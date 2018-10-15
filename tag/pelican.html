@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+<head>
+        <meta charset="utf-8" />
+        <title>嬉戏实验室 - pelican</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">嬉戏实验室 </a></h1>
+                <nav><ul>
+                    <li><a href="/category/qi-ji.html">奇技</a></li>
+                    <li><a href="/category/wen-yi.html">文艺</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/jing-tai-wang-zhan-sheng-cheng-qi-pelicanxue-xi-bi-ji.html">静态网站生成器Pelican学习笔记</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2018-10-14T08:44:00+08:00">
+                Published: 周日 14 十月 2018
+        </abbr>
+		<br />
+        <abbr class="modified" title="2018-10-14T08:44:00+08:00">
+                Updated: 周日 14 十月 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/huang-fu-xiong.html">黄复雄</a>
+        </address>
+<p>In <a href="/category/qi-ji.html">奇技</a>.</p>
+<p>tags: <a href="/tag/pelican.html">pelican</a> <a href="/tag/xie-zi.html">写字</a> </p>
+<br /> <!-- 目录 -->
+    <nav class="toc">
+    <div class="toc"><span class="toctitle">::::目录::::</span><ul>
+<li><a href="#_1">快速上手</a></li>
+<li><a href="#_2">常用命令</a></li>
+<li><a href="#_3">文件元数据</a></li>
+<li><a href="#html">HTML标签</a></li>
+<li><a href="#markdown">Markdown表格和目录设置</a></li>
+<li><a href="#pages">pages（固定页面）</a></li>
+<li><a href="#_4">内部内容链接</a></li>
+<li><a href="#_5">静态文件链接</a></li>
+<li><a href="#_6">元数据链接</a></li>
+<li><a href="#_7">代码语法高亮</a></li>
+<li><a href="#_8">发布草稿</a></li>
+<li><a href="#_9">文章的多语言翻译</a></li>
+<li><a href="#_10">配置</a></li>
+<li><a href="#extract_toc">extract_toc插件</a></li>
+</ul>
+</div>
+    </nav>
+</footer><!-- /.post-info -->
+<p>不写是不好的。</p>
+<p>写微信、微博，像是在村头赤身裸体，彼此都尴尬；写博客是在无中心的世界里守株待兔，带点虚空的暧昧情绪。</p>
+<p>尝试了几种静态文件生成器，基于Python语言的Pelican最简单、亲切。这是照着<a href="http://docs.getpelican.com/en/stable/index.html">pelican 文档</a>练习时随手所记，备查。</p>
+<h2 id="_1">快速上手</h2>
+<ul>
+<li>安装（通常在venv中）</li>
+</ul>
+<div class="highlight"><pre><span></span>pip install pelican markdown typogrify
+</pre></div>
+<ul>
+<li>在当前目录生成一个网站骨架</li>
+</ul>
+<div class="highlight"><pre><span></span>pelican-quickstart
+</pre></div>
+<p>目录结构如下：</p>
+<div class="highlight"><pre><span></span>yourproject/
+├── content              # 文章
+│   └── (pages)         # 固定页面
+│   └── (images)        # 静态文件夹(图像)
+├── output               # 生成的网站
+├── develop_server.sh
+├── fabfile.py           # 自动化工具
+├── Makefile             # 自动化工具
+├── pelicanconf.py       # 主配置
+└── publishconf.py       # 发布配置
+</pre></div>
+<h2 id="_2">常用命令</h2>
+<ul>
+<li>查看命令行：</li>
+</ul>
+<div class="highlight"><pre><span></span>pelican --help
+</pre></div>
+<ul>
+<li>监控更改，实时更新:</li>
+</ul>
+<div class="highlight"><pre><span></span>pelican -r
+</pre></div>
+<p>或：</p>
+<div class="highlight"><pre><span></span>pelican --autoreload
+</pre></div>
+<ul>
+<li>打开网站：</li>
+</ul>
+<p>所生成的是静态页，可以直接用浏览器打开。
+如果有链接错误，可以通过服务器打开。启动Python3服务器：</p>
+<div class="highlight"><pre><span></span>python -m http.server
+</pre></div>
+<ul>
+<li>发布</li>
+</ul>
+<div class="highlight"><pre><span></span>pelican content [-s publishconf.py]
+</pre></div>
+<h2 id="_3">文件元数据</h2>
+<p>Pelican支持Markdown、reStructuredText、AsciiDoc等书写格式，也能直接使用HTML页面。下面以较常见的Markdown为主。</p>
+<ul>
+<li>常用Markdown元数据：</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="nt">---</span>
+<span class="nt">Title</span><span class="o">:</span> <span class="nt">文章标题</span>
+<span class="nt">Slug</span><span class="o">:</span>                 <span class="o">//</span> <span class="nt">文章唯一标识</span><span class="o">,</span><span class="nt">相同的Slug搭配不同的Lan标记可以形成多语言平行页</span>
+                      <span class="o">//</span> <span class="nt">缺省则用Title生成</span><span class="o">,</span><span class="nt">汉字转换为无调拼音并用</span><span class="s1">'-'</span><span class="nt">分割</span>
+<span class="nt">Category</span><span class="o">:</span> <span class="nt">分类</span>         <span class="o">//</span> <span class="nt">归类到导航栏顶级菜单中</span><span class="o">(</span><span class="nt">可设置</span><span class="o">),</span><span class="nt">缺省值是次级目录名</span><span class="o">(</span><span class="nt">可关闭</span><span class="o">)</span>
+<span class="nt">Tags</span><span class="o">:</span> <span class="nt">标签1</span><span class="o">;</span> <span class="nt">标签2</span>     <span class="o">//</span> <span class="nt">顶级分隔符也可用</span><span class="s1">','</span>
+<span class="nt">Authors</span><span class="o">:</span> <span class="nt">作者1</span><span class="o">;</span> <span class="nt">作者2</span>   <span class="o">//</span> <span class="nt">顶级分隔符也可用</span><span class="s1">','</span><span class="o">,</span><span class="nt">只有一个作者时可以用</span><span class="s1">'author'</span>
+<span class="nt">Date</span><span class="o">:</span> <span class="nt">2018-10-14</span> <span class="nt">08</span><span class="p">:</span><span class="nd">44</span>      <span class="o">//</span> <span class="nt">书写时间</span>
+<span class="nt">Modified</span><span class="o">:</span> <span class="nt">2018-10-14</span> <span class="nt">08</span><span class="p">:</span><span class="nd">44</span>  <span class="o">//</span><span class="nt">更改时间</span>
+<span class="nt">Summary</span><span class="o">:</span> <span class="nt">摘要</span>          <span class="o">//</span> <span class="nt">缺省为使用正文开头</span><span class="o">(</span><span class="nt">字数可设置</span><span class="o">)</span>
+<span class="nt">Status</span><span class="o">:</span>                <span class="o">//</span> <span class="nt">状态</span><span class="o">,</span><span class="nt">如draft</span><span class="o">(</span><span class="nt">草稿</span><span class="o">,</span><span class="nt">不公布</span><span class="o">),</span> <span class="nt">published</span><span class="o">(</span><span class="nt">发布</span><span class="o">,</span><span class="nt">缺省值</span><span class="o">),</span>
+                       <span class="o">//</span> <span class="nt">hidden</span><span class="o">(</span><span class="nt">隐藏</span><span class="o">,</span><span class="nt">如404页</span><span class="o">)</span>
+<span class="nt">---</span>
+</pre></div>
+<ul>
+<li>HTML元数据：</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My super title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"tags"</span> <span class="na">content</span><span class="o">=</span><span class="s">"thats, awesome"</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"date"</span> <span class="na">content</span><span class="o">=</span><span class="s">"2012-07-09 22:28"</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"modified"</span> <span class="na">content</span><span class="o">=</span><span class="s">"2012-07-10 20:14"</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"category"</span> <span class="na">content</span><span class="o">=</span><span class="s">"yeah"</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"authors"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Alexis Métaireau, Conan Doyle"</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"summary"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Short version for index and feeds"</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        This is the content of my super blog post.
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+<h2 id="html">HTML标签</h2>
+<div class="highlight"><pre><span></span>:abbr:`HTML (HyperText Markup Language)`
+</pre></div>
+<h2 id="markdown">Markdown表格和目录设置</h2>
+<p>在Markdown设置中增加表格和目录扩展：</p>
+<div class="highlight"><pre><span></span><span class="n">MARKDOWN</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'extension_configs'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'markdown.extensions.codehilite'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'css_class'</span><span class="p">:</span> <span class="s1">'highlight'</span><span class="p">},</span>
+        <span class="s1">'markdown.extensions.extra'</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">'markdown.extensions.meta'</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s1">'markdown.extensions.tables'</span><span class="p">:</span> <span class="p">{</span>  <span class="c1"># 表格</span>
+        <span class="p">},</span>
+        <span class="s1">'markdown.extensions.toc'</span><span class="p">:</span> <span class="p">{</span>     <span class="c1"># 目录</span>
+            <span class="s1">'title'</span><span class="p">:</span> <span class="s1">'::::目录::::'</span>      <span class="c1"># 目录头</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">'output_format'</span><span class="p">:</span> <span class="s1">'html5'</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+<p>参考<a href="https://python-markdown.github.io/extensions/toc/">目录设置细节</a></p>
+<h2 id="pages">pages（固定页面）</h2>
+<p>内容文件夹<code>content</code>下的文件夹<code>pages</code>，其中的内容会生成静态页，比如About、Contact页。</p>
+<p>通过<code>DISPLAY_PAGES_ON_MENU</code>选项控制<code>pages</code>中的内容是否全部在顶级导航菜单中显示，默认为<code>True</code>。</p>
+<p>个别文章可以通过元数据<code>status: hidden</code>隐藏。</p>
+<h2 id="_4">内部内容链接</h2>
+<div class="highlight"><pre><span></span>[a link relative to the current file]({filename}category/article1.rst)
+</pre></div>
+<h2 id="_5">静态文件链接</h2>
+<p>在<code>pelicanconf.py</code>中设置静态文件路径:</p>
+<div class="highlight"><pre><span></span>STATIC_PATHS = ['images', 'pdfs']
+</pre></div>
+<p>使用方法：</p>
+<div class="highlight"><pre><span></span><span class="o">!</span><span class="p">[</span><span class="n">Alt</span> <span class="n">Text</span><span class="p">]({</span><span class="n">filename</span><span class="p">}</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">han</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
+<span class="p">[</span><span class="n">Our</span> <span class="n">Menu</span><span class="p">]({</span><span class="n">filename</span><span class="p">}</span><span class="o">/</span><span class="n">pdfs</span><span class="o">/</span><span class="n">menu</span><span class="p">.</span><span class="n">pdf</span><span class="p">)</span>
+</pre></div>
+<p>用<code>{attach}</code>代替<code>{filename}</code>可以保持文章与附件的相对关系。建议只在所有链接都指向同一个文件，且链接所在的文章都在同一目录时才使用。 </p>
+<h2 id="_6">元数据链接</h2>
+<p>链接到元数据：</p>
+<div class="highlight"><pre><span></span>`{author}name`
+`{category}foobar`
+`{index}`
+`{tag}tagname`
+</pre></div>
+<h2 id="_7">代码语法高亮</h2>
+<p>Markdown文件使用CodeHilite extension，代码块缩进、其上加语言标识：</p>
+<div class="highlight"><pre><span></span>    :::python
+    print("The triple-colon syntax will *not* show line numbers.")
+</pre></div>
+<p>加行号：</p>
+<div class="highlight"><pre><span></span>    #!python
+    print("The path-less shebang syntax *will* show line numbers.")
+</pre></div>
+<h2 id="_8">发布草稿</h2>
+<p>在元数据中添加草稿标签<code>Status: draft</code>，可发布到草稿文件夹drafts，不会列入目录、分类、标签中。</p>
+<p>可设置缺省元数据，缺省发布状态为草稿:</p>
+<div class="highlight"><pre><span></span>DEFAULT_METADATA = {
+    'status': 'draft',
+}
+</pre></div>
+<p>此后如果要发布，则需要添加发布状态标签：</p>
+<div class="highlight"><pre><span></span><span class="n">Status</span><span class="o">:</span> <span class="n">published</span><span class="o">.</span>
+</pre></div>
+<h2 id="_9">文章的多语言翻译</h2>
+<p>略。</p>
+<h2 id="_10">配置</h2>
+<p>详细配置见<a href="http://docs.getpelican.com/en/stable/settings.html">pelican 文档</a></p>
+<h2 id="extract_toc">extract_toc插件</h2>
+<p>extract_toc通过article.content中第一个[TOC]标签的内容生成目录，放在article.toc中，从而可以在模板中使用。注意，第一个[TOC]标签将被删除。</p>
+<p>安装依赖：</p>
+<div class="highlight"><pre><span></span>pip install beautifulsoup4
+</pre></div>
+<p>在设置中安装插件：</p>
+<div class="highlight"><pre><span></span>PLUGIN_PATHS = ['path/to/pelican-plugins']
+PLUGINS = ['assets', 'sitemap', 'gravatar']
+</pre></div>
+<p>在模板中使用：
+如在Pelican自带主题notmyidea的article_infos.html中添加空block，以便扩展：</p>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="n">toc</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endblock</span><span class="o">%</span><span class="p">}</span>
+</pre></div>
+<p>再新建article_infos_toc.html，扩展前者：</p>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">extends</span> <span class="s2">"article_infos.html"</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="n">toc</span> <span class="o">%</span><span class="p">}</span>
+    <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">article</span><span class="o">.</span><span class="n">toc</span> <span class="o">%</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="n">nav</span> <span class="n">class</span><span class="o">=</span><span class="s2">"toc"</span><span class="o">&gt;</span>
+        <span class="p">{{</span> <span class="n">article</span><span class="o">.</span><span class="n">toc</span> <span class="p">}}</span>
+        <span class="o">&lt;/</span><span class="n">nav</span><span class="o">&gt;</span>
+    <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endblock</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/phaserguan-wang-shi-li-xue-xi-bi-ji.html" rel="bookmark"
+                           title="Permalink to Phaser官网实例学习笔记">Phaser官网实例学习笔记</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-10-14T08:44:00+08:00">
+                Published: 周日 14 十月 2018
+        </abbr>
+		<br />
+        <abbr class="modified" title="2018-10-14T08:44:00+08:00">
+                Updated: 周日 14 十月 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/huang-fu-xiong.html">黄复雄</a>
+        </address>
+<p>In <a href="/category/qi-ji.html">奇技</a>.</p>
+<p>tags: <a href="/tag/pelican.html">pelican</a> <a href="/tag/xie-zi.html">写字</a> </p>
+<br /> <!-- 目录 -->
+</footer><!-- /.post-info -->                <p>这是我学习Phaser官网实例的笔记，对快速了解Phaser能做什么、API概貌也许有帮助。</p>
+                <a class="readmore" href="/phaserguan-wang-shi-li-xue-xi-bi-ji.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/yue-han-fan-di-john-fante.html" rel="bookmark"
+                           title="Permalink to 约翰·凡蒂（John Fante）">约翰·凡蒂（John Fante）</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-10-14T08:44:00+08:00">
+                Published: 周日 14 十月 2018
+        </abbr>
+		<br />
+        <abbr class="modified" title="2018-10-14T08:44:00+08:00">
+                Updated: 周日 14 十月 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/huang-fu-xiong.html">黄复雄</a>
+        </address>
+<p>In <a href="/category/wen-yi.html">文艺</a>.</p>
+<p>tags: <a href="/tag/pelican.html">pelican</a> <a href="/tag/xie-zi.html">写字</a> </p>
+<br /> <!-- 目录 -->
+</footer><!-- /.post-info -->                <p>约翰·凡蒂(John Fante, 1909年4月8日—1983年5月8日)是意大利裔美国小说家，短篇小说作家和编剧。他最出名的是半自传小说《问尘缘》（1939），写的是大萧条时代的洛杉矶作家阿图罗·班迪尼的艰难生活。普遍认为这是写洛杉矶的伟大小说，它是1938年至1985年间出版的四本系列小说——现在统称为“班迪尼四重奏”——中的一本。一个同名电影摄制于2006年，由Colin Farrell主演。凡蒂出版了五本长篇小说，一本中篇小说和一本短篇小说集。另有作品，包括两本长篇小说，两本中篇小说，以及两本短篇小说集，在死后得以出版。他的影视成就主要包括《生机勃勃》（1956）——根据他1952年的同名小说创作，《珍妮·伊格尔斯》（1957年）和1962年的电影《漫步荒野》和《不情愿的圣徒》。</p>
+                <a class="readmore" href="/yue-han-fan-di-john-fante.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://www.xiiigame.com">XiiiGame</a></li>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Powered by <a href="http://getpelican.com/">Pelican</a>, <a href="http://python.org">Python</a>, and <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine.</a>
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
