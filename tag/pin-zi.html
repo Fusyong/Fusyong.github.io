@@ -23,73 +23,69 @@
                 <article>
                     <h1 class="entry-title"><a href="/pin-zi-you-xi-ruan-jian-shuo-ming-wen-dang.html">《拼字》游戏软件说明文档</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2018-10-14T08:44:00+08:00">
-                Published: 周日 14 十月 2018
+        <abbr class="published" title="2018-09-17T12:47:10+08:00">
+                Published: 周一 17 九月 2018
         </abbr>
 		<br />
-        <abbr class="modified" title="2018-10-14T08:44:00+08:00">
-                Updated: 周日 14 十月 2018
+        <abbr class="modified" title="2018-09-17T12:47:10+08:00">
+                Updated: 周一 17 九月 2018
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/huang-fu-xiong.html">黄复雄</a>
         </address>
 <p>In <a href="/category/qi-ji.html">奇技</a>.</p>
-<p>tags: <a href="/tag/pin-zi.html">拼字</a> <a href="/tag/you-xi.html">游戏</a> </p>
+<p>tags: <a href="/tag/pin-zi.html">拼字</a> <a href="/tag/you-xi.html">游戏</a> <a href="/tag/bian-cheng.html">编程</a> </p>
 <br /> <!-- 目录 -->
     <nav class="toc">
     <div class="toc"><span class="toctitle">::::目录::::</span><ul>
-<li><a href="#_1">目录</a></li>
-<li><a href="#_2">宗旨</a></li>
-<li><a href="#_3">功能与操作</a><ul>
-<li><a href="#_4">开局逻辑</a></li>
-<li><a href="#_5">游戏场景</a></li>
-<li><a href="#_6">拼字动作</a></li>
-<li><a href="#_7">使用提示</a></li>
-<li><a href="#_8">查看汉字信息</a></li>
+<li><a href="#_1">宗旨</a></li>
+<li><a href="#_2">功能与操作</a><ul>
+<li><a href="#_3">开局逻辑</a></li>
+<li><a href="#_4">游戏场景</a></li>
+<li><a href="#_5">拼字动作</a></li>
+<li><a href="#_6">使用提示</a></li>
+<li><a href="#_7">查看汉字信息</a></li>
 <li><a href="#-">终局-新开局</a></li>
-<li><a href="#_9">综合控制场景</a><ul>
-<li><a href="#_10">计分逻辑和游戏数据统计</a></li>
-<li><a href="#_11">自适应调整难度</a></li>
+<li><a href="#_8">综合控制场景</a><ul>
+<li><a href="#_9">计分逻辑和游戏数据统计</a></li>
+<li><a href="#_10">自适应调整难度</a></li>
 </ul>
 </li>
-<li><a href="#_12">选择背景音，开关动作音</a></li>
-<li><a href="#_13">微信小游戏版的社交功能</a></li>
+<li><a href="#_11">选择背景音，开关动作音</a></li>
+<li><a href="#_12">微信小游戏版的社交功能</a></li>
 </ul>
 </li>
-<li><a href="#_14">材料</a><ul>
-<li><a href="#_15">字表依据</a></li>
-<li><a href="#_16">部件规则</a></li>
-<li><a href="#_17">文字信息</a></li>
-<li><a href="#_18">背景音乐和音效</a></li>
-<li><a href="#_19">美术设计</a></li>
+<li><a href="#_13">材料</a><ul>
+<li><a href="#_14">字表依据</a></li>
+<li><a href="#_15">部件规则</a></li>
+<li><a href="#_16">文字信息</a></li>
+<li><a href="#_17">背景音乐和音效</a></li>
+<li><a href="#_18">美术设计</a></li>
 </ul>
 </li>
-<li><a href="#_20">技术实现</a><ul>
-<li><a href="#_21">客户端</a></li>
-<li><a href="#_22">服务器端</a></li>
+<li><a href="#_19">技术实现</a><ul>
+<li><a href="#_20">客户端</a></li>
+<li><a href="#_21">服务器端</a></li>
 </ul>
 </li>
 </ul>
 </div>
     </nav>
-</footer><!-- /.post-info --><p><em>
-<br/>by 黄复雄
-<br/>凡事可联系aahuaang@gmail.com
-<br/>2018-9-17 12:47:10
-<br/>
-<br/>此文档本为著作权登记准备，今暂作软件简介之用
-<br/>（标题后均隐藏有回到目录的按钮）
-</em></p>
-<h2 id="_1">目录</h2>
+</footer><!-- /.post-info --><p>*</p>
+<blockquote>
+<p>凡事可联系aahuaang@gmail.com</p>
+<p>此文档本为<a href="http://www.xiiigame.com/example">《拼字》游戏</a>软件著作权登记准备，今暂作软件简介之用。
+*</p>
+</blockquote>
 
-<h2 id="_2">宗旨</h2>
+<h2 id="_1">宗旨</h2>
 <p>这是针对汉字爱好者的，有汉字知识普及作用的益智休闲游戏，把通用规范汉字的字形结构、字理、字源、古字形、字音等知识融入游戏中，以寓学于乐。</p>
-<h2 id="_3">功能与操作</h2>
-<h3 id="_4">开局逻辑</h3>
+<h2 id="_2">功能与操作</h2>
+<h3 id="_3">开局逻辑</h3>
 <p>软件启动时，根据用户的历史数据(最初一局预设难度系数/取字范围是2000)自动开局。</p>
 <p>根据自适应规则计算得出的难度值确定取字范围，在此范围内随机取出4个字分拆成部件，去除重复者；在《通用规范汉字》范围内计算这些部件能拼成哪些字，每拼成一个字即作为可用的部件，再重新计算，如此穷尽地算出所有能拼成的字。</p>
-<h3 id="_5">游戏场景</h3>
+<h3 id="_4">游戏场景</h3>
 <p>在游戏场景中把最初的部件显示出来，即部件/字头精灵；某个部件能拼成的字则用图片在此部件后预先占位留空（每个字只在它的一个部件后留空），以便给用户提供线索，降低难度。开局时的场景布局如下：</p>
 <ul>
 <li>开局时的游戏场景</li>
@@ -106,7 +102,7 @@
 <li>微信版开局（启动后第一局）</li>
 </ul>
 <p><img alt="微信版开局（启动后第一局）" src="images/开局（微信、初始化）.png"/></p>
-<h3 id="_6">拼字动作</h3>
+<h3 id="_5">拼字动作</h3>
 <p>显示出来的所有部件/字头精灵，点击时以动画形式掉落到场景下边中部的拼字区域；拼字区域有两个以上部件时计算能否拼字，能则在预设的占位图片上方显示拼成的字，这个字也可以用于拼字。</p>
 <ul>
 <li>拼字成功</li>
@@ -124,9 +120,9 @@
 </ul>
 <p><img alt="等待状态" src="images/等待状态.png"/></p>
 <p>三个以上部件能拼字时，全部部件掉落到拼字区域前为等待状态，并有文字提示。</p>
-<h3 id="_7">使用提示</h3>
+<h3 id="_6">使用提示</h3>
 <p>点击场景右下角的提示按钮，软件将模仿用户点击部件/字头精灵的动作，把余下可能拼成的字逐个拼出。</p>
-<h3 id="_8">查看汉字信息</h3>
+<h3 id="_7">查看汉字信息</h3>
 <ul>
 <li>汉字信息</li>
 </ul>
@@ -137,7 +133,7 @@
 <p>使用者可随时结束一局，同时即新开一局。方法是点击游戏场景左下角的按钮，打开综合控制场景，再点击“新”字按钮。</p>
 <p>只要本局有拼字动作，终局-新开局时将统计本局数据，并计入历史数据。</p>
 <p>如果本局没有拼字动作，则忽略不计。</p>
-<h3 id="_9">综合控制场景</h3>
+<h3 id="_8">综合控制场景</h3>
 <ul>
 <li>综合控制场景</li>
 </ul>
@@ -148,7 +144,7 @@
 </ul>
 <p><img alt="综合控制场景（微信版）" src="images/开局结局设置页（微信小游戏）.png"/></p>
 <p>微信版的综合控制场景另有转发、排行榜、游戏圈等社交功能</p>
-<h4 id="_10">计分逻辑和游戏数据统计</h4>
+<h4 id="_9">计分逻辑和游戏数据统计</h4>
 <p>当场游戏得分即时、简单地显示在游戏场景下部。游戏中可随时打开综合控制场景，其中有更详细的统计数据，包括得分、拼字错误次数、提示按钮使用次数。</p>
 <ul>
 <li>字面得分</li>
@@ -174,14 +170,14 @@
 <li>错误数</li>
 </ul>
 <p>拼字错误次数不影响得分，但影响下一局的取字范围（难度系数）。</p>
-<h4 id="_11">自适应调整难度</h4>
+<h4 id="_10">自适应调整难度</h4>
 <p>软件根据本局的取字范围（难度系数）、得分、拼字错误次数，综合计算，自适应地调整下一局的取字范围（难度系数），从而使使用者能尽快地获得难易适中局面，然后保持稳健的前进或后退步伐。</p>
 <p>目前的规则是：每个拼字错误计-2分，拼字错误负分与成功分合计后换算成分数，此值在大于等于0.6与小于0.8时之间时，步进取基本值50字；同一方向连续第n次步进，则下一个步进量为当前步进量的n倍。</p>
 <p>本计算方法经后会有根本调整。</p>
-<h3 id="_12">选择背景音，开关动作音</h3>
+<h3 id="_11">选择背景音，开关动作音</h3>
 <p>本游戏备有两组背景音乐和动作音效。使用者必须主动选择一组背景音乐，才能开始播放。</p>
 <p>动作音效开关是对最近一次选择的背景音乐之配套音效的控制，所以必须事先选择过一次背景音乐才能生效。</p>
-<h3 id="_13">微信小游戏版的社交功能</h3>
+<h3 id="_12">微信小游戏版的社交功能</h3>
 <ul>
 <li>“转”字按钮，可打开微信的转发功能</li>
 <li>“榜”字按钮，可打开排行榜场景</li>
@@ -190,14 +186,14 @@
 <ul>
 <li>微信游戏圈按钮，可打开微信游戏圈</li>
 </ul>
-<h2 id="_14">材料</h2>
-<h3 id="_15">字表依据</h3>
+<h2 id="_13">材料</h2>
+<h3 id="_14">字表依据</h3>
 <ul>
 <li>字表以国务院《通用规范汉字表》（2013）为基础，并参考教育部《义务教育语文课程标准（2011）》附录4、5《识字、写字教学基本字表》《义务教育语文课程常用字表》，国家语委、国家教委《现代汉语常用字表》（1988）。</li>
 <li>此外加入了30多个趣味性较强的同部件堆叠而成的字，如“吅、𠱠、㗊”。</li>
 <li>字表排序先据参考字表的难易定性先后分组，然后各组根据多种字频统计数据排序。</li>
 </ul>
-<h3 id="_16">部件规则</h3>
+<h3 id="_15">部件规则</h3>
 <ul>
 <li>部件拆分规则主要参考国家语委《基础教学用现代汉语常用字部件规范（征求意见稿）》（2003）。</li>
 <li>部件拆分在“合于字理”“字形显明”“局部统一”三条原则之间争取平衡。</li>
@@ -209,29 +205,29 @@
 <li>尽量采用二分法，如“器”分为“㗊、犬”，“㗊”分为“吅、吅”，以增加拼字的层次（避免多字一次拼成），或降低判断的难度；但涉及常用字、常用部件时仍优先考虑字理，如“品”字分为“口、口、口”，而不是“口、吅”。目前三拼以上的有110多字。</li>
 <li>最终部件尽量成字，不能成字时则在符合字理、尽量减少不成字部件总量、尽量避免三个以上部件拼合三个原则之间争取平衡。如“皮”不再分拆。本软件实际使用500余个字表外的成字部件，150余个不成字部件。</li>
 </ul>
-<h3 id="_17">文字信息</h3>
+<h3 id="_16">文字信息</h3>
 <ul>
 <li>相关字（变体、繁体、异体）数据依据国务院《通用规范汉字表》（2013），并有相当补充。</li>
 <li>字典信息优先取《说文解字注》，其次取《说文解字》，再次取《康熙字典》。三种文本均据网络资料整理而成。</li>
 <li>《说文》的小篆字形根据北京师范大学小篆字体整理而成。小篆字形在文本中的位置暂为标出，除第一个是字头外，其余需根据上下文判断。</li>
 </ul>
-<h3 id="_18">背景音乐和音效</h3>
+<h3 id="_17">背景音乐和音效</h3>
 <ul>
 <li>第一组是软件著作权人约请艺术家创作的，自有版权</li>
 <li>第二组是根据公版作品管平湖的《广陵散》制作而成</li>
 </ul>
-<h3 id="_19">美术设计</h3>
+<h3 id="_18">美术设计</h3>
 <ul>
 <li>界面美术元素和整体设计均为自有版权。</li>
 </ul>
-<h2 id="_20">技术实现</h2>
-<h3 id="_21">客户端</h3>
+<h2 id="_19">技术实现</h2>
+<h3 id="_20">客户端</h3>
 <ul>
 <li>本软件客户端使用Typescript、JavaScript语言；</li>
 <li>基于Egret（白鹭）游戏引擎开发；</li>
 <li>可发布为微信小游戏、浏览器H5游戏、安卓APP、苹果iOS系统APP、Facebook游戏等多种平台形式。</li>
 </ul>
-<h3 id="_22">服务器端</h3>
+<h3 id="_21">服务器端</h3>
 <ul>
 <li>服务器端使用Python语言和Flask框架，uWSGI和Nginx服务；</li>
 <li>字表、部件、文字信息等在服务端预制，游戏时请求获取；</li>
@@ -243,22 +239,22 @@
                         <h2>links</h2>
                         <ul>
                             <li><a href="http://www.xiiigame.com">XiiiGame</a></li>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://www.xiiigame.com/example">拼字游戏</a></li>
                         </ul>
                 </div><!-- /.blogroll -->
                 <div class="social">
                         <h2>social</h2>
                         <ul>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
+                            <li><a href="https://github.com/Fusyong">GitHub</a></li>
+                            <li><a href="https://www.facebook.com/Aahuaang">Facebook</a></li>
                         </ul>
                 </div><!-- /.social -->
         </section><!-- /#extras -->
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                Powered by <a href="http://getpelican.com/">Pelican</a>, <a href="http://python.org">Python</a>, and <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine.</a>
+                Powered by <a href="http://getpelican.com/">Pelican</a>, in <a href="http://python.org">Python</a>, and with a theme by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine.</a>
                 </address><!-- /#about -->
         </footer><!-- /#contentinfo -->
 
