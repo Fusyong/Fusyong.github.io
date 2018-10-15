@@ -58,6 +58,7 @@
 <li><a href="#_9">文章的多语言翻译</a></li>
 <li><a href="#_10">配置</a></li>
 <li><a href="#extract_toc">extract_toc插件</a></li>
+<li><a href="#githubuser-pages">部署到github的User Pages</a></li>
 </ul>
 </div>
     </nav>
@@ -241,6 +242,20 @@ PLUGINS = ['assets', 'sitemap', 'gravatar']
     <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">{</span><span class="o">%</span> <span class="n">endblock</span> <span class="o">%</span><span class="p">}</span>
 </pre></div>
+<h2 id="githubuser-pages">部署到github的User Pages</h2>
+<p>在github上新建一个名为username.github.io的库（username必须是你的github账户名）。然后在本地的output文件夹进行git初始化、提交、关联、推送。</p>
+<div class="highlight"><pre><span></span>echo "# Fusyong.github.io" &gt;&gt; README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Yourusername/Yourusername.github.io.git
+git push -u origin master
+</pre></div>
+<p>即可访问Yourusername.github.io。</p>
+<p>如果误删除文件夹，重新克隆即可：</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/username/username.github.io.git output
+</pre></div>
+<p><strong>我的win7系统上无法使用官方推荐的ghp-import</strong></p>
     </div><!-- /.entry-content -->
 
   </article>
