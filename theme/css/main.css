@@ -86,16 +86,17 @@ ol {
 
 li { margin-top: 0.5em;
      margin-bottom: 1em; }
-
+     
+/* ah21 */
 .post-info {
     float:right;
-    margin:10px;
+    margin:1px;
     padding:5px;
 }
-
+/* ah21 */
 .post-info p{
     margin-top: 1px;
-    margin-bottom: 1px;
+    margin-bottom: 5px;
 }
 
 .readmore { float: right }
