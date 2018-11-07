@@ -1,7 +1,7 @@
 # this is my blog
 
-at [blog.xiiigame.com](blog.xiiigame.com)
+at [blog.xiiigame.com](http://blog.xiiigame.com)
 
 or
 
-at [Fusyong.github.io](Fusyong.github.io)
+at [Fusyong.github.io](http://Fusyong.github.io)
