@@ -1,465 +1,70 @@
 <!DOCTYPE html>
 <html lang="chinese (simplified)">
 <head>
-        <meta charset="utf-8" />
-        <title>Phaser官网实例学习笔记</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+    <meta charset="utf-8">
+    <title>嬉戏实验室 - Phaser官网实例学习笔记</title>
+    <meta name="description" content="">
+    <meta name="author" content="黄复雄">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="/theme/local.css" rel="stylesheet">
+    <link href="/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
 </head>
 
-<body id="index" class="home">
-<a href="https://github.com/Fusyong">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
-</a>
-        <header id="banner" class="body">
-                <h1><a href="/">嬉戏实验室  <strong>你来了！</strong></a></h1>
-                <nav><ul>
-                            <li class="active"><a href="/category/qiao-ji.html">巧技</a></li>
-                            <li><a href="/category/wen-yi.html">文艺</a></li>
+<body>
 
-                    <li><a href="/archives.html">Archives</a>
-                    <li><a href="/tags.html">Tags</a>
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
 
-                            <li><a href="/pages/about.html">About</a></li>
-                    
-                        <li><a href="http://www.xiiigame.com">XiiiGame</a></li>
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
 
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/phaserguan-wang-shi-li-xue-xi-bi-ji.html" rel="bookmark"
-           title="Permalink to Phaser官网实例学习笔记">Phaser官网实例学习笔记</a></h1>
-    </header>
+        <a class="brand" href="/">嬉戏实验室</a>
+        <div class="nav-collapse">
+        <ul class="nav">
 
-    <div class="entry-content">
-<footer class="post-info">
-    <abbr class="published" title="2017-08-18T00:00:00+08:00">
-        Pub.: 2017-08-18 周五
-    </abbr>
-        <br />
-        <abbr class="modified" title="2017-08-18T00:00:00+08:00">
-            Upd.: 2017-08-18 周五
-        </abbr>
-	        <address class="vcard author">
-	            By 	                <a class="url fn" href="/author/huang-fu-xiong.html">黄复雄</a>
-	        </address>
-	<p>In <a href="/category/qiao-ji.html">巧技</a></p>
-<p>tags: <a href="/tag/phaser.html">Phaser</a> <a href="/tag/you-xi.html">游戏</a> <a href="/tag/bian-cheng.html">编程</a> </p>	
-	<br />
-	    <nav class="toc">
-	    <div class="toc"><span class="toctitle">TOC:</span><ul>
-<li><a href="#_1">说明：</a></li>
-<li><a href="#basics">BASICS：基础</a><ul>
-<li><a href="#01-load-an-image">01 Load An Image</a></li>
-<li><a href="#02-click-on-an-image">02 Click On An Image</a></li>
-<li><a href="#03-move-an-image">03 Move An Image</a></li>
-<li><a href="#04-image-follow-input">04 Image Follow Input</a></li>
-<li><a href="#05-load-an-animation">05 Load An Animation</a></li>
-<li><a href="#06-render-text">06 Render Text</a></li>
-<li><a href="#07-tween-an-image">07 Tween An Image</a></li>
-</ul>
-</li>
-<li><a href="#sprites">SPRITES：精灵</a><ul>
-<li><a href="#add-an-image">Add An Image</a></li>
-<li><a href="#add-a-sprite">Add A Sprite</a></li>
-<li><a href="#sprite-from-bitmapdata">Sprite From Bitmapdata</a></li>
-<li><a href="#spritesheet">Spritesheet</a></li>
-<li><a href="#anchor">Anchor</a></li>
-<li><a href="#move-a-sprite">Move A Sprite</a></li>
-<li><a href="#destroy">Destroy</a></li>
-<li><a href="#sprite-tint">Sprite Tint</a></li>
-<li><a href="#scale-a-sprite">Scale A Sprite</a></li>
-<li><a href="#fixed-scale">Fixed Scale</a></li>
-<li><a href="#rotate-and-scale">Rotate And Scale</a></li>
-<li><a href="#add-several-sprites">Add Several Sprites</a></li>
-<li><a href="#child-sprites">Child Sprites</a></li>
-<li><a href="#sprite-bounds">Sprite Bounds</a></li>
-<li><a href="#out-of-bounds">Out Of Bounds</a></li>
-<li><a href="#align-in-rectangle">Align In Rectangle</a></li>
-<li><a href="#align-to-rectangle">Align To Rectangle</a></li>
-<li><a href="#align-multiple-sprites">Align Multiple Sprites</a></li>
-<li><a href="#align-text-to-sprite">Align Text To Sprite</a></li>
-<li><a href="#align-within-sprite">Align Within Sprite</a></li>
-<li><a href="#collide-world-bounds">Collide World Bounds</a></li>
-<li><a href="#dynamic-crop">Dynamic Crop</a></li>
-<li><a href="#mask">Mask</a></li>
-<li><a href="#overlap-tween-without-physics">Overlap Tween Without Physics</a></li>
-<li><a href="#pivot">Pivot</a></li>
-<li><a href="#rope">Rope</a></li>
-<li><a href="#shared-sprite-textures">Shared Sprite Textures</a></li>
-</ul>
-</li>
-<li><a href="#arcade-physicsarcade">ARCADE PHYSICS：ARCADE物理引擎</a><ul>
-<li><a href="#body-enable">Body Enable</a></li>
-<li><a href="#gravity">Gravity</a></li>
-<li><a href="#bounce">Bounce</a></li>
-<li><a href="#bounce-accelerator">Bounce Accelerator</a></li>
-<li><a href="#body-debug">Body Debug</a></li>
-<li><a href="#circle-body">Circle Body</a></li>
-<li><a href="#global-pause">Global Pause</a></li>
-<li><a href="#asteroids-movement">Asteroids Movement</a></li>
-<li><a href="#angle-to-pointer">Angle To Pointer</a></li>
-<li><a href="#multi-angle-to-pointer">Multi Angle To Pointer</a></li>
-<li><a href="#angle-between">Angle Between</a></li>
-<li><a href="#angular-acceleration">Angular Acceleration</a></li>
-<li><a href="#angular-velocity">Angular Velocity</a></li>
-<li><a href="#accelerate-to-pointer">Accelerate To Pointer</a></li>
-<li><a href="#direct-body-movement">Direct Body Movement</a></li>
-<li><a href="#distance-to-pointer">Distance To Pointer</a></li>
-<li><a href="#gravity-and-drag">Gravity And Drag</a></li>
-<li><a href="#group-vs-group">Group Vs Group</a></li>
-<li><a href="#group-vs-self">Group Vs Self</a></li>
-<li><a href="#larger-bounding-box">Larger Bounding Box</a></li>
-<li><a href="#offset-bounding-box">Offset Bounding Box</a></li>
-<li><a href="#move-over-distance">Move Over Distance</a></li>
-<li><a href="#move-to-pointer">Move To Pointer</a></li>
-<li><a href="#move-towards-object">Move Towards Object</a></li>
-<li><a href="#multiball">Multiball</a></li>
-<li><a href="#on-collide-event">On Collide Event</a></li>
-<li><a href="#one-way-collision">One Way Collision</a></li>
-<li><a href="#process-callback">Process Callback</a></li>
-<li><a href="#quadtree-collision-infos">Quadtree Collision Infos</a></li>
-<li><a href="#sort-direction">Sort Direction</a></li>
-<li><a href="#sprite-vs-group">Sprite Vs Group</a></li>
-<li><a href="#world-bounds-event">World Bounds Event</a></li>
-</ul>
-</li>
-<li><a href="#input">INPUT：输入</a><ul>
-<li><a href="#bounds-rect">Bounds Rect</a></li>
-<li><a href="#bounds-sprite">Bounds Sprite</a></li>
-<li><a href="#bring-a-child-to-top">Bring A Child To Top</a></li>
-<li><a href="#button-destroy">Button Destroy</a></li>
-<li><a href="#cursor-key-movement">Cursor Key Movement</a></li>
-<li><a href="#custom-candidate-handler">Custom Candidate Handler</a></li>
-<li><a href="#down-duration">Down Duration</a></li>
-<li><a href="#drag">Drag</a></li>
-<li><a href="#drag-event-parameters">Drag Event Parameters</a></li>
-<li><a href="#drag-update">Drag Update</a></li>
-<li><a href="#drop-limitation">Drop Limitation</a></li>
-<li><a href="#gamepad">Gamepad</a></li>
-<li><a href="#group-input-events">Group Input Events</a></li>
-<li><a href="#ignore-child-input">Ignore Child Input</a></li>
-<li><a href="#input-child-priority">Input Child Priority</a></li>
-<li><a href="#input-order">Input Order</a></li>
-<li><a href="#key">Key</a></li>
-<li><a href="#keyboard-hotkeys">Keyboard Hotkeys</a></li>
-<li><a href="#keyboard-justpressed">Keyboard Justpressed</a></li>
-<li><a href="#motion-lock-horizontal">Motion Lock Horizontal</a></li>
-<li><a href="#mouse-buttons">Mouse Buttons</a></li>
-<li><a href="#multi-touch">Multi Touch</a></li>
-<li><a href="#on-tap">On Tap</a></li>
-<li><a href="#out-of-game">Out Of Game</a></li>
-<li><a href="#override-default-controls">Override Default Controls</a></li>
-<li><a href="#pixel-perfect-click-detection">Pixel Perfect Click Detection</a></li>
-<li><a href="#pixelpick-atlas">Pixelpick Atlas</a></li>
-<li><a href="#pointer-lock">Pointer Lock</a></li>
-<li><a href="#pointer-over">Pointer Over</a></li>
-<li><a href="#snap-on-drag">Snap On Drag</a></li>
-<li><a href="#virtual-gamecontroller">Virtual Gamecontroller</a></li>
-<li><a href="#word-input">Word Input</a></li>
-</ul>
-</li>
-<li><a href="#groups">GROUPS：组</a><ul>
-<li><a href="#create-group">Create Group</a></li>
-<li><a href="#add-a-sprite-to-group">Add A Sprite To Group</a></li>
-<li><a href="#remove-removebetween">Remove ### RemoveBetween</a></li>
-<li><a href="#replace">Replace</a></li>
-<li><a href="#align-frames-to-grid">Align Frames To Grid</a></li>
-<li><a href="#align-sprites-to-grid">Align Sprites To Grid</a></li>
-<li><a href="#bring-a-group-to-top">Bring A Group To Top</a></li>
-<li><a href="#call-all">Call All</a></li>
-<li><a href="#call-all-animations">Call All Animations</a></li>
-<li><a href="#call-all-input">Call All Input</a></li>
-<li><a href="#create-if-null">Create If Null</a></li>
-<li><a href="#depth-sort">Depth Sort</a></li>
-<li><a href="#display-order">Display Order</a></li>
-<li><a href="#filter-by-property">Filter By Property</a></li>
-<li><a href="#for-each">For Each</a></li>
-<li><a href="#get-first">Get First</a></li>
-<li><a href="#group-transform-rotate">Group Transform Rotate</a></li>
-<li><a href="#set-all">Set All</a></li>
-<li><a href="#move-to-another-group">Move To Another Group</a></li>
-<li><a href="#nested-groups">Nested Groups</a></li>
-<li><a href="#recycling">Recycling</a></li>
-<li><a href="#sort">Sort</a></li>
-<li><a href="#swap-children-in-a-group">Swap Children In A Group</a></li>
-</ul>
-</li>
-<li><a href="#buttons">BUTTONS：按钮</a><ul>
-<li><a href="#button-in-a-group">Button In A Group</a></li>
-<li><a href="#button-using-texture-atlas">Button Using Texture Atlas</a></li>
-<li><a href="#cancel-button">Cancel Button</a></li>
-<li><a href="#changing-the-frames">Changing The Frames</a></li>
-<li><a href="#disable-button-on-click">Disable Button On Click</a></li>
-</ul>
-</li>
-<li><a href="#tweens">TWEENS：补间动画</a><ul>
-<li><a href="#alpha-text">Alpha Text</a></li>
-<li><a href="#chained-tweens">Chained Tweens</a></li>
-<li><a href="#combined-tweens">Combined Tweens</a></li>
-<li><a href="#earthquake">Earthquake</a></li>
-<li><a href="#easing">Easing</a></li>
-<li><a href="#fading-in-a-sprite">Fading In A Sprite</a></li>
-<li><a href="#generate-data">Generate Data</a></li>
-<li><a href="#interpolation">INTERPOLATION</a></li>
-<li><a href="#pause-tween">Pause Tween</a></li>
-<li><a href="#repeat">Repeat</a></li>
-<li><a href="#tween-from">Tween From</a></li>
-<li><a href="#single-tween-reuse">Single Tween Reuse</a></li>
-<li><a href="#tween-array">Tween Array</a></li>
-<li><a href="#tween-loop-event">Tween Loop Event</a></li>
-<li><a href="#tween-relative">Tween Relative</a></li>
-<li><a href="#tween-several-properties">Tween Several Properties</a></li>
-<li><a href="#yoyo">Yoyo</a></li>
-</ul>
-</li>
-<li><a href="#animation">ANIMATION：动画</a><ul>
-<li><a href="#animation-events">Animation Events</a></li>
-<li><a href="#change-frame">Change Frame</a></li>
-<li><a href="#change-texture-on-click">Change Texture On Click</a></li>
-<li><a href="#creature-dragon">Creature Dragon</a></li>
-<li><a href="#load-texture">Load Texture</a></li>
-<li><a href="#dynamic-animation">Dynamic Animation</a></li>
-<li><a href="#frame-update">Frame Update</a></li>
-<li><a href="#group-creation">Group Creation</a></li>
-<li><a href="#looped-animation">Looped Animation</a></li>
-<li><a href="#sprite-sheet">Sprite Sheet</a></li>
-<li><a href="#starling-atlas">Starling Atlas</a></li>
-<li><a href="#stop-animation">Stop Animation</a></li>
-<li><a href="#two-frame-test">Two Frame Test</a></li>
-</ul>
-</li>
-<li><a href="#particles">PARTICLES：粒子</a><ul>
-<li><a href="#auto-scale">Auto Scale</a></li>
-<li><a href="#click-burst">Click Burst</a></li>
-<li><a href="#collision">Collision</a></li>
-<li><a href="#destroy-emitter">Destroy Emitter</a></li>
-<li><a href="#emitter-width">Emitter Width</a></li>
-<li><a href="#firestarter">Firestarter</a></li>
-<li><a href="#flow">Flow</a></li>
-<li><a href="#no-rotation">No Rotation</a></li>
-<li><a href="#particle-alpha">Particle Alpha</a></li>
-<li><a href="#particle-class">Particle Class</a></li>
-<li><a href="#particle-scale">Particle Scale</a></li>
-<li><a href="#rain">Rain</a></li>
-<li><a href="#snow">Snow</a></li>
-<li><a href="#when-particles-collide">When Particles Collide</a></li>
-</ul>
-</li>
-<li><a href="#time">TIME：时间</a><ul>
-<li><a href="#basic-timed-event">Basic Timed Event</a></li>
-<li><a href="#basic-looped-event">BASIC LOOPED EVENT</a></li>
-<li><a href="#basic-repeat-event">Basic Repeat Event</a></li>
-<li><a href="#custom-timer">Custom Timer</a></li>
-<li><a href="#elapsed-seconds">Elapsed Seconds</a></li>
-<li><a href="#remove-event">Remove Event</a></li>
-<li><a href="#slow-down-time">Slow Down Time</a></li>
-</ul>
-</li>
-<li><a href="#text">TEXT：文本</a><ul>
-<li><a href="#text-events">Text Events</a></li>
-<li><a href="#text-gradient">Text Gradient</a></li>
-<li><a href="#center-text">Center Text</a></li>
-<li><a href="#center-text-on-sprite">Center Text On Sprite</a></li>
-<li><a href="#word-wrap">Word Wrap</a></li>
-<li><a href="#text-line-spacing">Text Line Spacing</a></li>
-<li><a href="#text-padding">Text Padding</a></li>
-<li><a href="#text-reflect">Text Reflect</a></li>
-<li><a href="#text-resolution">Text Resolution</a></li>
-<li><a href="#text-shadow">Text Shadow</a></li>
-<li><a href="#text-shadow-stroke">Text Shadow Stroke</a></li>
-<li><a href="#colored-characters">Colored Characters</a></li>
-<li><a href="#text-stroke-with-color">Text Stroke With Color</a></li>
-<li><a href="#text-tabs">Text Tabs</a></li>
-<li><a href="#text-tabs-from-array">Text Tabs From Array</a></li>
-<li><a href="#text-with-physics">Text With Physics</a></li>
-<li><a href="#extending-text">Extending Text</a></li>
-<li><a href="#google-webfonts">Google Webfonts</a></li>
-<li><a href="#bitmap-fonts">Bitmap Fonts</a></li>
-<li><a href="#clean-text">Clean Text</a></li>
-<li><a href="#bitmapfont-drag">Bitmapfont Drag</a></li>
-<li><a href="#bitmaptext-anchor-x">Bitmaptext Anchor X</a></li>
-<li><a href="#bitmaptext-max-width">Bitmaptext Max Width</a></li>
-<li><a href="#bitmaptext-purge-glyphs">Bitmaptext Purge Glyphs</a></li>
-<li><a href="#bitmaptext-with-physics">Bitmaptext With Physics</a></li>
-<li><a href="#retro-font-1">Retro Font 1</a></li>
-</ul>
-</li>
-<li><a href="#debug">DEBUG：调试信息</a></li>
-<li><a href="#tile-sprites">TILE SPRITES：瓷砖精灵</a><ul>
-<li><a href="#tiling-sprite">Tiling Sprite</a></li>
-<li><a href="#animated-tiling-sprite">Animated Tiling Sprite</a></li>
-<li><a href="#sprite-sheet-tiling-sprite">Sprite Sheet Tiling Sprite</a></li>
-<li><a href="#tiling-sprite-atlas">Tiling Sprite Atlas</a></li>
-<li><a href="#colliding-with-tiling-sprite">Colliding With Tiling Sprite</a></li>
-<li><a href="#tile-sprite-from-animated-sprite">Tile Sprite From Animated Sprite</a></li>
-</ul>
-</li>
-<li><a href="#tilemaps">TILEMAPS：瓷砖地图</a><ul>
-<li><a href="#blank-tilemap">Blank Tilemap</a></li>
-<li><a href="#create-from-array">Create From Array</a></li>
-<li><a href="#create-from-objects">Create From Objects</a></li>
-<li><a href="#csv-map">Csv Map</a></li>
-<li><a href="#csv-map-collide">Csv Map Collide</a></li>
-<li><a href="#csv-map-with-p2">CSV MAP WITH P2</a></li>
-<li><a href="#features-test">Features Test</a></li>
-<li><a href="#fill-tiles">Fill Tiles</a></li>
-<li><a href="#paint-tiles">Paint Tiles</a></li>
-<li><a href="#randomise-tiles">Randomise Tiles</a></li>
-<li><a href="#replace-tiles">Replace Tiles</a></li>
-<li><a href="#swap-tiles">Swap Tiles</a></li>
-<li><a href="#resize-map">Resize Map</a></li>
-<li><a href="#tile-callbacks">Tile Callbacks</a></li>
-<li><a href="#tileset-from-bitmapdata">Tileset From Bitmapdata</a></li>
-</ul>
-</li>
-<li><a href="#camera">CAMERA：镜头</a><ul>
-<li><a href="#moving-the-camera">Moving The Camera</a></li>
-<li><a href="#basic-follow">Basic Follow</a></li>
-<li><a href="#camera-fade">Camera Fade</a></li>
-<li><a href="#camera-flash">Camera Flash</a></li>
-<li><a href="#camera-shake">Camera Shake</a></li>
-<li><a href="#deadzone">Deadzone</a></li>
-<li><a href="#fixed-to-camera">Fixed To Camera</a></li>
-<li><a href="#follow-styles">Follow Styles</a></li>
-</ul>
-</li>
-<li><a href="#world">WORLD：世界</a><ul>
-<li><a href="#fixed-to-camera_1">Fixed To Camera</a></li>
-<li><a href="#move-around-world">Move Around World</a></li>
-<li><a href="#world-wrap">World Wrap</a></li>
-</ul>
-</li>
-<li><a href="#display">DISPLAY：显示</a><ul>
-<li><a href="#circle">Circle</a></li>
-<li><a href="#ellips">Ellips</a></li>
-<li><a href="#arc">Arc</a></li>
-<li><a href="#arcade-physics-graphics-shape">Arcade Physics Graphics Shape</a></li>
-<li><a href="#extract-mask">Extract Mask</a></li>
-<li><a href="#fullscreen">Fullscreen</a></li>
-<li><a href="#game-background-color">Game Background Color</a></li>
-<li><a href="#generate-texture-from-graphics">Generate Texture From Graphics</a></li>
-<li><a href="#gradient">Gradient</a></li>
-<li><a href="#graphics">Graphics</a></li>
-<li><a href="#graphics-input-events">Graphics Input Events</a></li>
-<li><a href="#hsv-color-wheel">Hsv Color Wheel</a></li>
-<li><a href="#pixi-render-texture">Pixi Render Texture</a></li>
-<li><a href="#render-texture-image">Render Texture Image</a></li>
-<li><a href="#render-crisp">Render Crisp</a></li>
-<li><a href="#sprite-shadow">Sprite Shadow</a></li>
-<li><a href="#viewport">Viewport</a></li>
-</ul>
-</li>
-<li><a href="#bitmapdatabitmapd">BITMAPDATA：BITMAPD数据</a><ul>
-<li><a href="#fastcopy-draw">Fastcopy Draw</a></li>
-<li><a href="#copy-bitmapdata">Copy Bitmapdata</a></li>
-<li><a href="#copy-pixels">Copy Pixels</a></li>
-<li><a href="#draw-sprite">Draw Sprite</a></li>
-<li><a href="#alpha-mask">Alpha Mask</a></li>
-<li><a href="#atlas">Atlas</a></li>
-<li><a href="#cached-bitmapdata">Cached Bitmapdata</a></li>
-<li><a href="#draw-atlas-frame">Draw Atlas Frame</a></li>
-<li><a href="#draw-full">Draw Full</a></li>
-<li><a href="#draw-group">Draw Group</a></li>
-<li><a href="#get-pixel">Get Pixel</a></li>
-<li><a href="#process-pixels-1">Process Pixels 1</a></li>
-<li><a href="#radial-gradient">Radial Gradient</a></li>
-<li><a href="#replace-color">Replace Color</a></li>
-<li><a href="#set-hsl">Set Hsl</a></li>
-<li><a href="#sprite-texture">Sprite Texture</a></li>
-<li><a href="#text_1">Text</a></li>
-</ul>
-</li>
-<li><a href="#geometry">GEOMETRY：几何形状</a><ul>
-<li><a href="#line">Line</a></li>
-<li><a href="#rotate-line">Rotate Line</a></li>
-<li><a href="#line-bounds">Line Bounds</a></li>
-<li><a href="#center-line">Center Line</a></li>
-<li><a href="#centroid">Centroid</a></li>
-<li><a href="#circle_1">Circle</a></li>
-<li><a href="#circle-random-point">Circle Random Point</a></li>
-<li><a href="#line-intersection">Line Intersection</a></li>
-<li><a href="#line-midpoint">Line Midpoint</a></li>
-<li><a href="#line-reflection">Line Reflection</a></li>
-<li><a href="#playing-with-points">Playing With Points</a></li>
-<li><a href="#polygon">Polygon</a></li>
-<li><a href="#polygon-contains">Polygon Contains</a></li>
-<li><a href="#rectangle">Rectangle</a></li>
-<li><a href="#rectangle-get-point">Rectangle Get Point</a></li>
-<li><a href="#rectangle-intersects">Rectangle Intersects</a></li>
-</ul>
-</li>
-<li><a href="#audio">AUDIO：音频</a><ul>
-<li><a href="#audio-sprite-audio-sprite-duration">Audio Sprite/### Audio Sprite Duration</a></li>
-<li><a href="#play-music">Play Music</a></li>
-<li><a href="#fade-in">Fade In</a></li>
-<li><a href="#audio-sprite-json">Audio Sprite Json</a></li>
-<li><a href="#loop">Loop</a></li>
-<li><a href="#remove-sound">Remove Sound</a></li>
-<li><a href="#restart-sound">Restart Sound</a></li>
-<li><a href="#sound-complete">Sound Complete</a></li>
-</ul>
-</li>
-<li><a href="#video">VIDEO：视频</a><ul>
-<li><a href="#alpha-webm">Alpha Webm</a></li>
-<li><a href="#change-source">Change Source</a></li>
-<li><a href="#snapshot-blend-mode">Snapshot Blend Mode</a></li>
-<li><a href="#sprites-sharing-video">Sprites Sharing Video</a></li>
-<li><a href="#video-stream">Video Stream</a></li>
-</ul>
-</li>
-<li><a href="#weapon">WEAPON：武器</a><ul>
-<li><a href="#asteroids">Asteroids</a></li>
-<li><a href="#asteroids-bullet-wrap">Asteroids Bullet Wrap</a></li>
-<li><a href="#bullet-angle-variance">Bullet Angle Variance</a></li>
-<li><a href="#bullet-speed-variance">Bullet Speed Variance</a></li>
-<li><a href="#fire-rate">Fire Rate</a></li>
-<li><a href="#single-bullet">Single Bullet</a></li>
-</ul>
-</li>
-<li><a href="#loader">LOADER：文件加载器</a><ul>
-<li><a href="#asset-pack">Asset Pack</a></li>
-<li><a href="#check-cache">Check Cache</a></li>
-<li><a href="#load-audio">Load Audio</a></li>
-<li><a href="#load-binary-file">Load Binary File</a></li>
-<li><a href="#load-bitmap-font">Load Bitmap Font</a></li>
-<li><a href="#load-events">Load Events</a></li>
-<li><a href="#load-image">Load Image</a></li>
-<li><a href="#load-spritesheet">Load Spritesheet</a></li>
-<li><a href="#load-starling-atlas">Load Starling Atlas</a></li>
-<li><a href="#load-text-file">Load Text File</a></li>
-<li><a href="#load-json-file">Load Json File</a></li>
-<li><a href="#load-texture-atlas">Load Texture Atlas</a></li>
-<li><a href="#load-tilemap-json">Load Tilemap Json</a></li>
-<li><a href="#load-video">Load Video</a></li>
-<li><a href="#pick-images-from-cache">Pick Images From Cache</a></li>
-</ul>
-</li>
-<li><a href="#filters">FILTERS：滤镜</a><ul>
-<li><a href="#blue-dots">Blue Dots</a></li>
-<li><a href="#blur">Blur</a></li>
-</ul>
-</li>
-<li><a href="#misc">MISC：杂项</a><ul>
-<li><a href="#antialias-game">Antialias Game</a></li>
-<li><a href="#device">Device</a></li>
-<li><a href="#game-config">Game Config</a></li>
-<li><a href="#net">Net</a></li>
-<li><a href="#pause-menu">Pause Menu</a></li>
-<li><a href="#random-generators">Random Generators</a></li>
-<li><a href="#weighted-pick">Weighted Pick</a></li>
-</ul>
-</li>
-</ul>
+            <li><a href="http://www.xiiigame.com">XiiiGame</a></li>
+            
+            <li><a href="/pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
 </div>
-	    </nav>
-</footer><!-- /.post-info -->      
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Phaser官网实例学习笔记</h1>
+2017-08-18 周五
+
+by <a class="url fn" href="/author/huang-fu-xiong.html">黄复雄</a>
+ 
+
+
+        </div>
+	
+        <div>
 <h2 id="_1">说明：</h2>
 <ol>
 <li>这是我学习Phaser官网实例的笔记，对快速了解Phaser能做什么、API概貌也许有帮助。</li>
@@ -3104,43 +2709,497 @@ GAMEPAD MULTIPLE PADS</p>
     <span class="nx">rnd</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">rnd</span><span class="p">.</span><span class="nx">weightedPick</span><span class="p">(</span><span class="nx">test</span><span class="p">);</span>
     <span class="nx">total</span><span class="p">[</span><span class="nx">rnd</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
-    </div><!-- /.entry-content -->
+</pre></div></div>
+	
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                TOC
+                </li>
+                <nav class="toc">
+                    <div class="toc">
+<ul>
+<li><a href="#_1">说明：</a></li>
+<li><a href="#basics">BASICS：基础</a><ul>
+<li><a href="#01-load-an-image">01 Load An Image</a></li>
+<li><a href="#02-click-on-an-image">02 Click On An Image</a></li>
+<li><a href="#03-move-an-image">03 Move An Image</a></li>
+<li><a href="#04-image-follow-input">04 Image Follow Input</a></li>
+<li><a href="#05-load-an-animation">05 Load An Animation</a></li>
+<li><a href="#06-render-text">06 Render Text</a></li>
+<li><a href="#07-tween-an-image">07 Tween An Image</a></li>
+</ul>
+</li>
+<li><a href="#sprites">SPRITES：精灵</a><ul>
+<li><a href="#add-an-image">Add An Image</a></li>
+<li><a href="#add-a-sprite">Add A Sprite</a></li>
+<li><a href="#sprite-from-bitmapdata">Sprite From Bitmapdata</a></li>
+<li><a href="#spritesheet">Spritesheet</a></li>
+<li><a href="#anchor">Anchor</a></li>
+<li><a href="#move-a-sprite">Move A Sprite</a></li>
+<li><a href="#destroy">Destroy</a></li>
+<li><a href="#sprite-tint">Sprite Tint</a></li>
+<li><a href="#scale-a-sprite">Scale A Sprite</a></li>
+<li><a href="#fixed-scale">Fixed Scale</a></li>
+<li><a href="#rotate-and-scale">Rotate And Scale</a></li>
+<li><a href="#add-several-sprites">Add Several Sprites</a></li>
+<li><a href="#child-sprites">Child Sprites</a></li>
+<li><a href="#sprite-bounds">Sprite Bounds</a></li>
+<li><a href="#out-of-bounds">Out Of Bounds</a></li>
+<li><a href="#align-in-rectangle">Align In Rectangle</a></li>
+<li><a href="#align-to-rectangle">Align To Rectangle</a></li>
+<li><a href="#align-multiple-sprites">Align Multiple Sprites</a></li>
+<li><a href="#align-text-to-sprite">Align Text To Sprite</a></li>
+<li><a href="#align-within-sprite">Align Within Sprite</a></li>
+<li><a href="#collide-world-bounds">Collide World Bounds</a></li>
+<li><a href="#dynamic-crop">Dynamic Crop</a></li>
+<li><a href="#mask">Mask</a></li>
+<li><a href="#overlap-tween-without-physics">Overlap Tween Without Physics</a></li>
+<li><a href="#pivot">Pivot</a></li>
+<li><a href="#rope">Rope</a></li>
+<li><a href="#shared-sprite-textures">Shared Sprite Textures</a></li>
+</ul>
+</li>
+<li><a href="#arcade-physicsarcade">ARCADE PHYSICS：ARCADE物理引擎</a><ul>
+<li><a href="#body-enable">Body Enable</a></li>
+<li><a href="#gravity">Gravity</a></li>
+<li><a href="#bounce">Bounce</a></li>
+<li><a href="#bounce-accelerator">Bounce Accelerator</a></li>
+<li><a href="#body-debug">Body Debug</a></li>
+<li><a href="#circle-body">Circle Body</a></li>
+<li><a href="#global-pause">Global Pause</a></li>
+<li><a href="#asteroids-movement">Asteroids Movement</a></li>
+<li><a href="#angle-to-pointer">Angle To Pointer</a></li>
+<li><a href="#multi-angle-to-pointer">Multi Angle To Pointer</a></li>
+<li><a href="#angle-between">Angle Between</a></li>
+<li><a href="#angular-acceleration">Angular Acceleration</a></li>
+<li><a href="#angular-velocity">Angular Velocity</a></li>
+<li><a href="#accelerate-to-pointer">Accelerate To Pointer</a></li>
+<li><a href="#direct-body-movement">Direct Body Movement</a></li>
+<li><a href="#distance-to-pointer">Distance To Pointer</a></li>
+<li><a href="#gravity-and-drag">Gravity And Drag</a></li>
+<li><a href="#group-vs-group">Group Vs Group</a></li>
+<li><a href="#group-vs-self">Group Vs Self</a></li>
+<li><a href="#larger-bounding-box">Larger Bounding Box</a></li>
+<li><a href="#offset-bounding-box">Offset Bounding Box</a></li>
+<li><a href="#move-over-distance">Move Over Distance</a></li>
+<li><a href="#move-to-pointer">Move To Pointer</a></li>
+<li><a href="#move-towards-object">Move Towards Object</a></li>
+<li><a href="#multiball">Multiball</a></li>
+<li><a href="#on-collide-event">On Collide Event</a></li>
+<li><a href="#one-way-collision">One Way Collision</a></li>
+<li><a href="#process-callback">Process Callback</a></li>
+<li><a href="#quadtree-collision-infos">Quadtree Collision Infos</a></li>
+<li><a href="#sort-direction">Sort Direction</a></li>
+<li><a href="#sprite-vs-group">Sprite Vs Group</a></li>
+<li><a href="#world-bounds-event">World Bounds Event</a></li>
+</ul>
+</li>
+<li><a href="#input">INPUT：输入</a><ul>
+<li><a href="#bounds-rect">Bounds Rect</a></li>
+<li><a href="#bounds-sprite">Bounds Sprite</a></li>
+<li><a href="#bring-a-child-to-top">Bring A Child To Top</a></li>
+<li><a href="#button-destroy">Button Destroy</a></li>
+<li><a href="#cursor-key-movement">Cursor Key Movement</a></li>
+<li><a href="#custom-candidate-handler">Custom Candidate Handler</a></li>
+<li><a href="#down-duration">Down Duration</a></li>
+<li><a href="#drag">Drag</a></li>
+<li><a href="#drag-event-parameters">Drag Event Parameters</a></li>
+<li><a href="#drag-update">Drag Update</a></li>
+<li><a href="#drop-limitation">Drop Limitation</a></li>
+<li><a href="#gamepad">Gamepad</a></li>
+<li><a href="#group-input-events">Group Input Events</a></li>
+<li><a href="#ignore-child-input">Ignore Child Input</a></li>
+<li><a href="#input-child-priority">Input Child Priority</a></li>
+<li><a href="#input-order">Input Order</a></li>
+<li><a href="#key">Key</a></li>
+<li><a href="#keyboard-hotkeys">Keyboard Hotkeys</a></li>
+<li><a href="#keyboard-justpressed">Keyboard Justpressed</a></li>
+<li><a href="#motion-lock-horizontal">Motion Lock Horizontal</a></li>
+<li><a href="#mouse-buttons">Mouse Buttons</a></li>
+<li><a href="#multi-touch">Multi Touch</a></li>
+<li><a href="#on-tap">On Tap</a></li>
+<li><a href="#out-of-game">Out Of Game</a></li>
+<li><a href="#override-default-controls">Override Default Controls</a></li>
+<li><a href="#pixel-perfect-click-detection">Pixel Perfect Click Detection</a></li>
+<li><a href="#pixelpick-atlas">Pixelpick Atlas</a></li>
+<li><a href="#pointer-lock">Pointer Lock</a></li>
+<li><a href="#pointer-over">Pointer Over</a></li>
+<li><a href="#snap-on-drag">Snap On Drag</a></li>
+<li><a href="#virtual-gamecontroller">Virtual Gamecontroller</a></li>
+<li><a href="#word-input">Word Input</a></li>
+</ul>
+</li>
+<li><a href="#groups">GROUPS：组</a><ul>
+<li><a href="#create-group">Create Group</a></li>
+<li><a href="#add-a-sprite-to-group">Add A Sprite To Group</a></li>
+<li><a href="#remove-removebetween">Remove ### RemoveBetween</a></li>
+<li><a href="#replace">Replace</a></li>
+<li><a href="#align-frames-to-grid">Align Frames To Grid</a></li>
+<li><a href="#align-sprites-to-grid">Align Sprites To Grid</a></li>
+<li><a href="#bring-a-group-to-top">Bring A Group To Top</a></li>
+<li><a href="#call-all">Call All</a></li>
+<li><a href="#call-all-animations">Call All Animations</a></li>
+<li><a href="#call-all-input">Call All Input</a></li>
+<li><a href="#create-if-null">Create If Null</a></li>
+<li><a href="#depth-sort">Depth Sort</a></li>
+<li><a href="#display-order">Display Order</a></li>
+<li><a href="#filter-by-property">Filter By Property</a></li>
+<li><a href="#for-each">For Each</a></li>
+<li><a href="#get-first">Get First</a></li>
+<li><a href="#group-transform-rotate">Group Transform Rotate</a></li>
+<li><a href="#set-all">Set All</a></li>
+<li><a href="#move-to-another-group">Move To Another Group</a></li>
+<li><a href="#nested-groups">Nested Groups</a></li>
+<li><a href="#recycling">Recycling</a></li>
+<li><a href="#sort">Sort</a></li>
+<li><a href="#swap-children-in-a-group">Swap Children In A Group</a></li>
+</ul>
+</li>
+<li><a href="#buttons">BUTTONS：按钮</a><ul>
+<li><a href="#button-in-a-group">Button In A Group</a></li>
+<li><a href="#button-using-texture-atlas">Button Using Texture Atlas</a></li>
+<li><a href="#cancel-button">Cancel Button</a></li>
+<li><a href="#changing-the-frames">Changing The Frames</a></li>
+<li><a href="#disable-button-on-click">Disable Button On Click</a></li>
+</ul>
+</li>
+<li><a href="#tweens">TWEENS：补间动画</a><ul>
+<li><a href="#alpha-text">Alpha Text</a></li>
+<li><a href="#chained-tweens">Chained Tweens</a></li>
+<li><a href="#combined-tweens">Combined Tweens</a></li>
+<li><a href="#earthquake">Earthquake</a></li>
+<li><a href="#easing">Easing</a></li>
+<li><a href="#fading-in-a-sprite">Fading In A Sprite</a></li>
+<li><a href="#generate-data">Generate Data</a></li>
+<li><a href="#interpolation">INTERPOLATION</a></li>
+<li><a href="#pause-tween">Pause Tween</a></li>
+<li><a href="#repeat">Repeat</a></li>
+<li><a href="#tween-from">Tween From</a></li>
+<li><a href="#single-tween-reuse">Single Tween Reuse</a></li>
+<li><a href="#tween-array">Tween Array</a></li>
+<li><a href="#tween-loop-event">Tween Loop Event</a></li>
+<li><a href="#tween-relative">Tween Relative</a></li>
+<li><a href="#tween-several-properties">Tween Several Properties</a></li>
+<li><a href="#yoyo">Yoyo</a></li>
+</ul>
+</li>
+<li><a href="#animation">ANIMATION：动画</a><ul>
+<li><a href="#animation-events">Animation Events</a></li>
+<li><a href="#change-frame">Change Frame</a></li>
+<li><a href="#change-texture-on-click">Change Texture On Click</a></li>
+<li><a href="#creature-dragon">Creature Dragon</a></li>
+<li><a href="#load-texture">Load Texture</a></li>
+<li><a href="#dynamic-animation">Dynamic Animation</a></li>
+<li><a href="#frame-update">Frame Update</a></li>
+<li><a href="#group-creation">Group Creation</a></li>
+<li><a href="#looped-animation">Looped Animation</a></li>
+<li><a href="#sprite-sheet">Sprite Sheet</a></li>
+<li><a href="#starling-atlas">Starling Atlas</a></li>
+<li><a href="#stop-animation">Stop Animation</a></li>
+<li><a href="#two-frame-test">Two Frame Test</a></li>
+</ul>
+</li>
+<li><a href="#particles">PARTICLES：粒子</a><ul>
+<li><a href="#auto-scale">Auto Scale</a></li>
+<li><a href="#click-burst">Click Burst</a></li>
+<li><a href="#collision">Collision</a></li>
+<li><a href="#destroy-emitter">Destroy Emitter</a></li>
+<li><a href="#emitter-width">Emitter Width</a></li>
+<li><a href="#firestarter">Firestarter</a></li>
+<li><a href="#flow">Flow</a></li>
+<li><a href="#no-rotation">No Rotation</a></li>
+<li><a href="#particle-alpha">Particle Alpha</a></li>
+<li><a href="#particle-class">Particle Class</a></li>
+<li><a href="#particle-scale">Particle Scale</a></li>
+<li><a href="#rain">Rain</a></li>
+<li><a href="#snow">Snow</a></li>
+<li><a href="#when-particles-collide">When Particles Collide</a></li>
+</ul>
+</li>
+<li><a href="#time">TIME：时间</a><ul>
+<li><a href="#basic-timed-event">Basic Timed Event</a></li>
+<li><a href="#basic-looped-event">BASIC LOOPED EVENT</a></li>
+<li><a href="#basic-repeat-event">Basic Repeat Event</a></li>
+<li><a href="#custom-timer">Custom Timer</a></li>
+<li><a href="#elapsed-seconds">Elapsed Seconds</a></li>
+<li><a href="#remove-event">Remove Event</a></li>
+<li><a href="#slow-down-time">Slow Down Time</a></li>
+</ul>
+</li>
+<li><a href="#text">TEXT：文本</a><ul>
+<li><a href="#text-events">Text Events</a></li>
+<li><a href="#text-gradient">Text Gradient</a></li>
+<li><a href="#center-text">Center Text</a></li>
+<li><a href="#center-text-on-sprite">Center Text On Sprite</a></li>
+<li><a href="#word-wrap">Word Wrap</a></li>
+<li><a href="#text-line-spacing">Text Line Spacing</a></li>
+<li><a href="#text-padding">Text Padding</a></li>
+<li><a href="#text-reflect">Text Reflect</a></li>
+<li><a href="#text-resolution">Text Resolution</a></li>
+<li><a href="#text-shadow">Text Shadow</a></li>
+<li><a href="#text-shadow-stroke">Text Shadow Stroke</a></li>
+<li><a href="#colored-characters">Colored Characters</a></li>
+<li><a href="#text-stroke-with-color">Text Stroke With Color</a></li>
+<li><a href="#text-tabs">Text Tabs</a></li>
+<li><a href="#text-tabs-from-array">Text Tabs From Array</a></li>
+<li><a href="#text-with-physics">Text With Physics</a></li>
+<li><a href="#extending-text">Extending Text</a></li>
+<li><a href="#google-webfonts">Google Webfonts</a></li>
+<li><a href="#bitmap-fonts">Bitmap Fonts</a></li>
+<li><a href="#clean-text">Clean Text</a></li>
+<li><a href="#bitmapfont-drag">Bitmapfont Drag</a></li>
+<li><a href="#bitmaptext-anchor-x">Bitmaptext Anchor X</a></li>
+<li><a href="#bitmaptext-max-width">Bitmaptext Max Width</a></li>
+<li><a href="#bitmaptext-purge-glyphs">Bitmaptext Purge Glyphs</a></li>
+<li><a href="#bitmaptext-with-physics">Bitmaptext With Physics</a></li>
+<li><a href="#retro-font-1">Retro Font 1</a></li>
+</ul>
+</li>
+<li><a href="#debug">DEBUG：调试信息</a></li>
+<li><a href="#tile-sprites">TILE SPRITES：瓷砖精灵</a><ul>
+<li><a href="#tiling-sprite">Tiling Sprite</a></li>
+<li><a href="#animated-tiling-sprite">Animated Tiling Sprite</a></li>
+<li><a href="#sprite-sheet-tiling-sprite">Sprite Sheet Tiling Sprite</a></li>
+<li><a href="#tiling-sprite-atlas">Tiling Sprite Atlas</a></li>
+<li><a href="#colliding-with-tiling-sprite">Colliding With Tiling Sprite</a></li>
+<li><a href="#tile-sprite-from-animated-sprite">Tile Sprite From Animated Sprite</a></li>
+</ul>
+</li>
+<li><a href="#tilemaps">TILEMAPS：瓷砖地图</a><ul>
+<li><a href="#blank-tilemap">Blank Tilemap</a></li>
+<li><a href="#create-from-array">Create From Array</a></li>
+<li><a href="#create-from-objects">Create From Objects</a></li>
+<li><a href="#csv-map">Csv Map</a></li>
+<li><a href="#csv-map-collide">Csv Map Collide</a></li>
+<li><a href="#csv-map-with-p2">CSV MAP WITH P2</a></li>
+<li><a href="#features-test">Features Test</a></li>
+<li><a href="#fill-tiles">Fill Tiles</a></li>
+<li><a href="#paint-tiles">Paint Tiles</a></li>
+<li><a href="#randomise-tiles">Randomise Tiles</a></li>
+<li><a href="#replace-tiles">Replace Tiles</a></li>
+<li><a href="#swap-tiles">Swap Tiles</a></li>
+<li><a href="#resize-map">Resize Map</a></li>
+<li><a href="#tile-callbacks">Tile Callbacks</a></li>
+<li><a href="#tileset-from-bitmapdata">Tileset From Bitmapdata</a></li>
+</ul>
+</li>
+<li><a href="#camera">CAMERA：镜头</a><ul>
+<li><a href="#moving-the-camera">Moving The Camera</a></li>
+<li><a href="#basic-follow">Basic Follow</a></li>
+<li><a href="#camera-fade">Camera Fade</a></li>
+<li><a href="#camera-flash">Camera Flash</a></li>
+<li><a href="#camera-shake">Camera Shake</a></li>
+<li><a href="#deadzone">Deadzone</a></li>
+<li><a href="#fixed-to-camera">Fixed To Camera</a></li>
+<li><a href="#follow-styles">Follow Styles</a></li>
+</ul>
+</li>
+<li><a href="#world">WORLD：世界</a><ul>
+<li><a href="#fixed-to-camera_1">Fixed To Camera</a></li>
+<li><a href="#move-around-world">Move Around World</a></li>
+<li><a href="#world-wrap">World Wrap</a></li>
+</ul>
+</li>
+<li><a href="#display">DISPLAY：显示</a><ul>
+<li><a href="#circle">Circle</a></li>
+<li><a href="#ellips">Ellips</a></li>
+<li><a href="#arc">Arc</a></li>
+<li><a href="#arcade-physics-graphics-shape">Arcade Physics Graphics Shape</a></li>
+<li><a href="#extract-mask">Extract Mask</a></li>
+<li><a href="#fullscreen">Fullscreen</a></li>
+<li><a href="#game-background-color">Game Background Color</a></li>
+<li><a href="#generate-texture-from-graphics">Generate Texture From Graphics</a></li>
+<li><a href="#gradient">Gradient</a></li>
+<li><a href="#graphics">Graphics</a></li>
+<li><a href="#graphics-input-events">Graphics Input Events</a></li>
+<li><a href="#hsv-color-wheel">Hsv Color Wheel</a></li>
+<li><a href="#pixi-render-texture">Pixi Render Texture</a></li>
+<li><a href="#render-texture-image">Render Texture Image</a></li>
+<li><a href="#render-crisp">Render Crisp</a></li>
+<li><a href="#sprite-shadow">Sprite Shadow</a></li>
+<li><a href="#viewport">Viewport</a></li>
+</ul>
+</li>
+<li><a href="#bitmapdatabitmapd">BITMAPDATA：BITMAPD数据</a><ul>
+<li><a href="#fastcopy-draw">Fastcopy Draw</a></li>
+<li><a href="#copy-bitmapdata">Copy Bitmapdata</a></li>
+<li><a href="#copy-pixels">Copy Pixels</a></li>
+<li><a href="#draw-sprite">Draw Sprite</a></li>
+<li><a href="#alpha-mask">Alpha Mask</a></li>
+<li><a href="#atlas">Atlas</a></li>
+<li><a href="#cached-bitmapdata">Cached Bitmapdata</a></li>
+<li><a href="#draw-atlas-frame">Draw Atlas Frame</a></li>
+<li><a href="#draw-full">Draw Full</a></li>
+<li><a href="#draw-group">Draw Group</a></li>
+<li><a href="#get-pixel">Get Pixel</a></li>
+<li><a href="#process-pixels-1">Process Pixels 1</a></li>
+<li><a href="#radial-gradient">Radial Gradient</a></li>
+<li><a href="#replace-color">Replace Color</a></li>
+<li><a href="#set-hsl">Set Hsl</a></li>
+<li><a href="#sprite-texture">Sprite Texture</a></li>
+<li><a href="#text_1">Text</a></li>
+</ul>
+</li>
+<li><a href="#geometry">GEOMETRY：几何形状</a><ul>
+<li><a href="#line">Line</a></li>
+<li><a href="#rotate-line">Rotate Line</a></li>
+<li><a href="#line-bounds">Line Bounds</a></li>
+<li><a href="#center-line">Center Line</a></li>
+<li><a href="#centroid">Centroid</a></li>
+<li><a href="#circle_1">Circle</a></li>
+<li><a href="#circle-random-point">Circle Random Point</a></li>
+<li><a href="#line-intersection">Line Intersection</a></li>
+<li><a href="#line-midpoint">Line Midpoint</a></li>
+<li><a href="#line-reflection">Line Reflection</a></li>
+<li><a href="#playing-with-points">Playing With Points</a></li>
+<li><a href="#polygon">Polygon</a></li>
+<li><a href="#polygon-contains">Polygon Contains</a></li>
+<li><a href="#rectangle">Rectangle</a></li>
+<li><a href="#rectangle-get-point">Rectangle Get Point</a></li>
+<li><a href="#rectangle-intersects">Rectangle Intersects</a></li>
+</ul>
+</li>
+<li><a href="#audio">AUDIO：音频</a><ul>
+<li><a href="#audio-sprite-audio-sprite-duration">Audio Sprite/### Audio Sprite Duration</a></li>
+<li><a href="#play-music">Play Music</a></li>
+<li><a href="#fade-in">Fade In</a></li>
+<li><a href="#audio-sprite-json">Audio Sprite Json</a></li>
+<li><a href="#loop">Loop</a></li>
+<li><a href="#remove-sound">Remove Sound</a></li>
+<li><a href="#restart-sound">Restart Sound</a></li>
+<li><a href="#sound-complete">Sound Complete</a></li>
+</ul>
+</li>
+<li><a href="#video">VIDEO：视频</a><ul>
+<li><a href="#alpha-webm">Alpha Webm</a></li>
+<li><a href="#change-source">Change Source</a></li>
+<li><a href="#snapshot-blend-mode">Snapshot Blend Mode</a></li>
+<li><a href="#sprites-sharing-video">Sprites Sharing Video</a></li>
+<li><a href="#video-stream">Video Stream</a></li>
+</ul>
+</li>
+<li><a href="#weapon">WEAPON：武器</a><ul>
+<li><a href="#asteroids">Asteroids</a></li>
+<li><a href="#asteroids-bullet-wrap">Asteroids Bullet Wrap</a></li>
+<li><a href="#bullet-angle-variance">Bullet Angle Variance</a></li>
+<li><a href="#bullet-speed-variance">Bullet Speed Variance</a></li>
+<li><a href="#fire-rate">Fire Rate</a></li>
+<li><a href="#single-bullet">Single Bullet</a></li>
+</ul>
+</li>
+<li><a href="#loader">LOADER：文件加载器</a><ul>
+<li><a href="#asset-pack">Asset Pack</a></li>
+<li><a href="#check-cache">Check Cache</a></li>
+<li><a href="#load-audio">Load Audio</a></li>
+<li><a href="#load-binary-file">Load Binary File</a></li>
+<li><a href="#load-bitmap-font">Load Bitmap Font</a></li>
+<li><a href="#load-events">Load Events</a></li>
+<li><a href="#load-image">Load Image</a></li>
+<li><a href="#load-spritesheet">Load Spritesheet</a></li>
+<li><a href="#load-starling-atlas">Load Starling Atlas</a></li>
+<li><a href="#load-text-file">Load Text File</a></li>
+<li><a href="#load-json-file">Load Json File</a></li>
+<li><a href="#load-texture-atlas">Load Texture Atlas</a></li>
+<li><a href="#load-tilemap-json">Load Tilemap Json</a></li>
+<li><a href="#load-video">Load Video</a></li>
+<li><a href="#pick-images-from-cache">Pick Images From Cache</a></li>
+</ul>
+</li>
+<li><a href="#filters">FILTERS：滤镜</a><ul>
+<li><a href="#blue-dots">Blue Dots</a></li>
+<li><a href="#blur">Blur</a></li>
+</ul>
+</li>
+<li><a href="#misc">MISC：杂项</a><ul>
+<li><a href="#antialias-game">Antialias Game</a></li>
+<li><a href="#device">Device</a></li>
+<li><a href="#game-config">Game Config</a></li>
+<li><a href="#net">Net</a></li>
+<li><a href="#pause-menu">Pause Menu</a></li>
+<li><a href="#random-generators">Random Generators</a></li>
+<li><a href="#weighted-pick">Weighted Pick</a></li>
+</ul>
+</li>
+</ul>
+</div>
+                </nav>                
+            </ul>
+            </div>
+        
+        <hr>
 
-  </article>
-</section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://www.xiiigame.com">XiiiGame</a></li>
-                            <li><a href="http://www.xiiigame.com/example">拼字游戏</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+    </div>
+        </div>
+        
+        <div class="span3">
 
-                            <li><a href="https://github.com/Fusyong">GitHub</a></li>
-                            <li><a href="https://www.facebook.com/Aahuaang">Facebook</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="/archives.html">Archives</a>
+                <li><a href="/tags.html">Tags</a>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Powered by <a href="http://getpelican.com/">Pelican</a>, in <a href="http://python.org">Python</a>, and with a theme by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine.</a>
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
 
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-105243279-1', 'auto');
-    ga('send', 'pageview');
-    </script>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="/category/qiao-ji.html">巧技</a></li>
+                <li><a href="/category/wen-yi.html">文艺</a></li>
+                   
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+            
+                <li><a href="http://www.xiiigame.com">XiiiGame</a></li>
+                <li><a href="http://www.xiiigame.com/example">拼字游戏</a></li>
+            </ul>
+            </div>
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="https://github.com/Fusyong">GitHub</a></li>
+                <li><a href="https://www.facebook.com/Aahuaang">Facebook</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2018</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="/theme/bootstrap-collapse.js"></script>
+<script>var _gaq=[['_setAccount','UA-105243279-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+<a href="https://github.com/Fusyong"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+ 
 </body>
 </html>
