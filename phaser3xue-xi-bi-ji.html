@@ -67,21 +67,21 @@
         <div>
 <h2 id="_1">说明</h2>
 <p>这是我学习Phaser3，尤其是官网实例的笔记，对于快速概览Phaser3的功能及其实现方法有帮助。与Phaser2不同的地方做了重点标记。</p>
-<p>如果你完全不了解Phaser，宜先学习 官网入门教程。也可以快速浏览本人所做的<a href="http://blog.xiiigame.com/phaserguan-wang-shi-li-xue-xi-bi-ji.html">Phaser2官网实例学习笔记</a>，以便于对框架形成概观（仅限于概观！Phaser3变化很大）。</p>
+<p>如果你完全不了解Phaser，宜先学习官网入门教程。之后也可以快速浏览本人所做的<a href="http://blog.xiiigame.com/phaserguan-wang-shi-li-xue-xi-bi-ji.html">Phaser2官网实例学习笔记</a>，以便于对框架形成概观（仅限于概观！Phaser3变化很大）。</p>
 <p>我用的是TypeScript语言，但以下摘录的代码可能是JavaScript，或在此基础上添加了TypeScript类型标记。JavaScript代码在TypeScript中是有效的，但可能使编辑器、编译工具等报错——这跟设置有关。</p>
 <p>条目中有<code>@game load config, loader</code>一类标记的，表示来自官网实例的<code>loader</code>文件夹下的实例<code>game load config</code>。</p>
 <p><strong>本文是随时更新的。</strong></p>
 <h2 id="_2">学习资源</h2>
 <ul>
 <li><a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/index">官网入门教程</a>。一个简明、完整的权威教程。</li>
-<li><a href="https://github.com/photonstorm/phaser3-examples">Phaser3实例库</a>。可以在[http://labs.phaser.io]连线使用，但在我这里网速有问题。下载、安装后使用更方便，还可使用PowerGrep或FileLocator在代码全文中搜索。</li>
+<li><a href="https://github.com/photonstorm/phaser3-examples">Phaser3实例库</a>。可以在<a href="http://labs.phaser.io">labs.phaser.io</a>连线使用，但在我这里网速有问题。下载、安装后使用更方便，还可使用PowerGrep或FileLocator在代码全文中搜索。</li>
 <li><a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3在线文档</a>。仍很不完善。可参考<a href="https://github.com/photonstorm/phaser3-docs">完整的文档库</a>。</li>
 <li><a href="https://github.com/digitsensitive/phaser3-typescript">Phaser3-TypeScript模板与工具库</a>。包含工具和7个比较完整的游戏实例。</li>
 <li><a href="https://github.com/littlee/wechat-small-game-phaser">wechat-small-game-phaser库</a>，使PhaserCE适配微信小游戏（经实测，基本架构同样适用于Phaser3）；</li>
 <li><a href="https://www.cnblogs.com/honghong87/p/9592680.html">《phaser3 微信小游戏若干问题》</a>，解决Phaser3在微信中载入资源时不支持BLOB的问题（文章只解决了图片载入问题，其他资源载入问题需要照例自行修改Phaser3源码）。</li>
 </ul>
 <h2 id="gamegameconfig">Game配置对象GameConfig</h2>
-<p>Phaser3的配置对象包含很多项目，详见<a href="https://photonstorm.github.io/phaser3-docs/global.html#GameConfig">配置对象GameConfig文档</a>，也可参考[小抄]（https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/game-config.md）。</p>
+<p>Phaser3的配置对象包含很多项目，详见<a href="https://photonstorm.github.io/phaser3-docs/global.html#GameConfig">配置对象GameConfig文档</a>，也可参考<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/game-config.md">小抄</a>。</p>
 <p><strong>Phaser3广泛使用配置对象，又比如在生成Sprites、Tweens实例时。</strong></p>
 <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
