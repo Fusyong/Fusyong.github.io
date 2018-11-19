@@ -201,12 +201,25 @@ this.add.image(400, 300, 'hudbar');
 <h4>Bob</h4>
 <p>Blitter是为定制特效系统准备的容器，有很高的渲染效率；Blitter管理Bob，Bob有不能变形、旋转等限制。</p>
 <h3 id="container">Container容器</h3>
-<p>容器自有显示列表，子项加入时会自动从场景或原容器的显示列表益处。<strong>这一点跟Group不同。当要控制显示时用容器，如果只是为了归类组织，那么用Group。</strong>
+<p>容器自有显示列表，子项加入时默认会自动从场景或原容器的显示列表删除。<strong>这一点跟Group不同。当要控制显示时用容器，如果只是为了归类组织，那么用Group。</strong>
 容器可以应用遮罩，也可用作遮罩。
 容器可以嵌套，嵌套容器只有处于root的一个能应用遮罩。
 容器可以开启输入，这时需要指定一个形状作为点击区域；子项仍可开启输入。
 容器可以赋予物理属性，这时如果子项也有物理属性，可能带来混乱（如子项不处于0,0位时，可能引起错位）。
 容器会增加消耗，尤其是容器嵌套。</p>
+<h4>设置排他状态Container.setExclusive( [value])</h4>
+<p>value类型为boolean，<optional>，默认为true。 <br/>
+如果设为false，那么容器对子项的管理不是排他的，因此可以快速复制游戏对象；但是这些子项的输入事件、物理体将不再有效。</optional></p>
+<p>@Non Exclusive Containers, GameObjects/Container</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'lemming'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'Oh No!'</span><span class="p">,</span> <span class="p">{</span> <span class="nx">font</span><span class="o">:</span> <span class="s1">'16px Courier'</span><span class="p">,</span> <span class="nx">fill</span><span class="o">:</span> <span class="s1">'#00ff00'</span> <span class="p">});</span>
+<span class="kd">var</span> <span class="nx">container1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">container1</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
+<span class="kd">var</span> <span class="nx">container2</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">container2</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
+<span class="kd">var</span> <span class="nx">container3</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">container3</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
+</pre></div>
 <h3 id="group">组Group</h3>
 <p>Group是一个抽象分组，便于批量地生成、控制、循环处理近似游戏对象。<strong>与Container不同，它自身没有没有显隐、缩放、定位、旋转属性（但可以快速控制子项的这些属性）。他对子项不是独占的，子项可以存在于多个组中。</strong></p>
 <div class="highlight"><pre><span></span>let newGroup = this.add.group();
