@@ -72,11 +72,13 @@
         
         <div>
 <h2 id="_1">说明</h2>
-<p>这是我学习Phaser3，尤其是官网实例的笔记，对于快速概览Phaser3的功能及其实现方法有帮助。与Phaser2不同的地方做了重点标记。</p>
-<p>如果你完全不了解Phaser，宜先学习官网入门教程。之后也可以快速浏览本人所做的<a href="http://blog.xiiigame.com/phaserguan-wang-shi-li-xue-xi-bi-ji.html">Phaser2官网实例学习笔记</a>，以便于对框架形成概观（仅限于概观！Phaser3变化很大）。</p>
-<p>我用的是TypeScript语言，但以下摘录的代码可能是JavaScript，或在此基础上添加了TypeScript类型标记。JavaScript代码在TypeScript中是有效的，但可能使编辑器、编译工具等报错——这跟设置有关。</p>
-<p>条目中有<code>@game load config, loader</code>一类标记的，表示来自官网实例的<code>loader</code>文件夹下的实例<code>game load config</code>。</p>
-<p><strong>本文是随时更新的。</strong></p>
+<ul>
+<li>这是我学习Phaser3，尤其是官网实例的笔记，对于快速概览Phaser3的功能及其实现方法有帮助。Phaser3变化很大，与Phaser2不同的地方做了重点标记。<a href="http://blog.xiiigame.com/phaserguan-wang-shi-li-xue-xi-bi-ji.html">《Phaser2官网实例学习笔记》在这里。</a></li>
+<li>如果你完全不了解Phaser，宜先学习官网入门教程，以便对框架结构有整体了解。</li>
+<li>摘录的代码都是片段。我用的是TypeScript语言，但摘录的代码可能是JavaScript，或在此基础上添加了TypeScript类型标记。JavaScript代码在TypeScript中是有效的，但可能使编辑器、编译工具等报错——这跟设置有关。</li>
+<li>条目中有<code>@game load config, loader</code>一类标记的，表示来自官网实例的<code>loader</code>文件夹下的实例<code>game load config</code>。并非每处都记出处。</li>
+<li><strong>本文是随时更新的，</strong>最终会累积成一个便览手册；可通过搜索或底端的目录快速查找。</li>
+</ul>
 <h2 id="_2">学习资源</h2>
 <ul>
 <li><a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/index">官网入门教程</a>。一个简明、完整的权威教程。</li>
@@ -113,28 +115,14 @@
 <span class="kd">function</span> <span class="nx">create</span> <span class="p">(){}</span>
 <span class="kd">function</span> <span class="nx">update</span> <span class="p">(){}</span>
 </pre></div>
-<h2 id="sceneconfig">场景配置对象SceneConfig</h2>
-<p>Phaser3的Scene源于Phaser2的State，并包含Phaser2的Game World（游戏对象的生存世界）。</p>
-<p>从一个scene引用场景管理器：<code>scene.sys</code></p>
-<p>场景配置对象，例如：</p>
-<div class="highlight"><pre><span></span>{
-  key: "myScene",
-  physics: {
-    arcade: {
-      gravity: { y: 200 }
-      debug: true
-    }
-  }
-}
-</pre></div>
-<p>参考<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/scene-config.md">SceneConfig小抄</a></p>
 <h2 id="gameobjects">GameObjects游戏对象</h2>
-<h3 id="sprite">精灵Sprite</h3>
-<p>精灵是Phaser游戏中操控项最丰富的游戏对象。</p>
+<p><strong>Phaser3游戏对象的一个重要变化，是把Sprite、Text、Group等游戏对象的容器功能分离出来，归到Container中。这样一来，Sprite、Text等不能添加子项，Group有子项，但实际是逻辑分组，非独占，也不能控制显示状态。</strong>Phaser2的渲染核心是PIXI，PIXI有Container，但在Phaser2中一般不直接使用。</p>
+<h3 id="sprite">Sprite精灵</h3>
+<p>精灵是Phaser游戏中最主要的游戏对象。</p>
 <div class="highlight"><pre><span></span>let newSprite = this.add.sprite(20, 30, "spriteTexture", 2);
 </pre></div>
 <p>参考小抄<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/sprite.md">Phaser.GameObject.Sprite</a></p>
-<h4>PathFollower路径精灵</h4>
+<h4>PathFollower循路精灵</h4>
 <p>在一个路径上运动的精灵，是Sprite的子类。</p>
 <h4>直接生成有物理属性的精灵</h4>
 <div class="highlight"><pre><span></span>player = this.physics.add.sprite(100, 450, 'dude');
@@ -143,7 +131,7 @@ player.setCollideWorldBounds(true);  // 设置与世界边缘碰撞
 player.body.setGravityY(300) // 物理精灵的body包含了物理属性
 player.setTint(0xff0000); // 着色
 </pre></div>
-<h3 id="image">图像Image</h3>
+<h3 id="image">Image图像</h3>
 <p>图像与精灵的不同主要在于，Image没有动画（Animation）组件。——注意：Tween（补间运动）不属于Animation。
 <strong>在Phaser2中，Image的操控项更少，尤其是没有物理属性。</strong></p>
 <p><strong>Phaser3游戏对象的原点（对应于Phaser2的锚点anchor属性）默认为中心点，而不是左上角。</strong>原点通过属性<code>originX</code>, <code>originY</code>获取，通过方法<code>setOrigin(x, y)</code>设置。</p>
@@ -152,7 +140,7 @@ player.setTint(0xff0000); // 着色
 <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'sky'</span><span class="p">).</span><span class="nx">setOrigin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// 设左上角为原点/锚点</span>
 </pre></div>
 <p>参考小抄<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/image.md">Phaser.GameObject.Image</a></p>
-<h3 id="shapeshape">几何图形Shape和基于Shape的游戏对象子类</h3>
+<h3 id="shape">Shape几何图形和基于几何图形的游戏对象子类</h3>
 <p>Shape本身不能加到场景上，而是用作下列几何图形游戏对象的基类：</p>
 <ul>
 <li>Arc弧形</li>
@@ -167,7 +155,7 @@ player.setTint(0xff0000); // 着色
 <li>Start星形</li>
 <li>Triangle三角形</li>
 </ul>
-<h3 id="graphics">图形Graphics</h3>
+<h3 id="graphics">Graphics图形</h3>
 <p>用于向场景中绘制简单图形。比Shape子类的可控项少。</p>
 <div class="highlight"><pre><span></span>var graphics = this.add.graphics();
 graphics.fillStyle(0xffff00, 1);
@@ -226,7 +214,7 @@ this.add.image(400, 300, 'hudbar');
 <span class="kd">var</span> <span class="nx">container3</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
 <span class="nx">container3</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
 </pre></div>
-<h3 id="group">组Group</h3>
+<h3 id="group">Group组</h3>
 <p>Group是一个抽象分组，便于批量地生成、控制、循环处理近似游戏对象。<strong>与Container不同，它自身没有没有显隐、缩放、定位、旋转属性（但可以快速控制子项的这些属性）。他对子项不是独占的，子项可以存在于多个组中。</strong></p>
 <div class="highlight"><pre><span></span>let newGroup = this.add.group();
 </pre></div>
@@ -251,17 +239,17 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 
 });
 </pre></div>
-<h3 id="mesh">网格Mesh</h3>
+<h3 id="mesh">Mesh网格</h3>
 <p><strong>Mesh/网格是Phaser3新增功能，只支持webGL渲染模式。Phaser2不支持Mesh，因此也不支持Drangonbone等动画格式中的网格蒙皮功能。</strong></p>
-<div class="highlight"><pre><span></span>let newMesh = this.add.mesh(
-  300,
-  300,
-  [-250, -250, -250, 250, 250, 250, -250, -250, 250, 250, 250, -250],
-  [0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0],
-  [0xffffff, 0xffffff, 0xffffff, 0xffffff, 0xffffff, 0xffffff],
-  [1, 1, 1, 1, 1, 1],
-  "texture"
-);
+<div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">newMesh</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span>
+  <span class="mi">300</span><span class="p">,</span>
+  <span class="mi">300</span><span class="p">,</span>
+  <span class="p">[</span><span class="o">-</span><span class="mi">250</span><span class="p">,</span> <span class="o">-</span><span class="mi">250</span><span class="p">,</span> <span class="o">-</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="o">-</span><span class="mi">250</span><span class="p">,</span> <span class="o">-</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="o">-</span><span class="mi">250</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">[</span><span class="mh">0xffffff</span><span class="p">,</span> <span class="mh">0xffffff</span><span class="p">,</span> <span class="mh">0xffffff</span><span class="p">,</span> <span class="mh">0xffffff</span><span class="p">,</span> <span class="mh">0xffffff</span><span class="p">,</span> <span class="mh">0xffffff</span><span class="p">],</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+  <span class="s2">"texture"</span>
+<span class="p">);</span>
 </pre></div>
 <p>Parameters</p>
 <div class="highlight"><pre><span></span><span class="n">x</span>                    <span class="o">:</span> <span class="n">the</span> <span class="n">x</span> <span class="n">position</span> <span class="n">of</span> <span class="n">the</span> <span class="n">mesh</span>
@@ -275,17 +263,114 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 </pre></div>
 <p>通过<code>newMesh.vertices[0]</code>、<code>newMesh.uv[0]</code>等引用、操作。</p>
 <p>参考小抄 <a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/mesh.md">Phaser.GameObject.Mesh</a></p>
-<h2 id="_3">载入资源</h2>
+<h2 id="scene">Scene场景</h2>
+<h3 id="sceneconfig">SceneConfig场景配置对象</h3>
+<p>Phaser3的Scene源于Phaser2的State，并包含Phaser2的Game World（游戏对象的生存世界）。</p>
+<p>从一个scene引用场景管理器：<code>scene.sys</code></p>
+<p>场景配置对象，例如：</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nx">key</span><span class="o">:</span> <span class="s2">"myScene"</span><span class="p">,</span>
+  <span class="nx">physics</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">arcade</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">gravity</span><span class="o">:</span> <span class="p">{</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">200</span> <span class="p">}</span>
+      <span class="nx">debug</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>参考<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/scene-config.md">SceneConfig小抄</a></p>
+<h3 id="sceneadd">Scene.add属性</h3>
+<p>实际指向游戏对象工厂函数Phaser.GameObjects.GameObjectFactory，其下的方法通过多个参数生成、添加游戏对象。</p>
+<div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'gems'</span><span class="p">)</span>
+</pre></div>
+<ul>
+<li>Members</li>
+<li>displayList :Phaser.GameObjects.DisplayList</li>
+<li>scene :Phaser.Scene</li>
+<li>systems :Phaser.Scenes.Systems</li>
+<li>updateList :Phaser.GameObjects.UpdateList</li>
+<li>Methods</li>
+<li>existing(child)</li>
+</ul>
+<p><strong>添加已有的游戏对象，比如不能用<code>add</code>/<code>make</code>而只能用<code>new</code>生成的客户定制类的实例。</strong>
+  如有必要，会添加到显示列表DisplayList和更新列表UpdateList。</p>
+<div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">missile</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Missile</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="s1">'blue-missile'</span><span class="p">);</span>  
+<span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">existing</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">missile</span><span class="p">);</span>
+</pre></div>
+<ul>
+<li>各种游戏对象GameObjects生成器（类名对应的小写形式）</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="c1">// 生成后自动添加到显示列表</span>
+<span class="kr">const</span> <span class="nx">text1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">'image1'</span><span class="p">);</span>
+<span class="c1">// 生成后手动添加到显示列表</span>
+<span class="kr">const</span> <span class="nx">text2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">"image2"</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">existing</span><span class="p">(</span><span class="nx">text2</span><span class="p">);</span>
+</pre></div>
+<ul>
+<li>particles</li>
+<li>path</li>
+<li>quad</li>
+<li>renderTexture</li>
+<li>tween</li>
+</ul>
+<h3 id="scenemake">Scene.make属性</h3>
+<p>实际指向游戏对象生成函数Phaser.GameObjects.GameObjectCreator。成员与方法的名称与<code>add</code>属性的的相同；但与<code>add</code>不同，<code>make</code>下的方法通过一个<strong>配置对象</strong>生成、添加游戏对象；</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">bunny</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">sprite</span><span class="p">({</span>
+    <span class="nx">x</span><span class="o">:</span> <span class="nx">game</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> 
+    <span class="nx">y</span><span class="o">:</span> <span class="nx">game</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> 
+    <span class="nx">key</span><span class="o">:</span> <span class="s1">'bunny'</span><span class="p">,</span>
+    <span class="nx">add</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">});</span>
+</pre></div>
+<h3 id="scenechildren">Scene.children显示列表</h3>
+<h3 id="sceneanims">Scene.anims动画管理器</h3>
+<p><strong>Phaser3生成的动画是全局的，可以应用到不同的对象上。</strong></p>
+<div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+    <span class="nx">key</span><span class="o">:</span> <span class="s1">'left'</span><span class="p">,</span> <span class="c1">// 动画的键值，通过此键值应用动画</span>
+    <span class="nx">frames</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">generateFrameNumbers</span><span class="p">(</span><span class="s1">'dude'</span><span class="p">,</span> <span class="p">{</span> <span class="nx">start</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span><span class="o">:</span> <span class="mi">3</span> <span class="p">}),</span>
+    <span class="nx">frameRate</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">repeat</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span>
+<span class="p">});</span>
+
+<span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+    <span class="nx">key</span><span class="o">:</span> <span class="s1">'turn'</span><span class="p">,</span>
+    <span class="nx">frames</span><span class="o">:</span> <span class="p">[</span> <span class="p">{</span> <span class="nx">key</span><span class="o">:</span> <span class="s1">'dude'</span><span class="p">,</span> <span class="nx">frame</span><span class="o">:</span> <span class="mi">4</span> <span class="p">}</span> <span class="p">],</span>
+    <span class="nx">frameRate</span><span class="o">:</span> <span class="mi">20</span>
+<span class="p">});</span>
+
+<span class="nx">player</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s1">'left'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+</pre></div>
+<h3 id="scenetime">Scene.time时钟</h3>
+<h3 id="scenetweens">Scene.tweens补间动画管理器</h3>
+<h3 id="scenecache">Scene.cache缓存管理器</h3>
+<h3 id="scenecameras">Scene.cameras镜头管理器</h3>
+<h3 id="sceneevents">Scene.events事件发生器</h3>
+<h3 id="scenegamegame">Scene.game(Game)</h3>
+<h3 id="sceneinput">Scene.input输入插件</h3>
+<h3 id="scenelights">Scene.lights灯光管理器</h3>
+<h3 id="sceneload">Scene.load资源加载插件</h3>
 <div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">preload</span> <span class="p">()</span>
 <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="s1">'sky'</span><span class="p">,</span> <span class="s1">'assets/sky.png'</span><span class="p">);</span>  <span class="c1">// 'sky'是载入后资源的关键字，用以获取资源</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spritesheet</span><span class="p">(</span><span class="s1">'dude'</span><span class="p">,</span> 
         <span class="s1">'assets/dude.png'</span><span class="p">,</span>
-        <span class="p">{</span> <span class="nx">frameWidth</span>: <span class="kt">32</span><span class="p">,</span> <span class="nx">frameHeight</span>: <span class="kt">48</span> <span class="p">}</span>
+        <span class="p">{</span> <span class="nx">frameWidth</span><span class="o">:</span> <span class="mi">32</span><span class="p">,</span> <span class="nx">frameHeight</span><span class="o">:</span> <span class="mi">48</span> <span class="p">}</span>
     <span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-<h2 id="_4">生成碰撞、重叠管理对象</h2>
+<h3 id="sceneimpact-impact">Scene.impact Impact物理引擎</h3>
+<h3 id="scenematter-zatter">Scene.matter Zatter物理引擎</h3>
+<h3 id="scenephysics-arcade">Scene.physics Arcade物理引擎</h3>
+<h3 id="sceneplugins">Scene.plugins插件管理器</h3>
+<h3 id="scenefacebook-facebook">Scene.facebook Facebook即时游戏插件</h3>
+<h3 id="sceneregistry">Scene.registry数据管理器</h3>
+<h3 id="scenedata">Scene.data数据管理器</h3>
+<h3 id="scenescene">Scene.scene场景插件</h3>
+<p>管理各场景。</p>
+<h3 id="scenesound">Scene.sound基础声音管理器</h3>
+<h3 id="scenesys">Scene.sys系统</h3>
+<h3 id="scenetextures">Scene.textures文理管理器</h3>
+<h2 id="_3">生成碰撞、重叠管理对象</h2>
 <div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">collider</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">platforms</span><span class="p">);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">collider</span><span class="p">(</span><span class="nx">stars</span><span class="p">,</span> <span class="nx">platforms</span><span class="p">);</span> <span class="c1">// 组与组碰撞</span>
 
@@ -294,23 +379,6 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <span class="p">{</span>
     <span class="nx">star</span><span class="p">.</span><span class="nx">disableBody</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> 
 <span class="p">}</span>
-</pre></div>
-<h2 id="_5">生成动画、播放动画</h2>
-<p><strong>Phaser3生成的动画是全局的，可以应用到不同的对象上。</strong></p>
-<div class="highlight"><pre><span></span>this.anims.create({
-    key: 'left', // 动画的键值，通过此键值应用动画
-    frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
-    frameRate: 10,
-    repeat: -1
-});
-
-this.anims.create({
-    key: 'turn',
-    frames: [ { key: 'dude', frame: 4 } ],
-    frameRate: 20
-});
-
-player.anims.play('left', true);
 </pre></div>
 <h2 id="input">Input生成输入管理对象</h2>
 <div class="highlight"><pre><span></span>cursors = this.input.keyboard.createCursorKeys();
@@ -329,12 +397,12 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
 </pre></div>
 <h2 id="gameresize">调整尺寸Game.resize</h2>
 <p>根据浏览器窗口变动调整尺寸。</p>
-<div class="highlight"><pre><span></span>window.onresize = () =&gt; {
-  game.resize(window.innerWidth, window.innerHeight);
-};
+<div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">onresize</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">game</span><span class="p">.</span><span class="nx">resize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
+<span class="p">};</span>
 </pre></div>
 <h2 id="game">销毁Game实例</h2>
-<div class="highlight"><pre><span></span>Game.destroy(removeCanvas [, noReturn])
+<div class="highlight"><pre><span></span><span class="nx">Game</span><span class="p">.</span><span class="nx">destroy</span><span class="p">(</span><span class="nx">removeCanvas</span> <span class="p">[,</span> <span class="nx">noReturn</span><span class="p">])</span>
 </pre></div>
 <h2 id="src">src文件结构</h2>
 <div class="highlight"><pre><span></span><span class="nx">src</span>
