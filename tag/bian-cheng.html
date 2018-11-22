@@ -76,16 +76,17 @@
 <li>这是我学习Phaser3，尤其是官网实例的笔记，对于快速概览Phaser3的功能及其实现方法有帮助。Phaser3变化很大，与Phaser2不同的地方做了重点标记。<a href="http://blog.xiiigame.com/phaserguan-wang-shi-li-xue-xi-bi-ji.html">《Phaser2官网实例学习笔记》在这里。</a></li>
 <li>如果你完全不了解Phaser，宜先学习官网入门教程，以便对框架结构有整体了解。</li>
 <li>摘录的代码都是片段。我用的是TypeScript语言，但摘录的代码可能是JavaScript，或在此基础上添加了TypeScript类型标记。JavaScript代码在TypeScript中是有效的，但可能使编辑器、编译工具等报错——这跟设置有关。</li>
-<li>条目中有<code>@game load config, loader</code>一类标记的，表示来自官网实例的<code>loader</code>文件夹下的实例<code>game load config</code>。并非每处都记出处。</li>
+<li>同级的类往往有近似的属性和方法，所以通常只详记其中几个常用的。</li>
+<li>条目中<code>@audio/HTML5 Audio/play audio file</code>一类标记，表示代码片段所摘自的自官网实例js文件的位置。并非每处都记出处。</li>
 <li><strong>本文是随时更新的，</strong>最终会累积成一个便览手册；可通过搜索或底端的目录快速查找。</li>
 </ul>
 <h2 id="_2">学习资源</h2>
 <ul>
 <li><a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/index">官网入门教程</a>。一个简明、完整的权威教程。</li>
-<li><a href="https://github.com/photonstorm/phaser3-examples">Phaser3实例库</a>。可以在<a href="http://labs.phaser.io">labs.phaser.io</a>连线使用，但在我这里网速有问题。下载、安装后使用更方便，还可使用PowerGrep或FileLocator在代码全文中搜索。</li>
+<li><a href="https://github.com/photonstorm/phaser3-examples">Phaser3实例库</a>。可以在<a href="http://labs.phaser.io">labs.phaser.io</a>连线使用，但在我这里网速有问题。下载、安装后使用更方便，还可使用PowerGrep或FileLocator等高效的全文搜索软件在代码全文中检索。</li>
 <li><a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3在线文档</a>。仍很不完善。可参考<a href="https://github.com/photonstorm/phaser3-docs">完整的文档库</a>。</li>
 <li><a href="https://github.com/digitsensitive/phaser3-typescript">Phaser3-TypeScript模板与工具库</a>。包含工具和7个比较完整的游戏实例。</li>
-<li><a href="https://github.com/littlee/wechat-small-game-phaser">wechat-small-game-phaser库</a>，使PhaserCE适配微信小游戏（经实测，基本架构同样适用于Phaser3）；</li>
+<li><a href="https://github.com/littlee/wechat-small-game-phaser">wechat-small-game-phaser库</a>，这是一个使PhaserCE适配微信小游戏的库，但经实测，基本架构同样适用于Phaser3。</li>
 <li><a href="https://www.cnblogs.com/honghong87/p/9592680.html">《phaser3 微信小游戏若干问题》</a>，解决Phaser3在微信中载入资源时不支持BLOB的问题（文章只解决了图片载入问题，其他资源载入问题需要照例自行修改Phaser3源码）。</li>
 </ul>
 <h2 id="gamegameconfig">Game配置对象GameConfig</h2>
@@ -122,6 +123,26 @@
 <div class="highlight"><pre><span></span>let newSprite = this.add.sprite(20, 30, "spriteTexture", 2);
 </pre></div>
 <p>参考小抄<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/sprite.md">Phaser.GameObject.Sprite</a></p>
+<h4>Size内部尺寸</h4>
+<p>Size内部尺寸、原本（native）尺寸，包括：</p>
+<ul>
+<li>Sprite.width</li>
+<li>Sprite.height</li>
+</ul>
+<p>改变内部尺寸，供帧或物理体生成之用，不会影响已经渲染的游戏对象的尺寸：</p>
+<ul>
+<li>Sprite.setSize(width, height)</li>
+</ul>
+<h4>DisplaySize显示尺寸^[good]</h4>
+<ul>
+<li>Sprite.displayWidth</li>
+<li>Sprite.displayHeight</li>
+</ul>
+<p>有两个方法改变显示尺寸:</p>
+<ul>
+<li>Sprite.setScale(x [, y])</li>
+<li>Sprite.setDisplaySize(width, height) </li>
+</ul>
 <h4>PathFollower循路精灵</h4>
 <p>在一个路径上运动的精灵，是Sprite的子类。</p>
 <h4>直接生成有物理属性的精灵</h4>
@@ -157,17 +178,16 @@ player.setTint(0xff0000); // 着色
 </ul>
 <h3 id="graphics">Graphics图形</h3>
 <p>用于向场景中绘制简单图形。比Shape子类的可控项少。</p>
-<div class="highlight"><pre><span></span>var graphics = this.add.graphics();
-graphics.fillStyle(0xffff00, 1);
-graphics.fillRect(100, 100, 256, 256);
-graphics.fillStyle(0xff00ff, 0.5);
-graphics.fillRect(300, 200, 256, 256);
+<div class="highlight"><pre><span></span><span class="c1">// 绘制圆角方形</span>
+<span class="kd">var</span> <span class="nx">graphics</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">graphics</span><span class="p">();</span>
+<span class="nx">graphics</span><span class="p">.</span><span class="nx">fillStyle</span><span class="p">(</span><span class="mh">0xffff00</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">graphics</span><span class="p">.</span><span class="nx">fillRoundedRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </pre></div>
-<p>绘制矢量图形很消耗算力。如果图形变化不多，可生成文理<code>generateTexture</code>后作为图像渲染。</p>
-<div class="highlight"><pre><span></span>var graphics = this.make.graphics().fillStyle(0x00ff00).fillRect(0, 0, 800, 100);
-graphics.generateTexture('hudbar', 800, 100);
-graphics.destroy();
-this.add.image(400, 300, 'hudbar');
+<p>绘制矢量图形很消耗算力。如果图形变化不多，可生成纹理<code>generateTexture</code>后作为图像渲染。</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">graphics</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">graphics</span><span class="p">().</span><span class="nx">fillStyle</span><span class="p">(</span><span class="mh">0x00ff00</span><span class="p">).</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">graphics</span><span class="p">.</span><span class="nx">generateTexture</span><span class="p">(</span><span class="s1">'hudbar'</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">graphics</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">'hudbar'</span><span class="p">);</span>
 </pre></div>
 <h3 id="text">Text文本</h3>
 <p>文本所用字体必须是浏览器已经可以取用的，或已经载入，或已经嵌入CSS中。
@@ -189,7 +209,7 @@ this.add.image(400, 300, 'hudbar');
 <h4>TileSprite瓦片精灵</h4>
 <p>用小块Tile铺设背景。</p>
 <h4>Sprite3D</h4>
-<h3 id="rendertexture">RenderTexture渲染器文理</h3>
+<h3 id="rendertexture">RenderTexture渲染器纹理</h3>
 <p>能够在运行时绘制多个游戏对象，实时生成纹理，以供他用。对webGL友好，不激发GPU加载。</p>
 <h3 id="blitterbob">Blitter位块传送器（Bob容器）</h3>
 <h4>Bob</h4>
@@ -204,7 +224,7 @@ this.add.image(400, 300, 'hudbar');
 <h4>设置排他状态Container.setExclusive( [value])</h4>
 <p>value类型为boolean，<optional>，默认为true。 <br/>
 如果设为false，那么容器对子项的管理不是排他的，因此可以快速复制游戏对象；但是这些子项的输入事件、物理体将不再有效。</optional></p>
-<p>@Non Exclusive Containers, GameObjects/Container</p>
+<p>@GameObjects/Container/Non Exclusive Containers</p>
 <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'lemming'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'Oh No!'</span><span class="p">,</span> <span class="p">{</span> <span class="nx">font</span><span class="o">:</span> <span class="s1">'16px Courier'</span><span class="p">,</span> <span class="nx">fill</span><span class="o">:</span> <span class="s1">'#00ff00'</span> <span class="p">});</span>
 <span class="kd">var</span> <span class="nx">container1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
@@ -300,11 +320,14 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <ul>
 <li>各种游戏对象GameObjects生成器（类名对应的小写形式）</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="c1">// 生成后自动添加到显示列表</span>
+<p><strong>对比<code>add</code>、<code>make</code>、<code>new</code>三者的差异：</strong></p>
+<div class="highlight"><pre><span></span><span class="c1">// add生成后自动添加到显示列表</span>
 <span class="kr">const</span> <span class="nx">text1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">'image1'</span><span class="p">);</span>
-<span class="c1">// 生成后手动添加到显示列表</span>
+<span class="c1">// new生成后手动添加到显示列表</span>
 <span class="kr">const</span> <span class="nx">text2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">"image2"</span><span class="p">);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">existing</span><span class="p">(</span><span class="nx">text2</span><span class="p">);</span>
+<span class="c1">// make通过配置对象生成实例，通过设置决定是否立即添加到显示列表</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">nameStringText</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">text</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">text</span><span class="o">:</span> <span class="s2">"显示文本"</span><span class="p">,</span> <span class="nx">style</span><span class="o">:</span> <span class="p">{</span> <span class="nx">fontFamily</span><span class="o">:</span> <span class="s1">'楷体'</span><span class="p">,</span> <span class="nx">fontSize</span><span class="o">:</span> <span class="mi">64</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="nx">color</span> <span class="p">}},</span> <span class="nx">ture</span><span class="p">)</span>
 </pre></div>
 <ul>
 <li>particles</li>
@@ -314,13 +337,13 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <li>tween</li>
 </ul>
 <h3 id="scenemake">Scene.make属性</h3>
-<p>实际指向游戏对象生成函数Phaser.GameObjects.GameObjectCreator。成员与方法的名称与<code>add</code>属性的的相同；但与<code>add</code>不同，<code>make</code>下的方法通过一个<strong>配置对象</strong>生成、添加游戏对象；</p>
+<p>实际指向游戏对象生成函数Phaser.GameObjects.GameObjectCreator。成员与方法的名称与<code>add</code>属性的的相同；但与<code>add</code>不同，<code>make</code>下的方法通过一个<strong>配置对象</strong>生成游戏对象，并通过变量控制是否添加到显示列表。</p>
 <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">bunny</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">sprite</span><span class="p">({</span>
     <span class="nx">x</span><span class="o">:</span> <span class="nx">game</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> 
     <span class="nx">y</span><span class="o">:</span> <span class="nx">game</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> 
     <span class="nx">key</span><span class="o">:</span> <span class="s1">'bunny'</span><span class="p">,</span>
     <span class="nx">add</span><span class="o">:</span> <span class="kc">true</span>
-<span class="p">});</span>
+<span class="p">},</span> <span class="nx">ture</span><span class="p">);</span>
 </pre></div>
 <h3 id="scenechildren">Scene.children显示列表</h3>
 <h3 id="sceneanims">Scene.anims动画管理器</h3>
@@ -368,8 +391,28 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <h3 id="scenescene">Scene.scene场景插件</h3>
 <p>管理各场景。</p>
 <h3 id="scenesound">Scene.sound基础声音管理器</h3>
+<p>@audio/HTML5 Audio/play audio file</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">preload</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">audio</span><span class="p">(</span><span class="s1">'theme'</span><span class="p">,</span> <span class="p">[</span> <span class="c1">// 一组可选文件</span>
+        <span class="s1">'assets/audio/oedipus_wizball_highscore.ogg'</span><span class="p">,</span>
+        <span class="s1">'assets/audio/oedipus_wizball_highscore.mp3'</span>
+    <span class="p">]);</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">create</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">music</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sound</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'theme'</span><span class="p">);</span>
+    <span class="nx">music</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
 <h3 id="scenesys">Scene.sys系统</h3>
-<h3 id="scenetextures">Scene.textures文理管理器</h3>
+<div class="highlight"><pre><span></span><span class="c1">// 画布宽高</span>
+<span class="kd">let</span> <span class="nx">w</span>: <span class="kt">number</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">sys</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">h</span>: <span class="kt">number</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">sys</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+<span class="c1">// 判断不是桌面系统，而是移动系统</span>
+<span class="kd">let</span> <span class="nx">isDesktop</span>: <span class="kt">boolean</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">sys</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">desktop</span><span class="p">;</span>
+</pre></div>
+<h3 id="scenetextures">Scene.textures纹理管理器</h3>
 <h2 id="_3">生成碰撞、重叠管理对象</h2>
 <div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">collider</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">platforms</span><span class="p">);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">collider</span><span class="p">(</span><span class="nx">stars</span><span class="p">,</span> <span class="nx">platforms</span><span class="p">);</span> <span class="c1">// 组与组碰撞</span>
@@ -424,7 +467,8 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
 </pre></div>
 <p>另外，如果不使用webpack等打包工具，<code>index.html</code>文件和资源文件夹<code>assets/</code>可以跟入口文件<code>main.ts</code>放在同一层级（即<code>src/</code>)。</p>
 <p>微信版需要单建一个项目文件夹，存放微信小游戏必须的文件<code>game.js</code>（<code>game.ts</code>的编译目标）、<code>game.json</code>、<code>project.config.json</code>，以及<code>assets/</code>、<code>js/</code>等资源。微信版的问题当专文说明。</p>
-<h2 id="game-load-config-loader">资源加载的进度条@game load config, loader</h2>
+<h2 id="_4">资源加载的进度条</h2>
+<p>@loader/game load config</p>
 <div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">preload</span> <span class="p">()</span>
 <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">progress</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">graphics</span><span class="p">();</span>
