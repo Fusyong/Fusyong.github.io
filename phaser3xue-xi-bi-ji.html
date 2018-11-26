@@ -320,21 +320,35 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <p>此属性用以保存交互对象。</p>
 <p><a href="https://phaser.io/phaser3/devlog/89">Input问题，可参考开发日志。</a></p>
 <h2 id="scene">Scene场景</h2>
-<h3 id="sceneconfig">SceneConfig场景配置对象</h3>
-<p>Phaser3的Scene源于Phaser2的State，并包含Phaser2的Game World（游戏对象的生存世界）。</p>
-<p>从一个scene引用场景管理器：<code>scene.sys</code></p>
-<p>场景配置对象，例如：</p>
-<div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nx">key</span><span class="o">:</span> <span class="s2">"myScene"</span><span class="p">,</span>
-  <span class="nx">physics</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">arcade</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">gravity</span><span class="o">:</span> <span class="p">{</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">200</span> <span class="p">}</span>
-      <span class="nx">debug</span><span class="o">:</span> <span class="kc">true</span>
+<p>Phaser3的Scene源于Phaser2的State，并包含Phaser2的Game World（游戏对象的生存世界）。
+一个完整游戏，在正式游戏场景前常有boot、preload、menu等场景。场景控制细节见Scene.scene。
+场景类的结构通常是：</p>
+<div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">SimpleScene</span> <span class="kr">extends</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scene</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span>
+                <span class="p">{</span>
+                <span class="nx">key</span><span class="o">:</span> <span class="s2">"myScene"</span><span class="p">,</span>
+                <span class="nx">physics</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">arcade</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">gravity</span><span class="o">:</span> <span class="p">{</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">200</span> <span class="p">}</span>
+                    <span class="nx">debug</span><span class="o">:</span> <span class="kc">true</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
     <span class="p">}</span>
-  <span class="p">}</span>
+
+    <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+    <span class="nx">preload</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+    <span class="nx">create</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+    <span class="nx">update</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<p>参考<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/scene-config.md">SceneConfig小抄</a></p>
+<p>SceneConfig场景配置对象参考<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/scene-config.md">SceneConfig小抄</a></p>
 <h3 id="sceneadd">Scene.add属性</h3>
 <p>实际指向游戏对象工厂函数Phaser.GameObjects.GameObjectFactory，其下的方法通过多个参数生成、添加游戏对象。</p>
 <div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">'gems'</span><span class="p">)</span>
@@ -408,13 +422,28 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <h3 id="sceneinput">Scene.input输入插件</h3>
 <h3 id="scenelights">Scene.lights灯光管理器</h3>
 <h3 id="sceneload">Scene.load资源加载插件</h3>
+<p>@loader/game load config</p>
 <div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">preload</span> <span class="p">()</span>
 <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">progress</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">graphics</span><span class="p">();</span>
+    <span class="c1">// 设置'progress'事件的回调函数（绘制进度条）</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'progress'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">progress</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+        <span class="nx">progress</span><span class="p">.</span><span class="nx">fillStyle</span><span class="p">(</span><span class="mh">0xffffff</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="nx">progress</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">270</span><span class="p">,</span> <span class="mi">800</span> <span class="o">*</span> <span class="nx">value</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="c1">// 销毁进度条</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'complete'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">progress</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+    <span class="p">});</span>
+    <span class="c1">//  Now let's load a huge stack of files!</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="s1">'128x128'</span><span class="p">);</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="s1">'sky'</span><span class="p">,</span> <span class="s1">'assets/sky.png'</span><span class="p">);</span>  <span class="c1">// 'sky'是载入后资源的关键字，用以获取资源</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spritesheet</span><span class="p">(</span><span class="s1">'dude'</span><span class="p">,</span> 
         <span class="s1">'assets/dude.png'</span><span class="p">,</span>
         <span class="p">{</span> <span class="nx">frameWidth</span><span class="o">:</span> <span class="mi">32</span><span class="p">,</span> <span class="nx">frameHeight</span><span class="o">:</span> <span class="mi">48</span> <span class="p">}</span>
     <span class="p">);</span>
+    <span class="c1">// ...</span>
 <span class="p">}</span>
 </pre></div>
 <h3 id="sceneimpact-impact">Scene.impact Impact物理引擎</h3>
@@ -425,7 +454,13 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <h3 id="sceneregistry">Scene.registry数据管理器</h3>
 <h3 id="scenedata">Scene.data数据管理器</h3>
 <h3 id="scenescene">Scene.scene场景插件</h3>
-<p>管理各场景。</p>
+<p>指向场景插件ScenePlugin。
+管理各场景，如用<code>start</code>停止本场景并启动新场景，或用<code>launch</code>并行启动UI场景，或<code>pause</code>、<code>resume</code>、<code>stop</code>本场景。
+场景间的层级管理可用方法有：<code>bringToTop</code>, <code>sendToBack</code>, <code>moveUp</code>, <code>moveDown</code>, <code>moveAbove</code>, <code>moveBelow</code>。
+场景间通信，先建立引用<code>this.scene.get('SceneB')</code>，如果结合紧密则直接调用方法，如果关系不紧密则监听事件。
+参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html">API文档中的Phaser.Scenes.ScenePlugin</a>、
+<a href="https://github.com/jdotrjs/phaser-guides/blob/master/Basics/Part3.md">Let's Talk About Scenes</a>、
+<a href="https://gist.github.com/samme/01a33324a427f626254c1a4da7f9b6a3">phaser-scenes-summary</a></p>
 <h3 id="scenesound">Scene.sound基础声音管理器</h3>
 <p>@audio/HTML5 Audio/play audio file</p>
 <div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">preload</span> <span class="p">()</span>
@@ -483,7 +518,7 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
 <h2 id="game">销毁Game实例</h2>
 <div class="highlight"><pre><span></span><span class="nx">Game</span><span class="p">.</span><span class="nx">destroy</span><span class="p">(</span><span class="nx">removeCanvas</span> <span class="p">[,</span> <span class="nx">noReturn</span><span class="p">])</span>
 </pre></div>
-<h2 id="src">src文件结构</h2>
+<h2 id="src">src文件结构（最佳实践）</h2>
 <div class="highlight"><pre><span></span><span class="nx">src</span>
 <span class="o">|</span>   <span class="nx">phaser</span><span class="p">.</span><span class="nx">d</span><span class="p">.</span><span class="nx">ts</span>  <span class="c1">// Phaser类型声明文件，Typescript编译器需要</span>
 <span class="o">|</span>   <span class="nx">main</span><span class="p">.</span><span class="nx">ts</span>      <span class="c1">// web版入口文件</span>
@@ -503,27 +538,6 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
 </pre></div>
 <p>另外，如果不使用webpack等打包工具，<code>index.html</code>文件和资源文件夹<code>assets/</code>可以跟入口文件<code>main.ts</code>放在同一层级（即<code>src/</code>)。</p>
 <p>微信版需要单建一个项目文件夹，存放微信小游戏必须的文件<code>game.js</code>（<code>game.ts</code>的编译目标）、<code>game.json</code>、<code>project.config.json</code>，以及<code>assets/</code>、<code>js/</code>等资源。微信版的问题当专文说明。</p>
-<h2 id="_4">资源加载的进度条</h2>
-<p>@loader/game load config</p>
-<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">preload</span> <span class="p">()</span>
-<span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">progress</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">graphics</span><span class="p">();</span>
-    <span class="c1">// 设置'progress'事件的回调函数（重绘进度条）</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'progress'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">progress</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
-        <span class="nx">progress</span><span class="p">.</span><span class="nx">fillStyle</span><span class="p">(</span><span class="mh">0xffffff</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-        <span class="nx">progress</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">270</span><span class="p">,</span> <span class="mi">800</span> <span class="o">*</span> <span class="nx">value</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
-    <span class="p">});</span>
-    <span class="c1">// 销毁进度条</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'complete'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">progress</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-    <span class="p">});</span>
-    <span class="c1">//  Now let's load a huge stack of files!</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="s1">'128x128'</span><span class="p">);</span>
-    <span class="c1">// ...</span>
-    <span class="c1">// ...</span>
-<span class="p">}</span>
-</pre></div>
 <h2 id="math">Math数学</h2>
 <h3 id="rnd">RND随机数</h3>
 <ul>
@@ -562,7 +576,6 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
 </li>
 <li><a href="#input">Input游戏对象的输入控制</a></li>
 <li><a href="#scene">Scene场景</a><ul>
-<li><a href="#sceneconfig">SceneConfig场景配置对象</a></li>
 <li><a href="#sceneadd">Scene.add属性</a></li>
 <li><a href="#scenemake">Scene.make属性</a></li>
 <li><a href="#scenechildren">Scene.children显示列表</a></li>
@@ -593,8 +606,7 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
 <li><a href="#input_1">Input生成输入管理对象</a></li>
 <li><a href="#gameresize">调整尺寸Game.resize</a></li>
 <li><a href="#game">销毁Game实例</a></li>
-<li><a href="#src">src文件结构</a></li>
-<li><a href="#_4">资源加载的进度条</a></li>
+<li><a href="#src">src文件结构（最佳实践）</a></li>
 <li><a href="#math">Math数学</a><ul>
 <li><a href="#rnd">RND随机数</a></li>
 </ul>
@@ -661,7 +673,7 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
                 </li>
            
                 <li><a href="https://github.com/Fusyong">GitHub</a></li>
-                <li><a href="https://www.facebook.com/Aahuaang">Facebook</a></li>
+                <li><a href="https://www.phaser-china.com/">Phaser小站</a></li>
             </ul>
             </div>
             </div>
