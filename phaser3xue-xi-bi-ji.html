@@ -380,11 +380,11 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <span class="k">this</span><span class="p">.</span><span class="nx">nameStringText</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">text</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">text</span><span class="o">:</span> <span class="s2">"显示文本"</span><span class="p">,</span> <span class="nx">style</span><span class="o">:</span> <span class="p">{</span> <span class="nx">fontFamily</span><span class="o">:</span> <span class="s1">'楷体'</span><span class="p">,</span> <span class="nx">fontSize</span><span class="o">:</span> <span class="mi">64</span><span class="p">,</span> <span class="nx">color</span><span class="o">:</span> <span class="nx">color</span> <span class="p">}},</span> <span class="nx">ture</span><span class="p">)</span>
 </pre></div>
 <ul>
-<li>particles</li>
-<li>path</li>
-<li>quad</li>
-<li>renderTexture</li>
-<li>tween</li>
+<li>particles粒子</li>
+<li>path路径</li>
+<li>quad四边框子。一个预配置的网格（Mesh）游戏对象，由两个三角形/四条边控制一个纹理的变形。</li>
+<li>renderTexture渲染纹理</li>
+<li>tween补间动画</li>
 </ul>
 <h3 id="scenemake">Scene.make属性</h3>
 <p>实际指向游戏对象生成函数Phaser.GameObjects.GameObjectCreator。成员与方法的名称与<code>add</code>属性的的相同；但与<code>add</code>不同，<code>make</code>下的方法通过一个<strong>配置对象</strong>生成游戏对象，并通过变量控制是否添加到显示列表。</p>
@@ -545,7 +545,13 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
 </ul>
 <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">nouns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"ninja"</span><span class="p">,</span> <span class="s2">"chair"</span><span class="p">,</span> <span class="s2">"pancake"</span><span class="p">]</span>
 <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">pick</span><span class="p">(</span><span class="nx">nouns</span><span class="p">);</span>
-</pre></div></div>
+</pre></div>
+<h2 id="_4">对象对齐（定位）</h2>
+<p>常用三个类中的静态方法：</p>
+<ul>
+<li><a href="/phaser3-apiwen-dang-da-gang-displayaligninto.html">Display.Align.In&amp;To</a></li>
+<li><a href="/phaser3-apiwen-dang-da-gang-displaybounds.html">Display.Bounds</a></li>
+</ul></div>
 	
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
@@ -611,6 +617,7 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
 <li><a href="#rnd">RND随机数</a></li>
 </ul>
 </li>
+<li><a href="#_4">对象对齐（定位）</a></li>
 </ul>
 </div>
                 </nav>                
