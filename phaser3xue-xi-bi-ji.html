@@ -112,7 +112,7 @@
 <span class="kd">function</span> <span class="nx">update</span> <span class="p">(){}</span>
 </pre></div>
 <h2 id="gameobjects">GameObjects游戏对象</h2>
-<p><strong>Phaser3游戏对象的一个重要变化，是把Sprite、Text、Group等游戏对象的容器功能分离出来，归到Container中。这样一来，Sprite、Text等不能添加子项，Group有子项，但实际是逻辑分组，非独占，也不能控制显示状态。</strong>Phaser2的渲染核心是PIXI，PIXI有Container，但在Phaser2中一般不直接使用。</p>
+<p><strong>Phaser3游戏对象的一个重要变化，是把Sprite、Text、Group等游戏对象的容器功能分离出来，归到Container中。这样一来，Sprite、Text等不能添加子项，Group有子项，但实际是逻辑分组，非独占，也不能整体地控制显示状态。</strong>Phaser2的渲染核心是PIXI，PIXI有Container，但在Phaser2中一般不直接使用。</p>
 <h3 id="sprite">Sprite精灵</h3>
 <p>精灵是Phaser游戏中最主要的游戏对象，在游戏对象中有代表性。要便览精灵的属性和方法，请参考<a href="http://blog.xiiigame.com/phaser3-apiwen-dang-da-gang-sprite.html">《Phaser3 API文档大纲-Sprite》</a>。</p>
 <div class="highlight"><pre><span></span>let newSprite = this.add.sprite(20, 30, "spriteTexture", 2);
@@ -209,37 +209,11 @@ player.setTint(0xff0000); // 着色
 <h3 id="blitterbob">Blitter位块传送器（Bob容器）</h3>
 <h4>Bob</h4>
 <p>Blitter是为定制特效系统准备的容器，有很高的渲染效率；Blitter管理Bob，Bob有不能变形、旋转等限制。</p>
-<h3 id="container">Container容器</h3>
-<p>容器自有显示列表，子项加入时默认会自动从场景或原容器的显示列表删除。<strong>这一点跟Group不同。当要控制显示时用容器，如果只是为了归类组织，那么用Group。</strong>
-容器可以应用遮罩，也可用作遮罩。
-容器可以嵌套，嵌套容器只有处于root的一个能应用遮罩。
-容器可以开启输入，这时需要指定一个形状作为点击区域；子项仍可开启输入。
-容器可以赋予物理属性，<strong>这时如果子项也有物理属性，可能带来混乱</strong>（如子项不处于0,0位时，可能引起错位），但使用Arcade Physics物理引擎不会有问题。
-<strong>容器会增加消耗，尤其是容器嵌套。</strong></p>
-<h4>Container.getBounds( [output])与容器尺寸</h4>
-<p>目前（2018-11-22），可能出于性能的考虑，Container的width、height、displayWidth、displayHeight没有暴露，需要通过<code>getBounds</code>方法自行处理。当子项比较多时，<code>getBounds</code>很耗费算力，所以不宜频繁计算，<strong>不宜在<code>tween</code>中变动容器的长宽。</strong> <a href="http://www.html5gamedevs.com/topic/37425-container-height-and-width/">请参考。</a>（TODO: <em>scale也有这样的禁忌吗？</em>）</p>
-<div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">bounds</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Rectangle</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getBounds</span><span class="p">();</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">bounds</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">bounds</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
-</pre></div>
-<h4>设置排他状态Container.setExclusive( [value])</h4>
-<p>value类型为boolean，<optional>，默认为true。 <br/>
-如果设为false，那么容器对子项的管理不是排他的，因此可以快速复制游戏对象；但是这些子项的输入事件、物理体将不再有效。</optional></p>
-<p>@GameObjects/Container/Non Exclusive Containers</p>
-<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'lemming'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'Oh No!'</span><span class="p">,</span> <span class="p">{</span> <span class="nx">font</span><span class="o">:</span> <span class="s1">'16px Courier'</span><span class="p">,</span> <span class="nx">fill</span><span class="o">:</span> <span class="s1">'#00ff00'</span> <span class="p">});</span>
-<span class="kd">var</span> <span class="nx">container1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-<span class="nx">container1</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
-<span class="kd">var</span> <span class="nx">container2</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-<span class="nx">container2</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
-<span class="kd">var</span> <span class="nx">container3</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-<span class="nx">container3</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
-</pre></div>
-<h3 id="group">Group组</h3>
-<p>Group是一个抽象分组，便于批量地生成、控制、循环处理近似游戏对象。<strong>与Container不同，它自身没有没有显隐、缩放、定位、旋转属性（但可以快速控制子项的这些属性）。他对子项不是独占的，子项可以存在于多个组中。</strong></p>
-<div class="highlight"><pre><span></span>let newGroup = this.add.group();
-</pre></div>
-<p>可以使用GroupConfig或GroupCreateConfig创建组。参考小抄<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/group.md">Phaser.GameObject.Group</a></p>
+<h3 id="container"><a href="/phaser3-apiwen-dang-da-gang-container.html">Container容器</a></h3>
+<p>参考<code>Group</code>。</p>
+<h3 id="group"><a href="/phaser3-apiwen-dang-da-gang-group.html">Group组</a></h3>
+<p>Group是一个抽象分组，便于批量地生成、排布、控制、循环处理近似游戏对象。与Container不同，它自身没有没有显隐、缩放、定位、旋转属性（但可以快速控制子项的这些属性）。他对子项不是独占的，子项可以存在于多个组中。因此<strong>Container更适于把多个显示对象集合成一个复合型显示对象，以便整体地控制显示状态；Group则适合于对近似对象进行批量操作。</strong></p>
+<p><strong>组的一个重要用途是对象池。（？？）</strong></p>
 <h4>生成静态物理组</h4>
 <div class="highlight"><pre><span></span>var platforms;
 platforms = this.physics.add.staticGroup(); // 物理静态组
@@ -551,19 +525,19 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <span class="p">}</span>
 </pre></div>
 <h2 id="input_1">Input生成输入管理对象</h2>
-<div class="highlight"><pre><span></span>cursors = this.input.keyboard.createCursorKeys();
-if (cursors.left.isDown)
-{
-    player.setVelocityX(-160);
-    player.anims.play('left', true);
-}
-else if (cursors.right.isDown){}
-else{}
+<div class="highlight"><pre><span></span><span class="nx">cursors</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">keyboard</span><span class="p">.</span><span class="nx">createCursorKeys</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">cursors</span><span class="p">.</span><span class="nx">left</span><span class="p">.</span><span class="nx">isDown</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">player</span><span class="p">.</span><span class="nx">setVelocityX</span><span class="p">(</span><span class="o">-</span><span class="mi">160</span><span class="p">);</span>
+    <span class="nx">player</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s1">'left'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">cursors</span><span class="p">.</span><span class="nx">right</span><span class="p">.</span><span class="nx">isDown</span><span class="p">){}</span>
+<span class="k">else</span><span class="p">{}</span>
 
-if (cursors.up.isDown &amp;&amp; player.body.touching.down)
-{
-    player.setVelocityY(-330);
-}
+<span class="k">if</span> <span class="p">(</span><span class="nx">cursors</span><span class="p">.</span><span class="nx">up</span><span class="p">.</span><span class="nx">isDown</span> <span class="o">&amp;&amp;</span> <span class="nx">player</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">touching</span><span class="p">.</span><span class="nx">down</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">player</span><span class="p">.</span><span class="nx">setVelocityY</span><span class="p">(</span><span class="o">-</span><span class="mi">330</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 <h2 id="gameresize">调整尺寸Game.resize</h2>
 <p>根据浏览器窗口变动调整尺寸。</p>
@@ -605,67 +579,19 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
 <h2 id="_4">对象对齐（定位）</h2>
 <p>常用四个类中的静态方法：</p>
 <ul>
-<li><a href="/phaser3-apiwen-dang-da-gang-displayaligninto.html">Display.Align.In&amp;To</a></li>
+<li><a href="/phaser3-apiwen-dang-da-gang-displayaligninto.html">Display.Align中的In和To</a></li>
 <li><a href="/phaser3-apiwen-dang-da-gang-displaybounds.html">Display.Bounds</a></li>
-<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.GridAlign__anchor">Actions.GridAlign.<static>GridAlign(items, options)</static></a></li>
+<li><a href="/phaser3-apiwen-dang-da-gang-actions.html">Actions.GridAlign中的静态方法GridAlign、PlaceOn系列、Inc系列，Set系列，等等)</a></li>
 </ul>
-<h2 id="actionshttpsphotonstormgithubiophaser3-docsphaseractionshtml">Actions动作（批处理）(https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html)</h2>
-<p>对一组游戏对象（以数组形式）进行批量处理，应用相同的动作。
+<h2 id="actions"><a href="/phaser3-apiwen-dang-da-gang-actions.html">Actions动作（批处理）</a></h2>
+<p><code>Phaser. Actions</code>包含一组静态方法，可以对一组游戏对象进行批量处理，应用相同的动作。常常结合逻辑分组<code>Group.getChildren()</code>一起使用。
 条目要包含要处理的属性、方法，否则无效。</p>
-<ul>
-<li>Methods<ul>
-<li><static> Angle(items, value [, step] [, index] [, direction]) 逐一设置角度</static></li>
-<li><static> Call(items, callback, context) 逐一调用某个方法</static></li>
-<li><static> GetFirst(items, compare [, index]) 获取符合比较条件的第一个条目（如<code>GetFirst(group.getChildren(), { scaleX: 0.5, alpha: 1 }, index)</code>）</static></li>
-<li><static> GetLast(items, compare [, index])</static></li>
-<li><static> GridAlign(items, options) 逐一对齐栅格</static></li>
-<li><static> IncAlpha(items, value [, step] [, index] [, direction]) 逐一渐进地incrementally更改透明度（如<code>IncAlpha(group.getChildren(), value, step)</code>）</static></li>
-<li><static> IncX(items, value [, step] [, index] [, direction])</static></li>
-<li><static> IncXY(items, x [, y] [, stepX] [, stepY] [, index] [, direction])</static></li>
-<li><static> IncY(items, value [, step] [, index] [, direction])</static></li>
-<li><static> PlaceOnCircle(items, circle [, startAngle] [, endAngle]) 逐一均匀地放置在圆周上</static></li>
-<li><static> PlaceOnEllipse(items, ellipse [, startAngle] [, endAngle])</static></li>
-<li><static> PlaceOnLine(items, line)</static></li>
-<li><static> PlaceOnRectangle(items, rect [, shift]) 顺时针逐一均匀地放置在方框上（<code>shift</code>控制起始位置） </static></li>
-<li><static> PlaceOnTriangle(items, triangle [, stepRate])</static></li>
-<li><static> PlayAnimation(items, key [, startFrame]) 全部播放动画</static></li>
-<li><static> PropertyValueInc(items, key, value [, step] [, index] [, direction]) 逐一渐进地增加属性值</static></li>
-<li><static> PropertyValueSet(items, key, value [, step] [, index] [, direction]) 逐一渐设置属性值</static></li>
-<li><static> RandomCircle(items, circle) 逐一随机地放在一个圆内</static></li>
-<li><static> RandomEllipse(items, ellipse)</static></li>
-<li><static> RandomLine(items, line)</static></li>
-<li><static> RandomRectangle(items, rect)</static></li>
-<li><static> RandomTriangle(items, triangle)</static></li>
-<li><static> Rotate(items, value [, step] [, index] [, direction]) 逐一增加弧度</static></li>
-<li><static> RotateAround(items, point, angle) 逐一旋转</static></li>
-<li><static> RotateAroundDistance(items, point, angle, distance)</static></li>
-<li><static> ScaleX(items, value [, step] [, index] [, direction])</static></li>
-<li><static> ScaleXY(items, scaleX [, scaleY] [, stepX] [, stepY] [, index] [, direction])</static></li>
-<li><static> ScaleY(items, value [, step] [, index] [, direction])</static></li>
-<li><static> SetAlpha(items, value [, step] [, index] [, direction])</static></li>
-<li><static> SetBlendMode(items, value [, index] [, direction])</static></li>
-<li><static> SetDepth(items, value [, step] [, index] [, direction])</static></li>
-<li><static> SetHitArea(items, hitArea, hitAreaCallback)</static></li>
-<li><static> SetOrigin(items, originX [, originY] [, stepX] [, stepY] [, index] [, direction])</static></li>
-<li><static> SetRotation(items, value [, step] [, index] [, direction])</static></li>
-<li><static> SetScale(items, scaleX [, scaleY] [, stepX] [, stepY] [, index] [, direction])</static></li>
-<li><static> SetScaleX(items, value [, step] [, index] [, direction])</static></li>
-<li><static> SetScaleY(items, value [, step] [, index] [, direction])</static></li>
-<li><static> SetTint(items, topLeft [, topRight] [, bottomLeft] [, bottomRight])</static></li>
-<li><static> SetVisible(items, value [, index] [, direction])</static></li>
-<li><static> SetX(items, value [, step] [, index] [, direction])</static></li>
-<li><static> SetXY(items, x [, y] [, stepX] [, stepY] [, index] [, direction])</static></li>
-<li><static> SetY(items, value [, step] [, index] [, direction])</static></li>
-<li><static> ShiftPosition(items, x, y [, direction] [, output]) 逐一交换位置</static></li>
-<li><static> Shuffle(items) 打乱位置</static></li>
-<li><static> SmootherStep(items, property, min, max [, inc]) 属性值高度平滑渐变</static></li>
-<li><static> SmoothStep(items, property, min, max [, inc]) </static></li>
-<li><static> Spread(items, property, min, max [, inc])  属性值平展（或渐变）</static></li>
-<li><static> ToggleVisible(items) </static></li>
-<li><static> WrapInRectangle(items, rect [, padding])  在方形区域内折行排列</static></li>
-</ul>
-</li>
-</ul></div>
+<p>@actions\place on circle.js</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Circle</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">260</span><span class="p">);</span>
+<span class="nx">group</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span> <span class="nx">key</span><span class="o">:</span> <span class="s1">'ball'</span><span class="p">,</span> <span class="nx">frameQuantity</span><span class="o">:</span> <span class="mi">32</span> <span class="p">});</span>
+<span class="c1">// 把组中游戏对象放置在圆环上</span>
+<span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">PlaceOnCircle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">circle</span><span class="p">);</span>
+</pre></div></div>
 	
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
@@ -732,7 +658,7 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
 </ul>
 </li>
 <li><a href="#_4">对象对齐（定位）</a></li>
-<li><a href="#actionshttpsphotonstormgithubiophaser3-docsphaseractionshtml">Actions动作（批处理）(https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html)</a></li>
+<li><a href="#actions">Actions动作（批处理）</a></li>
 </ul>
 </div>
                 </nav>                

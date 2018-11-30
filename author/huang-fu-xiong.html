@@ -60,8 +60,8 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="/phaser3-apiwen-dang-da-gang-displayaligninto.html"><h1>Phaser3 API文档大纲-Display.Align.In&To</h1></a>
-2018-11-26 周一
+            <a href="/phaser3-apiwen-dang-da-gang-actions.html"><h1>Phaser3 API文档大纲-Actions</h1></a>
+2018-11-30 周五
 
 	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
  
@@ -72,26 +72,224 @@
         
         <div><h2 id="_1">说明</h2>
 <p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，略作说明，或增加代码示例。可做便览之用。</p>
-<h1 id="phaser-3-api-documentation-namespace-in"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#toc0">Phaser 3 API Documentation - Namespace: In</a></h1>
-<p><strong>叠置对齐（同侧对齐）。</strong>
-另有<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.To.html">Phaser.Display.Align.To</a>类，使两个对象<strong>并置对齐（对侧对齐）</strong>，方法与此近似。</p>
-<h2 id="phaserdisplayalign-in"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#toc1">Phaser.Display.Align. In</a></h2>
-<h3 id="methods"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#toc2">Methods</a></h3>
-<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#.BottomCenter"><static> BottomCenter(gameObject, alignIn [, offsetX] [, offsetY])</a></h4>
-<p>gameObject与alignIn两个游戏对象，叠置时底边中心对齐（同侧对齐）。以下各项类此。</p>
-<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#.BottomLeft"><static> BottomLeft(gameObject, alignIn [, offsetX] [, offsetY])</a></h4>
-<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#.BottomRight"><static> BottomRight(gameObject, alignIn [, offsetX] [, offsetY])</a></h4>
-<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#.Center"><static> Center(gameObject, alignIn [, offsetX] [, offsetY])</a></h4>
-<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#.LeftCenter"><static> LeftCenter(gameObject, alignIn [, offsetX] [, offsetY])</a></h4>
-<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#.QuickSet"><static> QuickSet(child, alignIn, position [, offsetX] [, offsetY])</a></h4>
-<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#.RightCenter"><static> RightCenter(gameObject, alignIn [, offsetX] [, offsetY])</a></h4>
-<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#.TopCenter"><static> TopCenter(gameObject, alignIn [, offsetX] [, offsetY])</a></h4>
-<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#.TopLeft"><static> TopLeft(gameObject, alignIn [, offsetX] [, offsetY])</a></h4>
-<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html#.TopRight"><static> TopRight(gameObject, alignIn [, offsetX] [, offsetY])</a></h4>
-<p>published from :<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html">Phaser 3 API Documentation - Namespace: In</a></p></div>
+<h1 id="phaser-3-api-documentation-namespace-actions"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#toc0">Phaser 3 API Documentation - Namespace: Actions</a></h1>
+<h2 id="phaser-actions"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#toc1">Phaser. Actions</a></h2>
+<p><code>Phaser. Actions</code>包含一组静态方法，可以对一组游戏对象进行批量处理，应用相同的动作。常常结合逻辑分组<code>Group.getChildren()</code>一起使用。
+条目要包含要处理的属性、方法，否则无效。</p>
+<p>@actions\place on circle.js</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Circle</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">260</span><span class="p">);</span>
+<span class="nx">group</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span> <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;ball&#39;</span><span class="p">,</span> <span class="nx">frameQuantity</span><span class="o">:</span> <span class="mi">32</span> <span class="p">});</span>
+<span class="c1">// 把组中游戏对象放置在圆环上</span>
+<span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">PlaceOnCircle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">circle</span><span class="p">);</span>
+</pre></div>
+
+
+<h3 id="methods"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#toc2">Methods</a></h3>
+<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.Angle"><static> Angle(items, value [, step] [, index] [, direction])</a>
+逐一设置角度</li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.Call"><static> Call(items, callback, context)</a>
+逐一调用某个方法</li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.GetFirst"><static> GetFirst(items, compare [, index])</a>
+获取符合比较条件的第一个条目（如<code>GetFirst(group.getChildren(), { scaleX: 0.5, alpha: 1 }, index)</code>）</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.GetLast"><static> GetLast(items, compare [, index])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.GridAlign"><static> GridAlign(items, options)</a>
+逐一对齐栅格</p>
+</li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.IncAlpha"><static> IncAlpha(items, value [, step] [, index] [, direction])</a>
+逐一渐进地incrementally更改透明度（如<code>IncAlpha(group.getChildren(), value, step)</code>）</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.IncX"><static> IncX(items, value [, step] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.IncXY"><static> IncXY(items, x [, y] [, stepX] [, stepY] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.IncY"><static> IncY(items, value [, step] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.PlaceOnCircle"><static> PlaceOnCircle(items, circle [, startAngle] [, endAngle])</a>
+逐一均匀地放置在圆周上</p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.PlaceOnEllipse"><static> PlaceOnEllipse(items, ellipse [, startAngle] [, endAngle])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.PlaceOnLine"><static> PlaceOnLine(items, line)</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.PlaceOnRectangle"><static> PlaceOnRectangle(items, rect [, shift])</a>
+顺时针逐一均匀地放置在方框上（<code>shift</code>控制起始位置） </p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.PlaceOnTriangle"><static> PlaceOnTriangle(items, triangle [, stepRate])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.PlayAnimation"><static> PlayAnimation(items, key [, startFrame])</a>
+全部播放动画</p>
+</li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.PropertyValueInc"><static> PropertyValueInc(items, key, value [, step] [, index] [, direction])</a>
+逐一渐进地增加属性值</li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.PropertyValueSet"><static> PropertyValueSet(items, key, value [, step] [, index] [, direction])</a>
+逐一渐设置属性值</li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.RandomCircle"><static> RandomCircle(items, circle)</a>
+逐一随机地放在一个圆内</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.RandomEllipse"><static> RandomEllipse(items, ellipse)</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.RandomLine"><static> RandomLine(items, line)</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.RandomRectangle"><static> RandomRectangle(items, rect)</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.RandomTriangle"><static> RandomTriangle(items, triangle)</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.Rotate"><static> Rotate(items, value [, step] [, index] [, direction])</a>
+逐一增加弧度</p>
+</li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.RotateAround"><static> RotateAround(items, point, angle)</a>
+逐一旋转</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.RotateAroundDistance"><static> RotateAroundDistance(items, point, angle, distance)</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.ScaleX"><static> ScaleX(items, value [, step] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.ScaleXY"><static> ScaleXY(items, scaleX [, scaleY] [, stepX] [, stepY] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.ScaleY"><static> ScaleY(items, value [, step] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetAlpha"><static> SetAlpha(items, value [, step] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetBlendMode"><static> SetBlendMode(items, value [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetDepth"><static> SetDepth(items, value [, step] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetHitArea"><static> SetHitArea(items, hitArea, hitAreaCallback)</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetOrigin"><static> SetOrigin(items, originX [, originY] [, stepX] [, stepY] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetRotation"><static> SetRotation(items, value [, step] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetScale"><static> SetScale(items, scaleX [, scaleY] [, stepX] [, stepY] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetScaleX"><static> SetScaleX(items, value [, step] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetScaleY"><static> SetScaleY(items, value [, step] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetTint"><static> SetTint(items, topLeft [, topRight] [, bottomLeft] [, bottomRight])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetVisible"><static> SetVisible(items, value [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetX"><static> SetX(items, value [, step] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetXY"><static> SetXY(items, x [, y] [, stepX] [, stepY] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SetY"><static> SetY(items, value [, step] [, index] [, direction])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.ShiftPosition"><static> ShiftPosition(items, x, y [, direction] [, output])</a>
+逐一交换位置</p>
+</li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.Shuffle"><static> Shuffle(items)</a>
+打乱层次。</li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SmootherStep"><static> SmootherStep(items, property, min, max [, inc])</a>
+属性值高度平滑渐变</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.SmoothStep"><static> SmoothStep(items, property, min, max [, inc])</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.Spread"><static> Spread(items, property, min, max [, inc])</a>
+属性值平展（或渐变）</p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.ToggleVisible"><static> ToggleVisible(items)</a></p>
+</li>
+<li>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.WrapInRectangle"><static> WrapInRectangle(items, rect [, padding])</a>
+在方形区域内折行排列</p>
+</li>
+</ul>
+<p>published from :<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html">Phaser 3 API Documentation - Namespace: Actions</a></p></div>
         <hr />
     </div>
 
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/phaser3-apiwen-dang-da-gang-container.html"><h2>Phaser3 API文档大纲-Container</h2></a>
+        <div class= "well small"> 2018-11-30 周五
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，对印象深刻的地方做了说明，或增加代码示例。可做便览之用。</p> <a href="/phaser3-apiwen-dang-da-gang-container.html">read...</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/phaser3-apiwen-dang-da-gang-group.html"><h2>Phaser3 API文档大纲-Group</h2></a>
+        <div class= "well small"> 2018-11-30 周五
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，对印象深刻的地方做了说明，或增加代码示例。可做便览之用。</p> <a href="/phaser3-apiwen-dang-da-gang-group.html">read...</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/phaser3-apiwen-dang-da-gang-displayaligninto.html"><h2>Phaser3 API文档大纲-Display.Align.In&To</h2></a>
+        <div class= "well small"> 2018-11-26 周一
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，对印象深刻的地方做了说明，或增加代码示例。可做便览之用。</p> <a href="/phaser3-apiwen-dang-da-gang-displayaligninto.html">read...</a></div>
+    </div>	
+				
 
  
         
@@ -198,61 +396,6 @@
 
  </div>
         <div class="summary"><p>这是针对汉字爱好者的，有汉字知识普及作用的益智休闲游戏，把通用规范汉字的字形结构、字理、字源、古字形、字音等知识融入游戏中，以寓学于乐。</p> <a href="/pin-zi-you-xi-ruan-jian-shuo-ming-wen-dang.html">read...</a></div>
-    </div>	
-				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/yi-ge-ye-yu-xi-phaserde-ye-lu-zi.html"><h2>一个业余习Phaser的野路子</h2></a>
-        <div class= "well small"> 2018-01-25 周四
-
-	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>2017年4月1日，结束了13年的小学语文教材编写、编辑工作，辞职在家，打算做一个独立教育游戏开发者，一个网络木匠...</p> <a href="/yi-ge-ye-yu-xi-phaserde-ye-lu-zi.html">read...</a></div>
-    </div>	
-				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/dan-zui-qin-ru-ji-gu-zhi-dao-shou-zhi-di-xie-bu-kao-si-ji-shi-ji.html"><h2>弹醉琴/如击鼓/直到手指滴血：布考斯基诗集</h2></a>
-        <div class= "well small"> 2017-08-24 周四
-
-	by 		<a class="url fn" href="/author/bukowski.html">Bukowski.</a>
-		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>据BLACK SPARROW出版社2001年版译出，坏蛋出版计划2009年出版。2017年8月24日发表于 <a href="www.xiiigame.com">xiiiGame·嬉戏实验室</a>，订正了个别错误。</p> <a href="/dan-zui-qin-ru-ji-gu-zhi-dao-shou-zhi-di-xie-bu-kao-si-ji-shi-ji.html">read...</a></div>
-    </div>	
-				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/phaserguan-wang-shi-li-xue-xi-bi-ji.html"><h2>Phaser官网实例学习笔记</h2></a>
-        <div class= "well small"> 2017-08-18 周五
-
-	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>这是我学习Phaser官网实例的笔记，对快速了解Phaser能做什么、API概貌也许有帮助。阅读本文前，您需要对Phaser的场景结构有大致了解。笔记只摘录了关键语句，加了少量注释；语句不完整、不连续；为便于字面理解，有些类实例名称调整得更接近类名。</p> <a href="/phaserguan-wang-shi-li-xue-xi-bi-ji.html">read...</a></div>
     </div>	
 				
 <div class="pagination">

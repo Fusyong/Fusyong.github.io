@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+<head>
+    <meta charset="utf-8">
+    <title>嬉戏实验室 - Phaser3 API文档大纲-Container</title>
+    <meta name="description" content="">
+    <meta name="author" content="黄复雄">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="/theme/local.css" rel="stylesheet">
+    <link href="/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="/">嬉戏实验室</a>
+        <div class="nav-collapse">
+        <ul class="nav">
+
+            <li><a href="http://www.xiiigame.com">XiiiGame</a></li>
+            
+            <li><a href="/pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Phaser3 API文档大纲-Container</h1>
+2018-11-30 周五
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+        </div>
+	
+        <div><h2 id="_1">说明</h2>
+<p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，略作说明，或增加代码示例。可做便览之用。</p>
+<h1 id="phaser-3-api-documentation-class-container"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#toc0">Phaser 3 API Documentation - Class: Container</a></h1>
+<p>Container的属性、方法与<a href="/phaser3-apiwen-dang-da-gang-sprite.html">Sprite</a>重合的部分，不再注释。</p>
+<p>容器自有显示列表，子项加入时默认会自动从场景或原容器的显示列表删除。<strong>这一点跟Group不同。当要整体控制显示时用容器，如果只是为了归类操控，那么用Group。</strong>
+容器可以应用遮罩，也可用作遮罩。
+容器可以嵌套，嵌套容器只有处于root的一个能应用遮罩。
+容器可以开启输入，这时需要指定一个形状作为点击区域；子项仍可开启输入。
+容器可以赋予物理属性，<strong>这时如果子项也有物理属性，可能带来混乱</strong>（如子项不处于0,0位时，可能引起错位），但使用Arcade Physics物理引擎不会有问题。
+<strong>容器会增加消耗，尤其是容器嵌套。</strong></p>
+<h2 id="phasergameobjects-container"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#toc1">Phaser.GameObjects. Container</a></h2>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#Container">new Container(scene [, x] [, y] [, children])</a>
+<a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#toc3">Extends</a></p>
+<h3 id="members"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#toc4">Members</a></h3>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#active">active :boolean</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#alpha">alpha :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#alphaBottomLeft">alphaBottomLeft :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#alphaBottomRight">alphaBottomRight :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#alphaTopLeft">alphaTopLeft :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#alphaTopRight">alphaTopRight :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#angle">angle :integer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#blendMode">blendMode :Phaser.BlendModes|string</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#body"><nullable> body :object|Phaser.Physics.Arcade.Body|Phaser.Physics.Impact.Body</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#cameraFilter">cameraFilter :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#data">data :Phaser.Data.DataManager</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#depth">depth :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#displayHeight">displayHeight :number</a></h4>
+<p>参考<code>getBounds</code>。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#displayOriginX"><readonly> displayOriginX :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#displayOriginY"><readonly> displayOriginY :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#displayWidth">displayWidth :number</a></h4>
+<p>参考<code>getBounds</code>。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#exclusive">exclusive :boolean</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#first"><readonly, nullable> first :Phaser.GameObjects.GameObject</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#height">height :number</a></h4>
+<p>参考<code>getBounds</code>。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#ignoreDestroy">ignoreDestroy :boolean</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#input"><nullable> input :Phaser.Input.InteractiveObject</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#last"><readonly, nullable> last :Phaser.GameObjects.GameObject</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#length"><readonly> length :integer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#list">list :Array.<Phaser.GameObjects.GameObject></a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#localTransform">localTransform :Phaser.GameObjects.Components.TransformMatrix</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#mask">mask :Phaser.Display.Masks.BitmapMask|Phaser.Display.Masks.GeometryMask</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#maxSize">maxSize :integer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#name">name :string</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#next"><readonly, nullable> next :Phaser.GameObjects.GameObject</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#originX"><readonly> originX :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#originY"><readonly> originY :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#parentContainer">parentContainer :Phaser.GameObjects.Container</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#position">position :integer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#previous"><readonly, nullable> previous :Phaser.GameObjects.GameObject</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#renderFlags">renderFlags :integer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#rotation">rotation :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#scaleX">scaleX :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#scaleY">scaleY :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#scene"><protected> scene :Phaser.Scene</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#scrollFactorX">scrollFactorX :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#scrollFactorY">scrollFactorY :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#tabIndex">tabIndex :integer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#type">type :string</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#visible">visible :boolean</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#w">w :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#width">width :number</a></h4>
+<p>参考<code>getBounds</code>。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#x">x :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#y">y :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#z">z :number</a></h4>
+<h3 id="methods"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#toc54">Methods</a></h3>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#add">add(child)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#addAt">addAt(child [, index])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#addListener">addListener(event, fn [, context])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#bringToTop">bringToTop(child)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#clearAlpha">clearAlpha()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#clearMask">clearMask( [destroyMask])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#count">count(property, value [, startIndex] [, endIndex])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#createBitmapMask">createBitmapMask( [renderable])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#createGeometryMask">createGeometryMask( [graphics])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#destroy">destroy( [fromScene])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#disableInteractive">disableInteractive()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#each">each(callback [, context] [, args])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#emit">emit(event [, args])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#eventNames">eventNames()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#exists">exists(child)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getAll">getAll( [property] [, value] [, startIndex] [, endIndex])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getAt">getAt(index)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getBounds">getBounds( [output])</a></h4>
+<p>取得容器边界。
+目前（2018-11-22），可能出于性能的考虑，Container的width、height、displayWidth、displayHeight没有暴露，需要通过<code>getBounds</code>方法自行处理。当子项比较多时，<code>getBounds</code>很耗费算力，所以不宜频繁计算，<strong>不宜在<code>tween</code>中变动容器的长宽。</strong> <a href="http://www.html5gamedevs.com/topic/37425-container-height-and-width/">请参考。</a>（TODO: <em>scale也有这样的禁忌吗？</em>）</p>
+<div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">bounds</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Rectangle</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getBounds</span><span class="p">();</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">bounds</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">bounds</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
+</pre></div>
+
+
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getBoundsTransformMatrix">getBoundsTransformMatrix()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getByName">getByName(name)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getData">getData(key)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getFirst">getFirst( [property] [, value] [, startIndex] [, endIndex])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getIndex">getIndex(child)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getIndexList">getIndexList()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getLocalTransformMatrix">getLocalTransformMatrix( [tempMatrix])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getRandom">getRandom( [startIndex] [, length])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getWorldTransformMatrix">getWorldTransformMatrix( [tempMatrix] [, parentMatrix])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#iterate">iterate(callback [, context] [, args])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#listenerCount">listenerCount(event)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#listeners">listeners(event)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#moveDown">moveDown(child)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#moveTo">moveTo(child, index)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#moveUp">moveUp(child)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#off">off(event, fn, context, once)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#on">on(event, fn [, context])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#once">once(event, fn [, context])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#pointToContainer">pointToContainer(source [, output])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#preDestroy"><protected> preDestroy()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#remove">remove(child [, destroyChild])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#removeAll">removeAll( [destroyChild])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#removeAllListeners">removeAllListeners( [event])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#removeAt">removeAt(index [, destroyChild])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#removeBetween">removeBetween( [startIndex] [, endIndex] [, destroyChild])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#removeInteractive">removeInteractive()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#removeListener">removeListener(event, fn, context, once)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#replace">replace(oldChild, newChild [, destroyChild])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#reverse">reverse()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#sendToBack">sendToBack(child)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setActive">setActive(value)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setAll">setAll(property, value [, startIndex] [, endIndex])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setAlpha">setAlpha( [topLeft] [, topRight] [, bottomLeft] [, bottomRight])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setAngle">setAngle( [degrees])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setBlendMode">setBlendMode(value)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setData">setData(key, data)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setDataEnabled">setDataEnabled()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setDepth">setDepth(value)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setDisplaySize">setDisplaySize(width, height)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setExclusive">setExclusive( [value])</a></h4>
+<p>设置排他状态。
+value类型为boolean，<optional>，默认为true。 <br>
+如果设为false，那么容器对子项的管理不是排他的，因此可以快速复制游戏对象；但是这些子项的输入事件、物理体将不再有效。</p>
+<p>@GameObjects/Container/Non Exclusive Containers</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;lemming&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Oh No!&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">font</span><span class="o">:</span> <span class="s1">&#39;16px Courier&#39;</span><span class="p">,</span> <span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#00ff00&#39;</span> <span class="p">});</span>
+<span class="kd">var</span> <span class="nx">container1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">container1</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
+<span class="kd">var</span> <span class="nx">container2</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">container2</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
+<span class="kd">var</span> <span class="nx">container3</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">container3</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
+</pre></div>
+
+
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setInteractive">setInteractive( [shape] [, callback] [, dropZone])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setMask">setMask(mask)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setName">setName(value)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setPosition">setPosition( [x] [, y] [, z] [, w])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setRandomPosition">setRandomPosition( [x] [, y] [, width] [, height])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setRotation">setRotation( [radians])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setScale">setScale(x [, y])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setScrollFactor">setScrollFactor(x [, y])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setSize">setSize(width, height)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setVisible">setVisible(value)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setW">setW( [value])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setX">setX( [value])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setY">setY( [value])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setZ">setZ( [value])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#shuffle">shuffle()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#shutdown">shutdown()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#sort">sort(property)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#swap">swap(child1, child2)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#toJSON">toJSON()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#update">update( [args])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#willRender">willRender(camera)</a></h4>
+<p>published from :<a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html">Phaser 3 API Documentation - Class: Container</a></p></div>
+	
+        
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="/archives.html">Archives</a>
+                <li><a href="/tags.html">Tags</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="/category/qiao-ji.html">巧技</a></li>
+                <li><a href="/category/wen-yi.html">文艺</a></li>
+                   
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+            
+                <li><a href="http://www.xiiigame.com/example">拼字游戏</a></li>
+            </ul>
+            </div>
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="https://github.com/Fusyong">GitHub</a></li>
+                <li><a href="https://www.phaser-china.com/">Phaser小站</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2018, Powered by <a href="http://getpelican.com/">Pelican</a></p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="/theme/bootstrap-collapse.js"></script>
+<script>var _gaq=[['_setAccount','UA-105243279-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+<a href="https://github.com/Fusyong"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+ 
+</body>
+</html>
