@@ -416,6 +416,62 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <h3 id="scenetime">Scene.time时钟</h3>
 <h3 id="scenetweens">Scene.tweens补间动画管理器</h3>
 <h3 id="scenecache">Scene.cache缓存管理器</h3>
+<p>指向<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cache.CacheManager.html">缓存管理器Phaser.Cache.CacheManager</a>。
+生成游戏实例的全局缓存，其中的每个<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cache.BaseCache.html">BaseCache</a>实例管理一类已经加载的文件。</p>
+<p>@\cache\json file</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">preload</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="s1">'jsonData'</span><span class="p">,</span> <span class="s1">'assets/atlas/megaset-0.json'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">create</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">cache</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'jsonData'</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+<h4>Phaser.Cache.CacheManager的成员和方法</h4>
+<ul>
+<li>Members<ul>
+<li>audio :Phaser.Cache.BaseCache</li>
+<li>binary :Phaser.Cache.BaseCache</li>
+<li>bitmapFont :Phaser.Cache.BaseCache</li>
+<li>custom :Object.<phaser.cache.basecache> 包含自定义BaseCache条目的对象</phaser.cache.basecache></li>
+<li><protected> game :Phaser.Game 指向自身所属的Game实例</protected></li>
+<li>html :Phaser.Cache.BaseCache</li>
+<li>json :Phaser.Cache.BaseCache</li>
+<li>obj :Phaser.Cache.BaseCache 存放加载的WaveFront OBJ文件</li>
+<li>physics :Phaser.Cache.BaseCache 存放（如加载的）物理学数据</li>
+<li>shader :Phaser.Cache.BaseCache</li>
+<li>text :Phaser.Cache.BaseCache</li>
+<li>tilemap :Phaser.Cache.BaseCache</li>
+<li>xml :Phaser.Cache.BaseCache</li>
+</ul>
+</li>
+<li>Methods<ul>
+<li>addCustom(key)添加自定义键（通过Cache.custom.key取用）</li>
+<li>destroy()销毁所有缓存</li>
+</ul>
+</li>
+</ul>
+<h4>Phaser.Cache.BaseCache的成员和方法</h4>
+<ul>
+<li>Members<ul>
+<li>entries :Phaser.Structs.Map.<string, *=""></string,></li>
+<li>events :Phaser.Events.EventEmitter</li>
+</ul>
+</li>
+<li>Methods<ul>
+<li>add(key, data)</li>
+<li>destroy() 销毁本缓存</li>
+<li>exists(key) 判断键值存在与否（与<code>BaseCache.has</code>的行为一致）</li>
+<li>get(key)</li>
+<li>has(key) 与<code>BaseCache.exists</code>的行为一致。</li>
+<li>remove(key)</li>
+</ul>
+</li>
+<li>Events<ul>
+<li>addEvent 条目增添事件</li>
+<li>removeEvent 条目移除事件</li>
+</ul>
+</li>
+</ul>
 <h3 id="scenecameras">Scene.cameras镜头管理器</h3>
 <h3 id="sceneevents">Scene.events事件发生器</h3>
 <h3 id="scenegamegame">Scene.game(Game)</h3>
@@ -547,10 +603,68 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
 <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">pick</span><span class="p">(</span><span class="nx">nouns</span><span class="p">);</span>
 </pre></div>
 <h2 id="_4">对象对齐（定位）</h2>
-<p>常用三个类中的静态方法：</p>
+<p>常用四个类中的静态方法：</p>
 <ul>
 <li><a href="/phaser3-apiwen-dang-da-gang-displayaligninto.html">Display.Align.In&amp;To</a></li>
 <li><a href="/phaser3-apiwen-dang-da-gang-displaybounds.html">Display.Bounds</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html#.GridAlign__anchor">Actions.GridAlign.<static>GridAlign(items, options)</static></a></li>
+</ul>
+<h2 id="actionshttpsphotonstormgithubiophaser3-docsphaseractionshtml">Actions动作（批处理）(https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html)</h2>
+<p>对一组游戏对象（以数组形式）进行批量处理，应用相同的动作。
+条目要包含要处理的属性、方法，否则无效。</p>
+<ul>
+<li>Methods<ul>
+<li><static> Angle(items, value [, step] [, index] [, direction]) 逐一设置角度</static></li>
+<li><static> Call(items, callback, context) 逐一调用某个方法</static></li>
+<li><static> GetFirst(items, compare [, index]) 获取符合比较条件的第一个条目（如<code>GetFirst(group.getChildren(), { scaleX: 0.5, alpha: 1 }, index)</code>）</static></li>
+<li><static> GetLast(items, compare [, index])</static></li>
+<li><static> GridAlign(items, options) 逐一对齐栅格</static></li>
+<li><static> IncAlpha(items, value [, step] [, index] [, direction]) 逐一渐进地incrementally更改透明度（如<code>IncAlpha(group.getChildren(), value, step)</code>）</static></li>
+<li><static> IncX(items, value [, step] [, index] [, direction])</static></li>
+<li><static> IncXY(items, x [, y] [, stepX] [, stepY] [, index] [, direction])</static></li>
+<li><static> IncY(items, value [, step] [, index] [, direction])</static></li>
+<li><static> PlaceOnCircle(items, circle [, startAngle] [, endAngle]) 逐一均匀地放置在圆周上</static></li>
+<li><static> PlaceOnEllipse(items, ellipse [, startAngle] [, endAngle])</static></li>
+<li><static> PlaceOnLine(items, line)</static></li>
+<li><static> PlaceOnRectangle(items, rect [, shift]) 顺时针逐一均匀地放置在方框上（<code>shift</code>控制起始位置） </static></li>
+<li><static> PlaceOnTriangle(items, triangle [, stepRate])</static></li>
+<li><static> PlayAnimation(items, key [, startFrame]) 全部播放动画</static></li>
+<li><static> PropertyValueInc(items, key, value [, step] [, index] [, direction]) 逐一渐进地增加属性值</static></li>
+<li><static> PropertyValueSet(items, key, value [, step] [, index] [, direction]) 逐一渐设置属性值</static></li>
+<li><static> RandomCircle(items, circle) 逐一随机地放在一个圆内</static></li>
+<li><static> RandomEllipse(items, ellipse)</static></li>
+<li><static> RandomLine(items, line)</static></li>
+<li><static> RandomRectangle(items, rect)</static></li>
+<li><static> RandomTriangle(items, triangle)</static></li>
+<li><static> Rotate(items, value [, step] [, index] [, direction]) 逐一增加弧度</static></li>
+<li><static> RotateAround(items, point, angle) 逐一旋转</static></li>
+<li><static> RotateAroundDistance(items, point, angle, distance)</static></li>
+<li><static> ScaleX(items, value [, step] [, index] [, direction])</static></li>
+<li><static> ScaleXY(items, scaleX [, scaleY] [, stepX] [, stepY] [, index] [, direction])</static></li>
+<li><static> ScaleY(items, value [, step] [, index] [, direction])</static></li>
+<li><static> SetAlpha(items, value [, step] [, index] [, direction])</static></li>
+<li><static> SetBlendMode(items, value [, index] [, direction])</static></li>
+<li><static> SetDepth(items, value [, step] [, index] [, direction])</static></li>
+<li><static> SetHitArea(items, hitArea, hitAreaCallback)</static></li>
+<li><static> SetOrigin(items, originX [, originY] [, stepX] [, stepY] [, index] [, direction])</static></li>
+<li><static> SetRotation(items, value [, step] [, index] [, direction])</static></li>
+<li><static> SetScale(items, scaleX [, scaleY] [, stepX] [, stepY] [, index] [, direction])</static></li>
+<li><static> SetScaleX(items, value [, step] [, index] [, direction])</static></li>
+<li><static> SetScaleY(items, value [, step] [, index] [, direction])</static></li>
+<li><static> SetTint(items, topLeft [, topRight] [, bottomLeft] [, bottomRight])</static></li>
+<li><static> SetVisible(items, value [, index] [, direction])</static></li>
+<li><static> SetX(items, value [, step] [, index] [, direction])</static></li>
+<li><static> SetXY(items, x [, y] [, stepX] [, stepY] [, index] [, direction])</static></li>
+<li><static> SetY(items, value [, step] [, index] [, direction])</static></li>
+<li><static> ShiftPosition(items, x, y [, direction] [, output]) 逐一交换位置</static></li>
+<li><static> Shuffle(items) 打乱位置</static></li>
+<li><static> SmootherStep(items, property, min, max [, inc]) 属性值高度平滑渐变</static></li>
+<li><static> SmoothStep(items, property, min, max [, inc]) </static></li>
+<li><static> Spread(items, property, min, max [, inc])  属性值平展（或渐变）</static></li>
+<li><static> ToggleVisible(items) </static></li>
+<li><static> WrapInRectangle(items, rect [, padding])  在方形区域内折行排列</static></li>
+</ul>
+</li>
 </ul></div>
 	
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
@@ -618,6 +732,7 @@ if (cursors.up.isDown &amp;&amp; player.body.touching.down)
 </ul>
 </li>
 <li><a href="#_4">对象对齐（定位）</a></li>
+<li><a href="#actionshttpsphotonstormgithubiophaser3-docsphaseractionshtml">Actions动作（批处理）(https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html)</a></li>
 </ul>
 </div>
                 </nav>                
