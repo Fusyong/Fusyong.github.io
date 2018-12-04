@@ -67,7 +67,7 @@
         <div>
 <h2 id="_1">说明</h2>
 <ul>
-<li>这是我学习Phaser3，尤其是API文档和官网实例的笔记，对于快速概览Phaser3的功能及其实现方法有帮助。Phaser3变化很大，与Phaser2不同的地方做了重点标记。<a href="http://blog.xiiigame.com/phaserguan-wang-shi-li-xue-xi-bi-ji.html">《Phaser2官网实例学习笔记》在这里。</a></li>
+<li>这是我学习Phaser3，尤其是API文档和官网实例的笔记，对于快速概览Phaser3的功能及其实现方法有帮助。Phaser3变化很大，与Phaser2不同的地方做了重点标记。<a href="/phaserguan-wang-shi-li-xue-xi-bi-ji.html">《Phaser2官网实例学习笔记》在这里。</a></li>
 <li>如果你完全不了解Phaser，宜先学习官网入门教程，以便对框架结构有整体了解。</li>
 <li>摘录的代码都是片段。我用的是TypeScript语言，但摘录的代码可能是JavaScript，或在此基础上添加了TypeScript类型标记。JavaScript代码在TypeScript中是有效的，但可能使编辑器、编译工具等报错——这跟设置有关。</li>
 <li>同级的类往往有近似的属性和方法，所以通常只详记其中几个常用的。</li>
@@ -78,7 +78,7 @@
 <ul>
 <li><a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/index">官网入门教程</a>。一个简明、完整的权威教程。</li>
 <li><a href="https://github.com/photonstorm/phaser3-examples">Phaser3实例库</a>。可以在<a href="http://labs.phaser.io">labs.phaser.io</a>连线使用，但在我这里网速有问题。下载、安装后使用更方便，还可使用PowerGrep或FileLocator等高效的全文搜索软件在代码全文中检索。</li>
-<li><a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3在线文档</a>。仍很不完善。可参考<a href="https://github.com/photonstorm/phaser3-docs">完整的文档库</a>。</li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3在线文档</a>。快要完善了（2018-12-4还差不到800条）。可参考<a href="https://github.com/photonstorm/phaser3-docs">完整的文档库</a>。</li>
 <li><a href="https://github.com/digitsensitive/phaser3-typescript">Phaser3-TypeScript模板与工具库</a>。包含工具和7个比较完整的游戏实例。</li>
 <li><a href="https://github.com/littlee/wechat-small-game-phaser">wechat-small-game-phaser库</a>，这是一个使PhaserCE适配微信小游戏的库，但经实测，基本架构同样适用于Phaser3。</li>
 <li><a href="https://www.cnblogs.com/honghong87/p/9592680.html">《phaser3 微信小游戏若干问题》</a>，解决Phaser3在微信中载入资源时不支持BLOB的问题（文章只解决了图片载入问题，其他资源载入问题需要照例自行修改Phaser3源码）。</li>
@@ -114,7 +114,7 @@
 <h2 id="gameobjects">GameObjects游戏对象</h2>
 <p><strong>Phaser3游戏对象的一个重要变化，是把Sprite、Text、Group等游戏对象的容器功能分离出来，归到Container中。这样一来，Sprite、Text等不能添加子项，Group有子项，但实际是逻辑分组，非独占，也不能整体地控制显示状态。</strong>Phaser2的渲染核心是PIXI，PIXI有Container，但在Phaser2中一般不直接使用。</p>
 <h3 id="sprite">Sprite精灵</h3>
-<p>精灵是Phaser游戏中最主要的游戏对象，在游戏对象中有代表性。要便览精灵的属性和方法，请参考<a href="http://blog.xiiigame.com/phaser3-apiwen-dang-da-gang-sprite.html">《Phaser3 API文档大纲-Sprite》</a>。</p>
+<p>精灵是Phaser游戏中最主要的游戏对象，在游戏对象中有代表性。要便览精灵的属性和方法，请参考<a href="/phaser3-apiwen-dang-da-gang-sprite.html">《Phaser3 API文档大纲-Sprite》</a>。</p>
 <div class="highlight"><pre><span></span>let newSprite = this.add.sprite(20, 30, "spriteTexture", 2);
 </pre></div>
 <p>参考小抄<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/sprite.md">Phaser.GameObject.Sprite</a></p>
@@ -699,8 +699,10 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
                 Categories
                 </li>
                 
-                <li><a href="/category/qiao-ji.html">巧技</a></li>
+                <li><a href="/category/bu-kao-si-ji.html">布考斯基</a></li>
+                <li><a href="/category/qi-ji-yin-qiao-zhi.html">奇技淫巧志</a></li>
                 <li><a href="/category/wen-yi.html">文艺</a></li>
+                <li><a href="/category/xi-phaser.html">习Phaser</a></li>
                    
             </ul>
             </div>
