@@ -148,6 +148,7 @@ this.add.image(x, y, &#39;mainmenu1&#39;, &#39;background&#39;);
 </pre></div>
 
 
+<p><strong>如使用Texture Packer，要改JSON文件编码为utf-8无签名；取消“允许旋转”。</strong></p>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#atlasXML">atlasXML(key [, textureURL] [, atlasURL] [, textureXhrSettings] [, atlasXhrSettings])</a></h4>
 <p>加载XML图集，如用Shoebox和Adobe Flash / Animate生成的。还可以加载Normal maps。</p>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#audio">audio(key [, urls] [, config] [, xhrSettings])</a></h4>
@@ -163,17 +164,21 @@ this.add.image(x, y, &#39;mainmenu1&#39;, &#39;background&#39;);
 
 
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#audioSprite">audioSprite(key, jsonURL [, audioURL] [, audioConfig] [, audioXhrSettings] [, jsonXhrSettings])</a></h4>
-<p>加载音频精灵（多文件打包），其JSON文件应符合<a href="https://github.com/tonistiigi/audiosprite">audiosprite生成器</a>的标准。</p>
+<p>加载音频精灵。音频精灵可以把多个音频文件合并到一个文件，并在配套JSON文件中指明起讫位置、回放参数等。
+音频精灵JSON文件应符合<a href="https://github.com/tonistiigi/audiosprite">audiosprite生成器</a>的标准。比如合并TTS导出的音节读音：<code>audiosprite --output audiosprite --export "ogg,m4a,mp3" --bitrate 32 --samplerate 16000 --gap 0.1 *.mp3</code>，把所有".mp3"文件制成音频精灵，以"audiosprite"名字导出"ogg,m4a,mp3"三种格式，并设置采样率、比特率。</p>
 <div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">audioSprite</span><span class="p">(</span><span class="s1">&#39;kyobi1&#39;</span><span class="p">,</span> <span class="s1">&#39;kyobi.json&#39;</span><span class="p">,</span> <span class="p">[</span>
     <span class="s1">&#39;kyobi.ogg&#39;</span><span class="p">,</span>
     <span class="s1">&#39;kyobi.mp3&#39;</span><span class="p">,</span>
     <span class="s1">&#39;kyobi.m4a&#39;</span>
 <span class="p">]);</span>
-<span class="c1">// JSON文件中包含 &#39;resource&#39;对象时</span>
+<span class="c1">// JSON文件中包含 &#39;resource&#39;对象时可省略资源名称列表。**实测此法无效，原因未知。**</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">audioSprite</span><span class="p">(</span><span class="s1">&#39;kyobi2&#39;</span><span class="p">,</span> <span class="s1">&#39;kyobi.json&#39;</span><span class="p">);</span>
 <span class="c1">// and later in your game ...</span>
-<span class="kd">var</span> <span class="nx">music</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sound</span><span class="p">.</span><span class="nx">addAudioSprite</span><span class="p">(</span><span class="s1">&#39;kyobi1&#39;</span><span class="p">);</span>
-<span class="nx">music</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">);</span>
+<span class="c1">// 播放精灵的一个title，播放后自动删除。</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">sound</span><span class="p">.</span><span class="nx">playAudioSprite</span><span class="p">(</span><span class="s2">&quot;kyobi1&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">);</span>
+<span class="c1">// 生成实例后选择title播放。**AudioSpriteSound定义有问题，需确认为any以免编译错误。**</span>
+<span class="kr">const</span> <span class="nx">music</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Sound</span><span class="p">.</span><span class="nx">BaseSound</span><span class="p">.</span><span class="nx">AudioSpriteSound</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sound</span><span class="p">.</span><span class="nx">addAudioSprite</span><span class="p">(</span><span class="s2">&quot;kyobi1&quot;</span><span class="p">);</span>
+<span class="p">(</span><span class="nx">music</span> <span class="nx">as</span> <span class="nx">any</span><span class="p">).</span><span class="nx">play</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">);</span>
 </pre></div>
 
 
@@ -198,7 +203,7 @@ Littera, Glyph Designer等软件生成的XML文件格式。
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#htmlTexture">htmlTexture(key [, url] [, width] [, height] [, xhrSettings])</a></h4>
 <p>加载HTML纹理文件、文件数组。</p>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#image">image(key [, url] [, xhrSettings])</a></h4>
-<p>加载图像，</p>
+<p>加载图像。</p>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#isLoading">isLoading()</a></h4>
 <p>取值：是否正在加载、或正在处理加载文件。</p>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#isReady">isReady()</a></h4>

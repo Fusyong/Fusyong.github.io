@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+<head>
+    <meta charset="utf-8">
+    <title>嬉戏实验室 - Phaser3常识答问（一）</title>
+    <meta name="description" content="">
+    <meta name="author" content="黄复雄">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="/theme/local.css" rel="stylesheet">
+    <link href="/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="/">嬉戏实验室</a>
+        <div class="nav-collapse">
+        <ul class="nav">
+
+            <li><a href="http://www.xiiigame.com">XiiiGame</a></li>
+            
+            <li><a href="/pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Phaser3常识答问（一）</h1>
+2018-12-04 周二
+
+	by 		<a class="url fn" href="/author/samme.html">Samme.</a>
+		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+        </div>
+	
+        <div>
+<h3 id="_1">注译说明</h3>
+<p>注、译自<a href="https://github.com/samme/phaser3-faq/wiki">Phaser 3 FAQ/常识答问</a>，作者为Samme。</p>
+<h3 id="how-do-i-learn-phaser">How do I learn Phaser?</h3>
+<p>// 怎么学Phaser？</p>
+<ul>
+<li><a href="https://github.com/photonstorm/phaser/blob/master/README.md">Phaser README</a></li>
+<li><a href="https://phaser.io/tutorials/getting-started-phaser3">Getting started with Phaser 3</a></li>
+<li><a href="https://phaser.io/tutorials/making-your-first-phaser-3-game">Making your first game</a></li>
+<li><a href="http://labs.phaser.io">Examples</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/index.html">API docs</a></li>
+<li><a href="https://github.com/photonstorm/phaser/tree/master/src">Source code</a></li>
+</ul>
+<h3 id="im-new-to-javascript">I'm new to JavaScript</h3>
+<p>// 我是JavaScript新手</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">A re-introduction to JavaScript</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">JavaScript guide</a></li>
+</ul>
+<h3 id="i-know-javascript-but-ive-never-made-a-game-before">I know JavaScript but I've never made a game before</h3>
+<p>// 我了解JavaScript，但是从没有做过游戏</p>
+<ul>
+<li><a href="https://phaser.io/tutorials/making-your-first-phaser-3-game">Making your first game</a></li>
+</ul>
+<h3 id="should-i-use-phaser-3-or-phaser-2ce">Should I use Phaser 3 or Phaser 2/CE?</h3>
+<p>// 我该用Phaser3还是2/CE?</p>
+<p>Probably Phaser 3, especially if you're new to both of them.
+// 可能是Phaser3，如果你对二者都是新手的话更是如此。</p>
+<p>Phaser 3 doesn't have
+// Phaser3没有</p>
+<ul>
+<li>A Scale Manager (planned for v3.16.0)
+// 游戏缩放/屏幕管理器（v3.16.0有计划）</li>
+<li><a href="https://github.com/photonstorm/phaser/issues/4133">video</a></li>
+<li><a href="https://github.com/photonstorm/phaser/issues/3640">Creature animations</a>
+// Creature动画</li>
+<li>Spine animations (<a href="http://labs.phaser.io/index.html?dir=spine/">in progress</a>)
+// Spine动画（进展情况）</li>
+</ul>
+<p>Phaser 3 probably won't have
+// Phaser3也许不会有</p>
+<ul>
+<li>Box2D physics
+// Box2D物理引擎</li>
+<li>P2 physics
+// P2物理引擎</li>
+</ul>
+<p>See
+// 参见</p>
+<ul>
+<li><a href="https://phaser.io/phaser3/devlog">Dev Logs</a> for progress reports</li>
+<li><a href="https://github.com/photonstorm/phaser/issues?q=is%3Aissue+is%3Aopen+label%3A%22💖+Feature+Request%22">feature requests</a></li>
+</ul>
+<h3 id="will-phaser-2-code-work-in-phaser-3">Will Phaser 2 code work in Phaser 3?</h3>
+<p>// Phaser2代码在3中有效吗？</p>
+<p>No, but many of the concepts, interfaces, and methods are similar.</p>
+<h3 id="does-phaser-3-use-pixijs">Does Phaser 3 use <a href="http://www.pixijs.com">PixiJS</a>?</h3>
+<p>// Phaser3使用PixiJS吗？</p>
+<p>No.</p>
+<h3 id="how-should-i-organize-my-project">How should I organize my project?</h3>
+<p>// 我该怎么组织工程？</p>
+<p>There's no particular requirement, except one HTML file that loads the Phaser library and your own game script.</p>
+<h3 id="how-can-i-split-my-code-into-separate-modules">How can I split my code into separate modules?</h3>
+<p>// 我怎么才能把代码拆分为独立的模块？</p>
+<p>You'll need a bundler such as <a href="http://browserify.org">browserify</a>, <a href="http://brunch.io">brunch</a>, <a href="https://parceljs.org">parcel</a>, or <a href="https://webpack.js.org">webpack</a>. Most of those tools can also transpile.
+// 你需要一个打包工具，比如……</p>
+<h3 id="can-i-use-es6">Can I use ES6?</h3>
+<p>// 可以用ES6吗？</p>
+<p>Yes. If you're publishing a game for general use, you'll need a transpiler.</p>
+<h3 id="how-do-i-use-phaser-with-typescript">How do I use Phaser with TypeScript?</h3>
+<p>// 怎么一起用TypeScript和Phaser？</p>
+<p>Download or install <a href="https://github.com/photonstorm/phaser3-docs">phaser3-docs</a>.</p>
+<p>Add <a href="https://github.com/photonstorm/phaser3-docs/blob/master/typescript/phaser.d.ts">typescript/phaser.d.ts</a> to the <code>files</code> entry of your project's <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig</a> file.</p>
+<h3 id="how-can-i-fix-errors-in-the-typescript-definitions">How can I fix errors in the TypeScript definitions?</h3>
+<p>// 怎么修正TypeScript定义的错误？</p>
+<p><a href="https://github.com/photonstorm/phaser/issues">Add an issue</a> or (better yet) make a <a href="https://github.com/photonstorm/phaser/pulls">pull request</a>.</p>
+<h3 id="how-can-i-fix-errorsomissions-in-the-api-docs">How can I fix errors/omissions in the <a href="https://photonstorm.github.io/phaser3-docs/index.html">API docs</a>?</h3>
+<p>// 怎么修正API文档的错误、遗漏？</p>
+<p>Make a pull request. Phaser uses the <a href="http://usejsdoc.org">JSDoc</a> format. </p>
+<h3 id="how-do-i-use-phaser-with-webpack">How do I use Phaser with <a href="https://webpack.js.org">webpack</a>?</h3>
+<p>// 怎么配合使用Phaser和webpack？</p>
+<p><a href="https://github.com/photonstorm/phaser3-project-template">phaser3-project-template</a> is a simple configuration, and there are others.</p>
+<h3 id="can-phaser-do-something-how-can-i-do-something-with-phaser">Can Phaser do (something) / How can I do (something) with Phaser?</h3>
+<p>// Phaser能做/怎么做某事？</p>
+<p>Check the <a href="http://labs.phaser.io">examples</a>.</p>
+<h3 id="how-can-i-make-a-game-object-stay-the-same-size-when-the-camera-zooms">How can I make a game object stay the same size when the camera zooms?</h3>
+<p>// 相机拉动时怎么保持对象尺寸？</p>
+<p>Either create a second camera and split your game objects between it and the main camera (using <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Camera.html#ignore__anchor">ignore</a>), or create a second scene atop the first.</p>
+<h3 id="how-do-i-pauseresume-the-game">How do I pause/resume the game?</h3>
+<p>// 怎么暂停、续播游戏？</p>
+<p>Call <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#pause__anchor">pause</a> or <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#resume__anchor">resume</a> on each scene.</p>
+<h3 id="how-do-i-stop-the-game-from-pausing-when-switching-tabsapplications">How do I stop the game from pausing when switching tabs/applications?</h3>
+<p>// 切换tab键/应用时暂停的游戏怎么停止？</p>
+<p>This is not a true game pause but the browser suspending the page, which necessarily halts halt the update loop.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout">setTimeout</a> calls may run as often as once per second while in the background, depending on the browser. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Web Workers</a> can run more frequently. </p>
+<h3 id="how-do-i-make-a-high-resolution-canvas">How do I make a high-resolution canvas?</h3>
+<p>// 怎么做高解析度的画布？</p>
+<p>Pass a <code>resolution</code> value larger than 1 in the game config. Don't use <code>autoResize: true</code>.</p>
+<h3 id="how-do-i-use-high-resolution-text-why-is-my-text-blurry">How do I use high-resolution text / Why is my text blurry?</h3>
+<p>// 怎么用高解析文本/为什么我的文本模糊？</p>
+<h3 id="how-do-i-scaleresize-the-game-canvas">How do I scale/resize the game canvas?</h3>
+<p>// 游戏画布怎么缩放/重订尺寸？</p>
+<p>Bind to the window <code>resize</code> event to react to window size changes.</p>
+<p>Modify <code>game.canvas.style</code> to scale the game canvas.</p>
+<p>Call <code>game.resize(...)</code> to change the game dimensions (in game pixels).</p>
+<p>Bind to the scene's <code>resize</code> event to react to game size changes. Cameras usually need to be resized as well.</p>
+<ul>
+<li><a href="http://labs.phaser.io/edit.html?src=src%5Cgame%20config%5Cgame%20resize.js">game resize</a></li>
+<li><a href="https://codepen.io/samme/pen/paOjMO">object-fit</a>, when you're not using pointer input</li>
+<li><a href="http://www.html5gamedevs.com/topic/33206-scalemanagershow_all/?tab=comments#comment-213451">style the game canvas yourself</a></li>
+<li><a href="https://github.com/samme/phaser-plugin-game-scale">game scale plugin</a></li>
+</ul>
+<h3 id="why-do-my-sprites-look-blurry">Why do my sprites look blurry?</h3>
+<p>// 为什么我的精灵看起来模糊？</p>
+<p>Set <code>antialias: false</code> or <code>pixelArt: true</code> in your game config. You don't need to set both.</p>
+<ul>
+<li><a href="https://github.com/photonstorm/phaser/blob/master/CHANGELOG.md#round-pixels-changes">Round pixels changes</a></li>
+</ul>
+<h3 id="how-do-i-fixdebug-my-game">How do I fix/debug my game?</h3>
+<p>// 游戏怎么修正错误/调试？</p>
+<p>Use Phaser's debugging tools:
+// 使用Phaser的调试工具：</p>
+<ul>
+<li>Physics drawing</li>
+<li>Tilemap layer drawing</li>
+</ul>
+<p>Use Phaser's API documentation.</p>
+<p>Use <a href="https://developers.google.com/web/tools/chrome-devtools/javascript/">your browser's debugging tools</a>. (You don't have to use Chrome; most of these are similar across the main browsers.)</p>
+<p>Getting started, the essentials are:</p>
+<ul>
+<li>Open the console and read errors and warnings.</li>
+<li>Expand error stack traces.</li>
+<li>Break on exceptions and examine values in the debugger.</li>
+</ul>
+<p>A few tools can be especially helpful for games:</p>
+<ul>
+<li>Conditional breakpoints</li>
+<li><a href="https://webkit.org/blog/8452/canvas-debugging/">Canvas inspector (Safari)</a></li>
+<li><a href="https://hacks.mozilla.org/2014/03/introducing-the-canvas-debugger-in-firefox-developer-tools/">Canvas debugger (Firefox)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Tools/Web_Audio_Editor">Web Audio Editor (Firefox)</a></li>
+</ul>
+<h3 id="how-do-i-ask-for-help">How do I ask for help?</h3>
+<p>// 怎么需求帮助？</p>
+<p><a href="http://www.catb.org/~esr/faqs/smart-questions.html#asking">The smart way</a>.</p>
+<h3 id="why-is-my-game-slow">Why is my game slow?</h3>
+<p>// 为什么我的游戏慢？</p>
+<p>Use your browser's Profile/Timeline tool to identify bottlenecks.</p>
+<p>Generally, it depends, but:</p>
+<ul>
+<li>Combine images into atlases/spritesheets
+// 图像打包【音频文件也能打包】</li>
+<li>Render same-texture objects consecutively (by keeping them adjacent on the display list)
+// 连续地渲染有相同纹理的对象（使他们在显示列表上连在一起）【？？？】</li>
+<li>Reduce the number/complexity of Graphics objects
+// 降低Graphics（自绘图形）对象的数量、复杂程度。【如果Graphics变化不大，可生成纹理后再使用】</li>
+<li>Reduce texture dimensions
+// 降低纹理的尺寸</li>
+<li>Reduce game canvas dimensions
+// 降低游戏画布的尺寸</li>
+</ul>
+<h3 id="how-do-scenes-work">How do scenes work?</h3>
+<p>// Scene场景是怎么运作的？</p>
+<p>A <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html">scene</a> is responsible for updating and displaying its own game objects. It also runs its own set of plugins.</p>
+<p>By default, Phaser adds all the scenes you specify and starts only the first one. It can also run and display several scenes at once.
+// 缺省情况下，Phaser加入你指定的所有场景，但只启动第一个。Phaser也能同时运行、显示多个场景。【并行场景可做UI】</p>
+<p>Scenes run <em>method hooks</em> and can listen to their own events as well.</p>
+<ul>
+<li><a href="https://phaser.io/phaser3/devlog/119">Scenes guide part 1 in Phaser 3 Dev Log #119</a></li>
+<li><a href="https://phaser.io/phaser3/devlog/121">Scenes guide part 2 in Phaser 3 Dev Log #121</a></li>
+<li><a href="https://github.com/jdotrjs/phaser-guides/blob/master/Basics/Part3.md">Let's talk about scenes</a></li>
+<li><a href="https://gist.github.com/samme/01a33324a427f626254c1a4da7f9b6a3">Scenes summary</a></li>
+</ul>
+<h3 id="how-do-i-use-this-in-a-scene">How do I use <code>this</code> in a scene?</h3>
+<p>// 在场景中怎么用<code>this</code>？</p>
+<ul>
+<li>Within a scene's method hooks (init, preload, create, update), <code>this</code> is <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html">the current scene</a>.
+// 在场景的方法钩子(init, preload, create, update)中，<code>this</code>指向当前场景。</li>
+<li>If you define your own scene methods, call them as <code>this.method(…)</code> to keep the scene context.
+// 你自定义的场景方法，用<code>this.myMethod(…)</code>这样调用，以保持场景上下文。</li>
+<li>If you pass a callback that uses <code>this</code>, you must also pass a callback context. Pass <code>this</code> if you want to keep the scene context.
+// 如果传递一个使用<code>this</code>掉回调函数，你也要传递上下文。——传递<code>this</code>以保持场景上下文。</li>
+</ul>
+<h3 id="whats-the-difference-between-the-add-and-make-methods">What's the difference between the add.<em> and make.</em> methods?</h3>
+<p>// <code>add.*</code>和<code>make.*</code>两个方法的区别是什么？</p>
+<p>The <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html">add methods</a> use ordered arguments and register the new object with scene.
+// <code>add.*</code>方法使用顺序参数，在场景中注册新对象。</p>
+<p>The <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectCreator.html">make methods</a> use configuration objects and register the new object with the scene only if specified, or by default, depending on the method. You might always pass an <code>add</code>/<code>addToScene</code> value to avoid confusion.
+// <code>make.*</code>方法使用配置对象，是否注册新对象要指定，缺省是依方法而定。——可以总是添加<code>add</code>/<code>addToScene</code>值以免混乱。</p>
+<h3 id="can-i-use-just-one-scene">Can I use just one scene?</h3>
+<p>// 可以只用一个场景吗？</p>
+<p>For simple games, yes. Most of the examples are written this way.</p>
+<h3 id="how-do-i-switch-scenes">How do I switch scenes?</h3>
+<p>// 怎么切换场景？</p>
+<p><code>this.scene.start('key')</code> stops the current scene and starts another (named by 'key'). Using only <code>start</code>, you can move through scenes one at a time.</p>
+<p><code>launch</code>, <code>run</code>, and <code>switch</code> are variations on <code>start</code>.
+// <code>launch</code>, <code>run</code>, <code>switch</code>是<code>start</code>的变体。</p>
+<ul>
+<li><a href="https://gist.github.com/samme/01a33324a427f626254c1a4da7f9b6a3">Scenes summary</a></li>
+</ul>
+<h3 id="how-do-i-restart-a-scene">How do I restart a scene?</h3>
+<p>// 怎么重启一个场景。</p>
+<p><code>this.scene.restart()</code> or <code>this.scene.restart('key')</code></p>
+<h3 id="what-happens-when-i-stoprestart-a-scene">What happens when I stop/restart a scene?</h3>
+<p>// 停止/重启一个场景发生了什么？</p>
+<p>When you stop a scene, the scene's display and update lists are emptied and the game objects they contained are destroyed. The scene plugins shut down and clear their own data (input events, time events, tweens, etc.). The scene becomes inactive and invisible.
+// 停止场景时，场景的显示列表、更新列表将清空，其中的游戏对象将销毁。场景的插件将关闭，插件的数据将清除。场景不再活动，不再可见。</p>
+<p>When you restart a scene, it's stopped and then started again, calling <code>init()</code>, <code>preload()</code>, and <code>create()</code>.
+// 重启场景，场景将关闭后重启，调用<code>init()</code>, <code>preload()</code>, <code>create()</code>方法。</p>
+<h3 id="why-dont-my-assets-load">Why don't my assets load?</h3>
+<p>// 为什么我的资源没有加载？</p>
+<p>Open your browser's console and look for errors.</p>
+<p>If you've opened your game from a <code>file:///…</code> URL and you see error messages similar to <em>Cross origin requests are only supported for HTTP</em>, you need to run your game from a local web server instead.</p>
+<p>If you see <em>Not found</em> errors, open the full URL and check it for mistakes.</p>
+<p>If you see errors similar to <em>Origin [origin] is not allowed by Access-Control-Allow-Origin</em>, you can try making cross-origin requests.</p>
+<h3 id="how-do-i-load-cross-origin-assets">How do I load cross-origin assets?</h3>
+<p>// 怎么加载跨域资源？</p>
+<p>Set <code>loader.crossOrigin</code> to <code>anonymous</code> in your game config. But this doesn't guarantee the cross-origin request will succeed; the server hosting the asset also has to agree to share it.</p>
+<p>If you're loading assets from the same origin (usually the same domain or server), don't set <code>crossOrigin</code>.</p>
+<h3 id="how-do-i-make-a-loading-progress-animation">How do I make a loading progress animation?</h3>
+<p>// 怎么做加载进度动画？</p>
+<p>Bind to the loader's <code>start</code>, <code>progress</code>, and <code>loadcomplete</code> events during the preload callback, or earlier.</p>
+<h3 id="i-need-per-file-loading-progress">I need per-file loading progress.</h3>
+<p>// 我需要单文件的加载进度。</p>
+<p>Bind to the <code>fileprogress</code> event.</p>
+<ul>
+<li><a href="http://labs.phaser.io/edit.html?src=src\loader\loader%20events\file%20progress%20event.js">file progress event</a></li>
+</ul>
+<h3 id="can-i-queue-files-during-loading">Can I queue files during loading?</h3>
+<p>// 加载过程中可以请求文件吗？</p>
+<p>Yes.</p>
+<h3 id="how-do-i-add-a-child-sprite">How do I add a child sprite?</h3>
+<p>// 怎么加入子精灵？</p>
+<p>Phaser 3's display list is flat, so there are no child sprites. It does have a special game object, <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html">Container</a>, that applies transformations to its children (including other containers).
+// Phaser3的显示列表是扁平的，所有没有子精灵。还有一个特殊的游戏对象<code>Container</code>，可以对子项（包括容器）应用变形。</p>
+<h3 id="how-do-i-extend-a-game-object">How do I extend a game object?</h3>
+<p>// 怎么扩展游戏对象（类继承）？</p>
+<p>You can use the traditional ES5 form, the Phaser.Class helper, or ES6 classes.</p>
+<p>The most common mistake is to add the instance to the scene incorrectly, or not at all. From the scene, you can call
+// 最常见的错误是添加实例不正确，或无法添加。可以从场景调用：</p>
+<div class="highlight"><pre><span></span>this.add.existing( new ExtendedObject(this, /* ... */) );
+</pre></div>
+<p>For a physics-enabled game object, use the physics plugin's <code>existing</code> method as well.
+// 对于开启物理引起的游戏对象，也可以使用物理引擎插件的<code>existing</code>方法：</p>
+<div class="highlight"><pre><span></span>this.physics.add.existing( new ExtendedObject(this, /* ... */) );
+</pre></div>
+<p>When in doubt, imitate the <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html">factory method</a> of the parent class. Make sure you're passing the parent constructor's arguments correctly.</p>
+<p>You can also write your own <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html">factory method</a> and call it, or register your game object with the plugin manager.
+// 也可以写自己的工厂函数（方法），然后调用，或在插件管理器中注册你的游戏对象。</p>
+<ul>
+<li><a href="http://labs.phaser.io/edit.html?src=src\plugins\custom%20game%20object.js">custom game object, with registerGameObject()</a></li>
+</ul>
+<h3 id="how-do-i-run-a-game-objects-update-method-automatically">How do I run a game object's <code>update</code> method automatically?</h3>
+<p>// 怎么自动地运行游戏对象的<code>update</code>方法。</p>
+<ul>
+<li>Bind to the scene's <code>update</code> event; or
+// 绑定到场景的<code>update</code>事件上；或者</li>
+<li>Add the game object to a group and set the group's <code>runChildUpdate</code>; or
+// 把游戏对象添加到组，然后设置组的<code>runChildUpdate</code>；或者</li>
+<li><a href="https://github.com/samme/phaser-plugin-update">Use a plugin</a>
+// 使用插件</li>
+<li><a href="https://github.com/photonstorm/phaser/issues/3378">#3378</a></li>
+</ul>
+<p>If the game object has a <code>preUpdate</code> method (such as a Sprite, but not an Image), you can <a href="http://labs.phaser.io/edit.html?src=src/game%20objects\sprites\custom%20sprite%20class%20ES6.js">override the <code>preUpdate</code> method instead</a>. Make sure you call the parent class's method as well.
+// 如果游戏对象有<code>preUpdate</code>方法，你也可以覆盖/重载此方法。记得也要调用父类的方法。</p>
+<h3 id="how-do-i-make-a-button">How do I make a button?</h3>
+<p>// 怎么做按钮？</p>
+<p>Make an <a href="http://labs.phaser.io/index.html?dir=input/game%20object/">interactive game object</a> and go from there. See <a href="https://snowbillr.github.io/blog/2018-07-03-buttons-in-phaser-3/">Buttons in Phaser 3</a>.</p>
+<h3 id="which-physics-system-should-i-use">Which physics system should I use?</h3>
+<p>// 我该用那个物理引擎？</p>
+<p>Arcade Physics is a simple, high-performance model. It uses only circular or rectangular shapes.
+// Arcade物理引擎模块简单、高性能。它只使用圆形和方形两种形状。</p>
+<p>Impact Physics is similar. You'll probably use it only if you're already familiar with it (from ImpactJS).
+// Impact物理引擎类似。假如你已经熟悉，也许可以用。</p>
+<p><a href="http://brm.io/matter-js/">Matter</a> is a complex 2d physics engine.
+Matter是复杂的2d物理引擎。</p>
+<h3 id="do-arcade-physics-bodies-rotate">Do Arcade Physics bodies rotate?</h3>
+<p>Arcade物理体会旋转吗？</p>
+<p>Geometrically, no.
+几何旋转不行。</p>
+<h3 id="whats-the-difference-between-an-arcade-physics-bodys-blocked-and-touching">What's the difference between an Arcade Physics body's <em>blocked</em> and <em>touching</em>?</h3>
+<p>// Arcade物理体_blocked_（受阻）和_touching_（接触）的区别是什么？</p>
+<p><em>blocked</em> is a collision with the world bounds, a tile, or a static body.
+// <em>blocked</em>（受阻）是与世界边界、地砖、静态物体碰撞。</p>
+<p><em>touching</em> is any other collision or overlap.
+// <em>touching</em>（接触）指其余的各种碰撞或重叠。</p>
+<h3 id="why-do-my-tilemap-tiles-show-small-gapslinesseams">Why do my tilemap tiles show small gaps/lines/seams?</h3>
+<p>// 为什么我的地体砖块见有细缝、细线？</p>
+<p>It's a visual artifact of normal WebGL rendering. Use a tool to extrude the tileset image.</p>
+<h3 id="whats-a-scene-plugin">What's a scene plugin?</h3>
+<p>// 场景插件是什么？</p>
+<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Plugins.ScenePlugin.html">Phaser.Plugins.ScenePlugin</a></li>
+</ul>
+<h3 id="whats-a-global-plugin">What's a global plugin?</h3>
+<p>// 全局插件是什么？</p>
+<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Plugins.BasePlugin.html">Phaser.Plugins.BasePlugin</a></li>
+</ul>
+<h3 id="where-can-i-publish-my-game-for-free">Where can I publish my game (for free)?</h3>
+<p>// 哪里可以发表游戏（免费地）？</p>
+<p>On <a href="https://itch.io/docs/creators/faq">itch.io</a> (<a href="https://itch.io/docs/butler/">cli</a>) or <a href="https://pages.github.com">GitHub Pages</a> or <a href="https://surge.sh/pricing">Surge</a>.</p>
+<p><a href="https://devcenter.heroku.com/articles/deploying-nodejs">Node-based apps</a> can be deployed on <a href="https://www.heroku.com/pricing">Heroku</a>.</p></div>
+	
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                TOC
+                </li>
+                <nav class="toc">
+                    <div class="toc">
+<ul>
+<li><a href="#_1">注译说明</a></li>
+<li><a href="#how-do-i-learn-phaser">How do I learn Phaser?</a></li>
+<li><a href="#im-new-to-javascript">I'm new to JavaScript</a></li>
+<li><a href="#i-know-javascript-but-ive-never-made-a-game-before">I know JavaScript but I've never made a game before</a></li>
+<li><a href="#should-i-use-phaser-3-or-phaser-2ce">Should I use Phaser 3 or Phaser 2/CE?</a></li>
+<li><a href="#will-phaser-2-code-work-in-phaser-3">Will Phaser 2 code work in Phaser 3?</a></li>
+<li><a href="#does-phaser-3-use-pixijs">Does Phaser 3 use PixiJS?</a></li>
+<li><a href="#how-should-i-organize-my-project">How should I organize my project?</a></li>
+<li><a href="#how-can-i-split-my-code-into-separate-modules">How can I split my code into separate modules?</a></li>
+<li><a href="#can-i-use-es6">Can I use ES6?</a></li>
+<li><a href="#how-do-i-use-phaser-with-typescript">How do I use Phaser with TypeScript?</a></li>
+<li><a href="#how-can-i-fix-errors-in-the-typescript-definitions">How can I fix errors in the TypeScript definitions?</a></li>
+<li><a href="#how-can-i-fix-errorsomissions-in-the-api-docs">How can I fix errors/omissions in the API docs?</a></li>
+<li><a href="#how-do-i-use-phaser-with-webpack">How do I use Phaser with webpack?</a></li>
+<li><a href="#can-phaser-do-something-how-can-i-do-something-with-phaser">Can Phaser do (something) / How can I do (something) with Phaser?</a></li>
+<li><a href="#how-can-i-make-a-game-object-stay-the-same-size-when-the-camera-zooms">How can I make a game object stay the same size when the camera zooms?</a></li>
+<li><a href="#how-do-i-pauseresume-the-game">How do I pause/resume the game?</a></li>
+<li><a href="#how-do-i-stop-the-game-from-pausing-when-switching-tabsapplications">How do I stop the game from pausing when switching tabs/applications?</a></li>
+<li><a href="#how-do-i-make-a-high-resolution-canvas">How do I make a high-resolution canvas?</a></li>
+<li><a href="#how-do-i-use-high-resolution-text-why-is-my-text-blurry">How do I use high-resolution text / Why is my text blurry?</a></li>
+<li><a href="#how-do-i-scaleresize-the-game-canvas">How do I scale/resize the game canvas?</a></li>
+<li><a href="#why-do-my-sprites-look-blurry">Why do my sprites look blurry?</a></li>
+<li><a href="#how-do-i-fixdebug-my-game">How do I fix/debug my game?</a></li>
+<li><a href="#how-do-i-ask-for-help">How do I ask for help?</a></li>
+<li><a href="#why-is-my-game-slow">Why is my game slow?</a></li>
+<li><a href="#how-do-scenes-work">How do scenes work?</a></li>
+<li><a href="#how-do-i-use-this-in-a-scene">How do I use this in a scene?</a></li>
+<li><a href="#whats-the-difference-between-the-add-and-make-methods">What's the difference between the add. and make. methods?</a></li>
+<li><a href="#can-i-use-just-one-scene">Can I use just one scene?</a></li>
+<li><a href="#how-do-i-switch-scenes">How do I switch scenes?</a></li>
+<li><a href="#how-do-i-restart-a-scene">How do I restart a scene?</a></li>
+<li><a href="#what-happens-when-i-stoprestart-a-scene">What happens when I stop/restart a scene?</a></li>
+<li><a href="#why-dont-my-assets-load">Why don't my assets load?</a></li>
+<li><a href="#how-do-i-load-cross-origin-assets">How do I load cross-origin assets?</a></li>
+<li><a href="#how-do-i-make-a-loading-progress-animation">How do I make a loading progress animation?</a></li>
+<li><a href="#i-need-per-file-loading-progress">I need per-file loading progress.</a></li>
+<li><a href="#can-i-queue-files-during-loading">Can I queue files during loading?</a></li>
+<li><a href="#how-do-i-add-a-child-sprite">How do I add a child sprite?</a></li>
+<li><a href="#how-do-i-extend-a-game-object">How do I extend a game object?</a></li>
+<li><a href="#how-do-i-run-a-game-objects-update-method-automatically">How do I run a game object's update method automatically?</a></li>
+<li><a href="#how-do-i-make-a-button">How do I make a button?</a></li>
+<li><a href="#which-physics-system-should-i-use">Which physics system should I use?</a></li>
+<li><a href="#do-arcade-physics-bodies-rotate">Do Arcade Physics bodies rotate?</a></li>
+<li><a href="#whats-the-difference-between-an-arcade-physics-bodys-blocked-and-touching">What's the difference between an Arcade Physics body's blocked and touching?</a></li>
+<li><a href="#why-do-my-tilemap-tiles-show-small-gapslinesseams">Why do my tilemap tiles show small gaps/lines/seams?</a></li>
+<li><a href="#whats-a-scene-plugin">What's a scene plugin?</a></li>
+<li><a href="#whats-a-global-plugin">What's a global plugin?</a></li>
+<li><a href="#where-can-i-publish-my-game-for-free">Where can I publish my game (for free)?</a></li>
+</ul>
+</div>
+                </nav>                
+            </ul>
+            </div>
+        
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="/archives.html">Archives</a>
+                <li><a href="/tags.html">Tags</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="/category/qiao-ji.html">巧技</a></li>
+                <li><a href="/category/wen-yi.html">文艺</a></li>
+                   
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+            
+                <li><a href="http://www.xiiigame.com/example">拼字游戏</a></li>
+            </ul>
+            </div>
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="https://github.com/Fusyong">GitHub</a></li>
+                <li><a href="https://www.phaser-china.com/">Phaser小站</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2018, Powered by <a href="http://getpelican.com/">Pelican</a></p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="/theme/bootstrap-collapse.js"></script>
+<script>var _gaq=[['_setAccount','UA-105243279-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+<a href="https://github.com/Fusyong"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+ 
+</body>
+</html>
