@@ -313,7 +313,35 @@ git push -u origin master
 <p>git知识可参考<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰的git教程.</a></p>
 <p><strong>另，我的win7系统上无法使用官方推荐的ghp-import来更新库。</strong></p>
 <h2 id="_11">域名绑定</h2>
-<p>如果需要绑定自己的域名，在github库根目录建一个名为<code>CNAME</code>的文件，写上要绑定的域名，如blog.xiiigame.com。xiiigame.com域名的DNS解析相应新建一条CNAME记录，指向Fusyong.github.io。如果绑定顶级域名，DNS要建A记录，指向Fusyong.github.io的IP地址（通过<code>ping Fusyong.github.io</code>获取）。</p></div>
+<p>如果需要绑定自己的域名，在github库根目录建一个名为<code>CNAME</code>的文件，写上要绑定的域名，如blog.xiiigame.com。xiiigame.com域名的DNS解析相应新建一条CNAME记录，指向Fusyong.github.io。如果绑定顶级域名，DNS要建A记录，指向Fusyong.github.io的IP地址（通过<code>ping Fusyong.github.io</code>获取）。</p>
+<h2 id="_12">更改主题</h2>
+<h3 id="_13">给代码块加水平滚动条</h3>
+<p>更改css文件。代码块折行：</p>
+<div class="highlight"><pre><span></span>    <span class="nt">pre</span> <span class="p">{</span>
+      <span class="k">white-space</span><span class="p">:</span> <span class="kc">pre-wrap</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+<p>不折行而加上横向滚动条：</p>
+<div class="highlight"><pre><span></span>    <span class="nt">pre</span> <span class="p">{</span>
+      <span class="k">overflow-x</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+<p>from :<a href="https://75team.com/post/considerations-for-styling-the-%3C-pre-%3E-tag.html">使用<code>pre</code>标签样式的注意事项</a></p>
+<h2 id="_14">书写格式</h2>
+<h3 id="_15">代码高亮</h3>
+<p>Markdown文档的语法高亮是使用CodeHilite扩展实现的，使用缩进式（三反引号也支持），有两种指定语言身分的方式：</p>
+<ul>
+<li>其一，使用三冒号</li>
+</ul>
+<div class="highlight"><pre><span></span>    :::python
+    print("The triple-colon syntax will *not* show line numbers.")
+</pre></div>
+<ul>
+<li>其二，使用path-less shebang（能显示行号，但会导致<code>css</code>中的<code>pre {overflow-x: auto;}</code>失效）：</li>
+</ul>
+<div class="highlight"><pre><span></span>    #!python
+    print("The path-less shebang syntax *will* show line numbers.")
+</pre></div></div>
 	
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
@@ -338,6 +366,14 @@ git push -u origin master
 <li><a href="#_10">常用配置</a></li>
 <li><a href="#githubuser-pages">部署到github的User Pages</a></li>
 <li><a href="#_11">域名绑定</a></li>
+<li><a href="#_12">更改主题</a><ul>
+<li><a href="#_13">给代码块加水平滚动条</a></li>
+</ul>
+</li>
+<li><a href="#_14">书写格式</a><ul>
+<li><a href="#_15">代码高亮</a></li>
+</ul>
+</li>
 </ul>
 </div>
                 </nav>                
