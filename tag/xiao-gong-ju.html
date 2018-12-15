@@ -60,8 +60,8 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="/xiao-gong-ju-cong-duo-wen-jian-zhong-shou-ji-zi-fu-chuan.html"><h1>小工具：从多文件中收集字符串</h1></a>
-2018-12-12 周三
+            <a href="/xiao-gong-ju-fen-ge-wen-ben-wen-jian.html"><h1>小工具：分割文本文件</h1></a>
+2018-12-15 周六
 
 	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
  
@@ -70,57 +70,115 @@
  
         </div>
         
-        <div><p>如果你想从很多<strong>文本文件</strong>中把一定格式的字符串收集在一起，可以使用下面的Python脚本。你需要做：</p>
+        <div><h2 id="_1">目标、步骤</h2>
+<p>如果你想以特定格式的行（用正则表达式表示）为界，把一批<strong>文本文件</strong>分割成小片段，比如每章节或每卷一个文件，可以使用下面的Python脚本。你需要做：</p>
 <ul>
 <li>保存脚本，后缀为<code>.py</code></li>
 <li>根据你的实际情况更改脚本中的设置部分，尤其是：</li>
-<li>用正则表达式表示你要收集的字符串</li>
+<li>用正则表达式表示文件分界标志行（作为下一个文件片段的首行）</li>
 <li>在命令行中运行脚本（或看看右键菜单[打开方式]中有没有[Python]）</li>
-<li>看看<code>out.txt</code>文件中有没有你要的东西</li>
 </ul>
-<h2 id="_1">代码</h2>
+<h2 id="_2">代码</h2>
 <div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd"># reCollectString.py</span>
-<span class="sd"># 收集指定路径下、指定后缀文件中的匹配字符串，并记录文件名和行号。</span>
-<span class="sd"># 适用于Python3</span>
-<span class="sd"># 要处理的文件编码应为：utf-8（无签名）</span>
+<span class="sd">reSplitFile.py</span>
+<span class="sd">文件分割：</span>
+<span class="sd">寻找指定路径下所有文本文件中的匹配行</span>
+<span class="sd">把一个匹配行以下至下一匹配行之前的部分存为单独文件</span>
+<span class="sd">新文件存在原文件相同的节点上，文件名</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">re</span>
 
-<span class="c1"># 要处理的文件所在路径</span>
+<span class="c1"># 要处理的路径</span>
 <span class="n">DIR</span> <span class="o">=</span> <span class="s2">&quot;./workDir&quot;</span>
-<span class="c1"># 要处理的文件后缀列表</span>
+<span class="c1"># 要处理的文本文件后缀列表</span>
 <span class="n">EXT</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;.txt&#39;</span><span class="p">,</span> <span class="s2">&quot;.md&quot;</span><span class="p">]</span>
-<span class="c1"># 输出文件（含路径）</span>
-<span class="n">OUT_FILE</span> <span class="o">=</span> <span class="s2">&quot;./out.txt&quot;</span>
-<span class="c1"># 要查找的字符串（正则表达式），请按需设置</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\[.*?\]&#39;</span><span class="p">)</span>
+<span class="c1"># 切分标记行（下一文件的首行）正则表达式，请按需设置</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^.{1,30}(卷第?[一二三四五六七八九十百千万零〇]+).{0,20}$&#39;</span><span class="p">)</span>
+<span class="c1"># 是否在正则匹配前删除行中空白字符</span>
+<span class="n">DELET_SPACE_BEFORE_MATCH</span> <span class="o">=</span> <span class="bp">True</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">OUT_FILE</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outFile</span><span class="p">:</span>
-    <span class="n">filesNum</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">DIR</span><span class="p">):</span>
-        <span class="n">lesson_cut_file_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">files</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">EXT</span><span class="p">]</span>
-        <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">lesson_cut_file_list</span><span class="p">:</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="nb">file</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                <span class="c1"># for line in f.readlines():</span>
-                <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-                    <span class="n">lineStrip</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-                    <span class="n">finds</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">lineStrip</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">finds</span><span class="p">:</span>
-                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">finds</span><span class="p">:</span>
-                            <span class="n">outLine</span> <span class="o">=</span> <span class="s2">&quot;{path}</span><span class="se">\t</span><span class="s2">{index}</span><span class="se">\t</span><span class="s2">{string}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="nb">file</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
-                            <span class="k">if</span> <span class="n">outLine</span><span class="p">:</span>
-                                <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">outLine</span><span class="p">)</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">filesNum</span><span class="p">,</span> <span class="s2">&quot;files done.&quot;</span><span class="p">)</span>
-            <span class="n">filesNum</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">fileNum</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">DIR</span><span class="p">):</span>
+    <span class="c1"># 文件过滤（限定扩展名）</span>
+    <span class="n">lesson_cut_file_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">files</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">EXT</span><span class="p">]</span>
+    <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">lesson_cut_file_list</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">outLines</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">chapter</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">ex</span><span class="p">)</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+        <span class="n">fn</span> <span class="o">+=</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">chapter</span> <span class="o">+</span> <span class="n">ex</span>
+        <span class="n">fileName</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
+        <span class="c1"># 注意文件编码为utf-8（无签名）</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="nb">file</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="c1"># 先删除（忽略）行中空白字符</span>
+                <span class="k">if</span> <span class="n">DELET_SPACE_BEFORE_MATCH</span><span class="p">:</span>
+                    <span class="n">clean_line</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\s&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+                    <span class="n">match_line</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">clean_line</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">match_line</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">match_line</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">outLines</span><span class="p">:</span>
+                        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outFile</span><span class="p">:</span>
+                            <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">outLines</span><span class="p">))</span>
+                    <span class="n">outLines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="p">]</span>
+                    <span class="n">chapter</span> <span class="o">=</span> <span class="n">match_line</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">ex</span><span class="p">)</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+                    <span class="n">fn</span> <span class="o">+=</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">chapter</span> <span class="o">+</span> <span class="n">ex</span>
+                    <span class="n">fileName</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">outLines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">outLines</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outFile</span><span class="p">:</span>
+                <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">outLines</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">fileNum</span><span class="p">,</span> <span class="s2">&quot;files done.&quot;</span><span class="p">)</span>
+        <span class="n">fileNum</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 
 
-<h2 id="_2">效果</h2>
-<p><img alt="小工具：从多文件中收集字符串" src="/images/小工具：从多文件中收集字符串/image0.png"></p></div>
+<h2 id="_3">效果</h2>
+<p><img alt="小工具：从多文件中收集字符串" src="/images/小工具：分割文本文件/image.png"></p></div>
         <hr />
     </div>
 
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/auditionji-qiao-ban-zi-dong-fen-qie-yin-pin.html"><h2>Audition技巧：半自动分切音频</h2></a>
+        <div class= "well small"> 2018-12-14 周五
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>在做电子书时，我需要把几百个生字朗读音频逐字分切开，把课文朗读音频逐句分切成开；或者获取每个分切位置的时间标签。总之是根据停顿静音进行分切的。此类要求可以通过Audition的“诊断”功能实现。</p> <a href="/auditionji-qiao-ban-zi-dong-fen-qie-yin-pin.html">read...</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/xiao-gong-ju-cong-duo-wen-jian-zhong-shou-ji-zi-fu-chuan.html"><h2>小工具：从多文件中收集字符串</h2></a>
+        <div class= "well small"> 2018-12-12 周三
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>如果你想从很多<strong>文本文件</strong>中把一定格式的字符串收集在一起，可以使用下面的Python脚本。</p> <a href="/xiao-gong-ju-cong-duo-wen-jian-zhong-shou-ji-zi-fu-chuan.html">read...</a></div>
+    </div>	
+				
 <div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr; Previous</a></li>
@@ -130,8 +188,7 @@
     <li class="next disabled"><a href="#">&rarr; Next</a></li>
 
 </ul>
-</div>       
-
+</div>
  
   
         </div>
