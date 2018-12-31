@@ -117,7 +117,7 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span><span class="o">.</span><span class="n">boot</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
-<p>生成并输出音频。下例是生成正弦波形振荡器对象，并输出到服务器。这时你就能听到声音了。</p>
+<p>生成并输出音频。下例是生成正弦振荡器对象，并输出到服务器。这时你就能听到声音了。</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Sine</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
 </pre></div>
 <p>停止服务器：</p>
@@ -138,8 +138,8 @@
 <p>或直接赋值：</p>
 <div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="mi">1000</span>
 </pre></div>
-<h3 id="_8">对象链条</h3>
-<p>振荡器实例可以作其他实例的输入，从而构成对象实例链条。下例是把前一个实例的频率传给后一个实例。</p>
+<h3 id="_8">对象的链条与封包</h3>
+<p>一个振荡器实例可以作其他实例的输入，从而构成对象实例链条。下例是把前一个实例的频率传给后一个实例。</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span><span class="o">.</span><span class="n">boot</span><span class="p">()</span>
 <span class="n">mod</span> <span class="o">=</span> <span class="n">Sine</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
@@ -154,12 +154,126 @@
 <span class="n">f</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
 </pre></div>
-<h3 id="_9">类的示例</h3>
+<h3 id="_9">所有类都有示例</h3>
 <p>Pyo中的所有类都带着一个示例，以展示类的用法。比如<code>Harmonizer</code>类，可以这样执行他的示例：</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example</span><span class="p">(</span><span class="n">Harmonizer</span><span class="p">)</span>
 </pre></div>
-<h2 id="_10">...</h2>
+<h2 id="windows_1"><a href="http://ajaxsoundstudio.com/pyodoc/winaudioinspect.html">配置音频输出（特别是在Windows系统中）</a></h2>
+<h3 id="windowsapi">在Windows中检测、选择音频宿主API</h3>
+<p>在Windows中选择合适的音频API是件头疼的事。你可以使用Pyo官方的<a href="https://github.com/belangeo/pyo/blob/master/scripts/win_audio_drivers_inspector.py">检测脚本</a>检测你的系统，以确定：</p>
+<ul>
+<li>Pyo是否可以双工模式运行，即输入、输出都可用。</li>
+<li>Pyo是否能连接到Windows中可用的不同宿主API。</li>
+</ul>
+<h3 id="windowswasapi">调校Windows的WASAPI驱动</h3>
+<p>Windows的音频会话API(WASAPI, Audio Session API)是微软最现代的与音频设备对话的方法，自Vista以后可用。Pyo默认宿主是DIRECTSOUND，但你可以换成WASAPI：更换服务器对象的winhost参数。如果上述检测脚本告诉你：</p>
+<div class="highlight"><pre><span></span>Host: <span class="nv">wasapi</span> <span class="o">==</span>&gt; Failed...
+</pre></div>
+<p>那么在任务栏上的扬声器图标上点右键，点选“播放设备”。然后选择你的设备，点击“属性”按钮；在“高级”书签页，确认其采样率与Pyo的采样率（默认为44100Hz）相同。如果需要，还可以勾选“独占模式”中的选项，这样可以忽视系统的混音器、缺省设置、尤其是音频驱动提供的任何效果。</p>
+<p>假如获得如下信息，又想让Pyo以使用双工模式运行的话，那么在“录音设备”选项中也做同样的操作：</p>
+<div class="highlight"><pre><span></span>No input available. Duplex mode should be turned off.
+you’ll have to make sure first that there is an available input device in that tab.
+</pre></div>
+<p>如果你用的是比较便宜的声卡（特别是，内置声卡都很不好！），你可能需要加大Pyo服务器的缓冲区规模，以避免音频流故障。</p>
+<h3 id="_10">服务器初始化样例</h3>
+<div class="highlight"><pre><span></span><span class="c1"># 采样率是44100Hz，缓冲区大小为256，声道数是2，双工模式全开，宿主是DIRECTSOUND</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span>
+
+<span class="c1"># 采样率是48000Hz，缓冲区大小为1024，声道数是2，双工模式全开，宿主是DIRECTSOUND</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="n">sr</span><span class="o">=</span><span class="mi">48000</span><span class="p">,</span> <span class="n">buffersize</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
+
+<span class="c1"># 采样率是48000Hz，缓冲区大小为512，声道数是2，双工模式全开，宿主是WASAPI</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="n">sr</span><span class="o">=</span><span class="mi">48000</span><span class="p">,</span> <span class="n">buffersize</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">winhost</span><span class="o">=</span><span class="s2">"wasapi"</span><span class="p">)</span>
+
+<span class="c1"># 采样率是48000Hz，缓冲区大小为512，声道数是2，双工模式半开（仅用输出），宿主是ASIO</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="n">sr</span><span class="o">=</span><span class="mi">48000</span><span class="p">,</span> <span class="n">buffersize</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">duplex</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">winhost</span><span class="o">=</span><span class="s2">"asio"</span><span class="p">)</span>
+
+<span class="c1"># 采样率是96000Hz，缓冲区大小为128，声道数是1，双工模式全开，宿主是ASIO</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="n">sr</span><span class="o">=</span><span class="mi">96000</span><span class="p">,</span> <span class="n">buffersize</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">nchnls</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">duplex</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">winhost</span><span class="o">=</span><span class="s2">"asio"</span><span class="p">)</span>
+</pre></div>
+<h3 id="_11">选择指定设备</h3>
+<p>一个宿主API可以指向多个可用的设备。有几个有用的函数可以帮助你选择音频设备：</p>
+<ul>
+<li>pa_list_host_apis(): 打印音频宿主API列表。</li>
+<li>pa_list_devices(): 打印音频设备列表。如果有设备索引号，那么在第一列。</li>
+<li>pa_get_default_input(): 返回默认输入设备索引号。</li>
+<li>pa_get_default_output(): 返回默认输出设备索引号。</li>
+<li>pa_get_default_devices_from_host(host): 为给定音频宿主返回默认输入、输出设备。</li>
+</ul>
+<p>运行下面的代码，看看你的音频配置的当前状态：</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"音频宿主API："</span><span class="p">)</span>
+<span class="n">pa_list_host_apis</span><span class="p">()</span>
+<span class="n">pa_list_devices</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"默认输入设备：</span><span class="si">%i</span><span class="s2">"</span> <span class="o">%</span> <span class="n">pa_get_default_input</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">"默认输出设备：</span><span class="si">%i</span><span class="s2">"</span> <span class="o">%</span> <span class="n">pa_get_default_output</span><span class="p">())</span>
+</pre></div>
+<p>如果意向宿主的默认设备不是你想要的，你可以用<code>setInputDevice(x)</code>和<code>setOutputDevice(x)</code>两个方法，通知服务器哪个设备是你想要的。这两个方法接收意向设备的索引号，必须在服务器引导（<code>Server.boot()</code>）前调用。比如：</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="n">duplex</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">setOutputDevice</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">s</span><span class="o">.</span><span class="n">boot</span><span class="p">()</span>
+</pre></div>
+<h2 id="pyo_2">提高Pyo程序的性能</h2>
+<h3 id="python_1">Python提示</h3>
+<p>大部分计算都是在Pyo的C语言部分进行的，所以Python层面能做的不多。不过仍有两个技巧可以考虑：</p>
+<h4>调整解释器的检查间隔</h4>
+<p>用<code>sys.setcheckinterval(interval)</code>调整解释器的检查频率。默认值是100，即每100条Python虚拟指令执行一次检查。加大此值可能会提高使用线程的程序的性能。</p>
+<h4>使用<code>subprocess</code>(子进程)或<code>multiprocessing</code>(多进程)模块</h4>
+<p>使用<code>subprocess</code>或<code>multiprocessing</code>模块能在多处理器上批量处理。下面的小例子使用了<code>multiprocessing</code>模块，以便在多处理器上批量进行正弦（Sine）波计算。</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># encoding: utf-8</span>
+<span class="sd">"""</span>
+<span class="sd">Spawning lot of sine waves to multiple processes.</span>
+<span class="sd">From the command line, run the script with -i flag.</span>
+
+<span class="sd">Call quit() to stop the workers and quit the program.</span>
+
+<span class="sd">"""</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">uniform</span>
+<span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="n">Server</span><span class="p">,</span> <span class="n">SineLoop</span>
+
+<span class="k">class</span> <span class="nc">Group</span><span class="p">(</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_of_sines</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Group</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_terminated</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_of_sines</span> <span class="o">=</span> <span class="n">num_of_sines</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># All code that should run on a separated</span>
+        <span class="c1"># core must be created in the run() method.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">deactivateMidi</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">boot</span><span class="p">()</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+        <span class="n">freqs</span> <span class="o">=</span> <span class="p">[</span><span class="n">uniform</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">800</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_of_sines</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">oscs</span> <span class="o">=</span> <span class="n">SineLoop</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="n">freqs</span><span class="p">,</span> <span class="n">feedback</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">mul</span><span class="o">=.</span><span class="mo">005</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+
+        <span class="c1"># Keeps the process alive...</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_terminated</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_terminated</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="c1"># Starts four processes playing 500 oscillators each.</span>
+    <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Group</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+    <span class="p">[</span><span class="n">job</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">quit</span><span class="p">():</span>
+        <span class="s2">"Stops the workers and quit the program."</span>
+        <span class="p">[</span><span class="n">job</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">]</span>
+        <span class="nb">exit</span><span class="p">()</span>
+</pre></div>
+<h4>...</h4>
+<h2 id="_12">...</h2>
 <p>待续。一切只是刚刚开始...</p></div>
         <hr />
     </div>
