@@ -60,7 +60,7 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="/pyoxue-xi-bi-ji.html"><h1>Pyo学习笔记</h1></a>
+            <a href="/pyoxue-xi-bi-ji-yi.html"><h1>Pyo学习笔记（一）</h1></a>
 2018-12-27 周四
 
 	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
@@ -71,14 +71,14 @@
         </div>
         
         <div>
-<p>这是我学习Pyo的笔记。以学官方文档为主。随时更新。</p>
+<p>这是我学习Pyo的笔记。以编译官方文档为主。本文不涉及官方文档中的API文档、实例、高级教程，此三者计划另文介绍。</p>
 <h2 id="pyo">Pyo简介</h2>
 <blockquote>
 <p>Pyo是用C写成的Python模块，用于生成数字信号处理（DSP）脚本。它提供一整套的类，用于构建音频软件，编写算法音乐，或通过一种简单、成熟、强大的编程语言随意探索音频处理。</p>
 <p>它包含众多的声音信号处理类。用户可以用它在Python脚本、工程中直接加入信号处理链，并可通过解释器实时操控处理链。Pyo模块中的工具提供最基本的东西，如音频信号的数学运算，基本的信号处理（滤波器、延迟器、合称发生器，等等），也提供复杂算法以生成音频颗粒（sound granulation），以及别的生成音频的操作。Pyo支持开放声音控制协议（OSC, Open Sound Control），以便软件间的交流；支持MIDI协议，以生成声音事件，控制参数的处理。Pyo能够利用一种成熟、广泛使用的通用处理语言的诸多优势，生成复杂的信号处理链条。</p>
 <p>Pyo的开发者是Olivier Bélanger &lt;<a href="mailto:belangeo@gmail.com">belangeo@gmail.com</a>&gt;。</p>
-<p><em>——以上来自<a href="http://ajaxsoundstudio.com/pyodoc/about.html">文档</a></em></p>
 </blockquote>
+<p><em>——以上来自<a href="http://ajaxsoundstudio.com/pyodoc/about.html">文档</a></em></p>
 <h2 id="_1">与近似平台/语言比较</h2>
 <p>与Pyo功能近似的平台有CSound，SuperCollider，ChucK，三者各是一种语言。</p>
 <ul>
@@ -108,9 +108,9 @@
 <li>也可以在第一位的Python中也安装一次Pyo。</li>
 <li>还可更改源码再自行编译。</li>
 </ul>
-<h2 id="pyo_1"><a href="http://ajaxsoundstudio.com/pyodoc/structure.html">Pyo的结构</a></h2>
+<h2 id="pyo_1">Pyo的结构（<strong>此节往后均编译自官方文档</strong>）</h2>
 <p><img alt="结构" src="/images/Pyo学习笔记/structure.png"/></p>
-<h2 id="_4"><a href="http://ajaxsoundstudio.com/pyodoc/gettingstarted.html">起步</a></h2>
+<h2 id="_4">起步</h2>
 <h3 id="_5">启动服务器，输出声音</h3>
 <p>生成并引导Pyo服务器（可配置采样率、声道数量等）。启动Pyo服务器，即开启音频和MIDI接口，以备接收其他Pyo对象生成的音频和MIDI。</p>
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
@@ -159,7 +159,7 @@
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">example</span><span class="p">(</span><span class="n">Harmonizer</span><span class="p">)</span>
 </pre></div>
-<h2 id="windows_1"><a href="http://ajaxsoundstudio.com/pyodoc/winaudioinspect.html">配置音频输出（特别是在Windows系统中）</a></h2>
+<h2 id="windows_1">配置音频输出（特别是在Windows系统中）</h2>
 <h3 id="windowsapi">在Windows中检测、选择音频宿主API</h3>
 <p>在Windows中选择合适的音频API是件头疼的事。你可以使用Pyo官方的<a href="https://github.com/belangeo/pyo/blob/master/scripts/win_audio_drivers_inspector.py">检测脚本</a>检测你的系统，以确定：</p>
 <ul>
@@ -225,11 +225,10 @@ you’ll have to make sure first that there is an available input device in that
 <div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># encoding: utf-8</span>
 <span class="sd">"""</span>
-<span class="sd">Spawning lot of sine waves to multiple processes.</span>
-<span class="sd">From the command line, run the script with -i flag.</span>
+<span class="sd">在多线程中批量生成大量的正弦（sine）波。</span>
+<span class="sd">在命令行中运行脚本，加上-i旗标。</span>
 
-<span class="sd">Call quit() to stop the workers and quit the program.</span>
-
+<span class="sd">调用quit()以停止工方（worker，负责处理子任务），并退出程序。</span>
 <span class="sd">"""</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">multiprocessing</span>
@@ -244,8 +243,7 @@ you’ll have to make sure first that there is an available input device in that
         <span class="bp">self</span><span class="o">.</span><span class="n">num_of_sines</span> <span class="o">=</span> <span class="n">num_of_sines</span>
 
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># All code that should run on a separated</span>
-        <span class="c1"># core must be created in the run() method.</span>
+        <span class="c1"># 每核都要运行的代码必须写在run()方法中</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">deactivateMidi</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">boot</span><span class="p">()</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
@@ -253,7 +251,7 @@ you’ll have to make sure first that there is an available input device in that
         <span class="n">freqs</span> <span class="o">=</span> <span class="p">[</span><span class="n">uniform</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">800</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_of_sines</span><span class="p">)]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">oscs</span> <span class="o">=</span> <span class="n">SineLoop</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="n">freqs</span><span class="p">,</span> <span class="n">feedback</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">mul</span><span class="o">=.</span><span class="mo">005</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
 
-        <span class="c1"># Keeps the process alive...</span>
+        <span class="c1"># 保持进程活动...</span>
         <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_terminated</span><span class="p">:</span>
             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
 
@@ -263,18 +261,247 @@ you’ll have to make sure first that there is an available input device in that
         <span class="bp">self</span><span class="o">.</span><span class="n">_terminated</span> <span class="o">=</span> <span class="bp">True</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-    <span class="c1"># Starts four processes playing 500 oscillators each.</span>
+    <span class="c1"># 开动四个进程，每个播放500个振荡器。</span>
     <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Group</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
-    <span class="p">[</span><span class="n">job</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">]</span>
+    <span class="c1"># 官网源码误作`job.start()`，现予更正</span>
+    <span class="p">[</span><span class="n">job</span><span class="o">.</span><span class="n">run</span><span class="p">()</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">quit</span><span class="p">():</span>
-        <span class="s2">"Stops the workers and quit the program."</span>
+        <span class="s2">"停止工方并退出程序。"</span>
         <span class="p">[</span><span class="n">job</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">]</span>
         <span class="nb">exit</span><span class="p">()</span>
 </pre></div>
-<h4>...</h4>
-<h2 id="_12">...</h2>
-<p>待续。一切只是刚刚开始...</p></div>
+<h4>避免在初始化之后进行内存分配</h4>
+<p>动态内存分配(malloc/calloc/realloc)容易引起不确定性；分配内存的时间无法预见，使其不适合于实时系统。为了保证音频回调函数何时候都能平稳运行，最好在程序初始化时生成所有音频对象，然后在需要时调用它们的<code>'stop()``play()``out()</code>方法。</p>
+<p>注意，一个简单的算数符号与音频对象关联后即可生成一个傀儡对象（以持有变动后的符号），于是会分配内存给它的音频流<strong>并且</strong>增加一个处理任务到CPU中。运行下面的简单代码，观察其进程的CPU如何增长：</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span><span class="o">.</span><span class="n">boot</span><span class="p">()</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">Fader</span><span class="p">(</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.09</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">jit</span> <span class="o">=</span> <span class="n">Randi</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">sig</span> <span class="o">=</span> <span class="n">RCOsc</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span> <span class="n">mul</span><span class="o">=</span><span class="n">env</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">change</span><span class="p">():</span>
+    <span class="n">freq</span> <span class="o">=</span> <span class="n">midiToHz</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="c1"># 因为`jit`是Pyo对象，`freq+jit`和`freq-jit`会</span>
+    <span class="c1"># 生成一个`傀儡/Dummy`对象，为了它要生成一个引用并</span>
+    <span class="c1"># 保存在`sig`对象中。其后果是内存兼CPU</span>
+    <span class="c1"># 增长，直至出事！</span>
+    <span class="n">sig</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="p">[</span><span class="n">freq</span><span class="o">+</span><span class="n">jit</span><span class="p">,</span> <span class="n">freq</span><span class="o">-</span><span class="n">jit</span><span class="p">]</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+
+<span class="n">pat</span> <span class="o">=</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">change</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mf">0.125</span><span class="p">)</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
+</pre></div>
+<p>这个程序的高效版本应该像这样：</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span><span class="o">.</span><span class="n">boot</span><span class="p">()</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">Fader</span><span class="p">(</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.09</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">jit</span> <span class="o">=</span> <span class="n">Randi</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># 生成一个`Sig`对象以持有频率值。</span>
+<span class="n">frq</span> <span class="o">=</span> <span class="n">Sig</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1"># 仅在初始化时一次性地生成`傀儡/Dummy`对象</span>
+<span class="n">sig</span> <span class="o">=</span> <span class="n">RCOsc</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="p">[</span><span class="n">frq</span><span class="o">+</span><span class="n">jit</span><span class="p">,</span> <span class="n">frq</span><span class="o">-</span><span class="n">jit</span><span class="p">],</span> <span class="n">mul</span><span class="o">=</span><span class="n">env</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">change</span><span class="p">():</span>
+    <span class="n">freq</span> <span class="o">=</span> <span class="n">midiToHz</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="c1"># 仅仅改变Sig对象的`value`属性</span>
+    <span class="n">frq</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">freq</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+
+<span class="n">pat</span> <span class="o">=</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">change</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mf">0.125</span><span class="p">)</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
+</pre></div>
+<h4>别做任何会激发垃圾回收的事</h4>
+<p>Python的垃圾回收也是一个不确定的进程。你要避免任何会激发它的事。所以，不要删除音频对象——这最终会删除许多音频流对象，而应该只是调用它的<code>stop()</code>方法以便把它从服务器的处理循环中移除。</p>
+<h3 id="pyo_3">Pyo提示</h3>
+<h4>在应用效果前先混合</h4>
+<p>使用Pyo很容易使CPU超饱和，尤其是使用多声道扩展特征时。如果你的最终输出使用的声道少于对象中的音频流数量，别忘了先混合（调用它的<code>mix()</code>方法），然后再给信号总体应用效果。</p>
+<p>看看下面的片段，它生成50个振荡器构成的的一个合奏，再对最终声音应用一个相位效果。</p>
+<div class="highlight"><pre><span></span><span class="n">src</span> <span class="o">=</span> <span class="n">SineLoop</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">190</span><span class="p">,</span><span class="mi">210</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)],</span>
+                <span class="n">feedback</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">lfo</span> <span class="o">=</span> <span class="n">Sine</span><span class="p">(</span><span class="o">.</span><span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">phs</span> <span class="o">=</span> <span class="n">Phaser</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">lfo</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">feedback</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+</pre></div>
+<p>这个版本在Pyo作者的i5 3320M @ 2.6GHz的ThinkPad T430上试用约47%的CPU。问题在于50个振荡器给Phaser对象作为输入，生成50个一样的Phaser对象实例，每个对象实例一个振荡器。这将大大地浪费CPU。下面的版本混合所有振荡器为一个立体声流，然后再应用效果，这样CPU消耗降到约7%！</p>
+<div class="highlight"><pre><span></span><span class="n">src</span> <span class="o">=</span> <span class="n">SineLoop</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">190</span><span class="p">,</span><span class="mi">210</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">)],</span>
+                <span class="n">feedback</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">lfo</span> <span class="o">=</span> <span class="n">Sine</span><span class="p">(</span><span class="o">.</span><span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">phs</span> <span class="o">=</span> <span class="n">Phaser</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">mix</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">freq</span><span class="o">=</span><span class="n">lfo</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">feedback</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+</pre></div>
+<p>当用到高消耗效果时，这会剧烈影响CPU的消耗。</p>
+<h4>停止不用的音频对象</h4>
+<p>当你不用一个音频对象（但还想留着备用）时，调用<code>stop()</code>方法。这会通知服务器把它移出计算循环。设置音量为0不能节省CPU（全都计算完后乘以0），而<code>stop()</code>方法可以。<strong>Pyo作者本人的合成类常常近似如下：</strong></p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Glitchy</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feed</span> <span class="o">=</span> <span class="n">Lorenz</span><span class="p">(</span><span class="mf">0.002</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mf">0.49</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">amp</span> <span class="o">=</span> <span class="n">Sine</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">src</span> <span class="o">=</span> <span class="n">SineLoop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">amp</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filt</span> <span class="o">=</span> <span class="n">ButLP</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">src</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">play</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chnl</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feed</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">src</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filt</span><span class="o">.</span><span class="n">out</span><span class="p">(</span><span class="n">chnl</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feed</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">src</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filt</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+</pre></div>
+<h4>控制属性当用数字而不是Pyo对象</h4>
+<p>当纯数字用作属性时，对象的内部处理函数会进行优化。除非你真地需要通过某些参数控制音频，否则不要浪费CPU的时钟周期，而是把固定数值给到所有属性，这样它们就不需要随时间变更。看下面的对比：</p>
+<div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">Noise</span><span class="p">(</span><span class="o">.</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 约5%的CPU消耗</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Phaser</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">105</span><span class="p">],</span> <span class="n">spread</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+            <span class="n">feedback</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">48</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+
+<span class="c1"># 约14%的CPU消耗</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Phaser</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">105</span><span class="p">],</span> <span class="n">spread</span><span class="o">=</span><span class="n">Sig</span><span class="p">(</span><span class="mf">1.2</span><span class="p">),</span> <span class="n">q</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+            <span class="n">feedback</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">48</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+</pre></div>
+<p>生成<code>p2</code>的<code>spread</code>属性时用一个音频信号，导致48个槽口（notch）的频率在每次采样时都要重新计算，这将是消耗很高的进程。</p>
+<h4>检查非常态数/低常态数/非规格化浮点数（denormal/subnormal number）</h4>
+<p>据维基百科：</p>
+<blockquote>
+<p>在计算机科学的浮点数算法中，denormal数或denormalized数(现常作subnormal数)会填充0后面的潜流（underflow）<sup id="fnref:underflow"><a class="footnote-ref" href="#fn:underflow" rel="footnote">1</a></sup>空位。任何非零的数，数值小于最小常态（normal）数时，即为subnormal数。</p>
+</blockquote>
+<p>问题在于，某些处理器计算非常态数值时很慢，这会很快地增加CPU消耗。解决办法是用一个<code>Denorm</code>（非常态）对象掩护（wrap）将受制于非常态数的对象（任何内部带有递归延迟行的对象，比如过滤/filter, 延迟/delay, 混响/reverb, 泛音/harmonizer，等等）。 <code>Denorm</code>添加一点点噪音到自己的输入中， 仅是略大于最小常态数的量。当然，你可以把相同的噪音用于多重的非常态化：</p>
+<div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">Noise</span><span class="p">(</span><span class="mf">1e-24</span><span class="p">)</span> <span class="c1"># 用于非常态对象的低水平噪音</span>
+
+<span class="n">src</span> <span class="o">=</span> <span class="n">SfPlayer</span><span class="p">(</span><span class="n">SNDS_PATH</span><span class="o">+</span><span class="s2">"/transparent.aif"</span><span class="p">)</span>
+<span class="n">dly</span> <span class="o">=</span> <span class="n">Delay</span><span class="p">(</span><span class="n">src</span><span class="o">+</span><span class="n">n</span><span class="p">,</span> <span class="n">delay</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> <span class="n">feedback</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+<span class="n">rev</span> <span class="o">=</span> <span class="n">WGVerb</span><span class="p">(</span><span class="n">src</span><span class="o">+</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+</pre></div>
+<h4>使用Pyo对象（PyoObject），只要可用</h4>
+<p>如果Pyo对象能实现你的意图，优先找来用，它一定比你从新写的更高效。下面的结构尽管在教学上有价值，但效率（即CPU与内存消耗）永远比不上用C写的Pyo对象（Phaser）。</p>
+<div class="highlight"><pre><span></span>    <span class="n">a</span> <span class="o">=</span> <span class="n">BrownNoise</span><span class="p">(</span><span class="o">.</span><span class="mo">02</span><span class="p">)</span><span class="o">.</span><span class="n">mix</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+
+    <span class="n">lfo</span> <span class="o">=</span> <span class="n">Sine</span><span class="p">(</span><span class="o">.</span><span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">)</span>
+    <span class="n">filters</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">):</span>
+        <span class="n">freq</span> <span class="o">=</span> <span class="n">rescale</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+        <span class="nb">filter</span> <span class="o">=</span> <span class="n">Allpass2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">lfo</span><span class="o">*</span><span class="n">freq</span><span class="p">,</span> <span class="n">bw</span><span class="o">=</span><span class="n">freq</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+        <span class="n">filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
+</pre></div>
+<p>使用<code>Biquadx(stages=4)</code>也会比用相同参数串联四个<code>Biquad</code>对象更高效。</p>
+<h4>避免三角函数计算</h4>
+<p>避免音频频率的三角函数计算(<code>Sin</code>, <code>Cos</code>, <code>Tan</code>, <code>Atan2</code>, 等等), 而用简单的近似对象代替。比如，你可以用基于<code>Sqrt</code>的更廉价的对象代替纯<code>Sin/Cos</code>声像函数：</p>
+<div class="highlight"><pre><span></span><span class="c1"># 沉重</span>
+<span class="n">pan</span> <span class="o">=</span> <span class="n">Linseg</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<span class="n">left</span> <span class="o">=</span> <span class="n">Cos</span><span class="p">(</span><span class="n">pan</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">right</span> <span class="o">=</span> <span class="n">Sin</span><span class="p">(</span><span class="n">pan</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Noise</span><span class="p">([</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">])</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+
+<span class="c1"># 廉价</span>
+<span class="n">pan2</span> <span class="o">=</span> <span class="n">Linseg</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<span class="n">left2</span> <span class="o">=</span> <span class="n">Sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">pan2</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">right2</span> <span class="o">=</span> <span class="n">Sqrt</span><span class="p">(</span><span class="n">pan2</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">Noise</span><span class="p">([</span><span class="n">left2</span><span class="p">,</span> <span class="n">right2</span><span class="p">])</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+</pre></div>
+<h4>使用近似对象，如果绝对精确没有必要</h4>
+<p>绝对精确不是确实重要时，你可以通过近似对象节省宝贵的CPU时钟周期。<code>FastSine</code>是<code>sin</code>函数的近似对象，它几乎比查表(Sine)廉价一半。Pyo作者计划将来添加更多的近似对象。</p>
+<h4>重用你的生成器</h4>
+<p>有时有可能把相同的信号用于近似目的。琢磨下面的过程：</p>
+<div class="highlight"><pre><span></span><span class="c1"># 单个白噪音</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">Noise</span><span class="p">()</span>
+
+<span class="c1"># 非常态信号</span>
+<span class="n">denorm</span> <span class="o">=</span> <span class="n">noise</span> <span class="o">*</span> <span class="mf">1e-24</span>
+<span class="c1"># 1上下的小震动，用于调制频率</span>
+<span class="n">jitter</span> <span class="o">=</span> <span class="n">noise</span> <span class="o">*</span> <span class="mf">0.0007</span> <span class="o">+</span> <span class="mf">1.0</span>
+<span class="c1"># 波导的激励信号</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">noise</span> <span class="o">*</span> <span class="mf">0.7</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">Fader</span><span class="p">(</span><span class="n">fadein</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">fadeout</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">dur</span><span class="o">=</span><span class="mf">0.015</span><span class="p">)</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<span class="n">src</span> <span class="o">=</span> <span class="n">ButLP</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="n">env</span><span class="p">)</span>
+<span class="n">wg</span> <span class="o">=</span> <span class="n">Waveguide</span><span class="p">(</span><span class="n">src</span><span class="o">+</span><span class="n">denorm</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">100</span><span class="o">*</span><span class="n">jitter</span><span class="p">,</span> <span class="n">dur</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+</pre></div>
+<p>在这里，同一个白噪音同时用于三个目标。首先，用于生成非常态信号。然后，用于生成小震动以备波导用作频率（给线性声音添加一个小嗡嗡声）。最后，用作波导的激励。这无疑比生成没有明显听觉差异的三个不同白噪音要廉价。</p>
+<h4>任由<code>mul</code>和<code>add</code>属性保持默认值，只要可能</h4>
+<p>当<code>mul=1</code>和<code>add=0</code>时，有一个内在条件会绕开对象的“后置处理”(post-processing)函数。好的实践是在同一处使用多重控制，而不是乱糟糟地在每个对象中使用<code>mul</code>属性。</p>
+<div class="highlight"><pre><span></span>    <span class="c1"># 错误</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">Noise</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">bp1</span> <span class="o">=</span> <span class="n">ButBP</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">bp2</span> <span class="o">=</span> <span class="n">ButBP</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">bp3</span> <span class="o">=</span> <span class="n">ButBP</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">2500</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">rev</span> <span class="o">=</span> <span class="n">Freeverb</span><span class="p">(</span><span class="n">bp1</span><span class="o">+</span><span class="n">bp2</span><span class="o">+</span><span class="n">bp3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">bal</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">mul</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+
+    <span class="c1"># 棒</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">Noise</span><span class="p">(</span><span class="n">mul</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+    <span class="n">bp1</span> <span class="o">=</span> <span class="n">ButBP</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">bp2</span> <span class="o">=</span> <span class="n">ButBP</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">bp3</span> <span class="o">=</span> <span class="n">ButBP</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">2500</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">rev</span> <span class="o">=</span> <span class="n">Freeverb</span><span class="p">(</span><span class="n">bp1</span><span class="o">+</span><span class="n">bp2</span><span class="o">+</span><span class="n">bp3</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">bal</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
+</pre></div>
+<h4>避免图形更新</h4>
+<p>即使运行在不同线程中，用不同的属性，音频回调函数与Python程序图形界面都是同一个进程，分享相同的CPU。如果你不需要看表或使用滑块，那么不要使用服务器的GUI。你可以从命令行启动脚本，带上旗标<code>-i</code>以便解释器保持活动。</p>
+<div class="highlight"><pre><span></span>&gt;&gt;&gt; python -i myscript.py
+</pre></div>
+<h4>CPU高消耗对象</h4>
+<p>这是库中的大部分、但并非完全的CPU高消耗对象的列表。</p>
+<ul>
+<li>Analysis</li>
+<li>Yin</li>
+<li>Centroid</li>
+<li>Spectrum</li>
+<li>Scope</li>
+<li>Arithmetic</li>
+<li>Sin</li>
+<li>Cos</li>
+<li>Tan</li>
+<li>Tanh</li>
+<li>Atan2</li>
+<li>Dynamic</li>
+<li>Compress</li>
+<li>Gate</li>
+<li>Special Effects</li>
+<li>Convolve</li>
+<li>Prefix Expression Evaluator</li>
+<li>Expr</li>
+<li>Filters</li>
+<li>Phaser</li>
+<li>Vocoder</li>
+<li>IRWinSinc</li>
+<li>IRAverage</li>
+<li>IRPulse</li>
+<li>IRFM</li>
+<li>Fast Fourier Transform</li>
+<li>CvlVerb</li>
+<li>Phase Vocoder</li>
+<li>Almost every objects!</li>
+<li>Signal Generators</li>
+<li>LFO</li>
+<li>Matrix Processing</li>
+<li>MatrixMorph</li>
+<li>Table Processing</li>
+<li>Granulator</li>
+<li>Granule</li>
+<li>Particule</li>
+<li>OscBank</li>
+<li>Utilities</li>
+<li>Resample</li>
+</ul>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:underflow">
+<p>译注：因精度限制/指数不够用而在小数点后加0表示，如0.000123e-126。这样一来，后面的有实际意义的数值即成为潜流（underflow）被丢弃，从而影响结果；如果重复此类计算则可能导致严重错误。 <a class="footnote-backref" href="#fnref:underflow" rev="footnote" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div></div>
         <hr />
     </div>
 
