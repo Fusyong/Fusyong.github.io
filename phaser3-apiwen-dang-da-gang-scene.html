@@ -109,12 +109,14 @@
 
 
 <ul>
-<li>Members</li>
+<li>Members<ul>
 <li>displayList :Phaser.GameObjects.DisplayList</li>
 <li>scene :Phaser.Scene</li>
 <li>systems :Phaser.Scenes.Systems</li>
 <li>updateList :Phaser.GameObjects.UpdateList</li>
-<li>Methods</li>
+</ul>
+</li>
+<li>Methods<ul>
 <li>各种游戏对象GameObjects生成器（类名对应的小写形式）</li>
 <li>particles粒子</li>
 <li>path路径</li>
@@ -122,6 +124,8 @@
 <li>renderTexture渲染纹理</li>
 <li>tween补间动画</li>
 <li>existing(child)</li>
+</ul>
+</li>
 </ul>
 <p><strong>添加已有的游戏对象，</strong>比如客户定制且未在场景中注入的类，不能通过<code>add</code>/<code>make</code>引用其工厂函数，而只能用<code>new</code>生成实例。这些实例就需要通过<code>add.existing(child)</code>添加。
 如有必要，会添加到显示列表DisplayList和更新列表UpdateList。</p>
@@ -164,7 +168,7 @@
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#cache">cache :Phaser.Cache.CacheManager</a></h4>
 <p>指向全局的缓存管理器。成员和方法：</p>
 <ul>
-<li>Members</li>
+<li>Members<ul>
 <li>audio :Phaser.Cache.BaseCache</li>
 <li>binary :Phaser.Cache.BaseCache</li>
 <li>bitmapFont :Phaser.Cache.BaseCache</li>
@@ -178,25 +182,35 @@
 <li>text :Phaser.Cache.BaseCache</li>
 <li>tilemap :Phaser.Cache.BaseCache</li>
 <li>xml :Phaser.Cache.BaseCache</li>
-<li>Methods</li>
+</ul>
+</li>
+<li>Methods<ul>
 <li>addCustom(key)添加自定义键（通过Cache.custom.key取用）</li>
 <li>destroy()销毁所有缓存</li>
 </ul>
+</li>
+</ul>
 <h5>Phaser.Cache.BaseCache的成员和方法</h5>
 <ul>
-<li>Members</li>
+<li>Members<ul>
 <li>entries :Phaser.Structs.Map.<String, *></li>
 <li>events :Phaser.Events.EventEmitter</li>
-<li>Methods</li>
+</ul>
+</li>
+<li>Methods<ul>
 <li>add(key, data)</li>
 <li>destroy() 销毁本缓存</li>
 <li>exists(key) 判断键值存在与否（与<code>BaseCache.has</code>的行为一致）</li>
 <li>get(key)</li>
 <li>has(key) 与<code>BaseCache.exists</code>的行为一致。</li>
 <li>remove(key)</li>
-<li>Events</li>
+</ul>
+</li>
+<li>Events<ul>
 <li>addEvent 条目增添事件</li>
 <li>removeEvent 条目移除事件</li>
+</ul>
+</li>
 </ul>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#cameras">cameras :Phaser.Cameras.Scene2D.CameraManager</a></h4>
 <p>指向场景的镜头管理器。</p>
