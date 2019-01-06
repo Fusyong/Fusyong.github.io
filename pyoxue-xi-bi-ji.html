@@ -95,7 +95,8 @@
 <h2 id="windows">在Windows中的安装问题</h2>
 <p>安装内容包括Python模块和E-Pyo编辑器两部分。另外，其GUI还依赖第三方模块WxPython。</p>
 <h3 id="_3">多声卡安装错误</h3>
-<p>如果有多个声卡，声音输出时可能报错：<code>assertion failed: false, file src\hostapi\wdmks\pa_win_wdmks.c, line 1036</code>。可只保留系统原有的Realtek...声卡，而禁用/卸载后装声卡，这样安装后就能运行。<strong>编辑器首选项中有声卡的配置选项，暂未测试。</strong></p>
+<p>如果有多个声卡，服务器启动时可能报错：<code>assertion failed: false, file src\hostapi\wdmks\pa_win_wdmks.c, line 1036</code>。编辑器首选项中有声卡的配置选项，此时无法设置。
+可只保留系统原有的Realtek...声卡，而禁用后装声卡，这样重启系统后就能运行。</p>
 <h3 id="python">安装到指定的Python版本中</h3>
 <p>可以安装到指定的Python版本，包括虚拟Python环境中。不过这时在编辑器中运行代码，可能无法取得Python的正确路径。因为Pyo编辑器是实时从系统变量中取第一位的Python的（编辑器首选项中能看到，但不能设置）。虽然Pyo在安装时会加入你指定的路径，但不一定正确（Pyo加入的是根目录如venv，没有加入Scripts目录）。当然，</p>
 <ul>
