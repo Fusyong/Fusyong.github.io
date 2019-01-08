@@ -66,6 +66,25 @@
 	
         <div>
 <h2 id="2019-1-6">2019-1-6</h2>
+<p>看到在VSCode中运行Jupyter Notebook的办法：<a href="https://blogs.msdn.microsoft.com/pythonengineering/2018/11/08/data-science-with-python-in-visual-studio-code/">Data Science with Python in Visual Studio Code.</a>
+大致思路是，在一个<code>.py</code>文件中用注释行符号<code>#</code>定义Jypyter Notebook的内容框(cell)和Markdown内容，如：</p>
+<ul>
+<li><code># %%</code>或<code>#%%</code>表示以下各行构成一个代码框。第一个<code>#</code>后的空格是可有可无的，下同</li>
+<li><code># %%[markdown]</code>或<code>#%%[markdown]</code>表示以下各行构成一个markdown框<ul>
+<li><code># # 一级标题</code>或<code>## 一级标题</code>，表示名为<code>一级标题</code>的一级标题</li>
+<li><code># ## 二级标题</code>或<code>### 二级标题</code>，表示名为<code>二级标题</code>的二级标题。其余各级标题以此类推</li>
+<li><code># 正文</code>表示内容为<code>正文</code>的正文段落。</li>
+<li><code># &gt;引用</code>或<code>#&gt;引用</code>表示内容为<code>引用</code>的引用段落。其余段落格式以此类推</li>
+</ul>
+</li>
+</ul>
+<p>操作跟Jupyter Notebook近似，都是可视化的。还可以导入导出Jupyter Notebook文件，导入命令是<code>&gt;Python: Import Jupyter Notebook</code>。
+有个别问题，如：</p>
+<ul>
+<li><code>!ls</code>一类shell命令和<code>%run test.py</code>一类魔法命令(magic commands)可以正常运行，但编辑器给出错误标记。</li>
+<li><code>object?</code>一类内省方法执行后看不到结果。</li>
+</ul>
+<h2 id="2019-1-6_1">2019-1-6</h2>
 <p>给孩子放动画片之前研究一下是否合法。</p>
 <ul>
 <li><a href="http://www.miit.gov.cn/n1146285/n1146352/n3054355/n3057656/n3057661/c3559457/content.html">《中华人民共和国计算机信息网络国际联网管理暂行规定(1997)》</a><ul>
@@ -136,6 +155,7 @@ TODO: 在此基础上还可以开发挑生字、挑词语功能，但教材已�
                     <div class="toc">
 <ul>
 <li><a href="#2019-1-6">2019-1-6</a></li>
+<li><a href="#2019-1-6_1">2019-1-6</a></li>
 <li><a href="#2018-12-15">2018-12-15</a></li>
 <li><a href="#2018-11-8">2018-11-8</a></li>
 <li><a href="#2018-11-72018-11-12">2018-11-7，2018-11-12</a></li>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>嬉戏实验室 - 黄复雄</title>
+    <title>嬉戏实验室 - Phaser3官网实例学习笔记</title>
     <meta name="description" content="">
     <meta name="author" content="黄复雄">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,78 +53,65 @@
     <div class="row">
 
         <div class="span9">
-        
-
-        
-
- 
-
     <div class='article'>
-        <a href="/hei-mo-ai-jia-cai-shi-yi.html"><h2>黑馍爱夹菜（试译）</h2></a>
-        <div class= "well small"> 2010-04-25 周日
+        <div class="content-title">
+            <h1>Phaser3官网实例学习笔记</h1>
+2019-01-08 周二
 
-	by 		<a class="url fn" href="/author/bukowski.html">Bukowski.</a>
-		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
  
 
 
- </div>
-        <div class="summary"><p>原书名<em>Ham on Rye</em>(1982)，查尔斯·布考斯基所著6部长篇小说之一。黄复雄草草试译，未曾深究，谨供便览。全书58节，此处译出22节。2010年初译出。《黑馍爱夹菜》因是自传体，信息多，挺实在。但较为琐碎，有情绪处更是如此。我当时没读过布考斯基的的传记，是把《黑馍爱夹菜》当作自传读的（据说其中故事绝大多数是真的），印象相当深刻，于是试译了这些。</p> <a href="/hei-mo-ai-jia-cai-shi-yi.html">read...</a></div>
-    </div>	
-				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/bu-kao-si-ji-nian-biao.html"><h2>布考斯基年表</h2></a>
-        <div class= "well small"> 2009-11-05 周四
-
-	by 		<a class="url fn" href="/author/bukowskinet.html">bukowski.net.</a>
-		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary">本表原是2009年11月5日前，据bukowski.net上的timeline（2009年10月31日更新）翻译的，附在我翻译的布考斯基诗集《弹醉琴如击鼓直到手指滴血》（2009，坏蛋出版计划）后印出。2017年8月23日订正个别错误，增补2010年以后的部分，发表在 xiiiGame·嬉戏实验室。 <a href="/bu-kao-si-ji-nian-biao.html">read...</a></div>
-    </div>	
-				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/zui-zhong-ren-ru-hua-bu-kao-si-ji-xin-shi-xuan-yi.html"><h2>最终人如花：布考斯基新诗选译</h2></a>
-        <div class= "well small"> 2009-03-18 周三
-
-	by 		<a class="url fn" href="/author/bukowski.html">Bukowski.</a>
-		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>这是2009年3月到9月，在工作日早间、午间于办公室翻译的。选择、翻译都颇为随意。原文出处待查。所标日期为翻译日期。</p> <a href="/zui-zhong-ren-ru-hua-bu-kao-si-ji-xin-shi-xuan-yi.html">read...</a></div>
-    </div>	
-				
-<div class="pagination">
+        </div>
+	
+        <div>
+<h2 id="_1">说明</h2>
+<ol>
+<li>这是我学习Phaser3官网实例的笔记，对快速了解Phaser3能做什么、API概貌也许有帮助。以前做过一篇<a href="/phaserguan-wang-shi-li-xue-xi-bi-ji.html">《Phaser2官网实例学习笔记》</a>。</li>
+<li>阅读本文前，您需要对Phaser的场景结构有大致了解。（如果你完全不了解Phaser，宜先学习<a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/index">官网入门教程</a>，以便对框架结构有整体了解。）笔记只摘录了关键语句，加了少量注释；语句不完整、不连续；为便于字面理解，有些类实例名称调整得更接近类名，如<code>Sprite</code>实例名称一般改作<code>sprite</code>。</li>
+<li>摘录的代码都是片段。我用的是TypeScript语言，但摘录的代码可能是JavaScript，或在此基础上添加了TypeScript类型标记。JavaScript代码在TypeScript中是有效的，但可能使编辑器、编译工具等报错——这跟设置有关。</li>
+<li>有些类别我没有看或粗粗看过：...</li>
+<li>官网是按字母排列类别的，现为初学者学习、理解方便重新排序。</li>
+<li><strong>本文是随时更新的，</strong>最终会累积成一个便览手册；可通过搜索或底端的目录快速查找。</li>
+</ol>
+<h2 id="input">input输入</h2>
+<h3 id="game-object">game object游戏对象</h3>
+<h4>src\input\game object\sprite example.js</h4>
+<p>精灵，热点在上，热点离开</p>
+<div class="highlight"><pre><span></span><span class="c1">// 开启互动</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerover'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerout'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
+</pre></div>
+<h4>src\input\game object\on down event.js</h4>
+<p>精灵，热点按下，热点抬起</p>
+<div class="highlight"><pre><span></span><span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerdown'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerup'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
+</pre></div></div>
+	
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                TOC
+                </li>
+                <nav class="toc">
+                    <div class="toc">
 <ul>
-    <li class="prev"><a href="/author/huang-fu-xiong3.html">&larr; Previous</a></li>
-
-    <li class=""><a href="/author/huang-fu-xiong.html">1</a></li>
-    <li class=""><a href="/author/huang-fu-xiong2.html">2</a></li>
-    <li class=""><a href="/author/huang-fu-xiong3.html">3</a></li>
-    <li class="active"><a href="/author/huang-fu-xiong4.html">4</a></li>
-
-    <li class="next disabled"><a href="#">&rarr; Next</a></li>
-
+<li><a href="#_1">说明</a></li>
+<li><a href="#input">input输入</a><ul>
+<li><a href="#game-object">game object游戏对象</a></li>
+</ul>
+</li>
 </ul>
 </div>
- 
-  
+                </nav>                
+            </ul>
+            </div>
+        
+        <hr>
+
+    </div>
         </div>
         
         <div class="span3">

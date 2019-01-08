@@ -60,162 +60,278 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="/phaser3chang-shi-da-wen-er.html"><h1>Phaser3常识答问（二）</h1></a>
-2018-12-04 周二
+            <a href="/phaser3-apiwen-dang-da-gang-inputplugin.html"><h1>Phaser3 API文档大纲-InputPlugin</h1></a>
+2019-01-08 周二
 
-	by 		<a class="url fn" href="/author/jdotr.html">Jdotr.</a>
-		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
  
 
 
  
         </div>
         
-        <div>
-<h3 id="_1">注译说明</h3>
-<p>注、译自<a href="https://github.com/phaser-discord/community/blob/master/FAQ.md">Phaser 3 FAQ/常识答问</a>，作者为Jdotr。</p>
-<h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
-<p>(that we have answers to)
-// 常见问题
-// (我们有答案的)</p>
-<p>Also note that <a href="https://github.com/samme">@samme</a> maintains <a href="https://github.com/samme/phaser3-faq/wiki">another FAQ</a> that you can check out!
-// 也请关注samme维护的另一个常识答问。</p>
-<h2 id="im-new-to-phaser-what-should-i-do">I'm new to Phaser, what should I do?</h2>
-<p>// 我是新学Phaser，该怎么做？</p>
-<p><em>Last Updated: 2018-05-17</em></p>
-<p>The key to learning game dev / Phaser is to <em>just build stuff</em>, it doesn't
-need to be good or even complete. The more you program the more you know
-and the easier it is to make what you imagine real.
-// 学游戏开发/Phaser的关键是_只管多多地做东西_……</p>
-<p>That said, if having a list of things that help you get started is useful
-we've compiled a bunch of introductory guides. They're ordered based on how
-much you're expected to already know and we're always happy to take
-suggestions about new stuff that should be added to the list.
-// 我们已经编制了一串入门指导的清单……按学习次序排列……</p>
-<ol>
-<li><a href="https://phaser.io/tutorials/getting-started-phaser3/index">Getting Started</a>—This introduces you to the basics of how to run your game and gives provides a super simple game you can create.</li>
-<li><a href="https://phaser.io/tutorials/making-your-first-phaser-3-game">Making your first game</a>—Once you're comfortable with running
-   a server and editing code work through this. It introduces some basic systems
-   involved in a Phaser game.</li>
-<li><a href="https://gamedevacademy.org/phaser-3-tutorial/">How to create a game</a>—This is a similar slice of information
-   as <em>Making your first game</em> but covers enough different information that it's
-   worth reading through as well.</li>
-<li><a href="https://github.com/jdotrjs/phaser-guides/blob/master/Basics/Part1.md">How to structure your code</a>—This isn't about how to program
-   exactly but talks a little bit about how to organize your project so that it's
-   easy to keep building on what you've got. Optional reading but I feel it's an
-   important bit of information.</li>
-<li><a href="https://phaser.io/community">Ask for help</a>—Get involved in the community! It's dangerous
-   to go alone, take a friend, and don't be afraid to ask for help.</li>
-<li><a href="https://github.com/jdotrjs/phaser-guides/blob/master/Basics/Part3.md">How scenes work</a>—Goes into more detail about how scenes can work and can fit into your game.</li>
-</ol>
-<p><em>Disclaimer:</em> the author of this list wrote the structure and scenes posts</p>
-<p>The <a href="https://labs.phaser.io">phaser examples page</a> is a rich source of code samples demonstrating
-various aspects of the Phaser framework.
-// Phaser官网实例。</p>
-<p>The <a href="https://photonstorm.github.io/phaser3-docs/">phaser API docs</a> is an ever-improving source of information and great for self-directed exploration.
-// PhaserAPI文档。</p>
-<p>If you'd like to help this list grow we'd like to add:</p>
-<ul>
-<li>some guides about javascript basics etc</li>
-<li>some simple sample projects with documentation</li>
-</ul>
-<h2 id="where-is-the-documentation-andor-examples">Where is the documentation and/or examples?</h2>
-<p>// 哪里有文档和实例？</p>
-<p><em>Last Updated: 2018-09-16</em></p>
-<p>The <a href="https://labs.phaser.io">phaser examples page</a> is a rich source of code samples demonstrating
-various aspects of the Phaser framework.</p>
-<p>The <a href="https://photonstorm.github.io/phaser3-docs/">phaser API docs</a> is an ever-improving source of information and great
-for self-directed exploration.</p>
-<h2 id="how-do-i-get-started-with-multiplayer-games">How do I get started with multiplayer games?</h2>
-<p>// 做多人游戏从哪儿下手？</p>
-<p><em>Work in progress, last updated: 2018-06-20</em></p>
-<p>Right now this is just a collection of links that potentially may be useful:</p>
-<ul>
-<li>(A great free course from Udacity / Google) https://eu.udacity.com/course/html5-game-development--cs255</li>
-<li>http://buildnewgames.com/real-time-multiplayer/</li>
-<li>http://www.gabrielgambetta.com/client-side-prediction-server-reconciliation.html</li>
-<li>(for phaser v2 but the theory is there) http://www.dynetisgames.com/2017/03/06/how-to-make-a-multiplayer-online-game-with-phaser-socket-io-and-node-js/</li>
-<li>(written in Haxe, but the theory is there) http://antriel.com/post/online-platformer-1/</li>
-<li>(non-code theory) https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/</li>
-<li>(probably not where you want to start but quality info) https://developer.valvesoftware.com/wiki/Latency_Compensating_Methods_in_Client/Server_In-game_Protocol_Design_and_Optimization</li>
-</ul>
-<h2 id="is-there-a-scalemanager-in-v3">Is there a ScaleManager in v3?</h2>
-<p>// Phaser3有ScaleManager（Phaser2的类，屏幕适配用）吗？</p>
-<p><em>Last Updated: 2018-08-13</em></p>
-<p>Not yet, but one is in the works and planned for Phaser 3.15! It won't be as complex as
-the one in Phaser CE, but should do a good job in helping you scale your game to fill
-the entire screen.</p>
-<p>In the mean time it's not too bad to roll your own solution. We even have some examples
-- <a href="http://phaser3.danny-t.co.uk/scaling/">Example page</a> from DannyT includes functional examples built using
-  some of the principles discussed in the following links
-- <a href="https://gist.github.com/AleBles/697d703e89eecae5a350c1453a32861e">this gist</a> from Str1ngS bundles some scaling functionality into a class and
-  demonstratse how to hook it into your game; the <code>orientation</code> and <code>content</code> references
-  are HTML elements in yoru page that you cane use to implement "wrong orientation" overlays
-  as described in <a href="https://www.creativebloq.com/web-design/master-screen-orientation-html5-101517371">this post</a>
-- <a href="http://www.html5gamedevs.com/topic/33206-scalemanagershow_all/">this thread</a> includes a (Haxe) code sample from community member Antriel
-- <a href="https://codepen.io/samme/pen/paOjMO">a codepen</a> sample linked from Samme includes another promising solution
-- <a href="http://www.emanueleferonato.com/2018/02/16/how-to-scale-your-html5-games-if-your-framework-does-not-feature-a-scale-manager-or-if-you-do-not-use-any-framework/">Scaling without framework support</a> Emanuele works through the principles
-  of scaling your game regardless of framework support</p>
-<h2 id="tell-me-the-story-of-phaser-v3-and-typescript">Tell me the story of Phaser v3 and Typescript</h2>
-<p>// 跟我说说Phaser3和Typescript。</p>
-<p><em>Last Updated: 2018-05-08</em></p>
-<p>Typescript defs are now available at <a href="https://github.com/photonstorm/phaser3-docs/tree/master/typescript">photonstorm/phaser3-docs</a>. That file
-is the one you want to use. Previously, <a href="https://github.com/photonstorm/phaser/issues/3224">phaser#3224</a> was the official
-Phaser tracking ticket.</p>
-<h2 id="is-there-a-guide-to-porting-my-v2ce-project-to-v3">Is there a guide to porting my v2/CE project to v3?</h2>
-<p>// Phaser2/CE迁移到3，有指导吗？</p>
-<p><em>Last Updated: 2018-03-14</em></p>
-<p>Not yet. There is a partial guide in <a href="https://madmimi.com/p/a022cb">Newsletter issue 116</a> in the
-section named <em>Moving from Phaser 2 to Phaser 3 (Part 1)</em>. Part 2 is in
-<a href="https://madmimi.com/p/ff68db">issue 118</a>.</p>
-<p>The API is similar enough that you will feel comfortable once you've figured
-out where things live but there is no mechanical solution to making a CE
-project run in v3. In that way it's definitely possible to make the jump for
-an existing project.</p>
-<p>That said, enough essential things are different (no <code>ScaleManager</code> yet,
-<code>Scene</code> works differently than <code>State</code>, etc.) that it takes a little thinking. 
-The work to describe how all the old CE concepts map into v3 is planned
-but currently incomplete.</p>
-<h2 id="should-i-use-phaser-ce-or-v3">Should I use Phaser CE or v3?</h2>
-<p>// 我该用PhaserCE还是Phaser3？</p>
-<p><em>Last Updated: 2018-02-10 / 2018-10-28</em></p>
-<p>tl;dr: One of our members made a video talking about deciding whether or not
-to use v3: <a href="https://www.youtube.com/watch?v=St_tPsG0pX0">go watch it</a> (thanks Wild)! For production stuff, Phaser CE
-is still a good choice, but if you're learning Phaser and/or feeling adventurous
-then v3 is a pretty good bet, and it's becoming better every day.</p>
-<p>That video was recorded Feb 10th. Since then we (the community at large) have
-leveled up several times about how well we understand and how much we've
-experimented with v3. Tutorials are beginning to emerge and several patch
-releases have appeared fixing bugs and adding previosly missing features.
-Broadly speaking getting into V3 is much easier than it was but still seeing
-quite a bit of development. If you're adventurous and willing to dig v3 is a
-good place to be. The API is cleaner than CE and it's definitely the future of
-Phaser so learning it to start with is probably a good move.</p>
-<p>If you need something exceptionally stable and battle worn that you can take
-into production <em>right now</em> then you probably still want to stick with CE for
-the time being. By the numbers most deployed Phaser games are CE which means
-more time has been spent understanding it's edge cases. You're not going to
-see as many bugs or API changes than working off V3 but you're also not going
-to see any improvements.</p>
-<h2 id="my-game-behaves-inconsistentstops-running-while-in-the-background">My game behaves inconsistent/stops running while in the background</h2>
-<p>// 我的游戏后台运行有问题/停止</p>
-<p><em>Last Updated: 2018-10-26</em></p>
-<p>Modern browsers place several restrictions on websites that run in the background. This usually means background tabs, but can also influence windows that are unfocused or partly hidden by another window. When in the background, requestAnimationFrame is not triggered, and it may be throttled when the website is unfocused. This means that Phaser's update loop won't run. Additionally, timers in background tabs may run less frequently than they normally would. Chrome only executes timers once per second, while Firefox has similar policies. The timers may be throttled even more in some cases. Playing audio or using websockets are usually an exception to this additional throttling.</p>
-<p>More details:
-- <a href="https://developers.google.com/web/updates/2017/03/background_tabs">Background tabs in chrome</a>
-- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API#Policies_in_place_to_aid_background_page_performance">MDN page about background page policies</a></p>
-<h2 id="how-do-i-post-code">How do I post code?</h2>
-<p>// 我怎么粘贴代码？</p>
-<p><em>Last Updated: 2018-11-03</em></p>
-<p>If you have a small bit of code (less than about 20-30 lines) to share the easiest approach
-is using the formatting support built into Discord. This means using <code>```javascript</code> on
-a line by itself then entering your code:</p>
-<p><img alt="code format sample" src="https://i.imgur.com/OzQ4KtS.png"/></p>
-<p>If you have a longer or multi-file segment of code creating a new <a href="https://gist.github.com/">gist</a>
-or <a href="https://codepen.io/">codepen</a> is better.</p></div>
+        <div><h2 id="_1">说明</h2>
+<p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，略作说明，或增加代码示例。可做便览之用。</p>
+<h1 id="phaser-3-api-documentation-class-inputplugin">Phaser 3 API Documentation - <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#toc0">Class: InputPlugin</a></h1>
+<h2 id="phaserinput-inputplugin"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#toc1">Phaser.Input. InputPlugin</a></h2>
+<p>输入插件（InputPlugin）属于一个场景，为场景处理所有输入相关的事件、操作。
+在场景中通过<code>this.input</code>接收输入插件。</p>
+<p>它直接发送事件。例如监听游戏画布的热点点击（pointerdown）事件：</p>
+<div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerdown&#39;</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">context</span><span class="p">);</span>
+</pre></div>
+
+
+<p>调用游戏对象的<code>setInteractive</code>方法以开启输入，以发送事件:</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">sprite</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">texture</span><span class="p">);</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerdown&#39;</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">context</span><span class="p">);</span>
+</pre></div>
+
+
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#InputPlugin">new InputPlugin(scene)</a></h4>
+<h3 id="extends"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#toc3">Extends</a></h3>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Events.EventEmitter.html">Phaser.Events.EventEmitter</a></p>
+<h3 id="members"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#toc4">Members</a></h3>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#activePointer"><readonly> activePointer :Phaser.Input.Pointer</a></h4>
+<p>当前活动的输入点。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#cameras">cameras :Phaser.Cameras.Scene2D.CameraManager</a></h4>
+<p>指向场景的镜头管理器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#displayList">displayList :Phaser.GameObjects.DisplayList</a></h4>
+<p>指向场景显示列表。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#dragDistanceThreshold">dragDistanceThreshold :number</a></h4>
+<p>判定热点正被拖拽的距离阈值，以像素计。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#dragTimeThreshold">dragTimeThreshold :number</a></h4>
+<p>判定热点正被拖拽的时间阈值，以毫秒计。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#enabled">enabled :boolean</a></h4>
+<p>开启输入，这时输入插件每帧循环更新。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#gamepad"><nullable> gamepad :Phaser.Input.Gamepad.GamepadPlugin</a></h4>
+<p>GamepadPlugin类的实例。也可以通过GameConfig属性设置。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#keyboard"><nullable> keyboard :Phaser.Input.Keyboard.KeyboardPlugin</a></h4>
+<p>KeyboardPlugin类的实例，用以生成Key对象，监听指定的键盘事件。也可以通过GameConfig属性设置。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#manager">manager :Phaser.Input.InputManager</a></h4>
+<p>指向游戏输入管理器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#mouse"><nullable> mouse :Phaser.Input.Mouse.MouseManager</a></h4>
+<p>指向鼠标管理器。只有在游戏Configuration文件中开启鼠标支持后，才能设置本属性。
+如果你只是想使用鼠标热点，那么请用<code>mousePointer</code>属性。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#mousePointer"><readonly> mousePointer :Phaser.Input.Pointer</a></h4>
+<p>鼠标拥有自己独特的Pointer对象，如果做桌面类游戏，能直接引用到。
+如果打算同时支持桌面与触摸设备，这时不要使用本属性，而要用<code>activePointer</code>，它将始终指向最近的交互热点。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#pointer1"><readonly> pointer1 :Phaser.Input.Pointer</a></h4>
+<p>基于触摸的热点（Pointer）对象。
+默认<code>undefined</code>，除非你用<code>addPointer</code>添加一个Pointer。
+<strong>下同，共十个触点。</strong></p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#pointer2"><readonly> pointer2 :Phaser.Input.Pointer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#pointer3"><readonly> pointer3 :Phaser.Input.Pointer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#pointer4"><readonly> pointer4 :Phaser.Input.Pointer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#pointer5"><readonly> pointer5 :Phaser.Input.Pointer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#pointer6"><readonly> pointer6 :Phaser.Input.Pointer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#pointer7"><readonly> pointer7 :Phaser.Input.Pointer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#pointer8"><readonly> pointer8 :Phaser.Input.Pointer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#pointer9"><readonly> pointer9 :Phaser.Input.Pointer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#pointer10"><readonly> pointer10 :Phaser.Input.Pointer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#pollRate">pollRate :integer</a></h4>
+<p>热点检查/轮询频率。单位是毫秒。如果用户已经移动、按下或释放过热点，那么热点一定得到检查。本属性仅仅控制未更新时的检查频率。
+如果你希望游戏对象相应于热点持续更新，即使热点本身未动，也要设置本属性。
+设为0将持续轮询。设为-1将只根据用户的移动轮询。缺省值是-1。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#scene">scene :Phaser.Scene</a></h4>
+<p>指向输入插件所负责的场景。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#settings">settings :Phaser.Scenes.Settings.Object</a></h4>
+<p>指向场景的系统设置。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#systems">systems :Phaser.Scenes.Systems</a></h4>
+<p>指向场景的系统类。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#topOnly">topOnly :boolean</a></h4>
+<p>设为<code>true</code>（默认值）时，输入插件将模仿DOM的行为，只从显示列表最顶层的游戏对象发出事件。
+如果设为<code>fals</code>，则将从热点下的所有游戏对象发出事件，而不限于顶层的一个。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#x"><readonly> x :number</a></h4>
+<p>活动热点（ActivePointer）的x坐标，根据摄像头列表中的第一个摄像头计算。
+如果你的游戏只有一个非变形摄像头，且未使用多个触点，那么这是唯一可安全使用的。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#y"><readonly> y :number</a></h4>
+<p>活动热点（ActivePointer）的y坐标，根据摄像头列表中的第一个摄像头计算。
+如果你的游戏只有一个非变形摄像头，且未使用多个触点，那么这是唯一可安全使用的。</p>
+<h3 id="methods"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#toc33">Methods</a></h3>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#addDownCallback">addDownCallback(callback [, isOnce])</a></h4>
+<p>添加回调函数，预备收到原生DOM的<code>mousedown</code>或<code>touchstart</code>事件时激发。
+通过设置<code>isOnce</code>参数，可以控制回调函数仅调用一次，还是每次事件都调用。</p>
+<p>回调函数传递给此方法后，在DOM事件处理器范围内，一发生DOM事件就会马上激发。
+因此从浏览器视角来说，他们把看做是<strong>“原生的”</strong>。
+这意味着它们可用于诸如打开新的浏览器窗口，或者任何明确要求用户输入从能激发的各种任务。
+不过，这样一来它们导致一些危险，<strong>因此不能用于一般的游戏输入，而是给特点情形备用的。</strong></p>
+<p>如果你只是想在一个热点落下时执行一个回调函数，那么请换用内置的输入事件系统。</p>
+<p>务必请明了，这些回调函数将在浏览器自认为必要时激发。
+这可能完全超出了Phaser游戏循环的事件流。
+因此，在这些回调函数中，你绝对要使Phaser相关的操作减到最少。
+比如，不要销毁游戏对象、更改场景或操作内部系统，否则你很可能生成[海森堡bug（heisenbugs）] (https://en.wikipedia.org/wiki/Heisenbug)，这种问题据信是难以重现、无法解决的。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#addListener">addListener(event, fn [, context])</a></h4>
+<p>就指定事件添加监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#addMoveCallback">addMoveCallback(callback [, isOnce])</a></h4>
+<p>添加回调函数，预备收到原生DOM的<code>mousemove</code>或<code>touchmove</code>事件时激发。
+通过设置<code>isOnce</code>参数，可以控制回调函数仅调用一次，还是每次事件都调用。</p>
+<p><strong>其余信息请参考<code>addDownCallback</code>方法。</strong></p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#addPointer">addPointer( [quantity])</a></h4>
+<p>添加新的热点（Pointer）对象到输入管理器中。默认生成两个热点对象: <code>mousePointer</code>和<code>pointer1</code>。
+可以生成更多，通过调用本方法，或在游戏配置中设置<code>input.activePointers</code>属性，最多可达10个热点。</p>
+<p>10个热点通过此方法添加好后，可以通过InputPlugin.pointerX属性获取。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#addUpCallback">addUpCallback(callback [, isOnce])</a></h4>
+<p>添加回调函数，预备收到原生DOM的<code>mouseup</code>或<code>touchend</code>事件时激发。
+通过设置<code>isOnce</code>参数，可以控制回调函数仅调用一次，还是每次事件都调用。</p>
+<p><strong>其余信息请参考<code>addDownCallback</code>方法。</strong></p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#clear">clear(gameObject)</a></h4>
+<p>清空一个游戏对象，使它不再相关联的交互对象。
+然后游戏对象排队等待下一次更新时从输入插件中移除。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#disable">disable(gameObject)</a></h4>
+<p>关闭一个游戏对象的的输入。
+关闭输入的游戏对象仍旧持有交互对象组件，还可以重新打开输入，方法是随时传递给<code>InputPlugin.enable</code>方法。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#emit">emit(event [, args])</a></h4>
+<p>调用给定事件的所有已注册的监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#enable">enable(gameObject [, shape] [, callback] [, dropZone])</a></h4>
+<p>开启一个游戏对象的互动功能。
+如果游戏对象已经有互动对象组件，那么组件将激活并返回。
+否则，生成新的互动对象组件，并分配到游戏对象的输入属性中。</p>
+<p>输入通过点击区域起作用，一般都用几何形状如方形、圆形，给游戏对象作点击区域。
+不过，如果要处理更高级的输入检测，也可以提供你自己的点击区域形状、回调函数。
+如果没有提供参数，将尝试基于游戏对象所用的纹理框架生成一个方形点击区域。
+如果不是纹理边框对象（如<code>Graphics</code>或<code>BitmapText</code>对象），将无法生成，这时你需要提供指定的形状供它使用。</p>
+<p>你也可以提供一个输入配置对象作为唯一参数。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#eventNames">eventNames()</a></h4>
+<p>返回一个数组，列出在事件发生器中注册过监听器的所有事件。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#hitTestPointer">hitTestPointer(pointer)</a></h4>
+<p>接收一个给定热点，对它执行一个点击测试，看看下面是哪些互动游戏对象。</p>
+<p>点击测试针对热点下所有摄像头都予以执行。如果下面是多重镜头，先从镜头列表的最顶层一个检测，如果没有发现，再往下依次重复。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#isActive">isActive()</a></h4>
+<p>检测本插件及其所属场景是否都是活动的。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#listenerCount">listenerCount(event)</a></h4>
+<p>返回给定事件的监听器数量。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#listeners">listeners(event)</a></h4>
+<p>返回就给定事件所注册的所有监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#makePixelPerfect">makePixelPerfect( [alphaTolerance])</a></h4>
+<p>生成一个函数，以传递给<code>setInteractive</code>, <code>enable</code>或<code>setHitArea</code>，
+它将处理基于<code>Image</code>和<code>Sprite</code>的游戏对象上的像素完美（pixel-perfect，完美地基于像素）的输入检测。
+如下将生成一个精灵，它的所有透明度大于等于1的所有像素都可点击。</p>
+<div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">key</span><span class="p">).</span><span class="nx">setInteractive</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">makePixelPerfect</span><span class="p">());</span>
+</pre></div>
+
+
+<p>如下将生成一个精灵，它的有所透明度大于150的像素都可以点击。</p>
+<div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">key</span><span class="p">).</span><span class="nx">setInteractive</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">makePixelPerfect</span><span class="p">(</span><span class="mi">150</span><span class="p">));</span>
+</pre></div>
+
+
+<p>一旦你做了一个像素完美的互动对象，将影响它的所有与输入有关的事件：down, up,
+dragstart, drag, 等等。</p>
+<p>因为热点与游戏对象互动时，将持续地对纹理进行轮询，从给定坐标中抽取一个像素，检测他的色值。
+这是高消耗的过程，所以应该只在确实需要的游戏对象上才运用。</p>
+<p>无法在非纹理基础的游戏对象上实现像素完美效果。所以这无法在<code>Graphic</code>, <code>BitmapText</code>,
+<code>RenderTexture</code>, <code>Text</code>, <code>Tilemap</code>, <code>Container</code>和<code>Particle</code>上起效。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#off">off(event, fn, context, once)</a></h4>
+<p>移除给定事件的监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#on">on(event, fn [, context])</a></h4>
+<p>为给定事件添加监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#once">once(event, fn [, context])</a></h4>
+<p>为给定事件添加一次性监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#removeAllListeners">removeAllListeners( [event])</a></h4>
+<p>移除所有监听器，或只针对就给定事件。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#removeListener">removeListener(event, fn, context, once)</a></h4>
+<p>移除给定事件的所有监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setDefaultCursor">setDefaultCursor(cursor)</a></h4>
+<p>通知输入系统设置客户定制光标。这个光标将作为默认光标，用于与游戏画布互动时。</p>
+<p>如果互动对象也设置了客户定制光标，那么它用过之后将重置为这里设置的光标。</p>
+<p>任何有效的CSS光标值可以，也包括指向图像文件的路径，等等。</p>
+<p><code>`JavaScript
+this.input.setDefaultCursor('url(assets/cursors/sword.cur), pointer');</code></p>
+<p>请看各浏览器对文件格式、大小的不同支持：</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor">CSS - cursor</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_User_Interface/Using_URL_values_for_the_cursor_property">Using_URL_values_for_the_cursor_property</a></p>
+<p>由你决定选取合适的光标格式，以便在你需要支持的各浏览器上都起效。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setDraggable">setDraggable(gameObjects [, value])</a></h4>
+<p>就给定有序对象数组设置可否拖拽。
+可以全设置为可以拖拽，或者传递<code>false</code>值以移除所有许可。
+游戏对象指定可拖拽后才会发出拖拽事件。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setGlobalTopOnly">setGlobalTopOnly(value)</a></h4>
+<p>如果设置为<code>true</code>，全局的输入管理器将模仿DOM行为，只从显示列表最顶层的游戏对象发出事件。
+如果设置为<code>false</code>，它将从热点下的所有游戏对象发出事件，而不只是最顶层的一个。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setHitArea">setHitArea(gameObjects [, shape] [, callback])</a></h4>
+<p>就给定的游戏对象数组设置点击区域。
+典型的点击区域是Phaser提供的几何形状，比如<code>Phaser.Geom.Rectangle</code>或<code>Phaser.Geom.Circle</code>。
+不过，也可以是对给定回调函数起效的任何对象。</p>
+<p>如果没有提供点击区域，将基于游戏对象的尺寸生成一个方形，如果可以算出的话。</p>
+<p>点击区域回调（HitAreaCallback）是一个函数，它接收<code>x</code>和<code>y</code>坐标值，根据坐标值是否位于形象的范围内返回一个布尔值。
+所有Phaser几何对象都提供这种函数，比如<code>Phaser.Geom.Rectangle.Contains</code>。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setHitAreaCircle">setHitAreaCircle(gameObjects, x, y, radius [, callback])</a></h4>
+<p>就给定游戏对象数组设置点击区域为<code>Phaser.Geom.Circle</code>形状（圆），
+使用给定的坐标、半径以控制其位置和大小。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setHitAreaEllipse">setHitAreaEllipse(gameObjects, x, y, width, height [, callback])</a></h4>
+<p>就给定游戏对象数组设置点击区域为<code>Phaser.Geom.Ellipse</code>形状（椭圆），
+使用给定的坐标、尺寸以控制其位置和大小。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setHitAreaFromTexture">setHitAreaFromTexture(gameObjects [, callback])</a></h4>
+<p>为游戏对象数组设置点击区域为<code>Phaser.Geom.Rectangle</code>形状（方形），
+使用游戏对象的纹理边框来界定点击区域的位置和大小。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setHitAreaRectangle">setHitAreaRectangle(gameObjects, x, y, width, height [, callback])</a></h4>
+<p>为游戏对象数组设置点击区域为<code>Phaser.Geom.Rectangle</code>形状（方形），
+使用给定的坐标、尺寸以控制其位置和大小。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setHitAreaTriangle">setHitAreaTriangle(gameObjects, x1, y1, x2, y2, x3, y3 [, callback])</a></h4>
+<p>为游戏对象数组设置点击区域为<code>Phaser.Geom.Triangle</code>形状（三角形），
+使用给定的坐标、尺寸以控制其位置和大小。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setPollAlways">setPollAlways()</a></h4>
+<p>设置始终轮询的热点（Pointer）。
+轮询一个热点时，运行一次点击测试以观察它下面是哪些游戏对象，
+或是哪些对象与它互动，不管热点实际上有没有移动。</p>
+<p>如果你希望游戏中的对象发出事件，而对象在持续移动，而热点可能没有动，这时你应该开启本项。
+每帧轮询需要额外算力消耗，游戏中有大量互动对象时尤其如此。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setPollOnMove">setPollOnMove()</a></h4>
+<p>设置移动或更新时只轮询的某些热点。
+轮询一个热点时，运行一次点击测试以观察它下面是哪些游戏对象，
+或是哪些对象与它互动。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setPollRate">setPollRate(value)</a></h4>
+<p>设置轮询速率。即再次轮询热点时已经过去的时间。
+请看<code>setPollAlways</code>和<code>setPollOnMove</code>方法。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#setTopOnly">setTopOnly(value)</a></h4>
+<p>如果设置为<code>true</code>，输入插件将模仿DOM行为，只从显示列表最顶层的游戏对象发出事件。
+如果设置为<code>false</code>，它将从热点下的所有游戏对象发出事件，而不只是最顶层的一个。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#sortGameObjects">sortGameObjects(gameObjects)</a></h4>
+<p>给一个游戏对象数组，排序后返回，使游戏对象按深度索引值排序，最低的在最下面。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#stopPropagation">stopPropagation()</a></h4>
+<p>使输入管理器在余下的游戏步骤里，停止发出任何事件。</p>
+<p>published from :<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html">Phaser 3 API Documentation - Class: InputPlugin</a></p></div>
         <hr />
     </div>
 
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/phaser3guan-wang-shi-li-xue-xi-bi-ji.html"><h2>Phaser3官网实例学习笔记</h2></a>
+        <div class= "well small"> 2019-01-08 周二
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>这是我学习Phaser3官网实例的笔记，对快速了解Phaser3能做什么、API概貌也许有帮助。</p> <a href="/phaser3guan-wang-shi-li-xue-xi-bi-ji.html">read...</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/phaser3chang-shi-da-wen-er.html"><h2>Phaser3常识答问（二）</h2></a>
+        <div class= "well small"> 2018-12-04 周二
+
+	by 		<a class="url fn" href="/author/jdotr.html">Jdotr.</a>
+		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>注、译自<a href="https://github.com/phaser-discord/community/blob/master/FAQ.md">Phaser 3 FAQ/常识答问</a>，作者为Jdotr。</p> <a href="/phaser3chang-shi-da-wen-er.html">read...</a></div>
+    </div>	
+				
 
  
         
@@ -343,42 +459,6 @@ or <a href="https://codepen.io/">codepen</a> is better.</p></div>
         <div class="summary"><p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，对印象深刻的地方做了说明，或增加代码示例。可做便览之用。</p> <a href="/phaser3-apiwen-dang-da-gang-displayaligninto.html">read...</a></div>
     </div>	
 				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/phaser3-apiwen-dang-da-gang-displaybounds.html"><h2>Phaser3 API文档大纲-Display.Bounds</h2></a>
-        <div class= "well small"> 2018-11-26 周一
-
-	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，对印象深刻的地方做了说明，或增加代码示例。可做便览之用。</p> <a href="/phaser3-apiwen-dang-da-gang-displaybounds.html">read...</a></div>
-    </div>	
-				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/phaser3-apiwen-dang-da-gang-sprite.html"><h2>Phaser3 API文档大纲-Sprite</h2></a>
-        <div class= "well small"> 2018-11-24 周六
-
-	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，对印象深刻的地方做了说明，或增加代码示例。可做便览之用。</p> <a href="/phaser3-apiwen-dang-da-gang-sprite.html">read...</a></div>
-    </div>	
-				
 <div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr; Previous</a></li>
@@ -455,7 +535,7 @@ or <a href="https://codepen.io/">codepen</a> is better.</p></div>
     </div>     </div> 
 <footer>
 <br />
-<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2018, Powered by <a href="http://getpelican.com/">Pelican</a></p>
+<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2019, Powered by <a href="http://getpelican.com/">Pelican</a></p>
 </footer>
 
 </div> <!-- /container -->
