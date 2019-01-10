@@ -90,10 +90,33 @@
 <span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerout'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
 </pre></div>
 <h4>src\input\game object\on down event.js</h4>
-<p>精灵，热点按下，热点抬起</p>
+<p>热点按下，热点抬起</p>
 <div class="highlight"><pre><span></span><span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
 <span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerdown'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
 <span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerup'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
+</pre></div>
+<h4>src\input\dragging\drag distance threshold.js; drag time threshold.js</h4>
+<p>拖拽距离阈值，拖拽时间阈值。</p>
+<div class="highlight"><pre><span></span><span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">setDraggable</span><span class="p">(</span><span class="nx">sprite</span><span class="p">);</span>
+<span class="c1">//  热点移动一定距离（阈值，16点）后才被看做拖拽</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">dragDistanceThreshold</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+<span class="c1">//  热点按钮500ms后才被看做拖拽</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">dragTimeThreshold</span> <span class="o">=</span> <span class="mi">500</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'dragstart'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">)</span> <span class="p">{});</span>
+<span class="c1">// 给场景中所有可能的拖拽对象设置事件回调</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'drag'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">,</span> <span class="nx">dragX</span><span class="p">,</span> <span class="nx">dragY</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 跟随拖拽点</span>
+    <span class="nx">gameObject</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">dragX</span><span class="p">;</span>
+    <span class="nx">gameObject</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">dragY</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'dragend'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">)</span> <span class="p">{});</span>
+</pre></div>
+<p>也可以单独给一个对象设置拖拽事件回调函数：</p>
+<div class="highlight"><pre><span></span><span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'drag'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="o">:</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Input</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">,</span> <span class="nx">dragX</span><span class="o">:</span><span class="nx">number</span><span class="p">,</span> <span class="nx">dragY</span><span class="o">:</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">dragX</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">dragY</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div></div>
         <hr />
     </div>
