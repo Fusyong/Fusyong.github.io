@@ -244,8 +244,9 @@ you’ll have to make sure first that there is an available input device in that
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
     <span class="c1"># 开动四个进程，每个播放500个振荡器。</span>
     <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Group</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
-    <span class="c1"># 下行源码如此，在我的机器上运行本代码没有任何结果。如改作`job.run()`，则有声音。</span>
-    <span class="c1"># 但作者说用户不应该调用`run`方法。</span>
+    <span class="c1"># 下行源码如此，在我的机器上运行本代码没有任何结果。如改作`job.run()`，则有声音。但作者说用户不应该调用`run`方法。</span>
+    <span class="c1"># 他不确定涉及多核的实例能不能在Windows上运行(可以在Linux上运行，MacOS上大概也能)。</span>
+    <span class="c1"># 可以肯定，使用SharedTable对象的将无法运行，此对象WIndows上不支持。作者有意要测试其他对象。</span>
     <span class="p">[</span><span class="n">job</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">jobs</span><span class="p">]</span>
 
     <span class="k">def</span> <span class="nf">quit</span><span class="p">():</span>

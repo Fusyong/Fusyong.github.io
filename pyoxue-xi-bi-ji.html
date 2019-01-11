@@ -92,7 +92,7 @@
 <li><a href="https://github.com/belangeo/pyo">GitHub代码库</a></li>
 <li>QQ群：878915279（Pyo学习中心组）</li>
 </ul>
-<h2 id="windows">在Windows中的安装问题</h2>
+<h2 id="windows">在Windows中的安装、运行问题</h2>
 <p>安装内容包括Python模块和E-Pyo编辑器两部分。另外，其GUI还依赖第三方模块WxPython。</p>
 <h3 id="_3">多声卡安装错误</h3>
 <p>如果有多个声卡，服务器启动时可能报错：<code>assertion failed: false, file src\hostapi\wdmks\pa_win_wdmks.c, line 1036</code>。编辑器首选项中有声卡的配置选项，此时无法设置。
@@ -104,6 +104,8 @@
 <li>也可以在第一位的Python中也安装一次Pyo。</li>
 <li>还可更改源码再自行编译。</li>
 </ul>
+<h3 id="windows_1">某些对象不支持多核Windows系统</h3>
+<p>作者确认Pyo整体可运行在Linux上，MacOS上大概也能。他肯定，SharedTable对象将无法运行在多核Windows上，并有意于测试其他对象。</p>
 <h2 id="_4">待续...</h2></div>
 	
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
@@ -117,9 +119,10 @@
 <li><a href="#pyo">Pyo简介</a></li>
 <li><a href="#_1">与近似平台/语言比较</a></li>
 <li><a href="#_2">学习资源</a></li>
-<li><a href="#windows">在Windows中的安装问题</a><ul>
+<li><a href="#windows">在Windows中的安装、运行问题</a><ul>
 <li><a href="#_3">多声卡安装错误</a></li>
 <li><a href="#python">安装到指定的Python版本中</a></li>
+<li><a href="#windows_1">某些对象不支持多核Windows系统</a></li>
 </ul>
 </li>
 <li><a href="#_4">待续...</a></li>
