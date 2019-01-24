@@ -77,19 +77,31 @@
 <p>对于初学者来说，合适的入门程序可以大大地提高成效。我的经验是：</p>
 <ol>
 <li>学习官网入门教程，知道做出Phaser游戏的最必要的技术，了解一个Phaser游戏的概观；</li>
-<li>便览官网实例，了解Phaser能做什么，大体是怎么做的；做好注记，以便日后快速查询；</li>
-<li>从零开始做一个Phaser游戏，遇到问题随时搜索官网实例、API文档；</li>
+<li>浏览官网实例，了解Phaser能做什么，大体是怎么做的；做好注记，以便日后快速查询；</li>
+<li>从零开始做一个Phaser游戏，遇到问题随时搜索官网实例、API文档、开发日志等；</li>
 </ol>
 <h2 id="_3">学习资源</h2>
 <ul>
 <li><a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/index">官网入门教程</a>。一个简明、完整的权威教程。</li>
-<li><a href="https://github.com/photonstorm/phaser3-examples">Phaser3实例库</a>。可以在<a href="http://labs.phaser.io">labs.phaser.io</a>连线使用，但在我这里网速有问题。下载、安装后使用更方便，还可使用PowerGrep或FileLocator等高效的全文搜索软件在代码全文中检索。英文不大好的可以看我做的学习笔记：<a href="/phaser3guan-wang-shi-li-xue-xi-bi-ji.html">Phaser3官网实例学习笔记</a>，<a href="/phaserguan-wang-shi-li-xue-xi-bi-ji.html">《Phaser2官网实例学习笔记》</a>。</li>
+<li><a href="https://github.com/photonstorm/phaser3-examples">Phaser3实例库</a>。可以在<a href="http://labs.phaser.io">labs.phaser.io</a>连线使用。英文不大好的可以看我做的学习笔记：<a href="/phaser3guan-wang-shi-li-xue-xi-bi-ji.html">Phaser3官网实例学习笔记</a>，<a href="/phaserguan-wang-shi-li-xue-xi-bi-ji.html">《Phaser2官网实例学习笔记》</a>。</li>
 <li><a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3在线文档</a>。快要完善了（2018-12-4还差不到800条）。可参考<a href="https://github.com/photonstorm/phaser3-docs">完整的文档库</a>。</li>
-<li><a href="https://github.com/digitsensitive/phaser3-typescript">Phaser3-TypeScript模板与工具库</a>。包含工具和7个比较完整的游戏实例。</li>
-<li><a href="https://github.com/littlee/wechat-small-game-phaser">wechat-small-game-phaser库</a>，这是一个使PhaserCE适配微信小游戏的库，但经实测，基本架构同样适用于Phaser3。</li>
+<li><a href="https://phaser.io/community/newsletter">官方电邮通讯/电子期刊<em>Phaser World</em></a>。其中的开发日志记录了Phaser3某些重要部分的的技术思路、使用方法，适于深度的专题学习。也包含很多官方推荐的他方教程，因无系统，精粗杂陈，不便使用。</li>
+<li><a href="https://github.com/digitsensitive/phaser3-typescript">Phaser3-TypeScript项目模板和实例库</a>。包含项目开发工具和7个比较完整的游戏实例。GitHub上也有使用JavaScript的Phaser3项目模板，因本人没有用过，不便推荐。</li>
+<li><a href="https://github.com/littlee/wechat-small-game-phaser">wechat-small-game-phaser库</a>，这是一个使PhaserCE适配微信小游戏的库，思路清晰。经实测，基本架构同样适用于Phaser3。</li>
 <li><a href="https://www.cnblogs.com/honghong87/p/9592680.html">《phaser3 微信小游戏若干问题》</a>，解决Phaser3在微信中载入资源时不支持BLOB的问题（文章只解决了图片载入问题，其他资源载入问题需要照例自行修改Phaser3源码）。</li>
-<li>我建的一个QQ群交流“Phaser3学习中心组”(938890881)。人气比较高的QQ群有<a href="https://www.phaser-china.com/">“Phaser小站”</a>(519413640)，“Pixi.js&amp;Phaser交流群”(384427721)</li>
+<li><a href="https://phaser.discourse.group/">Phaser官方新建的独立讨论组</a>。<a href="http://www.html5gamedevs.com/forum/14-phaser-2/">Phaser2论坛</a>。<a href="http://www.html5gamedevs.com/forum/33-phaser-3/">Phaser3旧论坛</a>。</li>
+<li>我建的一个QQ群交流“Phaser3学习中心组”(938890881)。人气比较高的QQ群有“Phaser小站”(519413640，<a href="https://www.phaser-china.com/">兼有同名网站</a>)，“Pixi.js&amp;Phaser交流群”(384427721)</li>
 </ul>
+<h2 id="_4">资源检索</h2>
+<p>搜索引擎自然不用说了。</p>
+<p>一些大规模的资源，比如实例库、文档、官方电子期刊等，可以先下载到本地。再用PowerGrep、FileLocator、PDF-XChange之类的全文检索工具检索。<strong>当然，你要比较熟悉Phaser的术语习惯，才能有效地检索。</strong></p>
+<p>有一个我经常用的<a href="http://phaserchains.boniatillo.com/">Phaser Chains项目</a>，可惜目前仅基于Phaser2.4.7。期待早日支持Phaser3。它可以对API文档和官网实例进行联合检索，支持通配符，<strong>支持对象属性的关系链条，</strong>所以要比翻看文档方便、直观得多。比如搜"state.*sprite"，就能查到很多相关条目（条目又关联着文档和官网实例）：</p>
+<div class="highlight"><pre><span></span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">State</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">frame</span><span class="p">)</span> <span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">;</span>
+<span class="nx">Phaser</span><span class="p">.</span><span class="nx">State</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">audioSprite</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AudioSprite</span><span class="p">;</span>
+<span class="nx">Phaser</span><span class="p">.</span><span class="nx">State</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">frame</span><span class="p">,</span> <span class="nx">group</span><span class="p">)</span> <span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">;</span>
+<span class="nx">Phaser</span><span class="p">.</span><span class="nx">State</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">audioSprite</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AudioSprite</span><span class="p">;</span>
+<span class="c1">//等等...</span>
+</pre></div>
 <h2 id="gamegameconfig">Game配置对象GameConfig</h2>
 <p>Phaser3的配置对象包含很多项目，详见<a href="https://photonstorm.github.io/phaser3-docs/global.html#GameConfig">配置对象GameConfig文档</a>，也可参考<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/game-config.md">小抄</a>。</p>
 <p><strong>Phaser3广泛使用配置对象，又比如在生成Sprites、Tweens实例时。</strong></p>
@@ -299,7 +311,7 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 </ul>
 <p>此属性用以保存交互对象。</p>
 <p><a href="https://phaser.io/phaser3/devlog/89">Input问题，可参考开发日志。</a></p>
-<h2 id="_4">生成碰撞、重叠管理对象</h2>
+<h2 id="_5">生成碰撞、重叠管理对象</h2>
 <div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">collider</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">platforms</span><span class="p">);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">collider</span><span class="p">(</span><span class="nx">stars</span><span class="p">,</span> <span class="nx">platforms</span><span class="p">);</span> <span class="c1">// 组与组碰撞</span>
 
@@ -361,7 +373,7 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">nouns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"ninja"</span><span class="p">,</span> <span class="s2">"chair"</span><span class="p">,</span> <span class="s2">"pancake"</span><span class="p">]</span>
 <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">pick</span><span class="p">(</span><span class="nx">nouns</span><span class="p">);</span>
 </pre></div>
-<h2 id="_5">对象对齐（定位）</h2>
+<h2 id="_6">对象对齐（定位）</h2>
 <p>常用四个类中的静态方法：</p>
 <ul>
 <li><a href="/phaser3-apiwen-dang-da-gang-displayaligninto.html">Display.Align中的In和To</a></li>
@@ -389,6 +401,7 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <li><a href="#_1">说明</a></li>
 <li><a href="#_2">入门三部曲</a></li>
 <li><a href="#_3">学习资源</a></li>
+<li><a href="#_4">资源检索</a></li>
 <li><a href="#gamegameconfig">Game配置对象GameConfig</a></li>
 <li><a href="#gameobjects">GameObjects游戏对象</a><ul>
 <li><a href="#sprite">Sprite精灵</a></li>
@@ -407,7 +420,7 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 </ul>
 </li>
 <li><a href="#input">Input游戏对象的输入控制</a></li>
-<li><a href="#_4">生成碰撞、重叠管理对象</a></li>
+<li><a href="#_5">生成碰撞、重叠管理对象</a></li>
 <li><a href="#input_1">Input生成输入管理对象</a></li>
 <li><a href="#gameresize">调整尺寸Game.resize</a></li>
 <li><a href="#game">销毁Game实例</a></li>
@@ -416,7 +429,7 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <li><a href="#rnd">RND随机数</a></li>
 </ul>
 </li>
-<li><a href="#_5">对象对齐（定位）</a></li>
+<li><a href="#_6">对象对齐（定位）</a></li>
 <li><a href="#actions">Actions动作（批处理）</a></li>
 </ul>
 </div>
