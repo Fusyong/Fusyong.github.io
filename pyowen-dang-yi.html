@@ -359,7 +359,7 @@ you’ll have to make sure first that there is an available input device in that
 <h4>检查非常态数/低常态数/非规格化浮点数（denormal/subnormal number）</h4>
 <p>据维基百科：</p>
 <blockquote>
-<p>在计算机科学的浮点数算法中，denormal数或denormalized数(现常作subnormal数)会填充0后面的潜流（underflow）<sup id="fnref:underflow"><a class="footnote-ref" href="#fn:underflow" rel="footnote">1</a></sup>空位。任何非零的数，数值小于最小常态（normal）数时，即为subnormal数。</p>
+<p>在计算机科学的浮点数算法中，denormal数或denormalized数(现常作subnormal数)会填充0后面的潜流（underflow）<sup id="fnref:underflow"><a class="footnote-ref" href="#fn:underflow">1</a></sup>空位。任何非零的数，数值小于最小常态（normal）数时，即为subnormal数。</p>
 </blockquote>
 <p>问题在于，某些处理器计算非常态数值时很慢，这会很快地增加CPU消耗。解决办法是用一个<code>Denorm</code>（非常态）对象掩护（wrap）将受制于非常态数的对象（任何内部带有递归延迟行的对象，比如过滤/filter, 延迟/delay, 混响/reverb, 泛音/harmonizer，等等）。 <code>Denorm</code>添加一点点噪音到自己的输入中， 仅是略大于最小常态数的量。当然，你可以把相同的噪音用于多重的非常态化：</p>
 <div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">Noise</span><span class="p">(</span><span class="mf">1e-24</span><span class="p">)</span> <span class="c1"># 用于非常态对象的低水平噪音</span>
@@ -481,7 +481,7 @@ you’ll have to make sure first that there is an available input device in that
 <hr/>
 <ol>
 <li id="fn:underflow">
-<p>译注：因精度限制/指数不够用而在小数点后加0表示，如0.000123e-126。这样一来，后面的有实际意义的数值即成为潜流（underflow）被丢弃，从而影响结果；如果重复此类计算则可能导致严重错误。 <a class="footnote-backref" href="#fnref:underflow" rev="footnote" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>译注：因精度限制/指数不够用而在小数点后加0表示，如0.000123e-126。这样一来，后面的有实际意义的数值即成为潜流（underflow）被丢弃，从而影响结果；如果重复此类计算则可能导致严重错误。 <a class="footnote-backref" href="#fnref:underflow" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 </ol>
 </div></div>
