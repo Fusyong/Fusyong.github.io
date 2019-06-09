@@ -77,9 +77,37 @@
 <li>阅读本文前，您需要对Phaser的场景结构有大致了解。（如果你完全不了解Phaser，宜先学习<a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/index">官网入门教程</a>，以便对框架结构有整体了解。）笔记只摘录了关键语句，加了少量注释；语句不完整、不连续；为便于字面理解，有些类实例名称调整得更接近类名，如<code>Sprite</code>实例名称一般改作<code>sprite</code>。</li>
 <li>摘录的代码都是片段。我用的是TypeScript语言，但摘录的代码可能是JavaScript，或在此基础上添加了TypeScript类型标记。JavaScript代码在TypeScript中是有效的，但可能使编辑器、编译工具等报错——这跟设置有关。</li>
 <li>有些类别我没有看或粗粗看过：...</li>
-<li>官网是按字母排列类别的，现为初学者学习、理解方便重新排序。</li>
+<li>小标题中给出了实例代码的路径，如“src\actions\grid align.js”，<a href="http://labs.phaser.io">http://labs.phaser.io</a>的首页即相当于“src\”；也可以用<a href="http://labs.phaser.io/edit.html?src=src\actions\grid%20align.js">http://labs.phaser.io/edit.html?src=src\actions\grid align.js</a>直接访问代码对应的在线编辑器界面（有时路径中的空格可能要用<code>%20</code>代替）。</li>
+<li>官网是按字母排列类别的，有时为初学者学习、理解方便会调整顺序。</li>
 <li><strong>本文是随时更新的，</strong>最终会累积成一个便览手册；可通过搜索或底端的目录快速查找。</li>
 </ol>
+<h2 id="actions">Actions（行动）</h2>
+<p><code>Phaser.Actions</code>包含一组静态方法，可以对一组游戏对象进行<strong>批量处理</strong>，应用相同的动作。常常结合组的方法<code>Group.getChildren()</code>（取得group的所有子项形成一个数组）一起使用。
+条目要包含要处理的属性、方法，否则无效。</p>
+<h3 id="grid-aligngridalign">Grid Align/用GridAlign对齐网格</h3>
+<p>src\actions\grid align.js</p>
+<div class="highlight"><pre><span></span><span class="c1">// 生成group，包含4x20个子项</span>
+<span class="kd">var</span> <span class="nx">group</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
+    <span class="nx">key</span><span class="o">:</span> <span class="s1">'diamonds'</span><span class="p">,</span> <span class="c1">// 精灵单的key</span>
+    <span class="nx">frame</span><span class="o">:</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="c1">// 依次使用的精灵单的帧号</span>
+    <span class="nx">frameQuantity</span><span class="o">:</span> <span class="mi">20</span> <span class="c1">// 每帧重复使用次数</span>
+<span class="p">});</span>
+<span class="c1">// group的所有子项逐一对齐网格（多余网格数量的子项不处理）</span>
+<span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">GridAlign</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="p">{</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// 网格列数</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// 网格行数</span>
+    <span class="nx">cellWidth</span><span class="o">:</span> <span class="mi">32</span><span class="p">,</span> <span class="c1">// 单网格宽度</span>
+    <span class="nx">cellHeight</span><span class="o">:</span> <span class="mi">32</span><span class="p">,</span> <span class="c1">// 单网个高度</span>
+    <span class="nx">x</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="c1">// 左上第一个网格中心点x值</span>
+    <span class="nx">y</span><span class="o">:</span> <span class="mi">100</span> <span class="c1">// 左上第一个网格中心点y值</span>
+<span class="p">});</span>
+</pre></div>
+<h3 id="inc-x-layersincxincy">Inc X Layers/使用IncX和IncY改变坐标，移动整个组</h3>
+<p>src\actions\inc x layers.js</p>
+<div class="highlight"><pre><span></span><span class="c1">// groupA所有子项的坐标值递增（此处默认步进量step为0），即整体移动</span>
+<span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncX</span><span class="p">(</span><span class="nx">groupA</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncY</span><span class="p">(</span><span class="nx">groupA</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
 <h2 id="input">input输入</h2>
 <h3 id="game-object">game object游戏对象</h3>
 <h4>src\input\game object\sprite example.js</h4>
