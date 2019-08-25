@@ -133,7 +133,7 @@
 <p><strong>Phaser3游戏对象的一个重要变化，是把Sprite、Text、Group等游戏对象的容器功能分离出来，归到Container中。这样一来，Sprite、Text等不能添加子项，Group有子项，但实际是逻辑分组，非独占，也不能整体地控制显示状态。</strong>Phaser2的渲染核心是PIXI，PIXI有Container，但在Phaser2中一般不直接使用。</p>
 <h3 id="sprite">Sprite精灵</h3>
 <p>精灵是Phaser游戏中最主要的游戏对象，在游戏对象中有代表性。要便览精灵的属性和方法，请参考<a href="/phaser3-apiwen-dang-da-gang-sprite.html">《Phaser3 API文档大纲-Sprite》</a>。</p>
-<div class="highlight"><pre><span></span>let newSprite = this.add.sprite(20, 30, "spriteTexture", 2);
+<div class="highlight"><pre><span></span><span class="n">let</span> <span class="n">newSprite</span> <span class="o">=</span> <span class="n">this</span><span class="p">.</span><span class="k">add</span><span class="p">.</span><span class="n">sprite</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="ss">"spriteTexture"</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 </pre></div>
 <p>参考小抄<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/sprite.md">Phaser.GameObject.Sprite</a></p>
 <h4>Size内部尺寸</h4>
@@ -159,11 +159,11 @@
 <h4>PathFollower循路精灵</h4>
 <p>在一个路径上运动的精灵，是Sprite的子类。</p>
 <h4>直接生成有物理属性的精灵</h4>
-<div class="highlight"><pre><span></span>player = this.physics.add.sprite(100, 450, 'dude');
-player.setBounce(0.2); // 设置反弹
-player.setCollideWorldBounds(true);  // 设置与世界边缘碰撞
-player.body.setGravityY(300) // 物理精灵的body包含了物理属性
-player.setTint(0xff0000); // 着色
+<div class="highlight"><pre><span></span><span class="n">player</span> <span class="o">=</span> <span class="n">this</span><span class="p">.</span><span class="n">physics</span><span class="p">.</span><span class="k">add</span><span class="p">.</span><span class="n">sprite</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="s1">'dude'</span><span class="p">);</span>
+<span class="n">player</span><span class="p">.</span><span class="n">setBounce</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span><span class="p">);</span> <span class="o">//</span> <span class="err">设置反弹</span>
+<span class="n">player</span><span class="p">.</span><span class="n">setCollideWorldBounds</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>  <span class="o">//</span> <span class="err">设置与世界边缘碰撞</span>
+<span class="n">player</span><span class="p">.</span><span class="n">body</span><span class="p">.</span><span class="n">setGravityY</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span> <span class="o">//</span> <span class="err">物理精灵的</span><span class="n">body包含了物理属性</span>
+<span class="n">player</span><span class="p">.</span><span class="n">setTint</span><span class="p">(</span><span class="mi">0</span><span class="n">xff0000</span><span class="p">);</span> <span class="o">//</span> <span class="err">着色</span>
 </pre></div>
 <h3 id="image">Image图像</h3>
 <p>图像与精灵的不同主要在于，Image没有动画（Animation）组件。——注意：Tween（补间运动）不属于Animation。
@@ -233,24 +233,24 @@ player.setTint(0xff0000); // 着色
 <p>Group是一个抽象分组，便于批量地生成、排布、控制、循环处理近似游戏对象。与Container不同，它自身没有没有显隐、缩放、定位、旋转属性（但可以快速控制子项的这些属性）。他对子项不是独占的，子项可以存在于多个组中。因此<strong>Container更适于把多个显示对象集合成一个复合型显示对象，以便整体地控制显示状态；Group则适合于对近似对象进行批量操作。</strong></p>
 <p><strong>组的一个重要用途是对象池。（？？）</strong></p>
 <h4>生成静态物理组</h4>
-<div class="highlight"><pre><span></span>var platforms;
-platforms = this.physics.add.staticGroup(); // 物理静态组
-platforms.create(400, 568, 'ground').setScale(2).refreshBody();  // 物理静态组变换尺寸后需要刷新物理Body，即通知物理系统
-platforms.create(600, 400, 'ground');
-platforms.create(50, 250, 'ground');
-platforms.create(750, 220, 'ground');
+<div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">platforms</span><span class="p">;</span>
+<span class="n">platforms</span> <span class="o">=</span> <span class="n">this</span><span class="p">.</span><span class="n">physics</span><span class="p">.</span><span class="k">add</span><span class="p">.</span><span class="n">staticGroup</span><span class="p">();</span> <span class="o">//</span> <span class="err">物理静态组</span>
+<span class="n">platforms</span><span class="p">.</span><span class="k">create</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">568</span><span class="p">,</span> <span class="s1">'ground'</span><span class="p">).</span><span class="n">setScale</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="n">refreshBody</span><span class="p">();</span>  <span class="o">//</span> <span class="err">物理静态组变换尺寸后需要刷新物理</span><span class="n">Body</span><span class="err">，即通知物理系统</span>
+<span class="n">platforms</span><span class="p">.</span><span class="k">create</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="s1">'ground'</span><span class="p">);</span>
+<span class="n">platforms</span><span class="p">.</span><span class="k">create</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="s1">'ground'</span><span class="p">);</span>
+<span class="n">platforms</span><span class="p">.</span><span class="k">create</span><span class="p">(</span><span class="mi">750</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="s1">'ground'</span><span class="p">);</span>
 </pre></div>
 <h4>生成动态物理组</h4>
-<div class="highlight"><pre><span></span>stars = this.physics.add.group({
-    key: 'star',
-    repeat: 11,
-    setXY: { x: 12, y: 0, stepX: 70 } // 生成一个行列
-});
+<div class="highlight"><pre><span></span><span class="n">stars</span> <span class="o">=</span> <span class="n">this</span><span class="p">.</span><span class="n">physics</span><span class="p">.</span><span class="k">add</span><span class="p">.</span><span class="k">group</span><span class="p">(</span><span class="err">{</span>
+    <span class="k">key</span><span class="p">:</span> <span class="s1">'star'</span><span class="p">,</span>
+    <span class="n">repeat</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+    <span class="n">setXY</span><span class="p">:</span> <span class="err">{</span> <span class="n">x</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stepX</span><span class="p">:</span> <span class="mi">70</span> <span class="err">}</span> <span class="o">//</span> <span class="err">生成一个行列</span>
+<span class="err">}</span><span class="p">);</span>
 
-stars.children.iterate(function (child) {  // 组内遍历、随机赋值
-    child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+<span class="n">stars</span><span class="p">.</span><span class="n">children</span><span class="p">.</span><span class="k">iterate</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="n">child</span><span class="p">)</span> <span class="err">{</span>  <span class="o">//</span> <span class="err">组内遍历、随机赋值</span>
+    <span class="n">child</span><span class="p">.</span><span class="n">setBounceY</span><span class="p">(</span><span class="n">Phaser</span><span class="p">.</span><span class="n">Math</span><span class="p">.</span><span class="n">FloatBetween</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">));</span>
 
-});
+<span class="err">}</span><span class="p">);</span>
 </pre></div>
 <h3 id="mesh">Mesh网格</h3>
 <p><strong>Mesh/网格是Phaser3新增功能，只支持webGL渲染模式。Phaser2不支持Mesh，因此也不支持Drangonbone等动画格式中的网格蒙皮功能。</strong></p>
@@ -265,14 +265,14 @@ stars.children.iterate(function (child) {  // 组内遍历、随机赋值
 <span class="p">);</span>
 </pre></div>
 <p>Parameters</p>
-<div class="highlight"><pre><span></span><span class="n">x</span>                    <span class="o">:</span> <span class="n">the</span> <span class="n">x</span> <span class="n">position</span> <span class="n">of</span> <span class="n">the</span> <span class="n">mesh</span>
-<span class="n">y</span>                    <span class="o">:</span> <span class="n">the</span> <span class="n">y</span> <span class="n">position</span> <span class="n">of</span> <span class="n">the</span> <span class="n">mesh</span>
-<span class="n">vertices</span>             <span class="o">:</span> <span class="n">array</span> <span class="n">of</span> <span class="n">x</span> <span class="n">and</span> <span class="n">y</span> <span class="n">positions</span> <span class="n">relative</span> <span class="n">to</span> <span class="n">center</span> <span class="n">of</span> <span class="n">mesh</span> <span class="n">object</span>
-<span class="n">uv</span>                   <span class="o">:</span> <span class="n">mapping</span> <span class="n">of</span> <span class="n">the</span> <span class="n">uv</span> <span class="n">coordinates</span>
-<span class="n">colors</span>               <span class="o">:</span> <span class="n">array</span> <span class="n">of</span> <span class="n">colors</span> <span class="k">for</span> <span class="k">each</span> <span class="n">uv</span> <span class="n">texture</span> <span class="n">coordinate</span>
-<span class="n">alphas</span>               <span class="o">:</span> <span class="n">array</span> <span class="n">of</span> <span class="n">alphas</span> <span class="k">for</span> <span class="k">each</span> <span class="n">uv</span> <span class="n">texture</span> <span class="n">coordinate</span>
-<span class="n">texture</span>              <span class="o">:</span> <span class="n">sprite</span> <span class="n">name</span>
-<span class="n">frame</span>                <span class="o">:</span> <span class="n">the</span> <span class="n">sprite</span> <span class="n">frame</span>
+<div class="highlight"><pre><span></span><span class="nv">x</span>                    : <span class="nv">the</span> <span class="nv">x</span> <span class="nv">position</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">mesh</span>
+<span class="nv">y</span>                    : <span class="nv">the</span> <span class="nv">y</span> <span class="nv">position</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">mesh</span>
+<span class="nv">vertices</span>             : <span class="nv">array</span> <span class="nv">of</span> <span class="nv">x</span> <span class="nv">and</span> <span class="nv">y</span> <span class="nv">positions</span> <span class="nv">relative</span> <span class="nv">to</span> <span class="nv">center</span> <span class="nv">of</span> <span class="nv">mesh</span> <span class="nv">object</span>
+<span class="nv">uv</span>                   : <span class="nv">mapping</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">uv</span> <span class="nv">coordinates</span>
+<span class="nv">colors</span>               : <span class="nv">array</span> <span class="nv">of</span> <span class="nv">colors</span> <span class="k">for</span> <span class="nv">each</span> <span class="nv">uv</span> <span class="nv">texture</span> <span class="nv">coordinate</span>
+<span class="nv">alphas</span>               : <span class="nv">array</span> <span class="nv">of</span> <span class="nv">alphas</span> <span class="k">for</span> <span class="nv">each</span> <span class="nv">uv</span> <span class="nv">texture</span> <span class="nv">coordinate</span>
+<span class="nv">texture</span>              : <span class="nv">sprite</span> <span class="nv">name</span>
+<span class="nv">frame</span>                : <span class="nv">the</span> <span class="nv">sprite</span> <span class="nv">frame</span>
 </pre></div>
 <p>通过<code>newMesh.vertices[0]</code>、<code>newMesh.uv[0]</code>等引用、操作。</p>
 <p>参考小抄 <a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/mesh.md">Phaser.GameObject.Mesh</a></p>

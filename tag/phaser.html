@@ -72,6 +72,22 @@
         
         <div>
 <p>播报Phaser共和国的街谈巷议，飞短流长。随时更新。</p>
+<h2 id="2019-08-24phaser-world-issue-148">2019-08-24，<a href="https://madmimi.com/p/4f5f0f?pact=1055868-153324938-8266689627-c307ee6b114ec018598392b24ee76883596785e3"><em>Phaser World Issue 148</em></a>摘要</h2>
+<h3 id="phaser-3190"><strong><a href="http://phaser.io/news/2019/08/phaser-3190-released">Phaser 3.19.0发布</a></strong></h3>
+<p>包括完整的Spine插件，全新的Tween动画系统，Shader Buffers（着色器的缓冲器）。</p>
+<p><code>Shader.setRenderToTexture</code>，可以把着色器重定向到自己的帧缓冲器（framebuffer）或者WebGL Texture，而不是显示列表。这样，你就可以把这个着色器当做另一个着色器的输入；还可以把着色器保存到Texture Manager（纹理管理器），这样就可以用作纹理，生成基于纹理的游戏对象比如Sprite。与新方法<code>setSampler2DBuffer</code>联合使用，就可以方便地把多个着色器链接起来，用作其他着色器的缓冲。</p>
+<p>还有渲染器文理快照功能，用于把渲染器纹理保存为图像。<code>RenderTexture.snapshot</code>和<code>snapshotArea</code>两个新方法，可以抓取渲染器纹理（Render Texture）上的任何东西，并转换成图像；然后可以保存图像到纹理管理器，或者保存到文件系统，或者转换为网络服务。</p>
+<h3 id="phaser-4">Phaser 4公告</h3>
+<p>因为得到Facebook的持续支持，以及与Facebook的Gaming和Instant Games团队合作，Phaser将开始新的迭代。</p>
+<p>首先是作者长期以来要实现的：用TypeScript重写Phaser。几个要点：</p>
+<ol>
+<li>不是API重写，尽管可能会有变动。</li>
+<li>仍将发布ES5绑定，所以游戏开发者不一定要使用TypeScript。</li>
+<li>版本号将从Phaser 4.0开始。</li>
+<li>尽管有Facebook的持续支持，作者仍将众筹。</li>
+</ol>
+<p>Phaser 4的开发将从2019年8月底开始，暂时没有预定发布日期。
+同时，Phaser 3还会开发，并发布新版，直到4版发布后停止。</p>
 <h2 id="2019-06-15phaser-world-issue-147">2019-06-15，<a href="https://madmimi.com/p/9835ae?pact=1044913-152128926-8266689627-3ca0f80806fe9e698765bc4c68a84e972896092b"><em>Phaser World Issue 147</em></a>摘要</h2>
 <p>Phaser 3.18即将发布。最重要的更改是改写了Input API。将带来的变化有：</p>
 <h3 id="_1">支持鼠标滚轮</h3>

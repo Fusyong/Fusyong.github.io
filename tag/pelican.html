@@ -151,17 +151,17 @@
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 <h2 id="html">HTML标签</h2>
-<div class="highlight"><pre><span></span>:abbr:`HTML (HyperText Markup Language)`
+<div class="highlight"><pre><span></span><span class="p">:</span><span class="n">abbr</span><span class="p">:</span><span class="o">`</span><span class="n">HTML</span> <span class="p">(</span><span class="n">HyperText</span> <span class="n">Markup</span> <span class="k">Language</span><span class="p">)</span><span class="o">`</span>
 </pre></div>
 <h2 id="pages">pages（固定页面）</h2>
 <p>内容文件夹<code>content</code>下的文件夹<code>pages</code>，其中的内容会生成静态页，比如About、Contact页。通过<code>DISPLAY_PAGES_ON_MENU</code>选项控制<code>pages</code>中的内容是否全部在顶级导航菜单中显示，默认为<code>True</code>。个别文章可以通过元数据<code>status: hidden</code>隐藏。</p>
 <h2 id="_4">内部内容链接</h2>
 <p>链接到内部的内容文件，包括即将编译的markdown文件；但图片等静态文件当用<code>static</code>标签。<strong>根文件夹前要用<code>/</code>，如<code>/category</code>。</strong></p>
-<div class="highlight"><pre><span></span>[a link relative to the current file]({filename}/category/article1.md)
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="n">a</span> <span class="n">link</span> <span class="k">relative</span> <span class="k">to</span> <span class="n">the</span> <span class="k">current</span> <span class="n">file</span><span class="p">](</span><span class="err">{</span><span class="n">filename</span><span class="err">}</span><span class="o">/</span><span class="n">category</span><span class="o">/</span><span class="n">article1</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
 </pre></div>
 <h2 id="_5">静态文件链接</h2>
 <p>在<code>pelicanconf.py</code>中设置静态文件路径:</p>
-<div class="highlight"><pre><span></span>STATIC_PATHS = ['images', 'pdfs']
+<div class="highlight"><pre><span></span><span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'images'</span><span class="p">,</span> <span class="s1">'pdfs'</span><span class="p">]</span>
 </pre></div>
 <p>文章使用方法<code>static</code>标签：</p>
 <div class="highlight"><pre><span></span><span class="o">!</span><span class="p">[</span><span class="n">Alt</span> <span class="n">Text</span><span class="p">]({</span><span class="k">static</span><span class="p">}</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">han</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
@@ -171,10 +171,10 @@
 另外，用<code>attach</code>代替<code>static</code>可以保持文章与附件的相对关系。但建议只当所有链接都指向同一个文件，且链接所在的文章都在同一目录时才使用<code>attach</code>标签。</p>
 <h2 id="_6">元数据链接</h2>
 <p>链接到元数据：</p>
-<div class="highlight"><pre><span></span>`{author}name`
-`{category}foobar`
-`{index}`
-`{tag}tagname`
+<div class="highlight"><pre><span></span><span class="o">`</span><span class="err">{</span><span class="n">author</span><span class="err">}</span><span class="n">name</span><span class="o">`</span>
+<span class="o">`</span><span class="err">{</span><span class="n">category</span><span class="err">}</span><span class="n">foobar</span><span class="o">`</span>
+<span class="o">`</span><span class="err">{</span><span class="k">index</span><span class="err">}</span><span class="o">`</span>
+<span class="o">`</span><span class="err">{</span><span class="n">tag</span><span class="err">}</span><span class="n">tagname</span><span class="o">`</span>
 </pre></div>
 <h2 id="_7">代码语法高亮</h2>
 <p>Markdown文件使用CodeHilite extension，代码块缩进、其上加语言标识（用常规的一对三反引号也可以）：</p>

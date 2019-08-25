@@ -138,13 +138,13 @@
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#atlas">atlas(key [, textureURL] [, atlasURL] [, textureXhrSettings] [, atlasXhrSettings])</a></h4>
 <p>加载JSON Hash或者JSON Array格式的图集，比如用Texture Packer, Shoebox, Adobe Flash / Animate生成的。还可以加载Normal maps。
 如果Texture Packer的multi-atlas，则请用Phaser Multi Atlas loader加载。</p>
-<div class="highlight"><pre><span></span>this.load.atlas(&#39;mainmenu1&#39;, &#39;images/MainMenu.png&#39;, &#39;images/MainMenu.json&#39;);
-this.load.atlas({
-    key: &#39;mainmenu2&#39;,
-    textureURL: &#39;images/MainMenu.png&#39;,
-    atlasURL: &#39;images/MainMenu.json&#39;
-});
-this.add.image(x, y, &#39;mainmenu1&#39;, &#39;background&#39;);
+<div class="highlight"><pre><span></span><span class="n">this</span><span class="p">.</span><span class="k">load</span><span class="p">.</span><span class="n">atlas</span><span class="p">(</span><span class="s1">&#39;mainmenu1&#39;</span><span class="p">,</span> <span class="s1">&#39;images/MainMenu.png&#39;</span><span class="p">,</span> <span class="s1">&#39;images/MainMenu.json&#39;</span><span class="p">);</span>
+<span class="n">this</span><span class="p">.</span><span class="k">load</span><span class="p">.</span><span class="n">atlas</span><span class="p">(</span><span class="err">{</span>
+    <span class="k">key</span><span class="p">:</span> <span class="s1">&#39;mainmenu2&#39;</span><span class="p">,</span>
+    <span class="n">textureURL</span><span class="p">:</span> <span class="s1">&#39;images/MainMenu.png&#39;</span><span class="p">,</span>
+    <span class="n">atlasURL</span><span class="p">:</span> <span class="s1">&#39;images/MainMenu.json&#39;</span>
+<span class="err">}</span><span class="p">);</span>
+<span class="n">this</span><span class="p">.</span><span class="k">add</span><span class="p">.</span><span class="n">image</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;mainmenu1&#39;</span><span class="p">,</span> <span class="s1">&#39;background&#39;</span><span class="p">);</span>
 </pre></div>
 
 
