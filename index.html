@@ -60,54 +60,78 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="/pythonkou-tou-shan.html"><h1>Python口头禅</h1></a>
-2019-05-15 周三
+            <a href="/you-dao-ci-dian-bi-20zhi-tong-shu-shi-ce.html"><h1>有道词典笔2.0之童书实测</h1></a>
+2019-09-08 周日
 
-	by 		<a class="url fn" href="/author/tim-peters.html">Tim Peters.</a>
-		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
  
 
 
  
         </div>
         
-        <div><p>《Python之禅》是2004年的Python改进提案，编号为<a href="https://www.python.org/dev/peps/pep-0020/">PEP 20</a>。禅诗、偈颂的形式。黄复雄译。</p>
-<h2 id="_1">摘要</h2>
-<p>老资格的Python人Tim Peters将仁慈独裁者（BDFL）<sup id="fnref:Rossum"><a class="footnote-ref" href="#fn:Rossum">1</a></sup>的Python设计指导原则简明扼要地归纳成20条警句，只有其中19句被记载下来。</p>
-<h2 id="python-the-zen-of-python">Python口头禅 / The Zen of Python</h2>
-<div class="highlight"><pre><span></span>美好过丑。 <span class="o">/</span> <span class="nv">Beautiful</span> <span class="nv">is</span> <span class="nv">better</span> <span class="nv">than</span> <span class="nv">ugly</span>.
-直白好过隐晦。 <span class="o">/</span> <span class="nv">Explicit</span> <span class="nv">is</span> <span class="nv">better</span> <span class="nv">than</span> <span class="nv">implicit</span>.
-简单好过复合。 <span class="o">/</span> <span class="nv">Simple</span> <span class="nv">is</span> <span class="nv">better</span> <span class="nv">than</span> <span class="nv">complex</span>.
-复合好过复杂。 <span class="o">/</span> <span class="nv">Complex</span> <span class="nv">is</span> <span class="nv">better</span> <span class="nv">than</span> <span class="nv">complicated</span>.
-扁平好过嵌套。 <span class="o">/</span> <span class="nv">Flat</span> <span class="nv">is</span> <span class="nv">better</span> <span class="nv">than</span> <span class="nv">nested</span>.
-分散好过密集。 <span class="o">/</span> <span class="nv">Sparse</span> <span class="nv">is</span> <span class="nv">better</span> <span class="nv">than</span> <span class="nv">dense</span>.
-可读很重要。 <span class="o">/</span> <span class="nv">Readability</span> <span class="nv">counts</span>.
-特例不能成为破坏规矩的特殊理由， <span class="o">/</span> <span class="nv">Special</span> <span class="nv">cases</span> <span class="nv">aren</span><span class="s1">&#39;</span><span class="s">t special enough to break the rules.</span>
-不过实用会打败纯净。 <span class="o">/</span> <span class="nv">Although</span> <span class="nv">practicality</span> <span class="nv">beats</span> <span class="nv">purity</span>.
-永远不要让错误无声地溜走， <span class="o">/</span> <span class="nv">Errors</span> <span class="nv">should</span> <span class="nv">never</span> <span class="nv">pass</span> <span class="nv">silently</span>.
-除非你直白地让它闭嘴。 <span class="o">/</span> <span class="nv">Unless</span> <span class="nv">explicitly</span> <span class="nv">silenced</span>.
-面对两可时，要拒绝揣测的引诱。 <span class="o">/</span> <span class="nv">In</span> <span class="nv">the</span> <span class="nv">face</span> <span class="nv">of</span> <span class="nv">ambiguity</span>, <span class="nv">refuse</span> <span class="nv">the</span> <span class="nv">temptation</span> <span class="nv">to</span> <span class="nv">guess</span>.
-应该有一个（最好是唯一一个）显然的实现方法， <span class="o">/</span> <span class="nv">There</span> <span class="nv">should</span> <span class="nv">be</span> <span class="nv">one</span><span class="o">--</span> <span class="nv">and</span> <span class="nv">preferably</span> <span class="nv">only</span> <span class="nv">one</span> <span class="o">--</span><span class="nv">obvious</span> <span class="nv">way</span> <span class="nv">to</span> <span class="k">do</span> <span class="nv">it</span>.
-不过开始的时候它可能并非显然——除非你是荷兰人[<span class="o">^</span><span class="nv">Rossum</span>]。 <span class="o">/</span> <span class="nv">Although</span> <span class="nv">that</span> <span class="nv">way</span> <span class="nv">may</span> <span class="nv">not</span> <span class="nv">be</span> <span class="nv">obvious</span> <span class="nv">at</span> <span class="nv">first</span> <span class="nv">unless</span> <span class="nv">you</span><span class="s1">&#39;</span><span class="s">re Dutch.</span>
-马上行动好过始终不动， <span class="o">/</span> <span class="nv">Now</span> <span class="nv">is</span> <span class="nv">better</span> <span class="nv">than</span> <span class="nv">never</span>.
-不过始终不动常常好过<span class="o">*</span>匆忙<span class="o">*</span>行动。 <span class="o">/</span> <span class="nv">Although</span> <span class="nv">never</span> <span class="nv">is</span> <span class="nv">often</span> <span class="nv">better</span> <span class="nv">than</span> <span class="o">*</span><span class="nv">right</span><span class="o">*</span> <span class="nv">now</span>.
-一个方案如果很难说清楚，那么不是好方案。 <span class="o">/</span> <span class="k">If</span> <span class="nv">the</span> <span class="nv">implementation</span> <span class="nv">is</span> <span class="nv">hard</span> <span class="nv">to</span> <span class="nv">explain</span>, <span class="nv">it</span><span class="s1">&#39;</span><span class="s">s a bad idea.</span>
-一个方案如果很容易说清楚，也许是个好方案。 <span class="o">/</span> <span class="k">If</span> <span class="nv">the</span> <span class="nv">implementation</span> <span class="nv">is</span> <span class="nv">easy</span> <span class="nv">to</span> <span class="nv">explain</span>, <span class="nv">it</span> <span class="nv">may</span> <span class="nv">be</span> <span class="nv">a</span> <span class="nv">good</span> <span class="nv">idea</span>.
-命名空间是响当当的好主意，让我多做一些。 <span class="o">/</span> <span class="nv">Namespaces</span> <span class="nv">are</span> <span class="nv">one</span> <span class="nv">honking</span> <span class="nv">great</span> <span class="nv">idea</span> <span class="o">--</span> <span class="nv">let</span><span class="s1">&#39;</span><span class="s">s do more of those!</span>
-</pre></div>
+        <div>
+<p><em>本文会不断更新。</em></p>
+<p>三四天前，一位邻居妈妈来家里，带了一支点读笔，让我帮更新。这种点读笔是配合几套英语阅读入门书使用的。笔是三四百块钱一支，书是特殊印刷的，比普通书要贵不少，而且品种有限，有些书的品质看起来还相当可疑。</p>
+<p>我以前编小学语文教材，十多年前就有商家跟我们合作，做点读版的，所以对点读笔不算陌生。从家长、孩子的角度看，点读笔的主要问题就是太贵，一支笔配几套书甚至只配一套书，就要三四百甚至七八百块钱。从我个人的偏见讲，这种不能通用、功能单一、<strong>设计往往非常粗糙甚至丑陋</strong>、看似附件的东西，却比主件——图书贵那么多，实在不能接受。</p>
+<p>想起来，最近看到关注了很久的有道词典笔出了2.0版，于是看了看些网上的评论，就让老婆给孩子买了一件。我家孩子最近爱认字，可能用得着。</p>
+<h2 id="_1">基本信息</h2>
+<p><strong>简单的盒子</strong></p>
+<p><img alt="盒子" src="images/有道词典笔2.0之童书实测/盒子.jpg"/></p>
+<p><strong>里面三件东西</strong></p>
+<p>我买的是黑色款，看起来屏幕与外壳连成一片了。</p>
+<p>说明书有些正文太浅了，想搞格调，让有点老花的想爸眼睛吃不消。</p>
+<p><img alt="包装清单" src="images/有道词典笔2.0之童书实测/包装清单.jpg"/></p>
+<p>主机背面如下：</p>
+<p><img alt="背面" src="images/有道词典笔2.0之童书实测/背面.jpg"/></p>
+<h2 id="_2">童书实测</h2>
+<h3 id="_3">汉字单字扫描</h3>
+<h3 id="_4">汉语句子扫描</h3>
+<p>目前，整句扫描只能限于一行之内，不能处理多行。有一两种欺骗扫描的笨办法办法：（1）童书往往有较大的空白，扫到一行末尾时迅速划过空白区域，移动到新行开头。（2）用中指抠住扫描开关，一行扫描到头时也不让扫描停止，然后快速移动到新行开头继续扫。<strong>有时走运，可以连续处理两行。</strong></p>
+<p>据<a href="https://www.guancha.cn/ChanJing/2019_08_07_512632.shtml">观察者网报导</a>,“换行后的整段翻译会在8月底软件升级后实现”。不过目前（2019-09-08）还没有升级。</p>
+<h3 id="_5">英文单词扫描</h3>
+<h3 id="_6">英文整句扫描</h3>
+<h3 id="_7">拼字母查词</h3>
+<h2 id="_8">建议</h2>
+<h2 id="_9">结论</h2>
+<!--
+
+https://post.smzdm.com/p/andgp6vp/
 
 
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn:Rossum">
-<p>指Python创始人，荷兰人吉多·范罗苏姆（Guido van Rossum）。&#160;<a class="footnote-backref" href="#fnref:Rossum" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div></div>
+不过它的作用也很明显，那就是方便孩子模仿朗读。
+
+孩子学习语言，不管是母语还是第二语言，通过语音上的直接模仿，都是最高效的。
+
+按理说，跟老师、家长读也不错，但是很多成人包括老师的语音都不可靠，再说父母总不能时刻在身边，跟别说带几十个孩子的老师了。
+
+还一种方式是用磁带机、电脑、手机等播放录音，孩子跟读，可是这时没有文本和图画对照，也就是语言学习环境不完整，不仅效果要折扣，对于学习阅读就相当不方便；还有，不能随时按自己的需要挑着读。
+
+点读笔一般是整句读，但这样其实可以部分代替查字典——孩子在语文学习上查字典首先是因为不会读。
+
+ --></div>
         <hr />
     </div>
 
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/pythonkou-tou-shan.html"><h2>Python口头禅</h2></a>
+        <div class= "well small"> 2019-05-15 周三
+
+	by 		<a class="url fn" href="/author/tim-peters.html">Tim Peters.</a>
+		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>《Python之禅》是2004年的Python改进提案。禅诗、偈颂的形式。</p> <a href="/pythonkou-tou-shan.html">read...</a></div>
+    </div>	
+				
 
  
         
@@ -254,24 +278,6 @@
         <div class="summary"><p>在做电子书时，我需要把几百个生字朗读音频逐字分切开，把课文朗读音频逐句分切成开；或者获取每个分切位置的时间标签。总之是根据停顿静音进行分切的。此类要求可以通过Audition的“诊断”功能实现。</p> <a href="/auditionji-qiao-ban-zi-dong-fen-qie-yin-pin.html">read...</a></div>
     </div>	
 				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/auditionji-qiao-shi-liang-duan-bu-tong-huan-jing-de-lu-yin-xie-diao-yi-zhi.html"><h2>Audition技巧：使两段不同环境的录音协调一致</h2></a>
-        <div class= "well small"> 2018-12-14 周五
-
-	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>在修补音频时，有时修补材料的录音环境有所改变，或者语音演播人改变了。如果变化不大，可以通过Audition分析、比较频率，然后根据差异调整均衡，使修补材料的音色更接近要修补的音频。调整后截取片段用于修补，能更为协调。</p> <a href="/auditionji-qiao-shi-liang-duan-bu-tong-huan-jing-de-lu-yin-xie-diao-yi-zhi.html">read...</a></div>
-    </div>	
-				
 <div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr;</a></li>
@@ -317,6 +323,7 @@
                 <li><a href="/category/qi-ji-yin-qiao-zhi.html">奇技淫巧志</a></li>
                 <li><a href="/category/xi-phaser.html">习Phaser</a></li>
                 <li><a href="/category/xi-pyo.html">习Pyo</a></li>
+                <li><a href="/category/xiang-ba-ai-xue-xi.html">想爸爱学习</a></li>
                    
             </ul>
             </div>
