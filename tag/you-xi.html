@@ -149,27 +149,66 @@
 <blockquote>
 <p>src\actions\rotate around distance.js</p>
 </blockquote>
-<p>function update ()
-{
-    Phaser.Actions.RotateAroundDistance(group.getChildren(), { x: 400, y: 300 }, 0.02, 200);
-}</p>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">update</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">RotateAroundDistance</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">300</span> <span class="p">},</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <h3 id="rotate-around">Rotate Around/所有对象（整体）围绕一点旋转</h3>
 <blockquote>
 <p>src\actions\rotate around.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><span class="nt">function</span> <span class="nt">update</span> <span class="o">()</span>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">update</span> <span class="p">()</span>
 <span class="p">{</span>
-    <span class="err">Phaser.Actions.RotateAround(group.getChildren(),</span> <span class="err">{</span> <span class="n">x</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="n">y</span><span class="o">:</span> <span class="mi">300</span> <span class="p">}</span><span class="o">,</span> <span class="nt">0</span><span class="p">.</span><span class="nc">01</span><span class="o">);</span>
-<span class="err">}</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">RotateAround</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">300</span> <span class="p">},</span> <span class="mf">0.01</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 <h3 id="set-alpha">Set Alpha/所有对象（整体）设置透明度</h3>
 <blockquote>
 <p>src\actions\set alpha.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><span class="k">function</span> <span class="k">create</span> <span class="p">()</span>
-<span class="err">{</span>
-    <span class="n">Phaser</span><span class="p">.</span><span class="n">Actions</span><span class="p">.</span><span class="n">SetAlpha</span><span class="p">(</span><span class="k">group</span><span class="p">.</span><span class="n">getChildren</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">50</span><span class="p">);</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">create</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">SetAlpha</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">50</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="set-xy">Set Xy/给所有对象设置坐标值</h3>
+<blockquote>
+<p>src\actions\set xy.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">create</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">SetXY</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="shift-position">Shift Position/所有对象依次换位</h3>
+<blockquote>
+<p>src\actions\shift position.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">update</span> <span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">delta</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// 给出第一个（或最后一个）新位置，后面依次换位</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">ShiftPosition</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="spread">Spread/在两个属性之间铺展所有对象</h3>
+<blockquote>
+<p>src\actions\spread.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">create</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">//  在两个属性值('alpha', 0, 1)之间铺展所有对象</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">Spread</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="s1">'alpha'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="wrap-in-rectangle">wrap in rectangle/所有对象圈在一个方形内</h3>
+<blockquote>
+<p>src\actions\wrap in rectangle.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">update</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">WrapInRectangle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">rect</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 <h2 id="animation">Animation</h2>
 <h2 id="audio">Audio</h2>
