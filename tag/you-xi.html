@@ -73,26 +73,27 @@
         <div>
 <h2 id="_1">说明</h2>
 <ol>
-<li>这是我学习Phaser3官网实例的笔记，对快速了解Phaser3能做什么、API概貌也许有帮助。以前做过一篇<a href="/phaserguan-wang-shi-li-xue-xi-bi-ji.html">《Phaser2官网实例学习笔记》</a>。</li>
+<li><strong>本文是随时更新的，</strong>最终会累积成一个便览手册；可通过搜索或底端的目录快速查找。</li>
+<li>这是我学习Phaser3官网实例的笔记，对快速了解Phaser3能做什么、API概貌也许有帮助。以前做过一篇<a href="/phaser2guan-wang-shi-li-xue-xi-bi-ji.html">《Phaser2官网实例学习笔记》</a>。</li>
 <li>阅读本文前，您需要对Phaser的场景结构有大致了解。（如果你完全不了解Phaser，宜先学习<a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/index">官网入门教程</a>，以便对框架结构有整体了解。）笔记只摘录了关键语句，加了少量注释；语句不完整、不连续；为便于字面理解，有些类实例名称调整得更接近类名，如<code>Sprite</code>实例名称一般改作<code>sprite</code>。</li>
 <li>摘录的代码都是片段。我用的是TypeScript语言，但摘录的代码可能是JavaScript，或在此基础上添加了TypeScript类型标记。JavaScript代码在TypeScript中是有效的，但可能使编辑器、编译工具等报错——这跟设置有关。</li>
-<li>有些类别我没有看或粗粗看过：...</li>
-<li>小标题中给出了实例代码的路径，如“src\actions\grid align.js”，<a href="http://labs.phaser.io">http://labs.phaser.io</a>的首页即相当于“src\”；也可以用<a href="http://labs.phaser.io/edit.html?src=src\actions\grid%20align.js">http://labs.phaser.io/edit.html?src=src\actions\grid align.js</a>直接访问代码对应的在线编辑器界面（有时路径中的空格可能要用<code>%20</code>代替）。</li>
+<li>小标题下给出了实例代码的路径，如“src\actions\grid align.js”，<a href="http://labs.phaser.io">http://labs.phaser.io</a>的首页即相当于“src\”；也可以用<a href="http://labs.phaser.io/edit.html?src=src\actions\grid%20align.js">http://labs.phaser.io/edit.html?src=src\actions\grid align.js</a>直接访问代码对应的在线编辑器界面（有时路径中的空格可能要用<code>%20</code>代替）。</li>
 <li>官网是按字母排列类别的，有时为初学者学习、理解方便会调整顺序。</li>
-<li><strong>本文是随时更新的，</strong>最终会累积成一个便览手册；可通过搜索或底端的目录快速查找。</li>
 </ol>
-<h2 id="actions">Actions（行动）</h2>
-<p><code>Phaser.Actions</code>包含一组静态方法，可以对一组游戏对象进行<strong>批量处理</strong>，应用相同的动作。常常结合组的方法<code>Group.getChildren()</code>（取得group的所有子项形成一个数组）一起使用。
-条目要包含要处理的属性、方法，否则无效。</p>
-<h3 id="grid-aligngridalign">Grid Align/用GridAlign对齐网格</h3>
+<h2 id="actions">Actions/动作</h2>
+<p><code>Phaser.Actions</code>包含一组静态方法，可以对一组游戏对象进行<strong>批量处理</strong>，应用相同的动作。常常结合组的方法<code>Group.getChildren()</code>（取得group的所有对象形成一个数组）一起使用；这样一样，就可以尽量使用组（Group）来代替很消耗资源容器（Container，相当于Phaser2的Group）。</p>
+<p>要处理的对象要包含要处理的属性、方法，否则无效。</p>
+<h3 id="grid-align">Grid Align/所有对象对齐网格放置</h3>
+<blockquote>
 <p>src\actions\grid align.js</p>
-<div class="highlight"><pre><span></span><span class="c1">// 生成group，包含4x20个子项</span>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="c1">// 生成group，包含4x20个对象</span>
 <span class="kd">var</span> <span class="nx">group</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
     <span class="nx">key</span><span class="o">:</span> <span class="s1">'diamonds'</span><span class="p">,</span> <span class="c1">// 精灵单的key</span>
     <span class="nx">frame</span><span class="o">:</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="c1">// 依次使用的精灵单的帧号</span>
     <span class="nx">frameQuantity</span><span class="o">:</span> <span class="mi">20</span> <span class="c1">// 每帧重复使用次数</span>
 <span class="p">});</span>
-<span class="c1">// group的所有子项逐一对齐网格（多余网格数量的子项不处理）</span>
+<span class="c1">// group的所有对象逐一对齐网格（多余网格数量的对象不处理）</span>
 <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">GridAlign</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="p">{</span>
     <span class="nx">width</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// 网格列数</span>
     <span class="nx">height</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// 网格行数</span>
@@ -102,12 +103,89 @@
     <span class="nx">y</span><span class="o">:</span> <span class="mi">100</span> <span class="c1">// 左上第一个网格中心点y值</span>
 <span class="p">});</span>
 </pre></div>
-<h3 id="inc-x-layersincxincy">Inc X Layers/使用IncX和IncY改变坐标，移动整个组</h3>
+<h3 id="inc-x-layersincxincy">inc x layers/所有对象用IncX、IncY递增坐标值，整体改变位置</h3>
+<blockquote>
 <p>src\actions\inc x layers.js</p>
-<div class="highlight"><pre><span></span><span class="c1">// groupA所有子项的坐标值递增（此处默认步进量step为0），即整体移动</span>
-<span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncX</span><span class="p">(</span><span class="nx">groupA</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
-<span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncY</span><span class="p">(</span><span class="nx">groupA</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="mi">1</span><span class="p">);</span>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">update</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 所有对象移动</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncX</span><span class="p">(</span><span class="nx">groupA</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">move</span><span class="p">);</span> 
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncY</span><span class="p">(</span><span class="nx">groupA</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">move</span><span class="p">);</span>
+    <span class="c1">// 所有对象旋转</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">Rotate</span><span class="p">(</span><span class="nx">groupA</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">);</span>
+    <span class="c1">// 所有对象沿着圆形轨道移动</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncX</span><span class="p">(</span><span class="nx">groupB</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="o">-</span><span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">move</span><span class="p">));</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncY</span><span class="p">(</span><span class="nx">groupB</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="o">-</span><span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">move</span><span class="p">));</span>
+    <span class="c1">// 所有对象旋转</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">Rotate</span><span class="p">(</span><span class="nx">groupB</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="mf">0.01</span><span class="p">);</span>
+
+    <span class="nx">move</span> <span class="o">+=</span> <span class="mf">0.1</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
+<h3 id="place-on-circle">Place On Circle/所有对象沿着圆圈放置</h3>
+<blockquote>
+<p>src\actions\place on circle.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">create</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 沿着圆圈放置，也可以是椭圆、方形、三角形、直线等</span>
+    <span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Circle</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">260</span><span class="p">);</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">PlaceOnCircle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">circle</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="random-circle">Random Circle/所有对象随机放置在圆内</h3>
+<blockquote>
+<p>src\actions\random circle.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">create</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 对象随机放置在圆内，也可以是椭圆、方形、三角形、直线等</span>
+    <span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Circle</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">130</span><span class="p">);</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">RandomCircle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">circle</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="rotate-around-distance">Rotate Around Distance/所有对象（整体）围绕一定距离旋转</h3>
+<blockquote>
+<p>src\actions\rotate around distance.js</p>
+</blockquote>
+<p>function update ()
+{
+    Phaser.Actions.RotateAroundDistance(group.getChildren(), { x: 400, y: 300 }, 0.02, 200);
+}</p>
+<h3 id="rotate-around">Rotate Around/所有对象（整体）围绕一点旋转</h3>
+<blockquote>
+<p>src\actions\rotate around.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="nt">function</span> <span class="nt">update</span> <span class="o">()</span>
+<span class="p">{</span>
+    <span class="err">Phaser.Actions.RotateAround(group.getChildren(),</span> <span class="err">{</span> <span class="n">x</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="n">y</span><span class="o">:</span> <span class="mi">300</span> <span class="p">}</span><span class="o">,</span> <span class="nt">0</span><span class="p">.</span><span class="nc">01</span><span class="o">);</span>
+<span class="err">}</span>
+</pre></div>
+<h3 id="set-alpha">Set Alpha/所有对象（整体）设置透明度</h3>
+<blockquote>
+<p>src\actions\set alpha.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="k">function</span> <span class="k">create</span> <span class="p">()</span>
+<span class="err">{</span>
+    <span class="n">Phaser</span><span class="p">.</span><span class="n">Actions</span><span class="p">.</span><span class="n">SetAlpha</span><span class="p">(</span><span class="k">group</span><span class="p">.</span><span class="n">getChildren</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">50</span><span class="p">);</span>
+<span class="err">}</span>
+</pre></div>
+<h2 id="animation">Animation</h2>
+<h2 id="audio">Audio</h2>
+<h2 id="bugs">Bugs</h2>
+<h2 id="cache">Cache</h2>
+<h2 id="camera">Camera</h2>
+<h2 id="components">Components</h2>
+<h2 id="demoscene">Demoscene</h2>
+<h2 id="depth-sorting">Depth Sorting</h2>
+<h2 id="display">Display</h2>
+<h2 id="dwitter">Dwitter</h2>
+<h2 id="events">Events</h2>
+<h2 id="game-config">Game Config</h2>
+<h2 id="game-objects">Game Objects</h2>
+<h2 id="games">Games</h2>
+<h2 id="geom">Geom</h2>
 <h2 id="input">input输入</h2>
 <h3 id="game-object">game object游戏对象</h3>
 <h4>src\input\game object\sprite example.js</h4>
@@ -145,7 +223,23 @@
     <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">dragX</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">dragY</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div></div>
+</pre></div>
+<h2 id="loader">Loader</h2>
+<h2 id="paths">Paths</h2>
+<h2 id="physics">Physics</h2>
+<h2 id="plugins">Plugins</h2>
+<h2 id="pools">Pools</h2>
+<h2 id="renderer">Renderer</h2>
+<h2 id="scalemanager">Scalemanager</h2>
+<h2 id="scenes">Scenes</h2>
+<h2 id="snapshot">Snapshot</h2>
+<h2 id="spine">Spine</h2>
+<h2 id="textures">Textures</h2>
+<h2 id="time">Time</h2>
+<h2 id="timestep">Timestep</h2>
+<h2 id="transform">Transform</h2>
+<h2 id="tweens">Tweens</h2>
+<h2 id="utils">Utils</h2></div>
         <hr />
     </div>
 
@@ -192,7 +286,7 @@
  
 
     <div class='article'>
-        <a href="/phaserguan-wang-shi-li-xue-xi-bi-ji.html"><h2>Phaser官网实例学习笔记</h2></a>
+        <a href="/phaser2guan-wang-shi-li-xue-xi-bi-ji.html"><h2>Phaser2官网实例学习笔记</h2></a>
         <div class= "well small"> 2017-08-18 周五
 
 	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
@@ -200,7 +294,7 @@
 
 
  </div>
-        <div class="summary"><p>这是我学习Phaser官网实例的笔记，对快速了解Phaser能做什么、API概貌也许有帮助。阅读本文前，您需要对Phaser的场景结构有大致了解。笔记只摘录了关键语句，加了少量注释；语句不完整、不连续；为便于字面理解，有些类实例名称调整得更接近类名。</p> <a href="/phaserguan-wang-shi-li-xue-xi-bi-ji.html">read...</a></div>
+        <div class="summary"><p>这是我学习Phaser2官网实例的笔记，对快速了解Phaser2能做什么、API概貌也许有帮助。阅读本文前，您需要对Phaser2的场景结构有大致了解。笔记只摘录了关键语句，加了少量注释；语句不完整、不连续；为便于字面理解，有些类实例名称调整得更接近类名。</p> <a href="/phaser2guan-wang-shi-li-xue-xi-bi-ji.html">read...</a></div>
     </div>	
 				
 <div class="pagination">
