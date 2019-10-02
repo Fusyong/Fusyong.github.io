@@ -218,7 +218,228 @@
 <h2 id="display">Display</h2>
 <h2 id="dwitter">Dwitter</h2>
 <h2 id="events">Events</h2>
-<h2 id="game-config">Game Config</h2>
+<h2 id="game-config">Game Config/游戏配置</h2>
+<h3 id="banner-colors">Banner Colors/条幅颜色（及其他）</h3>
+<blockquote>
+<p>src\game config\banner colors.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
+    <span class="c1">// 透明背景</span>
+    <span class="nx">transparent</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="c1">// 绘制纹理对象时，像素位置预先处理成整数</span>
+    <span class="nx">roundPixels</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">scene</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">preload</span><span class="o">:</span> <span class="nx">preload</span><span class="p">,</span>
+        <span class="nx">create</span><span class="o">:</span> <span class="nx">create</span>
+    <span class="p">},</span>
+    <span class="c1">// 设定浏览器开发工具中能看到的游戏标题</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">'Shock and Awesome'</span><span class="p">,</span>
+    <span class="c1">// 设定浏览器开发工具中能看到的游戏版本号</span>
+    <span class="nx">version</span><span class="o">:</span> <span class="s1">'1.2b'</span>
+    <span class="c1">//  设定浏览器开发工具中能看到的条幅颜色和（标题等）文字颜色</span>
+    <span class="c1">// 使用banner: false关闭条幅</span>
+    <span class="nx">banner</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">text</span><span class="o">:</span> <span class="s1">'#ffffff'</span><span class="p">,</span>
+        <span class="nx">background</span><span class="o">:</span> <span class="p">[</span>
+            <span class="s1">'#fff200'</span><span class="p">,</span>
+            <span class="s1">'#38f0e8'</span><span class="p">,</span>
+            <span class="s1">'#00bff3'</span><span class="p">,</span>
+            <span class="s1">'#ec008c'</span>
+        <span class="p">],</span>
+        <span class="c1">// 隐藏Phaser版本等信息</span>
+        <span class="nx">hidePhaser</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="c1">// 设定浏览器开发工具中能看到的游戏链接</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">'http://xiiiGame.com'</span>
+
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+</pre></div>
+<h3 id="custom-canvas">Custom Canvas/客户定制画布</h3>
+<blockquote>
+<p>src\game config\custom canvas.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="c1">// 客户定制文档元素</span>
+<span class="kd">var</span> <span class="nx">myCustomCanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'canvas'</span><span class="p">);</span>
+<span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">'myCustomCanvas'</span><span class="p">;</span>
+<span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">style</span> <span class="o">=</span> <span class="s1">'border: 8px solid red'</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">myCustomCanvas</span><span class="p">);</span>
+<span class="c1">// var myCustomContext = myCustomCanvas.getContext('2d');</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">CANVAS</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
+    <span class="c1">// 使用客户定制的文档元素，用来放置画布</span>
+    <span class="nx">canvas</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myCustomCanvas'</span><span class="p">),</span>
+    <span class="nx">scene</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">preload</span><span class="o">:</span> <span class="nx">preload</span><span class="p">,</span>
+        <span class="nx">create</span><span class="o">:</span> <span class="nx">create</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+</pre></div>
+<h3 id="custom-webgl-canvaswebgl">Custom Webgl Canvas/客户定制WebGL画布</h3>
+<blockquote>
+<p>src\game config\custom webgl canvas.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="c1">// 客户定制文档元素</span>
+<span class="kd">var</span> <span class="nx">myCustomCanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'canvas'</span><span class="p">);</span>
+<span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">'myCustomCanvas'</span><span class="p">;</span>
+<span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">style</span> <span class="o">=</span> <span class="s1">'border: 8px solid green'</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">myCustomCanvas</span><span class="p">);</span>
+
+<span class="c1">//  设置Phaser需要的WebGL语境变量</span>
+<span class="kd">var</span> <span class="nx">contextCreationConfig</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">alpha</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">depth</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">antialias</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">premultipliedAlpha</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">stencil</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">preserveDrawingBuffer</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">failIfMajorPerformanceCaveat</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">powerPreference</span><span class="o">:</span> <span class="s1">'default'</span>
+<span class="p">};</span>
+<span class="c1">// 也可以是'webgl2'</span>
+<span class="kd">var</span> <span class="nx">myCustomContext</span> <span class="o">=</span> <span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">'webgl'</span><span class="p">,</span> <span class="nx">contextCreationConfig</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">WEBGL</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
+    <span class="c1">// 使用画布和语境</span>
+    <span class="nx">canvas</span><span class="o">:</span> <span class="nx">myCustomCanvas</span><span class="p">,</span>
+    <span class="nx">context</span><span class="o">:</span> <span class="nx">myCustomContext</span><span class="p">,</span>
+    <span class="nx">scene</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">preload</span><span class="o">:</span> <span class="nx">preload</span><span class="p">,</span>
+        <span class="nx">create</span><span class="o">:</span> <span class="nx">create</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+</pre></div>
+<h3 id="game-destroy-with-multi-scenes">Game Destroy With Multi Scenes/多场景游戏的销毁</h3>
+<blockquote>
+<p>src\game config\game destroy with multi scenes.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">Background</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Class</span><span class="p">({</span>
+    <span class="c1">// 继承场景</span>
+    <span class="nx">Extends</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scene</span><span class="p">,</span>
+
+    <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="nx">Background</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span> <span class="nx">key</span><span class="o">:</span> <span class="s1">'background'</span><span class="p">,</span> <span class="nx">active</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+    <span class="p">},</span>
+
+    <span class="nx">preload</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// ……</span>
+    <span class="p">},</span>
+
+    <span class="nx">create</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ……</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerdown'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// 销毁游戏</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sys</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">destroy</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+            <span class="c1">// 重新生成游戏</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'mousedown'</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">newGame</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+                <span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">'mousedown'</span><span class="p">,</span> <span class="nx">newGame</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">},</span> <span class="k">this</span><span class="p">);</span>
+    <span class="p">},</span>
+
+    <span class="nx">update</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">delta</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ……</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">Demo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Class</span><span class="p">({</span>
+    <span class="nx">Extends</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scene</span><span class="p">,</span>
+    <span class="c1">// …………</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
+    <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">'#000000'</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">scene</span><span class="o">:</span> <span class="p">[</span> <span class="nx">Background</span><span class="p">,</span> <span class="nx">Demo</span> <span class="p">]</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+</pre></div>
+<h3 id="game-rng">Game Rng/游戏的随机数问题</h3>
+<blockquote>
+<p>src\game config\game rng.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">seed</span> <span class="o">=</span> <span class="mi">122548965231</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
+    <span class="c1">// 为随机数生成器设置种子</span>
+    <span class="nx">seed</span><span class="o">:</span> <span class="p">[</span> <span class="nx">seed</span> <span class="p">],</span>
+    <span class="nx">scene</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">create</span><span class="o">:</span> <span class="nx">create</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">create</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">//  如果使用随机种子，那么每次重载所得随机数不变</span>
+    <span class="kd">var</span> <span class="nx">shuffleTest</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'F'</span><span class="p">,</span> <span class="s1">'G'</span> <span class="p">];</span>
+    <span class="nx">text</span><span class="p">.</span><span class="nx">setText</span><span class="p">([</span>
+        <span class="s1">'Between 0 and 50: '</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">between</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+        <span class="s1">'Between 0 and 1: '</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">realInRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">'Normal: '</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">normal</span><span class="p">(),</span>
+        <span class="s1">'UUID: '</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">uuid</span><span class="p">(),</span>
+        <span class="s1">'Angle: '</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">angle</span><span class="p">(),</span>
+        <span class="s1">'Shuffle: '</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">shuffle</span><span class="p">(</span><span class="nx">shuffleTest</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="multiple-game-instances">Multiple Game Instances/多个游戏实例</h3>
+<blockquote>
+<p>src\game config\multiple game instances.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">config2</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">scene</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">preload</span><span class="o">:</span> <span class="nx">preload2</span><span class="p">,</span>
+        <span class="nx">create</span><span class="o">:</span> <span class="nx">create2</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
+    <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">scene</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">preload</span><span class="o">:</span> <span class="nx">preload</span><span class="p">,</span>
+        <span class="nx">create</span><span class="o">:</span> <span class="nx">create</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// 两个游戏实例</span>
+<span class="kd">var</span> <span class="nx">game1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">game2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config2</span><span class="p">);</span>
+</pre></div>
 <h2 id="game-objects">Game Objects</h2>
 <h2 id="games">Games</h2>
 <h2 id="geom">Geom</h2>
@@ -311,7 +532,15 @@
 <li><a href="#display">Display</a></li>
 <li><a href="#dwitter">Dwitter</a></li>
 <li><a href="#events">Events</a></li>
-<li><a href="#game-config">Game Config</a></li>
+<li><a href="#game-config">Game Config/游戏配置</a><ul>
+<li><a href="#banner-colors">Banner Colors/条幅颜色（及其他）</a></li>
+<li><a href="#custom-canvas">Custom Canvas/客户定制画布</a></li>
+<li><a href="#custom-webgl-canvaswebgl">Custom Webgl Canvas/客户定制WebGL画布</a></li>
+<li><a href="#game-destroy-with-multi-scenes">Game Destroy With Multi Scenes/多场景游戏的销毁</a></li>
+<li><a href="#game-rng">Game Rng/游戏的随机数问题</a></li>
+<li><a href="#multiple-game-instances">Multiple Game Instances/多个游戏实例</a></li>
+</ul>
+</li>
 <li><a href="#game-objects">Game Objects</a></li>
 <li><a href="#games">Games</a></li>
 <li><a href="#geom">Geom</a></li>
