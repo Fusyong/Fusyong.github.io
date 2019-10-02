@@ -103,7 +103,7 @@
     <span class="nx">y</span><span class="o">:</span> <span class="mi">100</span> <span class="c1">// 左上第一个网格中心点y值</span>
 <span class="p">});</span>
 </pre></div>
-<h3 id="inc-x-layersincxincy">inc x layers/所有对象用IncX、IncY递增坐标值，整体改变位置</h3>
+<h3 id="inc-x-layersincxincyincxy">inc x layers/所有对象用IncX、IncY、IncXY递增坐标值，整体改变位置</h3>
 <blockquote>
 <p>src\actions\inc x layers.js</p>
 </blockquote>
@@ -191,7 +191,7 @@
     <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">ShiftPosition</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-<h3 id="spread">Spread/在两个属性之间铺展所有对象</h3>
+<h3 id="spread">Spread/在两个属性值之间铺展所有对象</h3>
 <blockquote>
 <p>src\actions\spread.js</p>
 </blockquote>
@@ -201,12 +201,15 @@
     <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">Spread</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="s1">'alpha'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-<h3 id="wrap-in-rectangle">wrap in rectangle/所有对象圈在一个方形内</h3>
+<h3 id="wrap-in-rectangle">wrap in rectangle/所有对象在一个方形内折返放置</h3>
 <blockquote>
 <p>src\actions\wrap in rectangle.js</p>
 </blockquote>
 <div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">update</span> <span class="p">()</span>
 <span class="p">{</span>
+    <span class="c1">// 移动位置后，超出方框的一侧的对象会折返到对侧重新放置</span>
+    <span class="kd">var</span> <span class="nx">children</span> <span class="o">=</span> <span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">();</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncXY</span><span class="p">(</span><span class="nx">children</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
     <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">WrapInRectangle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">rect</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
