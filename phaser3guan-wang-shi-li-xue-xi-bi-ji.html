@@ -77,6 +77,7 @@
 <h2 id="actions">Actions/动作</h2>
 <p><code>Phaser.Actions</code>包含一组静态方法，可以对一组游戏对象进行<strong>批量处理</strong>，应用相同的动作。常常结合组的方法<code>Group.getChildren()</code>（取得group的所有对象形成一个数组）一起使用；这样一样，就可以尽量使用组（Group）来代替很消耗资源容器（Container，相当于Phaser2的Group）。</p>
 <p>要处理的对象要包含要处理的属性、方法，否则无效。</p>
+<p>请参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html">Phaser.Actions的文档</a>。</p>
 <h3 id="grid-align">Grid Align/所有对象对齐网格放置</h3>
 <blockquote>
 <p>src\actions\grid align.js</p>
@@ -219,6 +220,7 @@
 <h2 id="dwitter">Dwitter</h2>
 <h2 id="events">Events</h2>
 <h2 id="game-config">Game Config/游戏配置</h2>
+<p>使用配置对象进行配置，是Phaser3的风格。以下游戏配置，可参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Types.Core.html#.GameConfig__anchor">GameConfig的文档</a>。</p>
 <h3 id="banner-colors">Banner Colors/条幅颜色（及其他）</h3>
 <blockquote>
 <p>src\game config\banner colors.js</p>
@@ -440,7 +442,132 @@
 <span class="kd">var</span> <span class="nx">game1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">game2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config2</span><span class="p">);</span>
 </pre></div>
-<h2 id="game-objects">Game Objects</h2>
+<h2 id="game-objects">Game Objects/游戏对象</h2>
+<p>各种具体游戏对象都是继承GameObject。请参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html">基础游戏对象/Phaser.GameObjects.GameObject的文档</a>。</p>
+<h3 id="bitmaptext">Bitmaptext/位图文本（静态）</h3>
+<p>请参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.BitmapText.html">静态文图文本的文档</a>。</p>
+<h4>Static/静态位图文本</h4>
+<h5>Bitmaptext Blend Mode/位图文本混色模式</h5>
+<blockquote>
+<p>src\game objects\bitmaptext\static\bitmaptext blend mode.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span>    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">'ice'</span><span class="p">,</span> <span class="s1">'Zero Two'</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+    <span class="c1">// 与下层的图进行ADD混色</span>
+    <span class="nx">text</span><span class="p">.</span><span class="nx">setBlendMode</span><span class="p">(</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">BlendModes</span><span class="p">.</span><span class="nx">ADD</span><span class="p">);</span>
+</pre></div>
+<h5>Bitmaptext-Atlas/用字体图集生成位图文本</h5>
+<blockquote>
+<p>src\game objects\bitmaptext\static\bitmaptext-atlas.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">preload</span><span class="p">()</span> 
+<span class="p">{</span>
+    <span class="c1">// 加载图集</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">atlas</span><span class="p">(</span><span class="s1">'fontatlas'</span><span class="p">,</span> <span class="s1">'assets/atlas/bitmap-fonts-debug.png'</span><span class="p">,</span> <span class="s1">'assets/atlas/bitmap-fonts.json'</span><span class="p">);</span>
+    <span class="c1">//  加载字体图集的XML数据</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">xml</span><span class="p">(</span><span class="s1">'atariXML'</span><span class="p">,</span> <span class="s1">'assets/fonts/bitmap/atari-sunset.xml'</span><span class="p">);</span>
+    <span class="c1">// 也可以直接加载位图字体</span>
+    <span class="c1">// this.load.bitmapFont('desyrel', 'assets/fonts/bitmap/desyrel.png', 'assets/fonts/bitmap/desyrel.xml');</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">create</span><span class="p">()</span> 
+<span class="p">{</span>
+    <span class="c1">// 生成位图字体和位图文本</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">BitmapText</span><span class="p">.</span><span class="nx">ParseFromAtlas</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'font3'</span><span class="p">,</span> <span class="s1">'fontatlas'</span><span class="p">,</span> <span class="s1">'atari-sunset'</span><span class="p">,</span> <span class="s1">'atariXML'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">'font3'</span><span class="p">,</span> <span class="s1">'qwert'</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h5>以下存目</h5>
+<ul>
+<li>Bitmaptext Rotation/旋转动画</li>
+<li>Bitmaptext Scale/缩放动画</li>
+<li>Bitmaptext-Canvas/字体缩放和比例缩放动画</li>
+<li>Bitmaptext/位图字体</li>
+<li>Change Font Size/更改字号</li>
+<li>Change Font/更改字体</li>
+<li>Get Text Size Multiline/获取多行文本的尺寸</li>
+<li>Get Text Size Scaled/获取缩放后文本的尺寸</li>
+<li>Get Text Size/获取文本尺寸</li>
+<li>Large-Text/大文本</li>
+<li>Multi Line Alignment/多行对齐</li>
+<li>Multi Line/多行文本</li>
+<li>Padding/边距</li>
+<li>Text Origin/文本原点</li>
+<li>Tinted Text/着色文本</li>
+<li>Width And Height/宽和高</li>
+</ul>
+<h4>Dynamic/动态文图文本</h4>
+<p>请参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.DynamicBitmapText.html">动态位图文本的文档</a>。</p>
+<h5>Display Callback Rotation Effect/显示回调，旋转效果</h5>
+<blockquote>
+<p>src\game objects\bitmaptext\dynamic\display callback rotation effect.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">create</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">dynamicBitmapText</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s1">'gothic'</span><span class="p">,</span> <span class="s1">'Hello\nWorld!'</span><span class="p">,</span> <span class="mi">128</span><span class="p">);</span>
+    <span class="nx">text</span><span class="p">.</span><span class="nx">setDisplayCallback</span><span class="p">(</span><span class="nx">textCallback</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">textCallback</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">data</span><span class="p">.</span><span class="nx">rotation</span> <span class="o">=</span> <span class="mf">1.570</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h5>存目</h5>
+<ul>
+<li>Display Callback Index Effect/显示回调，索引效果</li>
+<li>Display Callback Scale Effect/显示回调，缩放效果</li>
+<li>Display Callback Wibble Effect/显示回调，抖动效果</li>
+<li>Text Follow Path/文本跟随路径移动</li>
+<li>Tinted Text/文本着色</li>
+<li>Vertical Scroller/垂直滚动</li>
+</ul>
+<h4>Retro Font/复古字体</h4>
+<h5>Retro Text 1/复古字体</h5>
+<blockquote>
+<p>src\game objects\bitmaptext\retro font\retro text 1.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">create</span><span class="p">()</span> 
+<span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">image</span><span class="o">:</span> <span class="s1">'knighthawks'</span><span class="p">,</span>
+        <span class="nx">width</span><span class="o">:</span> <span class="mi">31</span><span class="p">,</span>
+        <span class="nx">height</span><span class="o">:</span> <span class="mi">25</span><span class="p">,</span>
+        <span class="nx">chars</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">RetroFont</span><span class="p">.</span><span class="nx">TEXT_SET6</span><span class="p">,</span>
+        <span class="nx">charsPerRow</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="nx">spacing</span><span class="o">:</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">1</span> <span class="p">}</span>
+    <span class="p">};</span>
+    <span class="c1">// 解析复古字体，加入缓存中</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">cache</span><span class="p">.</span><span class="nx">bitmapFont</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'knighthawks'</span><span class="p">,</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">RetroFont</span><span class="p">.</span><span class="nx">Parse</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">config</span><span class="p">));</span>
+    <span class="nx">dynamic</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">'knighthawks'</span><span class="p">,</span> <span class="s1">'PHASER 3'</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<h6>存目</h6>
+<ul>
+<li>Retro Text Mega Scroll/复古文本滚动</li>
+<li>Retro Text Scroll Callback/复古字体滚动回调</li>
+<li>Retro Text Scroll/复古文本滚动</li>
+<li>Scrolling Retro Text/复古文本滚动</li>
+<li>Tinted Retro Text/复古文本着色</li>
+</ul>
+<h3 id="blitter">Blitter</h3>
+<h3 id="container">Container</h3>
+<h3 id="dom-element">Dom Element</h3>
+<h3 id="graphics">Graphics</h3>
+<h3 id="group">Group</h3>
+<h3 id="images">Images</h3>
+<h3 id="lights">Lights</h3>
+<h3 id="mesh">Mesh</h3>
+<h3 id="particle-emitter">Particle Emitter</h3>
+<h3 id="quad">Quad</h3>
+<h3 id="render-texture">Render Texture</h3>
+<h3 id="shaders">Shaders</h3>
+<h3 id="shapes">Shapes</h3>
+<h3 id="sprites">Sprites</h3>
+<h3 id="tests">Tests</h3>
+<h3 id="text">Text</h3>
+<h3 id="tile-sprite">Tile Sprite</h3>
+<h3 id="tilemap">Tilemap</h3>
 <h2 id="games">Games</h2>
 <h2 id="geom">Geom</h2>
 <h2 id="input">input输入</h2>
@@ -541,7 +668,28 @@
 <li><a href="#multiple-game-instances">Multiple Game Instances/多个游戏实例</a></li>
 </ul>
 </li>
-<li><a href="#game-objects">Game Objects</a></li>
+<li><a href="#game-objects">Game Objects/游戏对象</a><ul>
+<li><a href="#bitmaptext">Bitmaptext/位图文本（静态）</a></li>
+<li><a href="#blitter">Blitter</a></li>
+<li><a href="#container">Container</a></li>
+<li><a href="#dom-element">Dom Element</a></li>
+<li><a href="#graphics">Graphics</a></li>
+<li><a href="#group">Group</a></li>
+<li><a href="#images">Images</a></li>
+<li><a href="#lights">Lights</a></li>
+<li><a href="#mesh">Mesh</a></li>
+<li><a href="#particle-emitter">Particle Emitter</a></li>
+<li><a href="#quad">Quad</a></li>
+<li><a href="#render-texture">Render Texture</a></li>
+<li><a href="#shaders">Shaders</a></li>
+<li><a href="#shapes">Shapes</a></li>
+<li><a href="#sprites">Sprites</a></li>
+<li><a href="#tests">Tests</a></li>
+<li><a href="#text">Text</a></li>
+<li><a href="#tile-sprite">Tile Sprite</a></li>
+<li><a href="#tilemap">Tilemap</a></li>
+</ul>
+</li>
 <li><a href="#games">Games</a></li>
 <li><a href="#geom">Geom</a></li>
 <li><a href="#input">input输入</a><ul>
