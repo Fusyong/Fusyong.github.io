@@ -450,6 +450,80 @@
 </pre></div>
 <h2 id="game-objects">Game Objects/游戏对象</h2>
 <p>各种具体游戏对象都是继承GameObject。请参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html">基础游戏对象/Phaser.GameObjects.GameObject的文档</a>。</p>
+<h3 id="sprites">Sprites/精灵</h3>
+<p>Sprite是Phaser最常用的游戏对象之一。</p>
+<h4>Create From Config/通过配置对象生成精灵</h4>
+<blockquote>
+<p>src\game objects\sprites\create from config.js</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="nv">function</span> <span class="nv">create</span> <span class="ss">()</span>
+{
+    <span class="o">//</span>  <span class="nv">Implicit</span> <span class="nv">values</span>
+    <span class="nv">var</span> <span class="nv">config1</span> <span class="o">=</span> {
+        <span class="nv">key</span>: <span class="s1">'</span><span class="s">bunny</span><span class="s1">'</span>,
+        <span class="nv">x</span>: <span class="mi">400</span>,
+        <span class="nv">y</span>: <span class="mi">300</span>
+    }<span class="c1">;</span>
+
+    <span class="o">//</span>  <span class="nv">Implicit</span> <span class="nv">values</span>
+    <span class="nv">var</span> <span class="nv">config2</span> <span class="o">=</span> {
+        <span class="nv">key</span>: <span class="s1">'</span><span class="s">bunny</span><span class="s1">'</span>,
+        <span class="nv">x</span>: <span class="mi">400</span>,
+        <span class="nv">y</span>: <span class="mi">300</span>,
+        <span class="nv">flipX</span>: <span class="nv">true</span>,
+        <span class="nv">flipY</span>: <span class="nv">true</span>
+    }<span class="c1">;</span>
+
+    <span class="o">//</span>  <span class="nv">An</span> <span class="nv">array</span> <span class="nv">means</span> <span class="s1">'</span><span class="s">pick one element at random</span><span class="s1">'</span>
+    <span class="nv">var</span> <span class="nv">config3</span> <span class="o">=</span> {
+        <span class="nv">key</span>: [ <span class="s1">'</span><span class="s">bunny</span><span class="s1">'</span>, <span class="s1">'</span><span class="s">atari</span><span class="s1">'</span>, <span class="s1">'</span><span class="s">logo</span><span class="s1">'</span> ],
+        <span class="nv">x</span>: <span class="mi">400</span>,
+        <span class="nv">y</span>: <span class="mi">300</span>
+    }<span class="c1">;</span>
+
+    <span class="o">//</span>  <span class="nv">randInt</span> <span class="nv">means</span> <span class="nv">pick</span> <span class="nv">a</span> <span class="k">random</span> <span class="nv">integer</span> <span class="nv">between</span> <span class="nv">the</span> <span class="nv">min</span> <span class="nv">and</span> <span class="nv">max</span> <span class="nv">values</span> <span class="nv">given</span>
+    <span class="nv">var</span> <span class="nv">config4</span> <span class="o">=</span> {
+        <span class="nv">key</span>: <span class="s1">'</span><span class="s">atari</span><span class="s1">'</span>,
+        <span class="nv">x</span>: { <span class="nv">randInt</span>: [ <span class="mi">0</span>, <span class="mi">800</span> ] },
+        <span class="nv">y</span>: <span class="mi">300</span>
+    }<span class="c1">;</span>
+
+    <span class="o">//</span>  <span class="nv">randFloat</span> <span class="nv">means</span> <span class="nv">pick</span> <span class="nv">a</span> <span class="k">random</span> <span class="nv">float</span> <span class="nv">between</span> <span class="nv">the</span> <span class="nv">min</span> <span class="nv">and</span> <span class="nv">max</span> <span class="nv">values</span> <span class="nv">given</span>
+    <span class="nv">var</span> <span class="nv">config5</span> <span class="o">=</span> {
+        <span class="nv">key</span>: <span class="s1">'</span><span class="s">logo</span><span class="s1">'</span>,
+        <span class="nv">x</span>: <span class="mi">400</span>,
+        <span class="nv">y</span>: <span class="mi">300</span>,
+        <span class="nv">alpha</span>: { <span class="nv">randFloat</span>: [ <span class="mi">0</span>.<span class="mi">1</span>, <span class="mi">1</span> ] }
+    }<span class="c1">;</span>
+
+    <span class="o">//</span>  <span class="k">If</span> <span class="nv">the</span> <span class="nv">property</span> <span class="nv">is</span> <span class="nv">a</span> <span class="nv">function</span> <span class="nv">it</span> <span class="nv">will</span> <span class="nv">invoke</span> <span class="nv">it</span> <span class="nv">and</span> <span class="nv">use</span> <span class="nv">the</span> <span class="nb">result</span> <span class="nv">as</span> <span class="nv">the</span> <span class="nv">value</span>
+    <span class="nv">var</span> <span class="nv">config6</span> <span class="o">=</span> {
+        <span class="nv">key</span>: <span class="s1">'</span><span class="s">atari</span><span class="s1">'</span>,
+        <span class="nv">x</span>: <span class="mi">400</span>,
+        <span class="nv">y</span>: <span class="nv">function</span> <span class="ss">()</span> {
+            <span class="k">return</span> <span class="mi">100</span> <span class="o">+</span> <span class="nv">Math</span>.<span class="k">random</span><span class="ss">()</span> <span class="o">*</span> <span class="mi">500</span><span class="c1">;</span>
+        }
+    }<span class="c1">;</span>
+
+    <span class="o">//</span>  <span class="nv">An</span> <span class="nv">example</span> <span class="nv">using</span> <span class="nv">randFloat</span> <span class="nv">to</span> <span class="nv">set</span> <span class="nv">the</span> <span class="nv">scale</span> <span class="nv">of</span> <span class="nv">a</span> <span class="nv">Sprite</span>
+    <span class="nv">var</span> <span class="nv">config7</span> <span class="o">=</span> {
+        <span class="nv">key</span>: <span class="s1">'</span><span class="s">logo</span><span class="s1">'</span>,
+        <span class="nv">x</span>: <span class="mi">400</span>,
+        <span class="nv">y</span>: <span class="mi">300</span>,
+        <span class="nv">scale</span>: { <span class="nv">randFloat</span>: [ <span class="mi">0</span>.<span class="mi">2</span>, <span class="mi">2</span> ] }
+    }<span class="c1">;</span>
+
+    <span class="o">//</span>  <span class="nv">An</span> <span class="nv">example</span> <span class="nv">using</span> <span class="nv">randFloat</span> <span class="nv">to</span> <span class="nv">set</span> <span class="nv">independent</span> <span class="nv">x</span> <span class="nv">and</span> <span class="nv">y</span> <span class="nv">scale</span> <span class="nv">values</span>
+    <span class="nv">var</span> <span class="nv">config8</span> <span class="o">=</span> {
+        <span class="nv">key</span>: <span class="s1">'</span><span class="s">logo</span><span class="s1">'</span>,
+        <span class="nv">x</span>: <span class="mi">400</span>,
+        <span class="nv">y</span>: <span class="mi">300</span>,
+        <span class="nv">scale</span>: { <span class="nv">x</span>: { <span class="nv">randFloat</span>: [ <span class="mi">0</span>.<span class="mi">2</span>, <span class="mi">2</span> ] }, <span class="nv">y</span>: { <span class="nv">randFloat</span>: [ <span class="mi">1</span>.<span class="mi">5</span>, <span class="mi">3</span> ] } }
+    }<span class="c1">;</span>
+
+    <span class="nv">this</span>.<span class="nv">make</span>.<span class="nv">sprite</span><span class="ss">(</span><span class="nv">config8</span><span class="ss">)</span><span class="c1">;</span>
+}
+</pre></div>
 <h3 id="bitmaptext">Bitmaptext/位图文本</h3>
 <p>请参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.BitmapText.html">静态文图文本的文档</a>。</p>
 <h4>Static/静态位图文本</h4>
@@ -569,7 +643,7 @@
 <h3 id="render-texture">Render Texture</h3>
 <h3 id="shaders">Shaders</h3>
 <h3 id="shapes">Shapes</h3>
-<h3 id="sprites">Sprites</h3>
+<h3 id="sprites_1">Sprites</h3>
 <h3 id="tests">Tests</h3>
 <h3 id="text">Text</h3>
 <h3 id="tile-sprite">Tile Sprite</h3>

@@ -68,12 +68,13 @@
 <p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，略作说明，或增加代码示例。可做便览之用。</p>
 <h1 id="phaser-3-api-documentation-class-container"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#toc0">Phaser 3 API Documentation - Class: Container</a></h1>
 <p>Container的属性、方法与<a href="/phaser3-apiwen-dang-da-gang-sprite.html">Sprite</a>重合的部分，不再注释。</p>
-<p>容器自有显示列表，子项加入时默认会自动从场景或原容器的显示列表删除。<strong>这一点跟Group不同。当要整体控制显示时用容器，如果只是为了归类操控，那么用Group。</strong>
-容器可以应用遮罩，也可用作遮罩。
-容器可以嵌套，嵌套容器只有处于root的一个能应用遮罩。
-容器可以开启输入，这时需要指定一个形状作为点击区域；子项仍可开启输入。
-容器可以赋予物理属性，<strong>这时如果子项也有物理属性，可能带来混乱</strong>（如子项不处于0,0位时，可能引起错位），但使用Arcade Physics物理引擎不会有问题。
-<strong>容器会增加消耗，尤其是容器嵌套。</strong></p>
+<p>一个游戏对象加入容器后，即从显示列表中删除，而加入容器内部的显示列表，由容器负责它的渲染；位置也是相对于容器位置而言的。</p>
+<p>容器可以嵌套。</p>
+<p>容器可以添加遮罩或作为遮罩，但是子项不能添加遮罩，即遮罩不能叠加。</p>
+<p>容器可以添加输入，但是因为它没有纹理，所以你必须提供一个shape作为点击区域。容器的子项也能添加输入，并独立于容器。</p>
+<p>容器可以赋予物理体。不过，如果子项也有物理属性，并且容器或任何前辈对象不是位于0x0位置的话，那么你可能碰到意外的结果，比如物理体偏置。不把带物理属性的子项考虑进来，是因为需要过多的运算。</p>
+<p>要注意容器带来的额外问题。嵌套越深，消耗越会升级，尤其是在输入事件上。尽可能避免使用。</p>
+<p>参考<code>Group</code>。</p>
 <h2 id="phasergameobjects-container"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#toc1">Phaser.GameObjects. Container</a></h2>
 <p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#Container">new Container(scene [, x] [, y] [, children])</a>
 <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#toc3">Extends</a></p>

@@ -175,10 +175,11 @@
 <div class="highlight"><pre><span></span>    <span class="p">:::</span><span class="n">python</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">"The triple-colon syntax will *not* show line numbers."</span><span class="p">)</span>
 </pre></div>
-<p>加行号：</p>
+<p>加行号（但会导致<code>css</code>中的<code>pre {overflow-x: auto;}</code>失效）：</p>
 <div class="highlight"><pre><span></span>    <span class="c1">#!python</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">"The path-less shebang syntax *will* show line numbers."</span><span class="p">)</span>
 </pre></div>
+<p><strong>用于诗歌等纯文本时，也应该明示为<code>:::text</code>，否则可能出现错误的红色框。</strong>因为如果没有明示语言，那么Pygments语法高亮引擎会猜测一种语言（除非<code>guess_lang=False</code>）。</p>
 <h2 id="_8">缺省元数据和发布草稿</h2>
 <p>在元数据中添加草稿标签<code>Status: draft</code>，可发布到草稿文件夹drafts，不会列入目录、分类、标签中。可设置缺省元数据，缺省发布状态为草稿:</p>
 <div class="highlight"><pre><span></span><span class="n">DEFAULT_METADATA</span> <span class="o">=</span> <span class="p">{</span>
@@ -331,22 +332,7 @@ git push -u origin master
       <span class="k">overflow-x</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
     <span class="p">}</span>
 </pre></div>
-<p>from :<a href="https://75team.com/post/considerations-for-styling-the-%3C-pre-%3E-tag.html">使用<code>pre</code>标签样式的注意事项</a></p>
-<h2 id="_14">书写格式</h2>
-<h3 id="_15">代码高亮</h3>
-<p>Markdown文档的语法高亮是使用CodeHilite扩展实现的，使用缩进式（三反引号也支持），有两种指定语言身分的方式：</p>
-<ul>
-<li>其一，使用三冒号</li>
-</ul>
-<div class="highlight"><pre><span></span>    <span class="p">:::</span><span class="n">python</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"The triple-colon syntax will *not* show line numbers."</span><span class="p">)</span>
-</pre></div>
-<ul>
-<li>其二，使用path-less shebang（能显示行号，但会导致<code>css</code>中的<code>pre {overflow-x: auto;}</code>失效）：</li>
-</ul>
-<div class="highlight"><pre><span></span>    <span class="c1">#!python</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"The path-less shebang syntax *will* show line numbers."</span><span class="p">)</span>
-</pre></div></div>
+<p>from :<a href="https://75team.com/post/considerations-for-styling-the-%3C-pre-%3E-tag.html">使用<code>pre</code>标签样式的注意事项</a></p></div>
 	
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
@@ -373,10 +359,6 @@ git push -u origin master
 <li><a href="#_11">域名绑定</a></li>
 <li><a href="#_12">更改主题</a><ul>
 <li><a href="#_13">给代码块加水平滚动条</a></li>
-</ul>
-</li>
-<li><a href="#_14">书写格式</a><ul>
-<li><a href="#_15">代码高亮</a></li>
 </ul>
 </li>
 </ul>
