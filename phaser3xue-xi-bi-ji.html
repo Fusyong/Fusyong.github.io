@@ -66,7 +66,6 @@
 	
         <div>
 <h2 id="_1">说明</h2>
-<p><strong>【本文正在清理，把实例相关的内容分离到<a href="/phaser3guan-wang-shi-li-xue-xi-bi-ji.html">Phaser3官网实例学习笔记</a>】</strong></p>
 <p>最近Phaser的中文社区突然活跃起来。（也可能是我最近关注多一点造成的错觉。）很多初学者问一些过于基础的问题，比如怎么旋转一个精灵，有时引起社区成员的反感甚至奚落；这些问题本应该在自学入门中了解。我把自己自学Phaser的一些经验、资料累积在这里，对初学者可能有用。</p>
 <ul>
 <li>文中材料主要是针对Phaser3的。Phaser3变化很大，与Phaser2不同的地方做了重点标记。<a href="/phaser3guan-wang-shi-li-xue-xi-bi-ji.html">Phaser3官网实例学习笔记</a>已经单列一文。</li>
@@ -102,6 +101,7 @@
 <span class="nx">Phaser</span><span class="p">.</span><span class="nx">State</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">audioSprite</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AudioSprite</span><span class="p">;</span>
 <span class="c1">//等等...</span>
 </pre></div>
+<p>另外，<strong>官方文档有SQLite和json版，</strong>值得深入挖掘。</p>
 <h2 id="gamegameconfig">Game配置对象GameConfig</h2>
 <p>Phaser3的配置对象包含很多项目，详见<a href="https://photonstorm.github.io/phaser3-docs/global.html#GameConfig">配置对象GameConfig文档</a>，也可参考<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/game-config.md">小抄</a>。</p>
 <p><strong>Phaser3广泛使用配置对象，又比如在生成Sprites、Tweens实例时。</strong></p>
@@ -138,9 +138,9 @@
 <p>Phaser3游戏对象的原点（origin，对应于Phaser2的锚点/anchor属性）默认为中心点，而不是左上角。原点通过属性<code>originX</code>, <code>originY</code>获取，通过方法<code>setOrigin(x, y)</code>设置。</p>
 </li>
 <li>
-<p>Phaser.GameObjects.GameObjectFactory/游戏对象工厂类。实际上通过Scene.add属性引用，比如<code>this.add.sprite(config)</code>。</p>
+<p>Phaser.GameObjects.GameObjectFactory/游戏对象工厂类。实际上通过<code>Scene.add</code>属性引用，比如<code>this.add.sprite(config)</code>。</p>
 </li>
-<li>Phaser.GameObjects.GameObjectCreator/游戏对象生成器。实际上通过Scene.make属性引用，比如<code>this.make.sprite(config)</code>。与工厂类不同，生成器生成的游戏对象不会自动加载到场景上。</li>
+<li>Phaser.GameObjects.GameObjectCreator/游戏对象生成器。实际上通过<code>Scene.make</code>属性引用，比如<code>this.make.sprite(config)</code>。与工厂类不同，生成器生成的游戏对象不会自动加载到场景上。</li>
 </ul>
 <h3 id="sprite">Sprite精灵</h3>
 <p>精灵是Phaser游戏中最主要的游戏对象，在游戏对象中有代表性。要便览精灵的属性和方法，请参考<a href="/phaser3-apiwen-dang-da-gang-sprite.html">《Phaser3 API文档大纲-Sprite》</a>。</p>
@@ -322,6 +322,17 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 </pre></div>
 <p>你可以像操控其他游戏对象一样操控DOM对象，比如设置位置、缩放、旋转、透明度等属性。但它不能开启输入；但可以直接用addListener方法添加原生事件监听器。 </p>
 <p>DOM元素是对齐原生HTML和游戏对象的好办法。比如，你可以你可以插入登录框，或文本输入框，或者从第三方服务插入条幅广告，或者用于高解析度的文本显示与UI。</p>
+<h3 id="video">Video/视频</h3>
+<p>Video对象可以回放预先载入缓存的视频，或者播放给定链接的视频。视频可以是本地的，也可以是流式的。</p>
+<div class="highlight"><pre><span></span><span class="nx">preload</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">video</span><span class="p">(</span><span class="s1">'pixar'</span><span class="p">,</span> <span class="s1">'nemo.mp4'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">create</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">video</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">'pixar'</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>Video是标准游戏对象，跟Sprite一样，通常的缩放、旋转、修剪、着色、交互、赋予物理体等操作都可以。
+如果视频文件有透明通道，那么通过WebM文件格式，还可以实现透明；但需要浏览器支持。</p>
 <h2 id="input">Input游戏对象的输入控制</h2>
 <ul>
 <li>GameObject.setInteractive( [shape] [, callback] [, dropZone])</li>
@@ -471,6 +482,7 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 <li><a href="#quad-webgl-only">Quad (WebGL only)/方块</a></li>
 <li><a href="#shader-webgl-only">Shader (WebGL only)/着色器</a></li>
 <li><a href="#domelementdom">DOMElement/DOM元素</a></li>
+<li><a href="#video">Video/视频</a></li>
 </ul>
 </li>
 <li><a href="#input">Input游戏对象的输入控制</a></li>
