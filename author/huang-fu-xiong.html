@@ -60,8 +60,8 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="/pygame-zerowen-dang-de-si-wei-dao-tu-he-ru-men-shi-li.html"><h1>Pygame Zero文档的思维导图和入门实例</h1></a>
-2019-11-23 周六
+            <a href="/gei-bian-ji-peng-you-de-zheng-ze-biao-da-shi-ke-cheng.html"><h1>给编辑朋友的正则表达式课程</h1></a>
+2020-05-31 周日
 
 	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
  
@@ -70,280 +70,72 @@
  
         </div>
         
-        <div>
-<p>我认为Python + Pygame Zero + Thonny是最好的少儿编程入门技术路线。
-今天把Pygame Zero v1.2的文档，结合源码分析，整理成思维导图和入门实例，看起来真的很简单。
-又梳理API的详细用法，整理成一个“一文通”的示例。</p>
-<h2 id="python-vs-scratch">Python vs Scratch</h2>
-<p>这一年多少儿编程教育兴起，Scratch大火，机构赶紧圈钱，孩子确实喜欢，父母愉快入坑。
-但Scratch不是实用语言，而是乐高式的玩具语言，主要好处/目标是让孩子容易理解，降低难度，激发兴趣。</p>
-<p>但我比较认同，<strong>学习要尽量接近真实生活情景，学真的，真的学。</strong>也就说，学编程就尽可能学主流的编程语言。
-这几年人工智能技术大发展，Python因此几乎成了第一位的语言。实际上，多年来，它不仅在软件工程师中得到广泛使用，也是各行业通用的专家语言，就是说，不管孩子以后做什么，都可能用得着。所以中小学课堂上多半是教Python，美国多年前就是这样，中国这两年也开始跟上。</p>
-<p><strong>人生苦短，早学Python。</strong>等到上老年兴趣班的时候才发现Python的好处，那就太遗憾了，像这位——</p>
-<p><img alt="老潘学Python" src="/images/pgzero_doc/老潘学Python.jpg"/></p>
-<p>下面来看看pgzero(Pygame Zero正式库名)。Thonny得空再讲。</p>
-<h2 id="_1">本文附件</h2>
+        <div><p>[toc]</p>
+<p>很多编辑只会用Word。有些编辑也会用WPS，但他以为自己是在用Word；如果给他装Libreoffice Writer，他会稍稍不适应，但很快也能用起来。</p>
+<p>如果一个编辑希望稍微进一步学点“电脑知识”，我推荐学正则表达式。再搭配使用高效的文本处理工具，比如</p>
 <ul>
-<li>文档思维导图：<a href="/pgzero_doc.7z">pgzero_doc.7z</a>。Freeplane格式，包含官方文档的完整内容，以及分析源码获得的一些信息。还没有翻译。</li>
-<li>入门实例和详细的API用法示例：<a href="/pgzero_intro.7z">pgzero_intro.7z</a></li>
+<li>TextPro（<strong>除非特别说明，文中例子都是TextPro环境中的</strong>），</li>
+<li>EmEditor，</li>
+<li>VSCode，</li>
+<li>PowerGrep，</li>
+<li>Libreoffice Writer，</li>
 </ul>
-<h2 id="_2">文档结构是这样的</h2>
-<p><img alt="Pygame Zero文档的思维导图" src="/images/pgzero_doc/pgzero_doc.jpg"/></p>
-<h2 id="_3">这是入门实例</h2>
-<p>看起来真的很容易。</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>  <span class="c1"># 导入time模块</span>
-
-<span class="kn">import</span> <span class="nn">pgzrun</span>  <span class="c1"># 导入pgzero的模块运行工具pgzrun</span>
-
-
-<span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">800</span>  <span class="c1"># 画布宽</span>
-<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">800</span>  <span class="c1"># 画布高</span>
-
-<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>  <span class="c1"># 用images文件夹中的图像'alien'生成演员</span>
-<span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">400</span>  <span class="c1"># 定位</span>
-
-<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>  <span class="c1"># 绘制画面（显示钩子）</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>  <span class="c1"># 清屏</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span>  <span class="c1"># 填色</span>
-    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>  <span class="c1"># 绘制演员</span>
-
-<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>  <span class="c1"># 更新数据（显示钩子）</span>
-    <span class="n">alien</span><span class="o">.</span><span class="n">left</span> <span class="o">+=</span> <span class="mi">2</span>  <span class="c1"># 右移</span>
-    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">left</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>  <span class="c1"># 如果超出屏幕右边界</span>
-        <span class="n">alien</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1">#  重新放到屏幕左侧外</span>
-
-<span class="k">def</span> <span class="nf">on_mouse_down</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>  <span class="c1"># 当鼠标按下（事件钩子）</span>
-    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">collidepoint</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>  <span class="c1"># 如果与鼠标位置碰撞</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># 暂停</span>
-        <span class="n">set_alien_hurt</span><span class="p">()</span>  <span class="c1"># 调用函数</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">"You missed me!"</span><span class="p">)</span>  <span class="c1"># 打印消息</span>
-
-<span class="k">def</span> <span class="nf">set_alien_hurt</span><span class="p">():</span>  <span class="c1"># 外星人被击中后的动作</span>
-    <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien_hurt'</span>  <span class="c1"># 换用图像'alien_hurt'</span>
-    <span class="n">sounds</span><span class="o">.</span><span class="n">eep</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>  <span class="c1"># 播放sounds文件夹中的声音文件'eep'</span>
-    <span class="n">clock</span><span class="o">.</span><span class="n">schedule_unique</span><span class="p">(</span><span class="n">set_alien_normal</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>  <span class="c1"># 用定时器调用一次函数</span>
-
-<span class="k">def</span> <span class="nf">set_alien_normal</span><span class="p">():</span>  <span class="c1"># 外星人复原</span>
-    <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien'</span>  <span class="c1"># 换用原图</span>
-
-<span class="n">pgzrun</span><span class="o">.</span><span class="n">go</span><span class="p">()</span>  <span class="c1"># 用pgzrun运行本脚本</span>
+<p>以及一些文档管理工具，比如</p>
+<ul>
+<li>Total Commander，</li>
+<li>Everything，</li>
+</ul>
+<p>那你就可以说是编辑界的极客了。</p>
+<p>据说中华书局的很多青年编辑都会正则表达式，并自称为正则青年。其实每个人都能学会。</p>
+<p>跟很多编辑同事、朋友讲过这个意思（最近还许诺开一个在线的Python入门课），说要给他们讲课，一直没有实行。这个帖子就是为讲课预备的，积累一些实际用例。</p>
+<p>会不断更新。也可能很久不更新。</p>
+<h3 id="_1">“正则表达式”什么意思？</h3>
+<p>正则表达式（regular expression）就是规则表达式，可以用来表示多个符合此规则的字符串。比如<code>\d\d\d</code>表示连续的3个数字，如125、121、254等等。</p>
+<p>他可以用来查找文本中符合规则的所有字符串，还可以按一定的规则进行替换；也可以用来查找文件名符合规则的所有文件，还可以按一定规则更改文件名、移动位置；等等。</p>
+<p>正则表达式只是一种约定，在不同软件、编程语言中的语法规则、使用方式、功能是不同的。所有，学正则表达式一般是配合某些软件、编程语言来学习。文字工作者可以配合引言中讲到的软件来学习、使用。</p>
+<h3 id="_2">学正则该从哪里下手</h3>
+<p>使用汉字的文字工作者，最好从<a href="http://www.fodianbaoku.com/tools/index.htm">TextPro</a>开始。TextPro是<a href="http://www.fodianbaoku.com">中华佛典宝库</a>网站开发的，是用来整理佛经的文本处理工具。它的正则，对汉字有专门的设计，比如有专门的字符集可以方便地区分汉字和汉字中的标点、数字、大写数字、天干地支用字、拼音用字符、注音符号，等等；它还能处理批量正则替换表（一般的软件都没有这一功能，或者没它方便）；还带有一个专门的正则帮助文件，清晰，简明，有示例，相当于一个教程，用它学习入门就可以。</p>
+<h3 id="aabb">查找AABB式的词语</h3>
+<div class="highlight"><pre><span></span>【查找】(\c)\1(\c)\2
 </pre></div>
-<h2 id="pgzero-api">这是详细的pgzero API用法示例</h2>
-<p>API一文通。</p>
-<div class="highlight"><pre><span></span><span class="sd">"""pgzero(Pygame Zero) API的基本用法示例</span>
-
-<span class="sd">by 黄复雄, xiiiGame.com, aahuaang@Gmail.com</span>
-
-<span class="sd">** 发布时可能省略了中文字体`fonts\simkai.ttf`，请自行补充！**</span>
-
-<span class="sd">"""</span>
-
-<span class="c1"># 导入本脚本要使用的模块</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
-
-<span class="c1"># 导入pgzero的模块运行工具pgzrun，与模块最后的`pgzrun.go()`配合使用</span>
-<span class="c1"># 效果相当于在命令行中运行`pgzrun intro.py`</span>
-<span class="c1"># Mu和Thonny的`Pygame Zero模式`运行，即是执行`pgzrun intro.py`命令</span>
-<span class="kn">import</span> <span class="nn">pgzrun</span>
-<span class="c1"># pgzrun将自动引入</span>
-<span class="c1"># * 类: Actor, Rect, ZRect</span>
-<span class="c1"># * 对象: images, keyboard, screen, sounds</span>
-<span class="c1"># * 枚举对象: keymods, keys, mouse</span>
-<span class="c1"># * 函数: animate(), exit()</span>
-<span class="c1"># * 模块: clock, music, pgzrun, tone</span>
-<span class="c1"># 因此下面这些导入不是必须的，但显示导入可以方便编辑器补全、提示</span>
-<span class="kn">from</span> <span class="nn">pgzero.actor</span> <span class="kn">import</span> <span class="n">Actor</span>
-<span class="kn">from</span> <span class="nn">pgzero.rect</span> <span class="kn">import</span> <span class="n">Rect</span><span class="p">,</span> <span class="n">ZRect</span>
-<span class="kn">from</span> <span class="nn">pgzero.loaders</span> <span class="kn">import</span> <span class="n">sounds</span><span class="p">,</span> <span class="n">images</span>
-<span class="kn">from</span> <span class="nn">pgzero</span> <span class="kn">import</span> <span class="n">music</span><span class="p">,</span> <span class="n">tone</span>
-<span class="kn">from</span> <span class="nn">pgzero.clock</span> <span class="kn">import</span> <span class="n">clock</span>
-<span class="kn">from</span> <span class="nn">pgzero.builtins</span> <span class="kn">import</span> <span class="n">keymods</span>  <span class="c1"># 似乎没有作用</span>
-<span class="c1"># keymods属性有: LSHIFT, RSHIFT, SHIFT, LCTRL, RCTRL, CTRL, LALT, RALT, ALT, LMETA, RMETA, META, NUM, CAPS, MODE</span>
-<span class="c1"># 可检测mod值，LCtrl: 64, RCtrl: 128, LAlt: 256, RAlt: 512, LShift: 1, RShift: 1, Capital: 8192</span>
-<span class="kn">from</span> <span class="nn">pgzero.constants</span> <span class="kn">import</span> <span class="n">mouse</span>
-<span class="kn">from</span> <span class="nn">pgzero.animation</span> <span class="kn">import</span> <span class="n">animate</span>
-<span class="kn">from</span> <span class="nn">pgzero.keyboard</span> <span class="kn">import</span> <span class="n">keys</span><span class="p">,</span> <span class="n">Keyboard</span>
-<span class="kn">from</span> <span class="nn">pgzero.screen</span> <span class="kn">import</span> <span class="n">Screen</span>
-<span class="n">keyboard</span><span class="p">:</span> <span class="n">Keyboard</span>  <span class="c1"># 类型标注</span>
-<span class="n">screen</span><span class="p">:</span> <span class="n">Screen</span>  <span class="c1"># 类型标注</span>
 
 
-<span class="c1"># 生成演员（Actor）实例alien</span>
-<span class="c1"># Actor(image, pos=POS_TOPLEFT, anchor=ANCHOR_CENTER, **kwargs)</span>
-<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
-<span class="c1"># 演员定位，可以使用这些属性：</span>
-<span class="c1"># bottom, bottom_left, bottom_right, center, left, mid_bottom, mid_left,</span>
-<span class="c1"># mid_right, mid_top, pos, right, top, top_left, top_right, x, y</span>
-<span class="c1"># 另有属性，锚点: anchor, 角度: angle</span>
-<span class="c1"># 另有方法，测量相对距离: distance_to(), 测量相对角度: angle_to()</span>
-<span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
-<span class="n">alien2</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
-
-<span class="n">TITLE</span> <span class="o">=</span> <span class="s1">'api用法'</span>  <span class="c1"># 窗口标题</span>
-<span class="c1"># 画布宽高</span>
-<span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">800</span>
-<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">400</span>
+<p><code>\c</code>代表一个汉字。<code>()</code>代表捕获其间的内容，以备引用，<code>\1</code>即是引用第一个捕获；那么<code>(\c)\1</code>就表示两个重复的汉字。</p>
+<p>如果你想把这些词语（或所在行）收集到一个文件中，TextPro的“编辑”菜单中有两个现成的功能：“复制所有查找结果”和“复制所有查找结果”。</p>
+<h3 id="_3">删除重复行</h3>
+<p>可以用正则处理（参见下面的思路），但一般使用软件现成的功能。EmEditor、TextPro，甚至excel都有这样的功能。</p>
+<h3 id="excel">可以像Excel那样，某一列相同的很多行，只保留一行吗？</h3>
+<p>用EmEditor跨行正则替换。先按行排序，把有相同值的行都排到一起，然后</p>
+<div class="highlight"><pre><span></span>【查找】^((.*?)\t.*)\n\2\t.*$
+【替换】\1
+</pre></div>
 
 
-<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
-    <span class="sd">"""    绘制（显示钩子）;</span>
-
-<span class="sd">    如果定义了update()，或者发出了定时器（clock）事件、输入事件，就会重绘画布;</span>
-<span class="sd">    不要在这里更新数据，定义动画;</span>
-<span class="sd">    """</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>  <span class="c1"># 屏幕清理，其后默认填充黑色</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">))</span>  <span class="c1"># 填充颜色</span>
-
-    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="s1">'alien_hurt'</span><span class="p">,(</span><span class="n">WIDTH</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># 绘制图像</span>
-
-    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">))</span>  <span class="c1"># 画线</span>
-
-    <span class="n">rect</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>  <span class="c1"># 画方形</span>
-    <span class="n">rect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">/</span> <span class="mi">2</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">))</span>
-    <span class="c1"># screen.draw.filled_rect(rect, color)  # 画填充的方形</span>
-
-    <span class="c1"># screen.draw.circle(pos, radius, color)  # 画圆形</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">filled_circle</span><span class="p">((</span><span class="n">WIDTH</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="mi">100</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">))</span>  <span class="c1"># 画填充的圆形</span>
-
-    <span class="c1"># 画文本</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
-        <span class="s2">"Python</span><span class="se">\n</span><span class="s2">和</span><span class="se">\n</span><span class="s2">Pygame Zero</span><span class="se">\n</span><span class="s2">游戏学习"</span><span class="p">,</span>  <span class="c1"># 要显示的文本</span>
-        <span class="n">midtop</span><span class="o">=</span><span class="p">(</span><span class="n">WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>  <span class="c1"># 定位，关键字：</span>
-        <span class="c1"># top left bottom right</span>
-        <span class="c1"># topleft bottomleft topright bottomright</span>
-        <span class="c1"># midtop midleft midbottom midright</span>
-        <span class="c1"># center centerx centery</span>
-        <span class="n">fontname</span><span class="o">=</span><span class="s2">"simkai"</span><span class="p">,</span>  <span class="c1"># 请保证存在字体： fonts\simkai.ttf</span>
-        <span class="n">fontsize</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
-        <span class="n">align</span><span class="o">=</span><span class="s1">'center'</span><span class="p">,</span>  <span class="c1"># 对齐方式：left, center, right</span>
-        <span class="n">color</span><span class="o">=</span><span class="s2">"#000000"</span><span class="p">,</span>  <span class="c1"># 颜色</span>
-        <span class="c1"># background="gray",  # 背景色</span>
-        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>  <span class="c1"># 透明度</span>
-        <span class="n">gcolor</span><span class="o">=</span><span class="s2">"#0000ff"</span><span class="p">,</span> <span class="c1"># 渐变色</span>
-
-        <span class="n">owidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="c1"># 外框</span>
-        <span class="n">ocolor</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span>  <span class="c1"># 外框色</span>
-
-        <span class="c1"># shadow=(1.0,1.0),  # 阴影投射偏置，会覆盖owidth，被alpha覆盖</span>
-        <span class="c1"># scolor="blue",  # 阴影颜色</span>
-    <span class="p">)</span>
-    <span class="c1"># 画适配方框的文本</span>
-    <span class="c1"># screen.draw.textbox(*args, **kwargs)</span>
-
-    <span class="c1"># 画文本</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
-        <span class="s2">"用空白键停止/播放音乐"</span><span class="p">,</span>
-        <span class="n">midtop</span><span class="o">=</span><span class="p">(</span><span class="n">WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">-</span> <span class="mi">30</span><span class="p">),</span>
-        <span class="n">fontname</span><span class="o">=</span><span class="s2">"simkai"</span><span class="p">,</span>
-        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span>
-    <span class="p">)</span>
-
-    <span class="c1"># 画演员</span>
-    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-    <span class="n">alien2</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-
-<span class="c1"># screen.surface: Surface  # 代表屏幕缓存</span>
-
-
-<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
-    <span class="sd">"""</span>
-<span class="sd">    更新（显示钩子）;</span>
-<span class="sd">    游戏的逐步逻辑，每秒重复60次;</span>
-<span class="sd">    update()基于帧，间距不稳定；update(dt)基于实际时间，消耗大;</span>
-<span class="sd">    """</span>
-    <span class="n">alien</span><span class="o">.</span><span class="n">left</span> <span class="o">+=</span> <span class="mi">2</span>
-    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">left</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
-        <span class="n">alien</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="mi">0</span>
-
-
-<span class="c1"># 合成音，'E4'指第4个八度的E，'A#5'指第5个八度的A升，'Bb3'指第3个八度的B降</span>
-<span class="n">beep</span> <span class="o">=</span> <span class="n">tone</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">'A3'</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">on_mouse_down</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
-    <span class="sd">""" 当鼠标按下（事件钩子）"""</span>
-    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">collidepoint</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
-        <span class="n">sounds</span><span class="o">.</span><span class="n">eep</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>  <span class="c1"># sounds, images 可以用`.file_name`取得Surface或Sound实例</span>
-        <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien_hurt'</span>
-        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-        <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien'</span>
-        <span class="n">set_alien_hurt</span><span class="p">()</span>
-        <span class="n">move_alien2</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">"You missed me!"</span><span class="p">)</span>
-        <span class="c1"># beep.stop()  # 快速点击会导致杂音，不停止则有变音</span>
-        <span class="n">beep</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
-        <span class="c1"># tone.play('A3', 0.5)  # 也可以不生成实例</span>
-
-
-<span class="k">def</span> <span class="nf">on_mouse_move</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">buttons</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">mouse</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">in</span> <span class="n">buttons</span> <span class="ow">and</span> <span class="n">alien</span><span class="o">.</span><span class="n">collidepoint</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
-        <span class="c1"># 当鼠标拖动</span>
-        <span class="n">alien</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span>
-
-
-<span class="k">def</span> <span class="nf">set_alien_hurt</span><span class="p">():</span>
-    <span class="sd">""" 外星人被击中后的动作"""</span>
-    <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien_hurt'</span>
-    <span class="n">sounds</span><span class="o">.</span><span class="n">eep</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
-    <span class="n">clock</span><span class="o">.</span><span class="n">schedule_unique</span><span class="p">(</span><span class="n">set_alien_normal</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
-    <span class="c1"># clock的方法还有: schedule(), schedule_interval(), unschedule()</span>
-
-
-<span class="k">def</span> <span class="nf">set_alien_normal</span><span class="p">():</span>
-    <span class="sd">""" 外星人复原"""</span>
-    <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien'</span>
-
-
-<span class="c1"># alien2动画</span>
-<span class="c1"># 位置数据</span>
-<span class="n">offset_x</span> <span class="o">=</span> <span class="n">alien2</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="n">offset_y</span> <span class="o">=</span> <span class="n">alien2</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="n">BLOCK_POSITIONS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="n">WIDTH</span> <span class="o">-</span> <span class="n">offset_x</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">),</span>
-    <span class="p">(</span><span class="n">WIDTH</span> <span class="o">-</span> <span class="n">offset_x</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">-</span> <span class="n">offset_y</span><span class="p">),</span>
-    <span class="p">(</span><span class="n">offset_x</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">-</span> <span class="n">offset_y</span><span class="p">),</span>
-    <span class="p">(</span><span class="n">offset_x</span><span class="p">,</span> <span class="n">offset_y</span><span class="p">),</span>
-<span class="p">]</span>
-<span class="n">alien2_positions</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">(</span><span class="n">BLOCK_POSITIONS</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">move_alien2</span><span class="p">():</span>
-    <span class="sd">"""Move the ship to the target."""</span>
-    <span class="n">animate</span><span class="p">(</span>
-        <span class="n">alien2</span><span class="p">,</span>
-        <span class="n">tween</span><span class="o">=</span><span class="s1">'accel_decel'</span><span class="p">,</span>  <span class="c1"># 可选: linear, accelerate, decelerate, accel_decel, end_elastic, </span>
-        <span class="c1"># start_elastic, both_elastic, bounce_end, bounce_start, bounce_start_end</span>
-        <span class="n">pos</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">alien2_positions</span><span class="p">),</span>
-        <span class="n">duration</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="c1"># on_finished=next_ship_target,  # 结束时回调</span>
-    <span class="p">)</span>
-    <span class="c1"># animate()会返回一个动画实例，可以使用方法: stop(complete=False)，属性: running, on_finished</span>
-
-<span class="c1"># 控制背景音乐</span>
-<span class="n">music</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"handel"</span><span class="p">)</span>
-<span class="n">is_pausing</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="k">def</span> <span class="nf">on_key_down</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">mod</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">SPACE</span><span class="p">:</span>
-        <span class="k">global</span> <span class="n">is_pausing</span>
-        <span class="k">if</span> <span class="n">is_pausing</span><span class="p">:</span>
-            <span class="n">music</span><span class="o">.</span><span class="n">unpause</span><span class="p">()</span>
-            <span class="n">is_pausing</span> <span class="o">=</span> <span class="bp">False</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">music</span><span class="o">.</span><span class="n">pause</span><span class="p">()</span>
-            <span class="n">is_pausing</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="c1"># music的方法还有: play_once(name), queue(name), stop(), is_playing(), fadeout(duration), get_volume(), </span>
-<span class="c1"># 键盘和鼠标事件钩子还有：</span>
-<span class="c1"># on_key_up()</span>
-<span class="c1"># on_mouse_up()</span>
-<span class="c1"># on_music_end()</span>
-
-
-<span class="n">pgzrun</span><span class="o">.</span><span class="n">go</span><span class="p">()</span>  <span class="c1"># 运行本脚本</span>
-</pre></div></div>
+<p><strong>其实，EmEditor中现成有这个功能：编辑.高级.删除/把重复行作为书签</strong></p>
+<h2 id="_4">跨行处理</h2>
+<p>有些工具可以跨行使用正则查找、替换，比如EmEditor、vscode、Libreoffice Writer（要安装插件altsearch）。
+不能跨行处理的软件，可以把所有行合并成一行后再处理。——用一些文本中不可能有的符号组合标记分行的位置，比如@@@@，处理完后还可能恢复分行。</p></div>
         <hr />
     </div>
 
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/pygame-zerowen-dang-de-si-wei-dao-tu-he-ru-men-shi-li.html"><h2>Pygame Zero文档的思维导图和入门实例</h2></a>
+        <div class= "well small"> 2019-11-23 周六
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>我认为Python + Pygame Zero + Thonny是最好的少儿编程入门技术路线。今天把Pygame Zero v1.2的文档，结合源码分析，整理成思维导图和入门实例，看起来真的很简单。又梳理API的详细用法，整理成一个“一文通”的示例。</p> <a href="/pygame-zerowen-dang-de-si-wei-dao-tu-he-ru-men-shi-li.html">read...</a></div>
+    </div>	
+				
 
  
         
@@ -491,24 +283,6 @@
         <div class="summary"><p>Pyo是用C写成的Python模块，用于生成数字信号处理（DSP）脚本。它提供一整套的类，用于构建音频软件，编写算法音乐，或通过一种简单、成熟、强大的编程语言随意探索音频处理。</p> <a href="/pyowen-dang-yi.html">read...</a></div>
     </div>	
 				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/pyoxue-xi-bi-ji.html"><h2>Pyo学习笔记</h2></a>
-        <div class= "well small"> 2018-12-27 周四
-
-	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>Pyo是用C写成的Python模块，用于生成数字信号处理（DSP）脚本。它提供一整套的类，用于构建音频软件，编写算法音乐，或通过一种简单、成熟、强大的编程语言随意探索音频处理。</p> <a href="/pyoxue-xi-bi-ji.html">read...</a></div>
-    </div>	
-				
 <div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr;</a></li>
@@ -551,11 +325,11 @@
                 </li>
                 
                 <li><a href="/category/bu-kao-si-ji.html">布考斯基</a></li>
+                <li><a href="/category/lao-xiong-ai-xue-xi.html">老熊爱学习</a></li>
                 <li><a href="/category/qi-ji-yin-qiao-zhi.html">奇技淫巧志</a></li>
                 <li><a href="/category/xi-phaser.html">习Phaser</a></li>
                 <li><a href="/category/xi-pygame-zero.html">习Pygame Zero</a></li>
                 <li><a href="/category/xi-pyo.html">习Pyo</a></li>
-                <li><a href="/category/xiang-ba-ai-xue-xi.html">想爸爱学习</a></li>
                    
             </ul>
             </div>
@@ -592,7 +366,7 @@
     </div>     </div> 
 <footer>
 <br />
-<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2019, Powered by <a href="http://getpelican.com/">Pelican</a></p>
+<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2020, Powered by <a href="http://getpelican.com/">Pelican</a></p>
 </footer>
 
 </div> <!-- /container -->
