@@ -72,15 +72,15 @@
 <ul>
 <li>安装，通常在一个独立的Python venv中</li>
 </ul>
-<div class="highlight"><pre><span></span>pip install pelican markdown beautifulsoup4
-</pre></div>
+<div class="highlight"><pre><span></span><code>pip install pelican markdown beautifulsoup4
+</code></pre></div>
 <ul>
 <li>在当前目录生成一个网站骨架</li>
 </ul>
-<div class="highlight"><pre><span></span>pelican-quickstart
-</pre></div>
+<div class="highlight"><pre><span></span><code>pelican-quickstart
+</code></pre></div>
 <p>目录结构如下：</p>
-<div class="highlight"><pre><span></span>yourproject/
+<div class="highlight"><pre><span></span><code>yourproject/
 ├── content              <span class="c1"># 文章</span>
 │   └── <span class="o">(</span>pages<span class="o">)</span>         <span class="c1"># 固定页面</span>
 │   └── <span class="o">(</span>images<span class="o">)</span>        <span class="c1"># 静态文件夹(图像)</span>
@@ -90,27 +90,27 @@
 ├── Makefile             <span class="c1"># 自动化工具</span>
 ├── pelicanconf.py       <span class="c1"># 主配置</span>
 └── publishconf.py       <span class="c1"># 发布配置</span>
-</pre></div>
+</code></pre></div>
 <h2 id="_2">常用命令</h2>
 <ul>
 <li>启动开发服务，监控更改，实时发布更新:</li>
 </ul>
-<div class="highlight"><pre><span></span>pelican -r
-</pre></div>
+<div class="highlight"><pre><span></span><code>pelican -r
+</code></pre></div>
 <p>即：</p>
-<div class="highlight"><pre><span></span>pelican --autoreload
-</pre></div>
+<div class="highlight"><pre><span></span><code>pelican --autoreload
+</code></pre></div>
 <ul>
 <li>在输出文件夹output的位置启动Python3服务器（其他服务器也可以），然后浏览器中打开给出的地址：</li>
 </ul>
-<div class="highlight"><pre><span></span>python -m http.server
-</pre></div>
+<div class="highlight"><pre><span></span><code>python -m http.server
+</code></pre></div>
 <h2 id="_3">文件元数据</h2>
 <p>Pelican支持Markdown、reStructuredText、AsciiDoc等书写格式，也能直接使用HTML页面。下面以较常见的Markdown为主。</p>
 <ul>
 <li>常用Markdown元数据：</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="o">---</span>
+<div class="highlight"><pre><span></span><code><span class="o">---</span>
 <span class="nx">Title</span><span class="o">:</span> <span class="nx">文章标题</span>        <span class="c1">// 必填</span>
 <span class="nx">Slug</span><span class="o">:</span>                 <span class="c1">// 文章唯一标识,相同的Slug搭配不同的Lan标记可以形成多语言平行页</span>
                       <span class="c1">// 缺省则用Title生成,汉字转换为无调拼音并用'-'分割</span>
@@ -124,12 +124,12 @@
 <span class="nx">Status</span><span class="o">:</span>                <span class="c1">// 状态,如draft(草稿,不公布), published(发布,缺省值),</span>
                        <span class="c1">// hidden(只用于隐藏page,如404页)</span>
 <span class="o">---</span>
-</pre></div>
+</code></pre></div>
 <p>另有<code>Save_as:</code>标签，控制转换后的输出目标。配合<code>INDEX_SAVE_AS = 'blog_index.html'</code>可以更改网站首页。</p>
 <ul>
 <li>HTML元数据：</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My super title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"tags"</span> <span class="na">content</span><span class="o">=</span><span class="s">"thats, awesome"</span> <span class="p">/&gt;</span>
@@ -143,73 +143,73 @@
         This is the content of my super blog post.
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></div>
+</code></pre></div>
 <h2 id="html">HTML标签</h2>
-<div class="highlight"><pre><span></span><span class="p">:</span><span class="n">abbr</span><span class="p">:</span><span class="o">`</span><span class="n">HTML</span> <span class="p">(</span><span class="n">HyperText</span> <span class="n">Markup</span> <span class="k">Language</span><span class="p">)</span><span class="o">`</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">:abbr:`HTML (HyperText Markup Language)`</span>
+</code></pre></div>
 <h2 id="pages">pages（固定页面）</h2>
 <p>内容文件夹<code>content</code>下的文件夹<code>pages</code>，其中的内容会生成静态页，比如About、Contact页。通过<code>DISPLAY_PAGES_ON_MENU</code>选项控制<code>pages</code>中的内容是否全部在顶级导航菜单中显示，默认为<code>True</code>。个别文章可以通过元数据<code>status: hidden</code>隐藏。</p>
 <h2 id="_4">内部内容链接</h2>
 <p>链接到内部的内容文件，包括即将编译的markdown文件；但图片等静态文件当用<code>static</code>标签。<strong>根文件夹前要用<code>/</code>，如<code>/category</code>。</strong></p>
-<div class="highlight"><pre><span></span><span class="p">[</span><span class="n">a</span> <span class="n">link</span> <span class="k">relative</span> <span class="k">to</span> <span class="n">the</span> <span class="k">current</span> <span class="n">file</span><span class="p">](</span><span class="err">{</span><span class="n">filename</span><span class="err">}</span><span class="o">/</span><span class="n">category</span><span class="o">/</span><span class="n">article1</span><span class="p">.</span><span class="n">md</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">[a link relative to the current file]({filename}/category/article1.md)</span>
+</code></pre></div>
 <h2 id="_5">静态文件链接</h2>
 <p>在<code>pelicanconf.py</code>中设置静态文件路径:</p>
-<div class="highlight"><pre><span></span><span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'images'</span><span class="p">,</span> <span class="s1">'pdfs'</span><span class="p">]</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">STATIC_PATHS = ['images', 'pdfs']</span>
+</code></pre></div>
 <p>文章使用方法<code>static</code>标签：</p>
-<div class="highlight"><pre><span></span><span class="o">!</span><span class="p">[</span><span class="n">Alt</span> <span class="n">Text</span><span class="p">]({</span><span class="k">static</span><span class="p">}</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">han</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="o">!</span><span class="p">[</span><span class="n">Alt</span> <span class="n">Text</span><span class="p">]({</span><span class="k">static</span><span class="p">}</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">han</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
 <span class="p">[</span><span class="n">Our</span> <span class="n">Menu</span><span class="p">]({</span><span class="k">static</span><span class="p">}</span><span class="o">/</span><span class="n">pdfs</span><span class="o">/</span><span class="n">menu</span><span class="p">.</span><span class="n">pdf</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 <p>与<code>filename</code>标签定义的链接，编译后将指向目标（如md文件）的编译输出文件（如html文件），而<code>static</code>标签定义的链接仍指向源文件。
 另外，用<code>attach</code>代替<code>static</code>可以保持文章与附件的相对关系。但建议只当所有链接都指向同一个文件，且链接所在的文章都在同一目录时才使用<code>attach</code>标签。</p>
 <h2 id="_6">元数据链接</h2>
 <p>链接到元数据：</p>
-<div class="highlight"><pre><span></span><span class="o">`</span><span class="err">{</span><span class="n">author</span><span class="err">}</span><span class="n">name</span><span class="o">`</span>
-<span class="o">`</span><span class="err">{</span><span class="n">category</span><span class="err">}</span><span class="n">foobar</span><span class="o">`</span>
-<span class="o">`</span><span class="err">{</span><span class="k">index</span><span class="err">}</span><span class="o">`</span>
-<span class="o">`</span><span class="err">{</span><span class="n">tag</span><span class="err">}</span><span class="n">tagname</span><span class="o">`</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">`{author}name`</span>
+<span class="err">`{category}foobar`</span>
+<span class="err">`{index}`</span>
+<span class="err">`{tag}tagname`</span>
+</code></pre></div>
 <h2 id="_7">代码语法高亮</h2>
 <p>Markdown文件使用CodeHilite extension，代码块缩进、其上加语言标识（用常规的一对三反引号也可以）：</p>
-<div class="highlight"><pre><span></span>    <span class="p">:::</span><span class="n">python</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"The triple-colon syntax will *not* show line numbers."</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>    <span class="p">:::</span><span class="n">python</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"The triple-colon syntax will *not* show line numbers."</span><span class="p">)</span>
+</code></pre></div>
 <p>加行号（但会导致<code>css</code>中的<code>pre {overflow-x: auto;}</code>失效）：</p>
-<div class="highlight"><pre><span></span>    <span class="c1">#!python</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">"The path-less shebang syntax *will* show line numbers."</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>    <span class="c1">#!python</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"The path-less shebang syntax *will* show line numbers."</span><span class="p">)</span>
+</code></pre></div>
 <p><strong>用于诗歌等纯文本时，也应该明示为<code>:::text</code>，否则可能出现错误的红色框。</strong>因为如果没有明示语言，那么Pygments语法高亮引擎会猜测一种语言（除非<code>guess_lang=False</code>）。</p>
 <h2 id="_8">缺省元数据和发布草稿</h2>
 <p>在元数据中添加草稿标签<code>Status: draft</code>，可发布到草稿文件夹drafts，不会列入目录、分类、标签中。可设置缺省元数据，缺省发布状态为草稿:</p>
-<div class="highlight"><pre><span></span><span class="n">DEFAULT_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="n">DEFAULT_METADATA</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">'status'</span><span class="p">:</span> <span class="s1">'draft'</span><span class="p">,</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 <p>此后如果要发布，则需要添加发布状态标签：</p>
-<div class="highlight"><pre><span></span><span class="n">Status</span><span class="o">:</span> <span class="n">published</span><span class="o">.</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Status</span><span class="o">:</span> <span class="n">published</span><span class="o">.</span>
+</code></pre></div>
 <h2 id="_9">文章的多语言翻译</h2>
 <p>略。</p>
 <h2 id="extract_toc">extract_toc插件</h2>
 <p>extract_toc通过article.content中第一个[TOC]标签的内容生成目录，放在article.toc中，从而可以在模板中使用。注意，第一个[TOC]标签将被删除。安装依赖：</p>
-<div class="highlight"><pre><span></span>pip install beautifulsoup4
-</pre></div>
+<div class="highlight"><pre><span></span><code>pip install beautifulsoup4
+</code></pre></div>
 <p>在设置中安装插件：</p>
-<div class="highlight"><pre><span></span><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'path/to/pelican-plugins'</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'path/to/pelican-plugins'</span><span class="p">]</span>
 <span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'extract_toc'</span><span class="p">]</span>
-</pre></div>
+</code></pre></div>
 <p>在模板中使用。比我的博客，把目录移到右侧文章信息下部：</p>
 <ul>
 <li>在Pelican自带主题notmyidea的article_infos.html中添加空block，以便扩展：</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">block</span> <span class="nv">toc</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">toc</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">endblock</span><span class="cp">%}</span><span class="x"></span>
-</pre></div>
+</code></pre></div>
 <ul>
 <li>再新建article_infos_toc.html，扩展前者：</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">"article_infos.html"</span> <span class="cp">%}</span><span class="x"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">"article_infos.html"</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">block</span> <span class="nv">toc</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.toc</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">        &lt;nav class="toc"&gt;</span>
@@ -217,10 +217,10 @@
 <span class="x">        &lt;/nav&gt;</span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
-</pre></div>
+</code></pre></div>
 <h2 id="_10">常用配置</h2>
 <p><code>pelican-quickstart</code>自动生成的<code>pelicanconf.py</code>种有一些重要的设置项，不在此列。这里主要是额外补充的：</p>
-<div class="highlight"><pre><span></span><span class="c1"># 网站副标题</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 网站副标题</span>
 <span class="n">SITESUBTITLE</span> <span class="o">=</span> <span class="s1">'你来了！'</span>
 
 <span class="c1"># 站点地址，最后的"/"不能少。或留空。</span>
@@ -228,7 +228,7 @@
 <span class="c1"># SITEURL = 'http://blog.xiiigame.com/'</span>
 
 <span class="c1"># 日期格式参看：https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior</span>
-<span class="n">DEFAULT_DATE_FORMAT</span> <span class="o">=</span> <span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1"> %a'</span>
+<span class="n">DEFAULT_DATE_FORMAT</span> <span class="o">=</span> <span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1"> </span><span class="si">%a</span><span class="s1">'</span>
 
 <span class="c1"># 使用未install的主题</span>
 <span class="n">THEME</span> <span class="o">=</span> <span class="s2">"./themes/notmyidea-ah21"</span>
@@ -266,7 +266,7 @@
                     <span class="p">}</span>
 
 <span class="c1">#次级文件夹中的文章，如果没有分类，则使用文件夹名称代替，缺省为True</span>
-<span class="n">USE_FOLDER_AS_CATEGORY</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">USE_FOLDER_AS_CATEGORY</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="c1"># 默认归类（未归类的归入自动此类）</span>
 <span class="n">DEFAULT_CATEGORY</span> <span class="o">=</span> <span class="s1">'杂项'</span>
 
@@ -293,28 +293,28 @@
 
 <span class="c1"># 谷歌分析号码</span>
 <span class="n">GOOGLE_ANALYTICS</span> <span class="o">=</span> <span class="s1">'UA-xxxxxxxxx-x'</span>
-</pre></div>
+</code></pre></div>
 <p>详细配置见<a href="http://docs.getpelican.com/en/stable/settings.html">pelican 文档</a></p>
 <h2 id="githubuser-pages">部署到github的User Pages</h2>
 <p>在github上新建一个名为username.github.io的库（username必须是你的github账户名，以下<code>Fusyong</code>是我的账号，请改成你自己的）。然后在本地的output文件夹进行git克隆，或者初始化、提交、关联，再推送。</p>
-<div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">"# Fusyong.github.io"</span> &gt;&gt; README.md
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">"# Fusyong.github.io"</span> &gt;&gt; README.md
 git init
 git add README.md
 git commit -m <span class="s2">"first commit"</span>
 git remote add origin https://github.com/Fusyong/Fusyong.github.io.git
 git push -u origin master
-</pre></div>
+</code></pre></div>
 <p>即可访问Yourusername.github.io。如果误删除<code>.git</code>文件夹，重新克隆库即可：</p>
-<div class="highlight"><pre><span></span>git clone https://github.com/Fusyong/Fusyong.github.io.git output
-</pre></div>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/Fusyong/Fusyong.github.io.git output
+</code></pre></div>
 <p>每次更新后提交、推送：</p>
-<div class="highlight"><pre><span></span>git add --all
+<div class="highlight"><pre><span></span><code>git add --all
 git commit -m <span class="s2">"refresh"</span>
 git push -u origin master
-</pre></div>
+</code></pre></div>
 <p>以上是用HTTPS链接，每次push都需要输入账号、密码，不过可以在git中保存账户名和密码：</p>
-<div class="highlight"><pre><span></span>git config --global credential.helper store
-</pre></div>
+<div class="highlight"><pre><span></span><code>git config --global credential.helper store
+</code></pre></div>
 <p>或者使用如下的SSH链接，使用秘钥，不需要每次提供：<code>git@github.com:Fusyong/Fusyong.github.io.git</code></p>
 <p>git知识可参考<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰的git教程.</a></p>
 <p><strong>另，我的win7系统上无法使用官方推荐的ghp-import来更新库。</strong></p>
@@ -323,15 +323,15 @@ git push -u origin master
 <h2 id="_12">更改主题</h2>
 <h3 id="_13">给代码块加水平滚动条</h3>
 <p>更改css文件。代码块折行：</p>
-<div class="highlight"><pre><span></span>    <span class="nt">pre</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code>    <span class="nt">pre</span> <span class="p">{</span>
       <span class="k">white-space</span><span class="p">:</span> <span class="kc">pre-wrap</span><span class="p">;</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 <p>不折行而加上横向滚动条：</p>
-<div class="highlight"><pre><span></span>    <span class="nt">pre</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code>    <span class="nt">pre</span> <span class="p">{</span>
       <span class="k">overflow-x</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 <p>from :<a href="https://75team.com/post/considerations-for-styling-the-%3C-pre-%3E-tag.html">使用<code>pre</code>标签样式的注意事项</a></p></div>
 	
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
@@ -411,10 +411,10 @@ git push -u origin master
                 
                 <li><a href="/category/bu-kao-si-ji.html">布考斯基</a></li>
                 <li><a href="/category/er-tong-shi-zi.html">儿童识字</a></li>
-                <li><a href="/category/jia-chang-ban-xue.html">家长伴学</a></li>
-                <li><a href="/category/lao-shao-xie-zi.html">老少写字</a></li>
                 <li><a href="/category/phaserzhong-xin-zu.html">Phaser中心组</a></li>
                 <li><a href="/category/qi-ji-yin-qiao.html">奇技淫巧</a></li>
+                <li><a href="/category/qin-zi-ban-xue.html">亲子伴学</a></li>
+                <li><a href="/category/qin-zi-xie-zi.html">亲子写字</a></li>
                    
             </ul>
             </div>

@@ -75,7 +75,7 @@
 <p><strong>组生成子项的配置对象非常丰富。可预先对子项的多种属性进行配置。</strong>类型是Array.[Phaser.GameObjects.GameObject] | <a href="https://photonstorm.github.io/phaser3-docs/global.html#GroupConfig">GroupConfig</a> | <a href="https://photonstorm.github.io/phaser3-docs/global.html#GroupCreateConfig">GroupCreateConfig</a>。
 参考小抄<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/group.md">Phaser.GameObject.Group</a></p>
 <p>@game objects\group\create invaders.js</p>
-<div class="highlight"><pre><span></span><span class="c1">// 一次生成一个小组的精灵</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// 一次生成一个小组的精灵</span>
 <span class="kd">var</span> <span class="nx">invader1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span> <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;invader1&#39;</span><span class="p">,</span> <span class="nx">frame</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">repeat</span><span class="o">:</span> <span class="mi">13</span><span class="p">,</span> <span class="nx">setXY</span><span class="o">:</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">32</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">stepX</span><span class="o">:</span> <span class="mi">40</span> <span class="p">}</span> <span class="p">});</span>
 <span class="c1">// 一次生成两个小组的精灵</span>
 <span class="kd">var</span> <span class="nx">invader2</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">([</span>
@@ -84,11 +84,11 @@
 <span class="p">]);</span>
 <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncX</span><span class="p">(</span><span class="nx">invader1</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="mi">100</span><span class="p">);</span>
 <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncX</span><span class="p">(</span><span class="nx">invader2</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="mi">100</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>@game objects\group\multiple adds.js</p>
-<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">group</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">([</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">group</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">([</span>
     <span class="c1">// 第一小组</span>
     <span class="p">{</span>
         <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;diamonds&#39;</span><span class="p">,</span>
@@ -116,7 +116,7 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">]);</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="members"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Group.html#toc3">Members</a></h3>
@@ -229,10 +229,10 @@
                 
                 <li><a href="/category/bu-kao-si-ji.html">布考斯基</a></li>
                 <li><a href="/category/er-tong-shi-zi.html">儿童识字</a></li>
-                <li><a href="/category/jia-chang-ban-xue.html">家长伴学</a></li>
-                <li><a href="/category/lao-shao-xie-zi.html">老少写字</a></li>
                 <li><a href="/category/phaserzhong-xin-zu.html">Phaser中心组</a></li>
                 <li><a href="/category/qi-ji-yin-qiao.html">奇技淫巧</a></li>
+                <li><a href="/category/qin-zi-ban-xue.html">亲子伴学</a></li>
+                <li><a href="/category/qin-zi-xie-zi.html">亲子写字</a></li>
                    
             </ul>
             </div>

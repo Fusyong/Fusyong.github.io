@@ -77,7 +77,7 @@
 <p>本文相当于原文档的Examples部分，但内容全部根据Pyo编辑器附带的实例（共128个，比文档要多一些）。标题如“起步/01-intro”，其中“起步”译自文档相应标题，“01-intro”是编辑器附带实例所在文件夹的名称。</p>
 <h2 id="01-intro">起步/01-intro</h2>
 <h3 id="01-audio-serverpy">音频服务器/01-audio-server.py</h3>
-<div class="highlight"><pre><span></span><span class="sd">"""</span>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">01-audio-server.py - 引导音频服务器。</span>
 
 <span class="sd">服务器对象要在所有别的音频对象之前生成。</span>
@@ -106,9 +106,9 @@
 <span class="c1"># 参数，用户可以不断地从GUI发送命令到</span>
 <span class="c1"># Python解释器。</span>
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
-</pre></div>
+</code></pre></div>
 <h3 id="02-sine-tonepy">正弦音/02-sine-tone.py</h3>
-<div class="highlight"><pre><span></span><span class="sd">"""</span>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">02-sine-tone.py - 音频编程的"hello world"！</span>
 
 <span class="sd">本脚本简单地播放一个1000Hz正弦声音。</span>
@@ -130,9 +130,9 @@
 
 <span class="c1"># 打开服务器的图形界面。</span>
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
-</pre></div>
+</code></pre></div>
 <h3 id="03-parallel-procpy">并行处理/03-parallel-proc.py</h3>
-<div class="highlight"><pre><span></span><span class="sd">"""</span>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">03-parallel-proc.py - 单个资源的多重处理。</span>
 
 <span class="sd">本例展示如何同时播放不同的音频对象。</span>
@@ -161,9 +161,9 @@
 <span class="n">sh</span> <span class="o">=</span> <span class="n">FreqShift</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
 
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
-</pre></div>
+</code></pre></div>
 <h3 id="04-serial-procpy">串行处理/04-serial-proc.py</h3>
-<div class="highlight"><pre><span></span><span class="sd">"""</span>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">04-serial-proc.py - 链接单个资源的多个处理。</span>
 
 <span class="sd">本例展示如何链接单个资源的多个处理。</span>
@@ -194,9 +194,9 @@
 <span class="n">h4</span> <span class="o">=</span> <span class="n">Harmonizer</span><span class="p">(</span><span class="n">h3</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
 
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
-</pre></div>
+</code></pre></div>
 <h3 id="05-output-channelspy">选择输出声道/05-output-channels.py</h3>
-<div class="highlight"><pre><span></span><span class="sd">"""</span>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">05-output-channels.py - 发送信号到不同的物理输出。</span>
 
 <span class="sd">选择输出声道（以接收声音）的最简单方法，是把它作为`out()`方法的</span>
@@ -223,10 +223,10 @@
 <span class="n">hp</span> <span class="o">=</span> <span class="n">ButHP</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">out</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
-</pre></div>
+</code></pre></div>
 <h2 id="02-controls">参数控制/02-controls</h2>
 <h3 id="01-fixed-controlpy">固定的控制/01-fixed-control.py</h3>
-<div class="highlight"><pre><span></span><span class="sd">"""</span>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">01-fixed-control.py - 用数字作参数。</span>
 
 <span class="sd">要控制音频对象的行为，可在初始化时</span>
@@ -253,9 +253,9 @@
 <span class="n">sp</span> <span class="o">=</span> <span class="n">Scope</span><span class="p">(</span><span class="n">h1</span><span class="o">+</span><span class="n">h2</span><span class="o">+</span><span class="n">h3</span><span class="o">+</span><span class="n">h4</span><span class="o">+</span><span class="n">h5</span><span class="o">+</span><span class="n">h6</span><span class="p">)</span>
 
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
-</pre></div>
+</code></pre></div>
 <h3 id="02-dynamic-controlpy">动态控制/02-dynamic-control.py</h3>
-<div class="highlight"><pre><span></span><span class="sd">"""</span>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">02-dynamic-control.py - 以图形控制参数。</span>
 
 <span class="sd">使用Pyo，便于快速尝试一些参数联合体，</span>
@@ -277,7 +277,7 @@
 <span class="n">b</span><span class="o">.</span><span class="n">ctrl</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Frequency modulation right channel"</span><span class="p">)</span>
 
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
-</pre></div>
+</code></pre></div>
 <h2 id="03-generators">03-generators</h2>
 <h2 id="04-soundfiles">04-soundfiles</h2>
 <h2 id="05-envelopes">05-envelopes</h2>
@@ -376,10 +376,10 @@
                 
                 <li><a href="/category/bu-kao-si-ji.html">布考斯基</a></li>
                 <li><a href="/category/er-tong-shi-zi.html">儿童识字</a></li>
-                <li><a href="/category/jia-chang-ban-xue.html">家长伴学</a></li>
-                <li><a href="/category/lao-shao-xie-zi.html">老少写字</a></li>
                 <li><a href="/category/phaserzhong-xin-zu.html">Phaser中心组</a></li>
                 <li><a href="/category/qi-ji-yin-qiao.html">奇技淫巧</a></li>
+                <li><a href="/category/qin-zi-ban-xue.html">亲子伴学</a></li>
+                <li><a href="/category/qin-zi-xie-zi.html">亲子写字</a></li>
                    
             </ul>
             </div>

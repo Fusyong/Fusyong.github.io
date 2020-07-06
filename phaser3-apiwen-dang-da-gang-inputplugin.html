@@ -71,15 +71,15 @@
 <p>输入插件（InputPlugin）属于一个场景，为场景处理所有输入相关的事件、操作。
 在场景中通过<code>this.input</code>接收输入插件。</p>
 <p>它直接发送事件。例如监听游戏画布的热点点击（pointerdown）事件：</p>
-<div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerdown&#39;</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">context</span><span class="p">);</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerdown&#39;</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">context</span><span class="p">);</span>
+</code></pre></div>
 
 
 <p>调用游戏对象的<code>setInteractive</code>方法以开启输入，以发送事件:</p>
-<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">sprite</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">texture</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">sprite</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">texture</span><span class="p">);</span>
 <span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
 <span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerdown&#39;</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">context</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 
 
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#InputPlugin">new InputPlugin(scene)</a></h4>
@@ -201,13 +201,13 @@
 <p>生成一个函数，以传递给<code>setInteractive</code>, <code>enable</code>或<code>setHitArea</code>，
 它将处理基于<code>Image</code>和<code>Sprite</code>的游戏对象上的像素完美（pixel-perfect，完美地基于像素）的输入检测。
 如下将生成一个精灵，它的所有透明度大于等于1的所有像素都可点击。</p>
-<div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">key</span><span class="p">).</span><span class="nx">setInteractive</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">makePixelPerfect</span><span class="p">());</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">key</span><span class="p">).</span><span class="nx">setInteractive</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">makePixelPerfect</span><span class="p">());</span>
+</code></pre></div>
 
 
 <p>如下将生成一个精灵，它的有所透明度大于150的像素都可以点击。</p>
-<div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">key</span><span class="p">).</span><span class="nx">setInteractive</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">makePixelPerfect</span><span class="p">(</span><span class="mi">150</span><span class="p">));</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">key</span><span class="p">).</span><span class="nx">setInteractive</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">makePixelPerfect</span><span class="p">(</span><span class="mi">150</span><span class="p">));</span>
+</code></pre></div>
 
 
 <p>一旦你做了一个像素完美的互动对象，将影响它的所有与输入有关的事件：down, up,
@@ -332,10 +332,10 @@ this.input.setDefaultCursor('url(assets/cursors/sword.cur), pointer');</code></p
                 
                 <li><a href="/category/bu-kao-si-ji.html">布考斯基</a></li>
                 <li><a href="/category/er-tong-shi-zi.html">儿童识字</a></li>
-                <li><a href="/category/jia-chang-ban-xue.html">家长伴学</a></li>
-                <li><a href="/category/lao-shao-xie-zi.html">老少写字</a></li>
                 <li><a href="/category/phaserzhong-xin-zu.html">Phaser中心组</a></li>
                 <li><a href="/category/qi-ji-yin-qiao.html">奇技淫巧</a></li>
+                <li><a href="/category/qin-zi-ban-xue.html">亲子伴学</a></li>
+                <li><a href="/category/qin-zi-xie-zi.html">亲子写字</a></li>
                    
             </ul>
             </div>

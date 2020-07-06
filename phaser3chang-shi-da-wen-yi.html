@@ -332,12 +332,12 @@
 <p>You can use the traditional ES5 form, the Phaser.Class helper, or ES6 classes.</p>
 <p>The most common mistake is to add the instance to the scene incorrectly, or not at all. From the scene, you can call
 // 最常见的错误是添加实例不正确，或无法添加。可以从场景调用：</p>
-<div class="highlight"><pre><span></span><span class="n">this</span><span class="p">.</span><span class="k">add</span><span class="p">.</span><span class="k">existing</span><span class="p">(</span> <span class="k">new</span> <span class="n">ExtendedObject</span><span class="p">(</span><span class="n">this</span><span class="p">,</span> <span class="cm">/* ... */</span><span class="p">)</span> <span class="p">);</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">this.add.existing( new ExtendedObject(this, /* ... */) );</span>
+</code></pre></div>
 <p>For a physics-enabled game object, use the physics plugin's <code>existing</code> method as well.
 // 对于开启物理引擎的游戏对象，同样可以使用物理引擎插件的<code>existing</code>方法：</p>
-<div class="highlight"><pre><span></span><span class="n">this</span><span class="p">.</span><span class="n">physics</span><span class="p">.</span><span class="k">add</span><span class="p">.</span><span class="k">existing</span><span class="p">(</span> <span class="k">new</span> <span class="n">ExtendedObject</span><span class="p">(</span><span class="n">this</span><span class="p">,</span> <span class="cm">/* ... */</span><span class="p">)</span> <span class="p">);</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">this.physics.add.existing( new ExtendedObject(this, /* ... */) );</span>
+</code></pre></div>
 <p>When in doubt, imitate the <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html">factory method</a> of the parent class. Make sure you're passing the parent constructor's arguments correctly.</p>
 <p>You can also write your own <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html">factory method</a> and call it, or register your game object with the plugin manager.
 // 也可以写自己的工厂函数（方法），然后调用，或在插件管理器中注册你的游戏对象。</p>
@@ -508,10 +508,10 @@ Matter是复杂的2d物理引擎。</p>
                 
                 <li><a href="/category/bu-kao-si-ji.html">布考斯基</a></li>
                 <li><a href="/category/er-tong-shi-zi.html">儿童识字</a></li>
-                <li><a href="/category/jia-chang-ban-xue.html">家长伴学</a></li>
-                <li><a href="/category/lao-shao-xie-zi.html">老少写字</a></li>
                 <li><a href="/category/phaserzhong-xin-zu.html">Phaser中心组</a></li>
                 <li><a href="/category/qi-ji-yin-qiao.html">奇技淫巧</a></li>
+                <li><a href="/category/qin-zi-ban-xue.html">亲子伴学</a></li>
+                <li><a href="/category/qin-zi-xie-zi.html">亲子写字</a></li>
                    
             </ul>
             </div>

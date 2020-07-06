@@ -74,7 +74,7 @@
 <li>看看<code>out.txt</code>文件中有没有你要的东西</li>
 </ul>
 <h2 id="_2">代码</h2>
-<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd"># reCollectString.py</span>
 <span class="sd"># 收集指定路径下、指定后缀文件中的匹配字符串，并记录文件名和行号。</span>
 <span class="sd"># 适用于Python3</span>
@@ -95,20 +95,20 @@
     <span class="n">filesNum</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">__</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">DIR</span><span class="p">):</span>
         <span class="n">lesson_cut_file_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">files</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">EXT</span><span class="p">]</span>
-        <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">lesson_cut_file_list</span><span class="p">:</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="nb">file</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">lesson_cut_file_list</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                 <span class="c1"># for line in f.readlines():</span>
                 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
                     <span class="n">lineStrip</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
                     <span class="n">finds</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">lineStrip</span><span class="p">)</span>
                     <span class="k">if</span> <span class="n">finds</span><span class="p">:</span>
                         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">finds</span><span class="p">:</span>
-                            <span class="n">outLine</span> <span class="o">=</span> <span class="s2">&quot;{path}</span><span class="se">\t</span><span class="s2">{index}</span><span class="se">\t</span><span class="s2">{string}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="nb">file</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+                            <span class="n">outLine</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{path}</span><span class="se">\t</span><span class="si">{index}</span><span class="se">\t</span><span class="si">{string}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
                             <span class="k">if</span> <span class="n">outLine</span><span class="p">:</span>
                                 <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">outLine</span><span class="p">)</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">filesNum</span><span class="p">,</span> <span class="s2">&quot;files done.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">filesNum</span><span class="p">,</span> <span class="s2">&quot;files done.&quot;</span><span class="p">)</span>
             <span class="n">filesNum</span> <span class="o">+=</span> <span class="mi">1</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_3">效果</h2>
@@ -159,10 +159,10 @@
                 
                 <li><a href="/category/bu-kao-si-ji.html">布考斯基</a></li>
                 <li><a href="/category/er-tong-shi-zi.html">儿童识字</a></li>
-                <li><a href="/category/jia-chang-ban-xue.html">家长伴学</a></li>
-                <li><a href="/category/lao-shao-xie-zi.html">老少写字</a></li>
                 <li><a href="/category/phaserzhong-xin-zu.html">Phaser中心组</a></li>
                 <li><a href="/category/qi-ji-yin-qiao.html">奇技淫巧</a></li>
+                <li><a href="/category/qin-zi-ban-xue.html">亲子伴学</a></li>
+                <li><a href="/category/qin-zi-xie-zi.html">亲子写字</a></li>
                    
             </ul>
             </div>

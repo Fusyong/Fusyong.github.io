@@ -91,7 +91,7 @@
 <p><img alt="Pygame Zero文档的思维导图" src="/images/pgzero_doc/pgzero_doc.jpg"/></p>
 <h2 id="_3">这是入门实例</h2>
 <p>看起来真的很容易。</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>  <span class="c1"># 导入time模块</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>  <span class="c1"># 导入time模块</span>
 
 <span class="kn">import</span> <span class="nn">pgzrun</span>  <span class="c1"># 导入pgzero的模块运行工具pgzrun</span>
 
@@ -117,7 +117,7 @@
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># 暂停</span>
         <span class="n">set_alien_hurt</span><span class="p">()</span>  <span class="c1"># 调用函数</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">"You missed me!"</span><span class="p">)</span>  <span class="c1"># 打印消息</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You missed me!"</span><span class="p">)</span>  <span class="c1"># 打印消息</span>
 
 <span class="k">def</span> <span class="nf">set_alien_hurt</span><span class="p">():</span>  <span class="c1"># 外星人被击中后的动作</span>
     <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien_hurt'</span>  <span class="c1"># 换用图像'alien_hurt'</span>
@@ -128,10 +128,10 @@
     <span class="n">alien</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="s1">'alien'</span>  <span class="c1"># 换用原图</span>
 
 <span class="n">pgzrun</span><span class="o">.</span><span class="n">go</span><span class="p">()</span>  <span class="c1"># 用pgzrun运行本脚本</span>
-</pre></div>
+</code></pre></div>
 <h2 id="pgzero-api">这是详细的pgzero API用法示例</h2>
 <p>API一文通。</p>
-<div class="highlight"><pre><span></span><span class="sd">"""pgzero(Pygame Zero) API的基本用法示例</span>
+<div class="highlight"><pre><span></span><code><span class="sd">"""pgzero(Pygame Zero) API的基本用法示例</span>
 
 <span class="sd">by 黄复雄, xiiiGame.com, aahuaang@Gmail.com</span>
 
@@ -271,7 +271,7 @@
         <span class="n">set_alien_hurt</span><span class="p">()</span>
         <span class="n">move_alien2</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">"You missed me!"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You missed me!"</span><span class="p">)</span>
         <span class="c1"># beep.stop()  # 快速点击会导致杂音，不停止则有变音</span>
         <span class="n">beep</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
         <span class="c1"># tone.play('A3', 0.5)  # 也可以不生成实例</span>
@@ -322,16 +322,16 @@
 <span class="c1"># 控制背景音乐</span>
 <span class="n">music</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
 <span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">"handel"</span><span class="p">)</span>
-<span class="n">is_pausing</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">is_pausing</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="k">def</span> <span class="nf">on_key_down</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">mod</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="n">keys</span><span class="o">.</span><span class="n">SPACE</span><span class="p">:</span>
         <span class="k">global</span> <span class="n">is_pausing</span>
         <span class="k">if</span> <span class="n">is_pausing</span><span class="p">:</span>
             <span class="n">music</span><span class="o">.</span><span class="n">unpause</span><span class="p">()</span>
-            <span class="n">is_pausing</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">is_pausing</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">music</span><span class="o">.</span><span class="n">pause</span><span class="p">()</span>
-            <span class="n">is_pausing</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">is_pausing</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="c1"># music的方法还有: play_once(name), queue(name), stop(), is_playing(), fadeout(duration), get_volume(), </span>
 <span class="c1"># 键盘和鼠标事件钩子还有：</span>
 <span class="c1"># on_key_up()</span>
@@ -340,7 +340,7 @@
 
 
 <span class="n">pgzrun</span><span class="o">.</span><span class="n">go</span><span class="p">()</span>  <span class="c1"># 运行本脚本</span>
-</pre></div></div>
+</code></pre></div></div>
         <hr />
     </div>
 
@@ -385,10 +385,10 @@
                 
                 <li><a href="/category/bu-kao-si-ji.html">布考斯基</a></li>
                 <li><a href="/category/er-tong-shi-zi.html">儿童识字</a></li>
-                <li><a href="/category/jia-chang-ban-xue.html">家长伴学</a></li>
-                <li><a href="/category/lao-shao-xie-zi.html">老少写字</a></li>
                 <li><a href="/category/phaserzhong-xin-zu.html">Phaser中心组</a></li>
                 <li><a href="/category/qi-ji-yin-qiao.html">奇技淫巧</a></li>
+                <li><a href="/category/qin-zi-ban-xue.html">亲子伴学</a></li>
+                <li><a href="/category/qin-zi-xie-zi.html">亲子写字</a></li>
                    
             </ul>
             </div>

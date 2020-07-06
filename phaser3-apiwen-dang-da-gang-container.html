@@ -153,10 +153,10 @@
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getBounds">getBounds( [output])</a></h4>
 <p>取得容器边界。
 目前（2018-11-22），可能出于性能的考虑，Container的width、height、displayWidth、displayHeight没有暴露，需要通过<code>getBounds</code>方法自行处理。当子项比较多时，<code>getBounds</code>很耗费算力，所以不宜频繁计算，<strong>不宜在<code>tween</code>中变动容器的长宽。</strong> <a href="http://www.html5gamedevs.com/topic/37425-container-height-and-width/">请参考。</a>（TODO: <em>scale也有这样的禁忌吗？</em>）</p>
-<div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">bounds</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Rectangle</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getBounds</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">bounds</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Rectangle</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getBounds</span><span class="p">();</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">bounds</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">bounds</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#getBoundsTransformMatrix">getBoundsTransformMatrix()</a></h4>
@@ -203,7 +203,7 @@
 value类型为boolean，<optional>，默认为true。 <br>
 如果设为false，那么容器对子项的管理不是排他的，因此可以快速复制游戏对象；但是这些子项的输入事件、物理体将不再有效。</p>
 <p>@GameObjects/Container/Non Exclusive Containers</p>
-<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;lemming&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;lemming&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Oh No!&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">font</span><span class="o">:</span> <span class="s1">&#39;16px Courier&#39;</span><span class="p">,</span> <span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;#00ff00&#39;</span> <span class="p">});</span>
 <span class="kd">var</span> <span class="nx">container1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 <span class="nx">container1</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
@@ -211,7 +211,7 @@ value类型为boolean，<optional>，默认为true。 <br>
 <span class="nx">container2</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
 <span class="kd">var</span> <span class="nx">container3</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">300</span><span class="p">).</span><span class="nx">setExclusive</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
 <span class="nx">container3</span><span class="p">.</span><span class="nx">add</span><span class="p">([</span> <span class="nx">image</span><span class="p">,</span> <span class="nx">text</span> <span class="p">]);</span>
-</pre></div>
+</code></pre></div>
 
 
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setInteractive">setInteractive( [shape] [, callback] [, dropZone])</a></h4>
@@ -282,10 +282,10 @@ value类型为boolean，<optional>，默认为true。 <br>
                 
                 <li><a href="/category/bu-kao-si-ji.html">布考斯基</a></li>
                 <li><a href="/category/er-tong-shi-zi.html">儿童识字</a></li>
-                <li><a href="/category/jia-chang-ban-xue.html">家长伴学</a></li>
-                <li><a href="/category/lao-shao-xie-zi.html">老少写字</a></li>
                 <li><a href="/category/phaserzhong-xin-zu.html">Phaser中心组</a></li>
                 <li><a href="/category/qi-ji-yin-qiao.html">奇技淫巧</a></li>
+                <li><a href="/category/qin-zi-ban-xue.html">亲子伴学</a></li>
+                <li><a href="/category/qin-zi-xie-zi.html">亲子写字</a></li>
                    
             </ul>
             </div>
