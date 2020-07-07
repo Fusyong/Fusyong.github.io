@@ -64,9 +64,9 @@
 
         </div>
 	
-        <div>
+        <div><p>[TOC]</p>
 <p>记性不好，这是本人备忘用的、曾经常用，或者正在使用，或者有意将来使用的的软件、语言和框架。</p>
-<h1 id="_1">文本处理【老编辑必备】</h1>
+<h1>文本处理【老编辑必备】</h1>
 <ul>
 <li>正则表达式</li>
 <li>TextPro，汉字的正则处理，批量正则替换</li>
@@ -74,7 +74,7 @@
 <li>VS Code，各种语言支持（比如办公常用的markdown），丰富的插件，Git版本控制</li>
 <li>LibreOffice Writer，正则处理MS Word文档</li>
 </ul>
-<h1 id="_2">文件管理【老编辑必备】</h1>
+<h1>文件管理【老编辑必备】</h1>
 <ul>
 <li>Total Commander，简称TC，文件管理</li>
 <li>Everything，文件查找，可与TC双向整合，可局域网分享</li>
@@ -86,7 +86,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="_3">电子词典【老编辑必备】</h1>
+<h1>电子词典【老编辑必备】</h1>
 <ul>
 <li>GoldenDict，支持各种格式的词典，最常用的是.mdx</li>
 <li>有道词典，外文词典、双语用例、翻译，某些旧版支持本机的星际译王词典<ul>
@@ -94,7 +94,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="_4">热键【老编辑必备】</h1>
+<h1>热键【老编辑必备】</h1>
 <ul>
 <li>Autohotkey</li>
 <li>宏录制<ul>
@@ -103,40 +103,40 @@
 </ul>
 </li>
 </ul>
-<h1 id="_5">学习相关</h1>
+<h1>学习相关</h1>
 <ul>
 <li>supermemo，记忆卡片，PC适用，商业软件</li>
 <li>anymemo，记忆卡片，安卓适用</li>
 <li>aboboo，通过视频、字幕学外语</li>
 </ul>
-<h1 id="_6">影音录制、处理</h1>
-<h2 id="_7">视频播放器</h2>
+<h1>影音录制、处理</h1>
+<h2>视频播放器</h2>
 <ul>
 <li>vlc player，如果打开列表，有时可能会看不到画面，用ctrl+l闭关列表即可</li>
 <li>MPlayer-corei7-r37875+gce466d0</li>
 </ul>
-<h2 id="_8">直播、展示、串流</h2>
-<h3 id="_9">屏幕绘图与教学白板</h3>
+<h2>直播、展示、串流</h2>
+<h3>屏幕绘图与教学白板</h3>
 <ul>
 <li>pointofix，屏幕画笔，教学演示用</li>
 <li>Open-Sankore，电子白板，还没有用过</li>
 </ul>
-<h3 id="_10">录屏、串流</h3>
+<h3>录屏、串流</h3>
 <ul>
 <li>ScreenToGif  录屏为动图、视频（无音频）</li>
 <li>active presenter 制作互动教程（比如录频为软件操作教程），强大的标注能力</li>
 <li>OBS-Studio 录屏，串流</li>
 <li>Captura-Portable 录屏，串流。较为简单，没用过</li>
 </ul>
-<h3 id="_11">拷贝手机屏幕到电脑</h3>
+<h3>拷贝手机屏幕到电脑</h3>
 <ul>
 <li>scrcpy
     打开usb调试模式；
     屏幕录制<code>scrcpy -r filename.mp4</code>；
     如果屏幕设置了缩放比例，投屏界面会模糊。右键 scrcpy.exe，属性 - 兼容性 - 更改高 DPI 设置 - 勾选替代高 DPI 缩放行为。</li>
 </ul>
-<h2 id="handbrake">视频转换：HandBrake</h2>
-<h2 id="ffmpeg">音频转换：FFmpeg</h2>
+<h2>视频转换：HandBrake</h2>
+<h2>音频转换：FFmpeg</h2>
 <ul>
 <li>图像序列转为视频：</li>
 </ul>
@@ -146,80 +146,110 @@
 <span class="c1"># %03d表示三位数字序列；</span>
 <span class="c1"># 多行命令各新开窗口并最小化依次等候处理：每行前加`start /wait /min`，后加回车空行</span>
 </code></pre></div>
+
+
 <ul>
 <li>拼接文件</li>
 </ul>
 <p><a href="https://trac.ffmpeg.org/wiki/Concatenate">详见</a></p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i <span class="s2">"concat:1.mp3|2.mp3"</span> -c copy output.mp3
+<div class="highlight"><pre><span></span><code>ffmpeg -i <span class="s2">&quot;concat:1.mp3|2.mp3&quot;</span> -c copy output.mp3
 </code></pre></div>
+
+
 <p>或预先做成文件列表mylist.txt</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># this is a comment</span>
-file <span class="s1">'/path/to/file1'</span>
-file <span class="s1">'/path/to/file2'</span>
-file <span class="s1">'/path/to/file3'</span>
+file <span class="s1">&#39;/path/to/file1&#39;</span>
+file <span class="s1">&#39;/path/to/file2&#39;</span>
+file <span class="s1">&#39;/path/to/file3&#39;</span>
 </code></pre></div>
+
+
 <p>然后：</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -f concat -safe <span class="m">0</span> -i mylist.txt -c copy output
 </code></pre></div>
+
+
 <p>如果是相对路径，不需要<code>-safe 0</code></p>
 <p>如果wav录音文件使用<code>ffmpeg -i input1.wav -i input2.wav -acodec output.wav</code>   `命令拼接的录音最终输出的录音只有第一段。
 原因是wav的音频编码格式不属于MPEG 类，所以需要加一个过滤器。解决办法：</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input1.wav -i input2.wav -filter_complex <span class="s1">'[0:0][1:0]concat=n=2:v=0:a=1[out]'</span> -map <span class="s1">'[out]'</span> output.wav
+<div class="highlight"><pre><span></span><code>ffmpeg -i input1.wav -i input2.wav -filter_complex <span class="s1">&#39;[0:0][1:0]concat=n=2:v=0:a=1[out]&#39;</span> -map <span class="s1">&#39;[out]&#39;</span> output.wav
 </code></pre></div>
+
+
 <p>根据录音数量需要修改的就只是[0:0][0:1]和n=2 这两个的数量。比如三个文件拼接就用：</p>
-<div class="highlight"><pre><span></span><code>ffmpeg -i input1.wav -i input2.wav -i input3.wav -filter_complex <span class="s1">'[0:0][1:0][2:0]concat=n=3:v=0:a=1[out]'</span> -map <span class="s1">'[out]'</span> output.wav
+<div class="highlight"><pre><span></span><code>ffmpeg -i input1.wav -i input2.wav -i input3.wav -filter_complex <span class="s1">&#39;[0:0][1:0][2:0]concat=n=3:v=0:a=1[out]&#39;</span> -map <span class="s1">&#39;[out]&#39;</span> output.wav
 </code></pre></div>
+
+
 <p>OverSpeed抓取的h.264封装成mp4文件：</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i source.264 -r <span class="m">30</span> -c:v copy -f mp4 myOutputFile.mp4
 <span class="c1"># 输出帧率30；编码不变，原样拷贝copy</span>
 </code></pre></div>
+
+
 <ul>
 <li>mp4转mp3</li>
 </ul>
 <div class="highlight"><pre><span></span><code>ffmpeg -i filename.mp4 filename.mp3
 </code></pre></div>
+
+
 <p>or</p>
 <div class="highlight"><pre><span></span><code>ffmpeg -i video.mp4 -b:a 192K -vn music.mp3
 </code></pre></div>
-<h2 id="flashswf">flash/swf</h2>
+
+
+<h2>flash/swf</h2>
 <ul>
 <li>ming, 使用php,perl,python生成swf文件</li>
 <li>swftools, 用程序生成swf(flash)文件</li>
 <li>MoyeaSWFtoVideoConverterPro_4.2</li>
 </ul>
-<h2 id="imagemagick">图像处理，ImageMagick</h2>
+<h2>图像处理，ImageMagick</h2>
 <ul>
 <li>将大图割成小，小图尺寸是124x146</li>
 </ul>
 <div class="highlight"><pre><span></span><code>magick convert src.jpg -crop 124x146 dest.jpg
 </code></pre></div>
+
+
 <ul>
 <li>将白色转成透明</li>
 </ul>
 <div class="highlight"><pre><span></span><code>magick src.png -fuzz <span class="m">5</span>% -transparent <span class="c1">#ffffff out.png</span>
 </code></pre></div>
+
+
 <ul>
 <li>转换svg文件为png，保留透明</li>
 </ul>
 <div class="highlight"><pre><span></span><code>magick -background transparent play.svg play.png
 </code></pre></div>
+
+
 <ul>
 <li>反相(把rga三个通道反相，而保持a通道/透明不变)</li>
 </ul>
 <div class="highlight"><pre><span></span><code>magick in.png -channel rgb -negate out.png
 </code></pre></div>
+
+
 <ul>
 <li>剪除白边/透明边(repage重置信息)</li>
 </ul>
 <div class="highlight"><pre><span></span><code>magick in.png -trim +repage out.png
 </code></pre></div>
+
+
 <ul>
 <li>拼字游戏部件与字头处理</li>
 </ul>
 <div class="highlight"><pre><span></span><code>magick in.png -fuzz <span class="m">0</span>% -transparent white -trim -resize 80x80 -background transparent -gravity center -extent 80x80 -channel rgb -negate +repage out.png
 <span class="c1"># 输入图像、模糊量+白转透明、剪边、大边尺寸、透明背景+重心居中+扩展画布、通道rgb+反相、重置信息页、输出图像</span>
 </code></pre></div>
-<h2 id="_12">电子图片处理</h2>
+
+
+<h2>电子图片处理</h2>
 <ul>
 <li>Abbyy Finereader(整体校直)</li>
 <li>Photoshop(模板调位置, 统一)
@@ -241,16 +271,16 @@ The conversion reduces file sizes significantly (often as much as 70%) and prese
 http://optipng.sourceforge.net/</p>
 </li>
 </ul>
-<h1 id="_13">其他办公、日用</h1>
-<h2 id="_14">邮件客户端</h2>
+<h1>其他办公、日用</h1>
+<h2>邮件客户端</h2>
 <ul>
 <li>becky</li>
 </ul>
-<h2 id="linuxwin">linux中的win环境</h2>
+<h2>linux中的win环境</h2>
 <ul>
 <li><a href="https://wiki.winehq.org/Download">wine</a></li>
 </ul>
-<h2 id="_15">常用商业办公软件的替代</h2>
+<h2>常用商业办公软件的替代</h2>
 <ul>
 <li>MS Word，换用libreOffice Write，</li>
 </ul>
@@ -265,22 +295,24 @@ Alternative Find &amp; Replace for Writer (AltSearch)</p>
 <li>Adobe Audition，换用Audacity</li>
 <li>Adobe Illustrator，换用InkSpace</li>
 </ul>
-<h2 id="_16">微软拼音输入法自定义时间</h2>
+<h2>微软拼音输入法自定义时间</h2>
 <div class="highlight"><pre><span></span><code>%yyyy%-%MM%-%dd%
 %yyyy%-%MM%-%dd% %hh%:%mm%:%ss%
 </code></pre></div>
-<h2 id="_17">静态网站生成</h2>
+
+
+<h2>静态网站生成</h2>
 <ul>
 <li>Pelican，本站就是用它生成的</li>
 </ul>
-<h1 id="_18">编程相关</h1>
-<h2 id="_19">语言学习列表</h2>
+<h1>编程相关</h1>
+<h2>语言学习列表</h2>
 <ul>
 <li>常用python, TypeScript/javascript, actionscript3</li>
 <li>以后学Kotlin。用于Android开发，替代/配合Java；可以编译成Java字节码，也可以编译成 JavaScript。“如果你正在为Android开发寻找一种替代编程语言，那么应该试下Kotlin。它很容易在Android项目中替代Java或者同Java一起使用。”</li>
 <li>关注Rust。用于替代C/C++，供python、javascript等绑定</li>
 </ul>
-<h2 id="h5">H5游戏</h2>
+<h2>H5游戏</h2>
 <ul>
 <li>框架<ul>
 <li>Phaser</li>
@@ -292,14 +324,16 @@ Alternative Find &amp; Replace for Writer (AltSearch)</p>
 <li><a href="https://www.mapeditor.org">地砖Tiled</a></li>
 <li><a href="http://kvazars.com/littera">字体Littera</a></li>
 </ul>
-<h2 id="js">js压缩和混淆</h2>
+<h2>js压缩和混淆</h2>
 <ul>
 <li>UglifyJS</li>
 <li>jsFuck</li>
 </ul>
 <div class="highlight"><pre><span></span><code>uglifyjs  strokes.js -m -c -o strokes.min.js
 </code></pre></div>
-<h2 id="_20">开发工具</h2>
+
+
+<h2>开发工具</h2>
 <ul>
 <li>Visual Studio Code，官方支持TypeScript，JavaScript，Python，可以连接WSL</li>
 <li>Python<ul>
@@ -310,17 +344,19 @@ Alternative Find &amp; Replace for Writer (AltSearch)</p>
 </li>
 <li>as3：FlashDevelop</li>
 </ul>
-<h2 id="pythonexe-pyinstaller">python打包exe: pyinstaller</h2>
+<h2>python打包exe: pyinstaller</h2>
 <div class="highlight"><pre><span></span><code>pyinstaller --onefile --noconsole --upx-dir<span class="o">=</span>c:<span class="se">\p</span>ython27<span class="se">\s</span>cripts setFlashInstanceName.py
 </code></pre></div>
-<h2 id="_21">音乐合成</h2>
+
+
+<h2>音乐合成</h2>
 <ul>
 <li>pyo is a Python module containing classes for a wide variety of audio signal processing types。</li>
 <li>csound</li>
 <li>supercollider</li>
 <li>chuck，主要用于computer music的创造性演出，live coding</li>
 </ul>
-<h2 id="3d">动画与3D建模</h2>
+<h2>动画与3D建模</h2>
 <ul>
 <li>ZBrush，雕刻</li>
 <li>Cinema 4D（C4D），建模和动画，视频包装行业多用，容易上手，效果好，适合美工爱好者，可配合Houdini的动力、特效和AE的后期效果</li>
@@ -328,59 +364,12 @@ Alternative Find &amp; Replace for Writer (AltSearch)</p>
 <li>3DMAX，建筑可视化，游戏建模，游戏动画</li>
 <li>blender，动画，游戏，免费软件，极客风格</li>
 <li>AE合称效果</li>
+</ul>
+<h2>装机</h2>
+<ul>
+<li>Driver Booster # 驱动管理</li>
 </ul></div>
 	
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                TOC
-                </li>
-                <nav class="toc">
-                    <div class="toc">
-<ul>
-<li><a href="#_1">文本处理【老编辑必备】</a></li>
-<li><a href="#_2">文件管理【老编辑必备】</a></li>
-<li><a href="#_3">电子词典【老编辑必备】</a></li>
-<li><a href="#_4">热键【老编辑必备】</a></li>
-<li><a href="#_5">学习相关</a></li>
-<li><a href="#_6">影音录制、处理</a><ul>
-<li><a href="#_7">视频播放器</a></li>
-<li><a href="#_8">直播、展示、串流</a><ul>
-<li><a href="#_9">屏幕绘图与教学白板</a></li>
-<li><a href="#_10">录屏、串流</a></li>
-<li><a href="#_11">拷贝手机屏幕到电脑</a></li>
-</ul>
-</li>
-<li><a href="#handbrake">视频转换：HandBrake</a></li>
-<li><a href="#ffmpeg">音频转换：FFmpeg</a></li>
-<li><a href="#flashswf">flash/swf</a></li>
-<li><a href="#imagemagick">图像处理，ImageMagick</a></li>
-<li><a href="#_12">电子图片处理</a></li>
-</ul>
-</li>
-<li><a href="#_13">其他办公、日用</a><ul>
-<li><a href="#_14">邮件客户端</a></li>
-<li><a href="#linuxwin">linux中的win环境</a></li>
-<li><a href="#_15">常用商业办公软件的替代</a></li>
-<li><a href="#_16">微软拼音输入法自定义时间</a></li>
-<li><a href="#_17">静态网站生成</a></li>
-</ul>
-</li>
-<li><a href="#_18">编程相关</a><ul>
-<li><a href="#_19">语言学习列表</a></li>
-<li><a href="#h5">H5游戏</a></li>
-<li><a href="#js">js压缩和混淆</a></li>
-<li><a href="#_20">开发工具</a></li>
-<li><a href="#pythonexe-pyinstaller">python打包exe: pyinstaller</a></li>
-<li><a href="#_21">音乐合成</a></li>
-<li><a href="#3d">动画与3D建模</a></li>
-</ul>
-</li>
-</ul>
-</div>
-                </nav>                
-            </ul>
-            </div>
         
         <hr>
 

@@ -64,8 +64,8 @@
 
         </div>
 	
-        <div>
-<h2 id="_1">说明</h2>
+        <div><p>[TOC]</p>
+<h2>说明</h2>
 <ol>
 <li><strong>本文是随时更新的，</strong>最终会累积成一个便览手册；可通过搜索或底端的目录快速查找。</li>
 <li>这是我学习Phaser3官网实例的笔记，对快速了解Phaser3能做什么、API概貌也许有帮助。以前做过一篇<a href="/phaser2guan-wang-shi-li-xue-xi-bi-ji.html">《Phaser2官网实例学习笔记》</a>。</li>
@@ -74,17 +74,17 @@
 <li>小标题下给出了实例代码的路径，如“src\actions\grid align.js”，<a href="http://labs.phaser.io">http://labs.phaser.io</a>的首页即相当于“src\”；也可以用<a href="http://labs.phaser.io/edit.html?src=src\actions\grid%20align.js">http://labs.phaser.io/edit.html?src=src\actions\grid align.js</a>直接访问代码对应的在线编辑器界面（有时路径中的空格可能要用<code>%20</code>代替）。</li>
 <li>官网是按字母排列类别的，有时为初学者学习、理解方便会调整顺序。</li>
 </ol>
-<h2 id="actions">Actions/动作</h2>
+<h2>Actions/动作</h2>
 <p><code>Phaser.Actions</code>包含一组静态方法，可以对一组游戏对象进行<strong>批量处理</strong>，应用相同的动作。常常结合组的方法<code>Group.getChildren()</code>（取得group的所有对象形成一个数组）一起使用；这样一样，就可以尽量使用组（Group）来代替很消耗资源容器（Container，相当于Phaser2的Group）。</p>
 <p>要处理的对象要包含要处理的属性、方法，否则无效。</p>
 <p>请参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Actions.html">Phaser.Actions的文档</a>。</p>
-<h3 id="grid-align">Grid Align/所有对象对齐网格放置</h3>
+<h3>Grid Align/所有对象对齐网格放置</h3>
 <blockquote>
 <p>src\actions\grid align.js</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="c1">// 生成group，包含4x20个对象</span>
 <span class="kd">var</span> <span class="nx">group</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
-    <span class="nx">key</span><span class="o">:</span> <span class="s1">'diamonds'</span><span class="p">,</span> <span class="c1">// 精灵单的key</span>
+    <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;diamonds&#39;</span><span class="p">,</span> <span class="c1">// 精灵单的key</span>
     <span class="nx">frame</span><span class="o">:</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="c1">// 依次使用的精灵单的帧号</span>
     <span class="nx">frameQuantity</span><span class="o">:</span> <span class="mi">20</span> <span class="c1">// 每帧重复使用次数</span>
 <span class="p">});</span>
@@ -98,7 +98,9 @@
     <span class="nx">y</span><span class="o">:</span> <span class="mi">100</span> <span class="c1">// 左上第一个网格中心点y值</span>
 <span class="p">});</span>
 </code></pre></div>
-<h3 id="inc-x-layersincxincyincxy">inc x layers/所有对象用IncX、IncY、IncXY递增坐标值，整体改变位置</h3>
+
+
+<h3>inc x layers/所有对象用IncX、IncY、IncXY递增坐标值，整体改变位置</h3>
 <blockquote>
 <p>src\actions\inc x layers.js</p>
 </blockquote>
@@ -118,7 +120,9 @@
     <span class="nx">move</span> <span class="o">+=</span> <span class="mf">0.1</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="place-on-circle">Place On Circle/所有对象沿着圆圈放置</h3>
+
+
+<h3>Place On Circle/所有对象沿着圆圈放置</h3>
 <blockquote>
 <p>src\actions\place on circle.js</p>
 </blockquote>
@@ -129,7 +133,9 @@
     <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">PlaceOnCircle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">circle</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="random-circle">Random Circle/所有对象随机放置在圆内</h3>
+
+
+<h3>Random Circle/所有对象随机放置在圆内</h3>
 <blockquote>
 <p>src\actions\random circle.js</p>
 </blockquote>
@@ -140,7 +146,9 @@
     <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">RandomCircle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">circle</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="rotate-around-distance">Rotate Around Distance/所有对象（整体）围绕一定距离旋转</h3>
+
+
+<h3>Rotate Around Distance/所有对象（整体）围绕一定距离旋转</h3>
 <blockquote>
 <p>src\actions\rotate around distance.js</p>
 </blockquote>
@@ -149,7 +157,9 @@
     <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">RotateAroundDistance</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">300</span> <span class="p">},</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="rotate-around">Rotate Around/所有对象（整体）围绕一点旋转</h3>
+
+
+<h3>Rotate Around/所有对象（整体）围绕一点旋转</h3>
 <blockquote>
 <p>src\actions\rotate around.js</p>
 </blockquote>
@@ -158,7 +168,9 @@
     <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">RotateAround</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">300</span> <span class="p">},</span> <span class="mf">0.01</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="set-alpha">Set Alpha/所有对象（整体）设置透明度</h3>
+
+
+<h3>Set Alpha/所有对象（整体）设置透明度</h3>
 <blockquote>
 <p>src\actions\set alpha.js</p>
 </blockquote>
@@ -167,7 +179,9 @@
     <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">SetAlpha</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">50</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="set-xy">Set Xy/给所有对象设置坐标值</h3>
+
+
+<h3>Set Xy/给所有对象设置坐标值</h3>
 <blockquote>
 <p>src\actions\set xy.js</p>
 </blockquote>
@@ -176,7 +190,9 @@
     <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">SetXY</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="shift-position">Shift Position/所有对象依次换位</h3>
+
+
+<h3>Shift Position/所有对象依次换位</h3>
 <blockquote>
 <p>src\actions\shift position.js</p>
 </blockquote>
@@ -186,17 +202,21 @@
     <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">ShiftPosition</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="spread">Spread/在两个属性值之间铺展所有对象</h3>
+
+
+<h3>Spread/在两个属性值之间铺展所有对象</h3>
 <blockquote>
 <p>src\actions\spread.js</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">create</span> <span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">//  在两个属性值('alpha', 0, 1)之间铺展所有对象</span>
-    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">Spread</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="s1">'alpha'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="c1">//  在两个属性值(&#39;alpha&#39;, 0, 1)之间铺展所有对象</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">Spread</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="wrap-in-rectangle">wrap in rectangle/所有对象在一个方形内折返放置</h3>
+
+
+<h3>wrap in rectangle/所有对象在一个方形内折返放置</h3>
 <blockquote>
 <p>src\actions\wrap in rectangle.js</p>
 </blockquote>
@@ -208,26 +228,28 @@
     <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">WrapInRectangle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">rect</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="animation">Animation</h2>
-<h2 id="audio">Audio</h2>
-<h2 id="bugs">Bugs</h2>
-<h2 id="cache">Cache</h2>
-<h2 id="camera">Camera</h2>
-<h2 id="components">Components</h2>
-<h2 id="demoscene">Demoscene</h2>
-<h2 id="depth-sorting">Depth Sorting</h2>
-<h2 id="display">Display</h2>
-<h2 id="dwitter">Dwitter</h2>
-<h2 id="events">Events</h2>
-<h2 id="game-config">Game Config/游戏配置</h2>
+
+
+<h2>Animation</h2>
+<h2>Audio</h2>
+<h2>Bugs</h2>
+<h2>Cache</h2>
+<h2>Camera</h2>
+<h2>Components</h2>
+<h2>Demoscene</h2>
+<h2>Depth Sorting</h2>
+<h2>Display</h2>
+<h2>Dwitter</h2>
+<h2>Events</h2>
+<h2>Game Config/游戏配置</h2>
 <p>使用配置对象进行配置，是Phaser3的风格。以下游戏配置，可参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Types.Core.html#.GameConfig__anchor">GameConfig的文档</a>。</p>
-<h3 id="banner-colors">Banner Colors/条幅颜色（及其他）</h3>
+<h3>Banner Colors/条幅颜色（及其他）</h3>
 <blockquote>
 <p>src\game config\banner colors.js</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
-    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">&#39;phaser-example&#39;</span><span class="p">,</span>
     <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
     <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
     <span class="c1">// 透明背景</span>
@@ -239,47 +261,49 @@
         <span class="nx">create</span><span class="o">:</span> <span class="nx">create</span>
     <span class="p">},</span>
     <span class="c1">// 设定浏览器开发工具中能看到的游戏标题</span>
-    <span class="nx">title</span><span class="o">:</span> <span class="s1">'Shock and Awesome'</span><span class="p">,</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Shock and Awesome&#39;</span><span class="p">,</span>
     <span class="c1">// 设定浏览器开发工具中能看到的游戏版本号</span>
-    <span class="nx">version</span><span class="o">:</span> <span class="s1">'1.2b'</span>
+    <span class="nx">version</span><span class="o">:</span> <span class="s1">&#39;1.2b&#39;</span>
     <span class="c1">//  设定浏览器开发工具中能看到的条幅颜色和（标题等）文字颜色</span>
     <span class="c1">// 使用banner: false关闭条幅</span>
     <span class="nx">banner</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">text</span><span class="o">:</span> <span class="s1">'#ffffff'</span><span class="p">,</span>
+        <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;#ffffff&#39;</span><span class="p">,</span>
         <span class="nx">background</span><span class="o">:</span> <span class="p">[</span>
-            <span class="s1">'#fff200'</span><span class="p">,</span>
-            <span class="s1">'#38f0e8'</span><span class="p">,</span>
-            <span class="s1">'#00bff3'</span><span class="p">,</span>
-            <span class="s1">'#ec008c'</span>
+            <span class="s1">&#39;#fff200&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;#38f0e8&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;#00bff3&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;#ec008c&#39;</span>
         <span class="p">],</span>
         <span class="c1">// 隐藏Phaser版本等信息</span>
         <span class="nx">hidePhaser</span><span class="o">:</span> <span class="kc">true</span>
     <span class="p">},</span>
     <span class="c1">// 设定浏览器开发工具中能看到的游戏链接</span>
-    <span class="nx">url</span><span class="o">:</span> <span class="s1">'http://xiiiGame.com'</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://xiiiGame.com&#39;</span>
 
 <span class="p">};</span>
 
 <span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="custom-canvas">Custom Canvas/客户定制画布</h3>
+
+
+<h3>Custom Canvas/客户定制画布</h3>
 <blockquote>
 <p>src\game config\custom canvas.js</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="c1">// 客户定制文档元素</span>
-<span class="kd">var</span> <span class="nx">myCustomCanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'canvas'</span><span class="p">);</span>
-<span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">'myCustomCanvas'</span><span class="p">;</span>
-<span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">style</span> <span class="o">=</span> <span class="s1">'border: 8px solid red'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">myCustomCanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">);</span>
+<span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">&#39;myCustomCanvas&#39;</span><span class="p">;</span>
+<span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">style</span> <span class="o">=</span> <span class="s1">&#39;border: 8px solid red&#39;</span><span class="p">;</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">myCustomCanvas</span><span class="p">);</span>
-<span class="c1">// var myCustomContext = myCustomCanvas.getContext('2d');</span>
+<span class="c1">// var myCustomContext = myCustomCanvas.getContext(&#39;2d&#39;);</span>
 
 <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">CANVAS</span><span class="p">,</span>
-    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">&#39;phaser-example&#39;</span><span class="p">,</span>
     <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
     <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
     <span class="c1">// 使用客户定制的文档元素，用来放置画布</span>
-    <span class="nx">canvas</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'myCustomCanvas'</span><span class="p">),</span>
+    <span class="nx">canvas</span><span class="o">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myCustomCanvas&#39;</span><span class="p">),</span>
     <span class="nx">scene</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">preload</span><span class="o">:</span> <span class="nx">preload</span><span class="p">,</span>
         <span class="nx">create</span><span class="o">:</span> <span class="nx">create</span>
@@ -288,14 +312,16 @@
 
 <span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="custom-webgl-canvaswebgl">Custom Webgl Canvas/客户定制WebGL画布</h3>
+
+
+<h3>Custom Webgl Canvas/客户定制WebGL画布</h3>
 <blockquote>
 <p>src\game config\custom webgl canvas.js</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="c1">// 客户定制文档元素</span>
-<span class="kd">var</span> <span class="nx">myCustomCanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'canvas'</span><span class="p">);</span>
-<span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">'myCustomCanvas'</span><span class="p">;</span>
-<span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">style</span> <span class="o">=</span> <span class="s1">'border: 8px solid green'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">myCustomCanvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">);</span>
+<span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s1">&#39;myCustomCanvas&#39;</span><span class="p">;</span>
+<span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">style</span> <span class="o">=</span> <span class="s1">&#39;border: 8px solid green&#39;</span><span class="p">;</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">myCustomCanvas</span><span class="p">);</span>
 
 <span class="c1">//  设置Phaser需要的WebGL语境变量</span>
@@ -307,14 +333,14 @@
     <span class="nx">stencil</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nx">preserveDrawingBuffer</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
     <span class="nx">failIfMajorPerformanceCaveat</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">powerPreference</span><span class="o">:</span> <span class="s1">'default'</span>
+    <span class="nx">powerPreference</span><span class="o">:</span> <span class="s1">&#39;default&#39;</span>
 <span class="p">};</span>
-<span class="c1">// 也可以是'webgl2'</span>
-<span class="kd">var</span> <span class="nx">myCustomContext</span> <span class="o">=</span> <span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">'webgl'</span><span class="p">,</span> <span class="nx">contextCreationConfig</span><span class="p">);</span>
+<span class="c1">// 也可以是&#39;webgl2&#39;</span>
+<span class="kd">var</span> <span class="nx">myCustomContext</span> <span class="o">=</span> <span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;webgl&#39;</span><span class="p">,</span> <span class="nx">contextCreationConfig</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">WEBGL</span><span class="p">,</span>
-    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">&#39;phaser-example&#39;</span><span class="p">,</span>
     <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
     <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
     <span class="c1">// 使用画布和语境</span>
@@ -328,7 +354,9 @@
 
 <span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="game-destroy-with-multi-scenes">Game Destroy With Multi Scenes/多场景游戏的销毁</h3>
+
+
+<h3>Game Destroy With Multi Scenes/多场景游戏的销毁</h3>
 <blockquote>
 <p>src\game config\game destroy with multi scenes.js</p>
 </blockquote>
@@ -337,7 +365,7 @@
     <span class="nx">Extends</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scene</span><span class="p">,</span>
 
     <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="nx">Background</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span> <span class="nx">key</span><span class="o">:</span> <span class="s1">'background'</span><span class="p">,</span> <span class="nx">active</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+        <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span> <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;background&#39;</span><span class="p">,</span> <span class="nx">active</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
     <span class="p">},</span>
 
     <span class="nx">preload</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
@@ -347,13 +375,13 @@
     <span class="nx">create</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// ……</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerdown'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerdown&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="c1">// 销毁游戏</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">sys</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">destroy</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
             <span class="c1">// 重新生成游戏</span>
-            <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'mousedown'</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">newGame</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mousedown&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="nx">newGame</span> <span class="p">()</span> <span class="p">{</span>
                 <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
-                <span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">'mousedown'</span><span class="p">,</span> <span class="nx">newGame</span><span class="p">);</span>
+                <span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">&#39;mousedown&#39;</span><span class="p">,</span> <span class="nx">newGame</span><span class="p">);</span>
             <span class="p">});</span>
         <span class="p">},</span> <span class="k">this</span><span class="p">);</span>
     <span class="p">},</span>
@@ -372,21 +400,23 @@
     <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
     <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
     <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
-    <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">'#000000'</span><span class="p">,</span>
-    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;#000000&#39;</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">&#39;phaser-example&#39;</span><span class="p">,</span>
     <span class="nx">scene</span><span class="o">:</span> <span class="p">[</span> <span class="nx">Background</span><span class="p">,</span> <span class="nx">Demo</span> <span class="p">]</span>
 <span class="p">};</span>
 
 <span class="kd">var</span> <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="game-rng">Game Rng/游戏的随机数问题</h3>
+
+
+<h3>Game Rng/游戏的随机数问题</h3>
 <blockquote>
 <p>src\game config\game rng.js</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">seed</span> <span class="o">=</span> <span class="mi">122548965231</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
-    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">&#39;phaser-example&#39;</span><span class="p">,</span>
     <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
     <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
     <span class="c1">// 为随机数生成器设置种子</span>
@@ -401,18 +431,20 @@
 <span class="kd">function</span> <span class="nx">create</span> <span class="p">()</span>
 <span class="p">{</span>
     <span class="c1">//  如果使用随机种子，那么每次重载所得随机数不变</span>
-    <span class="kd">var</span> <span class="nx">shuffleTest</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'D'</span><span class="p">,</span> <span class="s1">'E'</span><span class="p">,</span> <span class="s1">'F'</span><span class="p">,</span> <span class="s1">'G'</span> <span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">shuffleTest</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span> <span class="p">];</span>
     <span class="nx">text</span><span class="p">.</span><span class="nx">setText</span><span class="p">([</span>
-        <span class="s1">'Between 0 and 50: '</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">between</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
-        <span class="s1">'Between 0 and 1: '</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">realInRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-        <span class="s1">'Normal: '</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">normal</span><span class="p">(),</span>
-        <span class="s1">'UUID: '</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">uuid</span><span class="p">(),</span>
-        <span class="s1">'Angle: '</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">angle</span><span class="p">(),</span>
-        <span class="s1">'Shuffle: '</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">shuffle</span><span class="p">(</span><span class="nx">shuffleTest</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+        <span class="s1">&#39;Between 0 and 50: &#39;</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">between</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+        <span class="s1">&#39;Between 0 and 1: &#39;</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">realInRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s1">&#39;Normal: &#39;</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">normal</span><span class="p">(),</span>
+        <span class="s1">&#39;UUID: &#39;</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">uuid</span><span class="p">(),</span>
+        <span class="s1">&#39;Angle: &#39;</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">angle</span><span class="p">(),</span>
+        <span class="s1">&#39;Shuffle: &#39;</span> <span class="o">+</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">shuffle</span><span class="p">(</span><span class="nx">shuffleTest</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
     <span class="p">]);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="multiple-game-instances">Multiple Game Instances/多个游戏实例</h3>
+
+
+<h3>Multiple Game Instances/多个游戏实例</h3>
 <blockquote>
 <p>src\game config\multiple game instances.js</p>
 </blockquote>
@@ -420,7 +452,7 @@
     <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
     <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
     <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
-    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">&#39;phaser-example&#39;</span><span class="p">,</span>
     <span class="nx">scene</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">preload</span><span class="o">:</span> <span class="nx">preload2</span><span class="p">,</span>
         <span class="nx">create</span><span class="o">:</span> <span class="nx">create2</span>
@@ -431,7 +463,7 @@
     <span class="nx">type</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
     <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
     <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
-    <span class="nx">parent</span><span class="o">:</span> <span class="s1">'phaser-example'</span><span class="p">,</span>
+    <span class="nx">parent</span><span class="o">:</span> <span class="s1">&#39;phaser-example&#39;</span><span class="p">,</span>
     <span class="nx">scene</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">preload</span><span class="o">:</span> <span class="nx">preload</span><span class="p">,</span>
         <span class="nx">create</span><span class="o">:</span> <span class="nx">create</span>
@@ -442,9 +474,11 @@
 <span class="kd">var</span> <span class="nx">game1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">game2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config2</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="game-objects">Game Objects/游戏对象</h2>
+
+
+<h2>Game Objects/游戏对象</h2>
 <p>各种具体游戏对象都是继承GameObject。请参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html">基础游戏对象/Phaser.GameObjects.GameObject的文档</a>。</p>
-<h3 id="sprites">Sprites/精灵</h3>
+<h3>Sprites/精灵</h3>
 <p>Sprite是Phaser最常用的游戏对象之一。</p>
 <h4>Create From Config/通过配置对象生成精灵</h4>
 <blockquote>
@@ -454,37 +488,37 @@
 <span class="p">{</span>
     <span class="o">//</span>  <span class="n">Implicit</span> <span class="n">values</span>
     <span class="n">var</span> <span class="s">config1</span> <span class="s">=</span> <span class="s">{</span>
-        <span class="n">key</span><span class="p">:</span> <span class="s">'bunny'</span><span class="p">,</span>
+        <span class="n">key</span><span class="p">:</span> <span class="s">&#39;bunny&#39;</span><span class="p">,</span>
         <span class="n">x</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
         <span class="n">y</span><span class="p">:</span> <span class="mi">300</span>
     <span class="p">};</span>
 
     <span class="o">//</span>  <span class="n">Implicit</span> <span class="n">values</span>
     <span class="n">var</span> <span class="s">config2</span> <span class="s">=</span> <span class="s">{</span>
-        <span class="n">key</span><span class="p">:</span> <span class="s">'bunny'</span><span class="p">,</span>
+        <span class="n">key</span><span class="p">:</span> <span class="s">&#39;bunny&#39;</span><span class="p">,</span>
         <span class="n">x</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
         <span class="n">y</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
         <span class="n">flipX</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
         <span class="n">flipY</span><span class="p">:</span> <span class="n">true</span>
     <span class="p">};</span>
 
-    <span class="o">//</span>  <span class="n">An</span> <span class="n">array</span> <span class="n">means</span> <span class="s">'pick one element at random'</span>
+    <span class="o">//</span>  <span class="n">An</span> <span class="n">array</span> <span class="n">means</span> <span class="s">&#39;pick one element at random&#39;</span>
     <span class="n">var</span> <span class="s">config3</span> <span class="s">=</span> <span class="s">{</span>
-        <span class="n">key</span><span class="p">:</span> <span class="p">[</span> <span class="s">'bunny'</span><span class="p">,</span> <span class="s">'atari'</span><span class="p">,</span> <span class="s">'logo'</span> <span class="p">],</span>
+        <span class="n">key</span><span class="p">:</span> <span class="p">[</span> <span class="s">&#39;bunny&#39;</span><span class="p">,</span> <span class="s">&#39;atari&#39;</span><span class="p">,</span> <span class="s">&#39;logo&#39;</span> <span class="p">],</span>
         <span class="n">x</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
         <span class="n">y</span><span class="p">:</span> <span class="mi">300</span>
     <span class="p">};</span>
 
     <span class="o">//</span>  <span class="n">randInt</span> <span class="n">means</span> <span class="n">pick</span> <span class="n">a</span> <span class="n">random</span> <span class="n">integer</span> <span class="n">between</span> <span class="n">the</span> <span class="n">min</span> <span class="n">and</span> <span class="n">max</span> <span class="n">values</span> <span class="n">given</span>
     <span class="n">var</span> <span class="s">config4</span> <span class="s">=</span> <span class="s">{</span>
-        <span class="n">key</span><span class="p">:</span> <span class="s">'atari'</span><span class="p">,</span>
+        <span class="n">key</span><span class="p">:</span> <span class="s">&#39;atari&#39;</span><span class="p">,</span>
         <span class="n">x</span><span class="p">:</span> <span class="p">{</span> <span class="n">randInt</span><span class="p">:</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">800</span> <span class="p">]</span> <span class="p">},</span>
         <span class="n">y</span><span class="p">:</span> <span class="mi">300</span>
     <span class="p">};</span>
 
     <span class="o">//</span>  <span class="n">randFloat</span> <span class="n">means</span> <span class="n">pick</span> <span class="n">a</span> <span class="n">random</span> <span class="n">float</span> <span class="n">between</span> <span class="n">the</span> <span class="n">min</span> <span class="n">and</span> <span class="n">max</span> <span class="n">values</span> <span class="n">given</span>
     <span class="n">var</span> <span class="s">config5</span> <span class="s">=</span> <span class="s">{</span>
-        <span class="n">key</span><span class="p">:</span> <span class="s">'logo'</span><span class="p">,</span>
+        <span class="n">key</span><span class="p">:</span> <span class="s">&#39;logo&#39;</span><span class="p">,</span>
         <span class="n">x</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
         <span class="n">y</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
         <span class="n">alpha</span><span class="p">:</span> <span class="p">{</span> <span class="n">randFloat</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">]</span> <span class="p">}</span>
@@ -492,7 +526,7 @@
 
     <span class="o">//</span>  <span class="n">If</span> <span class="n">the</span> <span class="n">property</span> <span class="n">is</span> <span class="n">a</span> <span class="k">function</span> <span class="n">it</span> <span class="n">will</span> <span class="n">invoke</span> <span class="n">it</span> <span class="n">and</span> <span class="n">use</span> <span class="n">the</span> <span class="n">result</span> <span class="n">as</span> <span class="n">the</span> <span class="n">value</span>
     <span class="n">var</span> <span class="s">config6</span> <span class="s">=</span> <span class="s">{</span>
-        <span class="n">key</span><span class="p">:</span> <span class="s">'atari'</span><span class="p">,</span>
+        <span class="n">key</span><span class="p">:</span> <span class="s">&#39;atari&#39;</span><span class="p">,</span>
         <span class="n">x</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
         <span class="n">y</span><span class="p">:</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="n">return</span> <span class="s">100</span> <span class="s">+</span> <span class="s">Math.random()</span> <span class="s">*</span> <span class="s">500</span><span class="p">;</span>
@@ -501,7 +535,7 @@
 
     <span class="o">//</span>  <span class="n">An</span> <span class="n">example</span> <span class="n">using</span> <span class="n">randFloat</span> <span class="n">to</span> <span class="n">set</span> <span class="n">the</span> <span class="n">scale</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Sprite</span>
     <span class="n">var</span> <span class="s">config7</span> <span class="s">=</span> <span class="s">{</span>
-        <span class="n">key</span><span class="p">:</span> <span class="s">'logo'</span><span class="p">,</span>
+        <span class="n">key</span><span class="p">:</span> <span class="s">&#39;logo&#39;</span><span class="p">,</span>
         <span class="n">x</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
         <span class="n">y</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
         <span class="n">scale</span><span class="p">:</span> <span class="p">{</span> <span class="n">randFloat</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">2</span> <span class="p">]</span> <span class="p">}</span>
@@ -509,7 +543,7 @@
 
     <span class="o">//</span>  <span class="n">An</span> <span class="n">example</span> <span class="n">using</span> <span class="n">randFloat</span> <span class="n">to</span> <span class="n">set</span> <span class="n">independent</span> <span class="n">x</span> <span class="n">and</span> <span class="n">y</span> <span class="n">scale</span> <span class="n">values</span>
     <span class="n">var</span> <span class="s">config8</span> <span class="s">=</span> <span class="s">{</span>
-        <span class="n">key</span><span class="p">:</span> <span class="s">'logo'</span><span class="p">,</span>
+        <span class="n">key</span><span class="p">:</span> <span class="s">&#39;logo&#39;</span><span class="p">,</span>
         <span class="n">x</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
         <span class="n">y</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
         <span class="n">scale</span><span class="p">:</span> <span class="p">{</span> <span class="n">x</span><span class="p">:</span> <span class="p">{</span> <span class="n">randFloat</span><span class="p">:</span> <span class="p">[</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">2</span> <span class="p">]</span> <span class="p">},</span> <span class="n">y</span><span class="p">:</span> <span class="p">{</span> <span class="n">randFloat</span><span class="p">:</span> <span class="p">[</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span> <span class="p">}</span> <span class="p">}</span>
@@ -518,17 +552,21 @@
     <span class="n">this</span><span class="p">.</span><span class="n">make</span><span class="p">.</span><span class="n">sprite</span><span class="p">(</span><span class="n">config8</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="bitmaptext">Bitmaptext/位图文本</h3>
+
+
+<h3>Bitmaptext/位图文本</h3>
 <p>请参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.BitmapText.html">静态文图文本的文档</a>。</p>
 <h4>Static/静态位图文本</h4>
 <h5>Bitmaptext Blend Mode/位图文本混色模式</h5>
 <blockquote>
 <p>src\game objects\bitmaptext\static\bitmaptext blend mode.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">'ice'</span><span class="p">,</span> <span class="s1">'Zero Two'</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code>    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;ice&#39;</span><span class="p">,</span> <span class="s1">&#39;Zero Two&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
     <span class="c1">// 与下层的图进行ADD混色</span>
     <span class="nx">text</span><span class="p">.</span><span class="nx">setBlendMode</span><span class="p">(</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">BlendModes</span><span class="p">.</span><span class="nx">ADD</span><span class="p">);</span>
 </code></pre></div>
+
+
 <h5>Bitmaptext-Atlas/用字体图集生成位图文本</h5>
 <blockquote>
 <p>src\game objects\bitmaptext\static\bitmaptext-atlas.js</p>
@@ -536,20 +574,22 @@
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">preload</span><span class="p">()</span> 
 <span class="p">{</span>
     <span class="c1">// 加载图集</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">atlas</span><span class="p">(</span><span class="s1">'fontatlas'</span><span class="p">,</span> <span class="s1">'assets/atlas/bitmap-fonts-debug.png'</span><span class="p">,</span> <span class="s1">'assets/atlas/bitmap-fonts.json'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">atlas</span><span class="p">(</span><span class="s1">&#39;fontatlas&#39;</span><span class="p">,</span> <span class="s1">&#39;assets/atlas/bitmap-fonts-debug.png&#39;</span><span class="p">,</span> <span class="s1">&#39;assets/atlas/bitmap-fonts.json&#39;</span><span class="p">);</span>
     <span class="c1">//  加载字体图集的XML数据</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">xml</span><span class="p">(</span><span class="s1">'atariXML'</span><span class="p">,</span> <span class="s1">'assets/fonts/bitmap/atari-sunset.xml'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">xml</span><span class="p">(</span><span class="s1">&#39;atariXML&#39;</span><span class="p">,</span> <span class="s1">&#39;assets/fonts/bitmap/atari-sunset.xml&#39;</span><span class="p">);</span>
     <span class="c1">// 也可以直接加载位图字体</span>
-    <span class="c1">// this.load.bitmapFont('desyrel', 'assets/fonts/bitmap/desyrel.png', 'assets/fonts/bitmap/desyrel.xml');</span>
+    <span class="c1">// this.load.bitmapFont(&#39;desyrel&#39;, &#39;assets/fonts/bitmap/desyrel.png&#39;, &#39;assets/fonts/bitmap/desyrel.xml&#39;);</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">create</span><span class="p">()</span> 
 <span class="p">{</span>
     <span class="c1">// 生成位图字体和位图文本</span>
-    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">BitmapText</span><span class="p">.</span><span class="nx">ParseFromAtlas</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">'font3'</span><span class="p">,</span> <span class="s1">'fontatlas'</span><span class="p">,</span> <span class="s1">'atari-sunset'</span><span class="p">,</span> <span class="s1">'atariXML'</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">'font3'</span><span class="p">,</span> <span class="s1">'qwert'</span><span class="p">);</span>
+    <span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">BitmapText</span><span class="p">.</span><span class="nx">ParseFromAtlas</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;font3&#39;</span><span class="p">,</span> <span class="s1">&#39;fontatlas&#39;</span><span class="p">,</span> <span class="s1">&#39;atari-sunset&#39;</span><span class="p">,</span> <span class="s1">&#39;atariXML&#39;</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;font3&#39;</span><span class="p">,</span> <span class="s1">&#39;qwert&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
+
+
 <h5>以下存目</h5>
 <ul>
 <li>Bitmaptext Rotation/旋转动画</li>
@@ -577,7 +617,7 @@
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">create</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">dynamicBitmapText</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s1">'gothic'</span><span class="p">,</span> <span class="s1">'Hello\nWorld!'</span><span class="p">,</span> <span class="mi">128</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">dynamicBitmapText</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;gothic&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello\nWorld!&#39;</span><span class="p">,</span> <span class="mi">128</span><span class="p">);</span>
     <span class="nx">text</span><span class="p">.</span><span class="nx">setDisplayCallback</span><span class="p">(</span><span class="nx">textCallback</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -587,6 +627,8 @@
     <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+
+
 <h5>存目</h5>
 <ul>
 <li>Display Callback Index Effect/显示回调，索引效果</li>
@@ -604,7 +646,7 @@
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">create</span><span class="p">()</span> 
 <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">image</span><span class="o">:</span> <span class="s1">'knighthawks'</span><span class="p">,</span>
+        <span class="nx">image</span><span class="o">:</span> <span class="s1">&#39;knighthawks&#39;</span><span class="p">,</span>
         <span class="nx">width</span><span class="o">:</span> <span class="mi">31</span><span class="p">,</span>
         <span class="nx">height</span><span class="o">:</span> <span class="mi">25</span><span class="p">,</span>
         <span class="nx">chars</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">RetroFont</span><span class="p">.</span><span class="nx">TEXT_SET6</span><span class="p">,</span>
@@ -612,10 +654,12 @@
         <span class="nx">spacing</span><span class="o">:</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">1</span> <span class="p">}</span>
     <span class="p">};</span>
     <span class="c1">// 解析复古字体，加入缓存中</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">cache</span><span class="p">.</span><span class="nx">bitmapFont</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'knighthawks'</span><span class="p">,</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">RetroFont</span><span class="p">.</span><span class="nx">Parse</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">config</span><span class="p">));</span>
-    <span class="nx">dynamic</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">'knighthawks'</span><span class="p">,</span> <span class="s1">'PHASER 3'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">cache</span><span class="p">.</span><span class="nx">bitmapFont</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;knighthawks&#39;</span><span class="p">,</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">RetroFont</span><span class="p">.</span><span class="nx">Parse</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">config</span><span class="p">));</span>
+    <span class="nx">dynamic</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;knighthawks&#39;</span><span class="p">,</span> <span class="s1">&#39;PHASER 3&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
+
+
 <h6>存目</h6>
 <ul>
 <li>Retro Text Mega Scroll/复古文本滚动</li>
@@ -624,41 +668,45 @@
 <li>Scrolling Retro Text/复古文本滚动</li>
 <li>Tinted Retro Text/复古文本着色</li>
 </ul>
-<h3 id="blitter">Blitter</h3>
-<h3 id="container">Container</h3>
-<h3 id="dom-element">Dom Element</h3>
-<h3 id="graphics">Graphics</h3>
-<h3 id="group">Group</h3>
-<h3 id="images">Images</h3>
-<h3 id="lights">Lights</h3>
-<h3 id="mesh">Mesh</h3>
-<h3 id="particle-emitter">Particle Emitter</h3>
-<h3 id="quad">Quad</h3>
-<h3 id="render-texture">Render Texture</h3>
-<h3 id="shaders">Shaders</h3>
-<h3 id="shapes">Shapes</h3>
-<h3 id="sprites_1">Sprites</h3>
-<h3 id="tests">Tests</h3>
-<h3 id="text">Text</h3>
-<h3 id="tile-sprite">Tile Sprite</h3>
-<h3 id="tilemap">Tilemap</h3>
-<h2 id="games">Games</h2>
-<h2 id="geom">Geom</h2>
-<h2 id="input">input输入</h2>
-<h3 id="game-object">game object游戏对象</h3>
+<h3>Blitter</h3>
+<h3>Container</h3>
+<h3>Dom Element</h3>
+<h3>Graphics</h3>
+<h3>Group</h3>
+<h3>Images</h3>
+<h3>Lights</h3>
+<h3>Mesh</h3>
+<h3>Particle Emitter</h3>
+<h3>Quad</h3>
+<h3>Render Texture</h3>
+<h3>Shaders</h3>
+<h3>Shapes</h3>
+<h3>Sprites</h3>
+<h3>Tests</h3>
+<h3>Text</h3>
+<h3>Tile Sprite</h3>
+<h3>Tilemap</h3>
+<h2>Games</h2>
+<h2>Geom</h2>
+<h2>input输入</h2>
+<h3>game object游戏对象</h3>
 <h4>src\input\game object\sprite example.js</h4>
 <p>精灵，热点在上，热点离开</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// 开启互动</span>
 <span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
-<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerover'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
-<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerout'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerover&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerout&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
 </code></pre></div>
+
+
 <h4>src\input\game object\on down event.js</h4>
 <p>热点按下，热点抬起</p>
 <div class="highlight"><pre><span></span><code><span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
-<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerdown'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
-<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'pointerup'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerdown&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{});</span>
 </code></pre></div>
+
+
 <h4>src\input\dragging\drag distance threshold.js; drag time threshold.js</h4>
 <p>拖拽距离阈值，拖拽时间阈值。</p>
 <div class="highlight"><pre><span></span><code><span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
@@ -667,131 +715,42 @@
 <span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">dragDistanceThreshold</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
 <span class="c1">//  热点按钮500ms后才被看做拖拽</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">dragTimeThreshold</span> <span class="o">=</span> <span class="mi">500</span><span class="p">;</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'dragstart'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">)</span> <span class="p">{});</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;dragstart&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">)</span> <span class="p">{});</span>
 <span class="c1">// 给场景中所有可能的拖拽对象设置事件回调</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'drag'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">,</span> <span class="nx">dragX</span><span class="p">,</span> <span class="nx">dragY</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;drag&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">,</span> <span class="nx">dragX</span><span class="p">,</span> <span class="nx">dragY</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// 跟随拖拽点</span>
     <span class="nx">gameObject</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">dragX</span><span class="p">;</span>
     <span class="nx">gameObject</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">dragY</span><span class="p">;</span>
 <span class="p">});</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'dragend'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">)</span> <span class="p">{});</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;dragend&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">)</span> <span class="p">{});</span>
 </code></pre></div>
+
+
 <p>也可以单独给一个对象设置拖拽事件回调函数：</p>
-<div class="highlight"><pre><span></span><code><span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'drag'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="o">:</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Input</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">,</span> <span class="nx">dragX</span><span class="o">:</span><span class="nx">number</span><span class="p">,</span> <span class="nx">dragY</span><span class="o">:</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;drag&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="o">:</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Input</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">,</span> <span class="nx">dragX</span><span class="o">:</span><span class="nx">number</span><span class="p">,</span> <span class="nx">dragY</span><span class="o">:</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">dragX</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">dragY</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="loader">Loader</h2>
-<h2 id="paths">Paths</h2>
-<h2 id="physics">Physics</h2>
-<h2 id="plugins">Plugins</h2>
-<h2 id="pools">Pools</h2>
-<h2 id="renderer">Renderer</h2>
-<h2 id="scalemanager">Scalemanager</h2>
-<h2 id="scenes">Scenes</h2>
-<h2 id="snapshot">Snapshot</h2>
-<h2 id="spine">Spine</h2>
-<h2 id="textures">Textures</h2>
-<h2 id="time">Time</h2>
-<h2 id="timestep">Timestep</h2>
-<h2 id="transform">Transform</h2>
-<h2 id="tweens">Tweens</h2>
-<h2 id="utils">Utils</h2></div>
+
+
+<h2>Loader</h2>
+<h2>Paths</h2>
+<h2>Physics</h2>
+<h2>Plugins</h2>
+<h2>Pools</h2>
+<h2>Renderer</h2>
+<h2>Scalemanager</h2>
+<h2>Scenes</h2>
+<h2>Snapshot</h2>
+<h2>Spine</h2>
+<h2>Textures</h2>
+<h2>Time</h2>
+<h2>Timestep</h2>
+<h2>Transform</h2>
+<h2>Tweens</h2>
+<h2>Utils</h2></div>
 	
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                TOC
-                </li>
-                <nav class="toc">
-                    <div class="toc">
-<ul>
-<li><a href="#_1">说明</a></li>
-<li><a href="#actions">Actions/动作</a><ul>
-<li><a href="#grid-align">Grid Align/所有对象对齐网格放置</a></li>
-<li><a href="#inc-x-layersincxincyincxy">inc x layers/所有对象用IncX、IncY、IncXY递增坐标值，整体改变位置</a></li>
-<li><a href="#place-on-circle">Place On Circle/所有对象沿着圆圈放置</a></li>
-<li><a href="#random-circle">Random Circle/所有对象随机放置在圆内</a></li>
-<li><a href="#rotate-around-distance">Rotate Around Distance/所有对象（整体）围绕一定距离旋转</a></li>
-<li><a href="#rotate-around">Rotate Around/所有对象（整体）围绕一点旋转</a></li>
-<li><a href="#set-alpha">Set Alpha/所有对象（整体）设置透明度</a></li>
-<li><a href="#set-xy">Set Xy/给所有对象设置坐标值</a></li>
-<li><a href="#shift-position">Shift Position/所有对象依次换位</a></li>
-<li><a href="#spread">Spread/在两个属性值之间铺展所有对象</a></li>
-<li><a href="#wrap-in-rectangle">wrap in rectangle/所有对象在一个方形内折返放置</a></li>
-</ul>
-</li>
-<li><a href="#animation">Animation</a></li>
-<li><a href="#audio">Audio</a></li>
-<li><a href="#bugs">Bugs</a></li>
-<li><a href="#cache">Cache</a></li>
-<li><a href="#camera">Camera</a></li>
-<li><a href="#components">Components</a></li>
-<li><a href="#demoscene">Demoscene</a></li>
-<li><a href="#depth-sorting">Depth Sorting</a></li>
-<li><a href="#display">Display</a></li>
-<li><a href="#dwitter">Dwitter</a></li>
-<li><a href="#events">Events</a></li>
-<li><a href="#game-config">Game Config/游戏配置</a><ul>
-<li><a href="#banner-colors">Banner Colors/条幅颜色（及其他）</a></li>
-<li><a href="#custom-canvas">Custom Canvas/客户定制画布</a></li>
-<li><a href="#custom-webgl-canvaswebgl">Custom Webgl Canvas/客户定制WebGL画布</a></li>
-<li><a href="#game-destroy-with-multi-scenes">Game Destroy With Multi Scenes/多场景游戏的销毁</a></li>
-<li><a href="#game-rng">Game Rng/游戏的随机数问题</a></li>
-<li><a href="#multiple-game-instances">Multiple Game Instances/多个游戏实例</a></li>
-</ul>
-</li>
-<li><a href="#game-objects">Game Objects/游戏对象</a><ul>
-<li><a href="#sprites">Sprites/精灵</a></li>
-<li><a href="#bitmaptext">Bitmaptext/位图文本</a></li>
-<li><a href="#blitter">Blitter</a></li>
-<li><a href="#container">Container</a></li>
-<li><a href="#dom-element">Dom Element</a></li>
-<li><a href="#graphics">Graphics</a></li>
-<li><a href="#group">Group</a></li>
-<li><a href="#images">Images</a></li>
-<li><a href="#lights">Lights</a></li>
-<li><a href="#mesh">Mesh</a></li>
-<li><a href="#particle-emitter">Particle Emitter</a></li>
-<li><a href="#quad">Quad</a></li>
-<li><a href="#render-texture">Render Texture</a></li>
-<li><a href="#shaders">Shaders</a></li>
-<li><a href="#shapes">Shapes</a></li>
-<li><a href="#sprites_1">Sprites</a></li>
-<li><a href="#tests">Tests</a></li>
-<li><a href="#text">Text</a></li>
-<li><a href="#tile-sprite">Tile Sprite</a></li>
-<li><a href="#tilemap">Tilemap</a></li>
-</ul>
-</li>
-<li><a href="#games">Games</a></li>
-<li><a href="#geom">Geom</a></li>
-<li><a href="#input">input输入</a><ul>
-<li><a href="#game-object">game object游戏对象</a></li>
-</ul>
-</li>
-<li><a href="#loader">Loader</a></li>
-<li><a href="#paths">Paths</a></li>
-<li><a href="#physics">Physics</a></li>
-<li><a href="#plugins">Plugins</a></li>
-<li><a href="#pools">Pools</a></li>
-<li><a href="#renderer">Renderer</a></li>
-<li><a href="#scalemanager">Scalemanager</a></li>
-<li><a href="#scenes">Scenes</a></li>
-<li><a href="#snapshot">Snapshot</a></li>
-<li><a href="#spine">Spine</a></li>
-<li><a href="#textures">Textures</a></li>
-<li><a href="#time">Time</a></li>
-<li><a href="#timestep">Timestep</a></li>
-<li><a href="#transform">Transform</a></li>
-<li><a href="#tweens">Tweens</a></li>
-<li><a href="#utils">Utils</a></li>
-</ul>
-</div>
-                </nav>                
-            </ul>
-            </div>
         
         <hr>
 

@@ -70,14 +70,14 @@
  
         </div>
         
-        <div>
+        <div><p>[TOC]</p>
 <p>播报Phaser共和国的街谈巷议，飞短流长。随时更新。</p>
-<h2 id="2019-08-24phaser-world-issue-148">2019-08-24，<a href="https://madmimi.com/p/4f5f0f?pact=1055868-153324938-8266689627-c307ee6b114ec018598392b24ee76883596785e3"><em>Phaser World Issue 148</em></a>摘要</h2>
-<h3 id="phaser-3190"><strong><a href="http://phaser.io/news/2019/08/phaser-3190-released">Phaser 3.19.0发布</a></strong></h3>
+<h2>2019-08-24，<a href="https://madmimi.com/p/4f5f0f?pact=1055868-153324938-8266689627-c307ee6b114ec018598392b24ee76883596785e3"><em>Phaser World Issue 148</em></a>摘要</h2>
+<h3><strong><a href="http://phaser.io/news/2019/08/phaser-3190-released">Phaser 3.19.0发布</a></strong></h3>
 <p>包括完整的Spine插件，全新的Tween动画系统，Shader Buffers（着色器的缓冲器）。</p>
 <p><code>Shader.setRenderToTexture</code>，可以把着色器重定向到自己的帧缓冲器（framebuffer）或者WebGL Texture，而不是显示列表。这样，你就可以把这个着色器当做另一个着色器的输入；还可以把着色器保存到Texture Manager（纹理管理器），这样就可以用作纹理，生成基于纹理的游戏对象比如Sprite。与新方法<code>setSampler2DBuffer</code>联合使用，就可以方便地把多个着色器链接起来，用作其他着色器的缓冲。</p>
 <p>还有渲染器文理快照功能，用于把渲染器纹理保存为图像。<code>RenderTexture.snapshot</code>和<code>snapshotArea</code>两个新方法，可以抓取渲染器纹理（Render Texture）上的任何东西，并转换成图像；然后可以保存图像到纹理管理器，或者保存到文件系统，或者转换为网络服务。</p>
-<h3 id="phaser-4">Phaser 4公告</h3>
+<h3>Phaser 4公告</h3>
 <p>因为得到Facebook的持续支持，以及与Facebook的Gaming和Instant Games团队合作，Phaser将开始新的迭代。</p>
 <p>首先是作者长期以来要实现的：用TypeScript重写Phaser。几个要点：</p>
 <ol>
@@ -88,43 +88,43 @@
 </ol>
 <p>Phaser 4的开发将从2019年8月底开始，暂时没有预定发布日期。
 同时，Phaser 3还会开发，并发布新版，直到4版发布后停止。</p>
-<h2 id="2019-06-15phaser-world-issue-147">2019-06-15，<a href="https://madmimi.com/p/9835ae?pact=1044913-152128926-8266689627-3ca0f80806fe9e698765bc4c68a84e972896092b"><em>Phaser World Issue 147</em></a>摘要</h2>
+<h2>2019-06-15，<a href="https://madmimi.com/p/9835ae?pact=1044913-152128926-8266689627-3ca0f80806fe9e698765bc4c68a84e972896092b"><em>Phaser World Issue 147</em></a>摘要</h2>
 <p>Phaser 3.18即将发布。最重要的更改是改写了Input API。将带来的变化有：</p>
-<h3 id="_1">支持鼠标滚轮</h3>
+<h3>支持鼠标滚轮</h3>
 <p>包括三个事件：</p>
 <ul>
 <li>全局的<code>POINTER_WHEEL</code>，可以用来滚动背景、镜头等。</li>
 <li>滚轮事件如果发生在交互游戏对象上，再发出<code>GAMEOBJECT_WHEEL</code>，但并不会指出是哪个对象。</li>
 <li>游戏对象自身发出的<code>GAMEOBJECT_POINTER_WHEEL</code>，也就是说，你可以用滚轮控制这个游戏对象。</li>
 </ul>
-<h3 id="_2">同时监听画布和<strong>窗口</strong>的输入事件</h3>
+<h3>同时监听画布和<strong>窗口</strong>的输入事件</h3>
 <p>也就是说，可以连续处理画布与窗口之间的动作。</p>
-<h3 id="_3">完全支持多点触控事件</h3>
+<h3>完全支持多点触控事件</h3>
 <p>也就是说，你可以做一个弹钢琴的游戏。</p>
-<h2 id="2019-04-27phaser-world-issue-145">2019-04-27，<a href="https://madmimi.com/p/f1723e?pact=1022656-150852233-8266689627-fcf35a2423d6f09c39e101d4b2ea43a142db8714"><em>Phaser World Issue 145</em></a>摘要</h2>
-<h3 id="phaser">Phaser教程多语言版本（包括中文）上线</h3>
+<h2>2019-04-27，<a href="https://madmimi.com/p/f1723e?pact=1022656-150852233-8266689627-fcf35a2423d6f09c39e101d4b2ea43a142db8714"><em>Phaser World Issue 145</em></a>摘要</h2>
+<h3>Phaser教程多语言版本（包括中文）上线</h3>
 <p><a href="http://phaser.io/tutorials/making-your-first-phaser-3-game">Making your First Phaser 3 Game/Phaser 3 入门实例教程</a>的8种语言译本已经上线。（黄复雄注：中文本为鄙人翻译，敬请指教。）</p>
-<h3 id="dom">DOM元素脱离实验阶段</h3>
+<h3>DOM元素脱离实验阶段</h3>
 <p>DOM元素是2018年7月加入，但未充分测试，所以放在EXPERIMENTAL（实验）标签下，也就是说官方构建Phaser时不会加入，除非你自行加入然后构建。
 DOM元素通常可用于生成登录表单、排行榜之类的。
 Phaser.Loader可以加载CSS文件到浏览器中，并且可以直接设置DOM元素的类名。
 3.17版中可用。</p>
-<h3 id="_4">遮罩改进</h3>
+<h3>遮罩改进</h3>
 <p>此前，遮罩（Mask）不能作用域Container（容器）的子项。3.17版中，几何（Geometry）遮罩可以用于容器子项了。</p>
 <p>还增加了镜头（Camera）遮罩功能。</p>
-<h2 id="2019-2-22">2019-2-22</h2>
+<h2>2019-2-22</h2>
 <p>我给Phaser官方翻译的[Phaser 3 入门实例教程/<em>making-your-first-phaser-3-game</em>]翻译完成。</p>
-<h2 id="2019-2-20phaser-world-issue-141">2019-2-20，<a href="https://madmimi.com/p/b63bcd?pact=981118-149845303-8266689627-03bb45a226e31e7612bceab4affddadb8b74a162"><em>Phaser World Issue 141</em></a>摘要</h2>
+<h2>2019-2-20，<a href="https://madmimi.com/p/b63bcd?pact=981118-149845303-8266689627-03bb45a226e31e7612bceab4affddadb8b74a162"><em>Phaser World Issue 141</em></a>摘要</h2>
 <p>Richard Davey已经做了一个工作流，可以在几秒钟内把整个Phaser API文档导出为JSON，再转为SQLite；可以每个版本做一份。这样一来，Phaser Editor、VSCode、Sublime等编辑器就可以利用这些SQLite数据，做出方便的插件；Phaser文档也可以方便地集成到官网中（目前是在GitHub上），使用方式也很更灵活，还能增加官网广告的收入。</p>
 <p>作者计划翻译<a href="http://phaser.io/tutorials/getting-started-phaser3"><em>Getting Started</em></a>和<a href="http://phaser.io/tutorials/making-your-first-phaser-3-game"><em>Making your First Game</em></a>为多国语言，尤其需要翻译为中文和日语的人。有意者可发邮件到rdavey@gmail.com。</p>
-<h2 id="2019-2-10phaser-world-issue-139">2019-2-10，<a href="https://madmimi.com/p/f0b3bd?pact=959945-149476946-8266689627-b0eef99469e06f1fb704c51aaef20a8fa0624a5f"><em>Phaser World Issue 139</em></a>摘要</h2>
+<h2>2019-2-10，<a href="https://madmimi.com/p/f0b3bd?pact=959945-149476946-8266689627-b0eef99469e06f1fb704c51aaef20a8fa0624a5f"><em>Phaser World Issue 139</em></a>摘要</h2>
 <p>Phaser 3.16于2月5日发布（实际版本号是3.16.1，而不是3.16.0）。新版及发布日志<a href="https://github.com/photonstorm/phaser/releases/tag/v3.16.1">在此</a>。该版开发历时4个月。</p>
 <blockquote>
 <p>Most importantly of all, though, it finishes the Phaser 3 core feature set. /最关键的是，它完成了Phaser3的核心特性。</p>
 </blockquote>
 <p>文档有大幅度改善，目前仅差748条（总条目超过16000余条）。</p>
 <p>TypeScript定义文件亦有大改善，但新的事件未处理。</p>
-<h3 id="_5">输入系统有重要更改</h3>
+<h3>输入系统有重要更改</h3>
 <p>此前，输入系统通过一个事件队列（event queue）来工作。所有原生DOM事件，如键盘、触摸、鼠标，存储于输入管理器（Input Manager）的一个队列中，将在游戏的下一步进行处理；处理后清除。在处理的同时，内部事件，比如<code>pointerdown</code>和<code>keyup</code>被发送到你的游戏代码。
 这样能保证同时性，副作用是，在事件处理中，你不能做诸如打开外部浏览器窗口、进入全屏模式之类的事——因为他们不是“真的”事件，所以不能通过浏览器的安全检查。为此添加了诸如<code>addUpCallback</code>之类的方法，用于尝试、提供这类支持（不过键盘事件始终不可能）。</p>
 <p>3.16版变了。在同一个调用中，DOM事件立即激发对应的内部事件。所以，如果你点击画布，游戏中收到的<code>pointerdown</code>事件仍旧是原生事件处理器的一部分，所以这时你可以随意做诸如进入全屏模式、打开外部窗口之类的事，而不会有任何浏览器的警告或应急操作。不过这就意味着，处理器被调用时的点位（point）不再始终一致，也不再与请求动画帧（Request Animation Frame）的更新速度绑定。经过尽可能的测试，目前看工作表现跟以前一样。响应性能略有提升，因为移除了处理事件的零碎耽搁。</p>
@@ -132,16 +132,20 @@ Phaser.Loader可以加载CSS文件到浏览器中，并且可以直接设置DOM�
 <p>输入处理有很多更改，详见<a href="https://github.com/photonstorm/phaser/releases/tag/v3.16.1">日志列表</a>。比如：</p>
 <p>3.16可以处理游戏/画布外输入事件。可用三个事件：POINTER_DOWN_OUTSIDE、GAME_OUT和GAME_OVER。比如，热点离开画布时用来暂停游戏。</p>
 <p>键盘事件也不再像以前一样，会被浏览器截留。</p>
-<h3 id="_6">重要新特性：外部场景文件</h3>
+<h3>重要新特性：外部场景文件</h3>
 <p>现在可以使用新的Loader文件类型"SceneFile"实时加载外部场景文件。这样就不必预先把所有可能用到场景打包，可以随时在服务器端更新场景，或根据用户端信息选择场景。用法：</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">sceneFile</span><span class="p">(</span><span class="s1">'MiniGame520'</span><span class="p">,</span> <span class="s1">'js/minigames/520.js'</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">sceneFile</span><span class="p">(</span><span class="s1">&#39;MiniGame520&#39;</span><span class="p">,</span> <span class="s1">&#39;js/minigames/520.js&#39;</span><span class="p">);</span>
 <span class="c1">// `MiniGame520`是类名</span>
 </code></pre></div>
+
+
 <p>JS文件下载好后，会通过一个脚本标签添加到DOM，并被场景管理器接收。然后可以用它的key启动：</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="s1">'game520'</span><span class="p">);</span>
-<span class="c1">// 'game520'是key</span>
+<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="s1">&#39;game520&#39;</span><span class="p">);</span>
+<span class="c1">// &#39;game520&#39;是key</span>
 </code></pre></div>
-<h3 id="_7">后续事项</h3>
+
+
+<h3>后续事项</h3>
 <ul>
 <li>处理3.16的问题</li>
 <li>完成Spine插件</li>

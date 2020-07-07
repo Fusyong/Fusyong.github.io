@@ -64,9 +64,9 @@
 
         </div>
 	
-        <div><h2 id="_1">说明</h2>
+        <div><h2>说明</h2>
 <p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，略作说明，或增加代码示例。可做便览之用。</p>
-<h1 id="phaser-3-api-documentation-class-loaderplugin"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#toc0">Phaser 3 API Documentation - Class: LoaderPlugin</a></h1>
+<h1><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#toc0">Phaser 3 API Documentation - Class: LoaderPlugin</a></h1>
 <p>加载器（加载插件）用于加载所有外部资源。
 主要是通过场景的<code>this.load</code>属性来使用它。
 在场景中的<code>preload</code>（总是先于<code>create</code>方法调用）方法中使用加载器加载本场景所需资源。如果在<code>preload</code>之外使用加载器，则需自行启动加载器并监听完成事件。
@@ -75,10 +75,10 @@
 加载器启动后，在未完成之前仍可添加下载文件。
 <strong>每个场景都有自己的加载器实例。但是已经加载的资源放置在game全局缓存中，各场景都能取用。</strong>
 可以加载自定义文件类型（通过扩展<code>File</code>或<code>MultiFile</code>类）。</p>
-<h2 id="phaserloader-loaderplugin"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#toc1">Phaser.Loader. LoaderPlugin</a></h2>
+<h2><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#toc1">Phaser.Loader. LoaderPlugin</a></h2>
 <p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#LoaderPlugin">new LoaderPlugin(scene)</a></p>
 <p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#toc3">Extends</a></p>
-<h3 id="members"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#toc4">Members</a></h3>
+<h3><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#toc4">Members</a></h3>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#baseURL">baseURL :string</a></h4>
 <p>链接基。会附加到所有链接之前。如果直接给该属性赋值，最后需要代“/”，通过<code>setBaseURL()</code>方法赋值则会自动加上。参考<code>path</code>。</p>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#cacheManager"><protected> cacheManager :Phaser.Cache.CacheManager</a></h4>
@@ -116,7 +116,7 @@
 <p>需要加载的数量。不一定很精确，特别是加载文件包时。</p>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#xhr">xhr :XHRSettingsObject</a></h4>
 <p>xhr全局设置对象。可每个文件单独重写。</p>
-<h3 id="methods"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#toc23">Methods</a></h3>
+<h3><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#toc23">Methods</a></h3>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#addFile">addFile(file)</a></h4>
 <p>把文件加入队列。一般不直接使用，而是通过<code>Loader.image</code>之类的方法。</p>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#addListener">addListener(event, fn [, context])</a></h4>
@@ -336,7 +336,7 @@ Littera, Glyph Designer等软件生成的XML文件格式。
 <p>更新进度值，发出进度事件。自动调用。</p>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#xml">xml(key [, url] [, xhrSettings])</a></h4>
 <p>加载XML文件。</p>
-<h3 id="events"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#toc78">Events</a></h3>
+<h3><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#toc78">Events</a></h3>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#event:addFileEvent">addFileEvent</a></h4>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#event:completeEvent">completeEvent</a></h4>
 <h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#event:loadErrorEvent">loadErrorEvent</a></h4>

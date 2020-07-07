@@ -64,16 +64,16 @@
 
         </div>
 	
-        <div>
+        <div><p>[TOC]</p>
 <p>这是我学习Pyo的笔记。主要是学官方文档。</p>
-<h2 id="pyo">Pyo简介</h2>
+<h2>Pyo简介</h2>
 <blockquote>
 <p>Pyo是用C写成的Python模块，用于生成数字信号处理（DSP）脚本。它提供一整套的类，用于构建音频软件，编写算法音乐，或通过一种简单、成熟、强大的编程语言随意探索音频处理。</p>
 <p>它包含众多的声音信号处理类。用户可以用它在Python脚本、工程中直接加入信号处理链，并可通过解释器实时操控处理链。Pyo模块中的工具提供最基本的东西，如音频信号的数学运算，基本的信号处理（滤波器、延迟器、合称发生器，等等），也提供复杂算法以生成音频颗粒（sound granulation），以及别的生成音频的操作。Pyo支持开放声音控制协议（OSC, Open Sound Control），以便软件间的通信；支持MIDI协议，以生成声音事件，控制参数的处理。Pyo能够利用一种成熟、广泛使用的通用处理语言的诸多优势，生成复杂的信号处理链条。</p>
 <p>Pyo的开发者是Olivier Bélanger &lt;<a href="mailto:belangeo@gmail.com">belangeo@gmail.com</a>&gt;。</p>
 </blockquote>
 <p><em>——以上来自<a href="http://ajaxsoundstudio.com/pyodoc/about.html">文档</a></em></p>
-<h2 id="_1">与近似平台/语言比较</h2>
+<h2>与近似平台/语言比较</h2>
 <p>与Pyo功能近似的平台有CSound，SuperCollider，ChucK，三者各是一种语言。</p>
 <ul>
 <li><a href="https://csound.com/">CSound</a>是老牌劲旅，用户多，资料丰富（在亚马逊上能查到一种中文出版物、五种英文出版物），但有石器时代的不便。它本身用C语言写成，有多种语言（包括Python）的接口，一般通过C语言来使用。其语言有近1500个操作码。</li>
@@ -81,7 +81,7 @@
 <li><a href="http://chuck.cs.princeton.edu/">ChucK</a>主要用于创造性的现场编程（live coding），比较容易使用。</li>
 </ul>
 <p>Pyo也是后起之秀，更重要的优点在于：它是一个Python模块。就是说，<strong>你可以享受Python这种通用语言、专家语言的诸多便利。</strong></p>
-<h2 id="_2">学习资源</h2>
+<h2>学习资源</h2>
 <p>Pyo的官方资源不少，但社区资料不多。中文资料似乎还没有。</p>
 <ul>
 <li><a href="http://ajaxsoundstudio.com/pyodoc/index.html">出色的官方文档，</a>包括很多用例</li>
@@ -92,45 +92,22 @@
 <li><a href="https://github.com/belangeo/pyo">GitHub代码库</a></li>
 <li>QQ群：878915279（Pyo学习中心组）</li>
 </ul>
-<h2 id="windows">在Windows中的安装、运行问题</h2>
+<h2>在Windows中的安装、运行问题</h2>
 <p>安装内容包括Python模块和E-Pyo编辑器两部分。另外，其GUI还依赖第三方模块WxPython。</p>
-<h3 id="_3">多声卡安装错误</h3>
+<h3>多声卡安装错误</h3>
 <p>如果有多个声卡，服务器启动时可能报错：<code>assertion failed: false, file src\hostapi\wdmks\pa_win_wdmks.c, line 1036</code>。编辑器首选项中有声卡的配置选项，此时无法设置。
 可只保留系统原有的Realtek...声卡，而禁用后装声卡，这样重启系统后就能运行。</p>
-<h3 id="python">安装到指定的Python版本中</h3>
+<h3>安装到指定的Python版本中</h3>
 <p>可以安装到指定的Python版本，包括虚拟Python环境中。不过这时在编辑器中运行代码，可能无法取得Python的正确路径。因为Pyo编辑器是实时从系统变量中取第一位的Python的（编辑器首选项中能看到，但不能设置）。虽然Pyo在安装时会加入你指定的路径，但不一定正确（Pyo加入的是根目录如venv，没有加入Scripts目录）。当然，</p>
 <ul>
 <li>你可以通过更改系统变量第一位Python的路径来实现你的目的（可能影响其他应用）;</li>
 <li>也可以在第一位的Python中也安装一次Pyo。</li>
 <li>还可更改源码再自行编译。</li>
 </ul>
-<h3 id="windows_1">某些对象不支持多核Windows系统</h3>
+<h3>某些对象不支持多核Windows系统</h3>
 <p>作者确认Pyo整体可运行在Linux上，MacOS上大概也能。他肯定，SharedTable对象将无法运行在多核Windows上，并有意于测试其他对象。</p>
-<h2 id="_4">待续...</h2></div>
+<h2>待续...</h2></div>
 	
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                TOC
-                </li>
-                <nav class="toc">
-                    <div class="toc">
-<ul>
-<li><a href="#pyo">Pyo简介</a></li>
-<li><a href="#_1">与近似平台/语言比较</a></li>
-<li><a href="#_2">学习资源</a></li>
-<li><a href="#windows">在Windows中的安装、运行问题</a><ul>
-<li><a href="#_3">多声卡安装错误</a></li>
-<li><a href="#python">安装到指定的Python版本中</a></li>
-<li><a href="#windows_1">某些对象不支持多核Windows系统</a></li>
-</ul>
-</li>
-<li><a href="#_4">待续...</a></li>
-</ul>
-</div>
-                </nav>                
-            </ul>
-            </div>
         
         <hr>
 
