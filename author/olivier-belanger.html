@@ -71,19 +71,19 @@
  
         </div>
         
-        <div><p>[TOC]</p>
+        <div>
 <p>作者是Olivier Bélanger，自<a href="http://ajaxsoundstudio.com/pyodoc/index.html">ajaxsoundstudio.com</a>;
 黄复雄编译，有意译和少量省略。</p>
 <p>本文相当于原文档的Examples部分，但内容全部根据Pyo编辑器附带的实例（共128个，比文档要多一些）。标题如“起步/01-intro”，其中“起步”译自文档相应标题，“01-intro”是编辑器附带实例所在文件夹的名称。</p>
-<h2>起步/01-intro</h2>
-<h3>音频服务器/01-audio-server.py</h3>
-<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<h2 id="01-intro">起步/01-intro</h2>
+<h3 id="01-audio-serverpy">音频服务器/01-audio-server.py</h3>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">01-audio-server.py - 引导音频服务器。</span>
 
 <span class="sd">服务器对象要在所有别的音频对象之前生成。</span>
 <span class="sd">服务器对象负责与音频与midi驱动程序通信，</span>
 <span class="sd">还负责跟踪处理链条。</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># 生成服务器（Server）对象，使用缺省参数。</span>
@@ -107,14 +107,12 @@
 <span class="c1"># Python解释器。</span>
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
 </code></pre></div>
-
-
-<h3>正弦音/02-sine-tone.py</h3>
-<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">02-sine-tone.py - 音频编程的&quot;hello world&quot;！</span>
+<h3 id="02-sine-tonepy">正弦音/02-sine-tone.py</h3>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
+<span class="sd">02-sine-tone.py - 音频编程的"hello world"！</span>
 
 <span class="sd">本脚本简单地播放一个1000Hz正弦声音。</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># 生成、引导服务器。</span>
@@ -133,10 +131,8 @@
 <span class="c1"># 打开服务器的图形界面。</span>
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
 </code></pre></div>
-
-
-<h3>并行处理/03-parallel-proc.py</h3>
-<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<h3 id="03-parallel-procpy">并行处理/03-parallel-proc.py</h3>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">03-parallel-proc.py - 单个资源的多重处理。</span>
 
 <span class="sd">本例展示如何同时播放不同的音频对象。</span>
@@ -146,7 +142,7 @@
 
 <span class="sd">注意，输入变量给到处理对象，而调用</span>
 <span class="sd">每个对象的`out()`方法将发送其采样到输出。</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span><span class="o">.</span><span class="n">boot</span><span class="p">()</span>
@@ -166,10 +162,8 @@
 
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
 </code></pre></div>
-
-
-<h3>串行处理/04-serial-proc.py</h3>
-<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<h3 id="04-serial-procpy">串行处理/04-serial-proc.py</h3>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">04-serial-proc.py - 链接单个资源的多个处理。</span>
 
 <span class="sd">本例展示如何链接单个资源的多个处理。</span>
@@ -178,7 +172,7 @@
 <span class="sd">音频对象，以用于处理。</span>
 
 <span class="sd">注意输入变量给到了每个泛音器。</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span><span class="o">.</span><span class="n">boot</span><span class="p">()</span>
@@ -201,10 +195,8 @@
 
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
 </code></pre></div>
-
-
-<h3>选择输出声道/05-output-channels.py</h3>
-<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<h3 id="05-output-channelspy">选择输出声道/05-output-channels.py</h3>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">05-output-channels.py - 发送信号到不同的物理输出。</span>
 
 <span class="sd">选择输出声道（以接收声音）的最简单方法，是把它作为`out()`方法的</span>
@@ -215,7 +207,7 @@
 <span class="sd">`chnl`是输出，这是对象的第一个声道（流）要发送到的地方。</span>
 <span class="sd">`inc`是给别的声道的输出增量。`dur`是处理过程的持续时间，以秒计。</span>
 <span class="sd">持续时间为0，表示一直播放。`delay`是激活处理前的延迟，以秒计。</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span><span class="o">.</span><span class="n">boot</span><span class="p">()</span>
@@ -232,16 +224,14 @@
 
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
 </code></pre></div>
-
-
-<h2>参数控制/02-controls</h2>
-<h3>固定的控制/01-fixed-control.py</h3>
-<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<h2 id="02-controls">参数控制/02-controls</h2>
+<h3 id="01-fixed-controlpy">固定的控制/01-fixed-control.py</h3>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">01-fixed-control.py - 用数字作参数。</span>
 
 <span class="sd">要控制音频对象的行为，可在初始化时</span>
 <span class="sd">传值给参数。</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span><span class="o">.</span><span class="n">boot</span><span class="p">()</span>
@@ -264,17 +254,15 @@
 
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
 </code></pre></div>
-
-
-<h3>动态控制/02-dynamic-control.py</h3>
-<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
+<h3 id="02-dynamic-controlpy">动态控制/02-dynamic-control.py</h3>
+<div class="highlight"><pre><span></span><code><span class="sd">"""</span>
 <span class="sd">02-dynamic-control.py - 以图形控制参数。</span>
 
 <span class="sd">使用Pyo，便于快速尝试一些参数联合体，</span>
 <span class="sd">要用的控制窗口已经为有每个对象都配置好了。</span>
 <span class="sd">要打开控制窗口，只要在你想要控制的对象上面，</span>
 <span class="sd">调用`ctrl()`方法。</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="kn">from</span> <span class="nn">pyo</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">s</span> <span class="o">=</span> <span class="n">Server</span><span class="p">()</span><span class="o">.</span><span class="n">boot</span><span class="p">()</span>
@@ -285,31 +273,29 @@
 <span class="n">b</span> <span class="o">=</span> <span class="n">FM</span><span class="p">()</span><span class="o">.</span><span class="n">out</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># 打开控制窗口</span>
-<span class="n">a</span><span class="o">.</span><span class="n">ctrl</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Frequency modulation left channel&quot;</span><span class="p">)</span>
-<span class="n">b</span><span class="o">.</span><span class="n">ctrl</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Frequency modulation right channel&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">ctrl</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Frequency modulation left channel"</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">ctrl</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"Frequency modulation right channel"</span><span class="p">)</span>
 
 <span class="n">s</span><span class="o">.</span><span class="n">gui</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
 </code></pre></div>
-
-
-<h2>03-generators</h2>
-<h2>04-soundfiles</h2>
-<h2>05-envelopes</h2>
-<h2>06-filters</h2>
-<h2>07-effects</h2>
-<h2>18-multicore</h2>
-<h2>algorithmic</h2>
-<h2>control</h2>
-<h2>effects</h2>
-<h2>fft</h2>
-<h2>matrix</h2>
-<h2>sampling</h2>
-<h2>sequencing</h2>
-<h2>snds</h2>
-<h2>synthesis</h2>
-<h2>tables</h2>
-<h2>utilities</h2>
-<h2>wxgui</h2></div>
+<h2 id="03-generators">03-generators</h2>
+<h2 id="04-soundfiles">04-soundfiles</h2>
+<h2 id="05-envelopes">05-envelopes</h2>
+<h2 id="06-filters">06-filters</h2>
+<h2 id="07-effects">07-effects</h2>
+<h2 id="18-multicore">18-multicore</h2>
+<h2 id="algorithmic">algorithmic</h2>
+<h2 id="control">control</h2>
+<h2 id="effects">effects</h2>
+<h2 id="fft">fft</h2>
+<h2 id="matrix">matrix</h2>
+<h2 id="sampling">sampling</h2>
+<h2 id="sequencing">sequencing</h2>
+<h2 id="snds">snds</h2>
+<h2 id="synthesis">synthesis</h2>
+<h2 id="tables">tables</h2>
+<h2 id="utilities">utilities</h2>
+<h2 id="wxgui">wxgui</h2></div>
         <hr />
     </div>
 

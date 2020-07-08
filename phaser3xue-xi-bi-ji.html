@@ -64,22 +64,22 @@
 
         </div>
 	
-        <div><p>[TOC]</p>
-<h2>说明</h2>
+        <div>
+<h2 id="_1">说明</h2>
 <p>最近Phaser的中文社区突然活跃起来。（也可能是我最近关注多一点造成的错觉。）很多初学者问一些过于基础的问题，比如怎么旋转一个精灵，有时引起社区成员的反感甚至奚落；这些问题本应该在自学入门中了解。我把自己自学Phaser的一些经验、资料累积在这里，对初学者可能有用。</p>
 <ul>
 <li>文中材料主要是针对Phaser3的。Phaser3变化很大，与Phaser2不同的地方做了重点标记。<a href="/phaser3guan-wang-shi-li-xue-xi-bi-ji.html">Phaser3官网实例学习笔记</a>已经单列一文。</li>
 <li>摘录的代码都是片段。我用的是TypeScript语言，但摘录的代码可能是JavaScript，或在此基础上添加了TypeScript类型标记。JavaScript代码在TypeScript中是有效的，但可能使编辑器、编译工具等报错——这跟设置有关。</li>
 <li><strong>本文是随时更新的，</strong>最终会累积成一个便览手册；可通过搜索或底端的目录快速查找。</li>
 </ul>
-<h2>入门三部曲</h2>
+<h2 id="_2">入门三部曲</h2>
 <p>对于初学者来说，合适的入门程序可以大大地提高成效。我的经验是：</p>
 <ol>
 <li>学习官网入门教程，知道做出Phaser游戏的最必要的技术，了解一个Phaser游戏的概观；</li>
 <li>浏览官网实例，了解Phaser能做什么，大体是怎么做的；做好注记，以便日后快速查询；</li>
 <li>从零开始做一个Phaser游戏，遇到问题随时搜索官网实例、API文档、开发日志等；</li>
 </ol>
-<h2>学习资源</h2>
+<h2 id="_3">学习资源</h2>
 <ul>
 <li><a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/index">官网入门教程</a>。一个简明、完整的权威教程。</li>
 <li><a href="https://github.com/photonstorm/phaser3-examples">Phaser3实例库</a>。可以在<a href="http://labs.phaser.io">labs.phaser.io</a>连线使用。英文不大好的可以看我做的学习笔记：<a href="/phaser3guan-wang-shi-li-xue-xi-bi-ji.html">Phaser3官网实例学习笔记</a>，<a href="/phaser2guan-wang-shi-li-xue-xi-bi-ji.html">《Phaser2官网实例学习笔记》</a>。</li>
@@ -91,7 +91,7 @@
 <li><a href="https://phaser.discourse.group/">Phaser官方新建的独立讨论组</a>。<a href="http://www.html5gamedevs.com/forum/14-phaser-2/">Phaser2论坛</a>。<a href="http://www.html5gamedevs.com/forum/33-phaser-3/">Phaser3旧论坛</a>。</li>
 <li>我建的一个QQ群交流“Phaser3学习中心组”(938890881)。人气比较高的QQ群有“Phaser小站”(519413640，<a href="https://www.phaser-china.com/">兼有同名网站</a>)，“Pixi.js&amp;Phaser交流群”(384427721)</li>
 </ul>
-<h2>资源检索</h2>
+<h2 id="_4">资源检索</h2>
 <p>搜索引擎自然不用说了。</p>
 <p>一些大规模的资源，比如实例库、文档、官方电子期刊等，可以先下载到本地。再用PowerGrep、FileLocator、PDF-XChange之类的全文检索工具检索。<strong>当然，你要比较熟悉Phaser的术语习惯，才能有效地检索。</strong></p>
 <p>有一个我经常用的<a href="http://phaserchains.boniatillo.com/">Phaser Chains项目</a>，可惜目前仅基于Phaser2.4.7。期待早日支持Phaser3。它可以对API文档和官网实例进行联合检索，支持通配符，<strong>支持对象属性的关系链条，</strong>所以要比翻看文档方便、直观得多。比如搜"state.*sprite"，就能查到很多相关条目（条目又关联着文档和官网实例）：</p>
@@ -101,10 +101,8 @@
 <span class="nx">Phaser</span><span class="p">.</span><span class="nx">State</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">audioSprite</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">AudioSprite</span><span class="p">;</span>
 <span class="c1">//等等...</span>
 </code></pre></div>
-
-
 <p>另外，<strong>官方文档有SQLite和json版，</strong>值得深入挖掘。</p>
-<h2>Game配置对象GameConfig</h2>
+<h2 id="gamegameconfig">Game配置对象GameConfig</h2>
 <p>Phaser3的配置对象包含很多项目，详见<a href="https://photonstorm.github.io/phaser3-docs/global.html#GameConfig">配置对象GameConfig文档</a>，也可参考<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/game-config.md">小抄</a>。</p>
 <p><strong>Phaser3广泛使用配置对象，又比如在生成Sprites、Tweens实例时。</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
@@ -112,7 +110,7 @@
     <span class="nx">width</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span>
     <span class="nx">height</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
     <span class="nx">physics</span><span class="o">:</span> <span class="p">{</span>
-        <span class="k">default</span><span class="o">:</span> <span class="s1">&#39;arcade&#39;</span><span class="p">,</span>
+        <span class="k">default</span><span class="o">:</span> <span class="s1">'arcade'</span><span class="p">,</span>
         <span class="nx">arcade</span><span class="o">:</span> <span class="p">{</span>
             <span class="nx">gravity</span><span class="o">:</span> <span class="p">{</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">300</span> <span class="p">},</span>
             <span class="nx">debug</span><span class="o">:</span> <span class="kc">false</span>
@@ -131,9 +129,7 @@
 <span class="kd">function</span> <span class="nx">create</span> <span class="p">(){}</span>
 <span class="kd">function</span> <span class="nx">update</span> <span class="p">(){}</span>
 </code></pre></div>
-
-
-<h2>GameObjects游戏对象</h2>
+<h2 id="gameobjects">GameObjects游戏对象</h2>
 <ul>
 <li>
 <p>Phaser3游戏对象的一个重要变化，是把Phaser2中Sprite、Text、Group等游戏对象的容器功能分离出来，归到Container中。这样一来，Sprite、Text等不能添加子项；Group有子项，但实际是逻辑分组，非独占，通常也不能整体地控制显示状态（可以通过Actions批处理）。Phaser2的渲染核心是PIXI，虽然PIXI有Container，但在Phaser2中一般不直接使用。</p>
@@ -146,12 +142,10 @@
 </li>
 <li>Phaser.GameObjects.GameObjectCreator/游戏对象生成器。实际上通过<code>Scene.make</code>属性引用，比如<code>this.make.sprite(config)</code>。与工厂类不同，生成器生成的游戏对象不会自动加载到场景上。</li>
 </ul>
-<h3>Sprite精灵</h3>
+<h3 id="sprite">Sprite精灵</h3>
 <p>精灵是Phaser游戏中最主要的游戏对象，在游戏对象中有代表性。要便览精灵的属性和方法，请参考<a href="/phaser3-apiwen-dang-da-gang-sprite.html">《Phaser3 API文档大纲-Sprite》</a>。</p>
-<div class="highlight"><pre><span></span><code><span class="err">let newSprite = this.add.sprite(20, 30, &quot;spriteTexture&quot;, 2);</span>
+<div class="highlight"><pre><span></span><code><span class="err">let newSprite = this.add.sprite(20, 30, "spriteTexture", 2);</span>
 </code></pre></div>
-
-
 <p>参考小抄<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/sprite.md">Phaser.GameObject.Sprite</a></p>
 <h4>Size内部尺寸</h4>
 <p>Size内部尺寸、原本（native）尺寸，包括：</p>
@@ -174,26 +168,22 @@
 <li>Sprite.setDisplaySize(width, height) </li>
 </ul>
 <h4>直接生成有物理属性的精灵</h4>
-<div class="highlight"><pre><span></span><code><span class="nx">player</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="s1">&#39;dude&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="nx">player</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">450</span><span class="p">,</span> <span class="s1">'dude'</span><span class="p">);</span>
 <span class="nx">player</span><span class="p">.</span><span class="nx">setBounce</span><span class="p">(</span><span class="mf">0.2</span><span class="p">);</span> <span class="c1">// 设置反弹</span>
 <span class="nx">player</span><span class="p">.</span><span class="nx">setCollideWorldBounds</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>  <span class="c1">// 设置与世界边缘碰撞</span>
 <span class="nx">player</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">setGravityY</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span> <span class="c1">// 物理精灵的body包含了物理属性</span>
 <span class="nx">player</span><span class="p">.</span><span class="nx">setTint</span><span class="p">(</span><span class="mh">0xff0000</span><span class="p">);</span> <span class="c1">// 着色</span>
 </code></pre></div>
-
-
-<h3>Image/图像</h3>
+<h3 id="image">Image/图像</h3>
 <p>图像与精灵的不同主要在于，Image没有动画（Animation）组件，消耗更小。
 但图像也有输入事件、物理体，可以应用补间动画，可以滚动，所以只要你不使用动画，那么就应该用Image代替精灵。图像常用于显示静态图像，比如logo，背景，布景等没有动画（Animation）的元素。（在Phaser2中，Image的操控项更少，尤其是没有物理属性。）
 注意：Tween（补间运动/补间动画）不同于动画（Animation）。</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;sky&#39;</span><span class="p">);</span>  <span class="c1">// 指定原点/中心点位置位置</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sys</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">sys</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;background&quot;</span><span class="p">);</span> <span class="c1">// 居中放置</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;sky&#39;</span><span class="p">).</span><span class="nx">setOrigin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// 设左上角为原点/锚点</span>
+<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">'sky'</span><span class="p">);</span>  <span class="c1">// 指定原点/中心点位置位置</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sys</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">sys</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"background"</span><span class="p">);</span> <span class="c1">// 居中放置</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'sky'</span><span class="p">).</span><span class="nx">setOrigin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// 设左上角为原点/锚点</span>
 </code></pre></div>
-
-
 <p>参考小抄<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/image.md">Phaser.GameObject.Image</a></p>
-<h3>Shape/几何图形及其子类</h3>
+<h3 id="shape">Shape/几何图形及其子类</h3>
 <p>Shape是Phaser3新增的游戏对象。Shape本身不能加到场景上，而是用作下列几何图形游戏对象的基类：</p>
 <ul>
 <li>Arc弧形</li>
@@ -210,7 +200,7 @@
 </ul>
 <p>这些Shape子类，可以加入场景、组和容器中。你可以像处理其他常见游戏对象一样处理它们，比如应用补间动画、缩放、打开输入和物理属性。Shape通常支持填充色和笔触色。</p>
 <p><strong>Shape拥有常规游戏对象的所有特性，不同之处在于它有高效的渲染方式。</strong>Shape不需要使用纹理，但又可以利用WebGL中的批处理的好处，所以能很方便地在游戏中快速渲染形状。它不仅没有Graphics的高消耗问题，甚至有些Shape子类比Sprite还要快。</p>
-<h3>Graphics/几何图画</h3>
+<h3 id="graphics">Graphics/几何图画</h3>
 <p>Graphics主要用于绘制一些几何形状（比如方形、圆形、多边形、直线、弧线、曲线），最终构成一个几何图画。
 Graphics初始的时候是空的，需要制定笔触色、填充色，然后用路径绘制，最后笔触着色、填充。有些常见形状，比如方形，可以方便地绘制。</p>
 <p>在Canvas和WebGL两种模式中，Graphics的渲染是不同的。在Canvas下是绘制路径，在WebGL下是绘制多边形。这两种方式都很消耗资源，尤其是图画复杂的时候。所以，如果你的几何图画不会变化，或者变化少，你应该用Phaser.GameObjects.Graphics#generateTexture把几何图画“备份”成一个纹理，并把它返回用于生成精灵Sprite或者其他游戏对象。请注意你的几何图画的复杂程度和数量。</p>
@@ -219,39 +209,33 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 <span class="nx">graphics</span><span class="p">.</span><span class="nx">fillStyle</span><span class="p">(</span><span class="mh">0xffff00</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 <span class="nx">graphics</span><span class="p">.</span><span class="nx">fillRoundedRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span>
 </code></pre></div>
-
-
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">graphics</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">graphics</span><span class="p">().</span><span class="nx">fillStyle</span><span class="p">(</span><span class="mh">0x00ff00</span><span class="p">).</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 <span class="c1">// 由几何图画生成纹理，由纹理生成Image，销毁几何图画</span>
-<span class="nx">graphics</span><span class="p">.</span><span class="nx">generateTexture</span><span class="p">(</span><span class="s1">&#39;hudbar&#39;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">graphics</span><span class="p">.</span><span class="nx">generateTexture</span><span class="p">(</span><span class="s1">'hudbar'</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 <span class="nx">graphics</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;hudbar&#39;</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">'hudbar'</span><span class="p">);</span>
 </code></pre></div>
-
-
-<h3>TileSprite瓦片精灵</h3>
+<h3 id="tilesprite">TileSprite瓦片精灵</h3>
 <p>用小块Tile铺设背景。【有待补充】</p>
-<h3>Sprite3D/3D精灵</h3>
+<h3 id="sprite3d3d">Sprite3D/3D精灵</h3>
 <p>标准精灵的封装，可以被3D相机渲染，可以放在3D空间内。</p>
-<h3>PathFollower/循路器</h3>
+<h3 id="pathfollower">PathFollower/循路器</h3>
 <p>PathFollower是一种特殊的Sprite，拥有精灵的所有属性，同时可以自动循着一条Path运动。</p>
-<h3>Blitter/显存块移动单元/位块传送器</h3>
+<h3 id="blitter">Blitter/显存块移动单元/位块传送器</h3>
 <p>Blitter是一种特殊容器，用于更新、管理Bob对象。Bob主要目标是快速渲染，而不是追求弹性；它包括一个纹理或者纹理中的帧、位置、透明度，还有翻转、是否可见的开关，但不能旋转、缩放；它们批量绘制方法以加速渲染。</p>
 <p>一个Blitter绑定一个纹理。由这个Blitter生成的Bob可以使用这个纹理中的任何帧（可以动态改变），但不能使用别的纹理。就是因为绑定唯一的纹理，使得它们速度很快。</p>
 <p>可以从游戏代码直接操控Bob对象，但Bob的生成和销毁需要通过父级Blitter来操作。</p>
 <p>如果你需要在屏幕上渲染大量的帧，那么可以考虑Blitter；尤其是用作自己的特效系统的基础，它是特别有用的。</p>
-<h3>Bob/显存块移动对象/位块传送对象</h3>
+<h3 id="bob">Bob/显存块移动对象/位块传送对象</h3>
 <p>参见Blitter。</p>
-<h3>Text文本</h3>
+<h3 id="text">Text文本</h3>
 <p>Text对象使用标准的Canvas fillText API（效果比较多），在内部隐层画布上预先渲染，然后生成纹理，再渲染到游戏上。
 文本所用字体必须是浏览器已经可以取用的，或通过第三方加载器预先已载入（Phaser没有字体加载功能），或已经嵌入CSS中。<strong>注意：如果字体名称中有空格或者数字，需要加上引号。</strong></p>
 <p><strong>任何内容和格式变动都需要整体重制，因此很消耗算力。变动频繁，或者文本很多时，最好使用BitmapText。</strong></p>
-<div class="highlight"><pre><span></span><code><span class="err">var scoreText = this.add.text(16, 16, &#39;score: 0&#39;, { fontSize: &#39;32px&#39;, fill: &#39;#000&#39; });</span>
-<span class="err">scoreText.setText(&#39;Score: &#39; + 10);</span>
+<div class="highlight"><pre><span></span><code><span class="err">var scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });</span>
+<span class="err">scoreText.setText('Score: ' + 10);</span>
 </code></pre></div>
-
-
-<h3>BitmapText静态位图文本</h3>
+<h3 id="bitmaptext">BitmapText静态位图文本</h3>
 <p>BitmapText的灵活性不如Text，比如不能使用阴影、填充、Web字体，但速度更快。
 生成工具：</p>
 <ul>
@@ -260,13 +244,13 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 <li><a href="http://kvazars.com/littera/">Littera (Web-based, free)</a></li>
 </ul>
 <p>推荐使用XML格式，如果使用JSON格式，必须符合X2JS库的转换标准。<a href="http://codebeautify.org/xmltojson">这里有在线工具。</a></p>
-<h3>DynamicBitmapText动态位图文本</h3>
+<h3 id="dynamicbitmaptext">DynamicBitmapText动态位图文本</h3>
 <p>与静态位图文本不同的是，动态位图文本每渲染一个字都会引发一次回调，让你控制这个字的渲染属性，比如位置、缩放、着色；这样会更耗时，所以不需要逐字控制时应使用静态位图文本。</p>
-<h3>Zone区块</h3>
+<h3 id="zone">Zone区块</h3>
 <p>Zone是一个矩形区块，没有纹理，不显示，但存在于与显示列表中，有游戏对象的一般属性。主要用做点击、角色变动的定位，或重叠检测，或作为非显示对象的基类。</p>
-<h3>RenderTexture渲染器纹理</h3>
+<h3 id="rendertexture">RenderTexture渲染器纹理</h3>
 <p>能够在运行时绘制多个游戏对象，实时生成纹理，以供他用。对webGL友好，不激发GPU加载。但不能抗锯齿（如渲染Shape时有锯齿）。</p>
-<h3><a href="/phaser3-apiwen-dang-da-gang-container.html">Container容器</a></h3>
+<h3 id="container"><a href="/phaser3-apiwen-dang-da-gang-container.html">Container容器</a></h3>
 <p>一个游戏对象加入容器后，即从显示列表中删除，而加入容器内部的显示列表，由容器负责它的渲染；位置也是相对于容器位置而言的。</p>
 <p>容器可以嵌套。</p>
 <p>容器可以添加遮罩或作为遮罩，但是子项不能添加遮罩，即遮罩不能叠加。</p>
@@ -274,22 +258,20 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 <p>容器可以赋予物理体。不过，如果子项也有物理属性，并且容器或任何前辈对象不是位于0x0位置的话，那么你可能碰到意外的结果，比如物理体偏置。不把带物理属性的子项考虑进来，是因为需要过多的运算。</p>
 <p>要注意容器带来的额外问题。嵌套越深，消耗越会升级，尤其是在输入事件上。尽可能避免使用。</p>
 <p>参考<code>Group</code>。</p>
-<h3><a href="/phaser3-apiwen-dang-da-gang-group.html">Group组</a></h3>
+<h3 id="group"><a href="/phaser3-apiwen-dang-da-gang-group.html">Group组</a></h3>
 <p>Group是一个抽象分组，便于批量地生成、排布、控制、循环处理近似游戏对象。与Container不同，它自身没有没有显隐、缩放、定位、旋转属性（但可以快速控制子项的这些属性）。他对子项不是独占的，子项可以存在于多个组中。因此<strong>Container更适于把多个显示对象集合成一个复合型显示对象，以便整体地控制显示状态；Group则适合于对近似对象进行批量操作。</strong></p>
 <p><strong>组的一个重要用途是对象池。</strong></p>
 <h4>生成静态物理组</h4>
 <div class="highlight"><pre><span></span><code><span class="err">var platforms;</span>
 <span class="err">platforms = this.physics.add.staticGroup(); // 物理静态组</span>
-<span class="err">platforms.create(400, 568, &#39;ground&#39;).setScale(2).refreshBody();  // 物理静态组变换尺寸后需要刷新物理Body，即通知物理系统</span>
-<span class="err">platforms.create(600, 400, &#39;ground&#39;);</span>
-<span class="err">platforms.create(50, 250, &#39;ground&#39;);</span>
-<span class="err">platforms.create(750, 220, &#39;ground&#39;);</span>
+<span class="err">platforms.create(400, 568, 'ground').setScale(2).refreshBody();  // 物理静态组变换尺寸后需要刷新物理Body，即通知物理系统</span>
+<span class="err">platforms.create(600, 400, 'ground');</span>
+<span class="err">platforms.create(50, 250, 'ground');</span>
+<span class="err">platforms.create(750, 220, 'ground');</span>
 </code></pre></div>
-
-
 <h4>生成动态物理组</h4>
 <div class="highlight"><pre><span></span><code><span class="n">stars</span> <span class="o">=</span> <span class="n">this</span><span class="p">.</span><span class="n">physics</span><span class="p">.</span><span class="k">add</span><span class="p">.</span><span class="k">group</span><span class="p">(</span><span class="err">{</span>
-    <span class="k">key</span><span class="p">:</span> <span class="s1">&#39;star&#39;</span><span class="p">,</span>
+    <span class="k">key</span><span class="p">:</span> <span class="s1">'star'</span><span class="p">,</span>
     <span class="n">repeat</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
     <span class="n">setXY</span><span class="p">:</span> <span class="err">{</span> <span class="n">x</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stepX</span><span class="p">:</span> <span class="mi">70</span> <span class="err">}</span> <span class="o">//</span> <span class="err">生成一个行列</span>
 <span class="err">}</span><span class="p">);</span>
@@ -299,11 +281,9 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 
 <span class="err">}</span><span class="p">);</span>
 </code></pre></div>
-
-
-<h3>Lights (WebGL only)/光照</h3>
+<h3 id="lights-webgl-only">Lights (WebGL only)/光照</h3>
 <p>Light2D的管道。</p>
-<h3>Mesh(WebGL only)网格</h3>
+<h3 id="meshwebgl-only">Mesh(WebGL only)网格</h3>
 <p><strong>Mesh/网格是Phaser3新增功能，只支持webGL渲染模式。Phaser2不支持Mesh，因此也不支持Drangonbone等动画格式中的网格蒙皮功能。</strong></p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">newMesh</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">mesh</span><span class="p">(</span>
   <span class="mi">300</span><span class="p">,</span>
@@ -312,11 +292,9 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
   <span class="p">[</span><span class="mh">0xffffff</span><span class="p">,</span> <span class="mh">0xffffff</span><span class="p">,</span> <span class="mh">0xffffff</span><span class="p">,</span> <span class="mh">0xffffff</span><span class="p">,</span> <span class="mh">0xffffff</span><span class="p">,</span> <span class="mh">0xffffff</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-  <span class="s2">&quot;texture&quot;</span>
+  <span class="s2">"texture"</span>
 <span class="p">);</span>
 </code></pre></div>
-
-
 <p>Parameters</p>
 <div class="highlight"><pre><span></span><code><span class="n">x</span>                    <span class="o">:</span> <span class="n">the</span> <span class="n">x</span> <span class="n">position</span> <span class="n">of</span> <span class="n">the</span> <span class="n">mesh</span>
 <span class="n">y</span>                    <span class="o">:</span> <span class="n">the</span> <span class="n">y</span> <span class="n">position</span> <span class="n">of</span> <span class="n">the</span> <span class="n">mesh</span>
@@ -327,43 +305,35 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 <span class="n">texture</span>              <span class="o">:</span> <span class="n">sprite</span> <span class="n">name</span>
 <span class="n">frame</span>                <span class="o">:</span> <span class="n">the</span> <span class="n">sprite</span> <span class="n">frame</span>
 </code></pre></div>
-
-
 <p>通过<code>newMesh.vertices[0]</code>、<code>newMesh.uv[0]</code>等引用、操作。</p>
 <p>参考小抄 <a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/mesh.md">Phaser.GameObject.Mesh</a></p>
-<h3>Quad (WebGL only)/方块</h3>
+<h3 id="quad-webgl-only">Quad (WebGL only)/方块</h3>
 <p>Mesh网格的一个单元。</p>
-<h3>Shader (WebGL only)/着色器</h3>
+<h3 id="shader-webgl-only">Shader (WebGL only)/着色器</h3>
 <p>控制quad方块的显示。【？？？】 </p>
-<h3>DOMElement/DOM元素</h3>
+<h3 id="domelementdom">DOMElement/DOM元素</h3>
 <p>DOMElement是在游戏上操控HTML元素的方法。需要在游戏配置对象中开启：</p>
 <div class="highlight"><pre><span></span><code><span class="nx">dom</span> <span class="p">{</span>
   <span class="nx">createContainer</span><span class="o">:</span> <span class="kc">true</span>
 <span class="p">}</span>
 </code></pre></div>
-
-
 <p>这样会自动在游戏画布上方生成一个尺寸相同的DOM容器div。所有DOM元素都会插入同一个DOM容器，而不管是在那个场景中生成的。可以这样添加DOM元素到容器中：</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">dom</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="s1">&#39;background-color: lime; width: 220px; height: 100px; font: 48px Arial&#39;</span><span class="p">,</span> <span class="s1">&#39;Phaser&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">dom</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="s1">'div'</span><span class="p">,</span> <span class="s1">'background-color: lime; width: 220px; height: 100px; font: 48px Arial'</span><span class="p">,</span> <span class="s1">'Phaser'</span><span class="p">);</span>
 </code></pre></div>
-
-
 <p>你可以像操控其他游戏对象一样操控DOM对象，比如设置位置、缩放、旋转、透明度等属性。但它不能开启输入；但可以直接用addListener方法添加原生事件监听器。 </p>
 <p>DOM元素是对齐原生HTML和游戏对象的好办法。比如，你可以你可以插入登录框，或文本输入框，或者从第三方服务插入条幅广告，或者用于高解析度的文本显示与UI。</p>
-<h3>Video/视频</h3>
+<h3 id="video">Video/视频</h3>
 <p>Video对象可以回放预先载入缓存的视频，或者播放给定链接的视频。视频可以是本地的，也可以是流式的。</p>
 <div class="highlight"><pre><span></span><code><span class="nx">preload</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">video</span><span class="p">(</span><span class="s1">&#39;pixar&#39;</span><span class="p">,</span> <span class="s1">&#39;nemo.mp4&#39;</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">video</span><span class="p">(</span><span class="s1">'pixar'</span><span class="p">,</span> <span class="s1">'nemo.mp4'</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">create</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">video</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">&#39;pixar&#39;</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">video</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="s1">'pixar'</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-
-
 <p>Video是标准游戏对象，跟Sprite一样，通常的缩放、旋转、修剪、着色、交互、赋予物理体等操作都可以。
 如果视频文件有透明通道，那么通过WebM文件格式，还可以实现透明；但需要浏览器支持。</p>
-<h2>Input游戏对象的输入控制</h2>
+<h2 id="input">Input游戏对象的输入控制</h2>
 <ul>
 <li>GameObject.setInteractive( [shape] [, callback] [, dropZone])</li>
 </ul>
@@ -374,15 +344,13 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 <div class="highlight"><pre><span></span><code><span class="nx">text</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">(</span><span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Rectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">text</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">text</span><span class="p">.</span><span class="nx">height</span><span class="p">),</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Rectangle</span><span class="p">.</span><span class="nx">Contains</span><span class="p">);</span>
 <span class="c1">//  Input Event listeners</span>
 <span class="c1">// this: Phaser.Scene</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;gameobjectover&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'gameobjectover'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">gameObject</span><span class="p">.</span><span class="nx">setTint</span><span class="p">(</span><span class="mh">0xff0000</span><span class="p">,</span> <span class="mh">0xff0000</span><span class="p">,</span> <span class="mh">0xffff00</span><span class="p">,</span> <span class="mh">0xff00ff</span><span class="p">);</span>
 <span class="p">});</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;gameobjectout&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'gameobjectout'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">pointer</span><span class="p">,</span> <span class="nx">gameObject</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">gameObject</span><span class="p">.</span><span class="nx">clearTint</span><span class="p">();</span>
 <span class="p">});</span>
 </code></pre></div>
-
-
 <ul>
 <li>GameObject.removeInteractive()</li>
 </ul>
@@ -400,7 +368,7 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 </ul>
 <p>此属性用以保存交互对象。</p>
 <p><a href="https://phaser.io/phaser3/devlog/89">Input问题，可参考开发日志。</a></p>
-<h2>生成碰撞、重叠管理对象</h2>
+<h2 id="_5">生成碰撞、重叠管理对象</h2>
 <div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">collider</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">platforms</span><span class="p">);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">collider</span><span class="p">(</span><span class="nx">stars</span><span class="p">,</span> <span class="nx">platforms</span><span class="p">);</span> <span class="c1">// 组与组碰撞</span>
 
@@ -410,14 +378,12 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
     <span class="nx">star</span><span class="p">.</span><span class="nx">disableBody</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> 
 <span class="p">}</span>
 </code></pre></div>
-
-
-<h2>Input生成输入管理对象</h2>
+<h2 id="input_1">Input生成输入管理对象</h2>
 <div class="highlight"><pre><span></span><code><span class="nx">cursors</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">keyboard</span><span class="p">.</span><span class="nx">createCursorKeys</span><span class="p">();</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">cursors</span><span class="p">.</span><span class="nx">left</span><span class="p">.</span><span class="nx">isDown</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nx">player</span><span class="p">.</span><span class="nx">setVelocityX</span><span class="p">(</span><span class="o">-</span><span class="mi">160</span><span class="p">);</span>
-    <span class="nx">player</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">player</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s1">'left'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">cursors</span><span class="p">.</span><span class="nx">right</span><span class="p">.</span><span class="nx">isDown</span><span class="p">){}</span>
 <span class="k">else</span><span class="p">{}</span>
@@ -427,22 +393,16 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
     <span class="nx">player</span><span class="p">.</span><span class="nx">setVelocityY</span><span class="p">(</span><span class="o">-</span><span class="mi">330</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-
-
-<h2>调整尺寸Game.resize</h2>
+<h2 id="gameresize">调整尺寸Game.resize</h2>
 <p>根据浏览器窗口变动调整尺寸。</p>
 <div class="highlight"><pre><span></span><code><span class="nb">window</span><span class="p">.</span><span class="nx">onresize</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
   <span class="nx">game</span><span class="p">.</span><span class="nx">resize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
 <span class="p">};</span>
 </code></pre></div>
-
-
-<h2>销毁Game实例</h2>
+<h2 id="game">销毁Game实例</h2>
 <div class="highlight"><pre><span></span><code><span class="nx">Game</span><span class="p">.</span><span class="nx">destroy</span><span class="p">(</span><span class="nx">removeCanvas</span> <span class="p">[,</span> <span class="nx">noReturn</span><span class="p">])</span>
 </code></pre></div>
-
-
-<h2>src文件结构（最佳实践）</h2>
+<h2 id="src">src文件结构（最佳实践）</h2>
 <div class="highlight"><pre><span></span><code><span class="nx">src</span>
 <span class="o">|</span>   <span class="nx">phaser</span><span class="p">.</span><span class="nx">d</span><span class="p">.</span><span class="nx">ts</span>  <span class="c1">// Phaser类型声明文件，Typescript编译器需要</span>
 <span class="o">|</span>   <span class="nx">main</span><span class="p">.</span><span class="nx">ts</span>      <span class="c1">// web版入口文件</span>
@@ -460,37 +420,88 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
         <span class="nx">MainMenuScene</span><span class="p">.</span><span class="nx">ts</span>   <span class="c1">// 游戏菜单</span>
         <span class="nx">GameScene</span><span class="p">.</span><span class="nx">ts</span>       <span class="c1">// 游戏场景</span>
 </code></pre></div>
-
-
 <p>另外，如果不使用webpack等打包工具，<code>index.html</code>文件和资源文件夹<code>assets/</code>可以跟入口文件<code>main.ts</code>放在同一层级（即<code>src/</code>)。</p>
 <p>微信版需要单建一个项目文件夹，存放微信小游戏必须的文件<code>game.js</code>（<code>game.ts</code>的编译目标）、<code>game.json</code>、<code>project.config.json</code>，以及<code>assets/</code>、<code>js/</code>等资源。微信版的问题当专文说明。</p>
-<h2>Math数学</h2>
-<h3>RND随机数</h3>
+<h2 id="math">Math数学</h2>
+<h3 id="rnd">RND随机数</h3>
 <ul>
 <li>随机取选取列表中的项目</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">nouns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ninja&quot;</span><span class="p">,</span> <span class="s2">&quot;chair&quot;</span><span class="p">,</span> <span class="s2">&quot;pancake&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">nouns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"ninja"</span><span class="p">,</span> <span class="s2">"chair"</span><span class="p">,</span> <span class="s2">"pancake"</span><span class="p">]</span>
 <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">pick</span><span class="p">(</span><span class="nx">nouns</span><span class="p">);</span>
 </code></pre></div>
-
-
-<h2>对象对齐（定位）</h2>
+<h2 id="_6">对象对齐（定位）</h2>
 <p>常用四个类中的静态方法：</p>
 <ul>
 <li><a href="/phaser3-apiwen-dang-da-gang-displayaligninto.html">Display.Align中的In和To</a></li>
 <li><a href="/phaser3-apiwen-dang-da-gang-displaybounds.html">Display.Bounds</a></li>
 <li><a href="/phaser3-apiwen-dang-da-gang-actions.html">Actions.GridAlign中的静态方法GridAlign、PlaceOn系列、Inc系列，Set系列，等等)</a></li>
 </ul>
-<h2><a href="/phaser3-apiwen-dang-da-gang-actions.html">Actions动作（批处理）</a></h2>
+<h2 id="actions"><a href="/phaser3-apiwen-dang-da-gang-actions.html">Actions动作（批处理）</a></h2>
 <p><code>Phaser. Actions</code>包含一组静态方法，可以对一组游戏对象进行批量处理，应用相同的动作。常常结合逻辑分组<code>Group.getChildren()</code>一起使用。
 条目要包含要处理的属性、方法，否则无效。</p>
 <p>@actions\place on circle.js</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Circle</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">260</span><span class="p">);</span>
-<span class="nx">group</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span> <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;ball&#39;</span><span class="p">,</span> <span class="nx">frameQuantity</span><span class="o">:</span> <span class="mi">32</span> <span class="p">});</span>
+<span class="nx">group</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span> <span class="nx">key</span><span class="o">:</span> <span class="s1">'ball'</span><span class="p">,</span> <span class="nx">frameQuantity</span><span class="o">:</span> <span class="mi">32</span> <span class="p">});</span>
 <span class="c1">// 把组中游戏对象放置在圆环上</span>
 <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">PlaceOnCircle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">circle</span><span class="p">);</span>
 </code></pre></div></div>
 	
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                TOC
+                </li>
+                <nav class="toc">
+                    <div class="toc">
+<ul>
+<li><a href="#_1">说明</a></li>
+<li><a href="#_2">入门三部曲</a></li>
+<li><a href="#_3">学习资源</a></li>
+<li><a href="#_4">资源检索</a></li>
+<li><a href="#gamegameconfig">Game配置对象GameConfig</a></li>
+<li><a href="#gameobjects">GameObjects游戏对象</a><ul>
+<li><a href="#sprite">Sprite精灵</a></li>
+<li><a href="#image">Image/图像</a></li>
+<li><a href="#shape">Shape/几何图形及其子类</a></li>
+<li><a href="#graphics">Graphics/几何图画</a></li>
+<li><a href="#tilesprite">TileSprite瓦片精灵</a></li>
+<li><a href="#sprite3d3d">Sprite3D/3D精灵</a></li>
+<li><a href="#pathfollower">PathFollower/循路器</a></li>
+<li><a href="#blitter">Blitter/显存块移动单元/位块传送器</a></li>
+<li><a href="#bob">Bob/显存块移动对象/位块传送对象</a></li>
+<li><a href="#text">Text文本</a></li>
+<li><a href="#bitmaptext">BitmapText静态位图文本</a></li>
+<li><a href="#dynamicbitmaptext">DynamicBitmapText动态位图文本</a></li>
+<li><a href="#zone">Zone区块</a></li>
+<li><a href="#rendertexture">RenderTexture渲染器纹理</a></li>
+<li><a href="#container">Container容器</a></li>
+<li><a href="#group">Group组</a></li>
+<li><a href="#lights-webgl-only">Lights (WebGL only)/光照</a></li>
+<li><a href="#meshwebgl-only">Mesh(WebGL only)网格</a></li>
+<li><a href="#quad-webgl-only">Quad (WebGL only)/方块</a></li>
+<li><a href="#shader-webgl-only">Shader (WebGL only)/着色器</a></li>
+<li><a href="#domelementdom">DOMElement/DOM元素</a></li>
+<li><a href="#video">Video/视频</a></li>
+</ul>
+</li>
+<li><a href="#input">Input游戏对象的输入控制</a></li>
+<li><a href="#_5">生成碰撞、重叠管理对象</a></li>
+<li><a href="#input_1">Input生成输入管理对象</a></li>
+<li><a href="#gameresize">调整尺寸Game.resize</a></li>
+<li><a href="#game">销毁Game实例</a></li>
+<li><a href="#src">src文件结构（最佳实践）</a></li>
+<li><a href="#math">Math数学</a><ul>
+<li><a href="#rnd">RND随机数</a></li>
+</ul>
+</li>
+<li><a href="#_6">对象对齐（定位）</a></li>
+<li><a href="#actions">Actions动作（批处理）</a></li>
+</ul>
+</div>
+                </nav>                
+            </ul>
+            </div>
         
         <hr>
 
