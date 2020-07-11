@@ -111,7 +111,7 @@
 <li>anymemo，记忆卡片，仅安卓适用。以前我常用，开发不活跃的，最新版是2018的</li>
 <li>aboboo，通过视频、字幕学外语</li>
 </ul>
-<h1 id="_6">影音录制、处理</h1>
+<h1 id="_6">图像和声音相关</h1>
 <h2 id="_7">视频播放器</h2>
 <ul>
 <li>vlc player，如果打开列表，有时可能会看不到画面，用ctrl+l闭关列表即可</li>
@@ -137,7 +137,11 @@
     屏幕录制<code>scrcpy -r filename.mp4</code>；
     如果屏幕设置了缩放比例，投屏界面会模糊。右键 scrcpy.exe，属性 - 兼容性 - 更改高 DPI 设置 - 勾选替代高 DPI 缩放行为。</li>
 </ul>
-<h2 id="handbrake">视频转换：HandBrake</h2>
+<h2 id="_12">视频转换</h2>
+<ul>
+<li>HandBrake，格式转换</li>
+<li>autosub，视频语言转写成字幕、翻译等，用到Google服务，需要翻墙</li>
+</ul>
 <h2 id="ffmpeg">音频转换：FFmpeg</h2>
 <ul>
 <li>图像序列转为视频：</li>
@@ -221,7 +225,7 @@ file <span class="s1">'/path/to/file3'</span>
 <div class="highlight"><pre><span></span><code>magick in.png -fuzz <span class="m">0</span>% -transparent white -trim -resize 80x80 -background transparent -gravity center -extent 80x80 -channel rgb -negate +repage out.png
 <span class="c1"># 输入图像、模糊量+白转透明、剪边、大边尺寸、透明背景+重心居中+扩展画布、通道rgb+反相、重置信息页、输出图像</span>
 </code></pre></div>
-<h2 id="_12">电子图片处理</h2>
+<h2 id="_13">电子图片处理</h2>
 <ul>
 <li>Abbyy Finereader(整体校直)</li>
 <li>Photoshop(模板调位置, 统一)
@@ -243,8 +247,8 @@ The conversion reduces file sizes significantly (often as much as 70%) and prese
 http://optipng.sourceforge.net/</p>
 </li>
 </ul>
-<h1 id="_13">其他办公、日用</h1>
-<h2 id="_14">邮件客户端（已多不用）</h2>
+<h1 id="_14">其他办公、日用</h1>
+<h2 id="_15">邮件客户端（已多不用）</h2>
 <ul>
 <li>becky</li>
 </ul>
@@ -252,7 +256,7 @@ http://optipng.sourceforge.net/</p>
 <ul>
 <li><a href="https://wiki.winehq.org/Download">wine</a></li>
 </ul>
-<h2 id="_15">常用商业办公软件的替代</h2>
+<h2 id="_16">常用商业办公软件的替代</h2>
 <ul>
 <li>MS Word，换用libreOffice Write，</li>
 </ul>
@@ -267,16 +271,16 @@ Alternative Find &amp; Replace for Writer (AltSearch)</p>
 <li>Adobe Audition，换用Audacity</li>
 <li>Adobe Illustrator，换用InkSpace</li>
 </ul>
-<h2 id="_16">微软拼音输入法自定义时间</h2>
+<h2 id="_17">微软拼音输入法自定义时间</h2>
 <div class="highlight"><pre><span></span><code>%yyyy%-%MM%-%dd%
 %yyyy%-%MM%-%dd% %hh%:%mm%:%ss%
 </code></pre></div>
-<h2 id="_17">静态网站生成</h2>
+<h2 id="_18">静态网站生成</h2>
 <ul>
 <li>Pelican，本站就是用它生成的</li>
 </ul>
-<h1 id="_18">编程相关</h1>
-<h2 id="_19">语言学习列表</h2>
+<h1 id="_19">编程相关</h1>
+<h2 id="_20">语言学习列表</h2>
 <ul>
 <li>常用python, TypeScript/javascript, actionscript3</li>
 <li>以后学Kotlin。用于Android开发，替代/配合Java；可以编译成Java字节码，也可以编译成 JavaScript。“如果你正在为Android开发寻找一种替代编程语言，那么应该试下Kotlin。它很容易在Android项目中替代Java或者同Java一起使用。”</li>
@@ -301,7 +305,7 @@ Alternative Find &amp; Replace for Writer (AltSearch)</p>
 </ul>
 <div class="highlight"><pre><span></span><code>uglifyjs  strokes.js -m -c -o strokes.min.js
 </code></pre></div>
-<h2 id="_20">开发工具</h2>
+<h2 id="_21">开发工具</h2>
 <ul>
 <li>Visual Studio Code，官方支持TypeScript，JavaScript，Python，可以连接WSL</li>
 <li>Python<ul>
@@ -315,7 +319,7 @@ Alternative Find &amp; Replace for Writer (AltSearch)</p>
 <h2 id="pythonexe-pyinstaller">python打包exe: pyinstaller</h2>
 <div class="highlight"><pre><span></span><code>pyinstaller --onefile --noconsole --upx-dir<span class="o">=</span>c:<span class="se">\p</span>ython27<span class="se">\s</span>cripts setFlashInstanceName.py
 </code></pre></div>
-<h2 id="_21">音乐合成</h2>
+<h2 id="_22">音乐合成</h2>
 <ul>
 <li>pyo is a Python module containing classes for a wide variety of audio signal processing types。</li>
 <li>csound</li>
@@ -331,11 +335,11 @@ Alternative Find &amp; Replace for Writer (AltSearch)</p>
 <li>blender，动画，游戏，免费软件，极客风格</li>
 <li>AE合称效果</li>
 </ul>
-<h2 id="_22">装机</h2>
+<h2 id="_23">装机</h2>
 <ul>
 <li>Driver Booster # 驱动管理</li>
 </ul>
-<h2 id="_23">思维导图</h2>
+<h2 id="_24">思维导图</h2>
 <ul>
 <li>Freeplane，开源，基于已经停止开发的FreeMind</li>
 </ul></div>
@@ -353,7 +357,7 @@ Alternative Find &amp; Replace for Writer (AltSearch)</p>
 <li><a href="#_3">电子词典【老编辑必备】</a></li>
 <li><a href="#_4">热键【老编辑必备】</a></li>
 <li><a href="#_5">学习相关</a></li>
-<li><a href="#_6">影音录制、处理</a><ul>
+<li><a href="#_6">图像和声音相关</a><ul>
 <li><a href="#_7">视频播放器</a></li>
 <li><a href="#_8">直播、展示、串流</a><ul>
 <li><a href="#_9">屏幕绘图与教学白板</a></li>
@@ -361,31 +365,31 @@ Alternative Find &amp; Replace for Writer (AltSearch)</p>
 <li><a href="#_11">拷贝手机屏幕到电脑</a></li>
 </ul>
 </li>
-<li><a href="#handbrake">视频转换：HandBrake</a></li>
+<li><a href="#_12">视频转换</a></li>
 <li><a href="#ffmpeg">音频转换：FFmpeg</a></li>
 <li><a href="#flashswf">flash/swf</a></li>
 <li><a href="#imagemagick">图像处理，ImageMagick</a></li>
-<li><a href="#_12">电子图片处理</a></li>
+<li><a href="#_13">电子图片处理</a></li>
 </ul>
 </li>
-<li><a href="#_13">其他办公、日用</a><ul>
-<li><a href="#_14">邮件客户端（已多不用）</a></li>
+<li><a href="#_14">其他办公、日用</a><ul>
+<li><a href="#_15">邮件客户端（已多不用）</a></li>
 <li><a href="#linuxwin">linux中的win环境</a></li>
-<li><a href="#_15">常用商业办公软件的替代</a></li>
-<li><a href="#_16">微软拼音输入法自定义时间</a></li>
-<li><a href="#_17">静态网站生成</a></li>
+<li><a href="#_16">常用商业办公软件的替代</a></li>
+<li><a href="#_17">微软拼音输入法自定义时间</a></li>
+<li><a href="#_18">静态网站生成</a></li>
 </ul>
 </li>
-<li><a href="#_18">编程相关</a><ul>
-<li><a href="#_19">语言学习列表</a></li>
+<li><a href="#_19">编程相关</a><ul>
+<li><a href="#_20">语言学习列表</a></li>
 <li><a href="#h5">H5游戏</a></li>
 <li><a href="#js">js压缩和混淆</a></li>
-<li><a href="#_20">开发工具</a></li>
+<li><a href="#_21">开发工具</a></li>
 <li><a href="#pythonexe-pyinstaller">python打包exe: pyinstaller</a></li>
-<li><a href="#_21">音乐合成</a></li>
+<li><a href="#_22">音乐合成</a></li>
 <li><a href="#3d">动画与3D建模</a></li>
-<li><a href="#_22">装机</a></li>
-<li><a href="#_23">思维导图</a></li>
+<li><a href="#_23">装机</a></li>
+<li><a href="#_24">思维导图</a></li>
 </ul>
 </li>
 </ul>
