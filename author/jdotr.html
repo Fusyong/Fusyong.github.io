@@ -80,6 +80,11 @@
 // (我们有答案的)</p>
 <p>Also note that <a href="https://github.com/samme">@samme</a> maintains <a href="https://github.com/samme/phaser3-faq/wiki">another FAQ</a> that you can check out!
 // 也请关注samme维护的另一个常识答问。</p>
+<h2 id="what-is-phaser-4-didnt-phaser-3-just-come-out">What is Phaser 4? Didn't Phaser 3 just come out?</h2>
+<p>//Phaser 4是什么？3不是刚出来吗？</p>
+<p>_Last Updated: 2019-10-23</p>
+<p>Phaser 4 is like an evolution of Phaser 3. Keep the best parts and improve the rest. Phaser 4 will be written in TypeScript and be more modular and tree-shakeable. The development has just started, but the plan is for you to be able to either use a Phaser 3-like API, or the new style of importing and using just what you need. You can read more about it in <a href="https://www.patreon.com/posts/phaser-4-process-29671934">Rich's patreon post</a>
+// 4是3的进化版，继承好的部分，改进不足的部分，用typescript写成，会更加模块化。</p>
 <h2 id="im-new-to-phaser-what-should-i-do">I'm new to Phaser, what should I do?</h2>
 <p>// 我是新学Phaser，该怎么做？</p>
 <p><em>Last Updated: 2018-05-17</em></p>
@@ -139,29 +144,25 @@ for self-directed exploration.</p>
 <li>(non-code theory) https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/</li>
 <li>(probably not where you want to start but quality info) https://developer.valvesoftware.com/wiki/Latency_Compensating_Methods_in_Client/Server_In-game_Protocol_Design_and_Optimization</li>
 </ul>
-<h2 id="is-there-a-scalemanager-in-v3">Is there a ScaleManager in v3?</h2>
-<p>// Phaser3有ScaleManager（Phaser2的类，屏幕适配用）吗？</p>
-<p><em>Last Updated: 2018-08-13</em></p>
-<p>Not yet, but one is in the works and planned for Phaser 3.15! It won't be as complex as
-the one in Phaser CE, but should do a good job in helping you scale your game to fill
-the entire screen.</p>
-<p>In the mean time it's not too bad to roll your own solution. We even have some examples
-- <a href="http://phaser3.danny-t.co.uk/scaling/">Example page</a> from DannyT includes functional examples built using
-  some of the principles discussed in the following links
-- <a href="https://gist.github.com/AleBles/697d703e89eecae5a350c1453a32861e">this gist</a> from Str1ngS bundles some scaling functionality into a class and
-  demonstratse how to hook it into your game; the <code>orientation</code> and <code>content</code> references
-  are HTML elements in yoru page that you cane use to implement "wrong orientation" overlays
-  as described in <a href="https://www.creativebloq.com/web-design/master-screen-orientation-html5-101517371">this post</a>
-- <a href="http://www.html5gamedevs.com/topic/33206-scalemanagershow_all/">this thread</a> includes a (Haxe) code sample from community member Antriel
-- <a href="https://codepen.io/samme/pen/paOjMO">a codepen</a> sample linked from Samme includes another promising solution
-- <a href="http://www.emanueleferonato.com/2018/02/16/how-to-scale-your-html5-games-if-your-framework-does-not-feature-a-scale-manager-or-if-you-do-not-use-any-framework/">Scaling without framework support</a> Emanuele works through the principles
-  of scaling your game regardless of framework support</p>
+<h2 id="how-do-i-scale-a-phaser-3-game-is-there-a-scalemanager-in-v3">How do I scale a Phaser 3 game? Is there a ScaleManager in v3?</h2>
+<p>// 我怎么适配Phaser 3游戏。Phaser3有ScaleManager（Phaser2的类，屏幕适配用）吗？</p>
+<p><em>Last Updated: 2019-3-29</em></p>
+<p>With the release of 3.16, Phaser now comes with a ScaleManager built in! Examples on it can be found <a href="https://labs.phaser.io/index.html?dir=scalemanager/&amp;q=">here</a>.
+//3.16后有</p>
+<p>If you're not on 3.16 or above you'll have to roll your own solution. Heres some examples
+// 3.16以前的解决方法</p>
+<ul>
+<li><a href="http://phaser3.danny-t.co.uk/scaling/">Example page</a> from DannyT includes functional examples built using some of the principles discussed in the following links</li>
+<li><a href="https://gist.github.com/AleBles/697d703e89eecae5a350c1453a32861e">this gist</a> from Str1ngS bundles some scaling functionality into a class and demonstrates how to hook it into your game; the orientation and content references are HTML elements in your page that you cane use to implement "wrong orientation" overlays as described in <a href="https://www.creativebloq.com/web-design/master-screen-orientation-html5-101517371">this post</a></li>
+<li><a href="http://www.html5gamedevs.com/topic/33206-scalemanagershow_all/">this thread</a> includes a (Haxe) code sample from community member Antriel</li>
+<li><a href="https://codepen.io/samme/pen/paOjMO">a codepen</a> sample linked from Samme includes another promising solution</li>
+<li><a href="http://www.emanueleferonato.com/2018/02/16/how-to-scale-your-html5-games-if-your-framework-does-not-feature-a-scale-manager-or-if-you-do-not-use-any-framework/">Scaling without framework support</a> Emanuele works through the principles of scaling your game regardless of framework support</li>
+<li><a href="https://phaser.discourse.group/t/scaling-your-game-on-any-device/79">James Pierce posted the code he uses</a> for scaling a game across devices</li>
+</ul>
 <h2 id="tell-me-the-story-of-phaser-v3-and-typescript">Tell me the story of Phaser v3 and Typescript</h2>
 <p>// 跟我说说Phaser3和Typescript。</p>
-<p><em>Last Updated: 2018-05-08</em></p>
-<p>Typescript defs are now available at <a href="https://github.com/photonstorm/phaser3-docs/tree/master/typescript">photonstorm/phaser3-docs</a>. That file
-is the one you want to use. Previously, <a href="https://github.com/photonstorm/phaser/issues/3224">phaser#3224</a> was the official
-Phaser tracking ticket.</p>
+<p><em>Last Updated: 2019-10-08</em></p>
+<p>Typescript defs for Phaser have been available for a long time now. They are considered stable enough, and have been included in the types folder of the Phaser repository since Phaser 3.17. If you install Phaser with npm, that means you already have them downloaded. Before 3.17 they were available at <a href="https://github.com/photonstorm/phaser3-docs/tree/master/typescript">photonstorm/phaser3-docs</a>. If you are stuck on an old version, that file is the one you want to use, just make sure to use the one corresponding yo your version. Previously, <a href="https://github.com/photonstorm/phaser/issues/3224">phaser#3224</a> was the official tracking ticket for typescript support in Phaser.</p>
 <h2 id="is-there-a-guide-to-porting-my-v2ce-project-to-v3">Is there a guide to porting my v2/CE project to v3?</h2>
 <p>// Phaser2/CE迁移到3，有指导吗？</p>
 <p><em>Last Updated: 2018-03-14</em></p>

@@ -122,20 +122,20 @@
 <p>// Phaser2代码在Phaser3中有效吗？</p>
 <p>No.</p>
 <h3 id="should-i-convert-this-phaser-2-projecttutorial-to-phaser-3">Should I convert this Phaser 2 project/tutorial to Phaser 3?</h3>
-<p>// 我应该把Phaser2项目或教程转成3吗？
-Probably not, especially if you're new to Phaser 3.
+<p>// 我应该把Phaser2项目或教程转成3吗？</p>
+<p>Probably not, especially if you're new to Phaser 3.
 // 不要了吧，如果你不熟悉3更没必要。</p>
 <h3 id="does-phaser-3-use-pixijs">Does Phaser 3 use <a href="http://www.pixijs.com">PixiJS</a>?</h3>
 <p>// Phaser3使用PixiJS吗？</p>
 <p>No.</p>
 <h3 id="which-phaser-am-i-using">Which Phaser am I using?</h3>
-<p>// 我用的是哪个版本的Phaser呀？
-Look in the browser console after creating a game, or in <code>Phaser.VERSION</code>.</p>
+<p>// 我用的是哪个版本的Phaser呀？</p>
+<p>Look in the browser console after creating a game, or in <code>Phaser.VERSION</code>.</p>
 <h3 id="should-i-use-phaserjs-or-phaserminjs">Should I use <em>phaser.js</em> or <em>phaser.min.js</em>?</h3>
 <p>// 我该用 <em>phaser.js</em> 还是 <em>phaser.min.js</em> ？</p>
 <p>Use <em>phaser.js</em> until your game is done, then switch to <em>phaser.min.js</em>.</p>
-<p><em>phaser.min.js</em> is the minified (packed) build.</p>
-<p>游戏做完前用 <em>phaser.js</em> ，发布时用压缩、包装过的 <em>phaser.min.js</em> 。</p>
+<p><em>phaser.min.js</em> is the minified (packed) build.
+// 游戏做完前用 <em>phaser.js</em> ，发布时用压缩、包装过的 <em>phaser.min.js</em> 。</p>
 <h3 id="but-i-switched-and-now-my-game-doesnt-work">But I switched and now my game doesn't work! :(</h3>
 <p>//我换了以后游戏不运行了</p>
 <p>That is nearly impossible. Make sure you haven't switched Phaser <strong>versions</strong> by accident (look in browser console).
@@ -145,10 +145,10 @@ Look in the browser console after creating a game, or in <code>Phaser.VERSION</c
 <p>There are <a href="https://gist.github.com/willurd/5720255">many</a> and you may have some already installed.
 // 有很多选择，Node的http-server就挺好，安装、运行如下：</p>
 <p>If you already have <a href="https://nodejs.org/en/">Node</a>/npm, then <a href="https://www.npmjs.com/package/http-server">http-server</a> is a good choice. Install once with</p>
-<div class="highlight"><pre><span></span><code><span class="err">npm i -g http-server</span>
+<div class="highlight"><pre><span></span><code>npm i -g http-server
 </code></pre></div>
 <p>Then run in your project directory:</p>
-<div class="highlight"><pre><span></span><code><span class="err">http-server . -c-1 --open</span>
+<div class="highlight"><pre><span></span><code>http-server . -c-1 --open
 </code></pre></div>
 <p><code>-c-1</code> means <em>don't cache（不缓存）</em> and <code>--open</code> means <em>open a browser（打开一个浏览器）</em>.</p>
 <h3 id="how-should-i-organize-my-project">How should I organize my project?</h3>
@@ -352,14 +352,14 @@ Look in the browser console after creating a game, or in <code>Phaser.VERSION</c
 <p>You can use the traditional ES5 form, the Phaser.Class helper, or ES6 classes.</p>
 <p>The most common mistake is to add the instance to the scene incorrectly, or not at all. From the scene, you can call
 // 最常见的错误是添加实例不正确，或无法添加。可以从场景调用：</p>
-<div class="highlight"><pre><span></span><code><span class="err">this.add.existing( new ExtendedObject(this, /* ... */) );</span>
+<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">existing</span><span class="p">(</span> <span class="k">new</span> <span class="nx">ExtendedObject</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="cm">/* ... */</span><span class="p">)</span> <span class="p">);</span>
 </code></pre></div>
 <p>or from the class</p>
-<div class="highlight"><pre><span></span><code><span class="err">this.scene.add.existing(this);</span>
+<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">existing</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
 </code></pre></div>
 <p>For a physics-enabled game object, use the physics plugin's <code>existing</code> method as well.
 // 对于开启物理引擎的游戏对象，同样可以使用物理引擎插件的<code>existing</code>方法：</p>
-<div class="highlight"><pre><span></span><code><span class="err">this.physics.add.existing( new ExtendedObject(this, /* ... */) );</span>
+<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">existing</span><span class="p">(</span> <span class="k">new</span> <span class="nx">ExtendedObject</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="cm">/* ... */</span><span class="p">)</span> <span class="p">);</span>
 </code></pre></div>
 <p>When in doubt, imitate the <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html">factory method</a> of the parent class. Make sure you're passing the parent constructor's arguments correctly.</p>
 <p>You can also write your own <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html">factory method</a> and call it, or register your game object with the plugin manager.
@@ -425,7 +425,7 @@ Matter是复杂的2d物理引擎。</p>
 <p>//这个警告是怎么回事……</p>
 <p>This is normal when using Phaser with Web Audio in Chrome. By itself it doesn't signify a problem. Phaser will automatically resume the audio context when the user clicks/taps. Sound may be muted before that, though.</p>
 <p>If your game doesn't use sound, disable it and you won't see the warning:</p>
-<div class="highlight"><pre><span></span><code><span class="err">new Phaser.Game({ audio: { noAudio: true } });</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">({</span> <span class="nx">audio</span><span class="o">:</span> <span class="p">{</span> <span class="nx">noAudio</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span> <span class="p">});</span>
 </code></pre></div>
 <p>//如果不使用声音，可以关闭警告</p>
 <h3 id="how-do-i-fixdebug-my-game">How do I fix/debug my game?</h3>
