@@ -144,7 +144,7 @@
 </ul>
 <h3 id="sprite">Sprite精灵</h3>
 <p>精灵是Phaser游戏中最主要的游戏对象，在游戏对象中有代表性。要便览精灵的属性和方法，请参考<a href="/phaser3-apiwen-dang-da-gang-sprite.html">《Phaser3 API文档大纲-Sprite》</a>。</p>
-<div class="highlight"><pre><span></span><code><span class="err">let newSprite = this.add.sprite(20, 30, "spriteTexture", 2);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">newSprite</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">"spriteTexture"</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 </code></pre></div>
 <p>参考小抄<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/sprite.md">Phaser.GameObject.Sprite</a></p>
 <h4>Size内部尺寸</h4>
@@ -232,8 +232,8 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 <p>Text对象使用标准的Canvas fillText API（效果比较多），在内部隐层画布上预先渲染，然后生成纹理，再渲染到游戏上。
 文本所用字体必须是浏览器已经可以取用的，或通过第三方加载器预先已载入（Phaser没有字体加载功能），或已经嵌入CSS中。<strong>注意：如果字体名称中有空格或者数字，需要加上引号。</strong></p>
 <p><strong>任何内容和格式变动都需要整体重制，因此很消耗算力。变动频繁，或者文本很多时，最好使用BitmapText。</strong></p>
-<div class="highlight"><pre><span></span><code><span class="err">var scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });</span>
-<span class="err">scoreText.setText('Score: ' + 10);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">scoreText</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s1">'score: 0'</span><span class="p">,</span> <span class="p">{</span> <span class="nx">fontSize</span><span class="o">:</span> <span class="s1">'32px'</span><span class="p">,</span> <span class="nx">fill</span><span class="o">:</span> <span class="s1">'#000'</span> <span class="p">});</span>
+<span class="nx">scoreText</span><span class="p">.</span><span class="nx">setText</span><span class="p">(</span><span class="s1">'Score: '</span> <span class="o">+</span> <span class="mi">10</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="bitmaptext">BitmapText静态位图文本</h3>
 <p>BitmapText的灵活性不如Text，比如不能使用阴影、填充、Web字体，但速度更快。
@@ -262,24 +262,24 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 <p>Group是一个抽象分组，便于批量地生成、排布、控制、循环处理近似游戏对象。与Container不同，它自身没有没有显隐、缩放、定位、旋转属性（但可以快速控制子项的这些属性）。他对子项不是独占的，子项可以存在于多个组中。因此<strong>Container更适于把多个显示对象集合成一个复合型显示对象，以便整体地控制显示状态；Group则适合于对近似对象进行批量操作。</strong></p>
 <p><strong>组的一个重要用途是对象池。</strong></p>
 <h4>生成静态物理组</h4>
-<div class="highlight"><pre><span></span><code><span class="err">var platforms;</span>
-<span class="err">platforms = this.physics.add.staticGroup(); // 物理静态组</span>
-<span class="err">platforms.create(400, 568, 'ground').setScale(2).refreshBody();  // 物理静态组变换尺寸后需要刷新物理Body，即通知物理系统</span>
-<span class="err">platforms.create(600, 400, 'ground');</span>
-<span class="err">platforms.create(50, 250, 'ground');</span>
-<span class="err">platforms.create(750, 220, 'ground');</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">platforms</span><span class="p">;</span>
+<span class="nx">platforms</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">staticGroup</span><span class="p">();</span> <span class="c1">// 物理静态组</span>
+<span class="nx">platforms</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">568</span><span class="p">,</span> <span class="s1">'ground'</span><span class="p">).</span><span class="nx">setScale</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">refreshBody</span><span class="p">();</span>  <span class="c1">// 物理静态组变换尺寸后需要刷新物理Body，即通知物理系统</span>
+<span class="nx">platforms</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="s1">'ground'</span><span class="p">);</span>
+<span class="nx">platforms</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="s1">'ground'</span><span class="p">);</span>
+<span class="nx">platforms</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="mi">750</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="s1">'ground'</span><span class="p">);</span>
 </code></pre></div>
 <h4>生成动态物理组</h4>
-<div class="highlight"><pre><span></span><code><span class="n">stars</span> <span class="o">=</span> <span class="n">this</span><span class="p">.</span><span class="n">physics</span><span class="p">.</span><span class="k">add</span><span class="p">.</span><span class="k">group</span><span class="p">(</span><span class="err">{</span>
-    <span class="k">key</span><span class="p">:</span> <span class="s1">'star'</span><span class="p">,</span>
-    <span class="n">repeat</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
-    <span class="n">setXY</span><span class="p">:</span> <span class="err">{</span> <span class="n">x</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stepX</span><span class="p">:</span> <span class="mi">70</span> <span class="err">}</span> <span class="o">//</span> <span class="err">生成一个行列</span>
-<span class="err">}</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="nx">stars</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
+    <span class="nx">key</span><span class="o">:</span> <span class="s1">'star'</span><span class="p">,</span>
+    <span class="nx">repeat</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span>
+    <span class="nx">setXY</span><span class="o">:</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">stepX</span><span class="o">:</span> <span class="mi">70</span> <span class="p">}</span> <span class="c1">// 生成一个行列</span>
+<span class="p">});</span>
 
-<span class="n">stars</span><span class="p">.</span><span class="n">children</span><span class="p">.</span><span class="k">iterate</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="n">child</span><span class="p">)</span> <span class="err">{</span>  <span class="o">//</span> <span class="err">组内遍历、随机赋值</span>
-    <span class="n">child</span><span class="p">.</span><span class="n">setBounceY</span><span class="p">(</span><span class="n">Phaser</span><span class="p">.</span><span class="n">Math</span><span class="p">.</span><span class="n">FloatBetween</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">));</span>
+<span class="nx">stars</span><span class="p">.</span><span class="nx">children</span><span class="p">.</span><span class="nx">iterate</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">child</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// 组内遍历、随机赋值</span>
+    <span class="nx">child</span><span class="p">.</span><span class="nx">setBounceY</span><span class="p">(</span><span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">FloatBetween</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">));</span>
 
-<span class="err">}</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <h3 id="lights-webgl-only">Lights (WebGL only)/光照</h3>
 <p>Light2D的管道。</p>
@@ -296,14 +296,14 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 <span class="p">);</span>
 </code></pre></div>
 <p>Parameters</p>
-<div class="highlight"><pre><span></span><code><span class="n">x</span>                    <span class="o">:</span> <span class="n">the</span> <span class="n">x</span> <span class="n">position</span> <span class="n">of</span> <span class="n">the</span> <span class="n">mesh</span>
-<span class="n">y</span>                    <span class="o">:</span> <span class="n">the</span> <span class="n">y</span> <span class="n">position</span> <span class="n">of</span> <span class="n">the</span> <span class="n">mesh</span>
-<span class="n">vertices</span>             <span class="o">:</span> <span class="n">array</span> <span class="n">of</span> <span class="n">x</span> <span class="n">and</span> <span class="n">y</span> <span class="n">positions</span> <span class="n">relative</span> <span class="n">to</span> <span class="n">center</span> <span class="n">of</span> <span class="n">mesh</span> <span class="n">object</span>
-<span class="n">uv</span>                   <span class="o">:</span> <span class="n">mapping</span> <span class="n">of</span> <span class="n">the</span> <span class="n">uv</span> <span class="n">coordinates</span>
-<span class="n">colors</span>               <span class="o">:</span> <span class="n">array</span> <span class="n">of</span> <span class="n">colors</span> <span class="k">for</span> <span class="k">each</span> <span class="n">uv</span> <span class="n">texture</span> <span class="n">coordinate</span>
-<span class="n">alphas</span>               <span class="o">:</span> <span class="n">array</span> <span class="n">of</span> <span class="n">alphas</span> <span class="k">for</span> <span class="k">each</span> <span class="n">uv</span> <span class="n">texture</span> <span class="n">coordinate</span>
-<span class="n">texture</span>              <span class="o">:</span> <span class="n">sprite</span> <span class="n">name</span>
-<span class="n">frame</span>                <span class="o">:</span> <span class="n">the</span> <span class="n">sprite</span> <span class="n">frame</span>
+<div class="highlight"><pre><span></span><code><span class="nx">x</span>                    <span class="o">:</span> <span class="nx">the</span> <span class="nx">x</span> <span class="nx">position</span> <span class="k">of</span> <span class="nx">the</span> <span class="nx">mesh</span>
+<span class="nx">y</span>                    <span class="o">:</span> <span class="nx">the</span> <span class="nx">y</span> <span class="nx">position</span> <span class="k">of</span> <span class="nx">the</span> <span class="nx">mesh</span>
+<span class="nx">vertices</span>             <span class="o">:</span> <span class="nx">array</span> <span class="k">of</span> <span class="nx">x</span> <span class="nx">and</span> <span class="nx">y</span> <span class="nx">positions</span> <span class="nx">relative</span> <span class="nx">to</span> <span class="nx">center</span> <span class="k">of</span> <span class="nx">mesh</span> <span class="nx">object</span>
+<span class="nx">uv</span>                   <span class="o">:</span> <span class="nx">mapping</span> <span class="k">of</span> <span class="nx">the</span> <span class="nx">uv</span> <span class="nx">coordinates</span>
+<span class="nx">colors</span>               <span class="o">:</span> <span class="nx">array</span> <span class="k">of</span> <span class="nx">colors</span> <span class="k">for</span> <span class="nx">each</span> <span class="nx">uv</span> <span class="nx">texture</span> <span class="nx">coordinate</span>
+<span class="nx">alphas</span>               <span class="o">:</span> <span class="nx">array</span> <span class="k">of</span> <span class="nx">alphas</span> <span class="k">for</span> <span class="nx">each</span> <span class="nx">uv</span> <span class="nx">texture</span> <span class="nx">coordinate</span>
+<span class="nx">texture</span>              <span class="o">:</span> <span class="nx">sprite</span> <span class="nx">name</span>
+<span class="nx">frame</span>                <span class="o">:</span> <span class="nx">the</span> <span class="nx">sprite</span> <span class="nx">frame</span>
 </code></pre></div>
 <p>通过<code>newMesh.vertices[0]</code>、<code>newMesh.uv[0]</code>等引用、操作。</p>
 <p>参考小抄 <a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/gameobjects/mesh.md">Phaser.GameObject.Mesh</a></p>

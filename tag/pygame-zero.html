@@ -259,6 +259,8 @@
     <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">left</span> <span class="o">&gt;</span> <span class="n">WIDTH</span><span class="p">:</span>
         <span class="n">alien</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="mi">0</span>
 
+    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="n">alien2</span><span class="p">):</span> <span class="c1"># 两个Actor之间的碰撞检测</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"collide"</span><span class="p">)</span>
 
 <span class="c1"># 合成音，'E4'指第4个八度的E，'A#5'指第5个八度的A升，'Bb3'指第3个八度的B降</span>
 <span class="n">beep</span> <span class="o">=</span> <span class="n">tone</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">'A3'</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
