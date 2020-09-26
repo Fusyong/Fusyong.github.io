@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>嬉戏实验室 - Phaser3 API文档大纲-Sprite</title>
+    <meta name="description" content="">
+    <meta name="author" content="黄复雄">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="/theme/local.css" rel="stylesheet">
+    <link href="/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="/">嬉戏实验室</a>
+        <div class="nav-collapse">
+        <ul class="nav">
+
+            <li><a href="http://www.xiiigame.com">XiiiGame</a></li>
+           
+            <li><a href="/pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Phaser3 API文档大纲-Sprite</h1>
+2018-11-24 周六
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+        </div>
+	
+        <div><h2 id="_1">说明</h2>
+<p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，略作说明，或增加代码示例。可做便览之用。</p>
+<h1 id="phaser-3-api-documentation-class-sprite"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#toc0">Phaser 3 API Documentation - Class: Sprite</a></h1>
+<h2 id="phasergameobjects-sprite"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#toc1">Phaser.GameObjects. Sprite</a></h2>
+<p>Sprite用于显示静态或动画图像。可以拥有输入事件和物理体（physics body）。还可以应用补间动画、着色、滚动、动画（animate）等效果。</p>
+<p><strong>Sprite和Image的主要不同在于，Image不能加动画（animate）。</strong>如此，因为动画组件的原因，精灵要多花一点时间来持有、处理更大的API内存印记（API footprint）。如果你不需要动画（animation），所有场合都可以使用Image代替精灵。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#Sprite">new Sprite(scene, x, y, texture [, frame])</a></h4>
+<h3 id="extends"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#toc3">Extends</a></h3>
+<h3 id="members"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#toc4">Members</a></h3>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#active">active :boolean</a></h4>
+<p>激活状态。即是否加入所在场景的更新列表（UpdateList）中。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#alpha">alpha :number</a></h4>
+<p>透明度。以下是渐变透明度：</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#alphaBottomLeft">alphaBottomLeft :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#alphaBottomRight">alphaBottomRight :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#alphaTopLeft">alphaTopLeft :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#alphaTopRight">alphaTopRight :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#angle">angle :integer</a></h4>
+<p>旋转角度。<code>rotation</code>则是旋转弧度。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#anims">anims :Phaser.GameObjects.Components.Animation</a></h4>
+<p>动画。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#blendMode">blendMode :Phaser.BlendModes|string</a></h4>
+<p>混色模式。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#body"><nullable> body :object|Phaser.Physics.Arcade.Body|Phaser.Physics.Impact.Body</a></h4>
+<p>物理体，开启物理系统后生成。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#cameraFilter">cameraFilter :number</a></h4>
+<p>摄像头滤镜，把精灵加入到该摄像头中，从而跟随摄像头运动。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#data">data :Phaser.Data.DataManager</a></h4>
+<p>精灵的键-值对数据。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#defaultPipeline">defaultPipeline :Phaser.Renderer.WebGL.WebGLPipeline</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#depth">depth :number</a></h4>
+<p>在场景中的深度，即渲染顺序，也叫z-index。显示列表索引也能控制渲染顺序，但场景、容器都有各自的显示列表。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#displayHeight">displayHeight :number</a></h4>
+<p>显示高度，计算了缩放值。包括以下三者，都是显示中的属性，与对应的原始属性不同。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#displayOriginX">displayOriginX :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#displayOriginY">displayOriginY :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#displayWidth">displayWidth :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#flipX">flipX :boolean</a></h4>
+<p>x轴翻转。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#flipY">flipY :boolean</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#frame">frame :Phaser.Textures.Frame</a></h4>
+<p>用于渲染的纹理的帧。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#height">height :number</a></h4>
+<p>原始高度。Size（原始尺寸）包括height、width，用于帧和物理体的生成。不影响显示尺寸（包括点击热区）。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#ignoreDestroy">ignoreDestroy :boolean</a></h4>
+<p>忽略销毁方法。这时可以跨场景使用精灵，但要注意<strong>理清进出双向的引用关系。</strong></p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#input"><nullable> input :Phaser.Input.InteractiveObject</a></h4>
+<p>通过<code>GameObject.setInteractive()</code>设置交互属性后，此属性指向交互对象实例。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#isCropped">isCropped :boolean</a></h4>
+<p>设置剪裁<code>setCrop</code>后，用此属性开关剪裁效果。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#isTinted"><readonly> isTinted :boolean</a></h4>
+<p>是否上色，它是只读属性，与<code>isCropped</code>不同。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#mask">mask :Phaser.Display.Masks.BitmapMask|Phaser.Display.Masks.GeometryMask</a></h4>
+<p>遮罩。遮罩必须预先生成，BitmapMask遮罩只能用于WebGL渲染模式。
+遮罩位于全局空间中，而不是相关的游戏对象中。多个游戏对象可共用一个遮罩。
+<strong>遮罩是纯渲染用的，不影响物理系统和输入检测。</strong></p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#name">name :string</a></h4>
+<p>名字，供开发者使用，Phaser不会填充此属性。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#originX">originX :number</a></h4>
+<p>原点（Phaser2叫锚点<code>anchor</code>）X值，缺省值为<code>0.5</code>，即居中。下项类此。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#originY">originY :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#parentContainer">parentContainer :Phaser.GameObjects.Container</a></h4>
+<p>父容器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#pipeline">pipeline :Phaser.Renderer.WebGL.WebGLPipeline</a></h4>
+<p>WebGL管道。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#renderFlags">renderFlags :integer</a></h4>
+<p>选举标记。与<code>RENDER_MASK</code>比较后确定渲染与否。0001 | 0010 | 0100 | 1000分别对应组件的Visible, Alpha, Transform, Texture。
+（未了解实际效果。）</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#rotation">rotation :number</a></h4>
+<p>旋转弧度。<code>angle</code>则是旋转角度。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#scaleMode">scaleMode :Phaser.ScaleModes</a></h4>
+<p>缩放模式，包括线性<code>ScaleModes.LINEAR</code>和<code>ScaleModes.NEAREST</code>两种。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#scaleX">scaleX :number</a></h4>
+<p>X轴缩放值。下项类此。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#scaleY">scaleY :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#scene"><protected> scene :Phaser.Scene</a></h4>
+<p>所属场景，一个游戏对象只能属于一个场景。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#scrollFactorX">scrollFactorX :number</a></h4>
+<p>X轴滚动因子（在<code>0</code>和<code>1</code>之间），控制与摄像机镜头的同步方式，<code>1</code>表示与镜头完全同步，<code>0</code>表示静止不动。
+滚动因子会改变视觉位置，但物理系统不会考虑这个因素，比如在碰撞检测时。
+因此此值主要用于生成远近关系。（未看到用例效果。）
+下项类此。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#scrollFactorY">scrollFactorY :number</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#tabIndex">tabIndex :integer</a></h4>
+<p>tab索引（控制在tab键激活中的顺序），保留属性，将来供插件和输入管理器使用。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#texture">texture :Phaser.Textures.Texture|Phaser.Textures.CanvasTexture</a></h4>
+<p>纹理。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#tint">tint :integer</a></h4>
+<p>着色值。图像原值乘以提供的着色值，即为新色值。<strong>这就意味着，黑色0x000000无法着色（仍是黑色），白色着什么色即得什么色。</strong>
+以下有四项是渐变着色（各角的着色值会混在一起）。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#tintBottomLeft">tintBottomLeft :integer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#tintBottomRight">tintBottomRight :integer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#tintFill">tintFill :boolean</a></h4>
+<p>着色是否有填充效果。用于闪白效果。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#tintTopLeft">tintTopLeft :integer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#tintTopRight">tintTopRight :integer</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#type">type :string</a></h4>
+<p>类型，即<code>"sprite"</code>，扩展类时可填充。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#visible">visible :boolean</a></h4>
+<p>是都可见。不影响更新属性<code>active</code>。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#w">w :number</a></h4>
+<p>3D物体用四元素表示的旋转角度。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#width">width :number</a></h4>
+<p>原始宽度，不影响显示尺寸。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#x">x :number</a></h4>
+<p>X轴位置。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#y">y :number</a></h4>
+<p>Y轴位置。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#z">z :number</a></h4>
+<p>3D空的Z轴位置。</p>
+<h3 id="methods"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#toc60">Methods</a></h3>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#addListener">addListener(event, fn [, context])</a></h4>
+<p>增加事件监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#clearAlpha">clearAlpha()</a></h4>
+<p>清空所有透明度设置，恢复为<code>1</code>。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#clearMask">clearMask( [destroyMask])</a></h4>
+<p>清空遮罩。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#clearTint">clearTint()</a></h4>
+<p>清空着色设置。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#createBitmapMask">createBitmapMask( [renderable])</a></h4>
+<p>生成并返回一个Bitmap遮罩。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#createGeometryMask">createGeometryMask( [graphics])</a></h4>
+<p>生成并返回一个几何遮罩。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#destroy">destroy( [fromScene])</a></h4>
+<p>销毁，即从显示列表、更新列表、输入管理器、物理管理器中删除，浏览器即可进行垃圾回收。
+需要重用的游戏对象应该通过游戏对象池Game Object Pool进行管理，而不是销毁。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#disableInteractive">disableInteractive()</a></h4>
+<p>暂时禁用交互，重新打开用<code>setInteractive()</code>（无需参数）。
+删除交互用<code>removeInteractive()</code>。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#emit">emit(event [, args])</a></h4>
+<p>发出事件，调用所有相关监听器的回调函数。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#eventNames">eventNames()</a></h4>
+<p>返回注册有监听器的事件列表。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#getBottomLeft">getBottomLeft( [output] [, includeParent])</a></h4>
+<p>返回左下角的本地空间中坐标（不考虑原点如何）。设置<code>includeParent</code>则计入父容器的因素。
+下项类此。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#getBottomRight">getBottomRight( [output] [, includeParent])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#getBounds">getBounds( [output])</a></h4>
+<p>h返回边框（几何方形对象）。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#getCenter">getCenter( [output])</a></h4>
+<p>返回在本地空间中的中心点，不考虑原点。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#getData">getData(key)</a></h4>
+<p>获取数据。有三种形式：</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 如获取&quot;gold&quot;键的值</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">getData</span><span class="p">(</span><span class="s1">&#39;gold&#39;</span><span class="p">);</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">gold</span><span class="p">;</span>
+<span class="c1">// 获取多个值</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">getData</span><span class="p">([</span> <span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="s1">&#39;armor&#39;</span><span class="p">,</span> <span class="s1">&#39;health&#39;</span> <span class="p">]);</span>
+</code></pre></div>
+
+
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#getIndexList">getIndexList()</a></h4>
+<p>获取相关显示列表的数组，包括父容器的。一般供Phaser内部使用。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#getLocalTransformMatrix">getLocalTransformMatrix( [tempMatrix])</a></h4>
+<p>获取本地变形矩阵。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#getPipelineName">getPipelineName()</a></h4>
+<p>获取所用WebGL管道的名称。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#getTopLeft">getTopLeft( [output] [, includeParent])</a></h4>
+<p>返回左上角的本地空间中坐标（不考虑原点如何）。设置<code>includeParent</code>则计入父容器的因素。
+下项类此。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#getTopRight">getTopRight( [output] [, includeParent])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#getWorldTransformMatrix">getWorldTransformMatrix( [tempMatrix] [, parentMatrix])</a></h4>
+<p>获取世界变形矩阵。考虑了所有父容器的因素。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#initPipeline">initPipeline( [pipelineName])</a></h4>
+<p>WebGL管道初始化，只能在实例化时调用。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#listenerCount">listenerCount(event)</a></h4>
+<p>某事件的监听器数量。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#listeners">listeners(event)</a></h4>
+<p>某事件的所有监听器（数组）。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#off">off(event, fn, context, once)</a></h4>
+<p>移除某事件的所有监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#on">on(event, fn [, context])</a></h4>
+<p>增加一个事件监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#once">once(event, fn [, context])</a></h4>
+<p>增加一次性事件监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#play">play(key [, ignoreIfPlaying] [, startFrame])</a></h4>
+<p>开始播放某动画。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#preUpdate"><protected> preUpdate(time, delta)</a></h4>
+<p>更新精灵的动画。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#removeAllListeners">removeAllListeners( [event])</a></h4>
+<p>移除所有（或指定的）监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#removeInteractive">removeInteractive()</a></h4>
+<p>移除交互。不是即时的，而是在游戏的下一步执行。如果是要临时禁用交互，则用<code>disableInteractive()</code>。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#removeListener">removeListener(event, fn, context, once)</a></h4>
+<p>移除某事件的监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#resetFlip">resetFlip()</a></h4>
+<p>重置翻转，即恢复到未翻转状态。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#resetPipeline">resetPipeline()</a></h4>
+<p>重置WebGL管道，及恢复生成的状态。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setActive">setActive(value)</a></h4>
+<p>设置为激活。这时将加入更新列表。以下各项设置类方法，都有相应的属性，已开列在前。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setAlpha">setAlpha( [topLeft] [, topRight] [, bottomLeft] [, bottomRight])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setAngle">setAngle( [degrees])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setBlendMode">setBlendMode(value)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setCrop">setCrop( [x] [, y] [, width] [, height])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setData">setData(key, data)</a></h4>
+<p>存储键-值对数据。存储数据前会自动调用<code>setDataEnabled()</code>。有多种使用方法：</p>
+<div class="highlight"><pre><span></span><code><span class="nx">sprite</span><span class="p">.</span><span class="nx">setData</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;Red Gem Stone&#39;</span><span class="p">);</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">setData</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Red Gem Stone&#39;</span><span class="p">,</span> <span class="nx">level</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span> <span class="nx">owner</span><span class="o">:</span> <span class="s1">&#39;Link&#39;</span><span class="p">,</span> <span class="nx">gold</span><span class="o">:</span> <span class="mf">50</span> <span class="p">});</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">getData</span><span class="p">(</span><span class="s1">&#39;gold&#39;</span><span class="p">);</span>
+<span class="nx">sprite</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">gold</span> <span class="o">+=</span> <span class="mf">50</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>设置时会发出两种事件，初次设置发出<code>setdata</code>，更改时发出<code>changedata_dataKey</code>（"dataKey"是具体数据的键值名称）。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setDataEnabled">setDataEnabled()</a></h4>
+<p>添加数据管理器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setDepth">setDepth(value)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setDisplayOrigin">setDisplayOrigin( [x] [, y])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setDisplaySize">setDisplaySize(width, height)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setFlip">setFlip(x, y)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setFlipX">setFlipX(value)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setFlipY">setFlipY(value)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setFrame">setFrame(frame [, updateSize] [, updateOrigin])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setInteractive">setInteractive( [shape] [, callback] [, dropZone])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setMask">setMask(mask)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setName">setName(value)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setOrigin">setOrigin( [x] [, y])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setOriginFromFrame">setOriginFromFrame()</a></h4>
+<p>把纹理帧的中心点设为原点。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setPipeline">setPipeline(pipelineName)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setPosition">setPosition( [x] [, y] [, z] [, w])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setRandomPosition">setRandomPosition( [x] [, y] [, width] [, height])</a></h4>
+<p>在指定区域内随机定位。<strong>即给原点定位，而不考虑长宽因素。</strong></p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setRotation">setRotation( [radians])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setScale">setScale(x [, y])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setScaleMode">setScaleMode(value)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setScrollFactor">setScrollFactor(x [, y])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setSize">setSize(width, height)</a></h4>
+<p>设置原始尺寸width、height。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setSizeToFrame">setSizeToFrame(frame)</a></h4>
+<p>设原始尺寸与帧同。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setTexture">setTexture(key [, frame])</a></h4>
+<p>设置纹理。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setTint">setTint( [topLeft] [, topRight] [, bottomLeft] [, bottomRight])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setTintFill">setTintFill( [topLeft] [, topRight] [, bottomLeft] [, bottomRight])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setVisible">setVisible(value)</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setW">setW( [value])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setX">setX( [value])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setY">setY( [value])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setZ">setZ( [value])</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#shutdown">shutdown()</a></h4>
+<p>停播。关闭所有事件监听器。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#toggleFlipX">toggleFlipX()</a></h4>
+<p>切换X轴翻转。下项类此。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#toggleFlipY">toggleFlipY()</a></h4>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#toJSON">toJSON()</a></h4>
+<p>生成精灵的JSON描述文件。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#update">update( [args])</a></h4>
+<p>可以被定制对象覆盖。以便在对象池中使用基础对象。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#updateDisplayOrigin">updateDisplayOrigin()</a></h4>
+<p>更新游戏对象中缓存的显现源。用于极端情形，一般不用自行处理。</p>
+<h4><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#willRender">willRender(camera)</a></h4>
+<p>比较renderMask和renderFlags，看要不要重新渲染。同时对比检查游戏对象是否在相机排除列表中。</p>
+<p>published from :<a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html">Phaser 3 API Documentation - Class: Sprite</a></p></div>
+	
+        
+        <hr>
+
+        <h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'xiiigame'; 
+    var disqus_title = 'Phaser3 API文档大纲-Sprite';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="/archives.html">所有文章</a>
+                <li><a href="/tags.html">分组标签</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="/category/11-bu-kao-si-ji.html">11 布考斯基</a></li>
+                <li><a href="/category/12-phaserxue-xi-zhong-xin-zu.html">12 Phaser学习中心组</a></li>
+                <li><a href="/category/13-pyo.html">13 Pyo</a></li>
+                <li><a href="/category/14-xiao-lu-gong-ju-bian-cheng-za-xiang.html">14 效率工具+编程杂项</a></li>
+                <li><a href="/category/21-er-tong-shi-zi.html">21 儿童识字</a></li>
+                <li><a href="/category/22-qin-zi-xie-zi.html">22 亲子写字</a></li>
+                <li><a href="/category/23-qin-zi-ban-xue.html">23 亲子伴学</a></li>
+                   
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+
+                <li>微信公众号“黄复雄”(xiiiGame):</li>
+                <div align="center"><img src="http://blog.xiiigame.com/images/about/qrCodeXiiigame.jpg" /></div> 
+
+                <li>《拼字》微信小游戏:</li>
+                <div align="center"><img src="http://blog.xiiigame.com/images/about/qrCode.jpg" /></div> 
+
+                <li><a href="http://www.xiiigame.com/example">拼字游戏(网页版)</a></li>
+            </ul>
+            </div>
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="https://github.com/Fusyong">GitHub</a></li>
+                <li><a href="https://www.phaser-china.com/">Phaser小站</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2020, Powered by <a href="http://getpelican.com/">Pelican</a></p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="/theme/bootstrap-collapse.js"></script>
+<script>var _gaq=[['_setAccount','UA-105243279-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+<a href="https://github.com/Fusyong"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+ 
+</body>
+</html>
