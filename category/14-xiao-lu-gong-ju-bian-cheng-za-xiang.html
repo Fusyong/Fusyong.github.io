@@ -60,8 +60,8 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="/ying-pan-sun-pi-qiang-jiu-shu-ju.html"><h1>硬盘损坏，抢救数据</h1></a>
-2020-09-26 周六
+            <a href="/yong-zheng-ze-biao-da-shi-chu-li-wen-ben-guan-li-wen-jian-de-san-jian-tao.html"><h1>用正则表达式处理文本、管理文件的三件套</h1></a>
+2020-10-26 周一
 
 	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
  
@@ -70,106 +70,39 @@
  
         </div>
         
-        <div><p>上两周坏了一个硬盘。——这还是第一次把硬盘用坏。虽然此前20天备份过一次，可想到要重做这二十天的工，很是沮丧。好在经过两三天的尝试，全部恢复了。现记录如下。</p>
-<h2 id="_1">前兆</h2>
-<p>大概两三个月前，有天晚上关机着急，没等主机关闭就关了点。结果导致固态C盘损坏。换盘，重装了系统。这跟今次硬盘损坏大概没有关系，存疑。</p>
-<p>这次D盘损坏前大概两三周，<strong>一个正在操作的问题突然报出无法找到。到所在位置去看，文件夹打不开了。用win10自带的磁盘“差错”工具处理后，在根目录隐藏文件夹<code>found.000</code>中找到了恢复的文件夹和文件。</strong></p>
-<p>这大概就是一个前兆，但当时没太在意，没有备份文件。</p>
-<h2 id="_2">磁盘崩溃过程</h2>
-<p>当天写笔记，编译为html时突然报刚才写的文件找不到，紧接着<strong>很多文件都无法找到。然后win10系统卡死，无法正常关机。</strong></p>
-<p>关电重启后报系统检查错误（具体记不清了），很久无进展。</p>
-<p>再关电重启，停留在主板logo页面，下面的圈长久不停。</p>
-<p>以上两种状态常交替出现。</p>
-<h2 id="_3">拆下硬盘能正常启动</h2>
-<p><strong>拆下D盘后能正常启动。</strong></p>
-<p>买了一个硬盘底座，连接后，用各种磁盘工具、数据恢复工具都无法处理，多半卡死。</p>
-<p>硬盘底座有个硬盘对拷的功能，不知道工作原理，尝试了一下，很久没看到进展，就没敢再用。</p>
-<h2 id="uubuntu">用U盘Ubuntu制作启动盘</h2>
-<p>根据<a href="https://www.cgsecurity.org/wiki/Damaged_Hard_Disk">这个网页</a>的提示，制作了一个U盘的Ubuntu系统。——这个网页推荐Knoppix LiveCD系统，但我不熟悉。</p>
-<p>具体制作方法可以看<a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-windows#10-installation-complete">这个简单教程</a>。主要包括两步：</p>
+        <div>
+<p>我用正则表达式进行文本处理+文件内容管理+文件管理的三件套：</p>
 <ol>
-<li>安装Rufus；</li>
-<li>用一个U盘制作Ubuntu系统，也就是直接用U盘启动、运行，不需要安装的系统。Rufus很容易用，只看这里的设置就可以：</li>
+<li>EmEditor（大文件、跨行正则处理、csv、JS脚本）/TextPro（汉语汉字相关、批量正则替换）/vsCode（编辑，大量插件）/LibreOffice Writer（word文件正则处理）；</li>
+<li>PowerGrep大批量文本内容的查找、提取、替换；</li>
+<li>Total Commander（全能文件管理器）+Everything（文件名快速查找）；</li>
 </ol>
-<p><img alt="refus" src="https://ubuntucommunity.s3.dualstack.us-east-2.amazonaws.com/original/2X/d/df720a52ca05eb8348856590a6ffc1c1ab27e8ac.png"></p>
-<h2 id="ubuntu">启动Ubuntu，安装软件</h2>
-<p>做好后插在电脑上，准备启动。<strong>最好只留下问题盘和一张容量等于或大于问题盘的空磁盘（用于存储恢复的数据），sata连接，其余的全部拆除，以免误操作。</strong></p>
-<p>把启动时更改biso的引导顺序，通过刚才的U盘引导。<strong>启动后不要操作问题盘和存储数据用的盘，不要装载！以免出问题。</strong></p>
-<p>进入Ubuntu系统后先添加国内的程序源，以便安装程序。也就是在源文件<code>/etc/apt/sources.list</code>后添加源列表。比如阿里源：</p>
-<div class="highlight"><pre><span></span><code>deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
-</code></pre></div>
-
-
-<p>然后更新系统：</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get update
-sudo apt-get upgrade
-</code></pre></div>
-
-
-<p><strong>安装<code>gddrescue</code>。注意软件包名字前有个g，但是命令没有g，只是<code>ddrescue</code>。</strong></p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install gddrescue
-</code></pre></div>
-
-
-<p>还可以安装通过图形查看进度的工具<code>ddrescueview</code>：</p>
-<div class="highlight"><pre><span></span><code>sudo apt-get install ddrescueview
-</code></pre></div>
-
-
-<h2 id="ddrescue">使用<code>ddrescue</code>复制、抢救数据</h2>
-<p>先查看磁盘列表：</p>
-<div class="highlight"><pre><span></span><code>lshw -C disk
-</code></pre></div>
-
-
-<p>或者：</p>
-<div class="highlight"><pre><span></span><code>fdisk -l
-</code></pre></div>
-
-
-<p><img alt="磁盘信息.jpg" src="/images/硬盘损坏，抢救数据/磁盘信息.jpg"></p>
-<p>磁盘通常显示为<code>/dev/sda</code>, <code>/dev/sdb</code>这样的格式。其下后还可能显示分卷，如<code>/dev/sda1</code>，<code>/dev/sda1</code>。<strong>下面处理时，应该操作整盘，而不是分卷。</strong></p>
-<p><a href="https://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html">这里是ddrecue的手册</a>，详细解释了算法和处理过程，有助于你在漫长的等待过程中免于焦虑。</p>
-<p>ddrescue有很多选项，但我们通常只需要两个步骤。</p>
-<p><strong>第一步，</strong>快速抓取大部分无错区域：</p>
-<div class="highlight"><pre><span></span><code>sudo ddrescue -n -f /dev/问题盘 /dev/存储盘 rescued.log
-</code></pre></div>
-
-
-<p><strong>注意，选项<code>-f</code>意味着存储盘上的内容会被覆盖。</strong></p>
-<p><code>rescued.log</code>是记录进度的文件。如果临时停止，<strong>重新开始后，ddrescue可以根据这个文件接着做。U盘系统重启后会丢失用户文件，所以这个文件应该通过在线邮箱等方式妥善保存。</strong></p>
-<p>可以使用ddrescueview查看进度（可以用<code>-r 30s</code>这样的选项来设置刷新间隔）：</p>
-<div class="highlight"><pre><span></span><code>sudo ddrescueview rescued.log
-</code></pre></div>
-
-
-<p>效果如下：</p>
-<p><img alt="图形信息.jpg" src="/images/硬盘损坏，抢救数据/图形信息.jpg"></p>
-<p><strong>我的问题盘是1T容量，数据大概900G，完成第一步耗时近6小时。</strong></p>
-<p><img alt="结果信息.jpg" src="/images/硬盘损坏，抢救数据/结果信息.jpg"></p>
-<p><strong>第二步，</strong>尝试从有错区域中“刮取”，也就是最大限度地恢复数据：</p>
-<div class="highlight"><pre><span></span><code>sudo ddrescue -r <span class="m">1</span> /dev/old_disk /dev/new_disk rescued.log
-</code></pre></div>
-
-
-<p>选项<code>-r 1</code>表示重复次数。这个步骤很耗时，如果时间允许重复两三次也是可以的。这一步我只做了一小会儿。拆下来发现绝大多数已经恢复，就不再做了。</p>
-<h2 id="win10">使用win10磁盘工具查错</h2>
-<p>复制得到的磁盘是有错误的，我使用win10磁盘工具查错后，在根目录的隐藏文件夹<code>found.000</code>中找到了很多恢复的文件、文件夹。再通过TC，过滤时间后，得到未备份的内容，加到备份中。
-（可能ddrescueview有相应的除错工具，我没有注意到。）</p>
-<p><strong>后来使用文件时，发现个别文件看起来正常，但无法打开。所以，重要文件最好逐一打开看看。</strong></p>
-<p>赶紧买了个4T的硬盘，所有文件都备份在这里。还重新打开谷歌硬盘，<strong>把重要文件和最近正处理的文件备份到网上。</strong>问题盘暂时还留着，后面如果再发现问题，还可以更精细地处理。</p></div>
+<p>TextPro的批量正则替换表功能是很值得推荐的，常用工作可以订制后重复使用。这是我的：</p>
+<p><img alt="tp2.png" src="/images/用正则表达式处理文本、管理文件的三件套/tp2.png"/>
+<img alt="tp1.png" src="/images/用正则表达式处理文本、管理文件的三件套/tp1.png"/></p>
+<p>逻辑链条更长的时候我用python。</p>
+<p>这是知乎上的一个回答，有待细说。</p></div>
         <hr />
     </div>
 
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/ying-pan-sun-pi-qiang-jiu-shu-ju.html"><h2>硬盘损坏，抢救数据</h2></a>
+        <div class= "well small"> 2020-09-26 周六
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>上两周坏了一个硬盘。——这还是第一次把硬盘用坏。虽然此前20天备份过一次，可想到要重做这二十天的工，很是沮丧。好在经过两三天的尝试，全部恢复了。现记录如下。</p> <a href="/ying-pan-sun-pi-qiang-jiu-shu-ju.html">read...</a></div>
+    </div>	
+				
 
  
         
@@ -313,24 +246,6 @@ sudo apt-get upgrade
 
  </div>
         <div class="summary"><p>本人琢磨教育学习技术问题，学习数字技术和尝试开发的日志。在这里写出来，有一点隐秘舞台的气氛，是默坐出神和盲动入迷之间的左顾右盼。</p> <a href="/qi-ji-yin-qiao-zhi.html">read...</a></div>
-    </div>	
-				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/jing-tai-wang-zhan-sheng-cheng-qi-pelicanxue-xi-bi-ji.html"><h2>静态网站生成器Pelican学习笔记</h2></a>
-        <div class= "well small"> 2018-10-14 周日
-
-	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>不写是不行的。写微信、微博像在村头赤身裸体，彼此都尴尬。写博客是无中心的世界里守株待兔，带点暧昧情绪。尝试了几种静态文件生成器，基于Python语言的Pelican最简单、亲切。这是学习<a href="http://docs.getpelican.com/en/stable/index.html">pelican 文档</a>时随手所记的，备查。</p> <a href="/jing-tai-wang-zhan-sheng-cheng-qi-pelicanxue-xi-bi-ji.html">read...</a></div>
     </div>	
 				
 <div class="pagination">

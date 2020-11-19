@@ -84,8 +84,8 @@
 <p><strong>拆下D盘后能正常启动。</strong></p>
 <p>买了一个硬盘底座，连接后，用各种磁盘工具、数据恢复工具都无法处理，多半卡死。</p>
 <p>硬盘底座有个硬盘对拷的功能，不知道工作原理，尝试了一下，很久没看到进展，就没敢再用。</p>
-<h2 id="uubuntu">用U盘Ubuntu制作启动盘</h2>
-<p>根据<a href="https://www.cgsecurity.org/wiki/Damaged_Hard_Disk">这个网页</a>的提示，制作了一个U盘的Ubuntu系统。——这个网页推荐Knoppix LiveCD系统，但我不熟悉。</p>
+<h2 id="uubuntulinux-live-usb">用U盘、Ubuntu制作Linux live USB系统</h2>
+<p>根据<a href="https://www.cgsecurity.org/wiki/Damaged_Hard_Disk">这个网页</a>的提示，制作了一个U盘的Ubuntu的Linux live USB系统。——这个网页推荐Knoppix LiveCD系统，但我不熟悉。</p>
 <p>具体制作方法可以看<a href="https://ubuntu.com/tutorials/create-a-usb-stick-on-windows#10-installation-complete">这个简单教程</a>。主要包括两步：</p>
 <ol>
 <li>安装Rufus；</li>
@@ -146,7 +146,7 @@ sudo apt-get upgrade
 
 
 <p><strong>注意，选项<code>-f</code>意味着存储盘上的内容会被覆盖。</strong></p>
-<p><code>rescued.log</code>是记录进度的文件。如果临时停止，<strong>重新开始后，ddrescue可以根据这个文件接着做。U盘系统重启后会丢失用户文件，所以这个文件应该通过在线邮箱等方式妥善保存。</strong></p>
+<p><code>rescued.log</code>是记录进度的文件。如果临时停止，<strong>重新开始后，ddrescue可以根据这个文件接着做。Linux live USB系统重启后会抛弃用户设置、文件，所以这个文件应该通过在线邮箱等方式妥善保存。</strong></p>
 <p>可以使用ddrescueview查看进度（可以用<code>-r 30s</code>这样的选项来设置刷新间隔）：</p>
 <div class="highlight"><pre><span></span><code>sudo ddrescueview rescued.log
 </code></pre></div>
