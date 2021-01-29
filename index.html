@@ -60,52 +60,154 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="/you-er-shi-zi-90tian-ren-shi-shu-zhong-80de-yi-zi.html"><h1>《幼儿识字90天：认识书中80%的汉字》</h1></a>
-2020-11-19 周四
+            <a href="/pygamezerozhu-shou.html"><h1>PygameZero助手</h1></a>
+2021-01-29 周五
 
-	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+	by 		<a class="url fn" href="/author/aposterioricomsg.html">aposteriori.com.sg.</a>
  
 
 
  
         </div>
         
-        <div><p>我编写了一本幼儿识字的书。号称《幼儿识字90天：认识书中80%的汉字》~</p>
-<p>其实是学习670个高频字。</p>
-<p>适合学前对书本接触较多、对识字有兴趣的孩子。一年级孩子也可以用，可以及早学到用处最大的那些高频字。</p>
-<p>这本书一共80课，400余页，主体内容已经完成。教学说明、指导性的内容还缺。可以用了。</p>
-<p>欢迎提意见。QQ交流群：537538431（幼儿小学生识字写字阅读）</p>
-<p>版本：v0.0.1-beta.2，2020-11-19</p>
-<p><img alt="01" src="/images/幼儿识字90天/01.jpg"></p>
-<p><img alt="01" src="/images/幼儿识字90天/02.jpg"></p>
-<p><img alt="01" src="/images/幼儿识字90天/03.jpg"></p>
-<p><img alt="01" src="/images/幼儿识字90天/04.jpg"></p>
-<p><img alt="01" src="/images/幼儿识字90天/05.jpg"></p>
-<p><img alt="01" src="/images/幼儿识字90天/06.jpg"></p>
-<p><img alt="01" src="/images/幼儿识字90天/07.jpg"></p>
-<p><img alt="01" src="/images/幼儿识字90天/08.jpg"></p>
-<p><img alt="01" src="/images/幼儿识字90天/09.jpg"></p>
-<p><a href="https://pan.baidu.com/s/1oCXm7VgSpOJ-F7PXMcH_bg">百度网盘下载地址</a>
-提取码：nu3n</p>
-<h1 id="9080" ignore="true">幼儿识字90天<br>认识书中80%的汉字</h1>
-<h2 id="license">license/许可协议</h2>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /></p>
-<p>本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0(知识共享署名-非商业性使用-相同方式共享4.0国际许可协议)</a>进行许可。</p>
-<p>作者：黄复雄
-链接：<a href="https://blog.xiiigame.com/you-er-shi-zi-90tian-ren-shi-shu-zhong-80de-yi-zi.html">blog.xiiigame.com</a>
-来源：<a href="https://xiiigame.com/">xiiigame.com</a>
-邮箱：aahuaang@gmail.com
-QQ交流群：537538431（幼儿小学生识字写字阅读）</p>
-<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-<h2 id="_1">版本标记</h2>
-<ul>
-<li>v0.0.1-beta.3，2020-11-19</li>
-<li>v0.0.1-beta.2，2020-11-19 10:42:00</li>
-<li>v0.0.1-beta.1，2020-11-17 11:34:30</li>
-</ul></div>
+        <div>
+<p><em>本文由黄复雄译自<a href="https://www.aposteriori.com.sg/pygame-zero-helper/">aposteriori.com.sg</a>，这是一家新加坡的STEAM教育机构</em></p>
+<hr/>
+<p>Pygame Zero少了一些Scratch中有的、游戏常用的函数。Pygame Zero Helper（PygameZero助手）就是为了弥补这一不足，提供了这些缺少的功能。</p>
+<p><a href="https://www.aposteriori.com.sg/wp-content/uploads/2021/01/pgzhelper.zip">在这里下载PygameZero助手</a></p>
+<p>用法是，在你的程序头部，在导入<code>pgzrun</code>后，即从<code>pgzhelper</code>（PygameZero助手的模块名）导入<code>*</code>（所有）。例如：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pgzrun</span>
+<span class="kn">from</span> <span class="nn">pgzhelper</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">flip_x</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="n">pgzrun</span><span class="o">.</span><span class="n">go</span><span class="p">()</span>
+</code></pre></div>
+<p>pgzhelper提供了如下这些函数：</p>
+<h2 id="actorflip_x-actorflip_y">Actor.flip_x, Actor.flip_y</h2>
+<p>以X或Y轴翻转图像。例如：</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">flip_x</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+<h2 id="actorscale">Actor.scale</h2>
+<p>缩放图像。接受一个浮点数作为倍数。例如：</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1"># 0.5倍大小</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mi">2</span>    <span class="c1"># 2倍大小</span>
+</code></pre></div>
+<h2 id="actormove_forward-actormove_back-actormove_right-actormove_left">Actor.move_forward(), Actor.move_back(), Actor.move_right(), Actor.move_left()</h2>
+<p>面向（正脸向前）移动Actor。默认情况下，Actor是面朝右边的，你可以先改变角度。例如：</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">angle</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">move_forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># Moves towards the North-East</span>
+</code></pre></div>
+<h2 id="actordirection-actormove_in_direction">Actor.direction, Actor.move_in_direction()</h2>
+<p>按设定的方向移动actor。与<code>angle</code>和<code>move_forward()</code>不同的是，它不会旋转actor的图像。</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="mi">45</span>        <span class="c1"># Does not rotate the actor</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">move_in_direction</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="c1"># Moves towards the North-East</span>
+</code></pre></div>
+<h2 id="actordistance_to-actordirection_to">Actor.distance_to(), Actor.direction_to()</h2>
+<p>获取一个actor到另一个actor的距离或方向。</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">hero</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'hero'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alien</span><span class="o">.</span><span class="n">distance_to</span><span class="p">(</span><span class="n">hero</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hero</span><span class="o">.</span><span class="n">direction_to</span><span class="p">(</span><span class="n">alien</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="actormove_towards-actorpoint_towards">Actor.move_towards(), Actor.point_towards()</h2>
+<p>将actor移向或指向另一个actor。使用<code>move_towards</code>会使actor移动而不转动。使用<code>point_towards</code>会使actor不移动而转动。</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">hero</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'hero'</span><span class="p">)</span>
+<span class="n">hero</span><span class="o">.</span><span class="n">move_towards</span><span class="p">(</span><span class="n">alien</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">point_towards</span><span class="p">(</span><span class="n">hero</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="actorget_rect">Actor.get_rect()</h2>
+<p>取得Actor图像的rectangle（方框）。例如：</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">alien</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># 相当于给alien画方框</span>
+</code></pre></div>
+<h2 id="actorimages-actornext_image">Actor.images, Actor.next_image()</h2>
+<p>设置图像列表。更换图像列表中的下一个图像。（相当于精灵列表/图单）</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien_run1'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'alien_run1'</span><span class="p">,</span><span class="s1">'alien_run2'</span><span class="p">,</span><span class="s1">'alien_run3'</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">next_image</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="actorfps-actoranimate">Actor.fps, Actor.animate()</h2>
+<p>作用类似于<code>Actor.next_image()</code>，不过是按指定的帧率（FPS，默认是每秒5帧）更换图片。必须先设置好<code>Actor.images</code>。</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien_run1'</span><span class="p">)</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'alien_run1'</span><span class="p">,</span><span class="s1">'alien_run2'</span><span class="p">,</span><span class="s1">'alien_run3'</span><span class="p">]</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">fps</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># 设置帧率</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+      <span class="n">alien</span><span class="o">.</span><span class="n">animate</span><span class="p">()</span> <span class="c1"># 动画</span>
+
+    <span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+      <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="actorcollidepoint_pixel-actorcollide_pixel-actorcollidelist_pixel-actorcollidelistall_pixel">Actor.collidepoint_pixel(), Actor.collide_pixel(), Actor.collidelist_pixel(), Actor.collidelistall_pixel()</h2>
+<p>像素完美（Pixel perfect）版的Rect（方框）碰撞。和Scratch一样，在检测碰撞时会忽略透明区域。警告：这可能会导致性能不佳和actor卡顿。通常最好使用普通的Rect碰撞。</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_mouse_down</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">collidepoint_pixel</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Eek!"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="set_fullscreen-set_windowed-toggle_fullscreen-hide_mouse-show_mouse">set_fullscreen(), set_windowed(), toggle_fullscreen(), hide_mouse(), show_mouse()</h2>
+<p>设为全屏模式：<code>set_fullscreen()</code>；设为窗口模式（非全屏）：<code>set_windowed()</code>；在全屏与否间切换：<code>toggle_fullscreen()</code>；影藏鼠标：<code>hide_mouse()</code>；显示鼠标：<code>show_mouse()</code>。</p>
+<div class="highlight"><pre><span></span><code><span class="n">hide_mouse</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">f</span><span class="p">:</span>
+    <span class="n">toggle_fullscreen</span><span class="p">()</span>
+</code></pre></div></div>
         <hr />
     </div>
 
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/shi-zi-da-wen-lei-ji-geng-xin.html"><h2>识字答问（累积更新）</h2></a>
+        <div class= "well small"> 2021-01-29 周五
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>这些是我在知乎等平台上，回答语言文字问题的帖子汇总。其中很多观点和材料亦见于我的其他短文中。有改动，并附原文地址。</p> <a href="/shi-zi-da-wen-lei-ji-geng-xin.html">read...</a></div>
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/you-er-shi-zi-90tian-ren-shi-shu-zhong-80de-yi-zi.html"><h2>《幼儿识字90天：认识书中80%的汉字》</h2></a>
+        <div class= "well small"> 2020-11-19 周四
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>我编写了一本幼儿识字的书。号称《幼儿识字90天：认识书中80%的汉字》。其实是学习670个高频字。适合学前对书本接触较多、对识字有兴趣的孩子。一年级孩子也可以用，可以及早学到用处最大的那些高频字。</p> <a href="/you-er-shi-zi-90tian-ren-shi-shu-zhong-80de-yi-zi.html">read...</a></div>
+    </div>	
+				
 
  
         
@@ -232,42 +334,6 @@ QQ交流群：537538431（幼儿小学生识字写字阅读）</p>
         <div class="summary"><p>这是几年前整理的十篇书论。版本来源比较杂，谨供一般性阅读。明·丰坊《童学书程》</p> <a href="/shu-lun-zheng-li-ming-feng-fang-tong-xue-shu-cheng.html">read...</a></div>
     </div>	
 				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/shu-lun-zheng-li-ming-li-chun-da-zi-jie-gou-ba-shi-si-fa.html"><h2>[书论整理]明·李淳《大字结构八十四法》</h2></a>
-        <div class= "well small"> 2020-07-17 周五
-
-	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>这是几年前整理的十篇书论。版本来源比较杂，谨供一般性阅读。明·李淳《大字结构八十四法》</p> <a href="/shu-lun-zheng-li-ming-li-chun-da-zi-jie-gou-ba-shi-si-fa.html">read...</a></div>
-    </div>	
-				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/shu-lun-zheng-li-ming-mo-qing-chu-song-cao-shu-fa-yue-yan.html"><h2>[书论整理]明末清初·宋曹《书法约言》</h2></a>
-        <div class= "well small"> 2020-07-17 周五
-
-	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>这是几年前整理的十篇书论。版本来源比较杂，谨供一般性阅读。明末清初·宋曹《书法约言》</p> <a href="/shu-lun-zheng-li-ming-mo-qing-chu-song-cao-shu-fa-yue-yan.html">read...</a></div>
-    </div>	
-				
 <div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr;</a></li>
@@ -279,6 +345,7 @@ QQ交流群：537538431（幼儿小学生识字写字阅读）</p>
     <li class=""><a href="/index5.html">5</a></li>
     <li class=""><a href="/index6.html">6</a></li>
     <li class=""><a href="/index7.html">7</a></li>
+    <li class=""><a href="/index8.html">8</a></li>
 
     <li class="next"><a href="/index2.html">&rarr;</a></li>
 
@@ -318,7 +385,7 @@ QQ交流群：537538431（幼儿小学生识字写字阅读）</p>
                 <li><a href="/category/14-xiao-lu-gong-ju-bian-cheng-za-xiang.html">14 效率工具+编程杂项</a></li>
                 <li><a href="/category/21-er-tong-shi-zi.html">21 儿童识字</a></li>
                 <li><a href="/category/22-qin-zi-xie-zi.html">22 亲子写字</a></li>
-                <li><a href="/category/23-qin-zi-ban-xue.html">23 亲子伴学</a></li>
+                <li><a href="/category/23-qin-zi-steam.html">23 亲子STEAM</a></li>
                    
             </ul>
             </div>
@@ -358,7 +425,7 @@ QQ交流群：537538431（幼儿小学生识字写字阅读）</p>
     </div>     </div> 
 <footer>
 <br />
-<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2020, Powered by <a href="http://getpelican.com/">Pelican</a></p>
+<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2021, Powered by <a href="http://getpelican.com/">Pelican</a></p>
 </footer>
 
 </div> <!-- /container -->

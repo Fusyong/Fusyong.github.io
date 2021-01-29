@@ -60,54 +60,137 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="/pythonkou-tou-shan.html"><h1>Python口头禅</h1></a>
-2019-05-15 周三
+            <a href="/pygamezerozhu-shou.html"><h1>PygameZero助手</h1></a>
+2021-01-29 周五
 
-	by 		<a class="url fn" href="/author/tim-peters.html">Tim Peters.</a>
-		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+	by 		<a class="url fn" href="/author/aposterioricomsg.html">aposteriori.com.sg.</a>
  
 
 
  
         </div>
         
-        <div><p>《Python之禅》是2004年的Python改进提案，编号为<a href="https://www.python.org/dev/peps/pep-0020/">PEP 20</a>。禅诗、偈颂的形式。黄复雄译。</p>
-<h2 id="_1">摘要</h2>
-<p>老资格的Python人Tim Peters将仁慈独裁者（BDFL）<sup id="fnref:Rossum"><a class="footnote-ref" href="#fn:Rossum">1</a></sup>的Python设计指导原则简明扼要地归纳成20条警句，只有其中19句被记载下来。</p>
-<h2 id="python-the-zen-of-python">Python口头禅 / The Zen of Python</h2>
-<div class="highlight"><pre><span></span><code>美好过丑。 / Beautiful is better than ugly.
-直白好过隐晦。 / Explicit is better than implicit.
-简单好过复合。 / Simple is better than complex.
-复合好过复杂。 / Complex is better than complicated.
-扁平好过嵌套。 / Flat is better than nested.
-分散好过密集。 / Sparse is better than dense.
-可读很重要。 / Readability counts.
-特例不能成为破坏规矩的特殊理由， / Special cases aren&#39;t special enough to break the rules.
-不过实用会打败纯净。 / Although practicality beats purity.
-永远不要让错误无声地溜走， / Errors should never pass silently.
-除非你直白地让它闭嘴。 / Unless explicitly silenced.
-面对两可时，要拒绝揣测的引诱。 / In the face of ambiguity, refuse the temptation to guess.
-应该有一个（最好是唯一一个）显然的实现方法， / There should be one-- and preferably only one --obvious way to do it.
-不过开始的时候它可能并非显然——除非你是荷兰人[^Rossum]。 / Although that way may not be obvious at first unless you&#39;re Dutch.
-马上行动好过始终不动， / Now is better than never.
-不过始终不动常常好过*匆忙*行动。 / Although never is often better than *right* now.
-一个方案如果很难说清楚，那么不是好方案。 / If the implementation is hard to explain, it&#39;s a bad idea.
-一个方案如果很容易说清楚，也许是个好方案。 / If the implementation is easy to explain, it may be a good idea.
-命名空间是响当当的好主意，让我多做一些。 / Namespaces are one honking great idea -- let&#39;s do more of those!
+        <div>
+<p><em>本文由黄复雄译自<a href="https://www.aposteriori.com.sg/pygame-zero-helper/">aposteriori.com.sg</a>，这是一家新加坡的STEAM教育机构</em></p>
+<hr/>
+<p>Pygame Zero少了一些Scratch中有的、游戏常用的函数。Pygame Zero Helper（PygameZero助手）就是为了弥补这一不足，提供了这些缺少的功能。</p>
+<p><a href="https://www.aposteriori.com.sg/wp-content/uploads/2021/01/pgzhelper.zip">在这里下载PygameZero助手</a></p>
+<p>用法是，在你的程序头部，在导入<code>pgzrun</code>后，即从<code>pgzhelper</code>（PygameZero助手的模块名）导入<code>*</code>（所有）。例如：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pgzrun</span>
+<span class="kn">from</span> <span class="nn">pgzhelper</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">flip_x</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="n">pgzrun</span><span class="o">.</span><span class="n">go</span><span class="p">()</span>
 </code></pre></div>
+<p>pgzhelper提供了如下这些函数：</p>
+<h2 id="actorflip_x-actorflip_y">Actor.flip_x, Actor.flip_y</h2>
+<p>以X或Y轴翻转图像。例如：</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">flip_x</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+<h2 id="actorscale">Actor.scale</h2>
+<p>缩放图像。接受一个浮点数作为倍数。例如：</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1"># 0.5倍大小</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mi">2</span>    <span class="c1"># 2倍大小</span>
+</code></pre></div>
+<h2 id="actormove_forward-actormove_back-actormove_right-actormove_left">Actor.move_forward(), Actor.move_back(), Actor.move_right(), Actor.move_left()</h2>
+<p>面向（正脸向前）移动Actor。默认情况下，Actor是面朝右边的，你可以先改变角度。例如：</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">angle</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">move_forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="c1"># Moves towards the North-East</span>
+</code></pre></div>
+<h2 id="actordirection-actormove_in_direction">Actor.direction, Actor.move_in_direction()</h2>
+<p>按设定的方向移动actor。与<code>angle</code>和<code>move_forward()</code>不同的是，它不会旋转actor的图像。</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="mi">45</span>        <span class="c1"># Does not rotate the actor</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">move_in_direction</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="c1"># Moves towards the North-East</span>
+</code></pre></div>
+<h2 id="actordistance_to-actordirection_to">Actor.distance_to(), Actor.direction_to()</h2>
+<p>获取一个actor到另一个actor的距离或方向。</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">hero</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'hero'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alien</span><span class="o">.</span><span class="n">distance_to</span><span class="p">(</span><span class="n">hero</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hero</span><span class="o">.</span><span class="n">direction_to</span><span class="p">(</span><span class="n">alien</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="actormove_towards-actorpoint_towards">Actor.move_towards(), Actor.point_towards()</h2>
+<p>将actor移向或指向另一个actor。使用<code>move_towards</code>会使actor移动而不转动。使用<code>point_towards</code>会使actor不移动而转动。</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">hero</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'hero'</span><span class="p">)</span>
+<span class="n">hero</span><span class="o">.</span><span class="n">move_towards</span><span class="p">(</span><span class="n">alien</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">point_towards</span><span class="p">(</span><span class="n">hero</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="actorget_rect">Actor.get_rect()</h2>
+<p>取得Actor图像的rectangle（方框）。例如：</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">alien</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># 相当于给alien画方框</span>
+</code></pre></div>
+<h2 id="actorimages-actornext_image">Actor.images, Actor.next_image()</h2>
+<p>设置图像列表。更换图像列表中的下一个图像。（相当于精灵列表/图单）</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien_run1'</span><span class="p">)</span>
+<span class="n">alien</span><span class="o">.</span><span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'alien_run1'</span><span class="p">,</span><span class="s1">'alien_run2'</span><span class="p">,</span><span class="s1">'alien_run3'</span><span class="p">]</span>
 
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">next_image</span><span class="p">()</span>
 
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn:Rossum">
-<p>指Python创始人，荷兰人吉多·范罗苏姆（Guido van Rossum）。&#160;<a class="footnote-backref" href="#fnref:Rossum" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div></div>
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="actorfps-actoranimate">Actor.fps, Actor.animate()</h2>
+<p>作用类似于<code>Actor.next_image()</code>，不过是按指定的帧率（FPS，默认是每秒5帧）更换图片。必须先设置好<code>Actor.images</code>。</p>
+<div class="highlight"><pre><span></span><code>    <span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien_run1'</span><span class="p">)</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'alien_run1'</span><span class="p">,</span><span class="s1">'alien_run2'</span><span class="p">,</span><span class="s1">'alien_run3'</span><span class="p">]</span>
+    <span class="n">alien</span><span class="o">.</span><span class="n">fps</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># 设置帧率</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+      <span class="n">alien</span><span class="o">.</span><span class="n">animate</span><span class="p">()</span> <span class="c1"># 动画</span>
+
+    <span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+      <span class="n">alien</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="actorcollidepoint_pixel-actorcollide_pixel-actorcollidelist_pixel-actorcollidelistall_pixel">Actor.collidepoint_pixel(), Actor.collide_pixel(), Actor.collidelist_pixel(), Actor.collidelistall_pixel()</h2>
+<p>像素完美（Pixel perfect）版的Rect（方框）碰撞。和Scratch一样，在检测碰撞时会忽略透明区域。警告：这可能会导致性能不佳和actor卡顿。通常最好使用普通的Rect碰撞。</p>
+<div class="highlight"><pre><span></span><code><span class="n">alien</span> <span class="o">=</span> <span class="n">Actor</span><span class="p">(</span><span class="s1">'alien'</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_mouse_down</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">collidepoint_pixel</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Eek!"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="set_fullscreen-set_windowed-toggle_fullscreen-hide_mouse-show_mouse">set_fullscreen(), set_windowed(), toggle_fullscreen(), hide_mouse(), show_mouse()</h2>
+<p>设为全屏模式：<code>set_fullscreen()</code>；设为窗口模式（非全屏）：<code>set_windowed()</code>；在全屏与否间切换：<code>toggle_fullscreen()</code>；影藏鼠标：<code>hide_mouse()</code>；显示鼠标：<code>show_mouse()</code>。</p>
+<div class="highlight"><pre><span></span><code><span class="n">hide_mouse</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">f</span><span class="p">:</span>
+    <span class="n">toggle_fullscreen</span><span class="p">()</span>
+</code></pre></div></div>
         <hr />
     </div>
 
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/pythonkou-tou-shan.html"><h2>Python口头禅</h2></a>
+        <div class= "well small"> 2019-05-15 周三
+
+	by 		<a class="url fn" href="/author/tim-peters.html">Tim Peters.</a>
+		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>《Python之禅》是2004年的Python改进提案。禅诗、偈颂的形式。</p> <a href="/pythonkou-tou-shan.html">read...</a></div>
+    </div>	
+				
 
  
         
@@ -244,7 +327,7 @@
                 <li><a href="/category/14-xiao-lu-gong-ju-bian-cheng-za-xiang.html">14 效率工具+编程杂项</a></li>
                 <li><a href="/category/21-er-tong-shi-zi.html">21 儿童识字</a></li>
                 <li><a href="/category/22-qin-zi-xie-zi.html">22 亲子写字</a></li>
-                <li><a href="/category/23-qin-zi-ban-xue.html">23 亲子伴学</a></li>
+                <li><a href="/category/23-qin-zi-steam.html">23 亲子STEAM</a></li>
                    
             </ul>
             </div>
@@ -284,7 +367,7 @@
     </div>     </div> 
 <footer>
 <br />
-<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2019, Powered by <a href="http://getpelican.com/">Pelican</a></p>
+<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2021, Powered by <a href="http://getpelican.com/">Pelican</a></p>
 </footer>
 
 </div> <!-- /container -->
