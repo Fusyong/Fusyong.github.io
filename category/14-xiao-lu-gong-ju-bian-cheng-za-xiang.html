@@ -60,8 +60,8 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="/jiao-yu-ying-jian-xue-xi-bi-ji-lei-ji-geng-xin.html"><h1>教育硬件学习笔记（累积更新）</h1></a>
-2020-12-02 周三
+            <a href="/liang-chong-markdownwen-jian-jie-xi-fang-fa.html"><h1>两种markdown文件解析方法</h1></a>
+2021-02-04 周四
 
 	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
  
@@ -70,49 +70,710 @@
  
         </div>
         
-        <div><p>想去做教育硬件（偏内容方向）。这是多方学习而随手做的笔记。有点乱。累积更新。</p>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Markmap</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-}
-#mindmap {
-  display: block;
-  width: 50vw;
-  height: 150vh;
-}
-</style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.4/dist/style.min.css">
-</head>
-<body>
-<svg id="mindmap"></svg>
-<script src="https://cdn.jsdelivr.net/npm/d3@6.3.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.4/dist/index.umd.min.js"></script><script>(r => {
-                setTimeout(r);
-              })(function anonymous(
-) {
-const toolbar = new markmap.Toolbar();
-toolbar.attach(mm);
-const el = toolbar.render();
-el.setAttribute('style', 'position:absolute;bottom:20px;left:20px');
-document.body.append(el);
-})</script><script>((getMarkmap, data) => {
-        const {
-          Markmap
-        } = getMarkmap();
-        window.mm = Markmap.create('svg#mindmap', null, data);
-      })(() => window.markmap,{"t":"heading","d":1,"p":{},"v":"教育硬件学习笔记","c":[{"t":"heading","d":2,"p":{},"v":"智能硬件（按应用场景分）","c":[{"t":"list_item","d":4,"p":{},"v":"穿戴设备","c":[{"t":"list_item","d":6,"p":{},"v":"手表"},{"t":"list_item","d":6,"p":{},"v":"手环"},{"t":"list_item","d":6,"p":{},"v":"无线耳机"},{"t":"list_item","d":6,"p":{},"v":"头显"},{"t":"list_item","d":6,"p":{},"v":"服装"}]},{"t":"list_item","d":4,"p":{},"v":"家居产品","c":[{"t":"list_item","d":6,"p":{},"v":"家电"},{"t":"list_item","d":6,"p":{},"v":"家具"},{"t":"list_item","d":6,"p":{},"v":"安防"}]},{"t":"list_item","d":4,"p":{},"v":"交通设备","c":[{"t":"list_item","d":6,"p":{},"v":"无人驾驶器"},{"t":"list_item","d":6,"p":{},"v":"乘载工具"},{"t":"list_item","d":6,"p":{},"v":"汽车辅助配件"}]},{"t":"list_item","d":4,"p":{},"v":"医疗器械","c":[{"t":"list_item","d":6,"p":{},"v":"能康复类"},{"t":"list_item","d":6,"p":{},"v":"器械类"}]},{"t":"list_item","d":4,"p":{},"v":"教育硬件","c":[{"t":"list_item","d":6,"p":{},"v":"早教机"},{"t":"list_item","d":6,"p":{},"v":"学习平板"},{"t":"list_item","d":6,"p":{},"v":"陪伴型机器人"},{"t":"list_item","d":6,"p":{},"v":"学习辅助工具"}]},{"t":"list_item","d":4,"p":{},"v":"其他","c":[{"t":"list_item","d":6,"p":{},"v":"无人机"}]}]},{"t":"heading","d":2,"p":{},"v":"<em>以下专指“智能教育硬件”</em>"},{"t":"heading","d":2,"p":{},"v":"产品要素","c":[{"t":"list_item","d":4,"p":{},"v":"硬件"},{"t":"list_item","d":4,"p":{},"v":"软件/内容"},{"t":"list_item","d":4,"p":{},"v":"数据/算法/AI","c":[{"t":"list_item","d":6,"p":{},"v":"OCR"},{"t":"list_item","d":6,"p":{},"v":"语音识别"},{"t":"list_item","d":6,"p":{},"v":"语音合成"},{"t":"list_item","d":6,"p":{},"v":"语音交互"},{"t":"list_item","d":6,"p":{},"v":"图片识别"},{"t":"list_item","d":6,"p":{},"v":"记忆曲线算法"},{"t":"list_item","d":6,"p":{},"v":"推荐算法"}]},{"t":"list_item","d":4,"p":{},"v":"服务"}]},{"t":"heading","d":2,"p":{},"v":"分类(C端)","c":[{"t":"list_item","d":4,"p":{},"v":"学习机/学习平板","c":[{"t":"list_item","d":6,"p":{},"v":"托普朗宁IEnglish（pad，妈妈代理模式）"},{"t":"list_item","d":6,"p":{},"v":"科大讯飞的X1Pro学习机"},{"t":"list_item","d":6,"p":{},"v":"华为MatePad"},{"t":"list_item","d":6,"p":{},"v":"有道精品课智能答题板"},{"t":"list_item","d":6,"p":{},"v":"小米的AI英语学习机“小爱老师”"},{"t":"list_item","d":6,"p":{},"v":"小霸王"},{"t":"list_item","d":6,"p":{},"v":"步步高"},{"t":"list_item","d":6,"p":{},"v":"优学派"},{"t":"list_item","d":6,"p":{},"v":"读书郎"},{"t":"list_item","d":6,"p":{},"v":"好记星"}]},{"t":"list_item","d":4,"p":{},"v":"翻译机","c":[{"t":"list_item","d":6,"p":{},"v":"有道翻译蛋"},{"t":"list_item","d":6,"p":{},"v":"讯飞"},{"t":"list_item","d":6,"p":{},"v":"小米"}]},{"t":"list_item","d":4,"p":{},"v":"词典笔","c":[{"t":"list_item","d":6,"p":{},"v":"<a href=\"https://blog.xiiigame.com/you-dao-ci-dian-bi-20zhi-tong-shu-shi-ce.html\">有道词典笔</a>"},{"t":"list_item","d":6,"p":{},"v":"讯飞阿尔法词典笔"}]},{"t":"list_item","d":4,"p":{},"v":"错题/卡片/纸条打印机","c":[{"t":"list_item","d":6,"p":{},"v":"小型热敏打印","c":[{"t":"list_item","d":8,"p":{},"v":"作业帮喵喵机（拍照搜题、解题）"},{"t":"list_item","d":8,"p":{},"v":"有道口袋打印机"},{"t":"list_item","d":8,"p":{},"v":"小猿错题打印机"},{"t":"list_item","d":8,"p":{},"v":"得力喵喵相印宝"},{"t":"list_item","d":8,"p":{},"v":"雅柯莱印先森迷你打印机"},{"t":"list_item","d":8,"p":{},"v":"咕咕机(Memobird)"},{"t":"list_item","d":8,"p":{},"v":"爱立熊错题打印机"}]},{"t":"list_item","d":6,"p":{},"v":"爱普生小白智慧学习打印机（拍照搜题、解题）"}]},{"t":"list_item","d":4,"p":{},"v":"点读笔","c":[{"t":"list_item","d":6,"p":{},"v":"毛毛虫"},{"t":"list_item","d":6,"p":{},"v":"外研通"},{"t":"list_item","d":6,"p":{},"v":"瓜瓜龙点读笔"},{"t":"list_item","d":6,"p":{},"v":"名校堂"}]},{"t":"list_item","d":4,"p":{},"v":"智能台灯/高拍仪","c":[{"t":"list_item","d":6,"p":{},"v":"字节跳动大力教育智能作业灯","c":[{"t":"list_item","d":8,"p":{},"v":"指尖查词"},{"t":"list_item","d":8,"p":{},"v":"英语跟读"},{"t":"list_item","d":8,"p":{},"v":"计算题讲解"}]}]},{"t":"list_item","d":4,"p":{},"v":"儿童手表","c":[{"t":"list_item","d":6,"p":{},"v":"小天才"},{"t":"list_item","d":6,"p":{},"v":"小寻儿童学习手表"}]},{"t":"list_item","d":4,"p":{},"v":"智能音箱","c":[{"t":"list_item","d":6,"p":{},"v":"早教机器人","c":[{"t":"list_item","d":8,"p":{},"v":"普通早教机"},{"t":"list_item","d":8,"p":{},"v":"故事机","c":[{"t":"list_item","d":10,"p":{},"v":"科大讯飞阿尔法蛋故事集"}]},{"t":"list_item","d":8,"p":{},"v":"对话/陪伴机器人"},{"t":"list_item","d":8,"p":{},"v":"绘本阅读机器人"}]},{"t":"list_item","d":6,"p":{},"v":"小度在家智能屏X8智能音箱"}]},{"t":"list_item","d":4,"p":{},"v":"可编程机器人","c":[{"t":"list_item","d":6,"p":{},"v":"大疆机甲大师RoboMaster S1"},{"t":"list_item","d":6,"p":{},"v":"讯飞阿尔法蛋编程机甲"},{"t":"list_item","d":6,"p":{},"v":"讯飞阿尔法蛋编程机器人"}]},{"t":"list_item","d":4,"p":{},"v":"手写笔/手写笔板","c":[{"t":"list_item","d":6,"p":{},"v":"有道云笔智能书写套装"}]},{"t":"list_item","d":4,"p":{},"v":"耳机","c":[{"t":"list_item","d":6,"p":{},"v":"网易智造主动降噪耳机"}]},{"t":"list_item","d":4,"p":{},"v":"脑电波可穿戴设备"},{"t":"list_item","d":4,"p":{},"v":"VR/AR教学装备"}]},{"t":"heading","d":2,"p":{},"v":"应用场景","c":[{"t":"list_item","d":4,"p":{},"v":"外语学习综合辅助"},{"t":"list_item","d":4,"p":{},"v":"多科目学习综合辅助"},{"t":"list_item","d":4,"p":{},"v":"纸书助读","c":[{"t":"list_item","d":6,"p":{},"v":"铺码识别"},{"t":"list_item","d":6,"p":{},"v":"图像识别"}]},{"t":"list_item","d":4,"p":{},"v":"电子词典","c":[{"t":"list_item","d":6,"p":{},"v":"扫描笔"}]},{"t":"list_item","d":4,"p":{},"v":"外语翻译"},{"t":"list_item","d":4,"p":{},"v":"错题/知识点处理（解题、打印、复习）"},{"t":"list_item","d":4,"p":{},"v":"收音频：儿童听故事/听百科知识"},{"t":"list_item","d":4,"p":{},"v":"机器人编程"},{"t":"list_item","d":4,"p":{},"v":"幼儿会话"},{"t":"list_item","d":4,"p":{},"v":"笔记辅助"},{"t":"list_item","d":4,"p":{},"v":"儿童通信/安全定位"}]},{"t":"heading","d":2,"p":{},"v":"政策","c":[{"t":"bullet_list","d":3,"p":{},"v":"","c":[{"t":"list_item","d":4,"p":{},"v":"<a href=\"http://www.moe.gov.cn/srcsite/A06/s7053/202101/t20210126_511120.html\">《教育部办公厅关于加强中小学生手机管理工作的通知》(2021)</a>"}]},{"t":"bullet_list","d":3,"p":{},"v":"","c":[{"t":"list_item","d":4,"p":{},"v":"<a href=\"http://www.moe.gov.cn/srcsite/A16/moe_784/201908/t20190829_396505.html\">《教育部等八部门关于引导规范教育移动互联网应用有序健康发展的意见》(2019)</a>"}]},{"t":"bullet_list","d":3,"p":{},"v":"","c":[{"t":"list_item","d":4,"p":{},"v":"<a href=\"http://www.moe.gov.cn/srcsite/A06/s3321/201901/t20190102_365728.html\">《教育部办公厅关于严禁有害APP进入中小学校园的通》知(2018)</a>"},{"t":"list_item","d":4,"p":{},"v":"<a href=\"http://www.moe.gov.cn/srcsite/A06/s3325/201804/t20180424_334106.html\">《教育部办公厅关于做好预防中小学生沉迷网络教育引导工作的紧急通知》(2018)</a>"}]}]},{"t":"heading","d":2,"p":{},"v":"主要参考","c":[{"t":"list_item","d":4,"p":{},"v":"<a href=\"http://www.djcapital.net/nd.jsp?id=161\">《多鲸行研丨2020年中国教育智能硬件报告》</a>"},{"t":"list_item","d":4,"p":{},"v":"<a href=\"http://sli.bnu.edu.cn/uploads/soft/200629/1_1138165791.pdf\">《2019全球教育机器人发展白皮书》</a>"},{"t":"list_item","d":4,"p":{},"v":"<a href=\"http://sli.bnu.edu.cn/\">北京师范大学智慧学习研究院</a>"}]}]})</script>
-</body>
-</html></div>
+        <div>
+
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>我常用markdown写东西。写比较大的项目时，比如写包含很多章节和栏目一本书，可能要用Python做一些自动处理工作，如给所有儿歌中的难字加标记，统一处理文件里涉及的所有图片，统计分散在各处的某个栏目的情况，等等。这时需要先对markdown文件进行解析，获得元素树（token/element tree），以便处理。下面是两种实现方法，第一种更可靠。</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">mistune</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+
+<span class="n">markdown_data</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2"># 标题1-1[图](url.com)</span>
+
+<span class="s2">title1-1 TEXT</span>
+
+<span class="s2">## title2-1</span>
+<span class="s2">title2-1 text</span>
+
+<span class="s2">* title2-1 li1</span>
+<span class="s2">* title2-1 li2</span>
+<span class="s2">* title2-1 li3</span>
+
+<span class="s2">## title2-2</span>
+
+<span class="s2">## title2-3</span>
+
+<span class="s2"># title1-2</span>
+
+<span class="s2">title1-2 text</span>
+
+<span class="s2">* title1-2 li1</span>
+<span class="s2">* title1-2 li2</span>
+<span class="s2">* title1-2 li3</span>
+
+<span class="s2"># title1-3</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="通过扩展mistune.Renderer获取tokenTree">&#36890;&#36807;&#25193;&#23637;mistune.Renderer&#33719;&#21462;tokenTree<a class="anchor-link" href="#通过扩展mistune.Renderer获取tokenTree">&#182;</a></h1>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">TokenTreeRenderer</span><span class="p">(</span><span class="n">mistune</span><span class="o">.</span><span class="n">Renderer</span><span class="p">):</span>
+    <span class="c1"># options is required</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">placeholder</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Saves the arguments to each Markdown handling method.&quot;&quot;&quot;</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="n">TokenTreeRenderer</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">found</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">fake_method</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[(</span><span class="n">name</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">fake_method</span>
+
+<span class="n">markdown</span> <span class="o">=</span> <span class="n">mistune</span><span class="o">.</span><span class="n">Markdown</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="n">TokenTreeRenderer</span><span class="p">())</span>
+<span class="n">tokenTree</span> <span class="o">=</span> <span class="n">markdown</span><span class="p">(</span><span class="n">markdown_data</span><span class="p">)</span> <span class="c1"># tokenTree = markdown.render(markdown_data)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">tokenTree</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>[(&#39;header&#39;,
+  ([(&#39;text&#39;, (&#39;标题1-1&#39;,), {}),
+    (&#39;link&#39;, (&#39;url.com&#39;, None, [(&#39;text&#39;, (&#39;图&#39;,), {})]), {})],
+   1,
+   &#39;标题1-1[图](url.com)&#39;),
+  {}),
+ (&#39;paragraph&#39;, ([(&#39;text&#39;, (&#39;title1-1 TEXT&#39;,), {})],), {}),
+ (&#39;header&#39;, ([(&#39;text&#39;, (&#39;title2-1&#39;,), {})], 2, &#39;title2-1&#39;), {}),
+ (&#39;paragraph&#39;, ([(&#39;text&#39;, (&#39;title2-1 text&#39;,), {})],), {}),
+ (&#39;list&#39;,
+  ([(&#39;list_item&#39;, ([(&#39;text&#39;, (&#39;title2-1 li1&#39;,), {})],), {}),
+    (&#39;list_item&#39;, ([(&#39;text&#39;, (&#39;title2-1 li2&#39;,), {})],), {}),
+    (&#39;list_item&#39;, ([(&#39;text&#39;, (&#39;title2-1 li3&#39;,), {})],), {})],
+   False),
+  {}),
+ (&#39;header&#39;, ([(&#39;text&#39;, (&#39;title2-2&#39;,), {})], 2, &#39;title2-2&#39;), {}),
+ (&#39;header&#39;, ([(&#39;text&#39;, (&#39;title2-3&#39;,), {})], 2, &#39;title2-3&#39;), {}),
+ (&#39;header&#39;, ([(&#39;text&#39;, (&#39;title1-2&#39;,), {})], 1, &#39;title1-2&#39;), {}),
+ (&#39;paragraph&#39;, ([(&#39;text&#39;, (&#39;title1-2 text&#39;,), {})],), {}),
+ (&#39;list&#39;,
+  ([(&#39;list_item&#39;, ([(&#39;text&#39;, (&#39;title1-2 li1&#39;,), {})],), {}),
+    (&#39;list_item&#39;, ([(&#39;text&#39;, (&#39;title1-2 li2&#39;,), {})],), {}),
+    (&#39;list_item&#39;, ([(&#39;text&#39;, (&#39;title1-2 li3&#39;,), {})],), {})],
+   False),
+  {}),
+ (&#39;header&#39;, ([(&#39;text&#39;, (&#39;title1-3&#39;,), {})], 1, &#39;title1-3&#39;), {})]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="或通过lxml获取元素树">&#25110;&#36890;&#36807;lxml&#33719;&#21462;&#20803;&#32032;&#26641;<a class="anchor-link" href="#或通过lxml获取元素树">&#182;</a></h1>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># html = mistune.markdown(markdown_data)</span>
+<span class="n">markdown</span> <span class="o">=</span> <span class="n">mistune</span><span class="o">.</span><span class="n">Markdown</span><span class="p">()</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">markdown</span><span class="p">(</span><span class="n">markdown_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;h1&gt;标题1-1&lt;a href=&#34;url.com&#34;&gt;图&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;title1-1 TEXT&lt;/p&gt;
+&lt;h2&gt;title2-1&lt;/h2&gt;
+&lt;p&gt;title2-1 text&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;title2-1 li1&lt;/li&gt;
+&lt;li&gt;title2-1 li2&lt;/li&gt;
+&lt;li&gt;title2-1 li3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;title2-2&lt;/h2&gt;
+&lt;h2&gt;title2-3&lt;/h2&gt;
+&lt;h1&gt;title1-2&lt;/h1&gt;
+&lt;p&gt;title1-2 text&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;title1-2 li1&lt;/li&gt;
+&lt;li&gt;title1-2 li2&lt;/li&gt;
+&lt;li&gt;title1-2 li3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;title1-3&lt;/h1&gt;
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 元素树</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;Element html at 0x16b3bb36080&gt;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 元素.标签</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">tag</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[&#39;h1&#39;, &#39;p&#39;, &#39;h2&#39;, &#39;p&#39;, &#39;ul&#39;, &#39;h2&#39;, &#39;h2&#39;, &#39;h1&#39;, &#39;p&#39;, &#39;ul&#39;, &#39;h1&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 元素.文本</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>title1-1 TEXT
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 转字符串</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">pretty_print</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>b&#39;&lt;html&gt;&lt;body&gt;&lt;h1&gt;\xe6\xa0\x87\xe9\xa2\x981-1&lt;a href=&#34;url.com&#34;&gt;\xe5\x9b\xbe&lt;/a&gt;&lt;/h1&gt;\n&lt;p&gt;title1-1 TEXT&lt;/p&gt;\n&lt;h2&gt;title2-1&lt;/h2&gt;\n&lt;p&gt;title2-1 text&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;title2-1 li1&lt;/li&gt;\n&lt;li&gt;title2-1 li2&lt;/li&gt;\n&lt;li&gt;title2-1 li3&lt;/li&gt;\n&lt;/ul&gt;\n&lt;h2&gt;title2-2&lt;/h2&gt;\n&lt;h2&gt;title2-3&lt;/h2&gt;\n&lt;h1&gt;title1-2&lt;/h1&gt;\n&lt;p&gt;title1-2 text&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;title1-2 li1&lt;/li&gt;\n&lt;li&gt;title1-2 li2&lt;/li&gt;\n&lt;li&gt;title1-2 li3&lt;/li&gt;\n&lt;/ul&gt;\n&lt;h1&gt;title1-3&lt;/h1&gt;\n&lt;/body&gt;&lt;/html&gt;&#39;
+b&#39;\xe6\xa0\x87\xe9\xa2\x981-1\xe5\x9b\xbe\ntitle1-1 TEXT\ntitle2-1\ntitle2-1 text\n\ntitle2-1 li1\ntitle2-1 li2\ntitle2-1 li3\n\ntitle2-2\ntitle2-3\ntitle1-2\ntitle1-2 text\n\ntitle1-2 li1\ntitle1-2 li2\ntitle1-2 li3\n\ntitle1-3\n&#39;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 用xpath查找元素</span>
+<span class="n">display</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;string()&quot;</span><span class="p">))</span> <span class="c1"># 文本 # lxml.etree only!</span>
+<span class="n">display</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//text()&quot;</span><span class="p">))</span> <span class="c1"># 文本列表 # lxml.etree only!</span>
+
+<span class="c1"># 同上</span>
+<span class="n">build_text_list</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPath</span><span class="p">(</span><span class="s2">&quot;//text()&quot;</span><span class="p">)</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">build_text_list</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>&#39;标题1-1图\ntitle1-1 TEXT\ntitle2-1\ntitle2-1 text\n\ntitle2-1 li1\ntitle2-1 li2\ntitle2-1 li3\n\ntitle2-2\ntitle2-3\ntitle1-2\ntitle1-2 text\n\ntitle1-2 li1\ntitle1-2 li2\ntitle1-2 li3\n\ntitle1-3\n&#39;</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>[&#39;标题1-1&#39;,
+ &#39;图&#39;,
+ &#39;\n&#39;,
+ &#39;title1-1 TEXT&#39;,
+ &#39;\n&#39;,
+ &#39;title2-1&#39;,
+ &#39;\n&#39;,
+ &#39;title2-1 text&#39;,
+ &#39;\n&#39;,
+ &#39;\n&#39;,
+ &#39;title2-1 li1&#39;,
+ &#39;\n&#39;,
+ &#39;title2-1 li2&#39;,
+ &#39;\n&#39;,
+ &#39;title2-1 li3&#39;,
+ &#39;\n&#39;,
+ &#39;\n&#39;,
+ &#39;title2-2&#39;,
+ &#39;\n&#39;,
+ &#39;title2-3&#39;,
+ &#39;\n&#39;,
+ &#39;title1-2&#39;,
+ &#39;\n&#39;,
+ &#39;title1-2 text&#39;,
+ &#39;\n&#39;,
+ &#39;\n&#39;,
+ &#39;title1-2 li1&#39;,
+ &#39;\n&#39;,
+ &#39;title1-2 li2&#39;,
+ &#39;\n&#39;,
+ &#39;title1-2 li3&#39;,
+ &#39;\n&#39;,
+ &#39;\n&#39;,
+ &#39;title1-3&#39;,
+ &#39;\n&#39;]</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[&#39;标题1-1&#39;, &#39;图&#39;, &#39;\n&#39;, &#39;title1-1 TEXT&#39;, &#39;\n&#39;, &#39;title2-1&#39;, &#39;\n&#39;, &#39;title2-1 text&#39;, &#39;\n&#39;, &#39;\n&#39;, &#39;title2-1 li1&#39;, &#39;\n&#39;, &#39;title2-1 li2&#39;, &#39;\n&#39;, &#39;title2-1 li3&#39;, &#39;\n&#39;, &#39;\n&#39;, &#39;title2-2&#39;, &#39;\n&#39;, &#39;title2-3&#39;, &#39;\n&#39;, &#39;title1-2&#39;, &#39;\n&#39;, &#39;title1-2 text&#39;, &#39;\n&#39;, &#39;\n&#39;, &#39;title1-2 li1&#39;, &#39;\n&#39;, &#39;title1-2 li2&#39;, &#39;\n&#39;, &#39;title1-2 li3&#39;, &#39;\n&#39;, &#39;\n&#39;, &#39;title1-3&#39;, &#39;\n&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 取父</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">getparent</span><span class="p">()</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">is_text</span><span class="p">)</span> <span class="c1"># 是否文本</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">is_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">is_tail</span><span class="p">)</span> <span class="c1"># 是否尾巴？？</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>标题1-1
+h1
+True
+True
+False
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 树的迭代</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>html - None
+body - None
+h1 - 标题1-1
+a - 图
+p - title1-1 TEXT
+h2 - title2-1
+p - title2-1 text
+ul - 
+
+li - title2-1 li1
+li - title2-1 li2
+li - title2-1 li3
+h2 - title2-2
+h2 - title2-3
+h1 - title1-2
+p - title1-2 text
+ul - 
+
+li - title1-2 li1
+li - title1-2 li2
+li - title1-2 li3
+h1 - title1-3
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 树的过滤</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">iter</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>h1 - 标题1-1
+h1 - title1-2
+h1 - title1-3
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 树的过滤，或关系</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">iter</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">,</span> <span class="s2">&quot;p&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">tag</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>h1 - 标题1-1
+p - title1-1 TEXT
+p - title2-1 text
+h1 - title1-2
+p - title1-2 text
+h1 - title1-3
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 寻找子元素</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">))</span> <span class="c1"># 寻找一级元素，find()找不到时返回None，其他方法会报错</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;.//h2&quot;</span><span class="p">))</span> <span class="c1"># 在任意一级寻找元素</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;.//h2&quot;</span><span class="p">))</span> <span class="c1"># 在任意一级寻找元素</span>
+<span class="nb">print</span><span class="p">([</span> <span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">iterfind</span><span class="p">(</span><span class="s2">&quot;.//h2&quot;</span><span class="p">)</span> <span class="p">])</span> <span class="c1"># 迭代查找</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;.//h2&quot;</span><span class="p">))</span>  <span class="c1"># 查找全部</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;.//h1[@x]&quot;</span><span class="p">))</span> <span class="c1"># 带属性查找</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>None
+&lt;Element h2 at 0x16b3bc97840&gt;
+&lt;Element h2 at 0x16b3bc97840&gt;
+[&lt;Element h2 at 0x16b3bc97840&gt;, &lt;Element h2 at 0x16b3bc97b00&gt;, &lt;Element h2 at 0x16b3bc97d40&gt;]
+[&lt;Element h2 at 0x16b3bc97840&gt;, &lt;Element h2 at 0x16b3bc97b00&gt;, &lt;Element h2 at 0x16b3bc97d40&gt;]
+[]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
         <hr />
     </div>
 
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/jiao-yu-ying-jian-xue-xi-bi-ji-lei-ji-geng-xin.html"><h2>教育硬件学习笔记（累积更新）</h2></a>
+        <div class= "well small"> 2020-12-02 周三
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>想去做教育硬件（偏内容方向）。这是多方学习而随手做的笔记。有点乱。累积更新。</p> <a href="/jiao-yu-ying-jian-xue-xi-bi-ji-lei-ji-geng-xin.html">read...</a></div>
+    </div>	
+				
 
  
         
@@ -258,24 +919,6 @@ document.body.append(el);
         <div class="summary"><p>如果你想从很多<strong>文本文件</strong>中把一定格式的字符串收集在一起，可以使用下面的Python脚本。</p> <a href="/xiao-gong-ju-cong-duo-wen-jian-zhong-shou-ji-zi-fu-chuan.html">read...</a></div>
     </div>	
 				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/qi-ji-yin-qiao-zhi.html"><h2>奇技淫巧志</h2></a>
-        <div class= "well small"> 2018-11-07 周三
-
-	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>本人琢磨教育学习技术问题，学习数字技术和尝试开发的日志。在这里写出来，有一点隐秘舞台的气氛，是默坐出神和盲动入迷之间的左顾右盼。</p> <a href="/qi-ji-yin-qiao-zhi.html">read...</a></div>
-    </div>	
-				
 <div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr;</a></li>
@@ -361,7 +1004,7 @@ document.body.append(el);
     </div>     </div> 
 <footer>
 <br />
-<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2020, Powered by <a href="http://getpelican.com/">Pelican</a></p>
+<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2021, Powered by <a href="http://getpelican.com/">Pelican</a></p>
 </footer>
 
 </div> <!-- /container -->
