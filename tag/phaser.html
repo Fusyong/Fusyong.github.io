@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>嬉戏实验室 - phaser</title>
+    <title>嬉戏实验室 - Phaser</title>
     <meta name="description" content="">
     <meta name="author" content="黄复雄">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,8 +60,8 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="/phaserxin-wen-lian-bo.html"><h1>Phaser新闻联播</h1></a>
-2019-02-10 周日
+            <a href="/you-mei-you-he-gua-de-neng-ti-dai-flashde-ruan-jian-tui-jian.html"><h1>有没有合适的能替代flash的软件推荐？</h1></a>
+2021-02-05 周五
 
 	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
  
@@ -70,87 +70,63 @@
  
         </div>
         
-        <div>
-<p>播报Phaser共和国的街谈巷议，飞短流长。随时更新。</p>
-<h2 id="2019-08-24phaser-world-issue-148">2019-08-24，<a href="https://madmimi.com/p/4f5f0f?pact=1055868-153324938-8266689627-c307ee6b114ec018598392b24ee76883596785e3"><em>Phaser World Issue 148</em></a>摘要</h2>
-<h3 id="phaser-3190"><strong><a href="http://phaser.io/news/2019/08/phaser-3190-released">Phaser 3.19.0发布</a></strong></h3>
-<p>包括完整的Spine插件，全新的Tween动画系统，Shader Buffers（着色器的缓冲器）。</p>
-<p><code>Shader.setRenderToTexture</code>，可以把着色器重定向到自己的帧缓冲器（framebuffer）或者WebGL Texture，而不是显示列表。这样，你就可以把这个着色器当做另一个着色器的输入；还可以把着色器保存到Texture Manager（纹理管理器），这样就可以用作纹理，生成基于纹理的游戏对象比如Sprite。与新方法<code>setSampler2DBuffer</code>联合使用，就可以方便地把多个着色器链接起来，用作其他着色器的缓冲。</p>
-<p>还有渲染器文理快照功能，用于把渲染器纹理保存为图像。<code>RenderTexture.snapshot</code>和<code>snapshotArea</code>两个新方法，可以抓取渲染器纹理（Render Texture）上的任何东西，并转换成图像；然后可以保存图像到纹理管理器，或者保存到文件系统，或者转换为网络服务。</p>
-<h3 id="phaser-4">Phaser 4公告</h3>
-<p>因为得到Facebook的持续支持，以及与Facebook的Gaming和Instant Games团队合作，Phaser将开始新的迭代。</p>
-<p>首先是作者长期以来要实现的：用TypeScript重写Phaser。几个要点：</p>
-<ol>
-<li>不是API重写，尽管可能会有变动。</li>
-<li>仍将发布ES5绑定，所以游戏开发者不一定要使用TypeScript。</li>
-<li>版本号将从Phaser 4.0开始。</li>
-<li>尽管有Facebook的持续支持，作者仍将众筹。</li>
-</ol>
-<p>Phaser 4的开发将从2019年8月底开始，暂时没有预定发布日期。
-同时，Phaser 3还会开发，并发布新版，直到4版发布后停止。</p>
-<h2 id="2019-06-15phaser-world-issue-147">2019-06-15，<a href="https://madmimi.com/p/9835ae?pact=1044913-152128926-8266689627-3ca0f80806fe9e698765bc4c68a84e972896092b"><em>Phaser World Issue 147</em></a>摘要</h2>
-<p>Phaser 3.18即将发布。最重要的更改是改写了Input API。将带来的变化有：</p>
-<h3 id="_1">支持鼠标滚轮</h3>
-<p>包括三个事件：</p>
+        <div><p>各家浏览器停止支持flash插件后引起一些误解，以为跟“flash”相关的技术都不行了。下面是在一个群里的回答，现稍加整理补充。</p>
+<p><strong>【问】</strong></p>
+<p>说起来你们有没有合适的能替代flash的软件推荐的？
+就是类似flash这样，画一些简单的几何图形也方便，同时可以用as语句写逻辑操控。
+感觉HTML+js那一套就是太麻烦了点，有没有封装过的比较接近flash使用感觉的？
+反正能实现界面交互简单绘图，同时能用脚本完成相应逻辑的即可。</p>
+<p><strong>【答】</strong></p>
+<p>“flash”是一个混杂的概念。</p>
+<p>你说的工具flash应该是开发环境Adobe Flash Pro，现在就是Adobe Animate，好处是画矢量图画/矢量动画方便，还有很多辅助开发工具，现在仍然在卖。所以说如果你熟悉Adobe Flash Pro + as3，那么你还可以继续用Adobe Animate。
+人们通常所说的flash文件，指的是格式为.swf的文件，可以在pc本地运行，以前也可以在浏览器插件中运行，或作为Adobe air的材料。<strong>现在官方插件已经停止维护了，各家浏览器也停止支持。</strong></p>
+<p>Adobe Flash Pro / Adobe Animate的开发语言一般是as3，还可以是js+H5。</p>
+<p>Adobe Flash Pro / Adobe Animate的开发目标可以是</p>
 <ul>
-<li>全局的<code>POINTER_WHEEL</code>，可以用来滚动背景、镜头等。</li>
-<li>滚轮事件如果发生在交互游戏对象上，再发出<code>GAMEOBJECT_WHEEL</code>，但并不会指出是哪个对象。</li>
-<li>游戏对象自身发出的<code>GAMEOBJECT_POINTER_WHEEL</code>，也就是说，你可以用滚轮控制这个游戏对象。</li>
+<li>.swf文件，如上所说<ul>
+<li>可以在pc本地运行</li>
+<li>或作为Adobe air的材料</li>
+<li>以前也可以在浏览器插件中运行</li>
 </ul>
-<h3 id="_2">同时监听画布和<strong>窗口</strong>的输入事件</h3>
-<p>也就是说，可以连续处理画布与窗口之间的动作。</p>
-<h3 id="_3">完全支持多点触控事件</h3>
-<p>也就是说，你可以做一个弹钢琴的游戏。</p>
-<h2 id="2019-04-27phaser-world-issue-145">2019-04-27，<a href="https://madmimi.com/p/f1723e?pact=1022656-150852233-8266689627-fcf35a2423d6f09c39e101d4b2ea43a142db8714"><em>Phaser World Issue 145</em></a>摘要</h2>
-<h3 id="phaser">Phaser教程多语言版本（包括中文）上线</h3>
-<p><a href="http://phaser.io/tutorials/making-your-first-phaser-3-game">Making your First Phaser 3 Game/Phaser 3 入门实例教程</a>的8种语言译本已经上线。（黄复雄注：中文本为鄙人翻译，敬请指教。）</p>
-<h3 id="dom">DOM元素脱离实验阶段</h3>
-<p>DOM元素是2018年7月加入，但未充分测试，所以放在EXPERIMENTAL（实验）标签下，也就是说官方构建Phaser时不会加入，除非你自行加入然后构建。
-DOM元素通常可用于生成登录表单、排行榜之类的。
-Phaser.Loader可以加载CSS文件到浏览器中，并且可以直接设置DOM元素的类名。
-3.17版中可用。</p>
-<h3 id="_4">遮罩改进</h3>
-<p>此前，遮罩（Mask）不能作用域Container（容器）的子项。3.17版中，几何（Geometry）遮罩可以用于容器子项了。</p>
-<p>还增加了镜头（Camera）遮罩功能。</p>
-<h2 id="2019-2-22">2019-2-22</h2>
-<p>我给Phaser官方翻译的[Phaser 3 入门实例教程/<em>making-your-first-phaser-3-game</em>]翻译完成。</p>
-<h2 id="2019-2-20phaser-world-issue-141">2019-2-20，<a href="https://madmimi.com/p/b63bcd?pact=981118-149845303-8266689627-03bb45a226e31e7612bceab4affddadb8b74a162"><em>Phaser World Issue 141</em></a>摘要</h2>
-<p>Richard Davey已经做了一个工作流，可以在几秒钟内把整个Phaser API文档导出为JSON，再转为SQLite；可以每个版本做一份。这样一来，Phaser Editor、VSCode、Sublime等编辑器就可以利用这些SQLite数据，做出方便的插件；Phaser文档也可以方便地集成到官网中（目前是在GitHub上），使用方式也很更灵活，还能增加官网广告的收入。</p>
-<p>作者计划翻译<a href="http://phaser.io/tutorials/getting-started-phaser3"><em>Getting Started</em></a>和<a href="http://phaser.io/tutorials/making-your-first-phaser-3-game"><em>Making your First Game</em></a>为多国语言，尤其需要翻译为中文和日语的人。有意者可发邮件到rdavey@gmail.com。</p>
-<h2 id="2019-2-10phaser-world-issue-139">2019-2-10，<a href="https://madmimi.com/p/f0b3bd?pact=959945-149476946-8266689627-b0eef99469e06f1fb704c51aaef20a8fa0624a5f"><em>Phaser World Issue 139</em></a>摘要</h2>
-<p>Phaser 3.16于2月5日发布（实际版本号是3.16.1，而不是3.16.0）。新版及发布日志<a href="https://github.com/photonstorm/phaser/releases/tag/v3.16.1">在此</a>。该版开发历时4个月。</p>
-<blockquote>
-<p>Most importantly of all, though, it finishes the Phaser 3 core feature set. /最关键的是，它完成了Phaser3的核心特性。</p>
-</blockquote>
-<p>文档有大幅度改善，目前仅差748条（总条目超过16000余条）。</p>
-<p>TypeScript定义文件亦有大改善，但新的事件未处理。</p>
-<h3 id="_5">输入系统有重要更改</h3>
-<p>此前，输入系统通过一个事件队列（event queue）来工作。所有原生DOM事件，如键盘、触摸、鼠标，存储于输入管理器（Input Manager）的一个队列中，将在游戏的下一步进行处理；处理后清除。在处理的同时，内部事件，比如<code>pointerdown</code>和<code>keyup</code>被发送到你的游戏代码。
-这样能保证同时性，副作用是，在事件处理中，你不能做诸如打开外部浏览器窗口、进入全屏模式之类的事——因为他们不是“真的”事件，所以不能通过浏览器的安全检查。为此添加了诸如<code>addUpCallback</code>之类的方法，用于尝试、提供这类支持（不过键盘事件始终不可能）。</p>
-<p>3.16版变了。在同一个调用中，DOM事件立即激发对应的内部事件。所以，如果你点击画布，游戏中收到的<code>pointerdown</code>事件仍旧是原生事件处理器的一部分，所以这时你可以随意做诸如进入全屏模式、打开外部窗口之类的事，而不会有任何浏览器的警告或应急操作。不过这就意味着，处理器被调用时的点位（point）不再始终一致，也不再与请求动画帧（Request Animation Frame）的更新速度绑定。经过尽可能的测试，目前看工作表现跟以前一样。响应性能略有提升，因为移除了处理事件的零碎耽搁。</p>
-<p>如果出现问题，很容易切换回原来的版本：在游戏配置（Game Config）中，做一个<code>input</code>对象，添加属性<code>queue: true</code>。但这个选项不久将会移除。</p>
-<p>输入处理有很多更改，详见<a href="https://github.com/photonstorm/phaser/releases/tag/v3.16.1">日志列表</a>。比如：</p>
-<p>3.16可以处理游戏/画布外输入事件。可用三个事件：POINTER_DOWN_OUTSIDE、GAME_OUT和GAME_OVER。比如，热点离开画布时用来暂停游戏。</p>
-<p>键盘事件也不再像以前一样，会被浏览器截留。</p>
-<h3 id="_6">重要新特性：外部场景文件</h3>
-<p>现在可以使用新的Loader文件类型"SceneFile"实时加载外部场景文件。这样就不必预先把所有可能用到场景打包，可以随时在服务器端更新场景，或根据用户端信息选择场景。用法：</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">sceneFile</span><span class="p">(</span><span class="s1">'MiniGame520'</span><span class="p">,</span> <span class="s1">'js/minigames/520.js'</span><span class="p">);</span>
-<span class="c1">// `MiniGame520`是类名</span>
-</code></pre></div>
-<p>JS文件下载好后，会通过一个脚本标签添加到DOM，并被场景管理器接收。然后可以用它的key启动：</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="s1">'game520'</span><span class="p">);</span>
-<span class="c1">// 'game520'是key</span>
-</code></pre></div>
-<h3 id="_7">后续事项</h3>
-<ul>
-<li>处理3.16的问题</li>
-<li>完成Spine插件</li>
-<li>完成更多文档</li>
-<li>3.17（会是维护版，很快出来）后大改Containers</li>
-</ul></div>
+</li>
+<li>打包成windows用的exe</li>
+<li>打包成苹果用的安装包</li>
+<li>安卓和iPhone用的Adobe air APP</li>
+</ul>
+<p>flash 浏览器插件死后，“flash”的未来，仅技术上讲，除了网页浏览器插件上不用能用之外，其他不受影响。
+如果从生态上讲，教育课件领域较为稳固。其他领域显然会很快衰落。</p>
+<p>另外，
+HTML+js是做网页动效用的，如果用来做逻辑链条比较长的交互动画/游戏，肯定很麻烦；
+但H5的canvas/webGL动画/游戏，一般不用直接操作html元素，所以跟其他开发技术相差不多（调试可能稍微麻烦），好不好用主要看游戏框架。H5框架中Phaser最好，只是微信小游戏中用不了。</p>
+<p>SVG动画也主要是做效果。P5.js主要做数字艺术类/动画，重在效果，可以有交互。</p>
+<p>你可能重点关注的是开发环境。像flash Pro/Adobe animate这样的综合开发环境挺多的，我只用过flash Pro，其他的说不上来。</p>
+<p>如果你完全是新学或者教初学者，除非是需要数学上的精确，一般不要在意画画的问题，随意用截屏软件都是可以画画的。
+因为语言的学习成本最高，使用周期最长，所以先考虑语言，画画工具不重要。
+如群友所说snipaste就是很好的截屏软件，录屏则可用screen2gif。</p>
+<p>vscode里面还有一个draw.io integration插件，画矢量图很方便。
+很神奇的是，它的原文件格式.drawio.png/.drawio.svg本身也是合法的.png/.svg文件，就是说你随时能改动。
+应该还有更多好的画图插件。我感觉vscode就是很好的交互动画开发环境。</p></div>
         <hr />
     </div>
 
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="/phaserxin-wen-lian-bo.html"><h2>Phaser新闻联播</h2></a>
+        <div class= "well small"> 2019-02-10 周日
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>播报Phaser共和国的街谈巷议，飞短流长。随时更新。</p> <a href="/phaserxin-wen-lian-bo.html">read...</a></div>
+    </div>	
+				
 
  
         
@@ -297,24 +273,6 @@ Phaser.Loader可以加载CSS文件到浏览器中，并且可以直接设置DOM�
         <div class="summary"><p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，对印象深刻的地方做了说明，或增加代码示例。可做便览之用。</p> <a href="/phaser3-apiwen-dang-da-gang-container.html">read...</a></div>
     </div>	
 				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="/phaser3-apiwen-dang-da-gang-group.html"><h2>Phaser3 API文档大纲-Group</h2></a>
-        <div class= "well small"> 2018-11-30 周五
-
-	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
- 
-
-
- </div>
-        <div class="summary"><p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，对印象深刻的地方做了说明，或增加代码示例。可做便览之用。</p> <a href="/phaser3-apiwen-dang-da-gang-group.html">read...</a></div>
-    </div>	
-				
 <div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr;</a></li>
@@ -400,7 +358,7 @@ Phaser.Loader可以加载CSS文件到浏览器中，并且可以直接设置DOM�
     </div>     </div> 
 <footer>
 <br />
-<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2019, Powered by <a href="http://getpelican.com/">Pelican</a></p>
+<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2021, Powered by <a href="http://getpelican.com/">Pelican</a></p>
 </footer>
 
 </div> <!-- /container -->
