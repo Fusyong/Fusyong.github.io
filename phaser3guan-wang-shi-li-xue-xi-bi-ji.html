@@ -690,6 +690,28 @@
 <h2 id="renderer">Renderer</h2>
 <h2 id="scalemanager">Scalemanager</h2>
 <h2 id="scenes">Scenes</h2>
+<h3 id="external-scene">外部场景/External Scene</h3>
+<p>跨场景控制，比如场景用来做菜单、控制面板时。</p>
+<h4><a href="http://labs.phaser.io/edit.html?src=src/scenes/tutorial/change%20scene%20order.js">改变场景顺序/Change Scene Order</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+    <span class="nx">scene</span><span class="o">:</span> <span class="p">[</span><span class="nx">SceneA</span><span class="p">,</span> <span class="nx">SceneB</span><span class="p">,</span> <span class="nx">SceneC</span> <span class="p">]</span> <span class="c1">//预先激活的场景，最后载入的场景在最前景</span>
+<span class="p">};</span>
+<span class="kd">let</span> <span class="nx">game</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+</code></pre></div>
+<h4><a href="http://labs.phaser.io/edit.html?src=src/scenes/tutorial/scene%20controller.js">多场景控制器/Scene Controller</a></h4>
+<p>用一个场景做控制面板，控制其他场景的启动、显示顺序、激活与否、可视与否；</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// this指当前场景，this.scene指当前场景的场景管理器:Phaser.Scenes. ScenePlugin</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">launch</span><span class="p">(</span><span class="s1">'SceneA'</span><span class="p">);</span> <span class="c1">//启动场景</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'SceneA'</span><span class="p">);</span> <span class="c1">//取得场景</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span><span class="p">);</span> <span class="c1">//设置不可见</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">setActive</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span><span class="p">);</span><span class="c1">//设置不激活</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">bringToTop</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span><span class="p">);</span><span class="c1">//把场景移到顶层</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">moveAbove</span><span class="p">(</span><span class="s1">'Controller'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span><span class="p">);</span><span class="c1">//移动到指定场景上面</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">moveDown</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span><span class="p">);</span><span class="c1">//向下移动</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">moveUp</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span><span class="p">);</span><span class="c1">//向上移动</span>
+<span class="kd">let</span> <span class="nx">idx</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">getIndex</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span><span class="p">);</span><span class="c1">//取得当前位置</span>
+</code></pre></div>
 <h2 id="snapshot">Snapshot</h2>
 <h2 id="spine">Spine</h2>
 <h2 id="textures">Textures</h2>
@@ -778,7 +800,10 @@
 <li><a href="#pools">Pools</a></li>
 <li><a href="#renderer">Renderer</a></li>
 <li><a href="#scalemanager">Scalemanager</a></li>
-<li><a href="#scenes">Scenes</a></li>
+<li><a href="#scenes">Scenes</a><ul>
+<li><a href="#external-scene">外部场景/External Scene</a></li>
+</ul>
+</li>
 <li><a href="#snapshot">Snapshot</a></li>
 <li><a href="#spine">Spine</a></li>
 <li><a href="#textures">Textures</a></li>
@@ -841,7 +866,7 @@
                 <li><a href="/category/14-xiao-lu-gong-ju-bian-cheng-za-xiang.html">14 效率工具+编程杂项</a></li>
                 <li><a href="/category/21-er-tong-shi-zi.html">21 儿童识字</a></li>
                 <li><a href="/category/22-qin-zi-xie-zi.html">22 亲子写字</a></li>
-                <li><a href="/category/23-qin-zi-steam.html">23 亲子STEAM</a></li>
+                <li><a href="/category/23-steam.html">23 STEAM</a></li>
                    
             </ul>
             </div>
