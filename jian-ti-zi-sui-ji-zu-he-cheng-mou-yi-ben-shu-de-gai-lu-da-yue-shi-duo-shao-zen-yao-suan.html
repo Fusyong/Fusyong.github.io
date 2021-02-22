@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>嬉戏实验室 - 简体字里三点水为什么简化为两点水？</title>
+    <title>嬉戏实验室 - 简体字随机组合成某一本书的概率大约是多少，怎么算？</title>
     <meta name="description" content="">
     <meta name="author" content="黄复雄">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,8 +55,8 @@
         <div class="span9">
     <div class='article'>
         <div class="content-title">
-            <h1>简体字里三点水为什么简化为两点水？</h1>
-2020-07-05 周日
+            <h1>简体字随机组合成某一本书的概率大约是多少，怎么算？</h1>
+2020-07-15 周三
 
 	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
  
@@ -66,18 +66,20 @@
 	
         <div>
 <p><em>这是本人在知乎的回答</em></p>
-<h1 id="_1"><a href="https://www.zhihu.com/question/405057736/answer/1319463780">简体字里三点水为什么简化为两点水？</a></h1>
-<blockquote>
-<p>凑、减、决、况、凉、准、净、冲、凄之类的。
-个人有两种猜测。一种是因为当时这些两点水的字比三点水的字更加通行。
-另一个猜测是当时是准备把三点水简化为两点水的，但是没简化完成。可是2简字里我没有看见有把海，泳等字简化啊</p>
-</blockquote>
+<h1 id="_1"><a href="https://www.zhihu.com/question/406968780/answer/1339229934">通过简体汉字随机组合产生我国现有的某一本书的全部内容的概率大约是多少，怎么去计算？</a></h1>
 <p><strong>【回答】</strong></p>
-<p>“更加通行”的情况是很少的。在当年实际的汉字简化过程中，使用俗字不一定要通行，有个影儿就行。</p>
-<p>个别，比如“凄凉”本来也有“冷”意思了，所以也还算妥当。</p>
-<p>平时写行、草书，三点水写成两笔或者一笔的都常见。这也算一种“有个影儿”的根据。</p>
-<p>简化的根据总是很容易找的，只是使用根据的宽严问题。</p>
-<p>当时不是“准备把三点水简化为两点水”，而是逐步、多次简化后，最终废除汉字，使用拼音文字，所以系统性、承续性并不是最重要的。反正迟早要改的，能早改一点是一点吧。</p></div>
+<p>有趣的问题。我尝试用我25年前的高中数学知识来研究一下。请各位指正。</p>
+<p>你说的“简体字”是没有固定范围/数字的，没法算. 现在有更确切的概念叫“通用规范汉字”，共8105字，这个可以算. 暂时不考虑标点符号，阿拉伯数字，外文字母，表情符号，分段符号，空格，如此等等.</p>
+<p>如果这本书只有1个字，而且确实是“通用规范汉字”（实际上现在很多书用字超出这个范围）。使用“通用规范汉字”随机生成一本“一字书”，正好跟这本书相同的几率是：1/8105.
+如果这本书是2个字。那么几率是8105^2分之一（每个字的位置上都有8105种可能），计算器告诉我，这是65,691,025分之一.
+如果这本书是10万字（这还算比较薄），那么几率是8,105^100,000分之一，这是多少呢???再次打开计算器——</p>
+<p><img alt="计算器无法计算.gif" src="/images/识字答问/计算器无法计算.gif"/></p>
+<p>超过了win10计算器的预设能力。用Python来算——</p>
+<p><img alt="python计算.gif" src="/images/识字答问/python计算.gif"/></p>
+<p>注意后面那三个省略号，说明超出了编辑行打印预设能力。实际上，如果打印到文件中，是一个390876位的大数——</p>
+<p><img alt="打印到文件.png" src="/images/识字答问/打印到文件.png"/></p>
+<p><strong>文字作品的复杂性，抄袭而用“巧合”来强辩无法服众，道理就在这里。</strong></p>
+<p>我数学一般般，不知道算得对不对。</p></div>
 	
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
@@ -87,7 +89,7 @@
                 <nav class="toc">
                     <div class="toc">
 <ul>
-<li><a href="#_1">简体字里三点水为什么简化为两点水？</a></li>
+<li><a href="#_1">通过简体汉字随机组合产生我国现有的某一本书的全部内容的概率大约是多少，怎么去计算？</a></li>
 </ul>
 </div>
                 </nav>                
@@ -100,7 +102,7 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'xiiigame'; 
-    var disqus_title = '简体字里三点水为什么简化为两点水？';
+    var disqus_title = '简体字随机组合成某一本书的概率大约是多少，怎么算？';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
