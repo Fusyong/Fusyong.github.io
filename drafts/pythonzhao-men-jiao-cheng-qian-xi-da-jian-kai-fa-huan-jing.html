@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>嬉戏实验室 - Python找门教程-前戏-搭建开发环境</title>
+    <meta name="description" content="">
+    <meta name="author" content="黄复雄">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="/theme/local.css" rel="stylesheet">
+    <link href="/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="/">嬉戏实验室</a>
+        <div class="nav-collapse">
+        <ul class="nav">
+
+            <li><a href="http://www.xiiigame.com">XiiiGame</a></li>
+           
+            <li><a href="/pages/about.html">About</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Python找门教程-前戏-搭建开发环境</h1>
+2020-12-06 周日
+
+	by 		<a class="url fn" href="/author/huang-fu-xiong.html">黄复雄.</a>
+ 
+
+
+        </div>
+	
+        <div>
+<p>准备写一个最简单的Python教程，最简单的那种，就是让读者在入门之前，先找着了门。给小学三年的孩子和心境相当的中老年人。现在只是不成文的思路。</p>
+<h2 id="_1">目录</h2>
+<h2 id="_2">编程，编什么编？在哪里编？</h2>
+<p>【微信聊天界面。派真发海报：少儿不Python，老大学编程。配潘石屹图】</p>
+<p>【两条腿】
+老铁，海报要正能量啊，给客户正向感受。
+改成：少儿学Python，一家会编程</p>
+<p>【派真】
+OK，少儿学Python，一家跳大绳
+闲话少说，言归正传。
+今天第一堂课，我们来讲：编程，编什么编？在哪里编？</p>
+<p>【两条腿】
+我要学Python数据分析。</p>
+<p>【派真】
+中年人，别心急。
+先把你的Python安装好。根据你电脑的操作系统，选择下面的Python下载链接，打开，下载，安装。<strong>如果是Windows系统，一定要勾选<code>Add Python 3.x to PATH</code>选项。</strong></p>
+<ul>
+<li><a href="https://www.python.org/downloads/windows/">Windows</a></li>
+<li><a href="https://www.python.org/downloads/source/">Linux/UNIX</a></li>
+<li><a href="https://www.python.org//downloads/mac-osx/">Mac OS X</a></li>
+<li><a href="https://www.python.org//download/othe">Other</a></li>
+</ul>
+<p>【派真】
+再<a href="https://code.visualstudio.com/download">到这里下载微软的宇宙第一编辑器VS Code</a>，一路选按默认选项安装。</p>
+<p>如果需要中文界面，这样安装中文插件：
+【待实测】</p>
+<p>【两条腿】
+看起来很难。</p>
+<p>【派真】
+找不着门的时候就是这种感觉，没头的苍蝇似的。我们这个课程就是帮你找到门。然后你就可以自己进去了。</p>
+<p>现在我们在Code里面新建一个文件（ctrl+n），在里面下来你的第一个魔法（这是程序员们伟大且无聊的传统）：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello World!"</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>请分清全角和半角标点符号，长得像不等于一样。</strong></p>
+<p>然后保存文件（ctrl+s），名字为<code>hello_world.py</code>，后缀名不能弄错。</p>
+<p>这是会提示你安装【需实测】插件，一路默认安装。</p>
+<p>安装好后点击右上角的三角形按钮，运行你的代码。你会看到一个终端打开了，并有类似这样的文字输入来：</p>
+<div class="highlight"><pre><span></span><code>Hello World!
+</code></pre></div>
+<p>恭喜，你的第一个脚本成功运行了！</p>
+<p>【两条腿】
+啊，这样啊。看起来挺简单。
+另外，脚本是什么？</p>
+<p>【派真】
+没找着门时的另一种感觉/错觉就是“看起来挺简单”。
+解释几个词语吧。</p>
+<ul>
+<li>开发环境</li>
+<li>编辑器</li>
+<li>代码，脚本</li>
+<li>解释器</li>
+<li>对象</li>
+<li>命名空间</li>
+</ul>
+<h2 id="_3">变量/盒子还是盒子标签</h2>
+<h2 id="all-in-class">各从其类/all in class</h2>
+<p>派真：神造物不是一个个造的，是一类一类地造。也就是“各从其类。”</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 类</span>
+<span class="k">class</span> <span class="nc">HelloWorld</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hello World"</span><span class="p">)</span>
+
+<span class="c1"># 用类生成的实例</span>
+<span class="n">helloWorld</span> <span class="o">=</span> <span class="n">HelloWorld</span><span class="p">()</span>
+<span class="n">helloThere</span> <span class="o">=</span> <span class="n">HelloWorld</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">HelloWorld</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">helloWorld</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">helloThere</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_4">神按自己的样子造人/类的继承</h2>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">God</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Python</span><span class="p">(</span><span class="n">God</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">TwoLegs</span><span class="p">(</span><span class="n">God</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Eve</span><span class="p">(</span><span class="n">TwoLegs</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<h2 id="object">全都是对象/基类/object</h2></div>
+	
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                TOC
+                </li>
+                <nav class="toc">
+                    <div class="toc">
+<ul>
+<li><a href="#_1">目录</a></li>
+<li><a href="#_2">编程，编什么编？在哪里编？</a></li>
+<li><a href="#_3">变量/盒子还是盒子标签</a></li>
+<li><a href="#all-in-class">各从其类/all in class</a></li>
+<li><a href="#_4">神按自己的样子造人/类的继承</a></li>
+<li><a href="#object">全都是对象/基类/object</a></li>
+</ul>
+</div>
+                </nav>                
+            </ul>
+            </div>
+        
+        <hr>
+
+        <h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'xiiigame'; 
+    var disqus_title = 'Python找门教程-前戏-搭建开发环境';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="/archives.html">所有文章</a>
+                <li><a href="/tags.html">分组标签</a>
+
+
+
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="/category/11-bu-kao-si-ji.html">11 布考斯基</a></li>
+                <li><a href="/category/12-phaserxue-xi-zhong-xin-zu.html">12 Phaser学习中心组</a></li>
+                <li><a href="/category/13-pyo.html">13 Pyo</a></li>
+                <li><a href="/category/15-lao-bian-ji-de-xiao-lu-gong-ju.html">15 老编辑的效率工具</a></li>
+                <li><a href="/category/21-er-tong-shi-zi.html">21 儿童识字</a></li>
+                <li><a href="/category/22-qin-zi-xie-zi.html">22 亲子写字</a></li>
+                <li><a href="/category/23-steam.html">23 STEAM</a></li>
+                   
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+
+                <li>微信公众号“黄复雄”(xiiiGame):</li>
+                <div align="center"><img src="http://blog.xiiigame.com/images/about/qrCodeXiiigame.jpg" /></div> 
+
+                <li>《拼字》微信小游戏:</li>
+                <div align="center"><img src="http://blog.xiiigame.com/images/about/qrCode.jpg" /></div> 
+
+                <li><a href="http://www.xiiigame.com/example">拼字游戏(网页版)</a></li>
+            </ul>
+            </div>
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="https://github.com/Fusyong">GitHub</a></li>
+                <li><a href="https://www.phaser-china.com/">Phaser小站</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="">嬉戏实验室</a> &copy; 黄复雄 2021, Powered by <a href="http://getpelican.com/">Pelican</a></p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="/theme/bootstrap-collapse.js"></script>
+<script>var _gaq=[['_setAccount','UA-105243279-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+<a href="https://github.com/Fusyong"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+ 
+</body>
+</html>
