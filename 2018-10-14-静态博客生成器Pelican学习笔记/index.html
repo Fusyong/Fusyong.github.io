@@ -2222,15 +2222,11 @@
 </td></tr></table>
 <h2 id="_7">代码语法高亮<a class="headerlink" href="#_7" title="Permanent link">#</a></h2>
 <p>Markdown文件使用CodeHilite extension，代码块缩进、其上加语言标识（用常规的一对三反引号也可以）：</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="p">:::</span><span class="n">python</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The triple-colon syntax will *not* show line numbers.&quot;</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The triple-colon syntax will *not* show line numbers.&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 <p>加行号（但会导致<code>css</code>中的<code>pre {overflow-x: auto;}</code>失效）：</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    <span class="c1">#!python</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The path-less shebang syntax *will* show line numbers.&quot;</span><span class="p">)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The path-less shebang syntax *will* show line numbers.&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 <p><strong>用于诗歌等纯文本时，也应该明示为<code>:::text</code>，否则可能出现错误的红色框。</strong>因为如果没有明示语言，那么Pygments语法高亮引擎会猜测一种语言（除非<code>guess_lang=False</code>）。</p>
