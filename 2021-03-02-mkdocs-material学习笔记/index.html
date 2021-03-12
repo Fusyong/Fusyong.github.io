@@ -2314,6 +2314,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    主题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mkdocs-materialoverrides" class="md-nav__link">
     mkdocs-material模板覆盖文件夹overrides的结构
   </a>
@@ -2322,7 +2329,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     在导航条目下加一行更新时间
   </a>
   
@@ -2334,7 +2341,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     提示块插件
   </a>
   
@@ -2342,7 +2349,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     共支持这些类型
   </a>
   
@@ -2361,7 +2368,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     参考资料
   </a>
   
@@ -2374,6 +2381,29 @@
     </li>
 
   <!-- Main navigation item -->
+  
+
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        mkdocs-macros-plugin宏插件
+      </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+      <font size=0.5em color="grey">
+        2021-03-12 更新
+      </font>
+      <br>
+      
+    </li>
   
 
           
@@ -3253,6 +3283,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    主题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mkdocs-materialoverrides" class="md-nav__link">
     mkdocs-material模板覆盖文件夹overrides的结构
   </a>
@@ -3261,7 +3298,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     在导航条目下加一行更新时间
   </a>
   
@@ -3273,7 +3310,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     提示块插件
   </a>
   
@@ -3281,7 +3318,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     共支持这些类型
   </a>
   
@@ -3300,7 +3337,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     参考资料
   </a>
   
@@ -3323,13 +3360,27 @@
                 
                 <p>把静态博客框架从Pelican换成了Mkdocs，搭配mkdocs-material插件/模板使用。把一些细节记在这里，备忘。</p>
 <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pip install mkdocs
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>pip install mkdocs
+
+<span class="c1"># 以下是插件，按需要安装</span>
 pip install mkdocs-material
 pip install mknotebooks
 pip install mkdocs-redirects
+pip install mkdocs-macros-plugin
+
+<span class="c1"># pip install jieba</span>
+<span class="c1"># pip install click-man</span>
+<span class="c1"># click-man --target path/to/man/pages mkdocs</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="_2">生成项目<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
@@ -3515,6 +3566,12 @@ mkdocs build --clean
 <li>Markdown的第一个1级标题；</li>
 <li>博文的文件名。</li>
 </ol>
+<h2 id="_7"><a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">主题</a><a class="headerlink" href="#_7" title="Permanent link">#</a></h2>
+<ul>
+<li>mkdocs</li>
+<li>readthedocs</li>
+<li><a href="https://squidfunk.github.io/mkdocs-material/">material</a></li>
+</ul>
 <h2 id="mkdocs-materialoverrides">mkdocs-material模板覆盖文件夹<code>overrides</code>的结构<a class="headerlink" href="#mkdocs-materialoverrides" title="Permanent link">#</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -3578,7 +3635,7 @@ mkdocs build --clean
 </code></pre></div>
 </td></tr></table>
 <p>下载官方库<code>src</code>中的对应文件，修改后放在上述的本地文件夹<code>overrides</code>中的相应位置。</p>
-<h3 id="_7">在导航条目下加一行更新时间<a class="headerlink" href="#_7" title="Permanent link">#</a></h3>
+<h3 id="_8">在导航条目下加一行更新时间<a class="headerlink" href="#_8" title="Permanent link">#</a></h3>
 <p>拷贝官方的<code>nav-item.html</code>文件到<code>overrides\partials\nav-item.html</code>，修改其中的一段如下</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -3613,7 +3670,7 @@ mkdocs build --clean
   <span class="o">...</span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="_8">提示块插件<a class="headerlink" href="#_8" title="Permanent link">#</a></h2>
+<h2 id="_9">提示块插件<a class="headerlink" href="#_9" title="Permanent link">#</a></h2>
 <p>设置如下：</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -3670,7 +3727,7 @@ mkdocs build --clean
 <p class="admonition-title">不要在家里做</p>
 <p>...</p>
 </div>
-<h3 id="_9">共支持这些类型<a class="headerlink" href="#_9" title="Permanent link">#</a></h3>
+<h3 id="_10">共支持这些类型<a class="headerlink" href="#_10" title="Permanent link">#</a></h3>
 <ul>
 <li>note, seealso</li>
 <li>abstract, summary, tldr</li>
@@ -3685,7 +3742,7 @@ mkdocs build --clean
 <li>example</li>
 <li>quote, cite</li>
 </ul>
-<h2 id="mkdocs-macros-plugin"><a href="https://mkdocs-macros-plugin.readthedocs.io/en/latest/">mkdocs-macros-plugin宏插件</a><a class="headerlink" href="#mkdocs-macros-plugin" title="Permanent link">#</a></h2>
+<h2 id="mkdocs-macros-plugin"><a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/">mkdocs-macros-plugin宏插件</a><a class="headerlink" href="#mkdocs-macros-plugin" title="Permanent link">#</a></h2>
 <p>通过变量和宏释放Mkdocs的威力。号称：</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3697,8 +3754,9 @@ mkdocs build --clean
 {{ context() | pretty }}
 </code></pre></div>
 </td></tr></table>
-<h2 id="_10">参考资料<a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
+<h2 id="_11">参考资料<a class="headerlink" href="#_11" title="Permanent link">#</a></h2>
 <ul>
+<li><a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins">插件列表</a></li>
 <li><a href="https://chrieke.medium.com/the-best-mkdocs-plugins-and-customizations-fc820eb19759">最好的MkDocs插件与定制</a></li>
 </ul>
                 
@@ -3735,13 +3793,13 @@ mkdocs build --clean
         </a>
       
       
-        <a href="../2018-10-14-%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E5%99%A8Pelican%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              静态网站生成器Pelican学习笔记
+              mkdocs-macros-plugin宏插件
             </div>
           </div>
           <div class="md-footer__button md-icon">
