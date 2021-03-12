@@ -2353,6 +2353,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mkdocs-macros-plugin" class="md-nav__link">
+    mkdocs-macros-plugin宏插件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3278,6 +3292,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mkdocs-macros-plugin" class="md-nav__link">
+    mkdocs-macros-plugin宏插件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3375,7 +3403,16 @@ pip install mkdocs-redirects
 <span class="normal">64</span>
 <span class="normal">65</span>
 <span class="normal">66</span>
-<span class="normal">67</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># mkdocs.yml</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># mkdocs.yml</span>
 <span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">嬉戏实验室</span>
 <span class="nt">nav</span><span class="p">:</span> <span class="c1"># 导航结构</span>
     <span class="p p-Indicator">-</span> <span class="nt">Home</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
@@ -3424,6 +3461,15 @@ pip install mkdocs-redirects
             <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ja</span> <span class="c1"># 日文，也勉强支持中文</span>
         <span class="nt">separator</span><span class="p">:</span> <span class="s">&#39;[\s\-\.]+&#39;</span> <span class="c1"># 分词分隔符</span>
         <span class="c1"># prebuild_index: true # 预制索引，不成功</span>
+    <span class="p p-Indicator">-</span> <span class="nt">macros</span><span class="p">:</span>
+        <span class="c1"># 替换默认的jinja宏标志{{}}，否则类似的地方可能报错</span>
+        <span class="c1"># 或用raw标签包裹</span>
+        <span class="c1"># </span>
+        <span class="nt">j2_block_start_string</span><span class="p">:</span> <span class="s">&#39;[[%&#39;</span>
+        <span class="nt">j2_block_end_string</span><span class="p">:</span> <span class="s">&#39;%]]&#39;</span>
+        <span class="nt">j2_variable_start_string</span><span class="p">:</span> <span class="s">&#39;[[&#39;</span>
+        <span class="nt">j2_variable_end_string</span><span class="p">:</span> <span class="s">&#39;]]&#39;</span>
+        <span class="c1">#     </span>
     <span class="c1"># - redirects: # 重定向，改动文件名时使用</span>
     <span class="c1">#     redirect_maps:</span>
     <span class="c1">#         path/to/old/file.md: path/to/new/file.md</span>
@@ -3456,7 +3502,7 @@ mkdocs serve
 mkdocs build
 </code></pre></div>
 </td></tr></table>
-<p>or</p>
+<p>or清理文件夹后在生成</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">cd</span> your<span class="se">\b</span>log<span class="se">\d</span>ir<span class="se">\</span>
 mkdocs build --clean
@@ -3500,35 +3546,35 @@ mkdocs build --clean
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>.
-├─ .icons/                             # Bundled icon sets
+├─ .icons/                             <span class="c1"># Bundled icon sets</span>
 ├─ assets/
-│  ├─ images/                          # Images and icons
-│  ├─ javascripts/                     # JavaScript
-│  └─ stylesheets/                     # Stylesheets
+│  ├─ images/                          <span class="c1"># Images and icons</span>
+│  ├─ javascripts/                     <span class="c1"># JavaScript</span>
+│  └─ stylesheets/                     <span class="c1"># Stylesheets</span>
 ├─ partials/
-│  ├─ integrations/                    # Third-party integrations
-│  │  ├─ analytics.html                # - Google Analytics
-│  │  └─ disqus.html                   # - Disqus
-│  ├─ languages/                       # Localized languages
-│  ├─ footer.html                      # Footer bar
-│  ├─ header.html                      # Header bar
-│  ├─ language.html                    # Localized labels
-│  ├─ logo.html                        # Logo in header and sidebar
-│  ├─ nav.html                         # 主导航
-│  ├─ nav-item.html                    # 主导航条目
-│  ├─ palette.html                     # Color palette
-│  ├─ search.html                      # Search box
-│  ├─ social.html                      # Social links
-│  ├─ source.html                      # Repository information
-│  ├─ source-date.html                 # Last updated date
-│  ├─ source-link.html                 # Link to source file
-│  ├─ tabs.html                        # Tabs navigation
-│  ├─ tabs-item.html                   # Tabs navigation item
-│  ├─ toc.html                         # Table of contents
-│  └─ toc-item.html                    # Table of contents item
-├─ 404.html                            # 404错误页
-├─ base.html                           # Base template
-└─ main.html                           # Default page
+│  ├─ integrations/                    <span class="c1"># Third-party integrations</span>
+│  │  ├─ analytics.html                <span class="c1"># - Google Analytics</span>
+│  │  └─ disqus.html                   <span class="c1"># - Disqus</span>
+│  ├─ languages/                       <span class="c1"># Localized languages</span>
+│  ├─ footer.html                      <span class="c1"># Footer bar</span>
+│  ├─ header.html                      <span class="c1"># Header bar</span>
+│  ├─ language.html                    <span class="c1"># Localized labels</span>
+│  ├─ logo.html                        <span class="c1"># Logo in header and sidebar</span>
+│  ├─ nav.html                         <span class="c1"># 主导航</span>
+│  ├─ nav-item.html                    <span class="c1"># 主导航条目</span>
+│  ├─ palette.html                     <span class="c1"># Color palette</span>
+│  ├─ search.html                      <span class="c1"># Search box</span>
+│  ├─ social.html                      <span class="c1"># Social links</span>
+│  ├─ source.html                      <span class="c1"># Repository information</span>
+│  ├─ source-date.html                 <span class="c1"># Last updated date</span>
+│  ├─ source-link.html                 <span class="c1"># Link to source file</span>
+│  ├─ tabs.html                        <span class="c1"># Tabs navigation</span>
+│  ├─ tabs-item.html                   <span class="c1"># Tabs navigation item</span>
+│  ├─ toc.html                         <span class="c1"># Table of contents</span>
+│  └─ toc-item.html                    <span class="c1"># Table of contents item</span>
+├─ <span class="m">404</span>.html                            <span class="c1"># 404错误页</span>
+├─ base.html                           <span class="c1"># Base template</span>
+└─ main.html                           <span class="c1"># Default page</span>
 </code></pre></div>
 </td></tr></table>
 <p>下载官方库<code>src</code>中的对应文件，修改后放在上述的本地文件夹<code>overrides</code>中的相应位置。</p>
@@ -3549,22 +3595,22 @@ mkdocs build --clean
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>  <span class="c">&lt;!-- Main navigation item --&gt;</span>
-  {% else %}
-    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;{{ class }}&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ nav_item.url | url }}&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;md-nav__link&quot;</span><span class="p">&gt;</span>
-        {{ nav_item.title }}
-      <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-      <span class="c">&lt;!-- 这里是修改：根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 --&gt;</span>
-      {% if nav_item.meta.Status and nav_item.meta.Status == &quot;new&quot; %}
-      <span class="p">&lt;</span><span class="nt">font</span> <span class="na">size</span><span class="o">=</span><span class="s">0.5em</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;grey&quot;</span><span class="p">&gt;</span>
-        {{ nav_item.meta.Modified }} 更新
-      <span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-      {% endif %}
-      <span class="c">&lt;!-- 修改结束 --&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-  {% endif %}
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>  <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">Main</span> <span class="n">navigation</span> <span class="n">item</span> <span class="o">--&gt;</span>
+  <span class="o">...</span>
+    <span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;{{ class }}&quot;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ nav_item.url | url }}&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;md-nav__link&quot;</span><span class="o">&gt;</span>
+        <span class="p">{{</span> <span class="n">nav_item</span><span class="o">.</span><span class="n">title</span> <span class="p">}}</span>
+      <span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">这里是修改</span><span class="err">：</span><span class="n">根据markdown文章的meta数据</span><span class="err">，</span><span class="n">显示Status值为new的文章的Modified时间</span> <span class="o">--&gt;</span>
+      <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">nav_item</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">Status</span> <span class="ow">and</span> <span class="n">nav_item</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">Status</span> <span class="o">==</span> <span class="s2">&quot;new&quot;</span> <span class="o">%</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="n">font</span> <span class="n">size</span><span class="o">=</span><span class="mf">0.5</span><span class="n">em</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="o">&gt;</span>
+        <span class="p">{{</span> <span class="n">nav_item</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">Modified</span> <span class="p">}}</span> <span class="n">更新</span>
+      <span class="o">&lt;/</span><span class="n">font</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">br</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">修改结束</span> <span class="o">--&gt;</span>
+    <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+  <span class="o">...</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="_8">提示块插件<a class="headerlink" href="#_8" title="Permanent link">#</a></h2>
@@ -3638,6 +3684,22 @@ mkdocs build --clean
 <li>bug</li>
 <li>example</li>
 <li>quote, cite</li>
+</ul>
+<h2 id="mkdocs-macros-plugin"><a href="https://mkdocs-macros-plugin.readthedocs.io/en/latest/">mkdocs-macros-plugin宏插件</a><a class="headerlink" href="#mkdocs-macros-plugin" title="Permanent link">#</a></h2>
+<p>通过变量和宏释放Mkdocs的威力。号称：</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is more than a plugin: it's a mini-framework!</p>
+</div>
+<p>用一个<code>info.md</code>页获取可用信息：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>{{ macros_info() }}
+{{ context() | pretty }}
+</code></pre></div>
+</td></tr></table>
+<h2 id="_10">参考资料<a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://chrieke.medium.com/the-best-mkdocs-plugins-and-customizations-fc820eb19759">最好的MkDocs插件与定制</a></li>
 </ul>
                 
                   

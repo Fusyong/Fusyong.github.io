@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#phaser_3_api_documentation_-_class_loaderplugin" class="md-skip">
           跳转至
         </a>
       
@@ -2632,6 +2632,11 @@
 
       <!-- Render table of contents, if not empty -->
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Phaser3 API文档大纲-Loader.LoaderPlugin
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a
         href="./"
         class="md-nav__link md-nav__link--active"
@@ -2640,6 +2645,621 @@
       </a>
 
       <!-- Show table of contents -->
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phaserloader_loaderplugin" class="md-nav__link">
+    Phaser.Loader. LoaderPlugin
+  </a>
+  
+    <nav class="md-nav" aria-label="Phaser.Loader. LoaderPlugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#members" class="md-nav__link">
+    Members
+  </a>
+  
+    <nav class="md-nav" aria-label="Members">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseurl_string" class="md-nav__link">
+    baseURL :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cachemanager_phasercachecachemanager" class="md-nav__link">
+     cacheManager :Phaser.Cache.CacheManager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crossorigin_string" class="md-nav__link">
+    crossOrigin :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inflight_phaserstructsset" class="md-nav__link">
+    inflight :Phaser.Structs.Set.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list_phaserstructsset" class="md-nav__link">
+    list :Phaser.Structs.Set.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxparalleldownloads_integer" class="md-nav__link">
+    maxParallelDownloads :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_string" class="md-nav__link">
+    path :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefix_string" class="md-nav__link">
+    prefix :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progress_number" class="md-nav__link">
+    progress :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue_phaserstructsset" class="md-nav__link">
+    queue :Phaser.Structs.Set.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_phaserscene" class="md-nav__link">
+     scene :Phaser.Scene
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state_integer" class="md-nav__link">
+     state :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_phaserscenessystems" class="md-nav__link">
+     systems :Phaser.Scenes.Systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texturemanager_phasertexturestexturemanager" class="md-nav__link">
+     textureManager :Phaser.Textures.TextureManager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totalcomplete_integer" class="md-nav__link">
+    totalComplete :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totalfailed_integer" class="md-nav__link">
+    totalFailed :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totaltoload_integer" class="md-nav__link">
+    totalToLoad :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xhr_xhrsettingsobject" class="md-nav__link">
+    xhr :XHRSettingsObject
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addfilefile" class="md-nav__link">
+    addFile(file)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addlistenerevent_fn_context" class="md-nav__link">
+    addListener(event, fn [, context])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addpackdata_packkey" class="md-nav__link">
+    addPack(data [, packKey])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animationkey_url_datakey_xhrsettings" class="md-nav__link">
+    animation(key [, url] [, dataKey] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atlaskey_textureurl_atlasurl_texturexhrsettings_atlasxhrsettings" class="md-nav__link">
+    atlas(key [, textureURL] [, atlasURL] [, textureXhrSettings] [, atlasXhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atlasxmlkey_textureurl_atlasurl_texturexhrsettings_atlasxhrsettings" class="md-nav__link">
+    atlasXML(key [, textureURL] [, atlasURL] [, textureXhrSettings] [, atlasXhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audiokey_urls_config_xhrsettings" class="md-nav__link">
+    audio(key [, urls] [, config] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audiospritekey_jsonurl_audiourl_audioconfig_audioxhrsettings_jsonxhrsettings" class="md-nav__link">
+    audioSprite(key, jsonURL [, audioURL] [, audioConfig] [, audioXhrSettings] [, jsonXhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binarykey_url_datatype_xhrsettings" class="md-nav__link">
+    binary(key [, url] [, dataType] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitmapfontkey_textureurl_fontdataurl_texturexhrsettings_fontdataxhrsettings" class="md-nav__link">
+    bitmapFont(key [, textureURL] [, fontDataURL] [, textureXhrSettings] [, fontDataXhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emitevent_args" class="md-nav__link">
+    emit(event [, args])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventnames" class="md-nav__link">
+    eventNames()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fileprocesscompletefile" class="md-nav__link">
+    fileProcessComplete(file)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flagforremovalfile" class="md-nav__link">
+    flagForRemoval(file)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glslkey_url_xhrsettings" class="md-nav__link">
+    glsl(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#htmlkey_url_xhrsettings" class="md-nav__link">
+    html(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#htmltexturekey_url_width_height_xhrsettings" class="md-nav__link">
+    htmlTexture(key [, url] [, width] [, height] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagekey_url_xhrsettings" class="md-nav__link">
+    image(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isloading" class="md-nav__link">
+    isLoading()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isready" class="md-nav__link">
+    isReady()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonkey_url_datakey_xhrsettings" class="md-nav__link">
+    json(key [, url] [, dataKey] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyexistsfile" class="md-nav__link">
+    keyExists(file)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listenercountevent" class="md-nav__link">
+    listenerCount(event)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listenersevent" class="md-nav__link">
+    listeners(event)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadcomplete" class="md-nav__link">
+    loadComplete()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiatlaskey_atlasurl_path_baseurl_atlasxhrsettings" class="md-nav__link">
+    multiatlas(key [, atlasURL] [, path] [, baseURL] [, atlasXhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextfilefile_success" class="md-nav__link">
+    nextFile(file, success)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offevent_fn_context_once" class="md-nav__link">
+    off(event, fn, context, once)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onevent_fn_context" class="md-nav__link">
+    on(event, fn [, context])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onceevent_fn_context" class="md-nav__link">
+    once(event, fn [, context])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packkey_url_datakey_xhrsettings" class="md-nav__link">
+    pack(key [, url] [, dataKey] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pluginkey_url_start_mapping_xhrsettings" class="md-nav__link">
+    plugin(key [, url] [, start] [, mapping] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removealllisteners_event" class="md-nav__link">
+    removeAllListeners( [event])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removelistenerevent_fn_context_once" class="md-nav__link">
+    removeListener(event, fn, context, once)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset" class="md-nav__link">
+    reset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#savedata_filename_filetype" class="md-nav__link">
+    save(data [, filename] [, filetype])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#savejsondata_filename" class="md-nav__link">
+    saveJSON(data [, filename])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenepluginkey_url_systemkey_scenekey_xhrsettings" class="md-nav__link">
+    scenePlugin(key [, url] [, systemKey] [, sceneKey] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scriptkey_url_xhrsettings" class="md-nav__link">
+    script(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbaseurl_url" class="md-nav__link">
+    setBaseURL( [url])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcors_crossorigin" class="md-nav__link">
+    setCORS( [crossOrigin])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpath_path" class="md-nav__link">
+    setPath( [path])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprefix_prefix" class="md-nav__link">
+    setPrefix( [prefix])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spritesheetkey_url_frameconfig_xhrsettings" class="md-nav__link">
+    spritesheet(key [, url] [, frameConfig] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start" class="md-nav__link">
+    start()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svgkey_url_svgconfig_xhrsettings" class="md-nav__link">
+    svg(key [, url] [, svgConfig] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textkey_url_xhrsettings" class="md-nav__link">
+    text(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tilemapcsvkey_url_xhrsettings" class="md-nav__link">
+    tilemapCSV(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tilemapimpactkey_url_xhrsettings" class="md-nav__link">
+    tilemapImpact(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tilemaptiledjsonkey_url_xhrsettings" class="md-nav__link">
+    tilemapTiledJSON(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unityatlaskey_textureurl_atlasurl_texturexhrsettings_atlasxhrsettings" class="md-nav__link">
+    unityAtlas(key [, textureURL] [, atlasURL] [, textureXhrSettings] [, atlasXhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    update()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updateprogress" class="md-nav__link">
+    updateProgress()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xmlkey_url_xhrsettings" class="md-nav__link">
+    xml(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addfileevent" class="md-nav__link">
+    addFileEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completeevent" class="md-nav__link">
+    completeEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loaderrorevent" class="md-nav__link">
+    loadErrorEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadevent" class="md-nav__link">
+    loadEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progressevent" class="md-nav__link">
+    progressEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startevent" class="md-nav__link">
+    startEvent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
 
@@ -3097,6 +3717,612 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phaserloader_loaderplugin" class="md-nav__link">
+    Phaser.Loader. LoaderPlugin
+  </a>
+  
+    <nav class="md-nav" aria-label="Phaser.Loader. LoaderPlugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#members" class="md-nav__link">
+    Members
+  </a>
+  
+    <nav class="md-nav" aria-label="Members">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseurl_string" class="md-nav__link">
+    baseURL :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cachemanager_phasercachecachemanager" class="md-nav__link">
+     cacheManager :Phaser.Cache.CacheManager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crossorigin_string" class="md-nav__link">
+    crossOrigin :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inflight_phaserstructsset" class="md-nav__link">
+    inflight :Phaser.Structs.Set.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list_phaserstructsset" class="md-nav__link">
+    list :Phaser.Structs.Set.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maxparalleldownloads_integer" class="md-nav__link">
+    maxParallelDownloads :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path_string" class="md-nav__link">
+    path :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefix_string" class="md-nav__link">
+    prefix :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progress_number" class="md-nav__link">
+    progress :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue_phaserstructsset" class="md-nav__link">
+    queue :Phaser.Structs.Set.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_phaserscene" class="md-nav__link">
+     scene :Phaser.Scene
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state_integer" class="md-nav__link">
+     state :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_phaserscenessystems" class="md-nav__link">
+     systems :Phaser.Scenes.Systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texturemanager_phasertexturestexturemanager" class="md-nav__link">
+     textureManager :Phaser.Textures.TextureManager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totalcomplete_integer" class="md-nav__link">
+    totalComplete :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totalfailed_integer" class="md-nav__link">
+    totalFailed :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totaltoload_integer" class="md-nav__link">
+    totalToLoad :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xhr_xhrsettingsobject" class="md-nav__link">
+    xhr :XHRSettingsObject
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addfilefile" class="md-nav__link">
+    addFile(file)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addlistenerevent_fn_context" class="md-nav__link">
+    addListener(event, fn [, context])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addpackdata_packkey" class="md-nav__link">
+    addPack(data [, packKey])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animationkey_url_datakey_xhrsettings" class="md-nav__link">
+    animation(key [, url] [, dataKey] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atlaskey_textureurl_atlasurl_texturexhrsettings_atlasxhrsettings" class="md-nav__link">
+    atlas(key [, textureURL] [, atlasURL] [, textureXhrSettings] [, atlasXhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atlasxmlkey_textureurl_atlasurl_texturexhrsettings_atlasxhrsettings" class="md-nav__link">
+    atlasXML(key [, textureURL] [, atlasURL] [, textureXhrSettings] [, atlasXhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audiokey_urls_config_xhrsettings" class="md-nav__link">
+    audio(key [, urls] [, config] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audiospritekey_jsonurl_audiourl_audioconfig_audioxhrsettings_jsonxhrsettings" class="md-nav__link">
+    audioSprite(key, jsonURL [, audioURL] [, audioConfig] [, audioXhrSettings] [, jsonXhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binarykey_url_datatype_xhrsettings" class="md-nav__link">
+    binary(key [, url] [, dataType] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitmapfontkey_textureurl_fontdataurl_texturexhrsettings_fontdataxhrsettings" class="md-nav__link">
+    bitmapFont(key [, textureURL] [, fontDataURL] [, textureXhrSettings] [, fontDataXhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emitevent_args" class="md-nav__link">
+    emit(event [, args])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventnames" class="md-nav__link">
+    eventNames()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fileprocesscompletefile" class="md-nav__link">
+    fileProcessComplete(file)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flagforremovalfile" class="md-nav__link">
+    flagForRemoval(file)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glslkey_url_xhrsettings" class="md-nav__link">
+    glsl(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#htmlkey_url_xhrsettings" class="md-nav__link">
+    html(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#htmltexturekey_url_width_height_xhrsettings" class="md-nav__link">
+    htmlTexture(key [, url] [, width] [, height] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagekey_url_xhrsettings" class="md-nav__link">
+    image(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isloading" class="md-nav__link">
+    isLoading()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isready" class="md-nav__link">
+    isReady()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsonkey_url_datakey_xhrsettings" class="md-nav__link">
+    json(key [, url] [, dataKey] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyexistsfile" class="md-nav__link">
+    keyExists(file)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listenercountevent" class="md-nav__link">
+    listenerCount(event)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listenersevent" class="md-nav__link">
+    listeners(event)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadcomplete" class="md-nav__link">
+    loadComplete()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiatlaskey_atlasurl_path_baseurl_atlasxhrsettings" class="md-nav__link">
+    multiatlas(key [, atlasURL] [, path] [, baseURL] [, atlasXhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextfilefile_success" class="md-nav__link">
+    nextFile(file, success)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offevent_fn_context_once" class="md-nav__link">
+    off(event, fn, context, once)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onevent_fn_context" class="md-nav__link">
+    on(event, fn [, context])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onceevent_fn_context" class="md-nav__link">
+    once(event, fn [, context])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packkey_url_datakey_xhrsettings" class="md-nav__link">
+    pack(key [, url] [, dataKey] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pluginkey_url_start_mapping_xhrsettings" class="md-nav__link">
+    plugin(key [, url] [, start] [, mapping] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removealllisteners_event" class="md-nav__link">
+    removeAllListeners( [event])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removelistenerevent_fn_context_once" class="md-nav__link">
+    removeListener(event, fn, context, once)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset" class="md-nav__link">
+    reset()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#savedata_filename_filetype" class="md-nav__link">
+    save(data [, filename] [, filetype])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#savejsondata_filename" class="md-nav__link">
+    saveJSON(data [, filename])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenepluginkey_url_systemkey_scenekey_xhrsettings" class="md-nav__link">
+    scenePlugin(key [, url] [, systemKey] [, sceneKey] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scriptkey_url_xhrsettings" class="md-nav__link">
+    script(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setbaseurl_url" class="md-nav__link">
+    setBaseURL( [url])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcors_crossorigin" class="md-nav__link">
+    setCORS( [crossOrigin])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpath_path" class="md-nav__link">
+    setPath( [path])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setprefix_prefix" class="md-nav__link">
+    setPrefix( [prefix])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spritesheetkey_url_frameconfig_xhrsettings" class="md-nav__link">
+    spritesheet(key [, url] [, frameConfig] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start" class="md-nav__link">
+    start()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svgkey_url_svgconfig_xhrsettings" class="md-nav__link">
+    svg(key [, url] [, svgConfig] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#textkey_url_xhrsettings" class="md-nav__link">
+    text(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tilemapcsvkey_url_xhrsettings" class="md-nav__link">
+    tilemapCSV(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tilemapimpactkey_url_xhrsettings" class="md-nav__link">
+    tilemapImpact(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tilemaptiledjsonkey_url_xhrsettings" class="md-nav__link">
+    tilemapTiledJSON(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unityatlaskey_textureurl_atlasurl_texturexhrsettings_atlasxhrsettings" class="md-nav__link">
+    unityAtlas(key [, textureURL] [, atlasURL] [, textureXhrSettings] [, atlasXhrSettings])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    update()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updateprogress" class="md-nav__link">
+    updateProgress()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xmlkey_url_xhrsettings" class="md-nav__link">
+    xml(key [, url] [, xhrSettings])
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    Events
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addfileevent" class="md-nav__link">
+    addFileEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completeevent" class="md-nav__link">
+    completeEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loaderrorevent" class="md-nav__link">
+    loadErrorEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadevent" class="md-nav__link">
+    loadEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#progressevent" class="md-nav__link">
+    progressEvent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startevent" class="md-nav__link">
+    startEvent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3108,7 +4334,7 @@
               
                 
                 
-                <h2 id="_1">说明<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+                <p><strong>【说明】</strong></p>
 <p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，略作说明，或增加代码示例。可做便览之用。</p>
 <h1 id="phaser_3_api_documentation_-_class_loaderplugin"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#toc0">Phaser 3 API Documentation - Class: LoaderPlugin</a><a class="headerlink" href="#phaser_3_api_documentation_-_class_loaderplugin" title="Permanent link">#</a></h1>
 <p>加载器（加载插件）用于加载所有外部资源。

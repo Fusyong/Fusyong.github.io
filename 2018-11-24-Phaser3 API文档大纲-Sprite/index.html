@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#phaser_3_api_documentation_-_class_sprite" class="md-skip">
           跳转至
         </a>
       
@@ -2524,6 +2524,11 @@
 
       <!-- Render table of contents, if not empty -->
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Phaser3 API文档大纲-Sprite
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a
         href="./"
         class="md-nav__link md-nav__link--active"
@@ -2532,6 +2537,1000 @@
       </a>
 
       <!-- Show table of contents -->
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phasergameobjects_sprite" class="md-nav__link">
+    Phaser.GameObjects. Sprite
+  </a>
+  
+    <nav class="md-nav" aria-label="Phaser.GameObjects. Sprite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new_spritescene_x_y_texture_frame" class="md-nav__link">
+    new Sprite(scene, x, y, texture [, frame])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extends" class="md-nav__link">
+    Extends
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#members" class="md-nav__link">
+    Members
+  </a>
+  
+    <nav class="md-nav" aria-label="Members">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#active_boolean" class="md-nav__link">
+    active :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpha_number" class="md-nav__link">
+    alpha :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphabottomleft_number" class="md-nav__link">
+    alphaBottomLeft :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphabottomright_number" class="md-nav__link">
+    alphaBottomRight :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphatopleft_number" class="md-nav__link">
+    alphaTopLeft :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphatopright_number" class="md-nav__link">
+    alphaTopRight :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angle_integer" class="md-nav__link">
+    angle :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anims_phasergameobjectscomponentsanimation" class="md-nav__link">
+    anims :Phaser.GameObjects.Components.Animation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blendmode_phaserblendmodesstring" class="md-nav__link">
+    blendMode :Phaser.BlendModes|string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body_objectphaserphysicsarcadebodyphaserphysicsimpactbody" class="md-nav__link">
+     body :object|Phaser.Physics.Arcade.Body|Phaser.Physics.Impact.Body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camerafilter_number" class="md-nav__link">
+    cameraFilter :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data_phaserdatadatamanager" class="md-nav__link">
+    data :Phaser.Data.DataManager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaultpipeline_phaserrendererwebglwebglpipeline" class="md-nav__link">
+    defaultPipeline :Phaser.Renderer.WebGL.WebGLPipeline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depth_number" class="md-nav__link">
+    depth :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displayheight_number" class="md-nav__link">
+    displayHeight :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displayoriginx_number" class="md-nav__link">
+    displayOriginX :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displayoriginy_number" class="md-nav__link">
+    displayOriginY :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displaywidth_number" class="md-nav__link">
+    displayWidth :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flipx_boolean" class="md-nav__link">
+    flipX :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flipy_boolean" class="md-nav__link">
+    flipY :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame_phasertexturesframe" class="md-nav__link">
+    frame :Phaser.Textures.Frame
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#height_number" class="md-nav__link">
+    height :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignoredestroy_boolean" class="md-nav__link">
+    ignoreDestroy :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input_phaserinputinteractiveobject" class="md-nav__link">
+     input :Phaser.Input.InteractiveObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iscropped_boolean" class="md-nav__link">
+    isCropped :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#istinted_boolean" class="md-nav__link">
+     isTinted :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mask_phaserdisplaymasksbitmapmaskphaserdisplaymasksgeometrymask" class="md-nav__link">
+    mask :Phaser.Display.Masks.BitmapMask|Phaser.Display.Masks.GeometryMask
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name_string" class="md-nav__link">
+    name :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#originx_number" class="md-nav__link">
+    originX :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#originy_number" class="md-nav__link">
+    originY :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parentcontainer_phasergameobjectscontainer" class="md-nav__link">
+    parentContainer :Phaser.GameObjects.Container
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline_phaserrendererwebglwebglpipeline" class="md-nav__link">
+    pipeline :Phaser.Renderer.WebGL.WebGLPipeline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renderflags_integer" class="md-nav__link">
+    renderFlags :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation_number" class="md-nav__link">
+    rotation :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalemode_phaserscalemodes" class="md-nav__link">
+    scaleMode :Phaser.ScaleModes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalex_number" class="md-nav__link">
+    scaleX :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaley_number" class="md-nav__link">
+    scaleY :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_phaserscene" class="md-nav__link">
+     scene :Phaser.Scene
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrollfactorx_number" class="md-nav__link">
+    scrollFactorX :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrollfactory_number" class="md-nav__link">
+    scrollFactorY :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabindex_integer" class="md-nav__link">
+    tabIndex :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texture_phasertexturestexturephasertexturescanvastexture" class="md-nav__link">
+    texture :Phaser.Textures.Texture|Phaser.Textures.CanvasTexture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tint_integer" class="md-nav__link">
+    tint :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tintbottomleft_integer" class="md-nav__link">
+    tintBottomLeft :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tintbottomright_integer" class="md-nav__link">
+    tintBottomRight :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tintfill_boolean" class="md-nav__link">
+    tintFill :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinttopleft_integer" class="md-nav__link">
+    tintTopLeft :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinttopright_integer" class="md-nav__link">
+    tintTopRight :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type_string" class="md-nav__link">
+    type :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visible_boolean" class="md-nav__link">
+    visible :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#w_number" class="md-nav__link">
+    w :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#width_number" class="md-nav__link">
+    width :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x_number" class="md-nav__link">
+    x :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#y_number" class="md-nav__link">
+    y :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#z_number" class="md-nav__link">
+    z :number
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addlistenerevent_fn_context" class="md-nav__link">
+    addListener(event, fn [, context])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearalpha" class="md-nav__link">
+    clearAlpha()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearmask_destroymask" class="md-nav__link">
+    clearMask( [destroyMask])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleartint" class="md-nav__link">
+    clearTint()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createbitmapmask_renderable" class="md-nav__link">
+    createBitmapMask( [renderable])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creategeometrymask_graphics" class="md-nav__link">
+    createGeometryMask( [graphics])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destroy_fromscene" class="md-nav__link">
+    destroy( [fromScene])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disableinteractive" class="md-nav__link">
+    disableInteractive()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emitevent_args" class="md-nav__link">
+    emit(event [, args])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventnames" class="md-nav__link">
+    eventNames()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbottomleft_output_includeparent" class="md-nav__link">
+    getBottomLeft( [output] [, includeParent])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbottomright_output_includeparent" class="md-nav__link">
+    getBottomRight( [output] [, includeParent])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbounds_output" class="md-nav__link">
+    getBounds( [output])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcenter_output" class="md-nav__link">
+    getCenter( [output])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdatakey" class="md-nav__link">
+    getData(key)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getindexlist" class="md-nav__link">
+    getIndexList()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlocaltransformmatrix_tempmatrix" class="md-nav__link">
+    getLocalTransformMatrix( [tempMatrix])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpipelinename" class="md-nav__link">
+    getPipelineName()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettopleft_output_includeparent" class="md-nav__link">
+    getTopLeft( [output] [, includeParent])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettopright_output_includeparent" class="md-nav__link">
+    getTopRight( [output] [, includeParent])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getworldtransformmatrix_tempmatrix_parentmatrix" class="md-nav__link">
+    getWorldTransformMatrix( [tempMatrix] [, parentMatrix])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initpipeline_pipelinename" class="md-nav__link">
+    initPipeline( [pipelineName])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listenercountevent" class="md-nav__link">
+    listenerCount(event)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listenersevent" class="md-nav__link">
+    listeners(event)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offevent_fn_context_once" class="md-nav__link">
+    off(event, fn, context, once)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onevent_fn_context" class="md-nav__link">
+    on(event, fn [, context])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onceevent_fn_context" class="md-nav__link">
+    once(event, fn [, context])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playkey_ignoreifplaying_startframe" class="md-nav__link">
+    play(key [, ignoreIfPlaying] [, startFrame])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preupdatetime_delta" class="md-nav__link">
+     preUpdate(time, delta)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removealllisteners_event" class="md-nav__link">
+    removeAllListeners( [event])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removeinteractive" class="md-nav__link">
+    removeInteractive()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removelistenerevent_fn_context_once" class="md-nav__link">
+    removeListener(event, fn, context, once)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetflip" class="md-nav__link">
+    resetFlip()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetpipeline" class="md-nav__link">
+    resetPipeline()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setactivevalue" class="md-nav__link">
+    setActive(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setalpha_topleft_topright_bottomleft_bottomright" class="md-nav__link">
+    setAlpha( [topLeft] [, topRight] [, bottomLeft] [, bottomRight])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setangle_degrees" class="md-nav__link">
+    setAngle( [degrees])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setblendmodevalue" class="md-nav__link">
+    setBlendMode(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcrop_x_y_width_height" class="md-nav__link">
+    setCrop( [x] [, y] [, width] [, height])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdatakey_data" class="md-nav__link">
+    setData(key, data)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdataenabled" class="md-nav__link">
+    setDataEnabled()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdepthvalue" class="md-nav__link">
+    setDepth(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdisplayorigin_x_y" class="md-nav__link">
+    setDisplayOrigin( [x] [, y])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdisplaysizewidth_height" class="md-nav__link">
+    setDisplaySize(width, height)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setflipx_y" class="md-nav__link">
+    setFlip(x, y)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setflipxvalue" class="md-nav__link">
+    setFlipX(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setflipyvalue" class="md-nav__link">
+    setFlipY(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setframeframe_updatesize_updateorigin" class="md-nav__link">
+    setFrame(frame [, updateSize] [, updateOrigin])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinteractive_shape_callback_dropzone" class="md-nav__link">
+    setInteractive( [shape] [, callback] [, dropZone])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmaskmask" class="md-nav__link">
+    setMask(mask)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setnamevalue" class="md-nav__link">
+    setName(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setorigin_x_y" class="md-nav__link">
+    setOrigin( [x] [, y])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setoriginfromframe" class="md-nav__link">
+    setOriginFromFrame()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpipelinepipelinename" class="md-nav__link">
+    setPipeline(pipelineName)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setposition_x_y_z_w" class="md-nav__link">
+    setPosition( [x] [, y] [, z] [, w])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrandomposition_x_y_width_height" class="md-nav__link">
+    setRandomPosition( [x] [, y] [, width] [, height])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrotation_radians" class="md-nav__link">
+    setRotation( [radians])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setscalex_y" class="md-nav__link">
+    setScale(x [, y])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setscalemodevalue" class="md-nav__link">
+    setScaleMode(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setscrollfactorx_y" class="md-nav__link">
+    setScrollFactor(x [, y])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsizewidth_height" class="md-nav__link">
+    setSize(width, height)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsizetoframeframe" class="md-nav__link">
+    setSizeToFrame(frame)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settexturekey_frame" class="md-nav__link">
+    setTexture(key [, frame])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settint_topleft_topright_bottomleft_bottomright" class="md-nav__link">
+    setTint( [topLeft] [, topRight] [, bottomLeft] [, bottomRight])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settintfill_topleft_topright_bottomleft_bottomright" class="md-nav__link">
+    setTintFill( [topLeft] [, topRight] [, bottomLeft] [, bottomRight])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvisiblevalue" class="md-nav__link">
+    setVisible(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setw_value" class="md-nav__link">
+    setW( [value])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setx_value" class="md-nav__link">
+    setX( [value])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sety_value" class="md-nav__link">
+    setY( [value])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setz_value" class="md-nav__link">
+    setZ( [value])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    shutdown()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggleflipx" class="md-nav__link">
+    toggleFlipX()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggleflipy" class="md-nav__link">
+    toggleFlipY()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tojson" class="md-nav__link">
+    toJSON()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_args" class="md-nav__link">
+    update( [args])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatedisplayorigin" class="md-nav__link">
+    updateDisplayOrigin()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#willrendercamera" class="md-nav__link">
+    willRender(camera)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
 
@@ -3097,6 +4096,991 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phasergameobjects_sprite" class="md-nav__link">
+    Phaser.GameObjects. Sprite
+  </a>
+  
+    <nav class="md-nav" aria-label="Phaser.GameObjects. Sprite">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new_spritescene_x_y_texture_frame" class="md-nav__link">
+    new Sprite(scene, x, y, texture [, frame])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extends" class="md-nav__link">
+    Extends
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#members" class="md-nav__link">
+    Members
+  </a>
+  
+    <nav class="md-nav" aria-label="Members">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#active_boolean" class="md-nav__link">
+    active :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alpha_number" class="md-nav__link">
+    alpha :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphabottomleft_number" class="md-nav__link">
+    alphaBottomLeft :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphabottomright_number" class="md-nav__link">
+    alphaBottomRight :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphatopleft_number" class="md-nav__link">
+    alphaTopLeft :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alphatopright_number" class="md-nav__link">
+    alphaTopRight :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angle_integer" class="md-nav__link">
+    angle :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anims_phasergameobjectscomponentsanimation" class="md-nav__link">
+    anims :Phaser.GameObjects.Components.Animation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blendmode_phaserblendmodesstring" class="md-nav__link">
+    blendMode :Phaser.BlendModes|string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#body_objectphaserphysicsarcadebodyphaserphysicsimpactbody" class="md-nav__link">
+     body :object|Phaser.Physics.Arcade.Body|Phaser.Physics.Impact.Body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camerafilter_number" class="md-nav__link">
+    cameraFilter :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data_phaserdatadatamanager" class="md-nav__link">
+    data :Phaser.Data.DataManager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaultpipeline_phaserrendererwebglwebglpipeline" class="md-nav__link">
+    defaultPipeline :Phaser.Renderer.WebGL.WebGLPipeline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depth_number" class="md-nav__link">
+    depth :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displayheight_number" class="md-nav__link">
+    displayHeight :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displayoriginx_number" class="md-nav__link">
+    displayOriginX :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displayoriginy_number" class="md-nav__link">
+    displayOriginY :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displaywidth_number" class="md-nav__link">
+    displayWidth :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flipx_boolean" class="md-nav__link">
+    flipX :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flipy_boolean" class="md-nav__link">
+    flipY :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame_phasertexturesframe" class="md-nav__link">
+    frame :Phaser.Textures.Frame
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#height_number" class="md-nav__link">
+    height :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignoredestroy_boolean" class="md-nav__link">
+    ignoreDestroy :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input_phaserinputinteractiveobject" class="md-nav__link">
+     input :Phaser.Input.InteractiveObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iscropped_boolean" class="md-nav__link">
+    isCropped :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#istinted_boolean" class="md-nav__link">
+     isTinted :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mask_phaserdisplaymasksbitmapmaskphaserdisplaymasksgeometrymask" class="md-nav__link">
+    mask :Phaser.Display.Masks.BitmapMask|Phaser.Display.Masks.GeometryMask
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name_string" class="md-nav__link">
+    name :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#originx_number" class="md-nav__link">
+    originX :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#originy_number" class="md-nav__link">
+    originY :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parentcontainer_phasergameobjectscontainer" class="md-nav__link">
+    parentContainer :Phaser.GameObjects.Container
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline_phaserrendererwebglwebglpipeline" class="md-nav__link">
+    pipeline :Phaser.Renderer.WebGL.WebGLPipeline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renderflags_integer" class="md-nav__link">
+    renderFlags :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation_number" class="md-nav__link">
+    rotation :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalemode_phaserscalemodes" class="md-nav__link">
+    scaleMode :Phaser.ScaleModes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalex_number" class="md-nav__link">
+    scaleX :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaley_number" class="md-nav__link">
+    scaleY :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_phaserscene" class="md-nav__link">
+     scene :Phaser.Scene
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrollfactorx_number" class="md-nav__link">
+    scrollFactorX :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrollfactory_number" class="md-nav__link">
+    scrollFactorY :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabindex_integer" class="md-nav__link">
+    tabIndex :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texture_phasertexturestexturephasertexturescanvastexture" class="md-nav__link">
+    texture :Phaser.Textures.Texture|Phaser.Textures.CanvasTexture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tint_integer" class="md-nav__link">
+    tint :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tintbottomleft_integer" class="md-nav__link">
+    tintBottomLeft :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tintbottomright_integer" class="md-nav__link">
+    tintBottomRight :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tintfill_boolean" class="md-nav__link">
+    tintFill :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinttopleft_integer" class="md-nav__link">
+    tintTopLeft :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tinttopright_integer" class="md-nav__link">
+    tintTopRight :integer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type_string" class="md-nav__link">
+    type :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visible_boolean" class="md-nav__link">
+    visible :boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#w_number" class="md-nav__link">
+    w :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#width_number" class="md-nav__link">
+    width :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x_number" class="md-nav__link">
+    x :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#y_number" class="md-nav__link">
+    y :number
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#z_number" class="md-nav__link">
+    z :number
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addlistenerevent_fn_context" class="md-nav__link">
+    addListener(event, fn [, context])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearalpha" class="md-nav__link">
+    clearAlpha()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearmask_destroymask" class="md-nav__link">
+    clearMask( [destroyMask])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleartint" class="md-nav__link">
+    clearTint()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createbitmapmask_renderable" class="md-nav__link">
+    createBitmapMask( [renderable])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creategeometrymask_graphics" class="md-nav__link">
+    createGeometryMask( [graphics])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destroy_fromscene" class="md-nav__link">
+    destroy( [fromScene])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disableinteractive" class="md-nav__link">
+    disableInteractive()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emitevent_args" class="md-nav__link">
+    emit(event [, args])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eventnames" class="md-nav__link">
+    eventNames()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbottomleft_output_includeparent" class="md-nav__link">
+    getBottomLeft( [output] [, includeParent])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbottomright_output_includeparent" class="md-nav__link">
+    getBottomRight( [output] [, includeParent])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getbounds_output" class="md-nav__link">
+    getBounds( [output])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcenter_output" class="md-nav__link">
+    getCenter( [output])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdatakey" class="md-nav__link">
+    getData(key)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getindexlist" class="md-nav__link">
+    getIndexList()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getlocaltransformmatrix_tempmatrix" class="md-nav__link">
+    getLocalTransformMatrix( [tempMatrix])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getpipelinename" class="md-nav__link">
+    getPipelineName()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettopleft_output_includeparent" class="md-nav__link">
+    getTopLeft( [output] [, includeParent])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettopright_output_includeparent" class="md-nav__link">
+    getTopRight( [output] [, includeParent])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getworldtransformmatrix_tempmatrix_parentmatrix" class="md-nav__link">
+    getWorldTransformMatrix( [tempMatrix] [, parentMatrix])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initpipeline_pipelinename" class="md-nav__link">
+    initPipeline( [pipelineName])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listenercountevent" class="md-nav__link">
+    listenerCount(event)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listenersevent" class="md-nav__link">
+    listeners(event)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#offevent_fn_context_once" class="md-nav__link">
+    off(event, fn, context, once)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onevent_fn_context" class="md-nav__link">
+    on(event, fn [, context])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onceevent_fn_context" class="md-nav__link">
+    once(event, fn [, context])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playkey_ignoreifplaying_startframe" class="md-nav__link">
+    play(key [, ignoreIfPlaying] [, startFrame])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preupdatetime_delta" class="md-nav__link">
+     preUpdate(time, delta)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removealllisteners_event" class="md-nav__link">
+    removeAllListeners( [event])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removeinteractive" class="md-nav__link">
+    removeInteractive()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removelistenerevent_fn_context_once" class="md-nav__link">
+    removeListener(event, fn, context, once)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetflip" class="md-nav__link">
+    resetFlip()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resetpipeline" class="md-nav__link">
+    resetPipeline()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setactivevalue" class="md-nav__link">
+    setActive(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setalpha_topleft_topright_bottomleft_bottomright" class="md-nav__link">
+    setAlpha( [topLeft] [, topRight] [, bottomLeft] [, bottomRight])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setangle_degrees" class="md-nav__link">
+    setAngle( [degrees])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setblendmodevalue" class="md-nav__link">
+    setBlendMode(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcrop_x_y_width_height" class="md-nav__link">
+    setCrop( [x] [, y] [, width] [, height])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdatakey_data" class="md-nav__link">
+    setData(key, data)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdataenabled" class="md-nav__link">
+    setDataEnabled()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdepthvalue" class="md-nav__link">
+    setDepth(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdisplayorigin_x_y" class="md-nav__link">
+    setDisplayOrigin( [x] [, y])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setdisplaysizewidth_height" class="md-nav__link">
+    setDisplaySize(width, height)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setflipx_y" class="md-nav__link">
+    setFlip(x, y)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setflipxvalue" class="md-nav__link">
+    setFlipX(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setflipyvalue" class="md-nav__link">
+    setFlipY(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setframeframe_updatesize_updateorigin" class="md-nav__link">
+    setFrame(frame [, updateSize] [, updateOrigin])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setinteractive_shape_callback_dropzone" class="md-nav__link">
+    setInteractive( [shape] [, callback] [, dropZone])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmaskmask" class="md-nav__link">
+    setMask(mask)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setnamevalue" class="md-nav__link">
+    setName(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setorigin_x_y" class="md-nav__link">
+    setOrigin( [x] [, y])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setoriginfromframe" class="md-nav__link">
+    setOriginFromFrame()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setpipelinepipelinename" class="md-nav__link">
+    setPipeline(pipelineName)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setposition_x_y_z_w" class="md-nav__link">
+    setPosition( [x] [, y] [, z] [, w])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrandomposition_x_y_width_height" class="md-nav__link">
+    setRandomPosition( [x] [, y] [, width] [, height])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setrotation_radians" class="md-nav__link">
+    setRotation( [radians])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setscalex_y" class="md-nav__link">
+    setScale(x [, y])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setscalemodevalue" class="md-nav__link">
+    setScaleMode(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setscrollfactorx_y" class="md-nav__link">
+    setScrollFactor(x [, y])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsizewidth_height" class="md-nav__link">
+    setSize(width, height)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setsizetoframeframe" class="md-nav__link">
+    setSizeToFrame(frame)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settexturekey_frame" class="md-nav__link">
+    setTexture(key [, frame])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settint_topleft_topright_bottomleft_bottomright" class="md-nav__link">
+    setTint( [topLeft] [, topRight] [, bottomLeft] [, bottomRight])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settintfill_topleft_topright_bottomleft_bottomright" class="md-nav__link">
+    setTintFill( [topLeft] [, topRight] [, bottomLeft] [, bottomRight])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvisiblevalue" class="md-nav__link">
+    setVisible(value)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setw_value" class="md-nav__link">
+    setW( [value])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setx_value" class="md-nav__link">
+    setX( [value])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sety_value" class="md-nav__link">
+    setY( [value])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setz_value" class="md-nav__link">
+    setZ( [value])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    shutdown()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggleflipx" class="md-nav__link">
+    toggleFlipX()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggleflipy" class="md-nav__link">
+    toggleFlipY()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tojson" class="md-nav__link">
+    toJSON()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_args" class="md-nav__link">
+    update( [args])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatedisplayorigin" class="md-nav__link">
+    updateDisplayOrigin()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#willrendercamera" class="md-nav__link">
+    willRender(camera)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3108,7 +5092,7 @@
               
                 
                 
-                <h2 id="_1">说明<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+                <p><strong>【说明】</strong></p>
 <p>这是根据<a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3 API文档</a>中各类之页面右侧的目录整理的，略作说明，或增加代码示例。可做便览之用。</p>
 <h1 id="phaser_3_api_documentation_-_class_sprite"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#toc0">Phaser 3 API Documentation - Class: Sprite</a><a class="headerlink" href="#phaser_3_api_documentation_-_class_sprite" title="Permanent link">#</a></h1>
 <h2 id="phasergameobjects_sprite"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#toc1">Phaser.GameObjects. Sprite</a><a class="headerlink" href="#phasergameobjects_sprite" title="Permanent link">#</a></h2>
