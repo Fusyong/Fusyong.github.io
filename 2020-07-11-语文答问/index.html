@@ -175,267 +175,471 @@
     
       
       
-      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         Home
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
     
       
       
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
+  
+
+    <!-- Determine whether to render item as a section -->
+    
+
+    <!-- Render item with nested items -->
+    <li class="md-nav__item md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
+      
+      
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_2"
+          type="checkbox"
+          id="__nav_2"
+          
+        />
       
 
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
-      
+      <!-- Expand active pages -->
       <label class="md-nav__link" for="__nav_2">
         儿童识字
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="儿童识字" data-md-level="1">
+      <nav
+        class="md-nav"
+        aria-label="儿童识字"
+        data-md-level="1"
+      >
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           儿童识字
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2021-03-02-%E8%AF%86%E5%AD%97%E7%94%A8%E6%88%90%E8%AF%AD%EF%BC%88A%E7%BA%A7%E5%AD%97%EF%BC%89/" class="md-nav__link">
         儿童识字用成语及录音（A级字）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+      <font size=0.5em color="grey">
+        2021-03-07 更新
+      </font>
+      <br>
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-06-24-%E8%87%AA%E5%88%B6%E5%84%BF%E7%AB%A5%E5%90%AF%E8%92%99%E9%9B%86%E4%B8%AD%E8%AF%86%E5%AD%97%E8%AF%AD%E6%96%99%E5%BA%93%E4%B8%8E%E5%88%86%E7%BA%A7%E5%AD%97%E8%A1%A8/" class="md-nav__link">
         自制儿童识字语料库与分级字表
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-06-24-%E8%87%AA%E5%88%B6%E5%84%BF%E7%AB%A5%E5%90%AF%E8%92%99%E9%9B%86%E4%B8%AD%E8%AF%86%E5%AD%97%E5%88%86%E7%BA%A7%E5%AD%97%E8%A1%A8/" class="md-nav__link">
         自制儿童识字分级字表
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2022-02-18-%E5%A6%82%E4%BD%95%E7%9C%8B%E5%BE%85%E3%80%8A%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E5%B8%B8%E7%94%A8%E8%AF%8D%E8%A1%A8%EF%BC%88%E8%8D%89%E6%A1%88%EF%BC%89%E3%80%8B%E5%87%BA%E7%89%88%E5%B9%B6%E5%AF%B9%E5%A4%96%E5%8F%91%E5%B8%83%EF%BC%9F/" class="md-nav__link">
         如何看待《义务教育常用词表（草案）》出版并对外发布
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2021-02-09-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%AD%97%E5%8D%A1%EF%BC%882021%E5%B9%B4%E6%98%A5%E5%AD%A3%EF%BC%89/" class="md-nav__link">
         小学语文识字卡片（2021年春季）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+      <font size=0.5em color="grey">
+        2021-02-09 更新
+      </font>
+      <br>
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-08-24-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%AD%97%E5%8D%A1%EF%BC%882020%E5%B9%B4%E7%A7%8B%E5%AD%A3%EF%BC%89/" class="md-nav__link">
         小学语文识字卡片（2020年秋季）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-11-19-%E3%80%8A%E5%B9%BC%E5%84%BF%E8%AF%86%E5%AD%9790%E5%A4%A9%EF%BC%9A%E8%AE%A4%E8%AF%86%E4%B9%A6%E4%B8%AD80%25%E7%9A%84%E6%B1%89%E5%AD%97%E3%80%8B/" class="md-nav__link">
         《幼儿识字90天：认识书中80%的汉字》
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-06-30-%E5%8F%A4%E4%BA%BA%E8%AF%86%E5%AD%97%E7%9A%84%E7%89%B9%E7%82%B9/" class="md-nav__link">
         古人识字的特点
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-06-30-%E8%AF%AD%E6%96%87%E8%AF%BE%E8%AF%86%E5%AD%97%E7%9A%84%E7%89%B9%E7%82%B9/" class="md-nav__link">
         语文课识字的特点
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-08-18-%E5%B0%8F%E5%AD%A6%E8%AF%86%E5%AD%97%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
         小学识字方法有哪些？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-09-15-%E6%80%8E%E4%B9%88%E6%95%99%E5%AD%A9%E5%AD%90%E8%AF%86%E5%AD%97/" class="md-nav__link">
         怎么教孩子识字
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-06-30-%E7%BB%99%E8%87%AA%E5%AE%B6%E5%AD%A9%E5%AD%90DIY%E8%AF%86%E5%AD%97%E6%9D%90%E6%96%99%EF%BC%9A%E5%AD%97%E5%8D%A1%EF%BC%88%E9%99%84%E6%88%90%E5%93%81%EF%BC%89/" class="md-nav__link">
         给自家孩子DIY识字材料：字卡（附成品）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-28-%E6%97%A9%E8%AF%86%E5%AD%97%E4%BC%9A%E7%A0%B4%E5%9D%8F%E5%AD%A9%E5%AD%90%E7%9A%84%E5%88%9B%E9%80%A0%E5%8A%9B%E3%80%81%E6%83%B3%E8%B1%A1%E5%8A%9B%E5%90%97/" class="md-nav__link">
         早识字会破坏孩子的创造力、想象力吗？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-09-15-%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%87%E7%AB%A0%E5%90%AB%E6%9C%89%E4%B8%8D%E5%90%8C%E7%9A%84%E6%B1%89%E5%AD%97%E6%AF%94%E8%BE%83%E5%A4%9A%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E6%95%99%E5%B0%8F%E6%9C%8B%E5%8F%8B%E8%AF%86%E5%AD%97/" class="md-nav__link">
         有什么文章含有不同的汉字比较多，可以用于教小朋友识字？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2021-01-31-%E5%AD%97%E7%90%86/" class="md-nav__link">
         常用字源字理(累积更新)
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-06-27-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%90%8C%E6%AD%A5%E5%85%B4%E8%B6%A3%E8%AF%86%E5%AD%97/" class="md-nav__link">
         小学语文同步兴趣识字（累积更新）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-11-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%AD%E6%96%87%E8%80%81%E5%B8%88%E4%B8%8D%E4%B8%80%E4%B8%AA%E4%B8%AA%E6%95%99%E6%B1%89%E5%AD%97%E6%9C%AC%E4%B9%89/" class="md-nav__link">
         为什么语文老师不一个个教汉字本义？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-08-11-%E5%AD%A9%E5%AD%90%E5%9C%A8%E4%B8%8A%E5%B0%8F%E5%AD%A6%E4%B9%8B%E5%89%8D%E8%AF%A5%E8%AE%A9%E4%BB%96%E6%8E%8C%E6%8F%A1%E6%8B%BC%E9%9F%B3%E5%90%97/" class="md-nav__link">
         孩子在上小学之前该让他掌握拼音吗？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-14-%E9%80%82%E5%BD%93%E5%BC%80%E5%B1%95%E7%B9%81%E4%BD%93%E5%AD%97%E6%95%99%E8%82%B2%E6%9C%89%E5%BF%85%E8%A6%81%E5%90%97/" class="md-nav__link">
         适当开展繁体字教育有必要吗？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
@@ -443,89 +647,188 @@
         </ul>
       </nav>
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
+
+    <!-- Determine whether to render item as a section -->
     
+
+    <!-- Render item with nested items -->
     <li class="md-nav__item md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_3"
+          type="checkbox"
+          id="__nav_3"
+          
+        />
       
+
+      <!-- Expand active pages -->
       <label class="md-nav__link" for="__nav_3">
         阅读启蒙
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="阅读启蒙" data-md-level="1">
+      <nav
+        class="md-nav"
+        aria-label="阅读启蒙"
+        data-md-level="1"
+      >
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           阅读启蒙
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../2021-03-09-%E5%AD%A6%E8%8B%B1%E8%AF%AD%E4%BB%8E%E5%93%AA%E9%87%8C%E5%BC%80%E5%A7%8B/" class="md-nav__link">
+        学英语从哪里开始？
+      </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+    </li>
+  
+
+          
+            
+
+  <!-- Determine class according to state -->
+  
+  
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-26-%E9%99%AA%E5%AD%A9%E5%AD%90%E5%AD%A6%E8%8B%B1%E8%AF%AD%E7%9A%84%E4%B8%80%E7%82%B9%E5%B0%9D%E8%AF%95%E5%92%8C%E6%83%B3%E6%B3%95/" class="md-nav__link">
         陪孩子学英语的一点尝试和想法（累积更新）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-19-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%87%AA%E7%84%B6%E6%8B%BC%E8%AF%BB%E6%B3%95%E9%87%8C%E9%9D%A2%E7%9A%84%E8%A7%84%E5%BE%8B%E7%BC%BA%E4%B9%8F%E6%99%AE%E9%81%8D%E6%80%A7/" class="md-nav__link">
         为什么自然拼读法里面的规律缺乏普遍性？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2019-09-08-%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%AC%942.0%E4%B9%8B%E7%AB%A5%E4%B9%A6%E5%AE%9E%E6%B5%8B/" class="md-nav__link">
         有道词典笔2.0之童书实测
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2021-02-28-%E4%BA%B2%E5%AD%90%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         亲子阅读笔记（累积更新）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-06-19-%E4%BC%B4%E5%AD%A6%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         家长伴学技术笔记（累积更新）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
@@ -533,198 +836,341 @@
         </ul>
       </nav>
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
   
   
     
   
+
+  <!-- Main navigation item with nested items -->
   
+
+    <!-- Determine whether to render item as a section -->
     
+
+    <!-- Render item with nested items -->
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_4"
+          type="checkbox"
+          id="__nav_4"
+          checked
+        />
       
+
+      <!-- Expand active pages -->
       <label class="md-nav__link" for="__nav_4">
         语文答问
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="语文答问" data-md-level="1">
+      <nav
+        class="md-nav"
+        aria-label="语文答问"
+        data-md-level="1"
+      >
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           语文答问
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-09-23-%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E9%9F%B5%E6%AF%8Do%E7%9A%84%E8%AF%BB%E6%B3%95/" class="md-nav__link">
         汉语拼音韵母o的读法
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2021-02-15-%E5%BD%93%E5%88%9D%E5%88%9B%E5%88%B6%E6%8B%BC%E9%9F%B3%E7%9A%84%E6%97%B6%E5%80%99%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8v%E8%80%8C%E7%94%A8%C3%BC%EF%BC%9F%EF%BC%88%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E6%96%B9%E6%A1%88%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%89/" class="md-nav__link">
         当初创制拼音的时候为什么不用v而用ü？（汉语拼音方案的一些问题）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2021-02-26-%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AB%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%EF%BC%8C%E8%80%8C%E4%B8%8D%E5%8F%AB%E6%B1%89%E8%AF%AD%E6%B3%A8%E9%9F%B3%E6%88%96%E6%B1%89%E8%AF%AD%E9%9F%B3%E6%A0%87/" class="md-nav__link">
         汉语拼音为什么叫汉语拼音，而不叫汉语注音或汉语音标？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-22-%E5%AE%8B%E4%BD%93%E5%AD%97%E6%98%AF%E5%90%A6%E6%98%AF%E6%9C%80%E9%95%BF%E6%97%B6%E9%97%B4%E9%80%82%E5%90%88%E9%98%85%E8%AF%BB%E7%9A%84%E5%AD%97%E4%BD%93/" class="md-nav__link">
         宋体字是否是最长时间适合阅读的字体？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-05-%E7%AE%80%E4%BD%93%E5%AD%97%E9%87%8C%E4%B8%89%E7%82%B9%E6%B0%B4%E4%B8%BA%E4%BB%80%E4%B9%88%E7%AE%80%E5%8C%96%E4%B8%BA%E4%B8%A4%E7%82%B9%E6%B0%B4/" class="md-nav__link">
         简体字里三点水为什么简化为两点水？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-16-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%95%BF%E6%97%B6%E9%97%B4%E7%9B%AF%E7%9D%80%E4%B8%80%E4%B8%AA%E6%B1%89%E5%AD%97%EF%BC%8C%E4%BC%9A%E8%A7%89%E5%BE%97%E5%BE%88%E5%A5%87%E6%80%AA%EF%BC%8C%E8%A7%89%E5%BE%97%E4%B8%8D%E8%AE%A4%E8%AF%86%E8%BF%99%E4%B8%AA%E6%B1%89%E5%AD%97/" class="md-nav__link">
         为什么长时间盯着一个汉字，会觉得很奇怪，觉得不认识这个汉字?
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-19-%E4%B8%BA%E4%BB%80%E4%B9%88%E7%AE%80%E5%8C%96%E5%AD%97%E3%80%8C%E5%9B%BD%E3%80%8D%E6%8A%8A%E3%80%8C%E6%88%96%E3%80%8D%E6%8D%A2%E6%88%90%E4%BA%86%E3%80%8C%E7%8E%89%E3%80%8D%EF%BC%8C%E7%B9%81%E4%BD%93%E5%AD%97%E4%B8%AD%E7%9A%84%E3%80%8C%E6%88%96%E3%80%8D%E6%9C%89%E4%BB%80%E4%B9%88%E5%90%AB%E4%B9%89/" class="md-nav__link">
         为什么把「國」改成「国」，「或」有什么含义？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-28-%E5%BD%A2%E5%A3%B0%E5%AD%97%E5%9C%A8%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E5%B8%B8%E7%94%A8%E5%AD%97%E4%B8%AD%E6%89%80%E5%8D%A0%E7%9A%84%E6%AF%94%E4%BE%8B%E6%98%AF%E7%99%BE%E5%88%86%E4%B9%8B%E5%87%A0/" class="md-nav__link">
         形声字在现代汉语常用字中所占的比例是百分之几？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-12-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B1%89%E5%AD%97%E4%BC%9A%E6%BC%94%E5%8C%96%E6%88%90%E6%96%B9%E6%96%B9%E6%AD%A3%E6%AD%A3%E7%9A%84%EF%BC%8C%E6%B2%A1%E6%9C%89%E5%9C%86%E5%9C%88%E7%BB%93%E6%9E%84%E7%9A%84%E5%81%8F%E6%97%81/" class="md-nav__link">
         为什么汉字会演化成方方正正的，没有圆圈结构的偏旁
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-06-25-%E6%B1%89%E5%AD%97%E6%9C%89%E5%A4%9A%E5%A4%9A/" class="md-nav__link">
         汉字有多多？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-15-%E9%80%9A%E8%BF%87%E7%AE%80%E4%BD%93%E6%B1%89%E5%AD%97%E9%9A%8F%E6%9C%BA%E7%BB%84%E5%90%88%E4%BA%A7%E7%94%9F%E6%88%91%E5%9B%BD%E7%8E%B0%E6%9C%89%E7%9A%84%E6%9F%90%E4%B8%80%E6%9C%AC%E4%B9%A6%E7%9A%84%E5%85%A8%E9%83%A8%E5%86%85%E5%AE%B9%E7%9A%84%E6%A6%82%E7%8E%87%E5%A4%A7%E7%BA%A6%E6%98%AF%E5%A4%9A%E5%B0%91%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8E%BB%E8%AE%A1%E7%AE%97/" class="md-nav__link">
         简体字随机组合成某一本书的概率大约是多少，怎么算？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-17-%E5%BD%93%E4%BB%A3%E5%88%9D%E9%AB%98%E4%B8%AD%E8%AF%AD%E6%96%87%E6%95%99%E5%AD%A6%E6%98%AF%E5%90%A6%E8%BF%87%E4%BA%8E%E2%80%9C%E6%96%87%E5%AD%A6%E5%8C%96%E2%80%9D%E4%BA%86/" class="md-nav__link">
         当代初高中语文教学是否过于“文学化”了？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
     
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+      <!-- Active checkbox expands items contained within nested section -->
+      <input
+        class="md-nav__toggle md-toggle"
+        data-md-toggle="toc"
+        type="checkbox"
+        id="__toc"
+      />
+
+      <!-- Hack: see partials/toc.html for more information -->
       
+
+      <!-- Render table of contents, if not empty -->
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           :::更多答问:::
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
+      <a
+        href="./"
+        class="md-nav__link md-nav__link--active"
+      >
         :::更多答问:::
       </a>
+
+      <!-- Show table of contents -->
       
         
 <nav class="md-nav md-nav--secondary" aria-label="目录">
@@ -739,160 +1185,181 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    一年级下学期拼音字母表为什么要用英文字母的顺序？
+    为什么外语姓名翻译总是音译？为什么不用意译？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    如何看待政协委员建议「中医名著入选初高中语文课文」？
+    汉英发音节奏的差异是不是因为汉字发音多是辅+元，而英语单词却有很多以元音开头？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    如何用小孩子也能听懂的话来解释为什么汉字是方的？
+    为什么很多人把“韦”读成汉语拼音的第三声？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    如何向小孩子解释为什么汉字必须按照笔画顺序来写？
+    一年级下学期拼音字母表为什么要用英文字母的顺序？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    如何较为系统的掌握识认篆文的知识？
+    如何看待政协委员建议「中医名著入选初高中语文课文」？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    在古诗词中一个逗号算一句，那为什么不直接把逗号改为句号呢？
+    如何用小孩子也能听懂的话来解释为什么汉字是方的？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    汉字为何是简化的趋势？
+    如何向小孩子解释为什么汉字必须按照笔画顺序来写？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    "一"的声调以字典为准还是小学语文教科书为准？
+    如何较为系统的掌握识认篆文的知识？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    佞、颖为什么是形声字？
+    在古诗词中一个逗号算一句，那为什么不直接把逗号改为句号呢？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    什么词语中有两个不字？
+    汉字为何是简化的趋势？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
-    “共”为什么从部首“艹”可以查到?
+    "一"的声调以字典为准还是小学语文教科书为准？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
-    为什么当代中国都不造字，而赋予汉字新的含义?
+    佞、颖为什么是形声字？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
-    古代汉语词典高中生怎么用？
+    什么词语中有两个不字？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_14" class="md-nav__link">
-    一个六岁的孩子最需要的是什么？
+    “共”为什么从部首“艹”可以查到?
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
-    「赵孟頫」的「頫」字不是只有传统字吗？高中教材是怎么做出简化字的？
+    为什么当代中国都不造字，而赋予汉字新的含义?
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_16" class="md-nav__link">
-    究竟有没有「您们」这种用法？
+    古代汉语词典高中生怎么用？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_17" class="md-nav__link">
-    玩的偏旁是叫“斜玉旁”还是“王字旁”啊？
+    一个六岁的孩子最需要的是什么？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_18" class="md-nav__link">
-    很多家长认为，亲子阅读只适用于幼儿阶段，这种理解正确吗？
+    「赵孟頫」的「頫」字不是只有传统字吗？高中教材是怎么做出简化字的？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_19" class="md-nav__link">
-    孩子快三年级了不爱写字怎么办？
+    究竟有没有「您们」这种用法？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_20" class="md-nav__link">
-    请问大家，三岁半的孩子上有必要上全脑教育课吗？
+    玩的偏旁是叫“斜玉旁”还是“王字旁”啊？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_21" class="md-nav__link">
-    怎么让孩子养成爱看书的习惯？
+    很多家长认为，亲子阅读只适用于幼儿阶段，这种理解正确吗？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_22" class="md-nav__link">
-    有没有背成语生词拼音的软件推荐？
+    孩子快三年级了不爱写字怎么办？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_23" class="md-nav__link">
+    请问大家，三岁半的孩子上有必要上全脑教育课吗？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    怎么让孩子养成爱看书的习惯？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    有没有背成语生词拼音的软件推荐？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
     为什么要按照国际音标发明汉语拼音，不用国际音标加声调？
   </a>
   
@@ -913,14 +1380,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_24" class="md-nav__link">
+  <a href="#_27" class="md-nav__link">
     成年人汉字基础较薄弱，读音经常读错怎么办？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_25" class="md-nav__link">
+  <a href="#_28" class="md-nav__link">
     如何在敲击电脑键盘的时候让电脑键盘发出字母读音？
   </a>
   
@@ -941,28 +1408,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_26" class="md-nav__link">
+  <a href="#_29" class="md-nav__link">
     几岁开始学写拼音？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_27" class="md-nav__link">
+  <a href="#_30" class="md-nav__link">
     繁体字有恢复的必要吗？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_28" class="md-nav__link">
+  <a href="#_31" class="md-nav__link">
     走之底的字大多和什么有关？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_29" class="md-nav__link">
+  <a href="#_32" class="md-nav__link">
     古代重男轻女那为什么在汉字里，以“男”为偏旁的字很少，以“女”为偏旁的字挺多。……
   </a>
   
@@ -973,83 +1440,160 @@
 </nav>
       
     </li>
+
+  <!-- Main navigation item -->
   
 
           
         </ul>
       </nav>
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
+
+    <!-- Determine whether to render item as a section -->
     
+
+    <!-- Render item with nested items -->
     <li class="md-nav__item md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_5"
+          type="checkbox"
+          id="__nav_5"
+          
+        />
       
+
+      <!-- Expand active pages -->
       <label class="md-nav__link" for="__nav_5">
         拼字游戏
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="拼字游戏" data-md-level="1">
+      <nav
+        class="md-nav"
+        aria-label="拼字游戏"
+        data-md-level="1"
+      >
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           拼字游戏
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-10-14-%E6%8B%BC%E5%AD%97%E6%B8%B8%E6%88%8F%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
         《拼字》游戏软件说明文档
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-06-13-%E6%B2%A1%E8%B6%A3%E6%B8%B8%E6%88%8F2.0/" class="md-nav__link">
         汉字《拼字》游戏2.0
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-06-15-%E4%B8%80%E5%AD%97%E4%B8%8D%E8%90%BD/" class="md-nav__link">
         跟我的《拼字》“同款”的几种游戏
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-12-5-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83%E7%99%BB%E8%AE%B0%E5%AE%9E%E4%BE%8B/" class="md-nav__link">
         计算机软件著作权登记实例
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
@@ -1057,173 +1601,296 @@
         </ul>
       </nav>
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
+
+    <!-- Determine whether to render item as a section -->
     
+
+    <!-- Render item with nested items -->
     <li class="md-nav__item md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_6"
+          type="checkbox"
+          id="__nav_6"
+          
+        />
       
+
+      <!-- Expand active pages -->
       <label class="md-nav__link" for="__nav_6">
         亲子写字
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="亲子写字" data-md-level="1">
+      <nav
+        class="md-nav"
+        aria-label="亲子写字"
+        data-md-level="1"
+      >
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           亲子写字
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-09-29-%E7%AC%94%E9%A1%BA%E5%8A%A8%E7%94%BB/" class="md-nav__link">
         2678字笔顺动画
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-06-19-%E6%B3%95%E5%B8%96%E7%BD%91%E5%9B%BE%E6%AF%94%E4%B9%A6%E6%B8%85%E6%A5%9A/" class="md-nav__link">
         《高力士墓志》网图比书清楚
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E5%A4%A7%E5%AD%97%E7%BB%93%E6%9E%84%E5%85%AB%E5%8D%81%E5%9B%9B%E6%B3%95%E3%80%8B/" class="md-nav__link">
         书论：明·李淳《大字结构八十四法》
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E6%B5%B7%E5%B2%B3%E5%90%8D%E8%A8%80%E3%80%8B/" class="md-nav__link">
         书论：宋·米芾《海岳名言》
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E7%BF%B0%E6%9E%97%E8%A6%81%E8%AF%80%E3%80%8B/" class="md-nav__link">
         书论：元·陈绎曾《翰林要诀》
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E7%BF%B0%E5%A2%A8%E5%BF%97%E3%80%8B/" class="md-nav__link">
         书论：宋高宗赵构《翰墨志》
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E5%A2%A8%E6%B1%A0%E7%90%90%E5%BD%95%E3%80%8B/" class="md-nav__link">
         书论：明·杨慎《墨池琐录》
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E6%8E%88%E7%AC%94%E8%A6%81%E8%AF%B4%E3%80%8B/" class="md-nav__link">
         书论：唐·韩方明《授笔要说》
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E4%B9%A6%E6%B3%95%E7%BA%B6%E8%B4%AF%E3%80%8B/" class="md-nav__link">
         书论：明·宋啬《书法纶贯》
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E4%B9%A6%E6%B3%95%E4%B8%89%E6%98%A7%E3%80%8B/" class="md-nav__link">
         书论：元·佚名《书法三昧》
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E4%B9%A6%E6%B3%95%E7%BA%A6%E8%A8%80%E3%80%8B/" class="md-nav__link">
         书论：明末清初·宋曹《书法约言》
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E7%AB%A5%E5%AD%A6%E4%B9%A6%E7%A8%8B%E3%80%8B/" class="md-nav__link">
         书论：明·丰坊《童学书程》
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
@@ -1231,65 +1898,139 @@
         </ul>
       </nav>
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
+
+    <!-- Determine whether to render item as a section -->
     
+
+    <!-- Render item with nested items -->
     <li class="md-nav__item md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_7"
+          type="checkbox"
+          id="__nav_7"
+          
+        />
       
+
+      <!-- Expand active pages -->
       <label class="md-nav__link" for="__nav_7">
         STEAM
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="STEAM" data-md-level="1">
+      <nav
+        class="md-nav"
+        aria-label="STEAM"
+        data-md-level="1"
+      >
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           STEAM
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2019-11-23-Pygame%20Zero%E6%96%87%E6%A1%A3%E7%9A%84%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" class="md-nav__link">
         Pygame Zero文档的思维导图和入门实例
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+      <font size=0.5em color="grey">
+        2019-12-29 更新
+      </font>
+      <br>
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2021-01-29-PygameZero%E5%8A%A9%E6%89%8B/" class="md-nav__link">
         PygameZero助手（比照Scratch而做的增强）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2019-10-20-%E6%95%99%E5%AD%A9%E5%AD%90%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/" class="md-nav__link">
         教孩子骑自行车
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
@@ -1297,65 +2038,144 @@
         </ul>
       </nav>
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
+
+    <!-- Determine whether to render item as a section -->
     
+
+    <!-- Render item with nested items -->
     <li class="md-nav__item md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_8"
+          type="checkbox"
+          id="__nav_8"
+          
+        />
       
+
+      <!-- Expand active pages -->
       <label class="md-nav__link" for="__nav_8">
         Python找门教程
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Python找门教程" data-md-level="1">
+      <nav
+        class="md-nav"
+        aria-label="Python找门教程"
+        data-md-level="1"
+      >
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Python找门教程
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2019-10-05-%E5%88%9D%E5%AD%A6python%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BC%96%E8%BE%91%E5%99%A8%E6%8E%A8%E8%8D%90/" class="md-nav__link">
         初学python，有哪些编辑器推荐
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+      <font size=0.5em color="grey">
+        2019-10-05 更新
+      </font>
+      <br>
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-12-06-Python%E6%89%BE%E9%97%A8%E6%95%99%E7%A8%8B-%E7%9B%AE%E5%BD%95-%E6%B4%BE%E7%9C%9F%E5%92%8C%E4%B8%A4%E6%9D%A1%E8%85%BF%E6%9D%A5%E5%88%B0%E5%93%88%E7%BD%97%E4%B8%96%E7%95%8C/" class="md-nav__link">
         派真和两条腿来到哈罗世界
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+      <font size=0.5em color="grey">
+        2020-12-06 更新
+      </font>
+      <br>
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2019-05-15-Python%E7%A6%85/" class="md-nav__link">
         Python口头禅
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
@@ -1363,221 +2183,388 @@
         </ul>
       </nav>
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
+
+    <!-- Determine whether to render item as a section -->
     
+
+    <!-- Render item with nested items -->
     <li class="md-nav__item md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_9"
+          type="checkbox"
+          id="__nav_9"
+          
+        />
       
+
+      <!-- Expand active pages -->
       <label class="md-nav__link" for="__nav_9">
         老编辑的效率工具
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="老编辑的效率工具" data-md-level="1">
+      <nav
+        class="md-nav"
+        aria-label="老编辑的效率工具"
+        data-md-level="1"
+      >
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           老编辑的效率工具
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2021-03-04-%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84TextPro%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9B%BF%E6%8D%A2%E8%A1%A8/" class="md-nav__link">
         我常用的TextPro用自定义替换表
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+      <font size=0.5em color="grey">
+        2021-03-04 更新
+      </font>
+      <br>
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-11-7-%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7%E5%BF%97/" class="md-nav__link">
         奇技淫巧志
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-07-11-%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7%E7%AD%94%E9%97%AE/" class="md-nav__link">
         效率工具答问（累积更新）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-10-26-%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%A4%84%E7%90%86%E6%96%87%E6%9C%AC%E3%80%81%E7%AE%A1%E7%90%86%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%89%E4%BB%B6%E5%A5%97/" class="md-nav__link">
         用正则表达式处理文本、管理文件的三件套
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-05-31-%E7%BB%99%E7%BC%96%E8%BE%91%E6%9C%8B%E5%8F%8B%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%BE%E7%A8%8B/" class="md-nav__link">
         给编辑朋友的正则表达式课程
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+      <font size=0.5em color="grey">
+        2020-06-13 更新
+      </font>
+      <br>
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
-      <a href="../2021-02-02-%E6%95%99%E8%82%B2%E7%A1%AC%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.mm/" class="md-nav__link">
+      <a href="../2021-02-02-%E6%95%99%E8%82%B2%E7%A1%AC%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         教育硬件学习笔记
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+      <font size=0.5em color="grey">
+        2020-12-02 更新
+      </font>
+      <br>
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-12-12-%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%9A%E4%BB%8E%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%AD%E6%94%B6%E9%9B%86%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
         小工具：从多文件中收集字符串
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-12-14-Audition%E6%8A%80%E5%B7%A7%EF%BC%9A%E4%BD%BF%E4%B8%A4%E6%AE%B5%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E7%9A%84%E5%BD%95%E9%9F%B3%E5%8D%8F%E8%B0%83%E4%B8%80%E8%87%B4/" class="md-nav__link">
         Audition技巧：使两段不同环境的录音协调一致
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-12-14-Audition%E6%8A%80%E5%B7%A7%EF%BC%9A%E8%87%AA%E5%8A%A8%E5%88%86%E5%88%87%E9%9F%B3%E9%A2%91/" class="md-nav__link">
         Audition技巧：半自动分切音频
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-12-15-%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%9A%E5%88%86%E5%89%B2%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6/" class="md-nav__link">
         小工具：分割文本文件
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2020-09-26-%E7%A1%AC%E7%9B%98%E6%8D%9F%E5%9D%8F%EF%BC%8C%E6%8A%A2%E6%95%91%E6%95%B0%E6%8D%AE/" class="md-nav__link">
         硬盘损坏，抢救数据
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2021-02-04-%E4%B8%A4%E7%A7%8Dmarkdown%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95/" class="md-nav__link">
         两种markdown文件解析方法
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2021-02-05-%E6%9C%89%E6%B2%A1%E6%9C%89%E5%90%88%E9%80%82%E7%9A%84%E8%83%BD%E6%9B%BF%E4%BB%A3flash%E7%9A%84%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90%E7%9A%84/" class="md-nav__link">
         有没有合适的能替代flash的软件推荐？
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2021-03-02-mkdocs-material%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         静态网站框架mkdocs+material学习笔记
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+      <font size=0.5em color="grey">
+        2021-03-02 更新
+      </font>
+      <br>
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-10-14-%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E5%99%A8Pelican%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         静态网站生成器Pelican学习笔记
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2019-10-12-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E3%80%81%E8%AF%AD%E8%A8%80%E5%92%8C%E6%A1%86%E6%9E%B6/" class="md-nav__link">
         常用/备用软件、语言和框架
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
@@ -1585,221 +2572,378 @@
         </ul>
       </nav>
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
+
+    <!-- Determine whether to render item as a section -->
     
+
+    <!-- Render item with nested items -->
     <li class="md-nav__item md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_10"
+          type="checkbox"
+          id="__nav_10"
+          
+        />
       
+
+      <!-- Expand active pages -->
       <label class="md-nav__link" for="__nav_10">
         Phaser学习中心组
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Phaser学习中心组" data-md-level="1">
+      <nav
+        class="md-nav"
+        aria-label="Phaser学习中心组"
+        data-md-level="1"
+      >
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           Phaser学习中心组
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2019-2-10-Phaser%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD/" class="md-nav__link">
         Phaser新闻联播
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+      <font size=0.5em color="grey">
+        2021-03-02 更新
+      </font>
+      <br>
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-12-4-Phaser%203%20FAQ%201/" class="md-nav__link">
         Phaser3常识答问（一）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-12-4-Phaser%203%20FAQ%202/" class="md-nav__link">
         Phaser3常识答问（二）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-11-12-Phaser3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         Phaser3学习笔记
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
+      <font size=0.5em color="grey">
+        2019-11-02 更新
+      </font>
+      <br>
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-10-14-Phaser2%E5%AE%98%E7%BD%91%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         Phaser2官网实例学习笔记
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2019-1-8-Phaser3%E5%AE%98%E7%BD%91%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         Phaser3官网实例学习笔记
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-10-14-%E4%B8%80%E4%B8%AA%E4%B8%9A%E4%BD%99%E4%B9%A0Phaser%E7%9A%84%E9%87%8E%E8%B7%AF%E5%AD%90/" class="md-nav__link">
         一个业余习Phaser的野路子
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-11-24-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Sprite/" class="md-nav__link">
         Phaser3 API文档大纲-Sprite
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-11-26-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Display.Align.In-To/" class="md-nav__link">
         Phaser3 API文档大纲-Display.Align.In&To
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-11-26-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Display.Bounds/" class="md-nav__link">
         Phaser3 API文档大纲-Display.Bounds
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Actions/" class="md-nav__link">
         Phaser3 API文档大纲-Actions
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Container/" class="md-nav__link">
         Phaser3 API文档大纲-Container
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Group/" class="md-nav__link">
         Phaser3 API文档大纲-Group
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-12-1-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Loader.LoaderPlugin/" class="md-nav__link">
         Phaser3 API文档大纲-Loader.LoaderPlugin
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2019-1-2-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Scene/" class="md-nav__link">
         Phaser3 API文档大纲-Scene
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2019-1-8-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-InputPlugin/" class="md-nav__link">
         Phaser3 API文档大纲-InputPlugin
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
@@ -1807,65 +2951,134 @@
         </ul>
       </nav>
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
+
+    <!-- Determine whether to render item as a section -->
     
+
+    <!-- Render item with nested items -->
     <li class="md-nav__item md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_11"
+          type="checkbox"
+          id="__nav_11"
+          
+        />
       
+
+      <!-- Expand active pages -->
       <label class="md-nav__link" for="__nav_11">
         Pyo
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Pyo" data-md-level="1">
+      <nav
+        class="md-nav"
+        aria-label="Pyo"
+        data-md-level="1"
+      >
         <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           Pyo
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-12-27-Pyo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         Pyo学习笔记
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-12-28-Pyo%E6%96%87%E6%A1%A3%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
         Pyo文档（一）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2019-1-1-Pyo%E6%96%87%E6%A1%A3%EF%BC%88%E4%BA%8C%EF%BC%89%E5%AE%9E%E4%BE%8B/" class="md-nav__link">
         Pyo文档（二）实例
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
@@ -1873,113 +3086,206 @@
         </ul>
       </nav>
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
+
+    <!-- Determine whether to render item as a section -->
     
+
+    <!-- Render item with nested items -->
     <li class="md-nav__item md-nav__item--nested">
+
+      <!-- Active checkbox expands items contained within nested section -->
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+        <input
+          class="md-nav__toggle md-toggle"
+          data-md-toggle="__nav_12"
+          type="checkbox"
+          id="__nav_12"
+          
+        />
       
+
+      <!-- Expand active pages -->
       <label class="md-nav__link" for="__nav_12">
         布考斯基
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="布考斯基" data-md-level="1">
+      <nav
+        class="md-nav"
+        aria-label="布考斯基"
+        data-md-level="1"
+      >
         <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           布考斯基
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+
+          <!-- Render nested item list -->
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-10-14-%E5%B8%83%E8%80%83%E6%96%AF%E5%9F%BA%E5%B9%B4%E8%A1%A8/" class="md-nav__link">
         布考斯基年表
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-10-14-%E5%BC%B9%E9%86%89%E7%90%B4%EF%BC%9A%E5%B8%83%E8%80%83%E6%96%AF%E5%9F%BA%E8%AF%97%E9%9B%86/" class="md-nav__link">
         弹醉琴/如击鼓/直到手指滴血：布考斯基诗集
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2012-8-2-%E7%88%B1%E6%98%AF%E5%9C%B0%E7%8B%B1%E7%9A%84%E6%81%B6%E7%8B%97%EF%BC%9A%E5%B8%83%E8%80%83%E6%96%AF%E5%9F%BA%E8%AF%97%E9%9B%86/" class="md-nav__link">
         爱如恶狗：布考斯基诗集
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2009-3-18-%E6%9C%80%E7%BB%88%E4%BA%BA%E5%A6%82%E8%8A%B1%EF%BC%9A%E5%B8%83%E8%80%83%E6%96%AF%E5%9F%BA%E6%96%B0%E8%AF%97%E9%80%89%E8%AF%91/" class="md-nav__link">
         最终人如花：布考斯基新诗选译
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2019-1-3-%E9%BB%91%E9%A6%8D%E7%88%B1%E5%A4%B9%E8%8F%9C%EF%BC%88%E8%AF%95%E8%AF%91%EF%BC%89/" class="md-nav__link">
         黑馍爱夹菜（试译）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-11-9-%E3%80%8A%E7%94%9F%E6%9D%A5%E5%A6%82%E6%AD%A4%E3%80%8B%E5%AD%97%E5%B9%95/" class="md-nav__link">
         《生来如此》字幕
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
           
             
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../2018-10-14-%E7%BA%A6%E7%BF%B0%C2%B7%E5%87%A1%E8%92%82/" class="md-nav__link">
         约翰·凡蒂（John Fante）
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
@@ -1987,20 +3293,53 @@
         </ul>
       </nav>
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+  <!-- Determine class according to state -->
   
   
+
+  <!-- Main navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
         About
       </a>
+      <!-- 根据markdown文章的meta数据，显示Status值为new的文章的Modified时间 -->
+      
     </li>
   
 
@@ -2029,160 +3368,181 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    一年级下学期拼音字母表为什么要用英文字母的顺序？
+    为什么外语姓名翻译总是音译？为什么不用意译？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    如何看待政协委员建议「中医名著入选初高中语文课文」？
+    汉英发音节奏的差异是不是因为汉字发音多是辅+元，而英语单词却有很多以元音开头？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    如何用小孩子也能听懂的话来解释为什么汉字是方的？
+    为什么很多人把“韦”读成汉语拼音的第三声？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    如何向小孩子解释为什么汉字必须按照笔画顺序来写？
+    一年级下学期拼音字母表为什么要用英文字母的顺序？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    如何较为系统的掌握识认篆文的知识？
+    如何看待政协委员建议「中医名著入选初高中语文课文」？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    在古诗词中一个逗号算一句，那为什么不直接把逗号改为句号呢？
+    如何用小孩子也能听懂的话来解释为什么汉字是方的？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    汉字为何是简化的趋势？
+    如何向小孩子解释为什么汉字必须按照笔画顺序来写？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    "一"的声调以字典为准还是小学语文教科书为准？
+    如何较为系统的掌握识认篆文的知识？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    佞、颖为什么是形声字？
+    在古诗词中一个逗号算一句，那为什么不直接把逗号改为句号呢？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    什么词语中有两个不字？
+    汉字为何是简化的趋势？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
-    “共”为什么从部首“艹”可以查到?
+    "一"的声调以字典为准还是小学语文教科书为准？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
-    为什么当代中国都不造字，而赋予汉字新的含义?
+    佞、颖为什么是形声字？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
-    古代汉语词典高中生怎么用？
+    什么词语中有两个不字？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_14" class="md-nav__link">
-    一个六岁的孩子最需要的是什么？
+    “共”为什么从部首“艹”可以查到?
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
-    「赵孟頫」的「頫」字不是只有传统字吗？高中教材是怎么做出简化字的？
+    为什么当代中国都不造字，而赋予汉字新的含义?
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_16" class="md-nav__link">
-    究竟有没有「您们」这种用法？
+    古代汉语词典高中生怎么用？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_17" class="md-nav__link">
-    玩的偏旁是叫“斜玉旁”还是“王字旁”啊？
+    一个六岁的孩子最需要的是什么？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_18" class="md-nav__link">
-    很多家长认为，亲子阅读只适用于幼儿阶段，这种理解正确吗？
+    「赵孟頫」的「頫」字不是只有传统字吗？高中教材是怎么做出简化字的？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_19" class="md-nav__link">
-    孩子快三年级了不爱写字怎么办？
+    究竟有没有「您们」这种用法？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_20" class="md-nav__link">
-    请问大家，三岁半的孩子上有必要上全脑教育课吗？
+    玩的偏旁是叫“斜玉旁”还是“王字旁”啊？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_21" class="md-nav__link">
-    怎么让孩子养成爱看书的习惯？
+    很多家长认为，亲子阅读只适用于幼儿阶段，这种理解正确吗？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_22" class="md-nav__link">
-    有没有背成语生词拼音的软件推荐？
+    孩子快三年级了不爱写字怎么办？
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_23" class="md-nav__link">
+    请问大家，三岁半的孩子上有必要上全脑教育课吗？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    怎么让孩子养成爱看书的习惯？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    有没有背成语生词拼音的软件推荐？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
     为什么要按照国际音标发明汉语拼音，不用国际音标加声调？
   </a>
   
@@ -2203,14 +3563,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_24" class="md-nav__link">
+  <a href="#_27" class="md-nav__link">
     成年人汉字基础较薄弱，读音经常读错怎么办？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_25" class="md-nav__link">
+  <a href="#_28" class="md-nav__link">
     如何在敲击电脑键盘的时候让电脑键盘发出字母读音？
   </a>
   
@@ -2231,28 +3591,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_26" class="md-nav__link">
+  <a href="#_29" class="md-nav__link">
     几岁开始学写拼音？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_27" class="md-nav__link">
+  <a href="#_30" class="md-nav__link">
     繁体字有恢复的必要吗？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_28" class="md-nav__link">
+  <a href="#_31" class="md-nav__link">
     走之底的字大多和什么有关？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_29" class="md-nav__link">
+  <a href="#_32" class="md-nav__link">
     古代重男轻女那为什么在汉字里，以“男”为偏旁的字很少，以“女”为偏旁的字挺多。……
   </a>
   
@@ -2274,22 +3634,41 @@
                   <h1>:::更多答问:::</h1>
                 
                 <p>这些是我在知乎等平台上，回答语言文字问题的帖子汇总(帖子越来越长，原来放在这里的一些已经拆成单篇，以便阅读)。其中很多观点和材料亦见于我的其他短文中。有改动，并附原文地址。</p>
-<h2 id="_1"><a href="https://www.zhihu.com/question/447691420/answer/1764115739">一年级下学期拼音字母表为什么要用英文字母的顺序？</a><a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<h2 id="_1"><a href="https://www.zhihu.com/question/385265179/answer/1772111631">为什么外语姓名翻译总是音译？为什么不用意译？</a><a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p><strong>【回答】</strong></p>
+<p>人名音译是翻译传统，直截了当，方便两边人包括名字的主人明白说的是谁。</p>
+<p>如果是意译就可能五花八门。虽说名字的意思里可能包含文化，但各人的理解不一样，“名从主人”，你的理解可能跟主人的理解不一样。再说，主人一不一定理解、同意他爸妈取的名字的意思。你把Jenny翻译成母驴，珍妮姑娘能同意吗？跟你没完！</p>
+<p>翻译中国人名也一样。比如很多中国孩子的名字有“沐”字，你把“李沐”翻译成“Wash Plum's Hair“，主人肯定不能同意；人家的李是李唐的李，沐是如沐春风的沐，或者纯粹是喜欢沐这个字，有水、有木，水清木华，你管不着。</p>
+<p>所以还是把名字当做单纯的声音符号更好。</p>
+<h2 id="_2"><a href="https://www.zhihu.com/question/448514519/answer/1772040377">汉英发音节奏的差异是不是因为汉字发音多是辅+元，而英语单词却有很多以元音开头？</a><a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p><strong>【回答】</strong></p>
+<p>根据不足。下面粗略统计，没有考虑词频、字频：</p>
+<p>在通用规范汉字表8105字的范围内，有1294种带调音节（对应8828字次），其中又有126种零声母音节（也就是元音开头的,对应1215字次），占9.7%，对应字次占13.8%。</p>
+<p>英语方面，我根据12dicts-6.0.2中的American-2of12inf统计，为15957/81883=19.5%。</p>
+<p>英语元音开头的词比同类汉字多5.7%，算多吗？</p>
+<p>原因更可能在于：汉语词以单音节、双音节（且主要是两个单音节松散拼合而成）为主，音节末尾一般是元音，此外只有鼻音n、ng。而英语词音节长度就比较多样，而且整体性强，导致词内音节轻重差别大；辅音结尾很普遍，前后词连读普遍。</p>
+<p>老北京人吞字严重，相声里说的，“建国门”说成jian'ge'me，竖起耳朵听像“见过没”。南方人把“这样子”说成“酱紫”。不过毕竟很少见。</p>
+<h2 id="_3"><a href="https://www.zhihu.com/question/448291186/answer/1770068119">为什么很多人把“韦”读成汉语拼音的第三声？</a><a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<p><strong>【回答】</strong></p>
+<p>可能因为更常用的人名用字“伟、炜”都读wei3。</p>
+<p>韦姓人不多，主要是我们广西老乡。更可能是因为韦唯在电视上经常被读成wei3wei2（似乎比“喂喂”好听~），而另一位韦姓名人拔哥（电影上的读音正确）的影响就要小得多。大众媒体（尤其是曾经的电视）的影响是难以估量的。</p>
+<p>只是猜。</p>
+<h2 id="_4"><a href="https://www.zhihu.com/question/447691420/answer/1764115739">一年级下学期拼音字母表为什么要用英文字母的顺序？</a><a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>这主要是查字典用的。汉语字词如果按拼音排序，那就是英文字母的顺序。</p>
 <p>如果孩子学了英语，按英语读更好。</p>
 <p>孩子读背的时候，用一本字典翻给他看，可以激发兴趣。</p>
-<h2 id="_2"><a href="https://www.zhihu.com/question/447607706/answer/1764072139">如何看待政协委员建议「中医名著入选初高中语文课文」？</a><a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<h2 id="_5"><a href="https://www.zhihu.com/question/447607706/answer/1764072139">如何看待政协委员建议「中医名著入选初高中语文课文」？</a><a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>大家都知道语文书是最大的广告牌。</p>
 <p>有年江西发现有套小学语文教材上没有井冈山，就这么着这么着了。然后教材就上了《朱德的扁担》。后来有人说，那个朱德的扁担的照片（从当地博物馆拍的），上面的字不对啊，跟文章上的字对不上，也不像那时候人写的。</p>
 <p>这人也太较真。在那艰难的革命岁月，一根竹扁担谁会留着它，扛着它爬雪山过草地，就为了将来搞红色旅游？</p>
-<h2 id="_3"><a href="https://www.zhihu.com/question/447361326/answer/1763210563">如何用小孩子也能听懂的话来解释为什么汉字是方的？</a><a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<h2 id="_6"><a href="https://www.zhihu.com/question/447361326/answer/1763210563">如何用小孩子也能听懂的话来解释为什么汉字是方的？</a><a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>跟孩子说，汉字不是方的，说汉字是“方块字”只是一个大致的、相对的说法；相对于一般的外文来说，汉字行列整齐排在一个个方格里是很合适的。</p>
 <p>大多数文字都把字母排在一条直线上（韩文等例外），所以单字就会有长有短，而汉字在造字初期不大讲究部件拼合顺序、方向，更在意整体性（免得把一个字看成多个字，因为部件往往就是一个字），所以拼得紧凑些。（按几何原理，拼成圆形最紧凑但从经济性上讲没必要，其次是正方形。）</p>
 <p>虽说，汉字大体上讲最适合写在一个个方格里，排成整齐的行列，但是每个字都不一样，每个人写字也不一样。拿一些不同风格的楷书字帖就能看出来，更不要说行草书了。</p>
-<h2 id="_4"><a href="https://www.zhihu.com/question/447361307">如何向小孩子解释为什么汉字必须按照笔画顺序来写？</a><a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
+<h2 id="_7"><a href="https://www.zhihu.com/question/447361307">如何向小孩子解释为什么汉字必须按照笔画顺序来写？</a><a class="headerlink" href="#_7" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>我给孩子说笔顺的时候，常常写一个行书或草书给她看。告诉她，如果不按笔顺写就</p>
 <ul>
@@ -2297,13 +3676,13 @@
 <li>写出来也不好看(这里也用行、草书示例)。</li>
 </ul>
 <p>不过也跟孩子说，个别笔顺不对也不是什么大事，但是发现错了最好改正，养成好习惯。</p>
-<h2 id="_5"><a href="https://www.zhihu.com/question/440483386/answer/1735573393">如何较为系统的掌握识认篆文的知识？</a><a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
+<h2 id="_8"><a href="https://www.zhihu.com/question/440483386/answer/1735573393">如何较为系统的掌握识认篆文的知识？</a><a class="headerlink" href="#_8" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>学篆书要看《说文》，但《说文解字》很多不可靠；</p>
 <p>《段注》好很多，但也不如现代人整理过的资料准确、好读，比如李学勤主编的《字源》，除非你要学怎么做学问。</p>
 <p>琢磨字形可以用高明、涂白奎《古文字类编》。</p>
 <p>《字源》《古文字类编》是比较简明的，业余学习够用了。其他复杂资料多如牛毛，慢慢再说。</p>
-<h2 id="_6"><a href="https://www.zhihu.com/question/406360374/answer/1703575435">在古诗词中一个逗号算一句，那为什么不直接把逗号改为句号呢？</a><a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
+<h2 id="_9"><a href="https://www.zhihu.com/question/406360374/answer/1703575435">在古诗词中一个逗号算一句，那为什么不直接把逗号改为句号呢？</a><a class="headerlink" href="#_9" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>直接改为句号，“联”的关系和界限就不清楚了。</p>
 <p>句末不一定非要用句号/叹号/问号，为了强调句子间关联（复句），常常用逗号分隔。以下各图选自《标点符号用法》。</p>
@@ -2311,18 +3690,18 @@
 <img alt="逗号2.jpg" src="../img/%E8%AF%86%E5%AD%97%E7%AD%94%E9%97%AE/%E9%80%97%E5%8F%B72.jpg" /></p>
 <p>有些人不分青红皂白，复句间一律用分号分隔，不好；第一层复句内部如果还得用逗号，这时才在第一层外用分号。</p>
 <p><img alt="分号.jpg" src="../img/%E8%AF%86%E5%AD%97%E7%AD%94%E9%97%AE/%E5%88%86%E5%8F%B7.jpg" /></p>
-<h2 id="_7"><a href="https://www.zhihu.com/question/440909609/answer/1696320856">汉字为何是简化的趋势？</a><a class="headerlink" href="#_7" title="Permanent link">#</a></h2>
+<h2 id="_10"><a href="https://www.zhihu.com/question/440909609/answer/1696320856">汉字为何是简化的趋势？</a><a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
 <p>没有那么简单，语言文字有繁化的过程，也有简化的过程。历史上汉字有简的时候，比如秦隶相对于大篆就是简化，最初的楷书相对于隶书也是简化；像宋元俗字这样的民间简化现象大概历来如此的，只是以前没被注意到罢了；颜真卿他们家学里就有很多“简字”。当然也有繁化的时候，这不用说了。</p>
 <p>另外，简化、繁化都会有个度，符号要有足够的信息保证有区分度，也会自然地讲求经济性限制过多的冗余信息。</p>
 <p>从社会动力来讲，笼统来说，社会大融合时，公共信息空间变得零散变动，理解和共识变得困难，所以会倾向于简化，大家只取能接受的交集就好了，与人方便自己方便。所以社会变革时期常常会出现语言文字改革（简化）。</p>
 <p>社会稳定发展阶段，因为有更大、更完整稳定的理解与共识的知识空间，又会有所繁化。比如各种亚文化语言，社群黑话，知识阶层的雅言。</p>
 <p>当然也没我说的这么简单。</p>
-<h2 id="_8"><a href="https://www.zhihu.com/question/425326374/answer/1521140003">"一"的声调以字典为准还是小学语文教科书为准？</a><a class="headerlink" href="#_8" title="Permanent link">#</a></h2>
+<h2 id="_11"><a href="https://www.zhihu.com/question/425326374/answer/1521140003">"一"的声调以字典为准还是小学语文教科书为准？</a><a class="headerlink" href="#_11" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>单字字音和语流中的实际读音（包括声调）是不同的。在语文教材，课文中标出了明显的语流音变（不全，已经尽量简化），以便学生正确朗读；而生字标的是原调（就是你说的字典标音）。</p>
 <p>为了简便起见，字典一般是不标语流音变的。这不等于说字典中的多音节词语在实际发音时不用变调，而是说，得读者自己变。</p>
 <p>如果学生在这个问题上有疑惑、困扰（不一定是提出问题，每到这样的地方打磕巴也算），老师应该告诉孩子有“语流音变”这种现象，但不一定用这个专业术语（用也没什么大不了，第一次举例解释一下就可以），也不用教规律。如果孩子没有疑惑、困扰，可以稍晚一点再说。</p>
-<h2 id="_9"><a href="https://www.zhihu.com/question/418915053/answer/1448667380">佞、颖为什么是形声字？</a><a class="headerlink" href="#_9" title="Permanent link">#</a></h2>
+<h2 id="_12"><a href="https://www.zhihu.com/question/418915053/answer/1448667380">佞、颖为什么是形声字？</a><a class="headerlink" href="#_12" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>一个部件的两个部分，分别放在一边一角，或左右两侧、上下两端，是常见的。如：</p>
 <ul>
@@ -2334,17 +3713,17 @@
 <li>班斑，从玨（珏）。</li>
 <li>哀衰衷裹褒衮袤亵裒襄，从衣。</li>
 </ul>
-<h2 id="_10"><a href="https://www.zhihu.com/question/417139401/answer/1438870956">什么词语中有两个不字？</a><a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
+<h2 id="_13"><a href="https://www.zhihu.com/question/417139401/answer/1438870956">什么词语中有两个不字？</a><a class="headerlink" href="#_13" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>GoldeDict有词头过滤功能，可以使用通配符或者正则表达式处理，很方便地找到特定格式/元素的词语。结果可以导出。</p>
 <p><img alt="通配符过滤.png" src="../img/%E8%AF%86%E5%AD%97%E7%AD%94%E9%97%AE/%E9%80%9A%E9%85%8D%E7%AC%A6%E8%BF%87%E6%BB%A4.png" />
 <img alt="正则表达式过滤.png" src="../img/%E8%AF%86%E5%AD%97%E7%AD%94%E9%97%AE/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%87%E6%BB%A4.png" /></p>
-<h2 id="_11"><a href="https://www.zhihu.com/question/416891050/answer/1438324420">“共”为什么从部首“艹”可以查到?</a><a class="headerlink" href="#_11" title="Permanent link">#</a></h2>
+<h2 id="_14"><a href="https://www.zhihu.com/question/416891050/answer/1438324420">“共”为什么从部首“艹”可以查到?</a><a class="headerlink" href="#_14" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>按国标应该归在“八”下。</p>
 <p>有些工具书用<strong>“多开门”</strong>的办法，也就是可以从多个部首找到同一个字。一般的汉字归部是为了索引方便，主要看字形，而不是字理；跟《说文》类工具书为了讲清字理不同。但是对同一个字的字形结构，不同的人可能有不同的直观理解。比如“共”字，有些人理解为“龷八”，有些人可能理解为“艹一八“。所以多开门，多几条路，也是好的。</p>
 <p>不过，如果“八”部下查不到，就可以认为这个归部有错误。</p>
-<h2 id="_12"><a href="https://www.zhihu.com/question/414255636/answer/1423263952">为什么当代中国都不造字，而赋予汉字新的含义?</a><a class="headerlink" href="#_12" title="Permanent link">#</a></h2>
+<h2 id="_15"><a href="https://www.zhihu.com/question/414255636/answer/1423263952">为什么当代中国都不造字，而赋予汉字新的含义?</a><a class="headerlink" href="#_15" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>造字最多的时代就是当代啊，简化字总表，二简字表，都是造字。化学用字也造了不少。有趣的是，搞化学的反对文改会简化；同时，文改会则讨厌搞化学的生造。</p>
 <p>语言文字的两条基本规律，第一条就是约定俗成。老百姓随时都可能有意无意地在造字，但是被广泛承认的机会很少，所以问题也不大。这是俗成。上面说的简化字总表、二简字表算是约定。</p>
@@ -2352,7 +3731,7 @@
 <p>不过在现当代，造字往往被视作革命，进步。比如钱玄同他们造“她”字。简化字运动中还发动群众造了很多字。</p>
 <p>总之，字是亿万人的公器公产，而且牵一发而动全身，要谨慎的。现在有人说要用繁体字代替简体字，其实跟当初用简体字代替繁体字一样，看起来很革命/反革命，实质上都是极权思维，不合于民权的潮流了。</p>
 <p>当然，因为汉语多音节化，对字的依赖也越来越小，也就是说造字的收益越来越小。不过造字向来有神力大能，从前可以让天雨粟鬼夜哭，现在也还很吸引人。</p>
-<h2 id="_13"><a href="https://www.zhihu.com/question/414042447/answer/1410524426">古代汉语词典高中生怎么用？</a><a class="headerlink" href="#_13" title="Permanent link">#</a></h2>
+<h2 id="_16"><a href="https://www.zhihu.com/question/414042447/answer/1410524426">古代汉语词典高中生怎么用？</a><a class="headerlink" href="#_16" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>想提高分数，要多读文言短文，选一些好篇目朗读，读熟。</p>
 <p>可以买一两本带注释和白话翻译的那种集子，作者和出版社都要专业。之所以要有注释和翻译，是因为即使你查词典，你也可能无法正确选择义项；再说还有很多字词、文化等方面的特殊情况，查一般的词典是查不到的。具体的读本我没有特别留意，读过，觉得比较好的有：</p>
@@ -2363,12 +3742,12 @@
 </ul>
 <p>要是不着急，还可以读些长点的。历史故事比较好读，最好是前四史，有点注释、解题的选本，比如王伯祥的《史记》选。也可以自选《通鉴纪事本末》中的故事来读（可能没人做过注释）。</p>
 <p><strong>纸质词典查起来比较费事，应该用电子词典（讲究的话，可以用mdx图版的），就因为方便，你才愿意多查，随手查。</strong></p>
-<h2 id="_14"><a href="https://www.zhihu.com/question/287322681/answer/1399861176">一个六岁的孩子最需要的是什么？</a><a class="headerlink" href="#_14" title="Permanent link">#</a></h2>
+<h2 id="_17"><a href="https://www.zhihu.com/question/287322681/answer/1399861176">一个六岁的孩子最需要的是什么？</a><a class="headerlink" href="#_17" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>这是价值观的问题，不可能有一致的意见。</p>
 <p>有人觉得孩子健康快乐最总要，有人觉得开发大脑最重要，有人觉得情商最重要，还有看重习惯、品格、艺术等等的。都没大问题，但什么都想要，什么都要孩子学，搞得孩子受不了，就有问题了。</p>
 <p>家庭教育跟家长、孩子的实际能力和实际问题紧密相关，需要寻找自己家的“最佳实践”，也需要确立自己家的价值观。没有作业可以抄。</p>
-<h2 id="_15"><a href="https://www.zhihu.com/question/27722018/answer/1381169168">「赵孟頫」的「頫」字不是只有传统字吗？高中教材是怎么做出简化字的？</a><a class="headerlink" href="#_15" title="Permanent link">#</a></h2>
+<h2 id="_18"><a href="https://www.zhihu.com/question/27722018/answer/1381169168">「赵孟頫」的「頫」字不是只有传统字吗？高中教材是怎么做出简化字的？</a><a class="headerlink" href="#_18" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>赵孟𫖯。（如果你看不见我打的“𫖯”字，那可能是你设备字体的问题。）</p>
 <p><img alt="頫0.png" src="../img/%E8%AF%86%E5%AD%97%E7%AD%94%E9%97%AE/%E9%A0%AB0.png" /></p>
@@ -2378,12 +3757,12 @@
 <p><img alt="頫2.png" src="../img/%E8%AF%86%E5%AD%97%E7%AD%94%E9%97%AE/%E9%A0%AB2.png" /></p>
 <p>《通用规范汉字表》因为一个人而加一个字还不止这一个，不过都不是普通人。比如“镕”字，大家都认识。还有这个，不看新闻联播的可能不大熟悉：</p>
 <p><img alt="馼.png" src="../img/%E8%AF%86%E5%AD%97%E7%AD%94%E9%97%AE/%E9%A6%BC.png" /></p>
-<h2 id="_16"><a href="https://www.zhihu.com/question/19696820/answer/1372873215">究竟有没有「您们」这种用法？</a><a class="headerlink" href="#_16" title="Permanent link">#</a></h2>
+<h2 id="_19"><a href="https://www.zhihu.com/question/19696820/answer/1372873215">究竟有没有「您们」这种用法？</a><a class="headerlink" href="#_19" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>吕叔湘《现代汉语八百词》是这么说的：</p>
 <p><img alt="您-现代汉语八百词.png" src="../img/%E8%AF%86%E5%AD%97%E7%AD%94%E9%97%AE/%E6%82%A8-%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E5%85%AB%E7%99%BE%E8%AF%8D.png" /></p>
 <p>南方人本来连“您”都不说的。可能有些人学了“您”之后，顺便用上了“您们”~~但是没有人顺便说“怹”。</p>
-<h2 id="_17"><a href="https://www.zhihu.com/question/410724388/answer/1372663082">玩的偏旁是叫“斜玉旁”还是“王字旁”啊？</a><a class="headerlink" href="#_17" title="Permanent link">#</a></h2>
+<h2 id="_20"><a href="https://www.zhihu.com/question/410724388/answer/1372663082">玩的偏旁是叫“斜玉旁”还是“王字旁”啊？</a><a class="headerlink" href="#_20" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>俗称“王字旁”，比较流行，比如在语文老师中。又叫“斜玉旁”，比较合理。推荐后者，让孩子多学一点还不算难但比较有用的知识。</p>
 <p>可供参考的是王宁先生等研制的《基础教学用现代汉语常用字部件规范》（征求意见稿，2003)，他们选定的是后者：</p>
@@ -2392,14 +3771,14 @@
 <p>也可能是因为后来发布了《现代常用字部件及部件名称规范》（2009）——研制团队相同，跟上一个标准保持一致：</p>
 <p><img alt="斜玉旁2.png" src="../img/%E8%AF%86%E5%AD%97%E7%AD%94%E9%97%AE/%E6%96%9C%E7%8E%89%E6%97%812.png" /></p>
 <p>《现代常用字部件及部件名称规范》（2009）是教育部/国家语委规范（GF），不是国标（GB）。二者的效力差异我不是太清楚。</p>
-<h2 id="_18"><a href="https://www.zhihu.com/question/405263275/answer/1370469026">很多家长认为，亲子阅读只适用于幼儿阶段，这种理解正确吗？</a><a class="headerlink" href="#_18" title="Permanent link">#</a></h2>
+<h2 id="_21"><a href="https://www.zhihu.com/question/405263275/answer/1370469026">很多家长认为，亲子阅读只适用于幼儿阶段，这种理解正确吗？</a><a class="headerlink" href="#_21" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>幼儿阶段的亲子阅读，效果是立竿见影的。</p>
 <p>但从孩子识字、阅读能力的角度看，孩子在二年级以前，比较长的文章读起来还有困难。（二年级课文一般不到五百字，尚且需要老师领读，同学伴读。）这时，家长读给孩子听，或者辅助孩子读，收益还是很高的。</p>
 <p>再大一点，就可以孩子读，亲子讨论，或者挑个别篇目讨论。</p>
 <p>给孩子读书，跟孩子讨论，是很花时间和精力的事情。各家有各家的情况，自可权衡，不一定非得怎么样。</p>
 <p>至于有些人说“亲子阅读是一辈子的事情”，听起来很美好，令人感动。不过这是废话。当家长老了，孩子给父母读书，是不是也叫“亲子阅读”？偷换概念、唱高调，只有抒情效果，并没有指导意义。</p>
-<h2 id="_19"><a href="https://www.zhihu.com/question/289919342/answer/1370409945">孩子快三年级了不爱写字怎么办？</a><a class="headerlink" href="#_19" title="Permanent link">#</a></h2>
+<h2 id="_22"><a href="https://www.zhihu.com/question/289919342/answer/1370409945">孩子快三年级了不爱写字怎么办？</a><a class="headerlink" href="#_22" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>可能是写怕了吧？慢慢改善。</p>
 <ol>
@@ -2409,14 +3788,14 @@
 <li>学习画画对于锻炼手部机能有帮助。</li>
 </ol>
 <p>一个题外话：亲子交流方法很重要，可以看看《如何说孩子才会听，怎么听孩子才肯说》一类的书。</p>
-<h2 id="_20"><a href="https://www.zhihu.com/question/408789830/answer/1370399791">请问大家，三岁半的孩子上有必要上全脑教育课吗？</a><a class="headerlink" href="#_20" title="Permanent link">#</a></h2>
+<h2 id="_23"><a href="https://www.zhihu.com/question/408789830/answer/1370399791">请问大家，三岁半的孩子上有必要上全脑教育课吗？</a><a class="headerlink" href="#_23" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>伪科学。</p>
 <p><a href="https://mp.weixin.qq.com/s?subscene=23&amp;__biz=MzIzNTAyODMwOA==&amp;mid=2650213711&amp;idx=1&amp;sn=27028d6caea6ebd5059c16be5824d1d0&amp;chksm=f0eec774c7994e6203ead482407b5a014dafa19bb25d4e8427b160f330c84ec3c1643cdfa63b&amp;scene=7&amp;key=b06d693918fd14f4ba7b6dc703107045afca4ca4039c4a7809950a9e0525acadb3f2767c8e3c2ec3ba383ab5a7571ad2d3a16312086ebc3e0fbfc6c9fae83b8ffaa219cd4e7be0605a2f7985961276d1&amp;ascene=0&amp;uin=MTU5NjgzNDIwOA%3D%3D&amp;devicetype=Windows+Server+2016+x64&amp;version=62090529&amp;lang=zh_CN&amp;exportkey=A3LPCrLykhCsAKEjPlCYIr4%3D&amp;pass_ticket=aOWsOSb2mRxuFWZfT6LMXJWtQlq%2Bn9WyzWd6SWY0pCCXQWUCfQj2vjO3YIYPC6Sh">别再给孩子做什么“右脑/全脑开发”，那是伪科学 | 短史记</a>
 ​</p>
 <p>育儿中不要轻信那些玄乎、没法体验到的东西，孩子的时光很宝贵，而且往往不可重复，所以不要拿孩子做实验。</p>
 <p>另一方面，孩子很敏感，可以简单粗暴地讲：孩子没感觉就是没作用，有好的感觉就有好的作用，有坏的感觉就有坏的作用。父母要细心观察、体会孩子的日常感受。</p>
-<h2 id="_21"><a href="https://www.zhihu.com/question/406279016/answer/1367296619">怎么让孩子养成爱看书的习惯？</a><a class="headerlink" href="#_21" title="Permanent link">#</a></h2>
+<h2 id="_24"><a href="https://www.zhihu.com/question/406279016/answer/1367296619">怎么让孩子养成爱看书的习惯？</a><a class="headerlink" href="#_24" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>我经验中最有效的三条是：</p>
 <ol>
@@ -2435,7 +3814,7 @@
 </ol>
 <p><a href="../2020-07-26-%E9%99%AA%E5%AD%A9%E5%AD%90%E5%AD%A6%E8%8B%B1%E8%AF%AD%E7%9A%84%E4%B8%80%E7%82%B9%E5%B0%9D%E8%AF%95%E5%92%8C%E6%83%B3%E6%B3%95/">陪孩子学英语的一点尝试和想法（累积更新）</a>
 ​</p>
-<h2 id="_22"><a href="https://www.zhihu.com/question/409501763/answer/1363740325">有没有背成语生词拼音的软件推荐？</a><a class="headerlink" href="#_22" title="Permanent link">#</a></h2>
+<h2 id="_25"><a href="https://www.zhihu.com/question/409501763/answer/1363740325">有没有背成语生词拼音的软件推荐？</a><a class="headerlink" href="#_25" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>记忆卡片(memo)类软件，只要是可以碎片化的，背什么都可以：</p>
 <ol>
@@ -2444,7 +3823,7 @@
 <li>supermemo，算法领袖，商业软件</li>
 </ol>
 <p>需要略微学习一下理念、操作、制卡（英语方面的现成单词库很多）。</p>
-<h2 id="_23"><a href="https://www.zhihu.com/question/408095514/answer/1362408497">为什么要按照国际音标发明汉语拼音，不用国际音标加声调？</a><a class="headerlink" href="#_23" title="Permanent link">#</a></h2>
+<h2 id="_26"><a href="https://www.zhihu.com/question/408095514/answer/1362408497">为什么要按照国际音标发明汉语拼音，不用国际音标加声调？</a><a class="headerlink" href="#_26" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>《汉语拼音方案》最初叫《汉语拼音方案文字方案》，据说是周恩来删掉的俩字。也就是说，最终目的是做文字，代替汉字。这样就需要好认、好写。</p>
 <p>当时，拉丁字母有最广泛的国际认同，众多使用广泛的、成熟的文字方案，成熟的机器输入（当时是打字、发电报）方案。比如现在的孩子都要学英语，拼音用同样的拉丁字母，这样就不需要学两遍，就是很大的便利。国际音标不是做文字用的，辨识度不高，容易混淆，机器输入、书写都困难。</p>
@@ -2463,7 +3842,7 @@
 <p>可能你用汉语发音去套英语发音造成的错觉。成人学外语容易这样，在母语里找相近的音位。</p>
 <p>你看看舌面元音图，[æ]离[a]很近。[a]本来舌位较低，但是紧接着要滑向次高元音（就成了ai），就跟[æ]更像了。但是ai是复元音，舌头是动的，而[æ]是单元音，差别挺大。</p>
 <p>多用有发音的电子词典。另外，也不要太纠结于一个词两个词，多听、多模仿成篇的。大量输入最关键。想正音就看专门的视频教程，比如Paul S. Gruber 的<em>pronunciation workshop</em></p>
-<h2 id="_24"><a href="https://www.zhihu.com/question/408320962/answer/1353666852">成年人汉字基础较薄弱，读音经常读错怎么办？</a><a class="headerlink" href="#_24" title="Permanent link">#</a></h2>
+<h2 id="_27"><a href="https://www.zhihu.com/question/408320962/answer/1353666852">成年人汉字基础较薄弱，读音经常读错怎么办？</a><a class="headerlink" href="#_27" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <ol>
 <li>勤查电子词典（查纸质词典不方便，一般人会偷懒，干脆不查），电脑、手机都装上电子词典；</li>
@@ -2471,7 +3850,7 @@
 <li>把常错的字，记在记忆卡片软件（如anki）里面，复习；</li>
 <li>看一点语音学知识的书，可能会帮你找到乐趣，吸引你钻研。专业研究是获得乐趣的好途径，就是所谓知识的乐趣。</li>
 </ol>
-<h2 id="_25"><a href="https://www.zhihu.com/question/407782930/answer/1347872684">如何在敲击电脑键盘的时候让电脑键盘发出字母读音？</a><a class="headerlink" href="#_25" title="Permanent link">#</a></h2>
+<h2 id="_28"><a href="https://www.zhihu.com/question/407782930/answer/1347872684">如何在敲击电脑键盘的时候让电脑键盘发出字母读音？</a><a class="headerlink" href="#_28" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>把win系统的“讲述人”功能打开即可。这是辅助视障人士的。也可以给孩子学习键盘、字母、练习输入时使用。</p>
 <p>不知道有没有按拼音读的软件。但肯定可以用Autohotkey来做，对孩子学拼音、输入汉字有帮助。</p>
@@ -2484,7 +3863,7 @@
 <p><strong>【回答】</strong></p>
 <p>蔓的两个读音，màn和wàn，是文白异读的关系。màn是文读，文言里肯定这么读。wàn是白读，口语里常用。</p>
 <p>还有个特别容易搞错的文白异读是“裳”，“初闻涕泪满衣裳”的“衣裳chang2”和口语里说的“衣裳shang”，音、意都不同。</p>
-<h2 id="_26"><a href="https://www.zhihu.com/question/407264164/answer/1343485466">几岁开始学写拼音？</a><a class="headerlink" href="#_26" title="Permanent link">#</a></h2>
+<h2 id="_29"><a href="https://www.zhihu.com/question/407264164/answer/1343485466">几岁开始学写拼音？</a><a class="headerlink" href="#_29" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>在小学语文中，拼音的定位是用来辅助识字的：</p>
 <blockquote>
@@ -2492,10 +3871,10 @@
 </blockquote>
 <p>就是说，学拼音的重点是要会认读；一般不用辨音并写下来（因受积习影响，实际教学中可能有超纲的情况），会有一些需要抄写的情况。</p>
 <p>那就上一年级了再跟着老师学写就可以。再说，仅就抄写而言，英语会写后，拼音自然就会写了。</p>
-<h2 id="_27"><a href="https://www.zhihu.com/question/45948055/answer/1334715785">繁体字有恢复的必要吗？</a><a class="headerlink" href="#_27" title="Permanent link">#</a></h2>
+<h2 id="_30"><a href="https://www.zhihu.com/question/45948055/answer/1334715785">繁体字有恢复的必要吗？</a><a class="headerlink" href="#_30" title="Permanent link">#</a></h2>
 <p>不是恢复哇，也没死，也没废。只是给限制了。现在需要把一些语言文字的选择权利归还给公民，比如出版物自主用字的权利。就像现在网络用字实际上是自由的，也没影响任何人，繁简相安无事。</p>
 <p>我反对动用公权废除简体重用繁体，就像我认为当初简化就不对一样。民众不应该为少数人的喜好，什么韵味呀，有文化呀，先进哪，国际化呀，等等买单。</p>
-<h2 id="_28"><a href="https://www.zhihu.com/question/405450409/answer/1333365917">走之底的字大多和什么有关？</a><a class="headerlink" href="#_28" title="Permanent link">#</a></h2>
+<h2 id="_31"><a href="https://www.zhihu.com/question/405450409/answer/1333365917">走之底的字大多和什么有关？</a><a class="headerlink" href="#_31" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>走之底“辶”，是“辵”（chuo4）的变形。上面的“彡”就是“彳”（chi4），是“行”的简化（参考“辵”的甲骨文），表示行走。下面是“止”，表示脚。</p>
 <p><img alt="辵.png" src="../img/%E8%AF%86%E5%AD%97%E7%AD%94%E9%97%AE/%E8%BE%B5.png" /></p>
@@ -2503,7 +3882,7 @@
 <p>《玉篇》说：“辵，走也。”这里的“走”是“跑”的意思。带走之儿的字，或近或远，或多或少，常跟这个意思有点儿关系。</p>
 <p>通用规范字中有108个带走之儿的字，可以体会一下：</p>
 <p>辽边迂过达迈迁迄迅巡进远违运还连近返迎这迟述迪迭迫迢选适追逃迹送迷逆退逊逝速逗逐逞造透途逛逢递通逻逸逮随逼遇遏遗逾道遂遍遣遥遭遮遵邀避迓迕迥迮迤迩迦迨逅逄迸逑逋逦逍逖逡逵逶逯遄遑遁遒遐遨遢遛遴遽邂邈邋辿迳迺逴逭遆遘遹</p>
-<h2 id="_29"><a href="https://www.zhihu.com/question/399757719/answer/1332020602">古代重男轻女那为什么在汉字里，以“男”为偏旁的字很少，以“女”为偏旁的字挺多。……</a><a class="headerlink" href="#_29" title="Permanent link">#</a></h2>
+<h2 id="_32"><a href="https://www.zhihu.com/question/399757719/answer/1332020602">古代重男轻女那为什么在汉字里，以“男”为偏旁的字很少，以“女”为偏旁的字挺多。……</a><a class="headerlink" href="#_32" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>默认没有标“女”的，都属男。比如“儿”，本来指小孩而不分雄雌，但还默认指“男孩/雄性”，“生儿育女”，“儿马”。</p>
                 
