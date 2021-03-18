@@ -1381,18 +1381,18 @@
       
         <li class="md-nav__item">
   <a href="#markdown" class="md-nav__link">
-    富markdown页面文件
+    用宏扩展markdown页面文件
   </a>
   
-    <nav class="md-nav" aria-label="富markdown页面文件">
+    <nav class="md-nav" aria-label="用宏扩展markdown页面文件">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    可用对象
+    内置的宏对象
   </a>
   
-    <nav class="md-nav" aria-label="可用对象">
+    <nav class="md-nav" aria-label="内置的宏对象">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1428,22 +1428,22 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     过滤器
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#jinja2" class="md-nav__link">
     Jinja2内置过滤器
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1988,18 +1988,18 @@
       
         <li class="md-nav__item">
   <a href="#markdown" class="md-nav__link">
-    富markdown页面文件
+    用宏扩展markdown页面文件
   </a>
   
-    <nav class="md-nav" aria-label="富markdown页面文件">
+    <nav class="md-nav" aria-label="用宏扩展markdown页面文件">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    可用对象
+    内置的宏对象
   </a>
   
-    <nav class="md-nav" aria-label="可用对象">
+    <nav class="md-nav" aria-label="内置的宏对象">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2035,22 +2035,22 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     过滤器
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#jinja2" class="md-nav__link">
     Jinja2内置过滤器
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2128,9 +2128,8 @@
 <p>通过变量和宏释放Mkdocs的威力。号称：</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This is more than a plugin: it's a mini-framework!</p>
+<p>这不只是一个插件，它是一个迷你框架！</p>
 </div>
-<p>可用一个markdown页面，渲染后（如本页）获取可用信息。</p>
 <h2 id="_1">设置<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2155,8 +2154,8 @@
         <span class="c1">#     </span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="markdown">富markdown页面文件<a class="headerlink" href="#markdown" title="Permanent link">#</a></h2>
-<h3 id="_2">可用对象<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<h2 id="markdown">用宏扩展markdown页面文件<a class="headerlink" href="#markdown" title="Permanent link">#</a></h2>
+<h3 id="_2">内置的宏对象<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
@@ -2171,11 +2170,11 @@
 </tr>
 <tr>
 <td>page</td>
-<td>Info on the current page (source)</td>
+<td>当前页的资料</td>
 </tr>
 <tr>
 <td>navigation</td>
-<td>List of all pages/sections of the website; sections are themselves list of pages; (source)</td>
+<td>所有页面/组的列表</td>
 </tr>
 <tr>
 <td>environment</td>
@@ -2195,6 +2194,10 @@
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">[[ context(page) | pretty ]]</span>
 </code></pre></div>
 </td></tr></table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本页以下的宏信息，就是像上面这样生成的。</p>
+</div>
 <h4 id="page">page<a class="headerlink" href="#page" title="Permanent link">#</a></h4>
 <table class="pretty" style="background-color: #F0FFFF; border:1px solid #DCDCDC; padding: 5px">
 
@@ -2311,7 +2314,7 @@
 
             <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
 
-            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'2021-03-17'</td>
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'2021-03-18'</td>
 
         </tr>
 
@@ -2351,7 +2354,7 @@
 
             <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>str</i></td>
 
-            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'[mkdocs-macros-plugin宏插件文档](https://mkdocs-macros-plugin.readthedocs.io/en/latest/)\n\n通过变量和宏释放Mkdocs的威力。号称：\n\n!!! Note\n    This is more than a plugin: it\'s a mini-framework!\n\n可用一个markdown页面，渲染后（如本页）获取可用信息。\n\n## 设置\n\n```yaml\nplugins:\n    - search\n    - macros:\n        # 替换默认的jinja宏标志{{}}，否则类似的地方可能报错\n        # 或用{{raw}}{{endraw}}标签包裹（花括号改成你设置的，下面的标签已经被吃掉，注释、code block都无法阻止转换）\n        # [[% raw %]]\n        j2_block_start_string: \'[[%\'\n        j2_block_end_string: \'%]]\'\n        j2_variable_start_string: \'[[\'\n        j2_variable_end_string: \']]\'\n        # [[% endraw %]]    \n```\n\n## 富markdown页面文件\n\n### 可用对象\n\nObject      | Description\n---         | ---\nconfig      | The standard config information on MkDocs\' environment.\npage        | Info on the current page (source)\nnavigation  | List of all pages/sections of the website; sections are themselves list of pages; (source)\nenvironment | Data on the system on which MkDocs is currently running.\nplugin      | Arguments of the macro plugin, in the config file\ngit         | Information on the git version of the website (if part of a git repository)\n\n查看详细信息：\n\n```jinja\n[[% raw %]]\n[[ context(page) | pretty ]]\n[[% endraw %]]    \n```\n\n\n#### page\n\n[[ context(page) | pretty ]]\n\n#### navigation\n\n[[ context(navigation) | pretty ]]\n\n#### navigation.pages\n\n[[ context(navigation.pages) | pretty ]]\n\n#### config\n\n[[ context(config) | pretty ]]\n\n\n\n\n## 过滤器\n\n[[ context(filters)| pretty ]]\n\n## Jinja2内置过滤器\n\n见[Jinja2内置过滤器的文档](https://jinja.palletsprojects.com/en/2.11.x/templates/#builtin-filters)。\n\n本地查看：\n\n```jinja\n[[% raw %]]\n[[ context(filters_builtin) | pretty ]]\n[[% endraw %]]    \n```\n\n## 自定义模块：宏、过滤器和变量\n\n**插件的威力体现在这里！**\n\n模块必须包含`define_env()`函数，其中包含宏、过滤器和变量声明。\n如在根目录中建立`main.py`：\n\n```python\nimport math\ndef define_env(env):\n    """\n    This is the hook for defining variables, macros and filters\n\n    - env.variables: the dictionary that contains the environment variables\n    - env.macro: a decorator function, to declare a macro.\n    """\n\n    # add to the dictionary of variables available to markdown pages:\n    env.variables[\'baz\'] = "John Doe"\n\n    # NOTE: you may also treat env.variables as a namespace,\n    #       with the dot notation:\n    env.variables.baz = "John Doe"\n\n    @env.macro\n    def mymacro():\n        return "this is mymacro!!!"\n\n    # If you wish, you can  declare a macro with a different name:\n    def f(x):\n        return x * x\n    env.macro(f, \'barbaz\')\n\n    # or by adding it to the `env.variables` dictionary\n    # or to export some predefined function\n    env.macro(math.floor) # will be exported as \'floor\'\n\n    # create a jinja2 filter\n    # or by adding it to the env.filters dictionary\n    @env.filter\n    def reverse(x):\n        "Reverse a string (and uppercase)"\n        return x.upper()[::-1]\n```\n\n在markdown中使用：\n\n```jinja\n[[% raw %]]\n[[ mymacro() ]]\n[[% endraw %]]    \n```\n\n效果：\n\n[[ mymacro() ]]\n\n### env的成员\n\nItem | Type | Description\n--- | --- | ---\nvariables | attribute | The namespace that contains the variables and macros that will be available in mardkown pages with {{ ... }} notation. This dictionary is initialized with the values contained in the extra section of the configuration file (and optionally, with external yaml files). This object is also accessible with the dot notation; e.g. env.variables[\'foo\'] is equivalent to env.variables.foo.\nmacro | function | A decorator function that you can use to declare a Python function as a Jinja2 callable (\'macro\' for MkDocs).\nfilters | attribute | A list list of jinja2 filters (default None)\nfilter | function | A decorator for declaring a Python function as a jinja2 custom filter\nproject_dir | attribute | The source directory of the MkDocs project (useful for finding or including other files)\nconf | attribute | The content of the config file (mkdocs.yaml).\nconfig | attribute | This can be a useful object; it contains the global context for MkDocs.\npage | attribute | The information on the page being served (such as the title, etc.). For more information on its content, see MkDoc\'s description of the page object.\n\n### 模块可用的更多的函数钩子\n\nFunction | Description | Typical Use | Triggered by MkDoc\'s event\n---|---|---|---\ndefine_env(env) | Main function | Create macros, filters, etc. | on_config\non_pre_page_macros(env) | Executed just before the Jinja2 directives (markdown page) have been rendered | Directly modify a markdown page | on_page\non_post_page_macros(env) | Executed just after the Jinja2 code (markdown page) have been rendered | Directly modify a markdown page | on_page\non_post_build(env) | Executed after the html pages have been produced | Add files to the website | on_post_build\n\n### [Mkdocs全局环境global-context](https://www.mkdocs.org/user-guide/custom-themes/#global-context)\n\n都包裹在或的env.conf下，例如\n\nenv.conf[\'nav\']，即是nav\nenv.conf[\'pages\']，即是pages\nenv.conf[\'page\'][\'meta\']，即是page.meta\nenv.config，宏插件自身的配置\n\n### 用例\n\n列出20天以来（据page.meta.Modified）的文章标题和日期。过滤器\n\n```python\n# 在index页中使用只能取到index页自身，不知何故\n@env.filter\ndef fromdays(navigation_pages, days):\n    "新帖梳理、排序"\n\n    l = []\n    for i in navigation_pages:\n        if hasattr(i, "meta"):\n            meta = i.meta\n            if ("Modified" in meta and meta["Modified"]): \n                page_time = datetime.datetime.strptime(str(meta["Modified"]).split(" ")[0], \'%Y-%m-%d\')\n                if datetime.datetime.today() - page_time < datetime.timedelta(days=days):\n                    l.append(i)\n    return l\n```\n\nmarkdown中的jinja模板：\n\n```jinja\n[[% raw %]]\n[[% for page in navigation.pages|fromdays(20) %]]\n- [ [[ page.meta.title ]][[ page.meta.Modified ]] ]([[config.site_url]][[page.url]])\n[[% endfor %]]\n[[% endraw %]]    \n```\n\n效果：\n\n[[% for page in navigation.pages|fromdays(20) %]]\n- [ [[ page.meta.title ]][[ page.meta.Modified ]] ]([[config.site_url]][[page.url]])\n[[% endfor %]]\n\n列出10篇最近更新的文章（据page.meta.Modified）。过滤器：\n\n```python\n# 在index页中使用只能取到index页自身，不知何故\n@env.filter\ndef last_blogs(navigation_pages, the_last_num):\n    "新帖梳理、排序"\n\n    l = []\n    for i in navigation_pages:\n        if hasattr(i, "meta"):\n            meta = i.meta\n            if ("Modified" in meta  and meta["Modified"]): \n                l.append(i)\n    l = sorted(l, key=lambda x: str(x.meta["Modified"]), reverse=True)\n    print(f\'【调用last_blog】\')\n    print(navigation_pages)\n    return l[:the_last_num]\n```\n\nmarkdown中的jinja模板：\n\n```jinja\n[[% raw %]]\n[[% for page in navigation.pages|last_blogs(10) %]]\n- [ [[ page.meta.title ]][[ page.meta.Modified ]] ]([[config.site_url]][[page.url]])\n[[% endfor %]]\n[[% endraw %]]    \n```\n\n效果：\n\n[[% for page in navigation.pages|last_blogs(10) %]]\n- [ [[ page.meta.title ]][[ page.meta.Modified ]] ]([[config.site_url]][[page.url]])\n[[% endfor %]]\n\n\n## [更强大的pluglets](https://mkdocs-macros-plugin.readthedocs.io/en/latest/pluglets/)\n\n[查看例子](https://github.com/fralau/mkdocs-macros-test)\n\n## [高级用法](https://mkdocs-macros-plugin.readthedocs.io/en/latest/advanced/)\n'</td>
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">'[mkdocs-macros-plugin宏插件文档](https://mkdocs-macros-plugin.readthedocs.io/en/latest/)\n\n通过变量和宏释放Mkdocs的威力。号称：\n\n!!! Note\n    这不只是一个插件，它是一个迷你框架！\n\n## 设置\n\n```yaml\nplugins:\n    - search\n    - macros:\n        # 替换默认的jinja宏标志{{}}，否则类似的地方可能报错\n        # 或用{{raw}}{{endraw}}标签包裹（花括号改成你设置的，下面的标签已经被吃掉，注释、code block都无法阻止转换）\n        # [[% raw %]]\n        j2_block_start_string: \'[[%\'\n        j2_block_end_string: \'%]]\'\n        j2_variable_start_string: \'[[\'\n        j2_variable_end_string: \']]\'\n        # [[% endraw %]]    \n```\n\n## 用宏扩展markdown页面文件\n\n\n### 内置的宏对象\n\nObject      | Description\n---         | ---\nconfig      | The standard config information on MkDocs\' environment.\npage        | 当前页的资料\nnavigation  | 所有页面/组的列表\nenvironment | Data on the system on which MkDocs is currently running.\nplugin      | Arguments of the macro plugin, in the config file\ngit         | Information on the git version of the website (if part of a git repository)\n\n查看详细信息：\n\n```jinja\n[[% raw %]]\n[[ context(page) | pretty ]]\n[[% endraw %]]    \n```\n\n!!! note\n    本页以下的宏信息，就是像上面这样生成的。\n\n#### page\n\n[[ context(page) | pretty ]]\n\n#### navigation\n\n[[ context(navigation) | pretty ]]\n\n#### navigation.pages\n\n[[ context(navigation.pages) | pretty ]]\n\n#### config\n\n[[ context(config) | pretty ]]\n\n\n### 过滤器\n\n[[ context(filters)| pretty ]]\n\n### Jinja2内置过滤器\n\n见[Jinja2内置过滤器的文档](https://jinja.palletsprojects.com/en/2.11.x/templates/#builtin-filters)。\n\n本地查看：\n\n```jinja\n[[% raw %]]\n[[ context(filters_builtin) | pretty ]]\n[[% endraw %]]    \n```\n\n## 自定义模块：宏、过滤器和变量\n\n**插件的威力体现在这里！**\n\n模块必须包含`define_env()`函数，其中包含宏、过滤器和变量声明。\n如在根目录中建立`main.py`：\n\n```python\nimport math\ndef define_env(env):\n    """\n    This is the hook for defining variables, macros and filters\n\n    - env.variables: the dictionary that contains the environment variables\n    - env.macro: a decorator function, to declare a macro.\n    """\n\n    # add to the dictionary of variables available to markdown pages:\n    env.variables[\'baz\'] = "John Doe"\n\n    # NOTE: you may also treat env.variables as a namespace,\n    #       with the dot notation:\n    env.variables.baz = "John Doe"\n\n    @env.macro\n    def mymacro():\n        return "this is mymacro!!!"\n\n    # If you wish, you can  declare a macro with a different name:\n    def f(x):\n        return x * x\n    env.macro(f, \'barbaz\')\n\n    # or by adding it to the `env.variables` dictionary\n    # or to export some predefined function\n    env.macro(math.floor) # will be exported as \'floor\'\n\n    # create a jinja2 filter\n    # or by adding it to the env.filters dictionary\n    @env.filter\n    def reverse(x):\n        "Reverse a string (and uppercase)"\n        return x.upper()[::-1]\n```\n\n在markdown中使用：\n\n```jinja\n[[% raw %]]\n[[ mymacro() ]]\n[[% endraw %]]    \n```\n\n效果：\n\n[[ mymacro() ]]\n\n### env的成员\n\nItem | Type | Description\n--- | --- | ---\nvariables | attribute | The namespace that contains the variables and macros that will be available in mardkown pages with {{ ... }} notation. This dictionary is initialized with the values contained in the extra section of the configuration file (and optionally, with external yaml files). This object is also accessible with the dot notation; e.g. env.variables[\'foo\'] is equivalent to env.variables.foo.\nmacro | function | A decorator function that you can use to declare a Python function as a Jinja2 callable (\'macro\' for MkDocs).\nfilters | attribute | A list list of jinja2 filters (default None)\nfilter | function | A decorator for declaring a Python function as a jinja2 custom filter\nproject_dir | attribute | The source directory of the MkDocs project (useful for finding or including other files)\nconf | attribute | The content of the config file (mkdocs.yaml).\nconfig | attribute | This can be a useful object; it contains the global context for MkDocs.\npage | attribute | The information on the page being served (such as the title, etc.). For more information on its content, see MkDoc\'s description of the page object.\n\n### 模块可用的更多的函数钩子\n\nFunction | Description | Typical Use | Triggered by MkDoc\'s event\n---|---|---|---\ndefine_env(env) | Main function | Create macros, filters, etc. | on_config\non_pre_page_macros(env) | Executed just before the Jinja2 directives (markdown page) have been rendered | Directly modify a markdown page | on_page\non_post_page_macros(env) | Executed just after the Jinja2 code (markdown page) have been rendered | Directly modify a markdown page | on_page\non_post_build(env) | Executed after the html pages have been produced | Add files to the website | on_post_build\n\n### [Mkdocs全局环境global-context](https://www.mkdocs.org/user-guide/custom-themes/#global-context)\n\n都包裹在或的env.conf下，例如\n\n* env.conf[\'nav\']，即是nav\n* env.conf[\'pages\']，即是pages\n* env.conf[\'page\'][\'meta\']，即是page.meta\n* env.config，宏插件自身的配置\n\n### 用例\n\n列出20天以来（据page.meta.Modified）的文章标题和日期。过滤器\n\n```python\n# 在index页中使用只能取到index页自身，不知何故\n@env.filter\ndef fromdays(navigation_pages, days):\n    "滤出今天之前X天内的新帖"\n\n    l = []\n    for i in navigation_pages:\n        if hasattr(i, "meta"):\n            meta = i.meta\n            if ("Modified" in meta and meta["Modified"]): \n                page_time = datetime.datetime.strptime(str(meta["Modified"]).split(" ")[0], \'%Y-%m-%d\')\n                if datetime.datetime.today() - page_time < datetime.timedelta(days=days):\n                    l.append(i)\n    return l\n```\n\nmarkdown中的jinja模板：\n\n```jinja\n[[% raw %]]\n[[% for page in navigation.pages|fromdays(20) %]]\n- [ [[ page.meta.title ]][[ page.meta.Modified ]] ]([[config.site_url]][[page.url]])\n[[% endfor %]]\n[[% endraw %]]    \n```\n\n效果：\n\n[[% for page in navigation.pages|fromdays(20) %]]\n- [ [[ page.meta.title ]][[ page.meta.Modified ]] ]([[config.site_url]][[page.url]])\n[[% endfor %]]\n\n列出10篇最近更新的文章（据page.meta.Modified）。过滤器：\n\n```python\n# 在index页中使用只能取到index页自身，不知何故\n@env.filter\ndef last_blogs(navigation_pages, the_last_num):\n    "滤出最新的X个新帖"\n\n    l = []\n    for i in navigation_pages:\n        if hasattr(i, "meta"):\n            if ("Modified" in i.meta  and i.meta["Modified"]): \n                l.append(i)\n                print(f"{i.title}-{i.meta[\'Modified\']}")\n            else:\n                print(f"没有Modified{i.title}")\n        else:\n            print(f"没有meta：{i.title}-{i.meta[\'Modified\']}")\n    l = sorted(l, key=lambda x: str(x.meta["Modified"]), reverse=True)\n    # print(f\'【调用last_blog】\')\n    # print(l)\n    return l[:the_last_num]\n        \n```\n\nmarkdown中的jinja模板：\n\n```jinja\n[[% raw %]]\n[[% for page in navigation.pages|last_blogs(10) %]]\n- [ [[ page.meta.title ]][[ page.meta.Modified ]] ]([[config.site_url]][[page.url]])\n[[% endfor %]]\n[[% endraw %]]    \n```\n\n效果：\n\n[[% for page in navigation.pages|last_blogs(10) %]]\n- [ [[ page.meta.title ]][[ page.meta.Modified ]] ]([[config.site_url]][[page.url]])\n[[% endfor %]]\n\n\n## [更强大的pluglets](https://mkdocs-macros-plugin.readthedocs.io/en/latest/pluglets/)\n\n[查看例子](https://github.com/fralau/mkdocs-macros-test)\n\n## [高级用法](https://mkdocs-macros-plugin.readthedocs.io/en/latest/advanced/)\n'</td>
 
         </tr>
 
@@ -2647,7 +2650,7 @@
 
             <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>Theme</i></td>
 
-            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">Theme(name='material', dirs=['D:\\Google_drive\\ah21\\note\\blog-new\\overrides', 'D:\\venvs\\mkdocs\\lib\\site-packages\\material', 'D:\\venvs\\mkdocs\\lib\\site-packages\\mkdocs\\templates'], static_templates=['sitemap.xml', '404.html'], language='zh', direction=None, features=['navigation.instant'], palette={'primary': 'blue grey', 'accent': 'pink'}, font={'text': 'Roboto', 'code': 'Roboto Mono'}, icon=None, favicon='img/favicon.ico', include_search_page=False, search_index_only=True, logo='img/logo.png')</td>
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">Theme(name='material', dirs=['D:\\Google_drive\\ah21\\note\\blog-new\\overrides', 'D:\\venvs\\mkdocs\\lib\\site-packages\\material', 'D:\\venvs\\mkdocs\\lib\\site-packages\\mkdocs\\templates'], static_templates=['404.html', 'sitemap.xml'], language='zh', direction=None, features=['navigation.instant'], palette={'primary': 'blue grey', 'accent': 'pink'}, font={'text': 'Roboto', 'code': 'Roboto Mono'}, icon=None, favicon='img/favicon.ico', include_search_page=False, search_index_only=True, logo='img/logo.png')</td>
 
         </tr>
 
@@ -2847,13 +2850,13 @@
 
             <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>HTMLExporter</i></td>
 
-            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><nbconvert.exporters.html.HTMLExporter object at 0x000001BEBA103F10></td>
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><nbconvert.exporters.html.HTMLExporter object at 0x00000220249188B0></td>
 
         </tr>
 
 </table>
 
-<h2 id="_3">过滤器<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<h3 id="_3">过滤器<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
 <table class="pretty" style="background-color: #F0FFFF; border:1px solid #DCDCDC; padding: 5px">
 
     <th style="border:1px solid #DCDCDC; padding: 5px">Variable</th>
@@ -2879,7 +2882,7 @@
 
             <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
 
-            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>navigation_pages, days, l, i, meta, page_time</i>)<br/> <p>新帖梳理、排序</p></td>
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>navigation_pages, days, l, i, meta, page_time</i>)<br/> <p>滤出今天之前X天内的新帖</p></td>
 
         </tr>
 
@@ -2889,13 +2892,13 @@
 
             <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px"><i>function</i></td>
 
-            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>navigation_pages, the_last_num, l, i</i>)<br/> <p>新帖梳理、排序</p></td>
+            <td style="vertical-align:top; border:1px solid #DCDCDC; padding: 5px">(<i>navigation_pages, the_last_num, l, i</i>)<br/> <p>滤出最新的X个新帖</p></td>
 
         </tr>
 
 </table>
 
-<h2 id="jinja2">Jinja2内置过滤器<a class="headerlink" href="#jinja2" title="Permanent link">#</a></h2>
+<h3 id="jinja2">Jinja2内置过滤器<a class="headerlink" href="#jinja2" title="Permanent link">#</a></h3>
 <p>见<a href="https://jinja.palletsprojects.com/en/2.11.x/templates/#builtin-filters">Jinja2内置过滤器的文档</a>。</p>
 <p>本地查看：</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="x">[[ context(filters_builtin) | pretty ]]</span>
@@ -3073,10 +3076,12 @@
 </table>
 <h3 id="mkdocsglobal-context"><a href="https://www.mkdocs.org/user-guide/custom-themes/#global-context">Mkdocs全局环境global-context</a><a class="headerlink" href="#mkdocsglobal-context" title="Permanent link">#</a></h3>
 <p>都包裹在或的env.conf下，例如</p>
-<p>env.conf['nav']，即是nav
-env.conf['pages']，即是pages
-env.conf['page']['meta']，即是page.meta
-env.config，宏插件自身的配置</p>
+<ul>
+<li>env.conf['nav']，即是nav</li>
+<li>env.conf['pages']，即是pages</li>
+<li>env.conf['page']['meta']，即是page.meta</li>
+<li>env.config，宏插件自身的配置</li>
+</ul>
 <h3 id="_6">用例<a class="headerlink" href="#_6" title="Permanent link">#</a></h3>
 <p>列出20天以来（据page.meta.Modified）的文章标题和日期。过滤器</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -3095,7 +3100,7 @@ env.config，宏插件自身的配置</p>
 <span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># 在index页中使用只能取到index页自身，不知何故</span>
 <span class="nd">@env</span><span class="o">.</span><span class="n">filter</span>
 <span class="k">def</span> <span class="nf">fromdays</span><span class="p">(</span><span class="n">navigation_pages</span><span class="p">,</span> <span class="n">days</span><span class="p">):</span>
-    <span class="s2">&quot;新帖梳理、排序&quot;</span>
+    <span class="s2">&quot;滤出今天之前X天内的新帖&quot;</span>
 
     <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">navigation_pages</span><span class="p">:</span>
@@ -3122,13 +3127,10 @@ env.config，宏插件自身的配置</p>
 <p><a href="https://blog.xiiigame.com/2021-03-02-%E8%AF%86%E5%AD%97%E7%94%A8%E6%88%90%E8%AF%AD%EF%BC%88A%E7%BA%A7%E5%AD%97%EF%BC%89/"> 儿童识字用成语及录音（A级字）2021-03-07 </a></p>
 </li>
 <li>
-<p><a href="https://blog.xiiigame.com/2021-02-26-%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AB%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%EF%BC%8C%E8%80%8C%E4%B8%8D%E5%8F%AB%E6%B1%89%E8%AF%AD%E6%B3%A8%E9%9F%B3%E6%88%96%E6%B1%89%E8%AF%AD%E9%9F%B3%E6%A0%87/"> 汉语拼音为什么叫汉语拼音，而不叫汉语注音或汉语音标？2021-02-26 </a></p>
-</li>
-<li>
 <p><a href="https://blog.xiiigame.com/2020-07-11-%E8%AF%AD%E6%96%87%E7%AD%94%E9%97%AE/"> 更多语文答问 〉〉2021-03-16 </a></p>
 </li>
 <li>
-<p><a href="https://blog.xiiigame.com/2021-03-17-%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B%E7%94%A8%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8/"> 少儿编程用在线编辑器2021-03-17 </a></p>
+<p><a href="https://blog.xiiigame.com/2021-03-17-%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B%E7%94%A8%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8/"> 少儿编程用在线编辑器2021-03-18 </a></p>
 </li>
 <li>
 <p><a href="https://blog.xiiigame.com/2021-03-04-%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84TextPro%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9B%BF%E6%8D%A2%E8%A1%A8/"> 我常用的TextPro用自定义替换表2021-03-04 </a></p>
@@ -3161,20 +3163,28 @@ env.config，宏插件自身的配置</p>
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># 在index页中使用只能取到index页自身，不知何故</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># 在index页中使用只能取到index页自身，不知何故</span>
 <span class="nd">@env</span><span class="o">.</span><span class="n">filter</span>
 <span class="k">def</span> <span class="nf">last_blogs</span><span class="p">(</span><span class="n">navigation_pages</span><span class="p">,</span> <span class="n">the_last_num</span><span class="p">):</span>
-    <span class="s2">&quot;新帖梳理、排序&quot;</span>
+    <span class="s2">&quot;滤出最新的X个新帖&quot;</span>
 
     <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">navigation_pages</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;meta&quot;</span><span class="p">):</span>
-            <span class="n">meta</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">meta</span>
-            <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;Modified&quot;</span> <span class="ow">in</span> <span class="n">meta</span>  <span class="ow">and</span> <span class="n">meta</span><span class="p">[</span><span class="s2">&quot;Modified&quot;</span><span class="p">]):</span> 
+            <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;Modified&quot;</span> <span class="ow">in</span> <span class="n">i</span><span class="o">.</span><span class="n">meta</span>  <span class="ow">and</span> <span class="n">i</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;Modified&quot;</span><span class="p">]):</span> 
                 <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;Modified&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;没有Modified</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;没有meta：</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">i</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;Modified&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">l</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;Modified&quot;</span><span class="p">]),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;【调用last_blog】&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">navigation_pages</span><span class="p">)</span>
+    <span class="c1"># print(f&#39;【调用last_blog】&#39;)</span>
+    <span class="c1"># print(l)</span>
     <span class="k">return</span> <span class="n">l</span><span class="p">[:</span><span class="n">the_last_num</span><span class="p">]</span>
 </code></pre></div>
 </td></tr></table>
@@ -3189,7 +3199,7 @@ env.config，宏插件自身的配置</p>
 <p>效果：</p>
 <ul>
 <li>
-<p><a href="https://blog.xiiigame.com/2021-03-17-%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B%E7%94%A8%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8/"> 少儿编程用在线编辑器2021-03-17 </a></p>
+<p><a href="https://blog.xiiigame.com/2021-03-17-%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B%E7%94%A8%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8/"> 少儿编程用在线编辑器2021-03-18 </a></p>
 </li>
 <li>
 <p><a href="https://blog.xiiigame.com/2020-07-11-%E8%AF%AD%E6%96%87%E7%AD%94%E9%97%AE/"> 更多语文答问 〉〉2021-03-16 </a></p>
