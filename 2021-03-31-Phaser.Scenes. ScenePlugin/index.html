@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://blog.xiiigame.com/2020-09-15-%E6%80%8E%E4%B9%88%E6%95%99%E5%AD%A9%E5%AD%90%E8%AF%86%E5%AD%97/">
+        <link rel="canonical" href="https://blog.xiiigame.com/2021-03-31-Phaser.Scenes.%20ScenePlugin/">
       
       <link rel="shortcut icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
     
     
       
-        <title>怎么教孩子识字 - 嬉戏实验室</title>
+        <title>Phaser.Scenes.ScenePlugin场景管理器 - 嬉戏实验室</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#phaserscenessceneplugin" class="md-skip">
           跳转至
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              怎么教孩子识字
+              Phaser.Scenes.ScenePlugin场景管理器
             
           </span>
         </div>
@@ -211,14 +211,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
         儿童识字
@@ -354,59 +352,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          怎么教孩子识字
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2020-09-15-%E6%80%8E%E4%B9%88%E6%95%99%E5%AD%A9%E5%AD%90%E8%AF%86%E5%AD%97/" class="md-nav__link">
         怎么教孩子识字
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    分级字表
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    用字级别的标记方法
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    亲子阅读、识字“听—读—认”
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1599,12 +1549,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
       
       <label class="md-nav__link" for="__nav_12">
         Phaser文档注记
@@ -1656,11 +1608,313 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../2021-03-31-Phaser.Scenes.%20ScenePlugin/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Phaser.Scenes.ScenePlugin场景管理器
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Phaser.Scenes.ScenePlugin场景管理器
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#new_scenepluginscene" class="md-nav__link">
+    new ScenePlugin(scene)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#members" class="md-nav__link">
+    Members
+  </a>
+  
+    <nav class="md-nav" aria-label="Members">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key_string" class="md-nav__link">
+    key :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manager_phaserscenesscenemanager" class="md-nav__link">
+    manager :Phaser.Scenes.SceneManager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_phaserscene" class="md-nav__link">
+    scene :Phaser.Scene
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings_phasertypesscenessettingsobject" class="md-nav__link">
+    settings :Phaser.Types.Scenes.SettingsObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_phaserscenessystems" class="md-nav__link">
+    systems :Phaser.Scenes.Systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitionprogress_number" class="md-nav__link">
+    transitionProgress :number
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restart_data" class="md-nav__link">
+    restart( [data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addkey_sceneconfig_autostart_data" class="md-nav__link">
+    add(key, sceneConfig, autoStart [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start_key_data" class="md-nav__link">
+    start( [key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launchkey_data" class="md-nav__link">
+    launch(key [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runkey_data" class="md-nav__link">
+    run(key [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pause_key_data" class="md-nav__link">
+    pause( [key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resume_key_data" class="md-nav__link">
+    resume( [key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sleep_key_data" class="md-nav__link">
+    sleep( [key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wake_key_data" class="md-nav__link">
+    wake( [key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switchkey" class="md-nav__link">
+    switch(key)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop_key_data" class="md-nav__link">
+    stop( [key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove_key" class="md-nav__link">
+    remove( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setactivevalue_key_data" class="md-nav__link">
+    setActive(value [, key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvisiblevalue_key" class="md-nav__link">
+    setVisible(value [, key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isactive_key" class="md-nav__link">
+    isActive( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ispaused_key" class="md-nav__link">
+    isPaused( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issleeping_key" class="md-nav__link">
+    isSleeping( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isvisible_key" class="md-nav__link">
+    isVisible( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bringtotop_key" class="md-nav__link">
+    bringToTop( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getkey" class="md-nav__link">
+    get(key)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getindex_key" class="md-nav__link">
+    getIndex( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moveabovekeya_keyb" class="md-nav__link">
+    moveAbove(keyA [, keyB])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movebelowkeya_keyb" class="md-nav__link">
+    moveBelow(keyA [, keyB])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movedown_key" class="md-nav__link">
+    moveDown( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moveup_key" class="md-nav__link">
+    moveUp( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendtoback_key" class="md-nav__link">
+    sendToBack( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swappositionkeya_keyb" class="md-nav__link">
+    swapPosition(keyA [, keyB])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitionconfig" class="md-nav__link">
+    transition(config)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1989,6 +2243,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1997,23 +2253,273 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    分级字表
+  <a href="#new_scenepluginscene" class="md-nav__link">
+    new ScenePlugin(scene)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    用字级别的标记方法
+  <a href="#members" class="md-nav__link">
+    Members
   </a>
+  
+    <nav class="md-nav" aria-label="Members">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key_string" class="md-nav__link">
+    key :string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manager_phaserscenesscenemanager" class="md-nav__link">
+    manager :Phaser.Scenes.SceneManager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_phaserscene" class="md-nav__link">
+    scene :Phaser.Scene
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings_phasertypesscenessettingsobject" class="md-nav__link">
+    settings :Phaser.Types.Scenes.SettingsObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_phaserscenessystems" class="md-nav__link">
+    systems :Phaser.Scenes.Systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitionprogress_number" class="md-nav__link">
+    transitionProgress :number
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    亲子阅读、识字“听—读—认”
+  <a href="#methods" class="md-nav__link">
+    Methods
   </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restart_data" class="md-nav__link">
+    restart( [data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addkey_sceneconfig_autostart_data" class="md-nav__link">
+    add(key, sceneConfig, autoStart [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start_key_data" class="md-nav__link">
+    start( [key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launchkey_data" class="md-nav__link">
+    launch(key [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runkey_data" class="md-nav__link">
+    run(key [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pause_key_data" class="md-nav__link">
+    pause( [key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resume_key_data" class="md-nav__link">
+    resume( [key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sleep_key_data" class="md-nav__link">
+    sleep( [key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wake_key_data" class="md-nav__link">
+    wake( [key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switchkey" class="md-nav__link">
+    switch(key)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop_key_data" class="md-nav__link">
+    stop( [key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove_key" class="md-nav__link">
+    remove( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setactivevalue_key_data" class="md-nav__link">
+    setActive(value [, key] [, data])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setvisiblevalue_key" class="md-nav__link">
+    setVisible(value [, key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isactive_key" class="md-nav__link">
+    isActive( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ispaused_key" class="md-nav__link">
+    isPaused( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issleeping_key" class="md-nav__link">
+    isSleeping( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isvisible_key" class="md-nav__link">
+    isVisible( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bringtotop_key" class="md-nav__link">
+    bringToTop( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getkey" class="md-nav__link">
+    get(key)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getindex_key" class="md-nav__link">
+    getIndex( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moveabovekeya_keyb" class="md-nav__link">
+    moveAbove(keyA [, keyB])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movebelowkeya_keyb" class="md-nav__link">
+    moveBelow(keyA [, keyB])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movedown_key" class="md-nav__link">
+    moveDown( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moveup_key" class="md-nav__link">
+    moveUp( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendtoback_key" class="md-nav__link">
+    sendToBack( [key])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swappositionkeya_keyb" class="md-nav__link">
+    swapPosition(keyA [, keyB])
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitionconfig" class="md-nav__link">
+    transition(config)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2030,32 +2536,67 @@
               
                 
                 
-                  <h1>怎么教孩子识字</h1>
-                
-                <p>这是对知乎问题<a href="https://www.zhihu.com/question/419919999/answer/1474585214">“孩子即将上小学，识字很慢。有什么识字的好办法吗？”</a>的回答。有改动。</p>
-<p><strong>【回答】</strong></p>
-<p>据我的经验，最便于操作的方法可能是这样的：</p>
-<ol>
-<li>挑选孩子喜欢或比较熟悉（耳熟）的文本，儿歌、儿童诗、短小的童话故事都可以考虑；如果孩子喜欢古诗，也可以考虑；</li>
-<li>根据一个分级字表（见后），在文本上标出每个字的级别（操作方法见后），先挑高频字多、难字少的篇目；</li>
-<li>进行亲子阅读，家长带着孩子“听—读—认”（操作方法见后），先认高频字，再认低频字。</li>
-</ol>
-<h2 id="_1">分级字表<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>可参考我根据自制的语文课标实验教材语料库做成的分级字表：</p>
-<p><a href="../2020-06-24-%E8%87%AA%E5%88%B6%E5%84%BF%E7%AB%A5%E5%90%AF%E8%92%99%E9%9B%86%E4%B8%AD%E8%AF%86%E5%AD%97%E8%AF%AD%E6%96%99%E5%BA%93%E4%B8%8E%E5%88%86%E7%BA%A7%E5%AD%97%E8%A1%A8/">自制儿童启蒙集中识字语料库与分级字表</a></p>
-<h2 id="_2">用字级别的标记方法<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<p>在文本上标记用字的级别，如果你会正则表达式，那就很容了。不会的话，可以照抄如下：</p>
-<p>用LibreOffice Writer打开MS Word文档。使用查找替换功能，勾选“正则表达式”，查找“[字表中同级别的字放在这个方括号中]”，“查找全部”。这样就能选中所有同级别的字，然后就可以进行统一更改字体、字号等你需要的操作；比如用楷体表示第一级的字，仿宋表示第二级，宋体表示三级以上的。</p>
-<p><img alt="标记用字级别" src="../img/%E6%80%8E%E4%B9%88%E6%95%99%E5%AD%A9%E5%AD%90%E8%AF%86%E5%AD%97/%E6%A0%87%E8%AE%B0%E7%94%A8%E5%AD%97%E7%BA%A7%E5%88%AB.jpg" /></p>
-<h2 id="_3">亲子阅读、识字“听—读—认”<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
-<p>这个方法总体上属于“听读识字”类型。思路是，在家长的帮助下，孩子先听孰文本，获得语音/字音的心象；然后心相与文本/汉字对应起来；最后逐步减少语境的帮助，强化并检验这种对应关系。不管是家长读，还是孩子读，通常都使用指读法。</p>
-<p>包含“听—读—认”三个学习动作：</p>
-<p>（一）听，就是家长指读诗文、词句，孩子在一边听、看，听孰。</p>
-<p>（二）读，就是在家长陪伴、辅助下，孩子指读诗文、词句。重复“听、读”，直到孩子读通顺为止。</p>
-<p>孩子不会读、读错的地方，家长直接读一遍正确的作为示范，这就可以了。有些家长会刻意制止孩子，指出孩子的错误，嘲笑孩子，甚至责问孩子。这些做法不仅耽误时间，更会伤害孩子的自尊心和学习热情！
-孩子读得比较顺利的时候，可能不愿意逐字指读，这时可以指着行头或行尾。</p>
-<p>（三）认，就是根据孩子的掌握情况，使用指读的形式，有选择地指出诗文中的句子、词语、单字，让孩子认读。从句子到词语，再到单字，语境越来越少，挑战越来越大。这是强化学习的过程，也能检测孩子的掌握情况。</p>
-<p>家长要对孩子察言观色，体会孩子的感受，把握好学习的难度和强度，既给孩子适当的挑战，也要保护他的信心！</p>
+                <h1 id="phaserscenessceneplugin"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#toc1">Phaser.Scenes.ScenePlugin</a><a class="headerlink" href="#phaserscenessceneplugin" title="Permanent link">#</a></h1>
+<p>代理的是场景管理器。<strong>一般通过<code>Phaser.Scene.scene</code>应用。</strong></p>
+<h3 id="new_scenepluginscene"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#ScenePlugin">new ScenePlugin(scene)</a><a class="headerlink" href="#new_scenepluginscene" title="Permanent link">#</a></h3>
+<h2 id="members"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#toc3">Members</a><a class="headerlink" href="#members" title="Permanent link">#</a></h2>
+<h3 id="key_string"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#key">key :string</a><a class="headerlink" href="#key_string" title="Permanent link">#</a></h3>
+<p>所属场景的键值。</p>
+<h3 id="manager_phaserscenesscenemanager"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#manager">manager :Phaser.Scenes.SceneManager</a><a class="headerlink" href="#manager_phaserscenesscenemanager" title="Permanent link">#</a></h3>
+<p>游戏的场景管理器。</p>
+<h3 id="scene_phaserscene"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#scene">scene :Phaser.Scene</a><a class="headerlink" href="#scene_phaserscene" title="Permanent link">#</a></h3>
+<p>所属的场景。</p>
+<h3 id="settings_phasertypesscenessettingsobject"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#settings">settings :Phaser.Types.Scenes.SettingsObject</a><a class="headerlink" href="#settings_phasertypesscenessettingsobject" title="Permanent link">#</a></h3>
+<h3 id="systems_phaserscenessystems"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#systems">systems :Phaser.Scenes.Systems</a><a class="headerlink" href="#systems_phaserscenessystems" title="Permanent link">#</a></h3>
+<h3 id="transitionprogress_number"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#transitionProgress">transitionProgress :number</a><a class="headerlink" href="#transitionprogress_number" title="Permanent link">#</a></h3>
+<h2 id="methods"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#toc10">Methods</a><a class="headerlink" href="#methods" title="Permanent link">#</a></h2>
+<h3 id="restart_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#restart">restart( [data])</a><a class="headerlink" href="#restart_data" title="Permanent link">#</a></h3>
+<p>重启本场景自身。</p>
+<h3 id="addkey_sceneconfig_autostart_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#add">add(key, sceneConfig, autoStart [, data])</a><a class="headerlink" href="#addkey_sceneconfig_autostart_data" title="Permanent link">#</a></h3>
+<p>添加新场景。</p>
+<h3 id="start_key_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#start">start( [key] [, data])</a><a class="headerlink" href="#start_key_data" title="Permanent link">#</a></h3>
+<p>启动指定场景，并关闭本场景。</p>
+<h3 id="launchkey_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#launch">launch(key [, data])</a><a class="headerlink" href="#launchkey_data" title="Permanent link">#</a></h3>
+<p>并行启动一个场景。</p>
+<h3 id="runkey_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#run">run(key [, data])</a><a class="headerlink" href="#runkey_data" title="Permanent link">#</a></h3>
+<p>运行（启动、续播、唤醒）指定场景，不影响本场景。</p>
+<h3 id="pause_key_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#pause">pause( [key] [, data])</a><a class="headerlink" href="#pause_key_data" title="Permanent link">#</a></h3>
+<p>暂停指定场景。正在进行的更新步子完成后停止更新，但保持渲染。
+Pause the Scene - this stops the update step from happening but it still renders.</p>
+<h3 id="resume_key_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#resume">resume( [key] [, data])</a><a class="headerlink" href="#resume_key_data" title="Permanent link">#</a></h3>
+<p>续播指定场景，继续更新循环。</p>
+<h3 id="sleep_key_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#sleep">sleep( [key] [, data])</a><a class="headerlink" href="#sleep_key_data" title="Permanent link">#</a></h3>
+<p>让指定场景休眠，不再更新、渲染，但不关闭（可唤醒）。
+Makes the Scene sleep (no update, no render) but doesn't shutdown.</p>
+<h3 id="wake_key_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#wake">wake( [key] [, data])</a><a class="headerlink" href="#wake_key_data" title="Permanent link">#</a></h3>
+<p>唤醒指定场景，开始更新和渲染。</p>
+<h3 id="switchkey"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#switch">switch(key)</a><a class="headerlink" href="#switchkey" title="Permanent link">#</a></h3>
+<p>切换场景，本场景休眠，启动新场景。</p>
+<h3 id="stop_key_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#stop">stop( [key] [, data])</a><a class="headerlink" href="#stop_key_data" title="Permanent link">#</a></h3>
+<p>停止指定场景：关闭场景，清楚显示列表和计时器等。</p>
+<h3 id="remove_key"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#remove">remove( [key])</a><a class="headerlink" href="#remove_key" title="Permanent link">#</a></h3>
+<p>移除指定场景：从场景管理器中移除并从系统中彻底销毁指定场景。</p>
+<h3 id="setactivevalue_key_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#setActive">setActive(value [, key] [, data])</a><a class="headerlink" href="#setactivevalue_key_data" title="Permanent link">#</a></h3>
+<p>设置指定场景的激活状态。</p>
+<h3 id="setvisiblevalue_key"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#setVisible">setVisible(value [, key])</a><a class="headerlink" href="#setvisiblevalue_key" title="Permanent link">#</a></h3>
+<p>设置指定场景的可视与否。</p>
+<h3 id="isactive_key"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#isActive">isActive( [key])</a><a class="headerlink" href="#isactive_key" title="Permanent link">#</a></h3>
+<h3 id="ispaused_key"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#isPaused">isPaused( [key])</a><a class="headerlink" href="#ispaused_key" title="Permanent link">#</a></h3>
+<h3 id="issleeping_key"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#isSleeping">isSleeping( [key])</a><a class="headerlink" href="#issleeping_key" title="Permanent link">#</a></h3>
+<h3 id="isvisible_key"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#isVisible">isVisible( [key])</a><a class="headerlink" href="#isvisible_key" title="Permanent link">#</a></h3>
+<h3 id="bringtotop_key"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#bringToTop">bringToTop( [key])</a><a class="headerlink" href="#bringtotop_key" title="Permanent link">#</a></h3>
+<h3 id="getkey"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#get">get(key)</a><a class="headerlink" href="#getkey" title="Permanent link">#</a></h3>
+<h3 id="getindex_key"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#getIndex">getIndex( [key])</a><a class="headerlink" href="#getindex_key" title="Permanent link">#</a></h3>
+<h3 id="moveabovekeya_keyb"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#moveAbove">moveAbove(keyA [, keyB])</a><a class="headerlink" href="#moveabovekeya_keyb" title="Permanent link">#</a></h3>
+<h3 id="movebelowkeya_keyb"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#moveBelow">moveBelow(keyA [, keyB])</a><a class="headerlink" href="#movebelowkeya_keyb" title="Permanent link">#</a></h3>
+<h3 id="movedown_key"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#moveDown">moveDown( [key])</a><a class="headerlink" href="#movedown_key" title="Permanent link">#</a></h3>
+<h3 id="moveup_key"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#moveUp">moveUp( [key])</a><a class="headerlink" href="#moveup_key" title="Permanent link">#</a></h3>
+<h3 id="sendtoback_key"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#sendToBack">sendToBack( [key])</a><a class="headerlink" href="#sendtoback_key" title="Permanent link">#</a></h3>
+<h3 id="swappositionkeya_keyb"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#swapPosition">swapPosition(keyA [, keyB])</a><a class="headerlink" href="#swappositionkeya_keyb" title="Permanent link">#</a></h3>
+<p>交换场景层级。</p>
+<h3 id="transitionconfig"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#transition">transition(config)</a><a class="headerlink" href="#transitionconfig" title="Permanent link">#</a></h3>
+<p>项目表场景过度。</p>
+<p>published from :<a href="">Phaser 3 API Documentation - Class: ScenePlugin</a></p>
                 
                   
                 
@@ -2075,7 +2616,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../2020-08-18-%E5%B0%8F%E5%AD%A6%E8%AF%86%E5%AD%97%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../2019-1-2-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Scene/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2084,19 +2625,19 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              小学识字方法有哪些？
+              Phaser.Scene场景类
             </div>
           </div>
         </a>
       
       
-        <a href="../2020-06-30-%E7%BB%99%E8%87%AA%E5%AE%B6%E5%AD%A9%E5%AD%90DIY%E8%AF%86%E5%AD%97%E6%9D%90%E6%96%99%EF%BC%9A%E5%AD%97%E5%8D%A1%EF%BC%88%E9%99%84%E6%88%90%E5%93%81%EF%BC%89/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../2018-11-24-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Sprite/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              给自家孩子DIY识字材料：字卡（附成品）
+              Phaser3 API文档大纲-Sprite
             </div>
           </div>
           <div class="md-footer__button md-icon">

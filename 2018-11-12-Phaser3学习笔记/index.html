@@ -1938,8 +1938,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../2021-03-30-haser.Scale.ScaleManager/" class="md-nav__link">
+      <a href="../2021-03-30-Phaser.Scale.ScaleManager/" class="md-nav__link">
         ScaleManager窗口适配
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-1-2-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Scene/" class="md-nav__link">
+        Phaser.Scene场景类
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-03-31-Phaser.Scenes.%20ScenePlugin/" class="md-nav__link">
+        Phaser.Scenes.ScenePlugin场景管理器
       </a>
     </li>
   
@@ -2024,18 +2048,6 @@
     <li class="md-nav__item">
       <a href="../2018-12-1-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Loader.LoaderPlugin/" class="md-nav__link">
         Phaser3 API文档大纲-Loader.LoaderPlugin
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-1-2-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Scene/" class="md-nav__link">
-        Phaser3 API文档大纲-Scene
       </a>
     </li>
   
@@ -2648,8 +2660,13 @@
 <li><a href="https://github.com/photonstorm/phaser3-examples">Phaser3实例库</a>。可以在<a href="http://labs.phaser.io">labs.phaser.io</a>连线使用。英文不大好的可以看我做的学习笔记：<a href="../2019-1-8-Phaser3%E5%AE%98%E7%BD%91%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Phaser3官网实例学习笔记</a>，<a href="../2018-10-14-Phaser2%E5%AE%98%E7%BD%91%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">《Phaser2官网实例学习笔记》</a>。</li>
 <li><a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3在线文档</a>。可参考<a href="https://github.com/photonstorm/phaser3-docs">完整的文档库</a>。</li>
 <li><a href="https://phaser.io/community/newsletter">官方电邮通讯/电子期刊<em>Phaser World</em></a>。其中的开发日志记录了Phaser3某些重要部分的的技术思路、使用方法，适于深度的专题学习。也包含很多官方推荐的他方教程，因无系统，精粗杂陈，不便使用。</li>
-<li><a href="https://github.com/digitsensitive/phaser3-typescript">Phaser3-TypeScript项目模板和实例库</a>。包含项目开发工具和7个比较完整的游戏实例。GitHub上也有使用JavaScript的Phaser3项目模板，因本人没有用过，不便推荐。</li>
 <li><a href="https://rexrainbow.github.io/phaser3-rex-notes/docs/site/">Phaser3笔记/Notes of Phaser 3</a>，一位大牛对API各部分的笔记，<strong>另有他做的一百多个插件，以及常用工具列表。</strong></li>
+<li>模板<ul>
+<li><a href="https://github.com/photonstorm/phaser3-typescript-project-template">官方typescript模板</a></li>
+<li><a href="https://github.com/photonstorm/phaser3-project-template">官方JS模板</a></li>
+<li><a href="https://github.com/digitsensitive/phaser3-typescript">Phaser3-TypeScript项目模板和实例库</a>。包含项目开发工具和7个比较完整的游戏实例。GitHub上也有使用JavaScript的Phaser3项目模板，因本人没有用过，不便推荐。</li>
+</ul>
+</li>
 <li><a href="https://github.com/littlee/wechat-small-game-phaser">wechat-small-game-phaser库</a>，这是一个使PhaserCE适配微信小游戏的库，思路清晰。经实测，基本架构同样适用于Phaser3。</li>
 <li><a href="https://www.cnblogs.com/honghong87/p/9592680.html">《phaser3 微信小游戏若干问题》</a>，解决Phaser3在微信中载入资源时不支持BLOB的问题（文章只解决了图片载入问题，其他资源载入问题需要照例自行修改Phaser3源码）。</li>
 <li><a href="https://phaser.discourse.group/">Phaser官方新建的独立讨论组</a>。<a href="http://www.html5gamedevs.com/forum/14-phaser-2/">Phaser2论坛</a>。<a href="http://www.html5gamedevs.com/forum/33-phaser-3/">Phaser3旧论坛</a>。</li>
@@ -2657,10 +2674,9 @@
 </ul>
 <h2 id="_4">资源检索<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p>搜索引擎自然不用说了。</p>
-<p>一些大规模的资源，比如实例库、文档、官方电子期刊等，可以先下载到本地。再用PowerGrep、FileLocator、PDF-XChange之类的全文检索工具检索。<strong>当然，你要比较熟悉Phaser的术语习惯，才能有效地检索。</strong></p>
-<p>有一个我经常用的<a href="http://phaserchains.boniatillo.com/">Phaser Chains项目</a>，可惜目前仅基于Phaser2.4.7。期待早日支持Phaser3。它可以对API文档和官网实例进行联合检索，支持通配符，<strong>支持对象属性的关系链条，</strong>所以要比翻看文档方便、直观得多。比如搜"state.*sprite"，就能查到很多相关条目（条目又关联着文档和官网实例）：</p>
-<p><strong>更新：<a href="https://chains.phasereditor2d.com/">Phaser Chains</a>，同时支持2、3版！！！</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<p><strong>更新：<a href="https://chains.phasereditor2d.com/">新的Phaser Chains</a>，同时支持2、3版！！！可用空格代表通配符。</strong> 这是编辑器Phaser Editor 2D的项目。
+~~有一个我经常用的<a href="http://phaserchains.boniatillo.com/">Phaser Chains项目</a>，可惜目前仅基于Phaser2.4.7。期待早日支持Phaser3。~~ 它可以对API文档和官网实例进行联合检索，支持通配符，<strong>支持对象属性的关系链条，</strong> 所以要比翻看文档方便、直观得多。比如搜"state.*sprite"，就能查到很多相关条目（条目又关联着文档和官网实例）：</p>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -2671,9 +2687,10 @@
 <span class="c1">//等等...</span>
 </code></pre></div>
 </td></tr></table>
+一些大规模的资源，比如实例库、文档、官方电子期刊等，也可以先下载到本地。再用PowerGrep、VSCode、FileLocator、PDF-XChange之类的全文检索工具检索。<strong>当然，你要比较熟悉Phaser的术语习惯，才能有效地检索。</strong></p>
 <p>另外，<strong>官方文档有SQLite和json版，</strong>值得深入挖掘。</p>
 <h2 id="gamegameconfig">Game配置对象GameConfig<a class="headerlink" href="#gamegameconfig" title="Permanent link">#</a></h2>
-<p>Phaser3的配置对象包含很多项目，详见<a href="https://photonstorm.github.io/phaser3-docs/global.html#GameConfig">配置对象GameConfig文档</a>，也可参考<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/game-config.md">小抄</a>。</p>
+<p>Phaser3的配置对象包含很多项目，详见<a href="https://photonstorm.github.io/phaser3-docs/global.html#GameConfig">配置对象GameConfig文档</a>，也参考<a href="../2021-03-30-GameConfig%E6%B8%B8%E6%88%8F%E9%85%8D%E7%BD%AE/">Phaser.Game配置文件详例</a>，还有<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/game-config.md">小抄</a>。</p>
 <p><strong>Phaser3广泛使用配置对象，又比如在生成Sprites、Tweens实例时。</strong></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2728,7 +2745,7 @@
 <p>Phaser3游戏对象的一个重要变化，是把Phaser2中Sprite、Text、Group等游戏对象的容器功能分离出来，归到Container中。这样一来，Sprite、Text等不能添加子项；Group有子项，但实际是逻辑分组，非独占，通常也不能整体地控制显示状态（可以通过Actions批处理）。Phaser2的渲染核心是PIXI，虽然PIXI有Container，但在Phaser2中一般不直接使用。</p>
 </li>
 <li>
-<p>Phaser3游戏对象的原点（origin，对应于Phaser2的锚点/anchor属性）默认为中心点，而不是左上角。原点通过属性<code>originX</code>, <code>originY</code>获取，通过方法<code>setOrigin(x, y)</code>设置。</p>
+<p>Phaser3游戏对象的原点（origin，对应于Phaser2的锚点/anchor属性）默认为中心点，而不是左上角。原点通过属性<code>originX</code>, <code>originY</code>获取，通过方法<code>setOrigin(x, y)</code>设置。origin以比分比计算（0到1），另有以像素计算的displayOrigin。</p>
 </li>
 <li>
 <p>Phaser.GameObjects.GameObjectFactory/游戏对象工厂类。实际上通过<code>Scene.add</code>属性引用，比如<code>this.add.sprite(config)</code>。</p>
