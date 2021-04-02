@@ -1537,6 +1537,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#phaser" class="md-nav__link">
+    怎么看明白phaser文档？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     学习资源
   </a>
@@ -2315,6 +2322,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#phaser" class="md-nav__link">
+    怎么看明白phaser文档？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     学习资源
   </a>
@@ -2654,6 +2668,36 @@
 <li>浏览官网实例，了解Phaser能做什么，大体是怎么做的；做好注记，以便日后快速查询；</li>
 <li>从零开始做一个Phaser游戏，遇到问题随时搜索官网实例、API文档、开发日志等；</li>
 </ol>
+<h2 id="phaser">怎么看明白phaser文档？<a class="headerlink" href="#phaser" title="Permanent link">#</a></h2>
+<p>Phaser文档是通过脚本工具整理成数据库，然后再生成的，所以很整齐，很有规律。但首先要找到规律。可以先看官方实例，照着写一遍，一边对照文档，这样来找规律。</p>
+<p>最让人迷惑的地方可能是，很多对象中都有不少成员（member）是用来引用其他对象的，相当于快捷方式。所以，看文档时，你看到的往往不是实际使用的情形，而需要通过连接不断跳转。</p>
+<p>比如类似<code>A_Class.B_Class.c_member:D_Class.e_method()</code>这样的形式，每个<code>.</code>都是一个文档跳转，可能链条更长。其中<code>c_member:D_Class</code>就表示一个引用关系，也就是说，实际关系是<code>A_Class.B_Class.c_member.e_method()</code>。</p>
+<p>而使用的时候还要实例化，可能是<code>a_Class_instance.b_Class_instance.c_member.e_method()</code>，也可能直接是<code>b_Class_instance.c_member.e_method()</code>。</p>
+<p>举一个实际的文档例子。层级和跳转如下：</p>
+<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.html">Phaser</a>: Namespace<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html">Scene</a>: Class<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html">add :Phaser.GameObjects.GameObjectFactory</a><ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html#sprite__anchor">sprite(x, y, texture [, frame])</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html#existing__anchor">existing(child)</a></li>
+</ul>
+</li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectCreator.html">make :Phaser.GameObjects.GameObjectCreator</a><ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectCreator.html#sprite__anchor">sprite(config [, addToScene])</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><code>Phaser.Scene.add</code>实际上引用的是工厂类<code>Phaser.GameObjects.GameObjectFactory</code>，其下有很多方法可生成游戏对象，比如<code>Phaser.Scene.add.sprite()</code>就是生成精灵，并把精灵加到场景的显示列表中。实际上通常是在场景实例<code>this</code>中使用，那就写作<code>this.add.sprite()</code>。</p>
+<p>而<code>this.make.sprite()</code>引用的是游戏对象生成器<code>Phaser.GameObjects.GameObjectCreator</code>中的方法<code>sprite()</code>。这个方法只能生成Sprite实例，生成后还需要通过<code>this.add.existing(child)</code>加到场景的显示列表中。</p>
+<p>如果是因为英语的问题，可以使用</p>
+<ul>
+<li>电子词典，配置好快捷键，比如<a href="https://github.com/goldendict/goldendict">GoldenDict</a>可以使用ctrl+c+c把选中的文字放到词典浮窗中。</li>
+<li><a href="https://www.deepl.com/translator">DeepL</a>，方便翻译大段文字，精确度很高，能识别程序代码。</li>
+</ul>
 <h2 id="_3">学习资源<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/index">官网入门教程</a>。一个简明、完整的权威教程。</li>
@@ -2674,7 +2718,7 @@
 </ul>
 <h2 id="_4">资源检索<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p>搜索引擎自然不用说了。</p>
-<p><strong>更新：<a href="https://chains.phasereditor2d.com/">新的Phaser Chains</a>，同时支持2、3版！！！可用空格代表通配符。</strong> 这是编辑器Phaser Editor 2D的项目。
+<p><strong>更新：<a href="https://chains.phasereditor2d.com/">新的Phaser Chains</a>，同时支持2、3版！！！可用空格代表通配符。</strong> 这是编辑器Phaser Editor 2D的项目。更多用法请看<a href="https://github.com/PhaserEditor2D/phaser3-chains">项目说明</a>。
 ~~有一个我经常用的<a href="http://phaserchains.boniatillo.com/">Phaser Chains项目</a>，可惜目前仅基于Phaser2.4.7。期待早日支持Phaser3。~~ 它可以对API文档和官网实例进行联合检索，支持通配符，<strong>支持对象属性的关系链条，</strong> 所以要比翻看文档方便、直观得多。比如搜"state.*sprite"，就能查到很多相关条目（条目又关联着文档和官网实例）：</p>
 <p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>

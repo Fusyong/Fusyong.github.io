@@ -2537,7 +2537,7 @@
                 
                 
                 <h1 id="phaserscenessceneplugin"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#toc1">Phaser.Scenes.ScenePlugin</a><a class="headerlink" href="#phaserscenessceneplugin" title="Permanent link">#</a></h1>
-<p>代理的是场景管理器。<strong>一般通过<code>Phaser.Scene.scene</code>应用。</strong></p>
+<p>代理的是场景管理器。<strong>一般通过<code>Phaser.Scene.scene</code>引用，也就是常见的写法：<code>this.scene...</code>。</strong></p>
 <h3 id="new_scenepluginscene"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#ScenePlugin">new ScenePlugin(scene)</a><a class="headerlink" href="#new_scenepluginscene" title="Permanent link">#</a></h3>
 <h2 id="members"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#toc3">Members</a><a class="headerlink" href="#members" title="Permanent link">#</a></h2>
 <h3 id="key_string"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#key">key :string</a><a class="headerlink" href="#key_string" title="Permanent link">#</a></h3>
@@ -2553,9 +2553,18 @@
 <h3 id="restart_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#restart">restart( [data])</a><a class="headerlink" href="#restart_data" title="Permanent link">#</a></h3>
 <p>重启本场景自身。</p>
 <h3 id="addkey_sceneconfig_autostart_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#add">add(key, sceneConfig, autoStart [, data])</a><a class="headerlink" href="#addkey_sceneconfig_autostart_data" title="Permanent link">#</a></h3>
-<p>添加新场景。</p>
+<p>向场景管理器中添加新场景。未在Game配置文件中添加的场景，需要这样添加。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">create</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 实例化场景类Index，并自动启动</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="nx">Index</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> 
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="start_key_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#start">start( [key] [, data])</a><a class="headerlink" href="#start_key_data" title="Permanent link">#</a></h3>
-<p>启动指定场景，并关闭本场景。</p>
+<p>启动指定的新场景，并关闭本场景。</p>
 <h3 id="launchkey_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#launch">launch(key [, data])</a><a class="headerlink" href="#launchkey_data" title="Permanent link">#</a></h3>
 <p>并行启动一个场景。</p>
 <h3 id="runkey_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.ScenePlugin.html#run">run(key [, data])</a><a class="headerlink" href="#runkey_data" title="Permanent link">#</a></h3>
