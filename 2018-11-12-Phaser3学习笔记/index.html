@@ -2693,6 +2693,7 @@
 </ul>
 <p><code>Phaser.Scene.add</code>实际上引用的是工厂类<code>Phaser.GameObjects.GameObjectFactory</code>，其下有很多方法可生成游戏对象，比如<code>Phaser.Scene.add.sprite()</code>就是生成精灵，并把精灵加到场景的显示列表中。实际上通常是在场景实例<code>this</code>中使用，那就写作<code>this.add.sprite()</code>。</p>
 <p>而<code>this.make.sprite()</code>引用的是游戏对象生成器<code>Phaser.GameObjects.GameObjectCreator</code>中的方法<code>sprite()</code>。这个方法只能生成Sprite实例，生成后还需要通过<code>this.add.existing(child)</code>加到场景的显示列表中。</p>
+<p>建议参看<a href="../2021-04-03-Phaser3%E7%9A%84%E6%A8%A1%E5%9D%97%E7%BB%93%E6%9E%84/">官方对模块结构的解释</a>。</p>
 <p>如果是因为英语的问题，可以使用</p>
 <ul>
 <li>电子词典，配置好快捷键，比如<a href="https://github.com/goldendict/goldendict">GoldenDict</a>可以使用ctrl+c+c把选中的文字放到词典浮窗中。</li>
@@ -2933,7 +2934,7 @@ Graphics初始的时候是空的，需要制定笔触色、填充色，然后用
 <p>要注意容器带来的额外问题。嵌套越深，消耗越会升级，尤其是在输入事件上。尽可能避免使用。</p>
 <p>参考<code>Group</code>。</p>
 <h3 id="group"><a href="../2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Group/">Group组</a><a class="headerlink" href="#group" title="Permanent link">#</a></h3>
-<p>Group是一个抽象分组，便于批量地生成、排布、控制、循环处理近似游戏对象。与Container不同，它自身没有没有显隐、缩放、定位、旋转属性（但可以快速控制子项的这些属性）。他对子项不是独占的，子项可以存在于多个组中。因此<strong>Container更适于把多个显示对象集合成一个复合型显示对象，以便整体地控制显示状态；Group则适合于对近似对象进行批量操作。</strong></p>
+<p>Group是多维的抽象分组，类似于打标签，便于批量地生成、排布、控制、循环处理近似游戏对象。与Container不同，它自身没有没有显隐、缩放、定位、旋转属性（但可以快速控制子项的这些属性）。他对子项不是独占的，子项可以存在于多个组中。因此<strong>Container更适于把多个显示对象集合成一个复合型显示对象，以便整体地控制显示状态；Group则适合于对近似对象进行批量操作。</strong></p>
 <p><strong>组的一个重要用途是对象池。</strong></p>
 <h4 id="_6">生成静态物理组<a class="headerlink" href="#_6" title="Permanent link">#</a></h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
