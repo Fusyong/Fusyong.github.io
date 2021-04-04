@@ -516,6 +516,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../2021-04-04-%E5%AD%A9%E5%AD%90%E4%B8%8D%E7%88%B1%E5%AD%A6%E4%B9%A0%EF%BC%8C%E6%AF%9B%E7%B3%99%E3%80%81%E5%BA%94%E4%BB%98%E6%80%8E%E4%B9%88%E5%8A%9E/" class="md-nav__link">
+        孩子不爱学习，毛糙、应付怎么办？
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2020-07-26-%E9%99%AA%E5%AD%A9%E5%AD%90%E5%AD%A6%E8%8B%B1%E8%AF%AD%E7%9A%84%E4%B8%80%E7%82%B9%E5%B0%9D%E8%AF%95%E5%92%8C%E6%83%B3%E6%B3%95/" class="md-nav__link">
         陪孩子学英语的一点尝试和想法（累积更新）
       </a>
@@ -1626,10 +1638,10 @@
       
         <li class="md-nav__item">
   <a href="#phaserscalescalemanager" class="md-nav__link">
-    Phaser.Scale.ScaleManager缩放管理器/窗口适配
+    Phaser.Scale.ScaleManager尺寸管理器/窗口适配
   </a>
   
-    <nav class="md-nav" aria-label="Phaser.Scale.ScaleManager缩放管理器/窗口适配">
+    <nav class="md-nav" aria-label="Phaser.Scale.ScaleManager尺寸管理器/窗口适配">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2546,10 +2558,10 @@
       
         <li class="md-nav__item">
   <a href="#phaserscalescalemanager" class="md-nav__link">
-    Phaser.Scale.ScaleManager缩放管理器/窗口适配
+    Phaser.Scale.ScaleManager尺寸管理器/窗口适配
   </a>
   
-    <nav class="md-nav" aria-label="Phaser.Scale.ScaleManager缩放管理器/窗口适配">
+    <nav class="md-nav" aria-label="Phaser.Scale.ScaleManager尺寸管理器/窗口适配">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3104,18 +3116,18 @@
                 
                   <h1>ScaleManager窗口适配</h1>
                 
-                <p>参考<a href="../2021-03-30-GameConfig%E6%B8%B8%E6%88%8F%E9%85%8D%E7%BD%AE/">Phaser.Game配置文件详例</a></p>
-<h2 id="phaserscalescalemanager"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#toc1">Phaser.Scale.ScaleManager缩放管理器/窗口适配</a><a class="headerlink" href="#phaserscalescalemanager" title="Permanent link">#</a></h2>
+                <p>参考<a href="../2021-03-30-GameConfig%E6%B8%B8%E6%88%8F%E9%85%8D%E7%BD%AE/">Phaser.Game配置文件详例</a>，并<a href="https://phaser.io/phaser3/devlog/136">深入理解新的Phaser3尺寸管理器</a></p>
+<h2 id="phaserscalescalemanager"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#toc1">Phaser.Scale.ScaleManager尺寸管理器/窗口适配</a><a class="headerlink" href="#phaserscalescalemanager" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Types.Core.html#.GameConfig">游戏配置对象</a><ul>
-<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Types.Core.html#.ScaleConfig">游戏配置对象：缩放配置对象</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Types.Core.html#.ScaleConfig">游戏配置对象：尺寸配置对象</a></li>
 </ul>
 </li>
 <li><a href="http://labs.phaser.io/index.html?dir=scalemanager/&amp;q=">用例</a></li>
 </ul>
 <blockquote>
-<p>缩放管理器处理游戏画布的缩放、调整大小和对齐。</p>
-<p>处理缩放的方式是通过将游戏画布设置为固定的大小，这是在游戏配置中定义的。您还可以在游戏配置中定义父容器。如果没有给出父容器，它将默认使用文档体。缩放管理器将查看父容器内的可用空间，并相应地缩放画布。缩放是通过设置画布的CSS宽度和高度属性来处理的，而不影响画布元素本身的宽度和高度。因此，通过保持核心画布的大小不变，并通过其CSS属性对其进行 "拉伸 "来实现缩放。这与使用transform-scale CSS属性的结果和速度是一样的，而不需要浏览器前缀处理。</p>
+<p>尺寸管理器处理游戏画布的尺寸、调整大小和对齐。</p>
+<p>处理尺寸的方式是通过将游戏画布设置为固定的大小，这是在游戏配置中定义的。您还可以在游戏配置中定义父容器。如果没有给出父容器，它将默认使用文档体。尺寸管理器将查看父容器内的可用空间，并相应地尺寸画布。尺寸是通过设置画布的CSS宽度和高度属性来处理的，而不影响画布元素本身的宽度和高度。因此，通过保持核心画布的大小不变，并通过其CSS属性对其进行 "拉伸 "来实现尺寸。这与使用transform-scale CSS属性的结果和速度是一样的，而不需要浏览器前缀处理。</p>
 <p>尺度的计算很大程度上受绑定父元素尺寸的影响，也就是画布父元素的计算尺寸。父元素的CSS规则在Scale Manager的操作中起着重要作用。例如，如果父元素没有定义宽度或高度，那么像自动居中这样的操作将无法达到所需的结果。Scale Manager与您在游戏页面上设置的CSS一起工作，而不是控制它。</p>
 </blockquote>
 <h3 id="_1"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#toc2">画布中的父级显示元素的原则：</a><a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
@@ -3126,16 +3138,20 @@
 <li>The Display canvas layout CSS styles (i.e. margins, size) should not be altered / specified as they may be updated by the Scale Manager.</li>
 </ul>
 <h3 id="scale_modes"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#toc3">Scale Modes</a><a class="headerlink" href="#scale_modes" title="Permanent link">#</a></h3>
-<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleModes.html">缩放模式</a></p>
-<p>Namespace: ScaleModes
-Phaser.Scale. ScaleModes
-Members
-<static, constant> FIT :number // 单向撑满，另一向可能留空
-<static, constant> ENVELOP :number // 双向遮满，其中一向可能超出
-<static, constant> WIDTH_CONTROLS_HEIGHT :number // 适配宽度
-<static, constant> HEIGHT_CONTROLS_WIDTH :number // 适配高度
-<static, constant> RESIZE :number //重设尺寸以适配父元素，调整长宽比
-<static, constant> NONE :number</p>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleModes.html">尺寸模式</a>的细节：</p>
+<p>Namespace: ScaleModes</p>
+<p>Phaser.Scale. ScaleModes</p>
+<p>Members：</p>
+<ul>
+<li><static, constant> FIT :number // 单向适配，保持比例，另一向可能留空</li>
+<li><static, constant> ENVELOP :number // 双向遮满，保持比例，其中一向可能超出</li>
+<li><static, constant> WIDTH_CONTROLS_HEIGHT :number // 适配宽度，保持比例</li>
+<li><static, constant> HEIGHT_CONTROLS_WIDTH :number // 适配高度，保持比例</li>
+<li><static, constant> RESIZE :number // 双向适配，<strong>调整比例</strong></li>
+<li><static, constant> NONE :number</li>
+</ul>
+<p><em>ENVELOP:</em></p>
+<p><img alt="" src="../img/2021-03-30-Phaser.Scale.ScaleManager/envelop.png" /></p>
 <h3 id="centering"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#toc4">Centering</a><a class="headerlink" href="#centering" title="Permanent link">#</a></h3>
 <p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Center.html">居中模式</a></p>
 <p>Namespace:Center
@@ -3153,15 +3169,20 @@ Members
 <h3 id="autocenter_phaserscalecentertype"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#autoCenter">autoCenter :Phaser.Scale.CenterType</a><a class="headerlink" href="#autocenter_phaserscalecentertype" title="Permanent link">#</a></h3>
 <h3 id="autoround_boolean"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#autoRound">autoRound :boolean</a><a class="headerlink" href="#autoround_boolean" title="Permanent link">#</a></h3>
 <h3 id="basesize_phaserstructssize"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#baseSize">baseSize :Phaser.Structs.Size</a><a class="headerlink" href="#basesize_phaserstructssize" title="Permanent link">#</a></h3>
+<p>Base Size组件。
+调整过的游戏尺寸，也就是自动取整的gameSize，用于设置画布的宽、高（不是CSS样式）。</p>
 <h3 id="canvas_htmlcanvaselement"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#canvas">canvas :HTMLCanvasElement</a><a class="headerlink" href="#canvas_htmlcanvaselement" title="Permanent link">#</a></h3>
 <h3 id="canvasbounds_phasergeomrectangle"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#canvasBounds">canvasBounds :Phaser.Geom.Rectangle</a><a class="headerlink" href="#canvasbounds_phasergeomrectangle" title="Permanent link">#</a></h3>
 <h3 id="dirty_boolean"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#dirty">dirty :boolean</a><a class="headerlink" href="#dirty_boolean" title="Permanent link">#</a></h3>
 <h3 id="displayscale_phasermathvector2"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#displayScale">displayScale :Phaser.Math.Vector2</a><a class="headerlink" href="#displayscale_phasermathvector2" title="Permanent link">#</a></h3>
 <h3 id="displaysize_phaserstructssize"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#displaySize">displaySize :Phaser.Structs.Size</a><a class="headerlink" href="#displaysize_phaserstructssize" title="Permanent link">#</a></h3>
+<p>Display Size组件。用于canvas style（画布css样式）的尺寸, 已经计算了尺寸模式、父容器等因素的值。</p>
 <h3 id="fullscreen_phaserdevicefullscreen"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#fullscreen">fullscreen :Phaser.Device.Fullscreen</a><a class="headerlink" href="#fullscreen_phaserdevicefullscreen" title="Permanent link">#</a></h3>
 <h3 id="fullscreentarget_any"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#fullscreenTarget"><nullable> fullscreenTarget :any</a><a class="headerlink" href="#fullscreentarget_any" title="Permanent link">#</a></h3>
 <h3 id="game_phasergame"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#game"><readonly> game :Phaser.Game</a><a class="headerlink" href="#game_phasergame" title="Permanent link">#</a></h3>
 <h3 id="gamesize_phaserstructssize"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#gameSize">gameSize :Phaser.Structs.Size</a><a class="headerlink" href="#gamesize_phaserstructssize" title="Permanent link">#</a></h3>
+<p>Game Size组件。
+按照游戏配置中的要求（原始宽、高）的、未修改的游戏尺寸，用于世界边界、相机等。</p>
 <h3 id="height_number"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#height"><readonly> height :number</a><a class="headerlink" href="#height_number" title="Permanent link">#</a></h3>
 <p>游戏的高度。通常是游戏配置中的尺寸。</p>
 <h3 id="isfullscreen_boolean"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#isFullscreen"><readonly> isFullscreen :boolean</a><a class="headerlink" href="#isfullscreen_boolean" title="Permanent link">#</a></h3>
@@ -3177,6 +3198,35 @@ Members
 <h3 id="scalemode_phaserscalescalemodetype"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#scaleMode">scaleMode :Phaser.Scale.ScaleModeType</a><a class="headerlink" href="#scalemode_phaserscalescalemodetype" title="Permanent link">#</a></h3>
 <h3 id="width_number"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#width"><readonly> width :number</a><a class="headerlink" href="#width_number" title="Permanent link">#</a></h3>
 <p>游戏的宽度。通常是游戏配置中的尺寸。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+    <span class="c1">// Game设置为width:1024,height:768(scale中的同名设置会覆盖它们)</span>
+    <span class="c1">// 画面有缩放</span>
+    <span class="sb">`this.game.scale.width: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">width</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+    <span class="sb">`this.game.scale.height: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">height</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+    <span class="sb">`this.game.scale.baseSize: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">baseSize</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+    <span class="sb">`this.game.scale.gameSize: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">gameSize</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+    <span class="sb">`this.game.scale.displaySize: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">displaySize</span><span class="si">}</span><span class="sb">`</span>
+    <span class="p">)</span>
+    <span class="c1">// this.game.scale.width: 1024</span>
+    <span class="c1">// this.game.scale.height: 768</span>
+    <span class="c1">// this.game.scale.baseSize: [{ Size (width=1024 height=768 aspectRatio=1.3333333333333333 aspectMode=0) }]</span>
+    <span class="c1">// this.game.scale.gameSize: [{ Size (width=1024 height=768 aspectRatio=1.3333333333333333 aspectMode=0) }] </span>
+    <span class="c1">// this.game.scale.displaySize: [{ Size (width=1161 height=870.75 aspectRatio=1.3333333333333333 aspectMode=3) }]</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="zoom_number"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.ScaleManager.html#zoom">zoom :number</a><a class="headerlink" href="#zoom_number" title="Permanent link">#</a></h3>
 <p>?? <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Zoom.html">推拉模式</a></p>
 <p>Namespace: Zoom
