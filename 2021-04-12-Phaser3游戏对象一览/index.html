@@ -2050,12 +2050,12 @@
   所有游戏对象的基类，不能直接生成游戏对象
 * [Game Object Factory](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html)
   Phaser.GameObjects.GameObjectFactory
-  游戏对象工厂，场景的一个插件，
-  从场景中引用游戏对象类的生成方法，
+  游戏对象工厂，场景的插件，引用方法:`Scene.add`
+  通过它从场景中引用游戏对象类的生成方法，以生成对象
   如`Scene.add.sprite()`
 * [Game Object Creator](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectCreator.html)
-  游戏对象生成器，场景的一个插件，
-  从场景中引用游戏对象类的生成方法，
+  游戏对象生成器，场景的插件，引用方法:`Scene.make`
+  通过从场景中引用游戏对象类的生成方法，以生成对象
   如`child = Scene.make.sprite()`
   生成的对象要用`Scene.add.existing(child)`加到场景中
 
@@ -2074,7 +2074,8 @@
   绑定一个Path，自动循Path移动
 * [Graphics](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html)
   Phaser.GameObjects.Graphics
-  图形，用于绘制各种初级的几何图形
+  图形，用于手动绘制各种基本几何图形
+  单一的基本几何图形可以用Shape相应的子类
 * [Bitmap Text (Static)](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.BitmapText.html)
   Phaser.GameObjects.BitmapText
   Bitmap文本，配合Bitmap字体资源使用
@@ -2094,13 +2095,13 @@
 * [DOM Element](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.DOMElement.html)
   Phaser.GameObjects.DOMElement
   DOM元素，可操控游戏之上的HTML元素
-  用作录表单、第三方广告、高分辨率文本、UI等
+  用作登录表单、第三方广告、高分辨文本、UI等
 
 ## 几何图形
 
 * [Shape](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Shape.html)
   Phaser.GameObjects.Shape
-  形状，多种几何图形（如弧形、星形、多边形）的基类
+  形状，各种几何图形的基类
   不能直接在场景中生成图形
 * [Line](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Line.html)
   直线
@@ -2130,13 +2131,14 @@
 * [Container](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html)
   Phaser.GameObjects.Container
   容器，可以加入别的游戏对象，负责子对象的定位和渲染
-  把子对象从显示列表中移除，加入容器的内部列表中
+  把子对象从显示列表中移除，再加入容器的内部列表中
   容器因可嵌套而功能强大，但也有诸多缺点，需谨慎使用
 * [Group](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Group.html)
   Phaser.GameObjects.Group
-  组，批量地生成、操控、重用近似对象的渠道
+  组，批量地生成、操控、重用近似对象的手段
   组不排他，一个对象可属于多个组（类似标签）
   组本身没有显示属性，不能定位、旋转、缩放、隐藏
+  可配合`Phaser.Actions`中的静态方法进行批处理
 * [Layer](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Layer.html)
   Phaser.GameObjects.Layer
   层，可充当显示列表（Display List）的特殊对象
@@ -2144,8 +2146,9 @@
 * [Zone](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Zone.html)
   Phaser.GameObjects.Zone
   区域，没有纹理/非渲染/不显示的显示对象
-  在现实列表中，位置、缩放等可操控
-  用于降落区、点击区、对象重叠检测，或定制非现实对象的基类
+  它本身在显示列表中，位置、缩放等可操控
+  有特殊方法以便用于降落区、点击区、对象重叠检测，
+  或用作定制非显示对象的基类
 
 ## 专用工具
 
@@ -2154,7 +2157,7 @@
   点光源，比传统光对象的阴影高效得多
 * [Particle Emitter](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Particles.ParticleEmitter.html)
   Phaser.GameObjects.Particles.ParticleEmitter
-  粒子发生器，表示、控制一个粒子流
+  粒子发生器，表示并控制一个粒子流
   由粒子发生器管理器控制
 * [Particle Emitter Manager](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Particles.ParticleEmitterManager.html)
   Phaser.GameObjects.Particles.ParticleEmitterManager
@@ -2176,14 +2179,14 @@
 
 * [Render Texture](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.RenderTexture.html)
   Phaser.GameObjects.RenderTexture
-  渲染器纹理，运行时动态生成纹理（供其他对象使用）的渠道
+  渲染器纹理，用于运行时动态生成纹理
   可把众多对象绘入其中，对WebGL友好，低消耗
 * [Blitter](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Blitter.html)
-  用于生成、更新、管理Bob对象的容器
+  显存块传送器，用于生成、更新、管理Bob对象的容器
   与一个纹理绑定，目的是高效地渲染大型对象
 * [Bob (Blitter Object)](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Bob.html)
-  一个Bob属于一个Blitter。
-  Bob包含一个位置、一个透明度、一个纹理帧（可从Blitter中更换）
+  显存块对象，一个Bob属于一个Blitter
+  Bob包含一个位置、一个透明度、一个纹理帧
 * [Extern](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Extern.html)
   Phaser.GameObjects.Extern
   外勤，可以用于第三方的渲染
@@ -2197,7 +2200,7 @@
 * [Lights](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.LightsPlugin.html)
   灯光，场景的灯光管理器插件
 * [Mesh](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Mesh.html)
-  网眼，可以通过一组定点操控纹理
+  网眼，可以通过一组定点操控纹理变形
   用于蒙皮动画等
 
 <!-- 下代码 -->
