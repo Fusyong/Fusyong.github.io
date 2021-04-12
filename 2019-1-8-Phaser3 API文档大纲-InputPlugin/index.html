@@ -1224,8 +1224,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../2021-03-04-%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84TextPro%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9B%BF%E6%8D%A2%E8%A1%A8/" class="md-nav__link">
-        我常用的TextPro用自定义替换表
+      <a href="../2018-11-7-%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7%E5%BF%97/" class="md-nav__link">
+        奇技淫巧志
       </a>
     </li>
   
@@ -1236,8 +1236,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../2018-11-7-%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7%E5%BF%97/" class="md-nav__link">
-        奇技淫巧志
+      <a href="../2021-03-04-%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84TextPro%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9B%BF%E6%8D%A2%E8%A1%A8/" class="md-nav__link">
+        我常用的TextPro用自定义替换表
       </a>
     </li>
   
@@ -1458,8 +1458,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../2021-04-12-Phaser3%E6%B8%B8%E6%88%8F%E7%BB%93%E6%9E%84%E7%A4%BA%E4%BE%8B/" class="md-nav__link">
+        Phaser3游戏结构示例（未完成）
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2021-04-03-Phaser3%E7%9A%84%E6%A8%A1%E5%9D%97%E7%BB%93%E6%9E%84/" class="md-nav__link">
         Phaser3的模块结构
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-04-12-Phaser3%E6%B8%B8%E6%88%8F%E5%AF%B9%E8%B1%A1%E4%B8%80%E8%A7%88/" class="md-nav__link">
+        Phaser3游戏对象一览
       </a>
     </li>
   
@@ -1634,6 +1658,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../2021-04-03-Phaser.Cameras.Scene2D.Camera/" class="md-nav__link">
+        Camera镜头
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2021-03-31-Phaser.Scenes.ScenePlugin/" class="md-nav__link">
         Phaser.Scenes.ScenePlugin场景管理器
       </a>
@@ -1754,6 +1790,18 @@
         Phaser3 API文档大纲-InputPlugin
       </a>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-04-11-Phaser.Input.Events%E4%BA%8B%E4%BB%B6/" class="md-nav__link">
+        Phaser.Input.Events事件清单
+      </a>
     </li>
   
 
@@ -2005,7 +2053,7 @@
 <h1 id="phaser_3_api_documentation_-_class_inputplugin">Phaser 3 API Documentation - <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#toc0">Class: InputPlugin</a><a class="headerlink" href="#phaser_3_api_documentation_-_class_inputplugin" title="Permanent link">#</a></h1>
 <h2 id="phaserinput_inputplugin"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#toc1">Phaser.Input. InputPlugin</a><a class="headerlink" href="#phaserinput_inputplugin" title="Permanent link">#</a></h2>
 <p>输入插件（InputPlugin）属于一个场景，为场景处理所有输入相关的事件、操作。
-在场景中通过<code>this.input</code>接收输入插件。</p>
+在场景中通过<code>this.input</code>控制/引用输入插件。</p>
 <p>它直接发送事件。例如监听游戏画布的热点点击（pointerdown）事件：</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerdown&#39;</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">context</span><span class="p">);</span>
 </code></pre></div>
@@ -2018,6 +2066,7 @@
 <span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerdown&#39;</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">context</span><span class="p">);</span>
 </code></pre></div>
 </td></tr></table>
+<p><strong>参看<a href="../2021-04-11-Phaser.Input.Events%E4%BA%8B%E4%BB%B6/">可用的事件清单</a>。</strong></p>
 <h4 id="new_inputpluginscene"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#InputPlugin">new InputPlugin(scene)</a><a class="headerlink" href="#new_inputpluginscene" title="Permanent link">#</a></h4>
 <h3 id="extends"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.InputPlugin.html#toc3">Extends</a><a class="headerlink" href="#extends" title="Permanent link">#</a></h3>
 <p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Events.EventEmitter.html">Phaser.Events.EventEmitter</a></p>
@@ -2254,13 +2303,13 @@ this.input.setDefaultCursor('url(assets/cursors/sword.cur), pointer');</code></p
         </a>
       
       
-        <a href="../2018-12-27-Pyo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../2021-04-11-Phaser.Input.Events%E4%BA%8B%E4%BB%B6/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              Pyo学习笔记
+              Phaser.Input.Events事件清单
             </div>
           </div>
           <div class="md-footer__button md-icon">
