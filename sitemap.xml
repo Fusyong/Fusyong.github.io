@@ -392,11 +392,11 @@
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://blog.xiiigame.com/2021-04-03-Phaser.Cameras.Scene2D.Camera/</loc>
+     <loc>https://blog.xiiigame.com/2021-03-31-Phaser.Scenes.ScenePlugin/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://blog.xiiigame.com/2021-03-31-Phaser.Scenes.ScenePlugin/</loc>
+     <loc>https://blog.xiiigame.com/2018-12-1-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Loader.LoaderPlugin/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -408,18 +408,6 @@
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://blog.xiiigame.com/2018-11-26-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Display.Align.In-To/</loc>
-     <lastmod>2021-04-13</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://blog.xiiigame.com/2018-11-26-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Display.Bounds/</loc>
-     <lastmod>2021-04-13</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://blog.xiiigame.com/2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Actions/</loc>
-     <lastmod>2021-04-13</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
      <loc>https://blog.xiiigame.com/2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Container/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
@@ -428,7 +416,7 @@
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://blog.xiiigame.com/2018-12-1-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Loader.LoaderPlugin/</loc>
+     <loc>https://blog.xiiigame.com/2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Actions/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -437,6 +425,18 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://blog.xiiigame.com/2021-04-11-Phaser.Input.Events%E4%BA%8B%E4%BB%B6/</loc>
+     <lastmod>2021-04-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://blog.xiiigame.com/2021-04-03-Phaser.Cameras.Scene2D.Camera/</loc>
+     <lastmod>2021-04-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://blog.xiiigame.com/2018-11-26-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Display.Align.In-To/</loc>
+     <lastmod>2021-04-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://blog.xiiigame.com/2018-11-26-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Display.Bounds/</loc>
      <lastmod>2021-04-13</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
