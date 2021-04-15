@@ -1950,6 +1950,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    设置背景色
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2014,13 +2021,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
       
       <label class="md-nav__link" for="__nav_12">
-        Phaser文档注记
+        Phaser3文档注记
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Phaser文档注记" data-md-level="1">
+      <nav class="md-nav" aria-label="Phaser3文档注记" data-md-level="1">
         <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
-          Phaser文档注记
+          Phaser3文档注记
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2054,7 +2061,7 @@
   
     <li class="md-nav__item">
       <a href="../2019-1-2-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Scene/" class="md-nav__link">
-        Phaser.Scene场景
+        Scene场景
       </a>
     </li>
   
@@ -2981,6 +2988,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    设置背景色
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3698,6 +3712,19 @@ Video是标准游戏对象，跟Sprite一样，通常的缩放、旋转、修剪
 <span class="nx">group</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span> <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;ball&#39;</span><span class="p">,</span> <span class="nx">frameQuantity</span><span class="o">:</span> <span class="mf">32</span> <span class="p">});</span>
 <span class="c1">// 把组中游戏对象放置在圆环上</span>
 <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">PlaceOnCircle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">circle</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="_12">设置背景色<a class="headerlink" href="#_12" title="Permanent link">#</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">config</span>:<span class="kt">Phaser.Types.Core.GameConfig</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s2">&quot;#cccccc&quot;</span><span class="p">,</span> <span class="c1">//游戏背景色</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// 相机背景色</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">cameras</span><span class="p">.</span><span class="nx">main</span><span class="p">.</span><span class="nx">setBackgroundColor</span><span class="p">(</span><span class="s2">&quot;#FEDFE1&quot;</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
                 
