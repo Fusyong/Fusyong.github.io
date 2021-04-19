@@ -233,11 +233,6 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2021-03-30-7%E5%B2%81%E5%AD%A9%E5%AD%90%E5%AE%B3%E6%80%95%E8%87%AA%E5%B7%B1%E5%88%B0100%E5%B2%81%E7%9A%84%E6%97%B6%E5%80%99%E6%AD%BB%E6%8E%89%EF%BC%8C%E6%80%8E%E4%B9%88%E8%B7%9F%E5%A5%B9%E8%A7%A3%E9%87%8A%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89/">
-        7岁孩子怕100岁的时候死掉，怎么跟她解释生命的意义？
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../2021-03-29-%E4%B8%80%E5%B9%B4%E7%BA%A7%E5%AD%A9%E5%AD%90%E7%9C%8B%E4%B9%A6%E7%89%B9%E5%88%AB%E7%B2%97%E7%95%A5%E6%80%8E%E4%B9%88%E5%BC%95%E5%AF%BC/">
         一年级孩子看书特别快，但很粗略，怎么引导？
       </a>
@@ -270,6 +265,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../2021-02-28-%E4%BA%B2%E5%AD%90%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
         亲子阅读笔记（累积更新）
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-18-%E5%A6%82%E4%BD%95%E8%AF%B4%E5%AD%A9%E5%AD%90%E6%89%8D%E4%BC%9A%E5%90%AC/">
+        如何说孩子才会听
       </a>
 </li>
 <li class="md-nav__item">
@@ -774,7 +774,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#graphics">
-    Graphics/几何图画
+    Graphics/图形
   </a>
 </li>
 <li class="md-nav__item">
@@ -1357,7 +1357,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#graphics">
-    Graphics/几何图画
+    Graphics/图形
   </a>
 </li>
 <li class="md-nav__item">
@@ -1750,10 +1750,20 @@
 </ul>
 <p>这些Shape子类，可以加入场景、组和容器中。你可以像处理其他常见游戏对象一样处理它们，比如应用补间动画、缩放、打开输入和物理属性。Shape通常支持填充色和笔触色。</p>
 <p><strong>Shape拥有常规游戏对象的所有特性，不同之处在于它有高效的渲染方式。</strong>Shape不需要使用纹理，但又可以利用WebGL中的批处理的好处，所以能很方便地在游戏中快速渲染形状。它不仅没有Graphics的高消耗问题，甚至有些Shape子类比Sprite还要快。</p>
-<h3 id="graphics">Graphics/几何图画<a class="headerlink" href="#graphics" title="Permanent link">#</a></h3>
-<p>Graphics主要用于绘制一些几何形状（比如方形、圆形、多边形、直线、弧线、曲线），最终构成一个几何图画。
+<h3 id="graphics">Graphics/图形<a class="headerlink" href="#graphics" title="Permanent link">#</a></h3>
+<p>Graphics主要用于绘制一些基本几何图形（比如方形、圆形、多边形、直线、弧线、曲线）。
 Graphics初始的时候是空的，需要制定笔触色、填充色，然后用路径绘制，最后笔触着色、填充。有些常见形状，比如方形，可以方便地绘制。</p>
-<p>在Canvas和WebGL两种模式中，Graphics的渲染是不同的。在Canvas下是绘制路径，在WebGL下是绘制多边形。这两种方式都很消耗资源，尤其是图画复杂的时候。所以，如果你的几何图画不会变化，或者变化少，你应该用Phaser.GameObjects.Graphics#generateTexture把几何图画“备份”成一个纹理，并把它返回用于生成精灵Sprite或者其他游戏对象。请注意你的几何图画的复杂程度和数量。</p>
+<p>在Canvas和WebGL两种模式中，Graphics的渲染是不同的。在Canvas下是绘制路径，在WebGL下是绘制多边形。这两种方式都很消耗资源，尤其是图画复杂的时候。所以，如果你的几何图画不会变化，或者变化少，你应该用<code>Phaser.GameObjects.Graphics.generateTexture</code>把几何图画“备份”成一个纹理，并把它返回用于生成精灵Sprite或者其他游戏对象。请注意你的几何图画的复杂程度和数量。</p>
+<p><strong>？？不适合做缩放操作，而要重绘。</strong>因为，相对于Image而言，Graphics缺少一些控制尺寸、位置、纹理的属性和方法，缺少的父类有<code>Phaser.GameObjects.Components.</code>之下的</p>
+<ul>
+<li>Alpha（但有AlphaSingle）</li>
+<li>Flip</li>
+<li>GetBounds</li>
+<li>Origin</li>
+<li>Size</li>
+<li>TextureCrop</li>
+<li>Tint</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="c1">// 绘制圆角方形</span>
 <span class="kd">var</span> <span class="nx">graphics</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">graphics</span><span class="p">();</span>
 <span class="nx">graphics</span><span class="p">.</span><span class="nx">fillStyle</span><span class="p">(</span><span class="mh">0xffff00</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
@@ -2085,7 +2095,15 @@ Video是标准游戏对象，跟Sprite一样，通常的缩放、旋转、修剪
 <li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.In.html">Display.Align.In</a>，使两个对象叠置对齐（同侧对齐）。</li>
 <li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Align.To.html">Display.Align.To</a>，使两个对象并排对齐（对侧对齐）。</li>
 <li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Display.Bounds.html">Display.Bounds</a></li>
-<li><a href="../2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Actions/">Actions.GridAlign中的静态方法GridAlign、PlaceOn系列、Inc系列，Set系列，等等)</a></li>
+<li><a href="../2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Actions/">Actions.GridAlign中的静态方法)</a><ul>
+<li>AlignTo（逐一对齐，是Display.Align.To的批处理）</li>
+<li>GridAlign（对齐网格）</li>
+<li>PlaceOn系列（均匀放在图形上）</li>
+<li>IncX、IncY、IncXY</li>
+<li>setX、setY、setXY</li>
+<li>等等</li>
+</ul>
+</li>
 </ul>
 <h3 id="phaserdisplayalignin">Phaser.Display.Align.In.<a class="headerlink" href="#phaserdisplayalignin" title="Permanent link">#</a></h3>
 <ul>
