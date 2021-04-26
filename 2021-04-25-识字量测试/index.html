@@ -24,6 +24,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -121,9 +124,26 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          试试你认识多少字
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         试试你认识多少字
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    知乎答问：有什么测试汉字词汇量的软件？
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../2021-03-02-%E8%AF%86%E5%AD%97%E7%94%A8%E6%88%90%E8%AF%AD%EF%BC%88A%E7%BA%A7%E5%AD%97%EF%BC%89/">
@@ -993,11 +1013,32 @@
 </div>
 </div>
 </div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    知乎答问：有什么测试汉字词汇量的软件？
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1>试试你认识多少字</h1>
 <p>做了一个<a href="https://www.xiiigame.com/example/Chinese-literacy-estimation/">估算识字量的小工具</a><br/>
-分小学生和成人两个测试对象。</p>
+分小学生和成人两个测试对象。<br/>
+小学生字表是从课标教材和同步读物中统计来的，针对性比较强，<br/>
+请参看<a href="../2020-06-24-%E8%87%AA%E5%88%B6%E5%84%BF%E7%AB%A5%E5%90%AF%E8%92%99%E9%9B%86%E4%B8%AD%E8%AF%86%E5%AD%97%E8%AF%AD%E6%96%99%E5%BA%93%E4%B8%8E%E5%88%86%E7%BA%A7%E5%AD%97%E8%A1%A8/">自制儿童启蒙集中识字语料库与分级字表</a>。</p>
 <p><strong>第一次浏览时会加载字体文件，比较大，</strong><br/>
 <strong>在我的电脑上需要15秒左右。</strong></p>
 <p>收敛速度还算可以，大概测试五六十个字就比较稳定。<br/>
@@ -1013,6 +1054,16 @@
 在阅读语文教材、同步读本或相当难度的读物时，<br/>
 认识的字与总字数之比。  </p>
 <p>您若有更好的算法，请不吝指教！</p>
+<h2 id="_1"><strong>知乎答问：<a href="https://www.zhihu.com/question/36012555/answer/1854303819">有什么测试汉字词汇量的软件？</a></strong><a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p><strong>【回答】</strong></p>
+<p>感觉汉语词汇量测量对中小学生可能有意义。对于有阅读习惯的成年人，好像还没有很好的基础资料，测量方法也有点难。</p>
+<p>汉字构词、词构词组的能力很强，词和词组的界限也很难分清。当然，可以权威词典为准。但是，很多专业、半专业的术语是未定型的、不定型的，而这些词语正能体现一个成年人的知识面。</p>
+<p>再加上，怎么算“认识一个词”也比较难界定与测量。——不像识字那样，能识读就算认识。</p>
+<p>可以尝试用《现代汉语常用词表草案》来估算自己的词汇量，带有词频排序。不过如果按“能识读”的标准，我看从30000万号直到最后的65000号，其间的区分度也不是很高：</p>
+<p><img alt="" src="../img/2021-04-25-%E8%AF%86%E5%AD%97%E9%87%8F%E6%B5%8B%E8%AF%95/%E8%AF%8D%E9%A2%91%E8%A1%A81.png"/></p>
+<p><img alt="" src="../img/2021-04-25-%E8%AF%86%E5%AD%97%E9%87%8F%E6%B5%8B%E8%AF%95/%E8%AF%8D%E9%A2%91%E8%A1%A82.png"/></p>
+<p><img alt="" src="../img/2021-04-25-%E8%AF%86%E5%AD%97%E9%87%8F%E6%B5%8B%E8%AF%95/%E8%AF%8D%E9%A2%91%E8%A1%A83.png"/></p>
+<p><img alt="" src="../img/2021-04-25-%E8%AF%86%E5%AD%97%E9%87%8F%E6%B5%8B%E8%AF%95/%E8%AF%8D%E9%A2%91%E8%A1%A84.png"/></p>
 </article>
 </div>
 </div>
