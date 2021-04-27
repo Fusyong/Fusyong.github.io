@@ -11,7 +11,7 @@
 <title>给编辑朋友的正则表达式课程 - 嬉戏实验室</title>
 <link href="../assets/stylesheets/main.1655a90d.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.7fa14f5b.min.css" rel="stylesheet"/>
-<meta content="#546d78" name="theme-color"/>
+<meta content="#4cae4f" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
@@ -19,7 +19,7 @@
 <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-105243279-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script>
 </head>
-<body data-md-color-accent="pink" data-md-color-primary="blue-grey" data-md-color-scheme="" dir="ltr">
+<body data-md-color-accent="pink" data-md-color-primary="green" data-md-color-scheme="" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -647,6 +647,11 @@
     部分内容跨行移动
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#emeditor">
+    怎么用EmEditor把中间一段移到句首
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1107,6 +1112,11 @@
     部分内容跨行移动
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#emeditor">
+    怎么用EmEditor把中间一段移到句首
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1191,6 +1201,13 @@ D、顶窗没关闭
 on  @@@@([A-C])([^\s]+?)(@@@@[^\s]+?)(\s+答案：\1) @@@@\1\2\4\3    RD
 on  @@@@    \n  RD
 </code></pre></div>
+<h2 id="emeditor"><a href="https://www.zhihu.com/question/456749822/answer/1856715424">怎么用EmEditor把中间一段移到句首</a><a class="headerlink" href="#emeditor" title="Permanent link">#</a></h2>
+<p>如把<code>可|不|能</code>转换成<code>不|可|能</code></p>
+<p><strong>【答】</strong></p>
+<div class="highlight"><pre><span></span><code>【查找】^(.+)\|(.+)\|(.+)$
+【替换】\2|\1|\3
+</code></pre></div>
+<p>此类比较规则的文本，也可以用EmEditor的csv表格操作功能。</p>
 </article>
 </div>
 </div>
