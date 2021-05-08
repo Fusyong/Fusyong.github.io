@@ -2401,6 +2401,7 @@
 <h4 id="list_array"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#list">list :Array.<phaser.gameobjects.gameobject></phaser.gameobjects.gameobject></a><a class="headerlink" href="#list_array" title="Permanent link">#</a></h4>
 <h4 id="localtransform_phasergameobjectscomponentstransformmatrix"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#localTransform">localTransform :Phaser.GameObjects.Components.TransformMatrix</a><a class="headerlink" href="#localtransform_phasergameobjectscomponentstransformmatrix" title="Permanent link">#</a></h4>
 <h4 id="mask_phaserdisplaymasksbitmapmaskphaserdisplaymasksgeometrymask"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#mask">mask :Phaser.Display.Masks.BitmapMask|Phaser.Display.Masks.GeometryMask</a><a class="headerlink" href="#mask_phaserdisplaymasksbitmapmaskphaserdisplaymasksgeometrymask" title="Permanent link">#</a></h4>
+<p>游戏对象渲染时所使用的遮罩。</p>
 <h4 id="maxsize_integer"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#maxSize">maxSize :integer</a><a class="headerlink" href="#maxsize_integer" title="Permanent link">#</a></h4>
 <h4 id="name_string"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#name">name :string</a><a class="headerlink" href="#name_string" title="Permanent link">#</a></h4>
 <h4 id="next_phasergameobjectsgameobject"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#next"><readonly, nullable=""> next :Phaser.GameObjects.GameObject</readonly,></a><a class="headerlink" href="#next_phasergameobjectsgameobject" title="Permanent link">#</a></h4>
@@ -2432,9 +2433,17 @@
 <h4 id="bringtotopchild"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#bringToTop">bringToTop(child)</a><a class="headerlink" href="#bringtotopchild" title="Permanent link">#</a></h4>
 <h4 id="clearalpha"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#clearAlpha">clearAlpha()</a><a class="headerlink" href="#clearalpha" title="Permanent link">#</a></h4>
 <h4 id="clearmask_destroymask"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#clearMask">clearMask( [destroyMask])</a><a class="headerlink" href="#clearmask_destroymask" title="Permanent link">#</a></h4>
+<p>清除正在使用的遮罩。</p>
 <h4 id="countproperty_value_startindex_endindex"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#count">count(property, value [, startIndex] [, endIndex])</a><a class="headerlink" href="#countproperty_value_startindex_endindex" title="Permanent link">#</a></h4>
 <h4 id="createbitmapmask_renderable"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#createBitmapMask">createBitmapMask( [renderable])</a><a class="headerlink" href="#createbitmapmask_renderable" title="Permanent link">#</a></h4>
+<p>生成并返回一个Bitmap遮罩，以供游戏对象（包括自身）使用。</p>
+<p>注意：Bitmap遮罩仅在WebGL中有效，而Geometry遮罩在WebGL和Canvas二者中有效。</p>
+<p>需要传入一个可渲染游戏对象的引用。可渲染对象指渲染时使用纹理的对象，如Image, Sprite, Render Texture, BitmapText.</p>
+<p>如果不传入可渲染对象，而本游戏对象自身有一个纹理，那么就会使用这个纹理；也就是说，你可以用任何可渲染游戏对象生成Bitmap遮罩。</p>
 <h4 id="creategeometrymask_graphics"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#createGeometryMask">createGeometryMask( [graphics])</a><a class="headerlink" href="#creategeometrymask_graphics" title="Permanent link">#</a></h4>
+<p>生成并返回Geometry遮罩，，以供游戏对象（包括自身）使用。</p>
+<p>需要传入一个Graphics游戏对象的引用。</p>
+<p>如果不传入可渲染对象，而本游戏对象自身即是Graphics对象的实例，那么就会使用它自身来生成遮罩；也就是说，你可以用任何Graphics游戏对象生成Geometry遮罩。</p>
 <h4 id="destroy_fromscene"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#destroy">destroy( [fromScene])</a><a class="headerlink" href="#destroy_fromscene" title="Permanent link">#</a></h4>
 <h4 id="disableinteractive"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#disableInteractive">disableInteractive()</a><a class="headerlink" href="#disableinteractive" title="Permanent link">#</a></h4>
 <h4 id="eachcallback_context_args"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#each">each(callback [, context] [, args])</a><a class="headerlink" href="#eachcallback_context_args" title="Permanent link">#</a></h4>
@@ -2505,6 +2514,11 @@ value类型为boolean，<optional>，默认为true。 <br/>
 </code></pre></div>
 <h4 id="setinteractive_shape_callback_dropzone"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setInteractive">setInteractive( [shape] [, callback] [, dropZone])</a><a class="headerlink" href="#setinteractive_shape_callback_dropzone" title="Permanent link">#</a></h4>
 <h4 id="setmaskmask"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setMask">setMask(mask)</a><a class="headerlink" href="#setmaskmask" title="Permanent link">#</a></h4>
+<p>设置遮罩。</p>
+<p>遮罩需预先生成，可以是GeometryMask或BitmapMask。注意：Bitmap遮罩仅在WebGL中有效，而Geometry遮罩在WebGL和Canvas二者中有效。</p>
+<p>如果原本就有遮罩，那么会立即替换。</p>
+<p>遮罩是在全局空间中定位的，而不是相对于所要应用至的对象。——这是为了多个对象可以分享同一个遮罩。</p>
+<p>遮罩对物理系统和输入检测没有影响。遮罩仅仅是渲染组件，只决定渲染过程中你能看到什么，不能看到什么。</p>
 <h4 id="setnamevalue"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setName">setName(value)</a><a class="headerlink" href="#setnamevalue" title="Permanent link">#</a></h4>
 <h4 id="setposition_x_y_z_w"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setPosition">setPosition( [x] [, y] [, z] [, w])</a><a class="headerlink" href="#setposition_x_y_z_w" title="Permanent link">#</a></h4>
 <h4 id="setrandomposition_x_y_width_height"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html#setRandomPosition">setRandomPosition( [x] [, y] [, width] [, height])</a><a class="headerlink" href="#setrandomposition_x_y_width_height" title="Permanent link">#</a></h4>

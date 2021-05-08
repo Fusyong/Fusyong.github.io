@@ -2610,6 +2610,13 @@
 <h4 id="setangle_degrees"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setAngle">setAngle( [degrees])</a><a class="headerlink" href="#setangle_degrees" title="Permanent link">#</a></h4>
 <h4 id="setblendmodevalue"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setBlendMode">setBlendMode(value)</a><a class="headerlink" href="#setblendmodevalue" title="Permanent link">#</a></h4>
 <h4 id="setcrop_x_y_width_height"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setCrop">setCrop( [x] [, y] [, width] [, height])</a><a class="headerlink" href="#setcrop_x_y_width_height" title="Permanent link">#</a></h4>
+<p>剪切一个基于文理的游戏对象，比如Sprite，或Image。</p>
+<p>剪切出一个方形区域，以限定渲染过程中纹理帧的可见区域。</p>
+<p>剪切游戏对象不会改变对象的尺寸、坐标、物理体和点击区域，而仅仅是改变渲染过程中展示什么。</p>
+<p>剪切坐标相对于纹理帧而非相对于游戏对象，就是说0 x 0表示左上角。因此，如果你的游戏对象的纹理时800x600，而你想指向展示左半部分，那么你应该调用<code>setCrop(0, 0, 400, 600)</code>。</p>
+<p>它会自动缩放，以便配合游戏对象的缩放。因此，对于一个缩放规模为2的游戏对象，剪裁100x50，将实际剪切一个200x100的区域。</p>
+<p>可以直接传入数值，也可以只在第一个参数传入一个Rectangle对象。</p>
+<p>无参数调用将重置剪裁，将isCropped属性切换为false。当剪切的方形与帧的尺寸一致时，你就可以这么做；这样，渲染器就可以跳过几种内部计算。</p>
 <h4 id="setdatakey_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#setData">setData(key, data)</a><a class="headerlink" href="#setdatakey_data" title="Permanent link">#</a></h4>
 <p>存储键-值对数据。存储数据前会自动调用<code>setDataEnabled()</code>。有多种使用方法：
 <div class="highlight"><pre><span></span><code><span class="nx">sprite</span><span class="p">.</span><span class="nx">setData</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'Red Gem Stone'</span><span class="p">);</span>
