@@ -1024,6 +1024,11 @@
     设置背景色
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phasergeom">
+    几何学方法Phaser.Geom
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1605,6 +1610,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_12">
     设置背景色
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#phasergeom">
+    几何学方法Phaser.Geom
   </a>
 </li>
 </ul>
@@ -2194,6 +2204,19 @@ Video是标准游戏对象，跟Sprite一样，通常的缩放、旋转、修剪
 <div class="highlight"><pre><span></span><code><span class="c1">// 相机背景色</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">cameras</span><span class="p">.</span><span class="nx">main</span><span class="p">.</span><span class="nx">setBackgroundColor</span><span class="p">(</span><span class="s2">"#FEDFE1"</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="phasergeom"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Geom.html">几何学方法Phaser.Geom</a><a class="headerlink" href="#phasergeom" title="Permanent link">#</a></h2>
+<p>几何学对象，包含一组静态的几何学方法，比如计算面积、周长、比例等，判断两个几何形包含与否、重叠与否等，生成、克隆、拷贝几何形等，以及集合形的移动、调整尺寸、适配等。</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// 判断精灵是否在世界中</span>
+<span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Rectangle</span><span class="p">.</span><span class="nx">Overlaps</span><span class="p">(</span><span class="nx">Scene</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">world</span><span class="p">.</span><span class="nx">bounds</span><span class="p">,</span> <span class="nx">sprite</span><span class="p">.</span><span class="nx">getBounds</span><span class="p">())</span>
+</code></pre></div>
+<p>成员：</p>
+<p><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Circle.html">\&lt;static&gt; CIRCLE :number</a>
+<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Ellipse.html">\&lt;static&gt; ELLIPSE :number</a>
+<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Line.html">\&lt;static&gt; LINE :number</a>
+<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Point.html">\&lt;static&gt; POINT :number</a>
+<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Polygon.html">\&lt;static&gt; POLYGON :number</a>
+<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Rectangle.html">\&lt;static&gt; RECTANGLE :number</a>
+<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Triangle.html">\&lt;static&gt; TRIANGLE :numbe</a></p>
 </article>
 </div>
 </div>
