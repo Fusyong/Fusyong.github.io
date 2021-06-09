@@ -597,12 +597,27 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#actorobb_collidepoint_actorobb_collidepoints">
+    Actor.obb_collidepoint(), Actor.obb_collidepoints()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#actorcircle_collidepoint_actorcircle_collidepoints">
+    Actor.circle_collidepoint(), Actor.circle_collidepoints()
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#set_fullscreen_set_windowed_toggle_fullscreen_hide_mouse_show_mouse">
     set_fullscreen(), set_windowed(), toggle_fullscreen(), hide_mouse(), show_mouse()
   </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-09-PygameZero%E8%B5%84%E6%BA%90/">
+        PygameZero资源
+      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../2021-03-17-%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B%E7%94%A8%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8/">
@@ -1152,6 +1167,16 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#actorobb_collidepoint_actorobb_collidepoints">
+    Actor.obb_collidepoint(), Actor.obb_collidepoints()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#actorcircle_collidepoint_actorcircle_collidepoints">
+    Actor.circle_collidepoint(), Actor.circle_collidepoints()
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#set_fullscreen_set_windowed_toggle_fullscreen_hide_mouse_show_mouse">
     set_fullscreen(), set_windowed(), toggle_fullscreen(), hide_mouse(), show_mouse()
   </a>
@@ -1255,6 +1280,35 @@
     <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">collidepoint_pixel</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Eek!"</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="actorobb_collidepoint_actorobb_collidepoints">Actor.obb_collidepoint(), Actor.obb_collidepoints()<a class="headerlink" href="#actorobb_collidepoint_actorobb_collidepoints" title="Permanent link">#</a></h2>
+<p>检测一个点与<strong>旋转边框 (obb, oriented bounding box)</strong> 的碰撞。 Pygame和Pygame Zero正常使用的碰撞检测用的是<strong>对齐坐标轴的边框(aabb, axis aligned bounding box )</strong>, 速度很快，但Actor旋转后效果很差。像素完美（Pixel perfect）的碰撞检测精确，但很慢。这里提供的OBB碰撞检测速度快，对旋转过的actor表现好，不过只能检测与一个点的碰撞。适于检测与子弹和鼠标这样的小对象的碰撞。</p>
+<p><img alt="" src="../img/2021-01-29-PygameZero%E5%8A%A9%E6%89%8B/2021-06-08-19-11-15.png"/></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="c1"># bullets是一个actor列表</span>
+    <span class="n">hit</span> <span class="o">=</span> <span class="n">alien</span><span class="o">.</span><span class="n">obb_collidepoints</span><span class="p">(</span><span class="n">bullets</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">hit</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">bullets</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">hit</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Eek!"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_mouse_down</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">alien</span><span class="o">.</span><span class="n">obb_collidepoint</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ook!"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="actorcircle_collidepoint_actorcircle_collidepoints">Actor.circle_collidepoint(), Actor.circle_collidepoints()<a class="headerlink" href="#actorcircle_collidepoint_actorcircle_collidepoints" title="Permanent link">#</a></h2>
+<p>检测碰撞时使用的是由你指定半径的一个圆。适用于你的图形接近圆形的时候。速度快，但只能检测与一个点的碰撞。可以指定圆的半径，与图形的尺寸无关。</p>
+<p><img alt="" src="../img/2021-01-29-PygameZero%E5%8A%A9%E6%89%8B/2021-06-08-19-12-05.png"/></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
+    <span class="c1"># bullets是一个actor列表</span>
+    <span class="c1"># 50是碰撞检测的半径</span>
+    <span class="n">hit</span> <span class="o">=</span> <span class="n">ufo</span><span class="o">.</span><span class="n">circle_collidepoints</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">bullets</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">hit</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">bullets</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">hit</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Eek!"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">on_mouse_down</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">ufo</span><span class="o">.</span><span class="n">obb_collidepoint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Ook!"</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="set_fullscreen_set_windowed_toggle_fullscreen_hide_mouse_show_mouse">set_fullscreen(), set_windowed(), toggle_fullscreen(), hide_mouse(), show_mouse()<a class="headerlink" href="#set_fullscreen_set_windowed_toggle_fullscreen_hide_mouse_show_mouse" title="Permanent link">#</a></h2>
 <p>设为全屏模式：<code>set_fullscreen()</code>；设为窗口模式（非全屏）：<code>set_windowed()</code>；在全屏与否间切换：<code>toggle_fullscreen()</code>；影藏鼠标：<code>hide_mouse()</code>；显示鼠标：<code>show_mouse()</code>。</p>
 <div class="highlight"><pre><span></span><code><span class="n">hide_mouse</span><span class="p">()</span>
@@ -1282,13 +1336,13 @@
             </div>
 </div>
 </a>
-<a class="md-footer__link md-footer__link--next" href="../2021-03-17-%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B%E7%94%A8%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8/" rel="next">
+<a class="md-footer__link md-footer__link--next" href="../2021-06-09-PygameZero%E8%B5%84%E6%BA%90/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              少儿编程用在线编辑器
+              PygameZero资源
             </div>
 </div>
 <div class="md-footer__button md-icon">
