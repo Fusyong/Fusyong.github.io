@@ -1742,9 +1742,10 @@
     主题
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="主题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#mkdocs-materialoverrides" class="md-nav__link">
     mkdocs-material模板覆盖文件夹overrides的结构
   </a>
@@ -1763,8 +1764,21 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#markdown_extensions" class="md-nav__link">
+    markdown_extensions
+  </a>
+  
+    <nav class="md-nav" aria-label="markdown_extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
     提示块插件
   </a>
@@ -1776,6 +1790,11 @@
   <a href="#_11" class="md-nav__link">
     共支持这些类型
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1815,13 +1834,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    参考资料
-  </a>
   
 </li>
       
@@ -2717,9 +2729,10 @@
     主题
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="主题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#mkdocs-materialoverrides" class="md-nav__link">
     mkdocs-material模板覆盖文件夹overrides的结构
   </a>
@@ -2738,8 +2751,21 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#markdown_extensions" class="md-nav__link">
+    markdown_extensions
+  </a>
+  
+    <nav class="md-nav" aria-label="markdown_extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
     提示块插件
   </a>
@@ -2751,6 +2777,11 @@
   <a href="#_11" class="md-nav__link">
     共支持这些类型
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2790,13 +2821,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    参考资料
-  </a>
   
 </li>
       
@@ -2949,7 +2973,7 @@ mkdocs build --clean
 <li>readthedocs</li>
 <li><a href="https://squidfunk.github.io/mkdocs-material/">material</a></li>
 </ul>
-<h2 id="mkdocs-materialoverrides">mkdocs-material模板覆盖文件夹<code>overrides</code>的结构<a class="headerlink" href="#mkdocs-materialoverrides" title="Permanent link">#</a></h2>
+<h3 id="mkdocs-materialoverrides">mkdocs-material模板覆盖文件夹<code>overrides</code>的结构<a class="headerlink" href="#mkdocs-materialoverrides" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>.
 ├─ .icons/                             <span class="c1"># Bundled icon sets</span>
 ├─ assets/
@@ -2982,7 +3006,7 @@ mkdocs build --clean
 └─ main.html                           <span class="c1"># Default page</span>
 </code></pre></div>
 <p>下载官方库<code>src</code>中的对应文件，修改后放在上述的本地文件夹<code>overrides</code>中的相应位置。</p>
-<h3 id="_9">在导航条目下加一行更新时间<a class="headerlink" href="#_9" title="Permanent link">#</a></h3>
+<h4 id="_9">在导航条目下加一行更新时间<a class="headerlink" href="#_9" title="Permanent link">#</a></h4>
 <p>拷贝官方的<code>nav-item.html</code>文件到<code>overrides\partials\nav-item.html</code>，修改其中的一段如下</p>
 <div class="highlight"><pre><span></span><code>  <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">Main</span> <span class="n">navigation</span> <span class="n">item</span> <span class="o">--&gt;</span>
   <span class="o">...</span>
@@ -3001,7 +3025,8 @@ mkdocs build --clean
     <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
   <span class="o">...</span>
 </code></pre></div>
-<h2 id="_10">提示块插件<a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
+<h2 id="markdown_extensions">markdown_extensions<a class="headerlink" href="#markdown_extensions" title="Permanent link">#</a></h2>
+<h3 id="_10">提示块插件<a class="headerlink" href="#_10" title="Permanent link">#</a></h3>
 <p>设置如下：</p>
 <div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">admonition</span>  <span class="c1"># 提示块</span>
@@ -3045,7 +3070,7 @@ mkdocs build --clean
 <p class="admonition-title">不要在家里做</p>
 <p>...</p>
 </div>
-<h3 id="_11">共支持这些类型<a class="headerlink" href="#_11" title="Permanent link">#</a></h3>
+<h4 id="_11">共支持这些类型<a class="headerlink" href="#_11" title="Permanent link">#</a></h4>
 <ul>
 <li>note, seealso</li>
 <li>abstract, summary, tldr</li>
@@ -3061,7 +3086,11 @@ mkdocs build --clean
 <li>quote, cite</li>
 </ul>
 <h2 id="_12">插件<a class="headerlink" href="#_12" title="Permanent link">#</a></h2>
-<p><a href="https://www.mkdocs.org/dev-guide/plugins/#developing-plugins">官方的插件开发手册</a></p>
+<ul>
+<li><a href="https://www.mkdocs.org/dev-guide/plugins/#developing-plugins">官方的插件开发手册</a></li>
+<li><a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins">插件列表</a></li>
+<li><a href="https://chrieke.medium.com/the-best-mkdocs-plugins-and-customizations-fc820eb19759">最好的MkDocs插件与定制</a></li>
+</ul>
 <h3 id="markdown">markdown增强<a class="headerlink" href="#markdown" title="Permanent link">#</a></h3>
 <p>目前支持</p>
 <ul>
@@ -3105,6 +3134,7 @@ mkdocs build --clean
 </code></pre></div>
 <h3 id="_13">简单支持中文搜索<a class="headerlink" href="#_13" title="Permanent link">#</a></h3>
 <p>更改默认的search插件（也可以把插件复制、更改为自己的插件），支持中文搜索。</p>
+<p>D:\venvs\mkdocs\Lib\site-packages\mkdocs\contrib\search\lunr-language\lunr.jp.js</p>
 <p>在配置中启用search插件，指定英语、日语和分隔符：</p>
 <p><div class="highlight"><pre><span></span><code>plugins:
     - search:
@@ -3145,11 +3175,7 @@ mkdocs build --clean
 <p class="admonition-title">Note</p>
 <p>This is more than a plugin: it's a mini-framework!</p>
 </div>
-<h2 id="_14">参考资料<a class="headerlink" href="#_14" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins">插件列表</a></li>
-<li><a href="https://chrieke.medium.com/the-best-mkdocs-plugins-and-customizations-fc820eb19759">最好的MkDocs插件与定制</a></li>
-</ul>
+<p>似乎比较慢。不如用插件直接替换markdown锚点。</p>
 <div class="footnote">
 <hr />
 <ol>
