@@ -2742,7 +2742,13 @@
                 <h2 id="_1">总体心得<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <ul>
 <li>现在用LibreOffice Writer替代微软Word不会有大问题；</li>
-<li>尽可能将文件转换为默认的odt格式后编辑，必要时才通过docx等格式交换文件（Word能直接编辑odt文件）；</li>
+<li>尽可能只在默认的odt格式上编辑<ol>
+<li><strong>第一次打开docx文件时，不要有修改动作，</strong> 注意观察字数（<strong>doc文件要先用MS Word另存为docx，而不是用Writer直接转</strong>）；</li>
+<li>另存为默认的odt格式，关闭，再打开，核对字数是否有误；</li>
+<li>只在odt上编辑，</li>
+<li>必要时才通过docx等格式交换文件（Word能直接编辑odt文件）；</li>
+</ol>
+</li>
 <li>好用的功能：<ul>
 <li>支持正则表达式的查找与替换，安装插件后能跨行处理；</li>
 <li>全屏模式。</li>
@@ -2765,11 +2771,14 @@
 <p>按理应当检查原文件的xml标签，可惜我不熟悉。</p>
 <h3 id="_3">目前可能的解决办法<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
 <ol>
-<li>用Writer导出odt；</li>
+<li>未作任何修改前，用Writer导出odt；<ul>
+<li>doc文件要先用MS Word另存为docx，而不是用Writer直接转</li>
+</ul>
+</li>
 <li><strong>仅修改odt</strong>（通过odt再导出的docx，也许可以在
 Writer中修改，但只经过少量验证）；</li>
 <li>再导出需要的格式；</li>
-<li>注意观察导出前后的字数是否一致（Writer有时要保存后，字数才是正确的，但有时保存后也不一定正确，所以需要通过前后变动来确认）</li>
+<li>注意观察转换格式前后的字数是否一致（Writer有时要保存后，字数才是正确的，但有时保存后也不一定正确，所以需要通过前后变动来确认）</li>
 </ol>
 <h3 id="_4">未证实的问题<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
 <p>未经证实的问题：如果审阅人没有名称(编辑软件中没有设置用户名称所致)，那么可能造成审阅标记混乱，比如错误恢复、大量时间归零的标记。</p>

@@ -2292,7 +2292,7 @@
       
         <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
-    设置背景色
+    设置背景色、背景透明
   </a>
   
 </li>
@@ -3386,7 +3386,7 @@
       
         <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
-    设置背景色
+    设置背景色、背景透明
   </a>
   
 </li>
@@ -3465,6 +3465,7 @@
 <li><a href="https://photonstorm.github.io/phaser3-docs/index.html">Phaser3在线文档</a>。可参考<a href="https://github.com/photonstorm/phaser3-docs">完整的文档库</a>。</li>
 <li><a href="https://phaser.io/community/newsletter">官方电邮通讯/电子期刊<em>Phaser World</em></a>。其中的开发日志记录了Phaser3某些重要部分的的技术思路、使用方法，适于深度的专题学习。也包含很多官方推荐的他方教程，因无系统，精粗杂陈，不便使用。</li>
 <li><a href="https://rexrainbow.github.io/phaser3-rex-notes/docs/site/">Phaser3笔记/Notes of Phaser 3</a>，一位大牛对API各部分的笔记，<strong>另有他做的一百多个插件，以及常用工具列表。</strong></li>
+<li><a href="https://github.com/ApowoGames/FairyGUI-Phaser">FairyGUI-Phaser</a>，一个适配Phaser3的FairyGUI插件。</li>
 <li>模板<ul>
 <li><a href="https://github.com/photonstorm/phaser3-typescript-project-template">官方typescript模板</a></li>
 <li><a href="https://github.com/photonstorm/phaser3-project-template">官方JS模板</a></li>
@@ -3984,9 +3985,10 @@ Video是标准游戏对象，跟Sprite一样，通常的缩放、旋转、修剪
 <span class="c1">// 把组中游戏对象放置在圆环上</span>
 <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">PlaceOnCircle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span> <span class="nx">circle</span><span class="p">);</span>
 </code></pre></div>
-<h2 id="_12">设置背景色<a class="headerlink" href="#_12" title="Permanent link">#</a></h2>
+<h2 id="_12">设置背景色、背景透明<a class="headerlink" href="#_12" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">config</span>:<span class="kt">Phaser.Types.Core.GameConfig</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s2">&quot;#cccccc&quot;</span><span class="p">,</span> <span class="c1">//游戏背景色</span>
+    <span class="nx">transparent</span>: <span class="kt">false</span><span class="p">,</span> <span class="c1">//背景透明；游戏是否浮动在页面上由Game实例所使用的DOM容器确定的；Phaser内部可以操控DOM</span>
 <span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">// 相机背景色</span>

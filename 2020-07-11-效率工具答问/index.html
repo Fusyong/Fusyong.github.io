@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#microsoft_word" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -1593,6 +1593,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    每天审阅大量平台稿件，求排版及校对智能工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdownruby" class="md-nav__link">
+    Markdown中如何使用注音（ruby、振假名）？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#microsoft_word" class="md-nav__link">
     Microsoft Word 这样的文字处理软件技术门槛高吗，为何卖那么贵？
   </a>
@@ -1600,14 +1614,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     想问一下汉字的笔画怎么能单独的一笔一划的打出来，并且可以改变他的字体呢？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     有没有背成语生词拼音的软件推荐？
   </a>
   
@@ -2608,6 +2622,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    每天审阅大量平台稿件，求排版及校对智能工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdownruby" class="md-nav__link">
+    Markdown中如何使用注音（ruby、振假名）？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#microsoft_word" class="md-nav__link">
     Microsoft Word 这样的文字处理软件技术门槛高吗，为何卖那么贵？
   </a>
@@ -2615,14 +2643,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     想问一下汉字的笔画怎么能单独的一笔一划的打出来，并且可以改变他的字体呢？
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     有没有背成语生词拼音的软件推荐？
   </a>
   
@@ -2644,6 +2672,33 @@
                   <h1>效率工具答问（累积更新）</h1>
                 
                 <p>这里汇总了我在知乎等平台上回答效率工具相关问题的帖子。有改动，并附原文地址。</p>
+<h2 id="_1"><a href="https://www.zhihu.com/question/508556579/answer/2291367546">每天审阅大量平台稿件，求排版及校对智能工具</a><a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p><strong>回答</strong></p>
+<p>不懂平台稿件是什么东西。</p>
+<p>排版校对没有智能工具。</p>
+<p>校对软件只有黑马实用，主要是提示错别字。对语法错误没有好办法。</p>
+<p>整理文稿（你说的“排版”）用Markdown格式比较合适，轻便，转各种格式方便；软件可以用VS Code。（为印刷而进行的半自动排版可以用LaTeX、ConTeXt类工具，估计不是你需要的。）</p>
+<p>长期来讲只有正则表达式能救你，可以做自己的错别字校对规则，也可以用来快速整理稿件。学会正则表达式后，工具就很多了，比如VS Code、EmEditor、PowerGrep、TextPro、LibreOffice Writer（处理word）。当然能学Python自己写脚本工具更好。详见：<a href="../2020-10-26-%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%A4%84%E7%90%86%E6%96%87%E6%9C%AC%E3%80%81%E7%AE%A1%E7%90%86%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%89%E4%BB%B6%E5%A5%97/">用正则表达式处理文本、管理文件的三件套</a></p>
+<h2 id="markdownruby"><a href="https://www.zhihu.com/question/505541536/answer/2268665095">Markdown中如何使用注音（ruby、振假名）？</a><a class="headerlink" href="#markdownruby" title="Permanent link">#</a></h2>
+<p><strong>【回答】</strong></p>
+<p>在vscode中，可以扩展markdown-preview-enhanced插件的Markdown Parser，参考：</p>
+<ul>
+<li><a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/extend-parser">markdown-preview-enhanced设置</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/ruby">ruby</a></li>
+</ul>
+<p>代码：</p>
+<div class="highlight"><pre><span></span><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">onWillParseMarkdown</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">markdown</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)=&gt;</span> <span class="p">{</span>
+        <span class="nx">markdown</span> <span class="o">=</span> <span class="nx">markdown</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\[([^\[\]]+)\]\^\(([^\(\)]+)\)/gm</span><span class="p">,</span> <span class="s2">&quot;&lt;ruby&gt;$1&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;$2&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">markdown</span><span class="p">)</span>
+      <span class="p">})</span>
+    <span class="p">},</span>
+    <span class="c1">// 以下不变</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>Markdown中用法:<code>[原文] ^ (yuán wén)</code>
+效果：<ruby>原文<rp>(</rp><rt>yuán wén</rt><rp>)</rp></ruby></p>
 <h2 id="microsoft_word"><a href="https://www.zhihu.com/question/21322381/answer/1742589074">Microsoft Word 这样的文字处理软件技术门槛高吗，为何卖那么贵？</a><a class="headerlink" href="#microsoft_word" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>要是从一个使用者（往往只使用了很小一部分功能）的角度看，msWord没什么了不起。使用者离不开msWord的地方大概主要是排版格式可以所见即所得地随意控制方面。</p>
@@ -2651,14 +2706,14 @@
 <p>如果嫌贵，现在完全可以用开源免费的libreoffice Writer替代msWord、WPS这样的商业软件。libreoffice Writer对msWord生成的.docx文件的支持已经很好；我碰到的问题，目前主要在使用审阅/修订记录时可能用兼容问题；以及表格、图片插入的地方可能会有位置不对的时候，需要重新排一下。</p>
 <p>如果你对排版随意度要求不大高，还可以使用开源免费的vsCode+markdown插件，这就是很好的文字处理套件。</p>
 <p>跟msWord一样，vsCode也是微软的。</p>
-<h2 id="_1"><a href="https://www.zhihu.com/question/399178237/answer/1720363501">想问一下汉字的笔画怎么能单独的一笔一划的打出来，并且可以改变他的字体呢？</a><a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<h2 id="_2"><a href="https://www.zhihu.com/question/399178237/answer/1720363501">想问一下汉字的笔画怎么能单独的一笔一划的打出来，并且可以改变他的字体呢？</a><a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>用方正飞翔可以自动拆笔画；</p>
 <p>也可以用adobe illustrator手动拆，不过字体文件本身得是一笔一个独立的轮廓线（微软楷体GB2312就是这样）。AI可以录制动作，简化操作。
 我曾经录过一个：</p>
 <p><a href="https://pan.baidu.com/s/1QiiwiK9oc7m9DFxnpb7feg">AI动作_把汉字拆分为单个笔画.aia</a></p>
 <p>提取码：cfu1 </p>
-<h2 id="_2"><a href="https://www.zhihu.com/question/409501763/answer/1363740325">有没有背成语生词拼音的软件推荐？</a><a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<h2 id="_3"><a href="https://www.zhihu.com/question/409501763/answer/1363740325">有没有背成语生词拼音的软件推荐？</a><a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
 <p><strong>【回答】</strong></p>
 <p>记忆卡片(memo)类软件，只要是可以碎片化的，背什么都可以：</p>
 <ol>
