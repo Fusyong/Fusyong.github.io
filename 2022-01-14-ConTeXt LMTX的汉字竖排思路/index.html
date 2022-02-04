@@ -705,6 +705,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../2022-02-04-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8B%BC%E9%9F%B3ao%E4%B8%8D%E5%86%99%E4%BD%9Cau/" class="md-nav__link">
+        为什么拼音ao不写作au
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2021-06-10-%E7%A9%B6%E7%AB%9F%E6%9C%89%E6%B2%A1%E6%9C%89%E2%80%9C%E6%82%A8%E4%BB%AC%E2%80%9D%E8%BF%99%E7%A7%8D%E7%94%A8%E6%B3%95/" class="md-nav__link">
         究竟有没有“您们”这种用法？
       </a>
@@ -2376,7 +2388,7 @@
   
     <li class="md-nav__item">
       <a href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-        LuaTeX-LuaMetaTEX-CLD-TEX学习笔记
+        LuaTeX-LMTX-CLD-TEX学习笔记
       </a>
     </li>
   
@@ -2642,7 +2654,7 @@
                 
                   <h1>ConTeXt LMTX的汉字竖排思路</h1>
                 
-                <p>根据这个答问中的线索：<a href="https://tex.stackexchange.com/questions/529650/vertical-typesetting-in-context-mkiv">vertical-typesetting-in-context-mkiv</a>学习了Hans Hagen的开发文档<a href="https://www.pragma-ade.com/general/manuals/followingup.pdf"><em>followingup</em></a>的第6节，Directions(方向)。</p>
+                <p>根据<a href="https://tex.stackexchange.com/questions/529650/vertical-typesetting-in-context-mkiv">vertical-typesetting-in-context-mkiv</a>这个答问中的线索学习了Hans Hagen所写的开发文档<a href="https://www.pragma-ade.com/general/manuals/followingup.pdf"><em>followingup</em></a>的第6节：Directions(方向)。</p>
 <p>感觉<a href="https://wiki.contextgarden.net/LMTX">ConTeXt LMTX（LuaMetaTeX）</a>很强大，<a href="https://www.pragma-ade.com/install.htm">安装说明</a>；据说2022版TeX live要换上。</p>
 <p>以下主要是从文档中拷贝的代码，有些地方做了注释，更正了个别笔误。</p>
 <p><div class="highlight"><pre><span></span><code><span class="c">% \setuppapersize[A4][A4]</span>
@@ -2744,36 +2756,51 @@ Y0-3分别表示如何垂直对齐原基线: baseline, lower corner, upper corne
 <span class="k">\hbox</span> orientation &quot;022 <span class="nb">{</span><span class="k">\TEX</span><span class="nb">}</span> and
 <span class="k">\hbox</span> orientation &quot;032 <span class="nb">{</span><span class="k">\TEX</span><span class="nb">}</span>
 
+<span class="k">\page</span>
 <span class="k">\subsection</span><span class="nb">{</span>反向文本流<span class="nb">}</span>
 
-<span class="k">\page</span>
+两种方法，
+
+一、指定盒子的流向为反向`direction 1`（<span class="k">\string\vbox</span>同样可用）：
+
+<span class="k">\hbox</span><span class="nb">{</span><span class="k">\hbox</span>
+    orientation 0
+    direction 1
+    <span class="nb">{</span>朱泙漫学屠龙于支离益，殚千金之家，三年技成，而无所用其巧。<span class="nb">}</span> <span class="nb">}</span>
+
+二、使用命令`<span class="k">\string\righttoleft</span>`：
+
+<span class="k">\hbox</span><span class="nb">{</span><span class="k">\hbox</span>
+    orientation 0
+    direction 0
+    <span class="nb">{</span><span class="k">\righttoleft</span> 朱泙漫学屠龙于支离益，殚千金之家，三年技成，而无所用其巧。<span class="nb">}</span> <span class="nb">}</span>
+
+三、二者重复使用不会冲突：
+
+<span class="k">\hbox</span><span class="nb">{</span><span class="k">\hbox</span>
+    orientation 0
+    direction 1
+    <span class="nb">{</span><span class="k">\righttoleft</span> 朱泙漫学屠龙于支离益，殚千金之家，三年技成，而无所用其巧。<span class="nb">}</span> <span class="nb">}</span>
+
 <span class="k">\subsection</span><span class="nb">{</span>偏置<span class="nb">}</span>
 
-<span class="k">\hbox</span><span class="nb">{</span>test 1<span class="nb">}</span>
+<span class="k">\hbox</span><span class="nb">{</span>偏置 0x0<span class="nb">}</span>
 <span class="k">\hbox</span>
     orientation 0
-    yoffset
-    15pt
     xoffset 150pt
-    <span class="nb">{</span>test<span class="nb">}</span>
+    yoffset 15pt
+    <span class="nb">{</span>偏置 150x15<span class="nb">}</span>
 <span class="k">\vbox</span>
     orientation 0
-    <span class="nb">{</span><span class="k">\hbox</span><span class="nb">{</span>test<span class="nb">}}</span>
+    <span class="nb">{</span><span class="k">\hbox</span><span class="nb">{</span><span class="k">\string\hbox\ </span>偏置 0x0<span class="nb">}}</span>
 <span class="k">\vbox</span>
     orientation 0
-    yoffset
-    -5pt
-    xoffset 130pt
-    <span class="nb">{</span><span class="k">\hbox</span><span class="nb">{</span>test<span class="nb">}}</span>
-<span class="k">\vbox</span>
-    orientation 0
-    yoffset 2pt
-    <span class="nb">{</span><span class="k">\hbox</span><span class="nb">{</span>test<span class="nb">}}</span>
+    xoffset 150pt
+    yoffset -15pt
+    <span class="nb">{</span><span class="k">\hbox</span><span class="nb">{</span><span class="k">\string\hbox\ </span>偏置 150x-15<span class="nb">}}</span>
+
 
 <span class="k">\subsection</span><span class="nb">{</span>竖排/直书<span class="nb">}</span>
-
-<span class="k">\define\NotoCJK</span><span class="nb">{</span>通用规范汉字表<span class="nb">}</span>
-
 
 <span class="k">\startluacode</span>
 local glyph<span class="nb">_</span>id = node.id(&quot;glyph&quot;)
@@ -2784,7 +2811,7 @@ local function is<span class="nb">_</span>vertical(c)
     return c &gt;= 0x04E00 and c &lt;= 0x09FFF
 end
 
--- 处理程序，输出一个盒子号码
+-- 处理程序，输入一个盒子号码
 function document.go<span class="nb">_</span>vertical(boxnumber)
     local box = tex.getbox(boxnumber)
     local n = box.list
@@ -2816,7 +2843,7 @@ function document.go<span class="nb">_</span>vertical(boxnumber)
 end
 <span class="k">\stopluacode</span>
 
-<span class="c">% 分拆非中文，调整偏置</span>
+<span class="c">% 调整非中文的偏置</span>
 <span class="k">\unexpanded\def\stripe</span>#1<span class="c">%</span>
     <span class="nb">{</span><span class="k">\hbox</span> orientation 0 yoffset .2<span class="k">\exheight</span><span class="nb">{</span><span class="k">\strut</span> #1<span class="nb">}}</span>
 
@@ -2847,8 +2874,11 @@ end
 <span class="k">\stoptext</span>
 </code></pre></div>
 部分效果：</p>
-<p><img alt="" src="../img/2022-01-14-ConTeXt%20LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/2022-01-14-13-44-16.png" /></p>
-<p><img alt="" src="../img/2022-01-14-ConTeXt%20LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/2022-01-14-13-44-48.png" /></p>
+<p><img alt="朝向" src="../img/2022-01-14-ConTeXt%20LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/2022-01-14-13-44-16.png" /></p>
+<p><img alt="锚点" src="../img/2022-01-14-ConTeXt%20LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/2022-01-14-13-44-48.png" /></p>
+<p><img alt="反向文本流" src="../img/2022-01-14-ConTeXt%20LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/2022-01-16-13-57-56.png" /></p>
+<p><img alt="偏置" src="../img/2022-01-14-ConTeXt%20LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/2022-01-15-16-37-31.png" /></p>
+<p><img alt="竖排" src="../img/2022-01-14-ConTeXt%20LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/2022-01-15-16-41-31.png" /></p>
 <p>要做中文竖排/直书工具还有很多问题，比如标点。</p>
                 
                   
