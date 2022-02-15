@@ -2365,15 +2365,51 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" checked>
       
       <label class="md-nav__link" for="__nav_15">
-        LuaTeX-ConTeXt-TEX
+        LuaTeX ConTeXt与自动排版
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="LuaTeX-ConTeXt-TEX" data-md-level="1">
+      <nav class="md-nav" aria-label="LuaTeX ConTeXt与自动排版" data-md-level="1">
         <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
-          LuaTeX-ConTeXt-TEX
+          LuaTeX ConTeXt与自动排版
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        ConTeXt LMTX中文竖排插件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-01-14-ConTeXt-LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/" class="md-nav__link">
+        ConTeXt LMTX中文竖排思路
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        LuaTeX-LMTX-CLD-TEX学习笔记
+      </a>
+    </li>
+  
+
           
             
   
@@ -2751,7 +2787,7 @@
       
         <li class="md-nav__item">
   <a href="#_41" class="md-nav__link">
-    视觉调试
+    调试
   </a>
   
 </li>
@@ -2797,32 +2833,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-        LuaTeX-LMTX-CLD-TEX学习笔记
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../2022-01-10-latex-CTEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         latex-CTEX学习笔记
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-01-14-ConTeXt%20LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/" class="md-nav__link">
-        ConTeXt LMTX的汉字竖排思路
       </a>
     </li>
   
@@ -3407,7 +3419,7 @@
       
         <li class="md-nav__item">
   <a href="#_41" class="md-nav__link">
-    视觉调试
+    调试
   </a>
   
 </li>
@@ -4025,7 +4037,7 @@ about <span class="k">\TeX</span>.
 <p>索引：</p>
 <p>mtxrun --generate
 mtxrun --script font --reload</p>
-<p>查找你想要字体，比如：</p>
+<p>查找你想要字体（包括文件名和符号名称），比如：</p>
 <p>mtxrun --script fonts --list --all --pattern=<em>pinin</em></p>
 <div class="highlight"><pre><span></span><code>identifier         familyname   fontname    filename                        subfont   instances
 ---
@@ -4042,8 +4054,24 @@ stxingkai                stxingkai         stxingkai               c:/windows/fo
 stxingkainormal          stxingkai         stxingkai               c:/windows/fonts/STXINGKA.TTF
 stxingkairegular         stxingkai         stxingkai               c:/windows/fonts/STXINGKA.TTF
 </code></pre></div>
-<p>然后定义名称后使用<code>\definefont[pinyin][name:ahpinying*default at 9pt]</code>
-（<code>*default</code>表示使用默认特性）</p>
+<p>然后定义名称后使用<code>\definefont[pinyin][name:ahpinying*default at 9pt]</code>。格式如下：</p>
+<ul>
+<li>\definefont[PublicReference][filename*featurenames scaling] % filename可以附加前缀<code>name:</code>，表示使用符号名称； <code>file:</code>表示使用文件名，可以使用后缀<code>.ttf</code>等；featurenames可以使用预制的<code>default</code>，或使用<code>\definefontfeature</code>定义</li>
+<li>\definefont[PublicReference][filename:featurespecication scaling] % 仅用户XƎTEX样式的字体</li>
+<li>\definefont[PublicReference][filename@virtualconstructor scaling] % 适用于虚拟字体，如数学字体，虚拟特性可参考m-punk.mkiv文件</li>
+</ul>
+<p><strong>字体颜色特性</strong></p>
+<p>颜文字着色</p>
+<div class="highlight"><pre><span></span><code><span class="k">\definefontfeature</span><span class="na">[colored][colr=yes]</span>
+<span class="k">\definefontsynonym</span><span class="na">[Emoji][file:seguiemj.ttf*default,colored]</span>
+<span class="k">\definesymbol</span><span class="na">[bug][\getglyphdirect{Emoji}{\char&quot;1F41B}]</span>
+<span class="k">\definesymbol</span><span class="na">[ant][\getglyphdirect{Emoji}{\char&quot;1F41C}]</span>
+<span class="k">\definesymbol</span><span class="na">[bee][\getglyphdirect{Emoji}{\char&quot;1F41D}]</span>
+
+<span class="c">% 或者用svg</span>
+<span class="k">\definefontfeature</span><span class="na">[svg][svg=yes]</span>
+<span class="k">\definefontsynonym</span><span class="na">[Emoji][file:emojionecolor-svginot.ttf*default,svg]</span>
+</code></pre></div>
 <h2 id="_19">字体知识<a class="headerlink" href="#_19" title="Permanent link">#</a></h2>
 <ul>
 <li>\setupbodyfont[Options]</li>
@@ -4653,7 +4681,7 @@ Two-two won one too.
 <p>或全局配置：\setuplines[indenting={yes, small, even}]</p>
 <p>带行号：</p>
 <p>\startlinenumbering[Options] ... \stoplinenumbering</p>
-<p><strong>水平对齐：</strong></p>
+<p><a href="https://wiki.contextgarden.net/Command/setupalign"><strong> 水平对齐：</strong></a></p>
 <ul>
 <li>\setupalign[right] %全文设置<ul>
 <li>\setupalign[horizontal, morehyphenation]</li>
@@ -4663,7 +4691,7 @@ Two-two won one too.
 <li>\startalignment[Options] ... \stopalignment % 对齐</li>
 </ul>
 <p>选项：</p>
-<p><code>broad</code> <code>wide</code> <code>bottom</code> <code>height</code> <code>line</code> <code>high</code> <code>low</code> <code>lohi</code> <code>flushright</code> <code>flushleft</code> <code>middle</code> <code>yes</code> <code>no</code> <code>width</code> <code>normal</code> <code>reset</code> <code>inner</code> <code>outer</code> <code>flushinner</code> <code>flushouter</code> <code>left</code> <code>right</code> <code>center</code> <code>disable</code> <code>last</code> <code>end</code> <code>paragraph</code> <code>lefttoright</code> <code>righttoleft</code> <code>l2r</code> <code>r2l</code> <code>table</code> <code>lesshyphenation</code> <code>morehyphenation</code> <code>hanging</code> <code>hangingboth</code> <code>nothanging</code> <code>hz</code> <code>fullhz</code> <code>nohz</code> <code>hyphenated</code> <code>nothyphenated</code> <code>tolerant</code> <code>verytolerant</code> <code>stretch</code> <code>extremestretch</code> <code>final</code> <code>1*final</code> <code>2*final</code> <code>3*final</code> <code>4*final</code> <code>more</code> <code>1*more</code> <code>2*more</code></p>
+<p><code>broad</code> <code>wide</code> <code>bottom</code> <code>height</code> <code>line</code> <code>high</code> <code>low</code> <code>lohi</code> <code>flushright</code> <code>flushleft</code> <code>middle</code> <code>yes</code> <code>no</code> <code>width</code> <code>normal</code> <code>reset</code> <code>inner</code> <code>outer</code> <code>flushinner</code> <code>flushouter</code> <code>left</code> <code>right</code> <code>center</code> <code>disable</code> <code>last</code> <code>end</code> <code>paragraph</code> <code>lefttoright</code> <code>righttoleft</code> <code>l2r</code> <code>r2l</code> <code>table</code> <code>lesshyphenation</code> <code>morehyphenation</code> <code>hanging</code>(标点悬挂/突出 protrusion) <code>hangingboth</code> <code>nothanging</code> <code>hz</code> <code>fullhz</code> <code>nohz</code> <code>hyphenated</code> <code>nothyphenated</code> <code>tolerant</code> <code>verytolerant</code> <code>stretch</code> <code>extremestretch</code> <code>final</code> <code>1*final</code> <code>2*final</code> <code>3*final</code> <code>4*final</code> <code>more</code> <code>1*more</code> <code>2*more</code></p>
 <ul>
 <li>normal or width or yes，对齐</li>
 <li>middle，行居中对齐 <strong>(实测会拉伸字距，等于<code>center, wide</code>，当是与center弄反了)</strong></li>
@@ -4962,11 +4990,30 @@ Two-two won one too.
 <p>https://wiki.contextgarden.net/Scaling_Rotating_Mirroring_Clipping</p>
 <h2 id="_40">系统宏<a class="headerlink" href="#_40" title="Permanent link">#</a></h2>
 <p>https://wiki.contextgarden.net/System_Macros</p>
-<h2 id="_41">视觉调试<a class="headerlink" href="#_41" title="Permanent link">#</a></h2>
-<p>https://wiki.contextgarden.net/Visual_Debugging</p>
+<h2 id="_41">调试<a class="headerlink" href="#_41" title="Permanent link">#</a></h2>
+<p><a href="https://wiki.contextgarden.net/Debugging">Debugging</a></p>
+<p><strong>跟踪</strong></p>
+<p>在可能的错误附近打开所有追踪：</p>
+<div class="highlight"><pre><span></span><code><span class="k">\enabletrackers</span>
+<span class="k">\tracingall</span>
+</code></pre></div>
+<p><strong>视觉展示</strong></p>
+<p><strong>清理</strong><a href="https://wiki.contextgarden.net/Visual_Debugging">Visual_Debugging</a></p>
 <ul>
-<li>\show...</li>
-<li>\trace...</li>
+<li><code>\trace...</code></li>
+<li><code>\show...</code></li>
+</ul>
+<p><strong>缺字替换</strong></p>
+<p><code>\replacemissingcharacters</code></p>
+<p>缺字体时替换为方块，并且可以拷贝、搜索。</p>
+<p><strong>段落与页面构成</strong></p>
+<p>\showmakeup[...]</p>
+<p>[...]makeup reset boxes all hbox vbox vtop kern glue penalty fontkern strut whatsit glyph simple simplehbox simplevbox simplevtop user math italic origin discretionary expansion line space depth</p>
+<p>三个快捷选项：</p>
+<ul>
+<li>makeup，页面布局</li>
+<li>boxes，盒子构成</li>
+<li>all，大部分有用选项</li>
 </ul>
 <h2 id="_42">项目结构<a class="headerlink" href="#_42" title="Permanent link">#</a></h2>
 <p><img alt="项目结构" src="https://wiki.contextgarden.net/images/5/5c/Project-structure.png" /></p>
@@ -5069,7 +5116,7 @@ the 21st century}}</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../making-your-first-phaser-3-game/part10/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -5078,19 +5125,19 @@ the 21st century}}</p>
               <span class="md-footer__direction">
                 上一页
               </span>
-              第10节 - 跳跳弹
+              LuaTeX-LMTX-CLD-TEX学习笔记
             </div>
           </div>
         </a>
       
       
-        <a href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../2022-01-10-latex-CTEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              LuaTeX-LMTX-CLD-TEX学习笔记
+              latex-CTEX学习笔记
             </div>
           </div>
           <div class="md-footer__button md-icon">
