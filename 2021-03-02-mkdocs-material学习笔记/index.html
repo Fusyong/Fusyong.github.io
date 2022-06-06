@@ -2832,13 +2832,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
       
       <label class="md-nav__link" for="__nav_16">
-        LuaTeX ConTeXt与自动化排版
+        TEX与自动化排版
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="LuaTeX ConTeXt与自动化排版" data-md-level="1">
+      <nav class="md-nav" aria-label="TEX与自动化排版" data-md-level="1">
         <label class="md-nav__title" for="__nav_16">
           <span class="md-nav__icon md-icon"></span>
-          LuaTeX ConTeXt与自动化排版
+          TEX与自动化排版
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2896,7 +2896,7 @@
   
     <li class="md-nav__item">
       <a href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-        LuaTeX-LMTX-CLD-TEX学习笔记
+        LuaTeX-LMTX-CLD学习笔记
       </a>
     </li>
   
@@ -2931,8 +2931,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../2022-05-28-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        TEX学习笔记
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2022-02-18-uaTeX-LuaMetaTeX-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" class="md-nav__link">
-        LuaTeX LuaMetaTeX ConTeXt 学习资源
+        TEX系学习资源
       </a>
     </li>
   
@@ -3364,12 +3376,12 @@ pip install mkdocs-mermaid2-plugin
     <span class="p p-Indicator">-</span> <span class="nt">macros</span><span class="p">:</span>
         <span class="c1"># 替换默认的jinja宏标志{{}}，否则类似的地方可能报错</span>
         <span class="c1"># 或用raw标签包裹</span>
-        <span class="c1"># </span>
+        <span class="c1"># [[% raw %]]</span>
         <span class="nt">j2_block_start_string</span><span class="p">:</span> <span class="s">&#39;[[%&#39;</span>
         <span class="nt">j2_block_end_string</span><span class="p">:</span> <span class="s">&#39;%]]&#39;</span>
         <span class="nt">j2_variable_start_string</span><span class="p">:</span> <span class="s">&#39;[[&#39;</span>
         <span class="nt">j2_variable_end_string</span><span class="p">:</span> <span class="s">&#39;]]&#39;</span>
-        <span class="c1">#     </span>
+        <span class="c1"># [[% endraw %]]    </span>
     <span class="c1"># - redirects: # 重定向，改动文件名时使用</span>
     <span class="c1">#     redirect_maps:</span>
     <span class="c1">#         path/to/old/file.md: path/to/new/file.md</span>
