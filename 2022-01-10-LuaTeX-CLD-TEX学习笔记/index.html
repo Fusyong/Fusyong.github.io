@@ -2803,8 +2803,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#9_local_par" class="md-nav__link">
-    9 local_par
+  <a href="#9_parlocal_par" class="md-nav__link">
+    9 par(local_par)
   </a>
   
 </li>
@@ -2852,15 +2852,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_rule" class="md-nav__link">
-    3 rule
+  <a href="#2_rule" class="md-nav__link">
+    2 rule
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_ins" class="md-nav__link">
-    3 ins
+  <a href="#3_insert" class="md-nav__link">
+    3 insert
   </a>
   
 </li>
@@ -2887,9 +2887,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#11_math" class="md-nav__link">
-    11 math
+  <a href="#18_noad" class="md-nav__link">
+    18 noad
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8_whatsit" class="md-nav__link">
+    8 whatsit前端小玩意
+  </a>
+  
+    <nav class="md-nav" aria-label="8 whatsit前端小玩意">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user_defined" class="md-nav__link">
+    user_defined
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3440,8 +3460,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pdfwhatsits" class="md-nav__link">
-    PDF后端物件（whatsits）
+  <a href="#pdfwhatsit" class="md-nav__link">
+    PDF后端物件（whatsit）
   </a>
   
 </li>
@@ -4330,8 +4350,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#9_local_par" class="md-nav__link">
-    9 local_par
+  <a href="#9_parlocal_par" class="md-nav__link">
+    9 par(local_par)
   </a>
   
 </li>
@@ -4379,15 +4399,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_rule" class="md-nav__link">
-    3 rule
+  <a href="#2_rule" class="md-nav__link">
+    2 rule
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_ins" class="md-nav__link">
-    3 ins
+  <a href="#3_insert" class="md-nav__link">
+    3 insert
   </a>
   
 </li>
@@ -4414,9 +4434,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#11_math" class="md-nav__link">
-    11 math
+  <a href="#18_noad" class="md-nav__link">
+    18 noad
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8_whatsit" class="md-nav__link">
+    8 whatsit前端小玩意
+  </a>
+  
+    <nav class="md-nav" aria-label="8 whatsit前端小玩意">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user_defined" class="md-nav__link">
+    user_defined
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4967,8 +5007,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pdfwhatsits" class="md-nav__link">
-    PDF后端物件（whatsits）
+  <a href="#pdfwhatsit" class="md-nav__link">
+    PDF后端物件（whatsit）
   </a>
   
 </li>
@@ -5577,6 +5617,7 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
+  
                 
                 
                   <h1>LuaTeX-LMTX-CLD学习笔记</h1>
@@ -5691,14 +5732,12 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 <p>在传统TEX中，前四步交织在一起。但在LuaTEX中是分开的，因为第5步可以通过回调重载；在这种情况下，第3、4步（甚至第2步）也有可能重载，特别是在Lua中处理字体的时候。</p>
 <h3 id="_3">结点表示<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
 <p><code>node.types()</code>返回类型总表（括号中的数字是类型id）：</p>
-<ol>
-<li>hlist (0), vlist (1), rule (2), 1. ins (3), 1. mark (4), 1. adjust (5), boundary (6), disc (7), 1. whatsit (8), local_par (9), dir (10), 1. math (11), glue (12), kern(13), 1. penalty (14), unset (15), style (16), choice (17), noad (18), radical (19), fraction (20), accent (21), fence (22), math_char (23), sub_box (24), sub_mlist (25), math_text_char (26), delim (27), margin_kern (28), glyph (29), align_record (30), pseudo_file (31), pseudo_line(32), page_insert (33), split_insert (34), expr_stack (35), nested_list (36), span (37), attribute (38), glue_spec (39), attribute_list (40), temp (41), align_stack (42), movement_stack (43), if_stack (44), unhyphenated (45), hyphenated (46), delta (47), passive (48), shape (49).</li>
-</ol>
+<p>hlist (0), vlist (1), rule (2), ins (3), mark (4), adjust (5), boundary (6), disc (7), whatsit (8), par (9), dir (10), math (11), glue (12), kern(13), penalty (14), unset (15), style (16), choice (17), noad (18), radical (19), fraction (20), accent (21), fence (22), math_char (23), sub_box (24), sub_mlist (25), math_text_char (26), delim (27), margin_kern (28), glyph (29), align_record (30), pseudo_file (31), pseudo_line(32), page_insert (33), split_insert (34), expr_stack (35), nested_list (36), span (37), attribute (38), glue_spec (39), attribute_list (40), temp (41), align_stack (42), movement_stack (43), if_stack (44), unhyphenated (45), hyphenated (46), delta (47), passive (48), shape (49).</p>
 <p>结点视觉化lua库：</p>
 <p><a href="https://gist.github.com/pgundlach/556247">pgundlach/viznodelist.lua</a></p>
 <h3 id="_4">主要文本结点<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
 <p><em>开头的数字是类型id</em></p>
-<h4 id="9_local_par">9 local_par<a class="headerlink" href="#9_local_par" title="Permanent link">#</a></h4>
+<h4 id="9_parlocal_par">9 par(local_par)<a class="headerlink" href="#9_parlocal_par" title="Permanent link">#</a></h4>
 <p>段首插入的结点。一般不要改动。</p>
 <table>
 <thead>
@@ -5795,7 +5834,7 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 <tr>
 <td>glue_order</td>
 <td>number</td>
-<td>数字范围[0, 4]，表示胶的次序</td>
+<td>数字范围[0, 4]，表示胶的序号（0即f，1即fi，2即fil...4即filll？？）</td>
 </tr>
 <tr>
 <td>glue_set</td>
@@ -6014,9 +6053,9 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 <td>额外的占位，或伸展量</td>
 </tr>
 <tr>
-<td>stretch_order</td>
+<td>stretchorder</td>
 <td>number</td>
-<td>拉伸量的系数</td>
+<td>拉伸量的系数/倍数（0即f，1即fi，2即fil...4即filll？？）</td>
 </tr>
 <tr>
 <td>shrink</td>
@@ -6024,12 +6063,21 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 <td>额外（负值）占位，或收缩量</td>
 </tr>
 <tr>
-<td>shrink_order</td>
+<td>shrinkorder</td>
 <td>number</td>
-<td>收缩量的系数</td>
+<td>收缩量的系数/倍数</td>
 </tr>
 </tbody>
 </table>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">parfillskip</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;glue&quot;</span><span class="p">,</span> <span class="s2">&quot;parfillskip&quot;</span><span class="p">)</span>
+<span class="n">parfillskip</span><span class="p">.</span><span class="n">stretch</span> <span class="o">=</span> <span class="mi">2</span><span class="o">^</span><span class="mi">16</span> <span class="c1">-- 拉伸量65536</span>
+<span class="n">parfillskip</span><span class="p">.</span><span class="n">stretchorder</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1">--拉伸倍数fil?</span>
+
+<span class="c1">-- 不再使用胶性</span>
+<span class="c1">-- parfillskip.spec = node.new(&quot;glue_spec&quot;)</span>
+<span class="c1">-- parfillskip.spec.stretch = 2^16</span>
+<span class="c1">-- parfillskip.spec.stretch_order = 2</span>
+</code></pre></div>
 <p>glue_spec（胶性）结点在寄存器中存储一套胶值。</p>
 <p>胶结点：</p>
 <table>
@@ -6058,11 +6106,11 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 </tr>
 </tbody>
 </table>
-<p>还有字段： width, stretch stretch_order, shrink, and shrink_order</p>
+<p>还有字段： width, stretch stretchorder, shrink, and shrinkorder</p>
 <p>水平胶和垂直胶都用width，这是TEX的传统。</p>
 <p>通常的词语间空格也导致一个spaceskip小类（通常是0号的userskip）。</p>
 <h4 id="13_kern">13 kern<a class="headerlink" href="#13_kern" title="Permanent link">#</a></h4>
-<p>字间，字模之间的相对偏置关系。
+<p>字间/出格，字模之间的相对偏置关系。
 由\kern命令、字体机制、数学机制生成的结点。</p>
 <table>
 <thead>
@@ -6121,9 +6169,9 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 </table>
 <p>小类是非正式的，TEX并不使用它们。当你碰到断行罚分（linebreakpenalty）时，你应该想到，它是club、widow（落单词）和其他相关惩罚的的累加。</p>
 <p>罚分用来控制断行（比如某些标点前后），-10000以下表示必须断行，10000以上表示禁止断行，其余中间值表示由引擎决定。</p>
-<h4 id="3_rule">3 rule<a class="headerlink" href="#3_rule" title="Permanent link">#</a></h4>
-<p>铅条，铅线。
-LuaTEX会使用界尺（rule）来存储可重用对象和图像，所以比tex的小类多；user结点不可见，可以通过回调截取。</p>
+<h4 id="2_rule">2 rule<a class="headerlink" href="#2_rule" title="Permanent link">#</a></h4>
+<p>条线，铅条，铅线。
+LuaTEX会使用条线来存储可重用对象和图像，所以比tex \hrule和\vrule的小类多；user小类结点不可见，可以通过回调截取。支持的 字段有：attr, char, data, depth, font, height, left, right, width, xoffset and yoffset.</p>
 <table>
 <thead>
 <tr>
@@ -6185,7 +6233,7 @@ LuaTEX会使用界尺（rule）来存储可重用对象和图像，所以比tex�
 </tr>
 </tbody>
 </table>
-<h4 id="3_ins">3 ins<a class="headerlink" href="#3_ins" title="Permanent link">#</a></h4>
+<h4 id="3_insert">3 insert<a class="headerlink" href="#3_insert" title="Permanent link">#</a></h4>
 <p>浮动对象的插入标记。
 与\insert基本命令相关。</p>
 <table>
@@ -6337,8 +6385,111 @@ shrink and shrink_order. 都是数字。</p>
 </tr>
 </tbody>
 </table>
-<h4 id="11_math">11 math<a class="headerlink" href="#11_math" title="Permanent link">#</a></h4>
-<p>数学结点表示数学公式（通常用<code>$</code>包裹）的边界。</p>
+<h4 id="18_noad">18 noad<a class="headerlink" href="#18_noad" title="Permanent link">#</a></h4>
+<p>数学noad结点。</p>
+<h4 id="8_whatsit">8 whatsit前端小玩意<a class="headerlink" href="#8_whatsit" title="Permanent link">#</a></h4>
+<p>小玩意儿，小东西。一种简单的结点，只有一个小类。他甚至比用户结点（user node，实际上很可能是这样）节点还小，使用极少的内存。怎么使用他全由你定，他是极简的。你可以分配一个小类，它可以有一些属性。完全有用户控制。</p>
+<p>node.whatsits查询小类:</p>
+<p>open(0), write(1), close(2), special(3), save_pos(6), late_lua(7), user_defined(8), pdf_literal(16), pdf_refobj(17), pdf_annot(18), pdf_start_link(19), pdf_end_link(20), pdf_dest(21), pdf_action(22), pdf_thread(23), pdf_start_thread(24), pdf_end_thread(25), pdf_thread_data(26), pdf_link_data(27), pdf_colorstack(28), pdf_setmatrix(29), pdf_save(30), pdf_restore(31), pdf_link_state(32).</p>
+<p>有些是通用的，有些与所选后端dvi或pdf相关。</p>
+<h5 id="user_defined">user_defined<a class="headerlink" href="#user_defined" title="Permanent link">#</a></h5>
+<p>User_defined类小玩意结点，是唯一可以从Lua code生成或操控的。实际上，它们是对扩展机制的一种扩展。LuaTEX引擎将简单地跨过这些小玩意，而不去看其内容。</p>
+<table>
+<thead>
+<tr>
+<th>FIELD</th>
+<th>TYPE</th>
+<th>EXPLANATION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attr</td>
+<td>node</td>
+<td>list of attributes</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>number</td>
+<td>id number</td>
+</tr>
+<tr>
+<td>type</td>
+<td>number</td>
+<td>type of the value</td>
+</tr>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>a Lua number</td>
+</tr>
+<tr>
+<td></td>
+<td>node</td>
+<td>a node list</td>
+</tr>
+<tr>
+<td></td>
+<td>string</td>
+<td>a Lua string</td>
+</tr>
+<tr>
+<td></td>
+<td>table</td>
+<td>a Lua table</td>
+</tr>
+</tbody>
+</table>
+<p>type可选六个值。可用string.byte("l")代替108。</p>
+<table>
+<thead>
+<tr>
+<th>VALUE</th>
+<th>MEANING</th>
+<th>EXPLANATION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>97</td>
+<td>a</td>
+<td>list of attributes (a node list)</td>
+</tr>
+<tr>
+<td>100</td>
+<td>d</td>
+<td>a Lua number</td>
+</tr>
+<tr>
+<td>108</td>
+<td>l</td>
+<td>a Lua value (table, number, boolean, etc)</td>
+</tr>
+<tr>
+<td>110</td>
+<td>n</td>
+<td>a node list</td>
+</tr>
+<tr>
+<td>115</td>
+<td>s</td>
+<td>a Lua string</td>
+</tr>
+<tr>
+<td>116</td>
+<td>t</td>
+<td>a Lua token list in Lua table form (a list of triplets)</td>
+</tr>
+</tbody>
+</table>
+<p>108是魔法类型。实际值可以是任何lua type。</p>
+<div class="highlight"><pre><span></span><code>    <span class="kd">local</span> <span class="n">w</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;whatsit&quot;</span><span class="p">,</span><span class="s2">&quot;user_defined&quot;</span><span class="p">)</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">setattribute</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">333</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">v</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="n">hasattribute</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">333</span><span class="p">)</span>
+    <span class="n">w</span><span class="p">.</span><span class="n">type</span><span class="o">=</span><span class="mi">108</span>
+    <span class="n">w</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;hello world&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">.</span><span class="n">subtype</span><span class="p">,</span> <span class="n">w</span><span class="p">.</span><span class="n">user_id</span><span class="p">,</span><span class="n">w</span><span class="p">.</span><span class="n">type</span><span class="p">,</span> <span class="n">w</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="n">w</span><span class="p">.</span><span class="n">attr</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="c1">--有些不起效</span>
+</code></pre></div>
 <h4 id="6_boundary">6 boundary<a class="headerlink" href="#6_boundary" title="Permanent link">#</a></h4>
 <p>（单词、突排的）边界结点。
 相关的基本命令是：\noboundary, \boundary, \protrusionboundary and \wordboundary</p>
@@ -6446,12 +6597,12 @@ shrink and shrink_order. 都是数字。</p>
 <p>结点构成互相连接的结点列表，但是没有引用计数，所以控制权交换luatex前，不要误删被引用的结点。一般情况下通过getter和setter来处理。还有一些可以定位结点内存的追踪、统计工具。</p>
 <h4 id="type">type结点类型<a class="headerlink" href="#type" title="Permanent link">#</a></h4>
 <ul>
-<li><boolean|integer> t = node.is_node(<any> item) --结点索引</li>
 <li><table> t = node.types() --大类id:string的映射表（查表用node.type()）</li>
 <li><string> type = node.type(<any> n) -- 类型id查类型名称；结点转字符串结点(string node)</li>
-<li><table> t = node.whatsits()  --小类id:string的映射表</li>
 <li><number> id = node.id(<string> type) --类型名称查类型id</li>
 <li><number> subtype = node.subtype(<string> type) -- 小类名称查id</li>
+<li><table> t = node.whatsits()  --whatsits小类id:string的映射表</li>
+<li><boolean|integer> t = node.is_node(<any> item) --结点索引</li>
 </ul>
 <h4 id="fields">fields结点字段<a class="headerlink" href="#fields" title="Permanent link">#</a></h4>
 <ul>
@@ -6470,15 +6621,16 @@ shrink and shrink_order. 都是数字。</p>
 <li><node> n =node.new(<number> id, <number> subtype) --小东西</li>
 </ul>
 <p>也可以接收字符串名称。字段被初始化为nil或0。</p>
+<p>请确保这样生成的结点只使用一次；如果不以某种方式回传，则要释放（free）掉。</p>
 <p>设置字体：n.font = fnt，
 设置字符：n.char = chr</p>
 <h4 id="free">free释放结点内存<a class="headerlink" href="#free" title="Permanent link">#</a></h4>
 <ul>
 <li><node> next =node.free(<node> n) -- 释放结点内存，返回后继结点</li>
-<li>flush_node(<node> n) --直接冲洗结点内存</li>
-<li>node.flush_list(<node> n) --直接冲洗结点n开头的整个列表</li>
+<li>flushnode(<node> n) -- 释放结点内存，不返回后继结点</li>
+<li>node.flushlist(<node> n) --直接冲洗结点n开头的整个列表</li>
 </ul>
-<p>请确保没有寄存器、next字段等指向要释放、冲洗的节点和列表，以及列表中的所有元素。</p>
+<p>请确保没有寄存器、next字段等指向要释放、冲洗的节点、列表，以及列表中的所有元素。</p>
 <h4 id="copy">copy拷贝结点<a class="headerlink" href="#copy" title="Permanent link">#</a></h4>
 <ul>
 <li><node> m =node.copy(<node> n) --不会拷贝next字段</li>
@@ -7137,27 +7289,27 @@ tex.setattribute(["global",] <register>, <number>)</p>
 <tr>
 <td>pardir</td>
 <td>string</td>
-<td></td>
+<td>段落方向</td>
 </tr>
 <tr>
 <td>pretolerance</td>
 <td>number</td>
-<td></td>
+<td>段落不断词的容忍值，tex默认100</td>
 </tr>
 <tr>
 <td>tracingparagraphs</td>
 <td>number</td>
-<td></td>
+<td>如果是正值，则生成断行算法跟踪，见log</td>
 </tr>
 <tr>
 <td>tolerance</td>
 <td>number</td>
-<td></td>
+<td>断词段落中各行的容忍值，tex默认200，IniTEX默认10000</td>
 </tr>
 <tr>
 <td>looseness</td>
 <td>number</td>
-<td></td>
+<td>本段必须比理想情况下的长度多出这么多行</td>
 </tr>
 <tr>
 <td>hyphenpenalty</td>
@@ -7187,12 +7339,12 @@ tex.setattribute(["global",] <register>, <number>)</p>
 <tr>
 <td>linepenalty</td>
 <td>number</td>
-<td></td>
+<td>每个断行的罚点，tex默认10</td>
 </tr>
 <tr>
 <td>lastlinefit</td>
 <td>number</td>
-<td></td>
+<td>段落末行的调整率，乘以1000</td>
 </tr>
 <tr>
 <td>doublehyphendemerits</td>
@@ -7207,7 +7359,7 @@ tex.setattribute(["global",] <register>, <number>)</p>
 <tr>
 <td>hangafter</td>
 <td>number</td>
-<td></td>
+<td>如果是正数，表示缩进开始前的行数；如果是负数，其绝对值是指从段落的第一行开始的缩进行数。默认值为1，在每个段落后恢复默认值1。</td>
 </tr>
 <tr>
 <td>interlinepenalty</td>
@@ -7232,53 +7384,62 @@ tex.setattribute(["global",] <register>, <number>)</p>
 <tr>
 <td>emergencystretch</td>
 <td>number</td>
-<td>in scaled points</td>
+<td>假设的段落各行的额外伸展性。以sp计</td>
 </tr>
 <tr>
 <td>hangindent</td>
 <td>number</td>
-<td>in scaled points</td>
+<td>如果是正数，表示从左页边距开始缩进；如果是负数，是从右页边距开始缩进的负数。默认值为0pt，在每个段落之后都会恢复。以sp计</td>
 </tr>
 <tr>
 <td>hsize</td>
 <td>number</td>
-<td>in scaled points</td>
+<td>在垂直盒子中排版时所用的行宽。以sp计</td>
 </tr>
 <tr>
 <td>leftskip</td>
 <td>glue_spec node</td>
-<td></td>
+<td>行左胶的胶性结点</td>
 </tr>
 <tr>
 <td>rightskip</td>
 <td>glue_spec node</td>
-<td></td>
+<td>行右胶的胶性结点</td>
 </tr>
 <tr>
 <td>parshape</td>
 <td>table</td>
-<td></td>
+<td>段落形状表</td>
 </tr>
 </tbody>
 </table>
-<p>你必须自行确保 listhead 是一个合适的段落列表，这个函数不会向它添加任何节点。确切地说，如果您想替换内核的断行行为，您可能需要做以下工作（如果你没有在pre_linebreak_filter或linebreak_filter回调中工作，或者当从listhead开始的原始列表是以水平模式生成的）：</p>
-<ul>
-<li>添加一个 "缩进框"，或许在开始时添加一个local_par节点（仅当需要时）；</li>
-<li>用一个无限罚分来替换最后的胶（如果最后一个节点不是胶，则添加这样一个罚分）；</li>
-<li>在该罚分节点之后为\parfillskip添加一个胶节点；</li>
+<p>你必须自行确保 listhead 是一个合适的段落列表，这个函数不会向它添加任何结点。确切地说，如果你想替换内核的断行行为，你可能需要做以下工作（如果你没有在pre_linebreak_filter或linebreak_filter回调中工作，<strong>或者当从listhead开始的原始列表是以水平模式生成的</strong>）：</p>
+<ol>
+<li>添加一个"缩进盒子indent box"，或许在开始时再添加一个par结点（仅当你需要它们时）；</li>
+<li>用一个无限罚分来替换最后的胶（如果最后一个结点不是胶，则添加这样一个罚分）；</li>
+<li>在该罚分结点之后添加一个胶结点表示\parfillskip；<strong>黄注：此时是各行拉伸胶宽、两端对齐模式。如果要模仿系统一般模式——各行平均收缩胶宽、末行左对齐，则要在parfillskip前再添加一个hskip，宽度和收缩均同textwidth（或hsize？？）行宽。</strong></li>
 <li>确保所有的prev指针都是正确的。</li>
-</ul>
-<p>结果是一个节点列表，如果你想把它分配给一个\vbox，它仍然需要vpack。f返回的信息表包含四个值，都是数字：</p>
+</ol>
+<p>结果是一个结点列表，如果你想把它分配给一个\vbox，它仍然需要vpack。返回的info信息表包含四个值，都是数字：</p>
 <ul>
-<li>prevdepth：  depth of the last line in the broken paragraph</li>
-<li>prevgraf：  number of lines in the broken paragraph</li>
-<li>looseness：  the actual looseness value in the broken paragraph</li>
-<li>demerits：  the total demerits of the chosen solution</li>
+<li>prevdepth： 断行后段落最后一行的深度；</li>
+<li>prevgraf：  断行后段落的行数；</li>
+<li>looseness：  断行后段落的实际松性looseness</li>
+<li>demerits：  所选方案的总缺点demerits</li>
 </ul>
-<p>请注意，有几件事你不能用这个函数来干预。除了通过pdfadjustspacing之外，你不能影响字体的伸缩，因为它的设置是在其他地方进行的。hbadness and hfuzz等同此。所有这些都在hpack程序中，它通过globals获取自己的变量。</p>
+<p>请注意，有几件事你不能用这个函数来干预。除了通过pdfadjustspacing之外，你不能影响字体的伸缩，因为它的设置是在其他地方进行的。hbadness和hfuzz等同此。所有这些都在hpack程序中，它通过globals获取自己的变量。</p>
 <p>例：</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 断行宽度10em</span>
 <span class="kd">local</span> <span class="n">new_head</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">tex</span><span class="p">.</span><span class="n">linebreak</span><span class="p">(</span><span class="n">copy_head</span><span class="p">,</span> <span class="p">{</span> <span class="n">hsize</span> <span class="o">=</span>  <span class="n">tex</span><span class="p">.</span><span class="n">sp</span><span class="p">(</span><span class="s2">&quot;10em&quot;</span><span class="p">)})</span>
+</code></pre></div>
+<p>断行后：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 一般行末尾是两个胶：</span>
+&lt;node :   <span class="m">5582</span> &lt;<span class="o">=</span>   <span class="nv">5594</span> <span class="o">=</span>&gt;   <span class="m">6210</span> : glue rightskip&gt;
+&lt;node :   <span class="m">5594</span> &lt;<span class="o">=</span>   <span class="nv">6210</span> <span class="o">=</span>&gt;    nil : glue righthangskip&gt;
+<span class="c1"># 末行末尾是三个胶：</span>
+&lt;node :   <span class="m">6157</span> &lt;<span class="o">=</span>   <span class="nv">6162</span> <span class="o">=</span>&gt;   <span class="m">6198</span> : glue parfillleftskip&gt;
+&lt;node :   <span class="m">6162</span> &lt;<span class="o">=</span>   <span class="nv">6198</span> <span class="o">=</span>&gt;   <span class="m">6180</span> : glue rightskip&gt;
+&lt;node :   <span class="m">6198</span> &lt;<span class="o">=</span>   <span class="nv">6180</span> <span class="o">=</span>&gt;    nil : glue righthangskip&gt;
 </code></pre></div>
 <p>配置示例（可能比较老旧）：</p>
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">main_text_tbl</span> <span class="o">=</span> <span class="p">{</span>
@@ -7512,7 +7673,7 @@ token.set_macro(catcodetable,"csname")</p>
 <div class="highlight"><pre><span></span><code><span class="n">set_lua</span><span class="p">(</span><span class="s2">&quot;mycode&quot;</span><span class="p">,</span><span class="n">id</span><span class="p">)</span>
 <span class="n">set_lua</span><span class="p">(</span><span class="s2">&quot;mycode&quot;</span><span class="p">,</span><span class="n">id</span><span class="p">,</span><span class="s2">&quot;global&quot;</span><span class="p">,</span><span class="s2">&quot;protected&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="pdfwhatsits">PDF后端物件（whatsits）<a class="headerlink" href="#pdfwhatsits" title="Permanent link">#</a></h3>
+<h3 id="pdfwhatsit">PDF后端物件（whatsit）<a class="headerlink" href="#pdfwhatsit" title="Permanent link">#</a></h3>
 <p>获取位置：pdf.getpos()</p>
 <h3 id="fonts">Fonts 字体<a class="headerlink" href="#fonts" title="Permanent link">#</a></h3>
 <p>更多细节参看<em>font manual(s)</em></p>
@@ -9705,6 +9866,53 @@ callback.register (&#39;hyphenate&#39;, function (head,tail)
                   
                 
               
+
+  <!-- Giscus -->
+  <h2 id="__comments">评论</h2>
+  <!-- Replace with generated snippet -->
+  <script src="https://giscus.app/client.js"
+  data-repo="Fusyong/Fusyong.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnkxNTMwNDc3ODc="
+  data-category="Announcements"
+  data-category-id="DIC_kwDOCR9S684CPp2T"
+  data-mapping="pathname"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="light"
+  data-lang="zh-CN"
+  crossorigin="anonymous"
+  async>
+</script>
+
+  <!-- Reload on palette change -->
+  <script>
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object")
+      if (palette.color.scheme === "slate") {
+        var giscus = document.querySelector("script[src*=giscus]")
+        giscus.setAttribute("data-theme", "dark") 
+      }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
               
                 
 

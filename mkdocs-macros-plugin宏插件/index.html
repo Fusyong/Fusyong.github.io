@@ -3235,6 +3235,7 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
+  
                 
                 
                   <h1>mkdocs-macros-plugin宏插件</h1>
@@ -3485,13 +3486,13 @@
 <p>markdown中的jinja模板：</p>
 <div class="highlight"><pre><span></span><code><span class="x">[[% raw %]]</span>
 <span class="x">[[% for page in navigation.pages|fromdays(20) %]]</span>
-<span class="x">- [ [[ page.meta.title ]][[ page.meta.Modified ]] ]([[config.site_url]][[page.url]])</span>
+<span class="x">- [ [[ page.meta.title ]][[ page.meta.Modified ]] ](https://blog.xiiigame.com/mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/)</span>
 <span class="x">[[% endfor %]]</span>
 <span class="x">[[% endraw %]]    </span>
 </code></pre></div>
 <p>效果：</p>
 <p>[[% for page in navigation.pages|fromdays(20) %]]
-- <a href="[[config.site_url]][[page.url]]"> [[ page.meta.title ]][[ page.meta.Modified ]] </a>
+- <a href="https://blog.xiiigame.com/mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/"> [[ page.meta.title ]][[ page.meta.Modified ]] </a>
 [[% endfor %]]</p>
 <p>列出10篇最近更新的文章（据page.meta.Modified）。过滤器：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 在index页中使用只能取到index页自身，不知何故</span>
@@ -3517,13 +3518,13 @@
 <p>markdown中的jinja模板：</p>
 <div class="highlight"><pre><span></span><code><span class="x">[[% raw %]]</span>
 <span class="x">[[% for page in navigation.pages|last_blogs(10) %]]</span>
-<span class="x">- [ [[ page.meta.title ]][[ page.meta.Modified ]] ]([[config.site_url]][[page.url]])</span>
+<span class="x">- [ [[ page.meta.title ]][[ page.meta.Modified ]] ](https://blog.xiiigame.com/mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/)</span>
 <span class="x">[[% endfor %]]</span>
 <span class="x">[[% endraw %]]    </span>
 </code></pre></div>
 <p>效果：</p>
 <p>[[% for page in navigation.pages|last_blogs(10) %]]
-- <a href="[[config.site_url]][[page.url]]"> [[ page.meta.title ]][[ page.meta.Modified ]] </a>
+- <a href="https://blog.xiiigame.com/mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/"> [[ page.meta.title ]][[ page.meta.Modified ]] </a>
 [[% endfor %]]</p>
 <h2 id="pluglets"><a href="https://mkdocs-macros-plugin.readthedocs.io/en/latest/pluglets/">更强大的pluglets</a><a class="headerlink" href="#pluglets" title="Permanent link">#</a></h2>
 <p><a href="https://github.com/fralau/mkdocs-macros-test">查看例子</a></p>
@@ -3532,6 +3533,53 @@
                   
                 
               
+
+  <!-- Giscus -->
+  <h2 id="__comments">评论</h2>
+  <!-- Replace with generated snippet -->
+  <script src="https://giscus.app/client.js"
+  data-repo="Fusyong/Fusyong.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnkxNTMwNDc3ODc="
+  data-category="Announcements"
+  data-category-id="DIC_kwDOCR9S684CPp2T"
+  data-mapping="pathname"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="light"
+  data-lang="zh-CN"
+  crossorigin="anonymous"
+  async>
+</script>
+
+  <!-- Reload on palette change -->
+  <script>
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object")
+      if (palette.color.scheme === "slate") {
+        var giscus = document.querySelector("script[src*=giscus]")
+        giscus.setAttribute("data-theme", "dark") 
+      }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
               
                 
 

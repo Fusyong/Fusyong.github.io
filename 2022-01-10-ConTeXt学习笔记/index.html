@@ -3713,6 +3713,7 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
+  
                 
                 
                   <h1>ConTeXt学习笔记</h1>
@@ -4873,12 +4874,15 @@ chinese  cn, chinese</p>
 <li>\blank[Dimension]，累加无效</li>
 </ul>
 <p><strong>段落缩进：</strong></p>
-<p>\setupindenting</p>
+<p>\setupindenting[...,...]</p>
+<p>[...,...]   [+-]small [+-]medium [+-]big none no not first next yes always never odd even normal reset toggle <code>dimension name</code></p>
 <ul>
-<li>always：所有段落缩进
-• yes：一般段落缩进。特点段落额外增加垂直间距，如小节起始段落；后面跟着某些环境的段落不缩进。
-• no, not, never, none：禁用段落缩进。</li>
+<li>always：所有段落缩进</li>
+<li>yes：一般段落缩进。特点段落额外增加垂直间距，如小节起始段落；后面跟着某些环境的段落不缩进。</li>
+<li>no, not, never, none：禁用段落缩进。</li>
 </ul>
+<div class="highlight"><pre><span></span><code><span class="k">\setupindenting</span><span class="na">[yes, 2em]</span>
+</code></pre></div>
 <p><strong>指定段落缩进：</strong></p>
 <p>\startnarrower[Options] ... \stopnarrower</p>
 <p><strong>垂直段落间距：</strong></p>
@@ -5344,6 +5348,53 @@ the 21st century}}</p>
                   
                 
               
+
+  <!-- Giscus -->
+  <h2 id="__comments">评论</h2>
+  <!-- Replace with generated snippet -->
+  <script src="https://giscus.app/client.js"
+  data-repo="Fusyong/Fusyong.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnkxNTMwNDc3ODc="
+  data-category="Announcements"
+  data-category-id="DIC_kwDOCR9S684CPp2T"
+  data-mapping="pathname"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="light"
+  data-lang="zh-CN"
+  crossorigin="anonymous"
+  async>
+</script>
+
+  <!-- Reload on palette change -->
+  <script>
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object")
+      if (palette.color.scheme === "slate") {
+        var giscus = document.querySelector("script[src*=giscus]")
+        giscus.setAttribute("data-theme", "dark") 
+      }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
               
                 
 
