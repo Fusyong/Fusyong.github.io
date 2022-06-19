@@ -2710,6 +2710,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../2022-06-19-ConTeXt%E5%8F%8C%E8%A1%8C%E5%A4%B9%E6%B3%A8%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
+        ConTeXt双行夹注的简单实现
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         LuaTeX-LMTX-CLD学习笔记
       </a>
@@ -5022,16 +5034,36 @@ Two-two won one too.
 <li>\fillinline[width=6cm] text， 用线填充剩余空间（通常是右侧）</li>
 <li>\fillinrules  填充多行线</li>
 </ul>
-<p><strong>与文本关联的线</strong></p>
+<p><strong>文本装饰，与文本关联的线</strong></p>
 <ul>
-<li>\textrule{Example text} 文字两侧画线</li>
-<li>\starttextrule... \stoptextrule</li>
-<li>\underbar{Text} 下划线</li>
-<li>\underbars{Text}</li>
-<li>\overbar{Text} 上划线</li>
-<li>\overbars{Text}</li>
-<li>\overstrike{Text} 删除线</li>
-<li>\overstrikes{Text}</li>
+<li>文字两侧画线<ul>
+<li>\textrule{Example text} </li>
+<li>\starttextrule[Configuration]{Text on the line} ... \stoptextrule</li>
+<li>\setuptextrule</li>
+</ul>
+</li>
+<li>\setupbar 设置参数</li>
+<li>\bar 预定义实例<ul>
+<li>\overbar，上画线，与属性模式的\overbarin不同</li>
+<li>\underbar，下画线，与数学模式的\underbarin不同</li>
+<li>\overstrike，删除线</li>
+<li>\understrike，字下删除线，如马克笔效果</li>
+<li>\overbars，逐词……</li>
+<li>\underbars</li>
+<li>\overstrikes</li>
+<li>\understrikes</li>
+<li>\underrandom，不规则（随机）下画线</li>
+<li>\underrandoms</li>
+<li>\underdash，下画断线</li>
+<li>\underdashes</li>
+<li>\underdot，下画点线</li>
+<li>\underdots</li>
+<li>\nobar</li>
+<li>\hiddenbar</li>
+</ul>
+</li>
+<li>\definebar 自定义实例</li>
+<li>\resetbar 清楚</li>
 </ul>
 <p><strong>加框文本</strong></p>
 <ul>
