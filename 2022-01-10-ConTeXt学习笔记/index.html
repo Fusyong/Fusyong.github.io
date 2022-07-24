@@ -3131,6 +3131,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pdf" class="md-nav__link">
+    在pdf文件中添加附件
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3158,6 +3165,18 @@
     <li class="md-nav__item">
       <a href="../2022-05-28-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
         TEX学习笔记
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-06-22-ConTeXt-rule%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        ConTeXt rule学习笔记
       </a>
     </li>
   
@@ -3710,6 +3729,13 @@
         <li class="md-nav__item">
   <a href="#layer" class="md-nav__link">
     层 layer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pdf" class="md-nav__link">
+    在pdf文件中添加附件
   </a>
   
 </li>
@@ -5376,6 +5402,13 @@ the 21st century}}</p>
 <h2 id="layer">层 layer<a class="headerlink" href="#layer" title="Permanent link">#</a></h2>
 <p>元素可以拥有绝对位置，可以开关某些内容。供重复使用，比如用作背景。</p>
 <p>未写入正式文档。<a href="https://wiki.contextgarden.net/Layers">官方web文档</a></p>
+<h2 id="pdf">在pdf文件中添加附件<a class="headerlink" href="#pdf" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">\setupinteraction</span><span class="na">[state=start]</span>
+<span class="k">\attachment</span><span class="na">[file=\jobname.tex]</span>
+<span class="k">\starttext</span>
+<span class="k">\input</span> zapf
+<span class="k">\stoptext</span>
+</code></pre></div>
                 
                   
                 

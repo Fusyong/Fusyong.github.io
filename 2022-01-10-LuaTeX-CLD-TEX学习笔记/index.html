@@ -3239,8 +3239,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    结点资产Properties表
+  <a href="#property" class="md-nav__link">
+    结点资产Property表
   </a>
   
 </li>
@@ -4140,6 +4140,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../2022-06-22-ConTeXt-rule%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        ConTeXt rule学习笔记
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2022-02-18-uaTeX-LuaMetaTeX-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" class="md-nav__link">
         TEX系学习资源
       </a>
@@ -4806,8 +4818,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    结点资产Properties表
+  <a href="#property" class="md-nav__link">
+    结点资产Property表
   </a>
   
 </li>
@@ -5938,7 +5950,7 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 <tr>
 <td>char</td>
 <td>number</td>
-<td>字符的字体中的索引</td>
+<td>字符在字体中的索引</td>
 </tr>
 <tr>
 <td>font</td>
@@ -5973,12 +5985,12 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 <tr>
 <td>xoffset</td>
 <td>number</td>
-<td>水平的虚拟占位</td>
+<td>水平偏置</td>
 </tr>
 <tr>
 <td>yoffset</td>
 <td>number</td>
-<td>垂直的虚拟占位</td>
+<td>垂直偏置</td>
 </tr>
 <tr>
 <td>width</td>
@@ -6010,8 +6022,7 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 <p><code>is_char</code>函数用于检查结点是不是小类小于256的字符结点。
 其变体<code>is_glyph</code>，不检查小类是不是小于256，返回字符值/nil和id。</p>
 <p><code>uses_font</code>函数输入一个结点和字体id，如果字符结点或断行结点引用了字体，则返回true。</p>
-<p>属性attr可以携带跨越不同处理阶段的信息，一般用作标记，以便在后面的处理过程中能够识别。<a href="http://wiki.luatex.org/index.php/Attributes">参考</a>。</p>
-<p>比如存储边注标记，然后通过post_linebreak_filter回调，在段落构造好后再构造边注。参考<a href="http://wiki.luatex.org/index.php/Post_linebreak_filter">Post_linebreak_filter</a></p>
+<p>属性attr可以携带跨越不同处理阶段的信息，一般用作标记，以便在后面的处理过程中能够识别。<a href="http://wiki.luatex.org/index.php/Attributes">参考</a>。比如存储边注标记，然后通过post_linebreak_filter回调，在段落构造好后再构造边注。参考<a href="http://wiki.luatex.org/index.php/Post_linebreak_filter">Post_linebreak_filter</a></p>
 <p>n.char也是unicode码点（codepoint）字符，可以通过unicode.utf8.char(n.char)取得字符。</p>
 <p>跟结点有关的一些命令（基元）：</p>
 <table>
@@ -6051,7 +6062,7 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 <tr>
 <td>\kern</td>
 <td>kern</td>
-<td>horizontal or vertical fixed skip</td>
+<td>水平或垂直调整用的skip</td>
 </tr>
 <tr>
 <td>\discretionary</td>
@@ -6154,7 +6165,7 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 <tr>
 <td>leader</td>
 <td>node</td>
-<td>指向起头的盒子或界尺</td>
+<td>指向起头的盒子或条线</td>
 </tr>
 </tbody>
 </table>
@@ -6228,6 +6239,7 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 <p>小类是非正式的，TEX并不使用它们。当你碰到断行罚分（linebreakpenalty）时，你应该想到，它是club、widow（落单词）和其他相关惩罚的的累加。</p>
 <p>罚分用来控制断行（比如某些标点前后），-10000以下表示必须断行，10000以上表示禁止断行，其余中间值表示由引擎决定。</p>
 <h4 id="2_rule">2 rule<a class="headerlink" href="#2_rule" title="Permanent link">#</a></h4>
+<p>参看<a href="../2022-06-22-ConTeXt-rule%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">ConTeXt-rule学习笔记</a></p>
 <p>条线，铅条，铅线。
 LuaTEX会使用条线来存储可重用对象和图像，所以比tex \hrule和\vrule的小类多；user小类结点不可见，可以通过回调截取。支持的 字段有：attr, char, data, depth, font, height, left, right, width, xoffset and yoffset.</p>
 <table>
@@ -6252,17 +6264,17 @@ LuaTEX会使用条线来存储可重用对象和图像，所以比tex \hrule和\
 <tr>
 <td>width</td>
 <td>number</td>
-<td>界尺宽度，特殊值<code>−1073741824</code>用来处理胶的尺寸</td>
+<td>条线宽度，特殊值<code>−1073741824</code>用来处理胶的尺寸</td>
 </tr>
 <tr>
 <td>height</td>
 <td>number</td>
-<td>界尺高度 (可以是负值)</td>
+<td>条线高度 (可以是负值)</td>
 </tr>
 <tr>
 <td>depth</td>
 <td>number</td>
-<td>界尺深度 (可以是负值)</td>
+<td>条线深度 (可以是负值)</td>
 </tr>
 <tr>
 <td>left</td>
@@ -6277,7 +6289,7 @@ LuaTEX会使用条线来存储可重用对象和图像，所以比tex \hrule和\
 <tr>
 <td>dir</td>
 <td>string</td>
-<td>界尺方向，参看 8.2.15</td>
+<td>条线方向，参看 8.2.15</td>
 </tr>
 <tr>
 <td>index</td>
@@ -6761,11 +6773,13 @@ shrink and shrink_order. 都是数字。</p>
     tex.box[0].glue<span class="nb">_</span>set,
     tex.box[0].glue<span class="nb">_</span>sign,
     tex.box[0].glue<span class="nb">_</span>order,
-    tex.box[0].head.next,
+    tex.box[0].head,
     node.tail(tex.box[0].head)
 )) <span class="nb">}</span>
 </code></pre></div>
-<p>请记住，这是TEX中少数几个使用浮点数的地方之一，这意味着当你将hpack报告的宽度与尺寸进行比较时，你会得到四舍五入的微小差异。</p>
+<p>请记住，<strong>这是TEX中少数几个使用浮点数的地方之一</strong>，这意味着当你将hpack报告的宽度与尺寸进行比较时，你会得到四舍五入的微小差异。</p>
+<p><strong>请注意：</strong>node.dimensions、n.width测量的实际上是测量范围内所有元素的标记宽度，而不是视觉看到的实际宽度。也就是说，如果有禁则导致的glue correctionskip（负值，表示刨除不得不附加在盒子边界外的字符宽度）等，算上它们，只是盒子宽度；刨除它们（只计算到最后一个字模）才是视觉宽度，才可以探测overfull。</p>
+<p>清除行末负值干扰后，node.dimensions与重新hpack后得到的n.width一致，但<strong>hpack前预先n.width=nil，可消除双重框</strong>。</p>
 <p>另有便利的查询(在LMTX中为：node.direct.rangedimensions)：</p>
 <ul>
 <li><number> w, <number> h, <number> d=node.rangedimensions(<node> parent, <node> first)</li>
@@ -6881,6 +6895,7 @@ shrink and shrink_order. 都是数字。</p>
 <p><node> head, new =node.insert_before(<node> head, <node> current, <node> new)
 <node> head, new =node.insert_after(<node> head, <node> current, <node> new)</p>
 <p>head可以是nil。返回新的head。</p>
+<p><strong>删除和插入节点时，列表头始终应该更新为返回的新列表头。除非你确定列表头不可能变动！！！</strong></p>
 <h4 id="ligaturing">ligaturing应用合体字<a class="headerlink" href="#ligaturing" title="Permanent link">#</a></h4>
 <ul>
 <li><node> h, <node> t, <boolean> success =node.ligaturing(<node> n)</li>
@@ -6954,6 +6969,7 @@ shrink and shrink_order. 都是数字。</p>
 <p>界面<code>node.direct</code>中还有更多辅助工具。</p>
 <h4 id="_14">属性的处理<a class="headerlink" href="#_14" title="Permanent link">#</a></h4>
 <p><em>ltmx</em></p>
+<p><strong>属性是将额外的信息与节点联系起来的一种方便方式。</strong>你可以在TEX端和Lua端给它们赋值，并在Lua端查阅它们。<strong>一个很大的优点是它们服从分组。它们是链接在一起的列表，通常对它们的检查是相当有效的，即使它们的用量很大。一个宏包必须在TEX端提供一些方法来管理这些属性，否则可能会发生冲突。</strong>类似的，还可以使用资产表。</p>
 <p>对属性寄存器的赋值，会导致给结点设置过属性的列表赋值；这个应用很重要，因为附加到结点上的值基本上是一个（排序的）键值对散列数组。一般来说，通过使用node库中的专用函数来处理属性列表和属性是最容易的。</p>
 <p>当前激活的属性列表：</p>
 <p><node> m = node.currentattr()</p>
@@ -7003,8 +7019,20 @@ tex.setattribute(["global",] <register>, <number>)</p>
 \setbox0=\hbox attr 2 = 3 {contents}</p>
 <p>这个盒子（结点）及其内容的每个结点，具有attribute 0，值为1；但只有盒子结点具有attribute 2，值3。它的内容具有当前分配给该属性的任何值（很可能该属性未被设置）。</p>
 <p>attr关键字应该在to和spread之前。</p>
-<h4 id="properties">结点资产Properties表<a class="headerlink" href="#properties" title="Permanent link">#</a></h4>
-<p>结点还可以用于properties表，通过<code>node.setproperty()</code>和<code>node.getproperty()</code>函数控制，比管理Attributes要效率低些，但方便使用复杂数据。</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 给盒子设置资产表，携带字符char(效率较低，但可以使用复杂数据，比如表)</span>
+<span class="kd">local</span> <span class="n">n_char</span> <span class="o">=</span> <span class="n">n</span><span class="p">.</span><span class="n">char</span>
+<span class="kd">local</span> <span class="n">p</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="n">getproperty</span><span class="p">(</span><span class="n">hlist</span><span class="p">)</span>
+<span class="kr">if</span> <span class="ow">not</span> <span class="n">p</span> <span class="kr">then</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">setproperty</span><span class="p">(</span><span class="n">hlist</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="kr">end</span>
+<span class="n">p</span><span class="p">.</span><span class="n">char</span> <span class="o">=</span> <span class="n">n_char</span>
+
+<span class="c1">--给盒子设置属性{1：n.char}（效率更高，只能用整数）</span>
+<span class="n">node</span><span class="p">.</span><span class="n">setattribute</span><span class="p">(</span><span class="n">hlist</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_char</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="property">结点资产Property表<a class="headerlink" href="#property" title="Permanent link">#</a></h4>
+<p>除了属性，每个节点也可以有一个资产表（property table），你可以用setproperty函数给这个表赋值，用getproperty函数获取资产。<strong>管理资产比管理属性效率低，但方便使用复杂数据。</strong></p>
 <div class="highlight"><pre><span></span><code><span class="err">\</span><span class="n">directlua</span> <span class="p">{</span>
     <span class="kd">local</span> <span class="n">n</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;glyph&quot;</span><span class="p">)</span>
     <span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="n">getproperty</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -7019,6 +7047,12 @@ tex.setattribute(["global",] <register>, <number>)</p>
     <span class="n">node</span><span class="p">.</span><span class="n">free</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
+<p>There are a few helper functions that you normally should not touch as user: getpropertiestable and will give the table that stores properties (using direct entries) and you can best notmess too much with that one either because LuaTEX itself will make sure that entries related tonodes will get wiped when nodes get freed, so that the Lua garbage collector can do its job. Infact, the main reason why we have this mechanism is that it saves the user (or macro package)some work. One can easily write a property mechanism in Lua where after a shipout propertiesgets cleaned up but it's not entirely trivial to make sure that with each freed node also its properties get freed, due to the fact that there can be nodes left over for a next page. And having acallback bound to the node deallocator would add way to much overhead.</p>
+<p>When we copy a node list that has a table as property, there are several possibilities: we do thesame as a new node, we copy the entry to the table in properties (a reference), we do a deep copyof a table in the properties, we create a new table and give it the original one as a metatable.After some experiments (that also included timing) with these scenarios we decided that a deepcopy made no sense, nor did nilling. In the end both the shallow copy and the metatable variantwere both ok, although the second one is slower. The most important aspect to keep in mind isthat references to other nodes in properties no longer can be valid for that copy. We could usetwo tables (one unique and one shared) or metatables but that only complicates matters.</p>
+<p>When defining a new node, we could already allocate a table but it is rather easy to do that atthe lua end e.g. using a metatable __index method. That way it is under macro package control.When deleting a node, we could keep the slot (e.g. setting it to false) but it could make memoryconsumption raise unneeded when we have temporary large node lists and after that only smalllists. Both are not done because in the end this is what happens now: when a node is copied,and it has a table as property, the new node will share that table. The copy gets its own tablewith the original table as metatable.</p>
+<p>A few more experiments were done. For instance: copy attributes to the properties so that wehave fast access at the Lua end. In the end the overhead is not compensated by speed andconvenience, in fact, attributes are not that slow when it comes to accessing them. So this wasrejected.</p>
+<p>Another experiment concerned a bitset in the node but again the gain compared to attributeswas neglectable and given the small amount of available bits it also demands a pretty strongagreement over what bit represents what, and this is unlikely to succeed in the TEX community. It doesn't pay off.</p>
+<p>Just in case one wonders why properties make sense: it is not so much speed that we gain,but more convenience: storing all kinds of (temporary) data in attributes is no fun and thismechanism makes sure that properties are cleaned up when a node is freed. Also, the advantageof a more or less global properties table is that we stay at the Lua end. An alternative is to storea reference in the node itself but that is complicated by the fact that the register has somelimitations (no numeric keys) and we also don't want to mess with it too much.</p>
 <h3 id="tex">TeX相关库<a class="headerlink" href="#tex" title="Permanent link">#</a></h3>
 <h4 id="tex_1">tex库<a class="headerlink" href="#tex_1" title="Permanent link">#</a></h4>
 <h5 id="_15">简介<a class="headerlink" href="#_15" title="Permanent link">#</a></h5>
@@ -7425,11 +7459,6 @@ tex.setattribute(["global",] <register>, <number>)</p>
 <td></td>
 </tr>
 <tr>
-<td>hangafter</td>
-<td>number</td>
-<td>如果是正数，表示缩进开始前的行数；如果是负数，其绝对值是指从段落的第一行开始的缩进行数。默认值为1，在每个段落后恢复默认值1。</td>
-</tr>
-<tr>
 <td>interlinepenalty</td>
 <td>number or table</td>
 <td>if a table, then it is an array like \interlinepenalties</td>
@@ -7453,6 +7482,11 @@ tex.setattribute(["global",] <register>, <number>)</p>
 <td>emergencystretch</td>
 <td>number</td>
 <td>段落各行应用的额外拉伸。以sp计</td>
+</tr>
+<tr>
+<td>hangafter</td>
+<td>number</td>
+<td>如果是正数，表示缩进开始前的行数；如果是负数，其绝对值是指从段落的第一行开始的缩进行数。默认值为1，在每个段落后恢复默认值1。</td>
 </tr>
 <tr>
 <td>hangindent</td>
@@ -7492,7 +7526,7 @@ tex.setattribute(["global",] <register>, <number>)</p>
 <ul>
 <li>prevdepth： 断行后段落最后一行的深度；</li>
 <li>prevgraf：  断行后段落的行数；</li>
-<li>looseness：  断行后段落的实际松性looseness</li>
+<li>looseness：  断行后段落的实际松性looseness（比理想行数多出的行数）</li>
 <li>demerits：  所选方案的总缺点demerits</li>
 </ul>
 <p>请注意，有几件事你不能用这个函数来干预。除了通过pdfadjustspacing之外，你不能影响字体的伸缩，因为它的设置是在其他地方进行的。hbadness和hfuzz等同此。所有这些都在hpack程序中，它通过globals获取自己的变量。</p>
@@ -7530,6 +7564,35 @@ tex.setattribute(["global",] <register>, <number>)</p>
     <span class="n">lefthyphenmin</span>  <span class="o">=</span> <span class="n">tex</span><span class="p">.</span><span class="n">lefthyphenmin</span><span class="p">,</span>
     <span class="n">righthyphenmin</span> <span class="o">=</span> <span class="n">tex</span><span class="p">.</span><span class="n">righthyphenmin</span><span class="p">,</span>
 <span class="p">}</span>
+</code></pre></div>
+<p><a href="https://www.mail-archive.com/luatex@tug.org/msg03398.html">段落形状parshape</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 系统段落形状 tex.parshape ？？？空值</span>
+
+<span class="kr">function</span> <span class="nf">do_linebreak</span><span class="p">(</span> <span class="n">nodelist</span><span class="p">,</span><span class="n">hsize</span><span class="p">,</span><span class="n">parameters</span> <span class="p">)</span>
+  <span class="n">parameters</span> <span class="o">=</span> <span class="n">parameters</span> <span class="ow">or</span> <span class="p">{}</span>
+
+  <span class="kd">local</span> <span class="n">pdfignoreddimen</span>
+  <span class="n">pdfignoreddimen</span>    <span class="o">=</span> <span class="o">-</span><span class="mi">65536000</span>
+
+  <span class="kd">local</span> <span class="n">default_parameters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">hsize</span> <span class="o">=</span> <span class="n">hsize</span><span class="p">,</span>
+    <span class="n">emergencystretch</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">hsize</span><span class="p">,</span>
+    <span class="n">hyphenpenalty</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">linepenalty</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">pretolerance</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">tolerance</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span>
+    <span class="n">doublehyphendemerits</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="n">pdfeachlineheight</span> <span class="o">=</span> <span class="n">pdfignoreddimen</span><span class="p">,</span>
+    <span class="n">pdfeachlinedepth</span>  <span class="o">=</span> <span class="n">pdfignoreddimen</span><span class="p">,</span>
+    <span class="n">pdflastlinedepth</span>  <span class="o">=</span> <span class="n">pdfignoreddimen</span><span class="p">,</span>
+    <span class="n">pdfignoreddimen</span>   <span class="o">=</span> <span class="n">pdfignoreddimen</span><span class="p">,</span>
+    <span class="n">parshape</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">40</span><span class="o">*</span><span class="mi">2</span><span class="o">^</span><span class="mi">16</span><span class="p">},{</span><span class="mi">0</span><span class="p">,</span><span class="n">hsize</span><span class="p">}</span> <span class="p">}</span> <span class="c1">-- {{缩进,行宽},..}</span>
+  <span class="p">}</span>
+  <span class="nb">setmetatable</span><span class="p">(</span><span class="n">parameters</span><span class="p">,{</span><span class="n">__index</span><span class="o">=</span><span class="n">default_parameters</span><span class="p">})</span>
+  <span class="kd">local</span> <span class="n">j</span> <span class="o">=</span> <span class="n">tex</span><span class="p">.</span><span class="n">linebreak</span><span class="p">(</span><span class="n">nodelist</span><span class="p">,</span><span class="n">parameters</span><span class="p">)</span>
+
+<span class="p">...</span>
+<span class="kr">end</span>
 </code></pre></div>
 <h6 id="shipout">shipout<a class="headerlink" href="#shipout" title="Permanent link">#</a></h6>
 <p>tex.shipout(<number> n)</p>
@@ -7996,7 +8059,7 @@ token.set_macro(catcodetable,"csname")</p>
 <li>subtype 32768</li>
 <li>attr    &lt;node :    nil &lt;=   1220 =&gt;   1222 : attribute list&gt;</li>
 <li>char    65292</li>
-<li>font    1</li>
+<li>font    1 # 字体</li>
 <li>language        56</li>
 <li>lhmin   2</li>
 <li>rhmin   2</li>
@@ -8006,12 +8069,12 @@ token.set_macro(catcodetable,"csname")</p>
 <li>right   0</li>
 <li>xoffset 0</li>
 <li>yoffset 0</li>
-<li>xscale  1000</li>
-<li>yscale  1000</li>
+<li>xscale  1000 # x标尺</li>
+<li>yscale  1000 # y标尺</li>
 <li>width   786000 # 字体原始宽度1000的786倍，以下尺寸同理</li>
-<li>height  80958</li>
-<li>depth   145410</li>
-<li>total   226368</li>
+<li>height  80958 # 高</li>
+<li>depth   145410 # 深</li>
+<li>total   226368 # 净高（height+depth）</li>
 <li>expansion       0</li>
 <li>data    0</li>
 <li>script  1</li>
@@ -8020,14 +8083,41 @@ token.set_macro(catcodetable,"csname")</p>
 <li>next    &lt;node :   1233 &lt;=    550 =&gt;   1013 : kern userkern&gt;</li>
 <li>prev    &lt;node :    684 &lt;=    512 =&gt;   1233 : kern userkern&gt;</li>
 </ul>
-<p>fonts.hashes.quads[n.font] # 字框宽度 78600，等于n.width</p>
+<p>fonts.hashes.quads[n.font] # 方铅/字框宽度 78600，等于n.width</p>
 <p>::::fonts.hashes.identifiers[n.font]字体详情::::</p>
 <ul>
-<li>characters      table: 000004431ff4af80<ul>
-<li>各字符</li>
+<li>parameters      table: 000004431ff4b000  # 处理后的字体参数表<ul>
+<li>units   1000 # 每个em的单元数(units_per_em)</li>
+<li>factor  786 # 缩放因子/倍数</li>
+<li>vfactor 786 # 垂直缩放因子/倍数</li>
+<li>hfactor 786  # 高度缩放因子/倍数</li>
+<li>quad    786000 # 方铅宽度（descender + ascender; units * hfactor）</li>
+<li>descender       157200 # 字模格子的深度</li>
+<li>ascender        628800 # 字模格子的高度</li>
+<li>size    786432 # 尺寸（？？？）</li>
+<li>scaledpoints    786432 # 伸缩后pt</li>
+<li>textsize        786432</li>
+<li>forcedsize      0</li>
+<li>slantfactor     0.0</li>
+<li>extrafactor     1</li>
+<li>extendfactor    1.0</li>
+<li>squeezefactor   1.0</li>
+<li>designsize      655360.0</li>
+<li>minsize 655360.0</li>
+<li>maxsize 655360.0</li>
+<li>extraspace      65500.0</li>
+<li>spaceshrink     65500.0 # 收缩空（等于左右空白？？？）</li>
+<li>spacestretch    98250.0 # 拉伸空 spaceshrink * 1.5</li>
+<li>space   196500 # 等于spacestretch * 2</li>
+<li>mathsize        0</li>
+<li>expansion       table: 0000050c3f0e5dc0</li>
+<li>mode    0</li>
+<li>xheight 301824 # 小写x高度</li>
+<li>slant   0.0</li>
+<li>width   0</li>
 </ul>
 </li>
-<li>descriptions    table: 000004431ff4afc0<ul>
+<li>descriptions    table: 000004431ff4afc0 # 各字模的原始描述表<ul>
 <li>65292 # 字符号码，即n.char<ul>
 <li>unicode 65292 # 字符号码</li>
 <li>index   7629</li>
@@ -8035,8 +8125,8 @@ token.set_macro(catcodetable,"csname")</p>
 <li>depth   185  # 深</li>
 <li>width   1000 # 外框宽度</li>
 <li>vheight 1301 # 外框高度</li>
-<li>tsb     883  # topsidebearing 上字肩</li>
-<li>boundingbox     table: 00000241d041c3c0 # 内框两个顶点的坐标，原点为基线左端<ul>
+<li>tsb     883  # topsidebearing 上字肩（字上的承条/留空高度）</li>
+<li>boundingbox     table: 00000241d041c3c0 # 内框两个顶点(左下、右上)的坐标，原点为基线左端<ul>
 <li>1       181 # x1</li>
 <li>2       -185 # y1</li>
 <li>3       330 # x2</li>
@@ -8045,6 +8135,10 @@ token.set_macro(catcodetable,"csname")</p>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li>characters      table: 000004431ff4af80<ul>
+<li>所包含的各字符</li>
 </ul>
 </li>
 <li>specification   table: 000004431b506ec0<ul>
@@ -8056,10 +8150,10 @@ token.set_macro(catcodetable,"csname")</p>
 <li>mathsize        0</li>
 <li>scalemode       2</li>
 <li>detail  chinese</li>
-<li>source  ttf</li>
+<li>source  ttf # 字体源格式</li>
 <li>id      1</li>
 <li>size    786432</li>
-<li>name    stsong</li>
+<li>name    stsong # 字体名称</li>
 <li>filename        c:/windows/fonts/stsong.ttf</li>
 <li>goodies</li>
 <li>lookup  file</li>
@@ -8083,7 +8177,7 @@ token.set_macro(catcodetable,"csname")</p>
 <li>language        dflt</li>
 <li>writingmode     horizontal</li>
 <li>mode    base</li>
-<li>filename        c:/windows/fonts/stsong.ttf</li>
+<li>filename        c:/windows/fonts/stsong.ttf # 字体文件名</li>
 <li>name    stsong</li>
 <li>subfont 1</li>
 <li>script  dflt</li>
@@ -8119,37 +8213,6 @@ token.set_macro(catcodetable,"csname")</p>
 <li>unicodes        table: 00000206d5724b00</li>
 <li>duplicates      table: 00000206d5724400</li>
 <li>markclasses     table: 00000206d5724680</li>
-</ul>
-</li>
-<li>parameters      table: 000004431ff4b000<ul>
-<li>extendfactor    1.0</li>
-<li>squeezefactor   1.0</li>
-<li>descender       157200</li>
-<li>factor  786</li>
-<li>size    786432</li>
-<li>scaledpoints    786432</li>
-<li>forcedsize      0</li>
-<li>vfactor 786</li>
-<li>slantfactor     0.0</li>
-<li>space   196500</li>
-<li>minsize 655360.0</li>
-<li>designsize      655360.0</li>
-<li>maxsize 655360.0</li>
-<li>mathsize        0</li>
-<li>expansion       table: 0000050c3f0e5dc0</li>
-<li>spaceshrink     65500.0</li>
-<li>mode    0</li>
-<li>spacestretch    98250.0</li>
-<li>ascender        628800</li>
-<li>extraspace      65500.0</li>
-<li>quad    786000</li>
-<li>xheight 301824</li>
-<li>units   1000</li>
-<li>textsize        786432</li>
-<li>extrafactor     1</li>
-<li>hfactor 786</li>
-<li>slant   0.0</li>
-<li>width   0</li>
 </ul>
 </li>
 <li>unscaled        table: 000004431ff4ad00<ul>
@@ -8659,7 +8722,7 @@ end
 </tr>
 </tbody>
 </table>
-<p>其中，parameters是哈希表，但包含7个便捷索引：slant, space, spacestretch, spaceshrink, xheight, quad, extraspace。比如，通过结点字体（n.font）这样取得最终属性：</p>
+<p>其中，parameters是哈希表，但包含7个便捷索引：slant, space, spacestretch, spaceshrink, xheight（小写x高度）, quad(方铅宽度，即em), extraspace。比如，通过结点字体（n.font）这样取得最终属性：</p>
 <div class="highlight"><pre><span></span><code><span class="n">fonts</span><span class="p">.</span><span class="n">hashes</span><span class="p">.</span><span class="n">identifiers</span><span class="p">[</span><span class="n">n</span><span class="p">.</span><span class="n">font</span><span class="p">].</span><span class="n">parameters</span><span class="p">.</span><span class="n">xheight</span>
 </code></pre></div>
 <p>其中，characters表（字体定义的字模），整数键，字模结点的字符代码会引用这些键。包括如下键：</p>
