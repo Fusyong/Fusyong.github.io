@@ -2956,16 +2956,19 @@
                   <h1>ConTeXt LMTX中文竖排插件</h1>
                 
                 <p><em>欢迎加入本人建的"LuaTeX ConTeXt 学习互助"群：431714622，互助学习LuaTeX ConTeXt LaTeX相关技术，以及通过Lua、Python实现格式化文本、数据的自动排版。</em></p>
-<p>在做一个ConTeXt LMTX中文竖排/直书插件，也是我学习和练习LuaTeX与ConTeXt的项目。</p>
-<p>目前初步实现汉字和标点旋转、标点压缩、行间注拼音等功能。标点压缩是在<a href="https://www.jianshu.com/u/9442cefd1ef7">liyanrui</a>所作<a href="https://github.com/liyanrui/zhfonts">zhfonts</a>基础上改进的，谨致谢忱！</p>
-<p><img alt="xz" src="../img/2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/vtypesetting_callback_2.jpg" /></p>
+<p>在做一个ConTeXt LMTX中文竖排/直书插件，也是我学习和练习LuaTeX(实际用的其后继者LuaMetaTeX)与ConTeXt的项目。</p>
+<p>竖排相关的几个功能，如字符旋转、标点压缩、夹注，以及书名号、专名号等，基本完了。</p>
+<p>还有不少小问题。最重要的是，对tex.linebreak()的质量控制还不大熟悉，做夹注时流溢比较多，因此包含夹注的段落之断行质量可能还有不少问题。</p>
+<p>标点压缩是在<a href="https://www.jianshu.com/u/9442cefd1ef7">liyanrui</a>所作<a href="https://github.com/liyanrui/zhfonts">zhfonts</a>基础上改进的，谨致谢忱！</p>
 <p><img alt="xz" src="../img/2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/vtypesetting_callback_1.jpg" /></p>
+<p><img alt="xz" src="../img/2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/vtypesetting_callback_2.jpg" /></p>
 <p>详见代码库：</p>
 <ul>
-<li>改进后的<a href="https://github.com/Fusyong/zhfonts">zhfonts</a></li>
 <li><a href="https://github.com/Fusyong/vertical-typesetting">直排插件vertical-typesetting及样例库</a></li>
+<li>改进后的<a href="https://github.com/Fusyong/zhfonts">z标点压缩插件hfonts</a>，能与直排插件配合。</li>
+<li><a href="https://github.com/Fusyong/jiazhu">夹注插件jiazhu</a></li>
 </ul>
-<p>并请参考此前的文章<a href="../2022-01-14-ConTeXt-LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/">ConTeXt LMTX中文竖排思路</a></p>
+<p>并请参考此前的文章<a href="../2022-01-14-ConTeXt-LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/">ConTeXt LMTX中文竖排思路</a>（<em>旧了，最新思路见上述直排插件代码库</em>）</p>
                 
                   
                 

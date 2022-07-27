@@ -1568,9 +1568,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pygame" class="md-nav__link">
-    使用pygame方法的示例
+  <a href="#_4" class="md-nav__link">
+    常见问题
   </a>
+  
+    <nav class="md-nav" aria-label="常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pygame" class="md-nav__link">
+    杂用pygame的方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    窗口定位
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3066,9 +3086,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pygame" class="md-nav__link">
-    使用pygame方法的示例
+  <a href="#_4" class="md-nav__link">
+    常见问题
   </a>
+  
+    <nav class="md-nav" aria-label="常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pygame" class="md-nav__link">
+    杂用pygame的方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    窗口定位
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3362,13 +3402,24 @@
 
 <span class="n">pgzrun</span><span class="o">.</span><span class="n">go</span><span class="p">()</span>  <span class="c1"># 运行本脚本</span>
 </code></pre></div>
-<h2 id="pygame">使用pygame方法的示例<a class="headerlink" href="#pygame" title="Permanent link">#</a></h2>
+<h2 id="_4">常见问题<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
+<h3 id="pygame">杂用pygame的方法<a class="headerlink" href="#pygame" title="Permanent link">#</a></h3>
 <p>PygameZero比较简单，需要复杂功能又不想自己实现则可以直接用pygame。</p>
 <p>比如画椭圆：</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
     <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">screen</span><span class="o">.</span><span class="n">surface</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># screen.surface是PygameZero的屏幕纹理</span>
 </code></pre></div>
 <p><em>本处原有的资源列表已经移到<a href="../2021-06-09-PygameZero%E8%B5%84%E6%BA%90/">PygameZero资源</a></em></p>
+<h3 id="_5">窗口定位<a class="headerlink" href="#_5" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 必须在pygame.init()和import pgzrun之前：</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;SDL_VIDEO_CENTERED&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span> <span class="c1"># 居中。有报告说新版SDL无效</span>
+<span class="c1"># or</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;SDL_VIDEO_WINDOW_POS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span> <span class="c1"># 指定坐标</span>
+<span class="c1"># 还可以结合桌面尺寸pygame.display.get_desktop_sizes()（非显示器尺寸，而是系统设定的显示尺寸）来使用（可能需要手动重启pygame）</span>
+</code></pre></div>
+<p><a href="https://www.pygame.org/wiki/FrequentlyAskedQuestions">参考</a></p>
                 
                   
                 

@@ -7378,6 +7378,20 @@ tex.setattribute(["global",] <register>, <number>)</p>
 <h6 id="linebreak">linebreak分行<a class="headerlink" href="#linebreak" title="Permanent link">#</a></h6>
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="n">nodelist</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span> <span class="n">info</span> <span class="o">=</span> <span class="n">tex</span><span class="p">.</span><span class="n">linebreak</span><span class="p">(</span><span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="n">listhead</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span> <span class="n">parameters</span><span class="p">)</span>
 </code></pre></div>
+<p>2022-07-26，在使用<code>tex.linebreak()</code>前，可以使用准备函数<code>tex.preparelinebreak()</code>，为你的结点列表准备必要的东西：</p>
+<div class="highlight"><pre><span></span><code>&lt;par vmodepar&gt; -- 用户必须实现自行准备，否则无法找到插入点
+&lt;glue parinitleftskip&gt;
+&lt;glue parinitrightskip&gt;
+&lt;glue indentskip&gt; -- 用户必须实现自行准备，否则无法找到插入点
+...
+&lt;penalty linepenalty&gt; -- infinite penalty，原列表最后一个胶会被删除
+&lt;glue parfillleftskip&gt;
+&lt;glue parfillskip&gt; -- 与parfillrightskip相同
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">h</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">parinitleftskip</span><span class="p">,</span> <span class="n">parinitrightskip</span><span class="p">,</span> <span class="n">parfillleftskip</span><span class="p">,</span> <span class="n">parfillrightskip</span> <span class="o">=</span> <span class="n">tex</span><span class="p">.</span><span class="n">preparelinebreak</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">new_head</span> <span class="o">=</span> <span class="n">tex</span><span class="p">.</span><span class="n">linebreak</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+<span class="n">tex</span><span class="p">.</span><span class="n">show</span><span class="p">(</span><span class="n">new_head</span><span class="p">)</span> <span class="c1">-- 查看结果</span>
+</code></pre></div>
 <p>表参数parameters：</p>
 <table>
 <thead>
