@@ -3201,8 +3201,8 @@
 <p>适用于ConTeXt和LuaMetaTeX(LMTX， LuaTeX的后继者，ConTeXt当前的实际引擎)的夹注模块，可以配合<a href="../2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/">竖排功能和标点压缩功能</a>使用。调整后应该可用于LuaTeX。</p>
 <p>也是本人学习LuaMetaTeX、LuaTeX的练习项目，主要涉及：段落与行的结点列表的操控；使用tex.linebreak()函数等干预断行；使用回调函数。会保留较多学习性的注释和代码。</p>
 <h2 id="_1">效果<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p><img alt="" src="../img/2022-06-19-ConTeXt%E5%8F%8C%E8%A1%8C%E5%A4%B9%E6%B3%A8%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/2022-06-19-17-17-26.png" /></p>
-<p><img alt="" src="../img/2022-06-19-ConTeXt%E5%8F%8C%E8%A1%8C%E5%A4%B9%E6%B3%A8%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/2022-06-19-17-18-08.png" /></p>
+<p><img alt="xz" src="../img/2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/vtypesetting_callback_1.jpg" /></p>
+<p><img alt="xz" src="../img/2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/vtypesetting_callback_2.jpg" /></p>
 <h2 id="_2">术语<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p>术语参考<a href="https://github.com/CTeX-org/ctex-kit/blob/master/jiazhu/jiazhu.dtx">CTeX-org</a>：</p>
 <blockquote>
@@ -3264,11 +3264,12 @@ inline cutting note, 夹注/双行夹注 in simplified Chinese, 割注/warichū 
 <h2 id="cjk_1">cjk断行相关的系统文件：<a class="headerlink" href="#cjk_1" title="Permanent link">#</a></h2>
 <ul>
 <li>语言脚本：D:\venvs\context-win64\tex\texmf-context\tex\context\base\mkiv\scrp-cjk.lua</li>
-<li>行to段：D:\venvs\context-win64\tex\texmf-context\tex\context\base\mkiv\node-ltp.lua</li>
+<li>行to段（tex.linebreak）：D:\venvs\context-win64\tex\texmf-context\tex\context\base\mkiv\node-ltp.lua</li>
 </ul>
 <h2 id="texlinebreak">tex.linebreak的工作基于当前状态<a class="headerlink" href="#texlinebreak" title="Permanent link">#</a></h2>
 <p>https://www.mail-archive.com/dev-luatex@ntg.nl/msg01805.html</p>
 <p>It is basing itself on the current TeX state at that point in time (at least, that is what it should do). You can look up tex_run_linebreak() in ltexlib.c, it should be easy to follow.</p>
+<p>也参见<code>node-ltp.lua</code></p>
 <h2 id="hans">Hans论干预断行的思路<a class="headerlink" href="#hans" title="Permanent link">#</a></h2>
 <p>https://www.mail-archive.com/luatex@tug.org/msg04329.html</p>
 <blockquote>

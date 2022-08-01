@@ -6118,7 +6118,7 @@ A<span class="k">\hskip</span>4pt plus3pt minus 2pt B<span class="c">%</span>
 <tr>
 <td>stretchorder</td>
 <td>number</td>
-<td>拉伸量的系数/倍数（0即f，1即fi，2即fil...4即filll？？）</td>
+<td>拉伸量的系数/倍数（0即f，1即fi，2即fil...4即filll ？？）</td>
 </tr>
 <tr>
 <td>shrink</td>
@@ -7376,6 +7376,7 @@ tex.setattribute(["global",] <register>, <number>)</p>
 <h6 id="texresetparagraph">tex.resetparagraph<a class="headerlink" href="#texresetparagraph" title="Permanent link">#</a></h6>
 <p>重置段落。</p>
 <h6 id="linebreak">linebreak分行<a class="headerlink" href="#linebreak" title="Permanent link">#</a></h6>
+<p>见源码<code>node-ltp.lua</code></p>
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="n">nodelist</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span> <span class="n">info</span> <span class="o">=</span> <span class="n">tex</span><span class="p">.</span><span class="n">linebreak</span><span class="p">(</span><span class="o">&lt;</span><span class="n">node</span><span class="o">&gt;</span> <span class="n">listhead</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span> <span class="n">parameters</span><span class="p">)</span>
 </code></pre></div>
 <p>2022-07-26，在使用<code>tex.linebreak()</code>前，可以使用准备函数<code>tex.preparelinebreak()</code>，为你的结点列表准备必要的东西：</p>
@@ -7403,99 +7404,24 @@ tex.setattribute(["global",] <register>, <number>)</p>
 </thead>
 <tbody>
 <tr>
-<td>pardir</td>
-<td>string</td>
-<td>段落方向</td>
-</tr>
-<tr>
-<td>pretolerance</td>
-<td>number</td>
-<td>段落不断词的容忍值，tex默认100</td>
-</tr>
-<tr>
 <td>tracingparagraphs</td>
 <td>number</td>
 <td>如果是正值，则生成断行算法跟踪，见log</td>
 </tr>
 <tr>
-<td>tolerance</td>
+<td>hsize</td>
 <td>number</td>
-<td>断词段落中各行的容忍值，tex默认200，IniTEX默认10000</td>
-</tr>
-<tr>
-<td>looseness</td>
-<td>number</td>
-<td>本段必须比理想行数多出这么多行</td>
-</tr>
-<tr>
-<td>hyphenpenalty</td>
-<td>number</td>
-<td></td>
-</tr>
-<tr>
-<td>exhyphenpenalty</td>
-<td>number</td>
-<td></td>
-</tr>
-<tr>
-<td>pdfadjustspacing</td>
-<td>number</td>
-<td></td>
-</tr>
-<tr>
-<td>adjdemerits</td>
-<td>number</td>
-<td></td>
-</tr>
-<tr>
-<td>pdfprotrudechars</td>
-<td>number</td>
-<td></td>
-</tr>
-<tr>
-<td>linepenalty</td>
-<td>number</td>
-<td>每个断行的罚点，tex默认10</td>
-</tr>
-<tr>
-<td>lastlinefit</td>
-<td>number</td>
-<td>段落末行的调整率，乘以1000</td>
-</tr>
-<tr>
-<td>doublehyphendemerits</td>
-<td>number</td>
-<td></td>
-</tr>
-<tr>
-<td>finalhyphendemerits</td>
-<td>number</td>
-<td></td>
-</tr>
-<tr>
-<td>interlinepenalty</td>
-<td>number or table</td>
-<td>if a table, then it is an array like \interlinepenalties</td>
-</tr>
-<tr>
-<td>clubpenalty</td>
-<td>number or table</td>
-<td>if a table, then it is an array like \clubpenalties</td>
-</tr>
-<tr>
-<td>widowpenalty</td>
-<td>number or table</td>
-<td>if a table, then it is an array like \widowpenalties</td>
-</tr>
-<tr>
-<td>brokenpenalty</td>
-<td>number</td>
-<td></td>
+<td>在垂直盒子中排版时所用的行宽。以sp计</td>
 </tr>
 <tr>
 <td>emergencystretch</td>
 <td>number</td>
-<td>段落各行应用的额外拉伸。以sp计</td>
+<td>（为前两遍断行失败后尝试第三遍时）段落各行应用的额外拉伸。以sp计，比如0.1 * hsize</td>
+</tr>
+<tr>
+<td>pardir</td>
+<td>string</td>
+<td>段落方向</td>
 </tr>
 <tr>
 <td>hangafter</td>
@@ -7506,11 +7432,6 @@ tex.setattribute(["global",] <register>, <number>)</p>
 <td>hangindent</td>
 <td>number</td>
 <td>如果是正数，表示从左页边距开始缩进；如果是负数，是从右页边距开始缩进的负数。默认值为0pt，在每个段落之后都会恢复。以sp计</td>
-</tr>
-<tr>
-<td>hsize</td>
-<td>number</td>
-<td>在垂直盒子中排版时所用的行宽。以sp计</td>
 </tr>
 <tr>
 <td>leftskip</td>
@@ -7526,6 +7447,86 @@ tex.setattribute(["global",] <register>, <number>)</p>
 <td>parshape</td>
 <td>table</td>
 <td>段落形状表</td>
+</tr>
+<tr>
+<td>pretolerance</td>
+<td>number</td>
+<td>不断词段落的容忍值（坏性），tex默认100</td>
+</tr>
+<tr>
+<td>tolerance</td>
+<td>number</td>
+<td>断词段落中各行的容忍值（坏性），tex默认200</td>
+</tr>
+<tr>
+<td>looseness</td>
+<td>number</td>
+<td>本段必须比理想行数多出这么多行</td>
+</tr>
+<tr>
+<td>lastlinefit</td>
+<td>number</td>
+<td>段落末行的调整率，乘以1000</td>
+</tr>
+<tr>
+<td>pdfadjustspacing</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>pdfprotrudechars</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>interlinepenalty</td>
+<td>number or table</td>
+<td>行间罚点，TEX默认为0，可以是像 \interlinepenalties 样的数组构成的表</td>
+</tr>
+<tr>
+<td>linepenalty</td>
+<td>number</td>
+<td>每个断行的罚点，tex默认10</td>
+</tr>
+<tr>
+<td>hyphenpenalty</td>
+<td>number</td>
+<td>在一个断词点/连字符处断行的罚点，TEX默认为50</td>
+</tr>
+<tr>
+<td>exhyphenpenalty</td>
+<td>number</td>
+<td>当断点前文本为空时，在水平行连字符条目处分行的罚点，TEX默认为50</td>
+</tr>
+<tr>
+<td>clubpenalty</td>
+<td>number or table</td>
+<td>段首孤行罚点，TEX默认为150，可以是像 \clubpenalties  样的数组构成的表</td>
+</tr>
+<tr>
+<td>widowpenalty</td>
+<td>number or table</td>
+<td>断尾孤行罚点，TEX默认为150，可以是像 \widowpenalties 样的数组构成的表</td>
+</tr>
+<tr>
+<td>brokenpenalty</td>
+<td>number</td>
+<td>在断词行后分页的额外罚点，TEX默认为100</td>
+</tr>
+<tr>
+<td>finalhyphendemerits</td>
+<td>number</td>
+<td>倒数第二行有连字时附加的罚点，TEX默认为5000</td>
+</tr>
+<tr>
+<td>doublehyphendemerits</td>
+<td>number</td>
+<td>连续两行以连字符结束的罚点，TEX默认为10000</td>
+</tr>
+<tr>
+<td>adjdemerits</td>
+<td>number</td>
+<td>毗连两行的视觉不协调（Badness分类号差别大于1）的罚点，TEX默认为10000</td>
 </tr>
 </tbody>
 </table>

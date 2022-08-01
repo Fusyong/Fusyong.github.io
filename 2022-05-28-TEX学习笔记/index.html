@@ -2927,7 +2927,7 @@
         
           <li class="md-nav__item">
   <a href="#badness_1" class="md-nav__link">
-    坏度 Badness
+    坏度/坏性 Badness
   </a>
   
 </li>
@@ -3389,7 +3389,7 @@
         
           <li class="md-nav__item">
   <a href="#badness_1" class="md-nav__link">
-    坏度 Badness
+    坏度/坏性 Badness
   </a>
   
 </li>
@@ -3595,12 +3595,12 @@ Column A is <span class="k">\number\columnA</span> sp wide. <span class="c">% in
 <p>为效率起见，实际算法有简化。</p>
 <p>\badness记录了最近构造的盒子的坏度。</p>
 <h4 id="breaking">胶和断breaking<a class="headerlink" href="#breaking" title="Permanent link">#</a></h4>
-<p>TEX可以可以断行、断页于多种地方，一个这种地方是一个胶之前，然后此胶被丢弃。</p>
-<p>在Plain TEX中有两个宏，\hglue和\vglue，分别在水平和垂直模式下提供不消失的胶水。对于水平的情况，实际放置的是：</p>
+<p>TEX可以在一个胶之前断行、断页，然后此胶被丢弃。</p>
+<p>在Plain TEX中有两个宏，\hglue和\vglue，分别在水平和垂直模式下提供不消失的胶。对于水平的情况，实际放置的是：</p>
 <p>\vrule width 0pt \nobreak \hskip ...</p>
-<p>因为TEX在胶的前端断开，这个胶会一直附着在线条（rule）上，因此不会消失。实际的宏定义要复杂一些，因为它们要注意保留 \spacefactor 和 \prevdepth。</p>
+<p>因为TEX在胶的前面断开，这个胶会一直附着在条线（rule）上，因此不会消失。实际的宏定义要复杂一些，因为它们要注意保留 \spacefactor 和 \prevdepth。</p>
 <h4 id="kern">字间 \kern<a class="headerlink" href="#kern" title="Permanent link">#</a></h4>
-<p>字间相当于不能伸缩的胶，并且不是合法的断点。比如：</p>
+<p>字间相当于不能伸缩的胶，但不是合法断点。比如：</p>
 <p>.. text .. \hbox{a}\kern0pt\hbox{b}</p>
 <p>以上盒子间不能断开；</p>
 <p>.. text .. \hbox{a}\hskip0pt\hbox{b}</p>
@@ -3609,11 +3609,11 @@ Column A is <span class="k">\number\columnA</span> sp wide. <span class="c">% in
 <h4 id="modes">胶与模式modes<a class="headerlink" href="#modes" title="Permanent link">#</a></h4>
 <p>所有水平skip命令都是⟨horizontal command⟩，所有垂直skip命令都是⟨vertical command⟩。这就是说，比如\hskip用在垂直模式中，TEX就会开始一个新段落。\kern命令可以用在两种模式中。</p>
 <h4 id="backspacing">列表尾胶：尾空backspacing<a class="headerlink" href="#backspacing" title="Permanent link">#</a></h4>
-<p>列表中的最后一个胶是可以测量的，可以移除，除非在外部垂直模式下。内部变量 \lastskip 和 \lastkern 可以用来测量所有模式下的最后一个胶；如果最后一个胶水不是skip或kern，它们分别给出0pt。在数学模式下，\lastskip的功能是⟨internal muglue⟩，但在一般情况下，它归类为⟨internal glue⟩。</p>
+<p>列表中的最后一个胶是可以测量的，可以移除，除非在外部垂直模式下。内部变量 \lastskip 和 \lastkern 可以用来测量所有模式下的最后一个胶；如果最后一个胶不是skip或kern，它们分别给出0pt。在数学模式下，\lastskip的功能是⟨internal muglue⟩，但在一般情况下，它归类为⟨internal glue⟩。</p>
 <p>如果测的是列表最后的glue或kern，\lastskip和\lastkern也是0pt。</p>
 <p>\unskip和\unkern操作，分别移除列表最后的glue和kern。它们在外部垂直模式下无效；此时最好的替代方法是\vskip-\lastskip和\kern-\lastkern。</p>
 <p>在段落构造过程中，TEX自身执行一个重要的\unskip: 一个以空白行结尾的段落会被TEX的输入处理器插入一个空格token。在插入 \parfillskip 胶之前，它将被 \unskip 移除。</p>
-<p>胶会被TEX当做铅条（leader）的一个特例，对铅条应用\unskip时显然会删除他们。</p>
+<p>胶会被TEX当做铅条（leader）的一个特例，对铅条应用\unskip时自然会删除铅条。</p>
 <h4 id="_4">尾空的例子<a class="headerlink" href="#_4" title="Permanent link">#</a></h4>
 <p>宏\removelastskip的定义是：</p>
 <p>\ifdim\lastskip=0pt \else \vskip-\lastskip \fi</p>
@@ -3647,19 +3647,19 @@ Column A is <span class="k">\number\columnA</span> sp wide. <span class="c">% in
 <li>\linepenalty 与每次断行相关的罚点。默认为10。</li>
 <li>\hyphenpenalty 通常情况下，在一个连字符处断行的罚点。默认值为50。</li>
 <li>\exhyphenpenalty，当断点前文本为空时，在水平行连字符条目处分行的罚点。默认50。</li>
-<li>\adjdemerits，毗连的视觉不协调行的罚点。默认10000。</li>
+<li>\adjdemerits，毗连行的视觉不协调的罚点。默认10000。</li>
 <li>\doublehyphendemerits，连续以连字符结束的行的罚点。默认10000。</li>
 <li>\finalhyphendemerits 倒数第二行有连字时加入的罚点。默认5000。</li>
 <li>\allowbreak，插入\penalty0，生成断点。</li>
 <li>\pretolerance 一个无连字符段落的坏性容忍的值。默认100。</li>
 <li>\tolerance 一个无连字符段落中的每行的坏性容忍值。默认为200。</li>
-<li>\looseness 本段落理想的最少行数。</li>
+<li>\looseness 超过理想行数的行数（可以是负值）。</li>
 <li>\prevgraf 最近加入垂直列表的段落的行数。</li>
 </ul>
 <h3 id="_8">段落的断行成本计算<a class="headerlink" href="#_8" title="Permanent link">#</a></h3>
 <p>分行构造一个段落，为的是与断行相关的总扣分d最小。一个段落的总扣分值是各个行的扣分值的总和，再加上一些可能的额外罚点。将一个段落作为一个整体来考虑，而不是逐行断开，可以导致更好的断行：TEX可以选择在段落的开始部分取一个稍微不那么漂亮的行，以避免以后出现更大的麻烦。对于每一行的扣分是由拉伸或收缩到断行处的坏度b和与断行有关的罚点p计算出来的。坏度不允许超过某个预先设定的容许值。除了对单个行的断行进行扣分外，TEX还对行的组合方式进行扣分。</p>
 <p>TEX段落分行算法的实现，参见：D.E. Knuth and M.F. Plass. Breaking paragraphs into lines. <em>Software practice and experience</em>, 11:1119–1184, 1981.</p>
-<h4 id="badness_1">坏度 Badness<a class="headerlink" href="#badness_1" title="Permanent link">#</a></h4>
+<h4 id="badness_1">坏度/坏性 Badness<a class="headerlink" href="#badness_1" title="Permanent link">#</a></h4>
 <p>根据行中表示的拉伸或收缩与实际使用的拉伸或收缩之间的比值，算出在某一点断行的坏度。坏度是断行的重要因素。</p>
 <p>坏度也用于断开垂直列表，这里仅讨论断行。</p>
 <p>描述坏度的术语：</p>
@@ -3669,16 +3669,16 @@ Column A is <span class="k">\number\columnA</span> sp wide. <span class="c">% in
 <li>loose (1)，松，指任何拉伸行坏度 b ≥ 13，即至少使用了拉伸量的一半。</li>
 <li>very loose (0)，很松，指任何拉伸行坏度 b ≥ 100，即尽数或超额使用了拉伸量。请记住，胶可以拉伸超过许可量，但不能收缩超过许可量。</li>
 </ul>
-<p>该计数用于跟踪输出，也用于以下定义：如果相邻两行的分类相差超过1，则称这两行视觉上不兼容（visually incompatible）。与此相关的\adjdemerits参数见下文。</p>
+<p>该计数用于跟踪输出，也用于以下定义：如果相邻两行的分类号数相差超过1，则称这两行视觉上不协调（visually incompatible）。与此相关的\adjdemerits参数见下文。</p>
 <p>如果发生溢出的水平盒子和垂直盒子的宽度或高度分别小于 \hfuzz 或 \vfuzz，则忽视；如果坏度小于 \hbadness 或 \vbadness，则不报告。</p>
 <h4 id="penalt">罚点Penalt和其他断开位置<a class="headerlink" href="#penalt" title="Permanent link">#</a></h4>
 <p>水平列表的可能断点（breakpoints）：</p>
 <ol>
-<li>在罚点penalty处。罚点是此处断行的美学代价（aesthetic cost）。负罚点被看做红利。罚点10000或更多，则禁止断行；罚点−10000或更少，则强制断行。在一行中放置一个以上的罚点，相当于只放置一个最小值的罚点，因为这个罚点是断行的最佳候选。水平模式下的惩点是由用户（或用户宏）插入的。唯一的例外是在\parfillskip胶之前插入的\nobreak。</li>
+<li>在罚点penalty处。罚点是此处断行的美学代价（aesthetic cost）。负罚点被看做红利。罚点10000或更多，则禁止断行；罚点−10000或更少，则强制断行。连续放置一个以上的罚点，相当于只放置一个最小值的罚点，因为这个罚点是断行的最佳候选。水平模式下的罚点是由用户（或用户宏）插入的。唯一的例外是在\parfillskip胶之前插入的\nobreak。</li>
 <li>在胶glue处，如果胶不是数学公式的一部分，并且前面有一个不可丢弃（non-discardable）项。在胶处断行是没有惩罚的。不可丢弃的前项这个条件是必须的，否则可能在两个胶之间断行，这将导致段落的边缘出现锯齿。</li>
-<li>在字间kern处, 如果字间不是数学公式的一部分，并且后续是胶。在字间处断行没有罚点。</li>
-<li>在数学关（math-off）处，如果后续是胶。因为“数学关”（和“数学开”，math-on）用作字间，这很像上一条。在“数学关”处断行没有罚点。</li>
-<li>在断字（discretionary break）处。其罚点是\hyphenpenalty或\exhyphenpenalty。 后当论及。</li>
+<li>在字间kern+胶glue处, 如果字间不是数学公式的一部分。在字间处断行没有罚点。</li>
+<li>在数学关（math-off）+胶glue处。因为“数学关”（和“数学开”，math-on）用作字间，这很像上一条。在“数学关”处断行没有罚点。</li>
+<li>在词语断字（discretionary break）处。其罚点是\hyphenpenalty或\exhyphenpenalty。 后当论及。</li>
 </ol>
 <p>任何可丢弃材料，跟随在断点——胶、字间、数学开/关、罚点——之后时，将被丢弃。如果你知道在胶（kern, math-on/off）处断行实际发生在胶的前端，这就意味着这个胶在断行中会消失。</p>
 <h4 id="demerit">缺点 Demerit<a class="headerlink" href="#demerit" title="Permanent link">#</a></h4>
@@ -3688,14 +3688,14 @@ Column A is <span class="k">\number\columnA</span> sp wide. <span class="c">% in
 (l + b)^2 - p^2 &amp; if &amp; -10000 &lt; p &lt; 0 \
 (l + b)^2       &amp; if &amp; p \le -10000 \
 \end{cases}$$</p>
-<p>段落的缺点是各行缺点的综合，再加上：</p>
+<p>段落的缺点是各行缺点的总合，再加上：</p>
 <ul>
-<li>所有\adjdemerits</li>
-<li>所有\doublehyphendemerits</li>
-<li>和\finalhyphendemerits</li>
+<li>所有\adjdemerits（毗连行不协调罚点）</li>
+<li>所有\doublehyphendemerits（连续断词行罚点）</li>
+<li>和\finalhyphendemerits（倒数第二行断词罚点）</li>
 </ul>
 <h4 id="_9">段落的行数<a class="headerlink" href="#_9" title="Permanent link">#</a></h4>
-<p>\prevgraf，可以用来影响悬挂缩进、段落形状等。</p>
+<p>\prevgraf，可以与悬挂缩进、段落形状等联合使用，以影响TEX的决定过程。</p>
 <h4 id="_10">行间<a class="headerlink" href="#_10" title="Permanent link">#</a></h4>
 <p>段落机制把行打包为水平盒子，然后添加到垂直列表中。结果的垂直条目序列如下重复：</p>
 <ul>
@@ -3710,10 +3710,10 @@ Column A is <span class="k">\number\columnA</span> sp wide. <span class="c">% in
 <h4 id="_12">三遍<a class="headerlink" href="#_12" title="Permanent link">#</a></h4>
 <p>一遍，尝试不不断词的断行成段，如果每一行的坏性都没有超过\pretolerance则成功。</p>
 <p>否则二遍，插入断词断点，应用\tolerance。如果\pretolerance是负值，则忽略一遍。</p>
-<p>如果一、二遍都失败，还可以让TEX做第三遍。如果\emergencystretch是正值尺寸，TEX将应用这么多的额外拉伸可能性于每一行，因此计算坏性和缺点。哪些解决方法略微超过容忍值者，于是成为可取者。不过，非\emergencystretch尺寸的胶都没有实际表达，不满盒子的信息还会出现。</p>
+<p>如果一、二遍都失败，还可以让TEX做第三遍。如果\emergencystretch是正值尺寸，TEX将应用这么多的额外拉伸可能性于每一行，因此计算坏性和缺点。哪些解决方法略微超过容忍值者，于是成为可取者。不过，并没有使用一个胶来表达\emergencystretch的尺寸，因此盒子不满的信息可能会出现。</p>
 <h4 id="_13">容忍值<a class="headerlink" href="#_13" title="Permanent link">#</a></h4>
-<p>有多少麻烦TEX将遭遇于排版一段文字时，部分据于容忍值。因此明智的是，稍微了解坏性在视觉术语中的意义。</p>
-<p>对于拉伸后的行，坏性是100乘以拉伸率的立方。因此坏性800意味着，拉伸率是2。如果空格如下，以10点Computer Modern字体为例,</p>
+<p>TEX排版一段文字时会遇到多少麻烦，部分基于容忍值。因此明智的是，稍微了解坏性在视觉术语中的意义。</p>
+<p><strong>对于拉伸后的行，坏性是100乘以拉伸率的立方。因此坏性800意味着，拉伸率是2。</strong> 如果空格如下，以10点Computer Modern字体为例,</p>
 <p>3.33pt plus 1.67pt minus 1.11pt</p>
 <p>坏性800意味着所有空格被拉伸为：</p>
 <p>3.33pt + 2 × 1.67pt = 6.66pt</p>
@@ -3722,11 +3722,11 @@ Column A is <span class="k">\number\columnA</span> sp wide. <span class="c">% in
 <p>TEX会在段落的最后一个元素后隐式插入\parfillskip的等价物：</p>
 <p>\unskip \penalty10000 \hskip\parfillskip</p>
 <p>\unskip用于移除段末的假胶，比如由行尾生成的空白，当\par由输入处理器插入时。</p>
-<p>\parfillskip在纯TEX中是一级无限胶（first-order infinite，0pt plus 1fil），所以段末是<code>\hfil$\bullet$\par</code>时，bullet将处于最后一个词语到行末的半中间；段末是<code>\hfill$\bullet$\par</code>时，则被冲到右边。</p>
+<p><strong>\parfillskip在纯TEX中是一级无限胶（first-order infinite，0pt plus 1fil），所以段末是<code>\hfil$\bullet$\par</code>时，bullet将处于最后一个词语到行末的半中间；段末是<code>\hfill$\bullet$\par</code>时，则被冲到右边。</strong></p>
 <h2 id="_15">空格<a class="headerlink" href="#_15" title="Permanent link">#</a></h2>
 <h2 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link">#</a></h2>
 <h2 id="relax">\relax<a class="headerlink" href="#relax" title="Permanent link">#</a></h2>
-<p>命令解析终止标记，以免有歧义（有些命令还能接收更多参数）。</p>
+<p>命令解析终止标记，以免继续解析造成歧义（有些命令还能接收更多参数）。</p>
 <h2 id="glue">glue 胶<a class="headerlink" href="#glue" title="Permanent link">#</a></h2>
 <p>TEX中的内容都以盒子的形式存在，水平盒子之间由胶连接，还有其他的元素，构成水平列表；水平列表再如此构成垂直列表。</p>
 <p>Glue如同弹簧一样，有三个属性：自然空间（space）；拉伸（stretch）能力；收缩（shrink）能力。只有当行、列版面糟糕的时候才会按比例拉伸和收缩。拉伸值最终可能被系统突破，而收缩值不会被突破。glue一旦设定（setting）后，就不变了。</p>
