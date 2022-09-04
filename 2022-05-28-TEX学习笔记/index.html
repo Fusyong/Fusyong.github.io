@@ -3708,9 +3708,9 @@ Column A is <span class="k">\number\columnA</span> sp wide. <span class="c">% in
 <p>TEX试图以这样的方式来分割段落，即每行的坏性（badness）不超过一定的容忍值（tolerance）。如果存在一个以上的解决方案，那么就取其缺点（demerits）最少的一个。</p>
 <p>通过设置\tracingparagraphs为正值，可以使TEX在日志文件中报告段落机制的计算结果。一些TEX的实现可能会禁用这个选项以使TEX运行得更快。</p>
 <h4 id="_12">三遍<a class="headerlink" href="#_12" title="Permanent link">#</a></h4>
-<p>一遍，尝试不不断词的断行成段，如果每一行的坏性都没有超过\pretolerance则成功。</p>
+<p>一遍，尝试不不断词的断行成段，如果每一行的坏性都没有超过\pretolerance 则成功。</p>
 <p>否则二遍，插入断词断点，应用\tolerance。如果\pretolerance是负值，则忽略一遍。</p>
-<p>如果一、二遍都失败，还可以让TEX做第三遍。如果\emergencystretch是正值尺寸，TEX将应用这么多的额外拉伸可能性于每一行，因此计算坏性和缺点。哪些解决方法略微超过容忍值者，于是成为可取者。不过，并没有使用一个胶来表达\emergencystretch的尺寸，因此盒子不满的信息可能会出现。</p>
+<p>如果一、二遍都失败，还可以让TEX做第三遍。如果\emergencystretch是正值尺寸，TEX将应用这么多的额外拉伸可能性于每一行，据此计算坏性和缺点。哪些较少超过容忍值的解决方法，此时被选用。不过，并没有使用一个胶来表达\emergencystretch的尺寸，因此盒子不满的信息可能会出现。</p>
 <h4 id="_13">容忍值<a class="headerlink" href="#_13" title="Permanent link">#</a></h4>
 <p>TEX排版一段文字时会遇到多少麻烦，部分基于容忍值。因此明智的是，稍微了解坏性在视觉术语中的意义。</p>
 <p><strong>对于拉伸后的行，坏性是100乘以拉伸率的立方。因此坏性800意味着，拉伸率是2。</strong> 如果空格如下，以10点Computer Modern字体为例,</p>

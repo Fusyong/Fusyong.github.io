@@ -7611,7 +7611,7 @@ tex.setattribute(["global",] <register>, <number>)</p>
 </code></pre></div>
 <h6 id="shipout">shipout<a class="headerlink" href="#shipout" title="Permanent link">#</a></h6>
 <p>tex.shipout(<number> n)</p>
-<p>把n号盒子送到输出文件，清楚盒子寄存器。</p>
+<p>把n号盒子送到输出文件，清除盒子寄存器。</p>
 <h6 id="getpagestate">getpagestate<a class="headerlink" href="#getpagestate" title="Permanent link">#</a></h6>
 <p>以整数值报告当前页的阶段（state）: empty, box_there or inserts_only。</p>
 <h6 id="getlocallevel">getlocallevel<a class="headerlink" href="#getlocallevel" title="Permanent link">#</a></h6>
@@ -9581,7 +9581,6 @@ serif
 </ul>
 <p>TeX中的信息同步，还需要配置<code>logs.messenger</code></p>
 <h3 id="lua_4">Lua 函数<a class="headerlink" href="#lua_4" title="Permanent link">#</a></h3>
-<p>查看内置函数：<code>inspect(somevar)</code></p>
 <h4 id="table">table<a class="headerlink" href="#table" title="Permanent link">#</a></h4>
 <p>LuaTeX的函数：</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 表项拼接为文本</span>
@@ -9609,12 +9608,16 @@ serif
 <span class="c1">-- t={ &quot;c&quot;, &quot;b&quot;, &quot;a&quot; }</span>
 </code></pre></div>
 <p>内置函数：</p>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="n">sorted</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 排序</span>
+<span class="kd">local</span> <span class="n">a</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="n">sorted</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
 <span class="c1">-- 取键值</span>
 <span class="kd">local</span> <span class="n">s</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="n">keys</span> <span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="kd">local</span> <span class="n">s</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="n">sortedkeys</span> <span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="kd">local</span> <span class="n">s</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="n">sortedhashkeys</span> <span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="c1">-- 追踪/打印/查看表格内容</span>
+<span class="n">inspect</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 
 <span class="c1">-- 迭代器（与sortedpairs同义，以便与pairs、ipairs相对） </span>
 <span class="kr">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="kr">in</span> <span class="n">table</span><span class="p">.</span><span class="n">sortedhash</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="kr">do</span>
