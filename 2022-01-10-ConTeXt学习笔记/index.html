@@ -3244,6 +3244,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../2022-09-23-metapost-luametafun-examples/" class="md-nav__link">
+        metapost用例
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2022-09-13-Understanding-underfull-and-overfull-box-warnings/" class="md-nav__link">
         理解未满盒子和溢出盒子的警告信息
       </a>
@@ -5236,8 +5248,13 @@ Two-two won one too.
 <p><strong>脚注、尾注、边注、行号注、局部注</strong></p>
 <p><strong>分栏：</strong></p>
 <ul>
+<li>\startmixedcolumns ... \stopmixedcolumns<ul>
+<li>\startitemgroupcolumns ... \stopitemgroupcolumns</li>
+<li>\startboxedcolumns ... \stopboxedcolumns</li>
 <li>\startcolumns[Configuration] ...\column...\stopcolumns</li>
 <li>\setupcolumns[Configuration]</li>
+</ul>
+</li>
 </ul>
 <p><strong>并行段落</strong></p>
 <p><strong>有结构列表</strong></p>
@@ -5286,6 +5303,7 @@ Two-two won one too.
 <ul>
 <li>\inframed 文字齐行</li>
 <li>\framed 框底齐行</li>
+<li>\framedtext, 宽度默认为0.75\hsize</li>
 <li>\startframedtext</li>
 </ul>
 <p><strong>可重用的缓存文本</strong></p>
@@ -5307,6 +5325,10 @@ Two-two won one too.
 <li>standardmakeup标准修饰  如每页有文件名</li>
 </ul>
 <h2 id="_36">图像、表格和其他浮动对象<a class="headerlink" href="#_36" title="Permanent link">#</a></h2>
+<ul>
+<li>\externalfigure[img.jpg]</li>
+<li>\placefigure[Options][Label] {Title} {Image}</li>
+</ul>
 <h2 id="zhfonts">zhfonts<a class="headerlink" href="#zhfonts" title="Permanent link">#</a></h2>
 <p>标点压缩和字体设置模块</p>
 <p><a href="https://github.com/Fusyong/zhfonts">项目地址</a>，
@@ -5520,6 +5542,8 @@ context --global m-directives.mkiv
 </ul>
 </li>
 </ul>
+<p><strong>缺字跟踪</strong></p>
+<p>\enabletrackers[fonts.missing]</p>
 <p><strong>缺字替换</strong></p>
 <p><code>\replacemissingcharacters</code></p>
 <p>缺字体时替换为方块，并且可以拷贝、搜索。</p>
