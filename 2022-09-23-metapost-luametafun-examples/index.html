@@ -3055,22 +3055,23 @@
                   <h1>metapost用例</h1>
                 
                 <p>我的metapost用例。可能包含从各处抄来又忘记了出处的片段。</p>
-<p>我主要的使用环境是ConTeXt，因此包含ConTeXt、luametafun、metafun、metapost的代码，请注意分辨。</p>
+<p>我主要的使用环境是ConTeXt，因此实际包含的是ConTeXt、luametafun(兼容metafun、metapost)、lua的代码，并尽可能在lua端处理，请注意分辨。</p>
 <h2 id="wordslink">wordslink<a class="headerlink" href="#wordslink" title="Permanent link">#</a></h2>
 <p><img alt="" src="../img/2022-09-23-metapost-luametafun-examples/Snipaste_2022-09-23_21-28-21.jpg" /></p>
 <p>ConTeXt文档：</p>
 <div class="highlight"><pre><span></span><code><span class="c">% 字体设置</span>
-<span class="k">\usetypescriptfile</span><span class="na">[mscore]</span>
-<span class="k">\usebodyfont</span>   [mschinese,18pt]
+<span class="k">\usetypescriptfile</span>  [mscore]
+<span class="k">\usebodyfont</span>        [mschinese,18pt]
 
-<span class="c">% 导入模块</span>
+<span class="c">% 导入lua模块MPwordslink.lua</span>
 <span class="k">\startluacode</span>
-require &quot;MPwordslink&quot;
+    require &quot;MPwordslink&quot;
 <span class="k">\stopluacode</span>
+
 <span class="c">% 定义宏</span>
 <span class="k">\def\wordslink</span><span class="na">[#1,#2,#3]</span><span class="nb">{</span>
     <span class="k">\startMPcode</span>
-    lua.MP.wordslink(#1,#2,#3) ;
+        lua.MP.wordslink(#1,#2,#3) ;
     <span class="k">\stopMPcode</span>
 <span class="nb">}</span>
 
@@ -3078,24 +3079,25 @@ require &quot;MPwordslink&quot;
 
 
 <span class="k">\startcolumns</span><span class="na">[n=3]</span>
-<span class="k">\wordslink</span><span class="na">[&quot;认&quot;,&quot;认识；认得；认不得；&quot;,                         &quot;0.7&quot;]</span>
-<span class="k">\wordslink</span><span class="na">[&quot;字&quot;,&quot;识字；认字；名字；生字；&quot;,                         &quot;0.7&quot;]</span>
-<span class="k">\wordslink</span><span class="na">[&quot;名&quot;,&quot;点名；几名；有名；名人；书名；&quot;,                       &quot;0.7&quot;]</span>
-<span class="k">\wordslink</span><span class="na">[&quot;草&quot;,&quot;草地；花草；花花草草；草鱼；&quot;,                     &quot;0.7&quot;]</span>
-<span class="k">\wordslink</span><span class="na">[&quot;自&quot;,&quot;自己；自个r；自学；不自在；自小；自来水；&quot;,                &quot;0.7&quot;]</span>
+<span class="k">\wordslink</span><span class="na">[&quot;认&quot;,&quot;认识；认得；认不得；&quot;,                     &quot;0.7&quot;]</span>
+<span class="k">\wordslink</span><span class="na">[&quot;字&quot;,&quot;识字；认字；名字；生字；&quot;,                 &quot;0.7&quot;]</span>
+<span class="k">\wordslink</span><span class="na">[&quot;名&quot;,&quot;点名；几名；有名；名人；书名；&quot;,               &quot;0.7&quot;]</span>
+<span class="k">\wordslink</span><span class="na">[&quot;草&quot;,&quot;草地；花草；花花草草；草鱼；&quot;,             &quot;0.7&quot;]</span>
+<span class="k">\wordslink</span><span class="na">[&quot;自&quot;,&quot;自己；自个r；自学；不自在；自小；自来水；&quot;,    &quot;0.7&quot;]</span>
 <span class="k">\wordslink</span><span class="na">[&quot;读&quot;,&quot;读书；&quot;,                                   &quot;0.7&quot;]</span>
-<span class="k">\wordslink</span><span class="na">[&quot;鱼&quot;,&quot;小鱼；小鱼r；鱼头；&quot;,                          &quot;0.7&quot;]</span>
-<span class="k">\wordslink</span><span class="na">[&quot;鸟&quot;,&quot;小鸟；小鸟r；鸟叫；&quot;,                          &quot;0.7&quot;]</span>
+<span class="k">\wordslink</span><span class="na">[&quot;鱼&quot;,&quot;小鱼；小鱼r；鱼头；&quot;,                      &quot;0.7&quot;]</span>
+<span class="k">\wordslink</span><span class="na">[&quot;鸟&quot;,&quot;小鸟；小鸟r；鸟叫；&quot;,                      &quot;0.7&quot;]</span>
 <span class="k">\stopcolumns</span>
 
 <span class="k">\stoptext</span>
 </code></pre></div>
 <p>lua模块：</p>
-<div class="highlight"><pre><span></span><code><span class="c1">-- utf8.lua模块见 https://gist.github.com/markandgo/5776124</span>
-<span class="kd">local</span> <span class="n">utf8</span> <span class="o">=</span> <span class="nb">require</span> <span class="s2">&quot;utf8&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 保存为MPwordslink.lua</span>
 
+<span class="c1">-- 依赖utf8.lua模块处理中文，见 https://gist.github.com/markandgo/5776124</span>
+<span class="kd">local</span> <span class="n">utf8</span> <span class="o">=</span> <span class="nb">require</span> <span class="s2">&quot;m-utf8&quot;</span>
 <span class="c1">-- c: 字；s: &quot;词语；词语；...&quot;；r：半径</span>
-<span class="kr">function</span> <span class="nc">MP</span><span class="p">.</span><span class="nf">wordslink</span><span class="p">(</span><span class="n">char</span><span class="p">,</span><span class="n">words</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+<span class="kr">function</span> <span class="nc">MP</span><span class="p">.</span><span class="nf">wordslink</span><span class="p">(</span><span class="n">char</span><span class="p">,</span><span class="n">words</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> <span class="c1">--lua.MP是给用户预留的命名空间，lua.mp则是系统自用的</span>
     <span class="kd">local</span> <span class="kr">function</span> <span class="nf">split</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">inputstr</span><span class="p">,</span> <span class="n">sep</span><span class="p">)</span>
         <span class="kr">if</span> <span class="n">sep</span> <span class="o">==</span> <span class="kc">nil</span> <span class="kr">then</span>
             <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;%s*；%s*&quot;</span>
@@ -3127,29 +3129,29 @@ require &quot;MPwordslink&quot;
 
     <span class="kd">local</span> <span class="n">code1</span> <span class="o">=</span> <span class="s">[[</span>
 <span class="s">        input boxes;</span>
-<span class="s">        sp:=]]</span><span class="o">..</span><span class="n">r</span><span class="o">..</span><span class="s">[[;</span>
-<span class="s">        circleit.n0(&quot;]]</span><span class="o">..</span><span class="n">char</span><span class="o">..</span><span class="s">[[&quot;);</span>
+<span class="s">        sp:=%s;</span>
+<span class="s">        circleit.n0(&quot;%s&quot;);</span>
 <span class="s">        n0.c = origin;</span>
 <span class="s">        drawboxed(n0);</span>
 <span class="s">        circleit.a(&quot;&quot;);</span>
 <span class="s">    ]]</span>
-    <span class="n">mp</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">code1</span><span class="p">)</span>
-    <span class="n">mp</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">[[a.c = n0.c + (0,]]</span><span class="o">..</span><span class="n">r</span><span class="o">..</span><span class="s">[[cm);]]</span><span class="p">)</span> <span class="c1">--定位圆</span>
+    <span class="n">mp</span><span class="p">.</span><span class="n">fprint</span><span class="p">(</span><span class="n">code1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span>
+    <span class="n">mp</span><span class="p">.</span><span class="n">fprint</span><span class="p">(</span><span class="s">[[a.c = n0.c + (0, %s cm);]]</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="c1">--定位圆</span>
 
     <span class="kr">for</span> <span class="n">i</span><span class="p">,</span><span class="n">data</span> <span class="kr">in</span> <span class="nb">ipairs</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="kr">do</span>
         <span class="kd">local</span> <span class="n">v</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;str&quot;</span><span class="p">]</span>
         <span class="n">v</span> <span class="o">=</span> <span class="n">utf8</span><span class="p">.</span><span class="n">gsub</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s">[[\low{儿}]]</span><span class="p">)</span>
         <span class="kd">local</span> <span class="n">len</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;len&quot;</span><span class="p">]</span>
         <span class="kd">local</span> <span class="n">ri</span> <span class="o">=</span> <span class="n">len</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span> <span class="c1">--实际半径cm</span>
-        <span class="n">mp</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">[[circleit.n]]</span><span class="o">..</span><span class="n">i</span><span class="o">..</span><span class="s">[[(btex ]]</span><span class="o">..</span><span class="n">v</span><span class="o">..</span><span class="s">[[ etex);]]</span><span class="p">)</span>
-        <span class="n">mp</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">[[n]]</span><span class="o">..</span><span class="n">i</span><span class="o">..</span><span class="s">[[.c = (a.c + (0,]]</span><span class="o">..</span><span class="n">ri</span><span class="o">..</span><span class="s">[[cm)) rotated ]]</span><span class="o">..</span><span class="p">(</span><span class="o">-</span><span class="n">rt</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">..</span><span class="s">[[;]]</span><span class="p">)</span>
-        <span class="n">mp</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">[[drawboxed(n]]</span><span class="o">..</span><span class="n">i</span><span class="o">..</span><span class="s">[[);]]</span><span class="p">)</span>
+        <span class="n">mp</span><span class="p">.</span><span class="n">fprint</span><span class="p">(</span><span class="s">[[circleit.n%s(btex %s etex);]]</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="n">mp</span><span class="p">.</span><span class="n">fprint</span><span class="p">(</span><span class="s">[[n%s.c = (a.c + (0, %s cm)) rotated %s;]]</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">ri</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="n">rt</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+        <span class="n">mp</span><span class="p">.</span><span class="n">fprint</span><span class="p">(</span><span class="s">[[drawboxed(n%s);]]</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
         <span class="kr">if</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;match_num&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;head_or_tail&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">nil</span> <span class="kr">then</span> <span class="c1">--含两个以上生字，或生字不在头尾</span>
-            <span class="n">mp</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">[[draw n0.c..n]]</span><span class="o">..</span><span class="n">i</span><span class="o">..</span><span class="s">[[.c cutbefore bpath.n0 cutafter bpath.n]]</span><span class="o">..</span><span class="n">i</span><span class="o">..</span><span class="s">[[;]]</span><span class="p">)</span>
+            <span class="n">mp</span><span class="p">.</span><span class="n">fprint</span><span class="p">(</span><span class="s">[[draw n0.c .. n%s.c cutbefore bpath.n0 cutafter bpath.n%s;]]</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
         <span class="kr">elseif</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;head_or_tail&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span> <span class="kr">then</span> <span class="c1">--生字在尾</span>
-            <span class="n">mp</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">[[drawarrow n]]</span><span class="o">..</span><span class="n">i</span><span class="o">..</span><span class="s">[[.c .. n0.c cutafter bpath.n0 cutbefore bpath.n]]</span><span class="o">..</span><span class="n">i</span><span class="o">..</span><span class="s">[[;]]</span><span class="p">)</span>
+            <span class="n">mp</span><span class="p">.</span><span class="n">fprint</span><span class="p">(</span><span class="s">[[drawarrow n%s.c .. n0.c cutafter bpath.n0 cutbefore bpath.n%s;]]</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
         <span class="kr">elseif</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;head_or_tail&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="kr">then</span> <span class="c1">--生字在头</span>
-            <span class="n">mp</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">[[drawarrow n0.c..n]]</span><span class="o">..</span><span class="n">i</span><span class="o">..</span><span class="s">[[.c cutbefore bpath.n0 cutafter bpath.n]]</span><span class="o">..</span><span class="n">i</span><span class="o">..</span><span class="s">[[;]]</span><span class="p">)</span>
+            <span class="n">mp</span><span class="p">.</span><span class="n">fprint</span><span class="p">(</span><span class="s">[[drawarrow n0.c .. n%s.c cutbefore bpath.n0 cutafter bpath.n%s;]]</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
         <span class="kr">end</span>
     <span class="kr">end</span>
 <span class="kr">end</span>
