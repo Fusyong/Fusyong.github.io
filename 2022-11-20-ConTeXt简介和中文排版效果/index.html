@@ -3375,7 +3375,8 @@
 <p>ConTeXt目前通常使用LuaTeX（目前的后继者叫LuaMetaTeX，简称LMTX）作为引擎，ConTeXt和LuaTeX是同一个团队开发的，有活跃的社区。</p>
 <p>你可以在排版文档中使用ConTeXt、TeX和第三方宏包控提供的命令，以及自己定制的命令，来控制文档的排版效果；这样的排版文档也叫排版脚本。你还可以在排版脚本中插入Lua代码，处理数据，干预引擎的行为。</p>
 <p>需要重复使用、分享的自制命令和Lua代码，可以制成模板和模块。（下文会说到的，本人所做的ConTeXt中文支持，即是模块的形式。）</p>
-<p>你也可以在Lua脚本中通过Lua接口使用ConTeXt和TeX命令（自动在后台生成ConTeXt排版脚本）完成排版，这叫ConTeXt Lua文档（CLD，ConTeXt Lua Document）。这就是说，你既可以使用熟悉的TeX系命令和资源，还可以使用灵活的Lua语言，实现自动排版。</p>
+<p>你也可以在Lua脚本中通过LuaTeX接口使用ConTeXt和TeX命令（实际上是在后台生成包含ConTeXt和TeX命令的排版脚本）完成排版，这叫ConTeXt Lua文档（CLD，ConTeXt Lua Document）。这就是说，你既可以使用熟悉的TeX系命令和资源，还可以使用灵活的Lua语言，实现自动排版。</p>
+<p>最后，你几乎可以完全抛开ConTeXt和TeX命令，而在Lua端直接使用LuaTeX，比如生成引擎需要的结点列表数据等，完成排版。这样，你就可以在LuaTeX的基础上改造出一个特定用途的排版应用。本主题参考<a href="http://wiki.luatex.org/index.php/TeX_without_TeX_revised_and_expanded">TeX_without_TeX</a>。</p>
 <h2 id="context_1">ConTeXt适合用来做什么<a class="headerlink" href="#context_1" title="Permanent link">#</a></h2>
 <p>就排版内容来说，ConTeXt+LMTX特别适合：</p>
 <ul>
