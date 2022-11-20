@@ -3384,7 +3384,7 @@
 <li>精细排版，比如根据实时数据控制特定字符的格式</li>
 <li>多语言排版</li>
 </ul>
-<p>所谓“结构化文档”“格式规范的图书”跟复杂程度无关，而重在于文档结构对应的排版格式，是都可以转述为数量有限的、可重复使用的排版命令，就是说，重复利用率越高越有价值，即越接近“自动化排版”。</p>
+<p>所谓“结构化文档”“格式规范的图书”跟复杂程度无关，而在于文档结构对应的排版格式，是否都可以转述为数量有限的、可重复使用的排版命令，就是说，重复利用率越高越有价值，即越接近“自动化排版”。</p>
 <h2 id="context_2">ConTeXt难学吗<a class="headerlink" href="#context_2" title="Permanent link">#</a></h2>
 <p>ConTeXt对于用户的要求是：</p>
 <ul>
@@ -3399,6 +3399,34 @@
 <li>竖排模块<a href="https://github.com/Fusyong/vertical-typesetting">vertical-typesetting</a></li>
 <li>双行夹注模块<a href="https://github.com/Fusyong/jiazhu">jiazhu</a></li>
 </ul>
+<p>下面是三个模块的设置选项，可以大体看出支持那些功能：</p>
+<div class="highlight"><pre><span></span><code><span class="c">%%%%%%%%%%%%% 使用模块(保持顺序) %%%%%%%%%%%%%</span>
+<span class="c">% 竖排</span>
+<span class="k">\usemodule</span><span class="na">[vtypeset]</span>
+
+
+<span class="c">% 标点压缩与支持</span>
+<span class="k">\usemodule</span><span class="na">[zhpunc][pattern=kaiming, spacequad=0.5, hangjian=false]</span>
+<span class="c">% </span>
+<span class="c">% 四种标点压缩方案：全角、开明、半角、原样：</span>
+<span class="c">%   pattern: quanjiao(default), kaiming, banjiao, yuanyang</span>
+<span class="c">% 行间标点（转换`、，。．：！；？`到行间，pattern建议用banjiao）：</span>
+<span class="c">%   hangjian: false(default), true</span>
+<span class="c">% 加空宽度（角）：</span>
+<span class="c">%   spacequad: 0.5(default)</span>
+<span class="c">% </span>
+<span class="c">% 行间书名号和专名号（\bar实例）：</span>
+<span class="c">%   \zhuanmh{专名}</span>
+<span class="c">%   \shumh{书名}</span>
+
+
+<span class="c">% 夹注</span>
+<span class="k">\usemodule</span><span class="na">[jiazhu][fontname=tf, fontsize=10.5pt, interlinespace=0.2em]</span>
+<span class="c">% default: fontname=tf, fontsize=10.5pt, interlinespace=0.08em(行间标点时约0.2em)</span>
+<span class="c">% fontname和fontsize与\switchtobodyfont的对应参数一致</span>
+<span class="c">% 夹注命令：</span>
+<span class="c">%   \jiazh{夹注}</span>
+</code></pre></div>
 <p>大体而言，目前已经实现中文排版的常见功能（包括竖排），可以尝试用于生产性的中文排版。如有问题和新需求，本人愿意支持。<strong>请注意，以上并非保证！</strong></p>
 <p>已知问题：</p>
 <ul>
