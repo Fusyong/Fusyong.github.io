@@ -735,6 +735,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-10-28-%E9%82%A3%E4%B8%AA%E5%81%B7%E4%B8%9C%E8%A5%BF%E7%9A%84%E4%BA%BA%E5%B0%B1%E6%98%AF%E6%88%91/" class="md-nav__link">
+        那个偷东西的人就是我
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -2695,15 +2707,27 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" checked>
       
       <label class="md-nav__link" for="__nav_16">
-        TEX与自动化排版
+        TEX、ConTeXt与排版自动化
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="TEX与自动化排版" data-md-level="1">
+      <nav class="md-nav" aria-label="TEX、ConTeXt与排版自动化" data-md-level="1">
         <label class="md-nav__title" for="__nav_16">
           <span class="md-nav__icon md-icon"></span>
-          TEX与自动化排版
+          TEX、ConTeXt与排版自动化
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-11-20-ConTeXt%E7%AE%80%E4%BB%8B%E5%92%8C%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%E6%95%88%E6%9E%9C/" class="md-nav__link">
+        ConTeXt简介和中文排版效果
+      </a>
+    </li>
+  
+
           
             
   
@@ -3119,6 +3143,18 @@
     <li class="md-nav__item">
       <a href="../2022-09-23-metapost-luametafun-examples/" class="md-nav__link">
         metapost用例
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-11-11-How-TeX-Calculates-Glue-Settings-in-an-hbox/" class="md-nav__link">
+        TeX怎样计算横盒子(hbox)中的胶的设定值
       </a>
     </li>
   
@@ -3716,6 +3752,10 @@
 </li>
 </ul>
 <p><strong><code>processors</code>针对每个段落应用回调；</strong>有hbox嵌套的段落则从第一个内套的最后一层开始，比如<code>我\hbox{你}\hbox{他\hbox{它}}</code>，依次是“你、它、他、我”所在的层。</p>
+<ul>
+<li>"processors", "before"，这时只加了par vmodepar和左右parfill skip</li>
+<li>"processors", "after"，这时还有脚本scrp-cjk.lua之hanzi加入了字间的glue userskip、标点前后的penalty userpenalty，可用于断行</li>
+</ul>
 <h3 id="finalizers">finalizers<a class="headerlink" href="#finalizers" title="Permanent link">#</a></h3>
 <ul>
 <li>before<ul>

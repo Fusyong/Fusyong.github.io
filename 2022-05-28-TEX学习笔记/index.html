@@ -735,6 +735,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-10-28-%E9%82%A3%E4%B8%AA%E5%81%B7%E4%B8%9C%E8%A5%BF%E7%9A%84%E4%BA%BA%E5%B0%B1%E6%98%AF%E6%88%91/" class="md-nav__link">
+        那个偷东西的人就是我
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -2695,15 +2707,27 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" checked>
       
       <label class="md-nav__link" for="__nav_16">
-        TEX与自动化排版
+        TEX、ConTeXt与排版自动化
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="TEX与自动化排版" data-md-level="1">
+      <nav class="md-nav" aria-label="TEX、ConTeXt与排版自动化" data-md-level="1">
         <label class="md-nav__title" for="__nav_16">
           <span class="md-nav__icon md-icon"></span>
-          TEX与自动化排版
+          TEX、ConTeXt与排版自动化
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-11-20-ConTeXt%E7%AE%80%E4%BB%8B%E5%92%8C%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%E6%95%88%E6%9E%9C/" class="md-nav__link">
+        ConTeXt简介和中文排版效果
+      </a>
+    </li>
+  
+
           
             
   
@@ -3157,6 +3181,18 @@
     <li class="md-nav__item">
       <a href="../2022-09-23-metapost-luametafun-examples/" class="md-nav__link">
         metapost用例
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-11-11-How-TeX-Calculates-Glue-Settings-in-an-hbox/" class="md-nav__link">
+        TeX怎样计算横盒子(hbox)中的胶的设定值
       </a>
     </li>
   
@@ -3641,47 +3677,51 @@
 </ul>
 <h2 id="boxes">盒子 boxes<a class="headerlink" href="#boxes" title="Permanent link">#</a></h2>
 <h2 id="_1">数字<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>\number，转换一个数字⟨number⟩（）为十进制样式。
-\romannumeral，转换一个正数⟨number⟩为小写罗马样式。
-\ifnum，测试两个数的关系。
-\ifodd，测试一个数字是奇数。
-\ifcase，枚举case语句。
-\count，计数寄存器前缀。
-\countdef，定义一个与\count寄存器同义的控制序列。
-\newcount，分配为使用的\count寄存器。
-\advance，算术命令，从一个数字变量⟨numeric variable⟩加或减。
-\multiply，算术命令，乘以一个数字变量。
-\divide，算术命令，除一个数字变量。</p>
+<ul>
+<li>\number，转换一个数字⟨number⟩（）为十进制样式。</li>
+<li>\romannumeral，转换一个正数⟨number⟩为小写罗马样式。</li>
+<li>\ifnum，测试两个数的关系。</li>
+<li>\ifodd，测试一个数字是奇数。</li>
+<li>\ifcase，枚举case语句。</li>
+<li>\count，计数寄存器前缀。</li>
+<li>\countdef，定义一个与\count寄存器同义的控制序列。</li>
+<li>\newcount，分配为使用的\count寄存器。</li>
+<li>\advance，算术命令，从一个数字变量⟨numeric variable⟩加或减。</li>
+<li>\multiply，算术命令，乘以一个数字变量。</li>
+<li>\divide，算术命令，除一个数字变量。</li>
+</ul>
 <h3 id="number">数字和⟨number⟩<a class="headerlink" href="#number" title="Permanent link">#</a></h3>
-<p><strong>在TEX中，⟨number⟩严格指整数。</strong>而一般所说“数字”，有时指字符串形式的数字。</p>
+<p><strong>在TEX中，⟨number⟩严格指整数。</strong> 而一般所说“数字”，有时指字符串形式的数字。</p>
 <h2 id="dimensionsglue">尺寸Dimensions和胶Glue<a class="headerlink" href="#dimensionsglue" title="Permanent link">#</a></h2>
 <p>在TEX中，垂直和水平的空格（space）可以通过 "拉伸 "（stretching）或 "收缩 "（shrinking）来调整自己。一个可调整的留白被称为胶。</p>
-<p>\dimen，尺寸寄存器前缀。
-\dimendef，定义一个与寄存器\dimen同义的控制序列。
-\newdimen，分配一个未使用的尺寸寄存器。
-\skip，Skip寄存器前缀。
-\skipdef，定一个与寄存器\skip同义的控制序列。
-\newskip，分配未使用的skip寄存器。
-\ifdim，比较两个尺寸。
-\hskip，插入一个水平胶。
-\hfil，等于\hskip 0cm加1fil。
-\hfilneg，等于\hskip 0cm加-1fil。
-\hfill，等于\hskip 0cm就1fill。
-\hss，等于\hskip 0cm加1fil减1fil。
-\vskip，插入一个垂直胶。
-\vfil
-\vfill
-\vfilneg
-\vss
-\kern，在当前水平或垂直列表中增加一个字间。
-\lastkern，如果当前列表最后一个项目是字间，取其尺寸。
-\lastskip，如果当前列表的最后一个尺寸是胶，取其尺寸。
-\unkern，如果当前列表最后一个项目是字间，将其移除。
-\unskip，如果当前列表最后一个项目是胶，将其移出。
-\removelastskip，宏，附加负的\lastskip。
-\advance
-\multiply
-\divide</p>
+<ul>
+<li>\dimen，尺寸寄存器前缀。</li>
+<li>\dimendef，定义一个与寄存器\dimen同义的控制序列。</li>
+<li>\newdimen，分配一个未使用的尺寸寄存器。</li>
+<li>\skip，Skip寄存器前缀。</li>
+<li>\skipdef，定一个与寄存器\skip同义的控制序列。</li>
+<li>\newskip，分配未使用的skip寄存器。</li>
+<li>\ifdim，比较两个尺寸。</li>
+<li>\hskip，插入一个水平胶。</li>
+<li>\hfil，等于\hskip 0cm加1fil。</li>
+<li>\hfilneg，等于\hskip 0cm加-1fil。</li>
+<li>\hfill，等于\hskip 0cm就1fill。</li>
+<li>\hss，等于\hskip 0cm加1fil减1fil。</li>
+<li>\vskip，插入一个垂直胶。</li>
+<li>\vfil</li>
+<li>\vfill</li>
+<li>\vfilneg</li>
+<li>\vss</li>
+<li>\kern，在当前水平或垂直列表中增加一个字间。</li>
+<li>\lastkern，如果当前列表最后一个项目是字间，取其尺寸。</li>
+<li>\lastskip，如果当前列表的最后一个尺寸是胶，取其尺寸。</li>
+<li>\unkern，如果当前列表最后一个项目是字间，将其移除。</li>
+<li>\unskip，如果当前列表最后一个项目是胶，将其移出。</li>
+<li>\removelastskip，宏，附加负的\lastskip。</li>
+<li>\advance</li>
+<li>\multiply</li>
+<li>\divide</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="k">\newdimen\columnA</span>                    <span class="c">% initialise variable</span>
 <span class="k">\columnA</span>=10mm                        <span class="c">% set variable</span>
 
@@ -3699,7 +3739,7 @@ Column A is <span class="k">\number\columnA</span> sp wide. <span class="c">% in
 <h4 id="badness">坏度 badness<a class="headerlink" href="#badness" title="Permanent link">#</a></h4>
 <p>拉伸或收缩一个列表时，TEX会计算坏度，基于实际拉伸量与行中表示的拉伸总量之间的比例。坏度用于段落算法。</p>
 <p>一个列表的坏度公式：</p>
-<p>$$b=min(1000000*(\frac{实际拉伸或收缩的总量}{可能的拉伸或收缩总量})^3)$$</p>
+<p>$$b=min(1,000,000*(\frac{实际拉伸或收缩的总量}{可能的拉伸或收缩总量})^3)$$</p>
 <p>为效率起见，实际算法有简化。</p>
 <p>\badness记录了最近构造的盒子的坏度。</p>
 <h4 id="breaking">胶和断breaking<a class="headerlink" href="#breaking" title="Permanent link">#</a></h4>

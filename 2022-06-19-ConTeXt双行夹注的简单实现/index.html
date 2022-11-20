@@ -735,6 +735,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-10-28-%E9%82%A3%E4%B8%AA%E5%81%B7%E4%B8%9C%E8%A5%BF%E7%9A%84%E4%BA%BA%E5%B0%B1%E6%98%AF%E6%88%91/" class="md-nav__link">
+        那个偷东西的人就是我
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -2695,15 +2707,27 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" checked>
       
       <label class="md-nav__link" for="__nav_16">
-        TEX与自动化排版
+        TEX、ConTeXt与排版自动化
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="TEX与自动化排版" data-md-level="1">
+      <nav class="md-nav" aria-label="TEX、ConTeXt与排版自动化" data-md-level="1">
         <label class="md-nav__title" for="__nav_16">
           <span class="md-nav__icon md-icon"></span>
-          TEX与自动化排版
+          TEX、ConTeXt与排版自动化
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-11-20-ConTeXt%E7%AE%80%E4%BB%8B%E5%92%8C%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%E6%95%88%E6%9E%9C/" class="md-nav__link">
+        ConTeXt简介和中文排版效果
+      </a>
+    </li>
+  
+
           
             
   
@@ -2994,6 +3018,18 @@
     <li class="md-nav__item">
       <a href="../2022-09-23-metapost-luametafun-examples/" class="md-nav__link">
         metapost用例
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-11-11-How-TeX-Calculates-Glue-Settings-in-an-hbox/" class="md-nav__link">
+        TeX怎样计算横盒子(hbox)中的胶的设定值
       </a>
     </li>
   
@@ -3309,8 +3345,8 @@
 <p>适用于ConTeXt和LuaMetaTeX(LMTX， LuaTeX的后继者，ConTeXt当前的实际引擎)的夹注模块，可以配合<a href="../2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/">竖排功能和标点压缩功能</a>使用。调整后应该可用于LuaTeX。</p>
 <p>也是本人学习LuaMetaTeX、LuaTeX的练习项目，主要涉及：段落与行的结点列表的操控；使用tex.linebreak()函数等干预断行；使用回调函数。会保留较多学习性的注释和代码。</p>
 <h2 id="_1">效果<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p><img alt="xz" src="../img/2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/vtypesetting_callback_1.jpg" /></p>
-<p><img alt="xz" src="../img/2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/vtypesetting_callback_2.jpg" /></p>
+<p><img alt="竖开明大学.jpg" src="../img/2022-11-20-ConTeXt%E7%AE%80%E4%BB%8B%E5%92%8C%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%E6%95%88%E6%9E%9C/%E7%AB%96%E5%BC%80%E6%98%8E%E5%A4%A7%E5%AD%A6.jpg" /></p>
+<p><img alt="横全角庄子.jpg" src="../img/2022-11-20-ConTeXt%E7%AE%80%E4%BB%8B%E5%92%8C%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%E6%95%88%E6%9E%9C/%E6%A8%AA%E5%85%A8%E8%A7%92%E5%BA%84%E5%AD%90.jpg" /></p>
 <h2 id="_2">术语<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p>术语参考<a href="https://github.com/CTeX-org/ctex-kit/blob/master/jiazhu/jiazhu.dtx">CTeX-org</a>：</p>
 <blockquote>
@@ -3373,11 +3409,13 @@ inline cutting note, 夹注/双行夹注 in simplified Chinese, 割注/warichū 
 <ul>
 <li>语言脚本：D:\venvs\context-win64\tex\texmf-context\tex\context\base\mkiv\scrp-cjk.lua</li>
 <li>行to段（tex.linebreak）：D:\venvs\context-win64\tex\texmf-context\tex\context\base\mkiv\node-ltp.lua</li>
+<li>用于字间加空、加罚点的hanzi模块<code>char-scr.lua</code> <code>scrp-cjk.lua</code></li>
 </ul>
+<p>type-imp-mscore.mkiv</p>
 <h2 id="texlinebreak">tex.linebreak的工作基于当前状态<a class="headerlink" href="#texlinebreak" title="Permanent link">#</a></h2>
 <p>https://www.mail-archive.com/dev-luatex@ntg.nl/msg01805.html</p>
 <p>It is basing itself on the current TeX state at that point in time (at least, that is what it should do). You can look up tex_run_linebreak() in ltexlib.c, it should be easy to follow.</p>
-<p>也参见<code>node-ltp.lua</code></p>
+<p>也参见<code>node-ltp.lua</code>和 https://github.com/michal-h21/linebreaker</p>
 <h2 id="hans">Hans论干预断行的思路<a class="headerlink" href="#hans" title="Permanent link">#</a></h2>
 <p>https://www.mail-archive.com/luatex@tug.org/msg04329.html</p>
 <blockquote>
