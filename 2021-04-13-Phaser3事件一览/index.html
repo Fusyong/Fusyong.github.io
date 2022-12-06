@@ -3100,317 +3100,339 @@
                   <h1>Phaser3事件一览</h1>
                 
                 <p>根据官方文档的目录整理，重新分组、排序。</p>
-<p><strong>如果没有看见思维导图，请按<code>F5</code>刷新</strong></p>
-<!-- 上代码起 -->
-<div>
-
-    <svg id="mindmap" style="width: 800px; height: 5000px"></svg>
-    <script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
-    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.11/dist/browser/view.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.7.11/dist/browser/transform.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/markmap-view"></script>
-    <div id="mm" hidden>
-    <!-- 上代码终 -->
-
-
-* Phaser.
-    * Animations.Events.
-      动画事件
-        * [ADD_ANIMATION](https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ADD_ANIMATION)
-        * [ANIMATION_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_COMPLETE)
-        * [ANIMATION_COMPLETE_KEY](https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_COMPLETE_KEY)
-        * [ANIMATION_REPEAT](https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_REPEAT)
-        * [ANIMATION_RESTART](https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_RESTART)
-        * [ANIMATION_START](https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_START)
-        * [ANIMATION_STOP](https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_STOP)
-        * [ANIMATION_UPDATE](https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_UPDATE)
-        * [PAUSE_ALL](https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:PAUSE_ALL)
-        * [REMOVE_ANIMATION](https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:REMOVE_ANIMATION)
-        * [RESUME_ALL](https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:RESUME_ALL)
-    * Cache.Events.
-      缓存事件
-        * [ADD](https://photonstorm.github.io/phaser3-docs/Phaser.Cache.Events.html#event:ADD)
-        * [REMOVE](https://photonstorm.github.io/phaser3-docs/Phaser.Cache.Events.html#event:REMOVE)
-    * Cameras.Scene2D.Events.
-        * [DESTROY](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:DESTROY)
-        * [FADE_IN_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FADE_IN_COMPLETE)
-        * [FADE_IN_START](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FADE_IN_START)
-        * [FADE_OUT_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FADE_OUT_COMPLETE)
-        * [FADE_OUT_START](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FADE_OUT_START)
-        * [FLASH_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FLASH_COMPLETE)
-        * [FLASH_START](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FLASH_START)
-        * [FOLLOW_UPDATE](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FOLLOW_UPDATE)
-        * [PAN_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:PAN_COMPLETE)
-        * [PAN_START](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:PAN_START)
-        * [POST_RENDER](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:POST_RENDER)
-        * [PRE_RENDER](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:PRE_RENDER)
-        * [ROTATE_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:ROTATE_COMPLETE)
-        * [ROTATE_START](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:ROTATE_START)
-        * [SHAKE_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:SHAKE_COMPLETE)
-        * [SHAKE_START](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:SHAKE_START)
-        * [ZOOM_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:ZOOM_COMPLETE)
-        * [ZOOM_START](https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:ZOOM_START)
-    * Core.Events.
-      内核事件
-        * [BLUR](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:BLUR)
-        * [BOOT](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:BOOT)
-        * [CONTEXT_LOST](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:CONTEXT_LOST)
-        * [CONTEXT_RESTORED](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:CONTEXT_RESTORED)
-        * [DESTROY](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:DESTROY)
-        * [FOCUS](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:FOCUS)
-        * [HIDDEN](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:HIDDEN)
-        * [PAUSE](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:PAUSE)
-        * [POST_RENDER](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:POST_RENDER)
-        * [POST_STEP](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:POST_STEP)
-        * [PRE_RENDER](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:PRE_RENDER)
-        * [PRE_STEP](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:PRE_STEP)
-        * [READY](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:READY)
-        * [RESUME](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:RESUME)
-        * [STEP](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:STEP)
-        * [VISIBLE](https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:VISIBLE)
-    * Data.Events.
-        * [CHANGE_DATA](https://photonstorm.github.io/phaser3-docs/Phaser.Data.Events.html#event:CHANGE_DATA)
-        * [CHANGE_DATA_KEY](https://photonstorm.github.io/phaser3-docs/Phaser.Data.Events.html#event:CHANGE_DATA_KEY)
-        * [DESTROY](https://photonstorm.github.io/phaser3-docs/Phaser.Data.Events.html#event:DESTROY)
-        * [REMOVE_DATA](https://photonstorm.github.io/phaser3-docs/Phaser.Data.Events.html#event:REMOVE_DATA)
-        * [SET_DATA](https://photonstorm.github.io/phaser3-docs/Phaser.Data.Events.html#event:SET_DATA)
-    * GameObjects.Events.
-        * [ADDED_TO_SCENE](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:ADDED_TO_SCENE)
-        * [DESTROY](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:DESTROY)
-        * [REMOVED_FROM_SCENE](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:REMOVED_FROM_SCENE)
-        * [VIDEO_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_COMPLETE)
-        * [VIDEO_CREATED](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_CREATED)
-        * [VIDEO_ERROR](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_ERROR)
-        * [VIDEO_LOOP](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_LOOP)
-        * [VIDEO_PLAY](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_PLAY)
-        * [VIDEO_SEEKED](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_SEEKED)
-        * [VIDEO_SEEKING](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_SEEKING)
-        * [VIDEO_STOP](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_STOP)
-        * [VIDEO_TIMEOUT](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_TIMEOUT)
-        * [VIDEO_UNLOCKED](https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_UNLOCKED)
-    * Input.Events.
-      输入事件
-        * [BOOT](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:BOOT)
-        * [DESTROY](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DESTROY)
-        * [DRAG](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DRAG)
-        * [DRAG_END](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DRAG_END)
-        * [DRAG_ENTER](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DRAG_ENTER)
-        * [DRAG_LEAVE](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DRAG_LEAVE)
-        * [DRAG_OVER](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DRAG_OVER)
-        * [DRAG_START](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DRAG_START)
-        * [DROP](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DROP)
-        * [GAME_OUT](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAME_OUT)
-        * [GAME_OVER](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAME_OVER)
-        * [GAMEOBJECT_DOWN](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DOWN)
-        * [GAMEOBJECT_DRAG](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DRAG)
-        * [GAMEOBJECT_DRAG_END](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_END)
-        * [GAMEOBJECT_DRAG_ENTER](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_ENTER)
-        * [GAMEOBJECT_DRAG_LEAVE](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_LEAVE)
-        * [GAMEOBJECT_DRAG_OVER](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_OVER)
-        * [GAMEOBJECT_DRAG_START](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_START)
-        * [GAMEOBJECT_DROP](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DROP)
-        * [GAMEOBJECT_MOVE](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_MOVE)
-        * [GAMEOBJECT_OUT](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_OUT)
-        * [GAMEOBJECT_OVER](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_OVER)
-        * [GAMEOBJECT_POINTER_DOWN](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_DOWN)
-        * [GAMEOBJECT_POINTER_MOVE](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_MOVE)
-        * [GAMEOBJECT_POINTER_OUT](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_OUT)
-        * [GAMEOBJECT_POINTER_OVER](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_OVER)
-        * [GAMEOBJECT_POINTER_UP](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_UP)
-        * [GAMEOBJECT_POINTER_WHEEL](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_WHEEL)
-        * [GAMEOBJECT_UP](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_UP)
-        * [GAMEOBJECT_WHEEL](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_WHEEL)
-        * [MANAGER_BOOT](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:MANAGER_BOOT)
-        * [MANAGER_PROCESS](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:MANAGER_PROCESS)
-        * [MANAGER_UPDATE](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:MANAGER_UPDATE)
-        * [POINTER_DOWN](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_DOWN)
-        * [POINTER_DOWN_OUTSIDE](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_DOWN_OUTSIDE)
-        * [POINTER_MOVE](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_MOVE)
-        * [POINTER_OUT](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_OUT)
-        * [POINTER_OVER](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_OVER)
-        * [POINTER_UP](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_UP)
-        * [POINTER_UP_OUTSIDE](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_UP_OUTSIDE)
-        * [POINTER_WHEEL](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_WHEEL)
-        * [POINTERLOCK_CHANGE](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTERLOCK_CHANGE)
-        * [PRE_UPDATE](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:PRE_UPDATE)
-        * [SHUTDOWN](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:SHUTDOWN)
-        * [START](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:START)
-        * [UPDATE](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:UPDATE)
-    * Input.Gamepad.Events.
-      游戏手柄事件
-        * [BUTTON_DOWN](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Gamepad.Events.html#event:BUTTON_DOWN)
-        * [BUTTON_UP](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Gamepad.Events.html#event:BUTTON_UP)
-        * [CONNECTED](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Gamepad.Events.html#event:CONNECTED)
-        * [DISCONNECTED](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Gamepad.Events.html#event:DISCONNECTED)
-        * [GAMEPAD_BUTTON_DOWN](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Gamepad.Events.html#event:GAMEPAD_BUTTON_DOWN)
-        * [GAMEPAD_BUTTON_UP](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Gamepad.Events.html#event:GAMEPAD_BUTTON_UP)
-    * Input.Keyboard.Events.
-      键盘事件
-        * [ANY_KEY_DOWN](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:ANY_KEY_DOWN)
-        * [ANY_KEY_UP](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:ANY_KEY_UP)
-        * [COMBO_MATCH](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:COMBO_MATCH)
-        * [DOWN](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:DOWN)
-        * [KEY_DOWN](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:KEY_DOWN)
-        * [KEY_UP](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:KEY_UP)
-        * [UP](https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:UP)
-    * Loader.Events.
-      资源加载事件
-        * [ADD](https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:ADD)
-        * [COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:COMPLETE)
-        * [FILE_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:FILE_COMPLETE)
-        * [FILE_KEY_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:FILE_KEY_COMPLETE)
-        * [FILE_LOAD](https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:FILE_LOAD)
-        * [FILE_LOAD_ERROR](https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:FILE_LOAD_ERROR)
-        * [FILE_PROGRESS](https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:FILE_PROGRESS)
-        * [POST_PROCESS](https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:POST_PROCESS)
-        * [PROGRESS](https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:PROGRESS)
-        * [START](https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:START)
-    * Physics.Arcade.Events.
-      Arcade物理系统事件
-        * [COLLIDE](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:COLLIDE)
-        * [OVERLAP](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:OVERLAP)
-        * [PAUSE](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:PAUSE)
-        * [RESUME](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:RESUME)
-        * [TILE_COLLIDE](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:TILE_COLLIDE)
-        * [TILE_OVERLAP](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:TILE_OVERLAP)
-        * [WORLD_BOUNDS](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:WORLD_BOUNDS)
-        * [WORLD_STEP](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:WORLD_STEP)
-    * Physics.Matter.Events.
-      Matter物理系统事件
-        * [AFTER_ADD](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:AFTER_ADD)
-        * [AFTER_REMOVE](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:AFTER_REMOVE)
-        * [AFTER_UPDATE](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:AFTER_UPDATE)
-        * [BEFORE_ADD](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:BEFORE_ADD)
-        * [BEFORE_REMOVE](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:BEFORE_REMOVE)
-        * [BEFORE_UPDATE](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:BEFORE_UPDATE)
-        * [COLLISION_ACTIVE](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:COLLISION_ACTIVE)
-        * [COLLISION_END](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:COLLISION_END)
-        * [COLLISION_START](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:COLLISION_START)
-        * [DRAG](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:DRAG)
-        * [DRAG_END](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:DRAG_END)
-        * [DRAG_START](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:DRAG_START)
-        * [PAUSE](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:PAUSE)
-        * [RESUME](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:RESUME)
-        * [SLEEP_END](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:SLEEP_END)
-        * [SLEEP_START](https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:SLEEP_START)
-    * Renderer.Events.
-      渲染事件
-        * [POST_RENDER](https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.Events.html#event:POST_RENDER)
-        * [PRE_RENDER](https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.Events.html#event:PRE_RENDER)
-        * [RENDER](https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.Events.html#event:RENDER)
-        * [RESIZE](https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.Events.html#event:RESIZE)
-    * Renderer.WebGL.Pipelines.Events.
-      WebGL渲染管道事件
-        * [AFTER_FLUSH](https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:AFTER_FLUSH)
-        * [BEFORE_FLUSH](https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:BEFORE_FLUSH)
-        * [BIND](https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:BIND)
-        * [BOOT](https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:BOOT)
-        * [DESTROY](https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:DESTROY)
-        * [REBIND](https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:REBIND)
-        * [RESIZE](https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:RESIZE)
-    * Scale.Events.
-      游戏缩放事件
-        * [ENTER_FULLSCREEN](https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Events.html#event:ENTER_FULLSCREEN)
-        * [FULLSCREEN_FAILED](https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Events.html#event:FULLSCREEN_FAILED)
-        * [FULLSCREEN_UNSUPPORTED](https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Events.html#event:FULLSCREEN_UNSUPPORTED)
-        * [LEAVE_FULLSCREEN](https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Events.html#event:LEAVE_FULLSCREEN)
-        * [ORIENTATION_CHANGE](https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Events.html#event:ORIENTATION_CHANGE)
-        * [RESIZE](https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Events.html#event:RESIZE)
-    * Scenes.Events.
-      场景事件
-        * [ADDED_TO_SCENE](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:ADDED_TO_SCENE)
-        * [BOOT](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:BOOT)
-        * [CREATE](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:CREATE)
-        * [DESTROY](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:DESTROY)
-        * [PAUSE](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:PAUSE)
-        * [POST_UPDATE](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:POST_UPDATE)
-        * [PRE_UPDATE](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:PRE_UPDATE)
-        * [READY](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:READY)
-        * [REMOVED_FROM_SCENE](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:REMOVED_FROM_SCENE)
-        * [RENDER](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:RENDER)
-        * [RESUME](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:RESUME)
-        * [SHUTDOWN](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:SHUTDOWN)
-        * [SLEEP](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:SLEEP)
-        * [START](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:START)
-        * [TRANSITION_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:TRANSITION_COMPLETE)
-        * [TRANSITION_INIT](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:TRANSITION_INIT)
-        * [TRANSITION_OUT](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:TRANSITION_OUT)
-        * [TRANSITION_START](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:TRANSITION_START)
-        * [TRANSITION_WAKE](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:TRANSITION_WAKE)
-        * [UPDATE](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:UPDATE)
-        * [WAKE](https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:WAKE)
-    * Sound.Events.
-      声音事件
-        * [COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:COMPLETE)
-        * [DECODED](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:DECODED)
-        * [DECODED_ALL](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:DECODED_ALL)
-        * [DESTROY](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:DESTROY)
-        * [DETUNE](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:DETUNE)
-        * [GLOBAL_DETUNE](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:GLOBAL_DETUNE)
-        * [GLOBAL_MUTE](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:GLOBAL_MUTE)
-        * [GLOBAL_RATE](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:GLOBAL_RATE)
-        * [GLOBAL_VOLUME](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:GLOBAL_VOLUME)
-        * [LOOP](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:LOOP)
-        * [LOOPED](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:LOOPED)
-        * [MUTE](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:MUTE)
-        * [PAN](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:PAN)
-        * [PAUSE](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:PAUSE)
-        * [PAUSE_ALL](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:PAUSE_ALL)
-        * [PLAY](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:PLAY)
-        * [RATE](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:RATE)
-        * [RESUME](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:RESUME)
-        * [RESUME_ALL](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:RESUME_ALL)
-        * [SEEK](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:SEEK)
-        * [STOP](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:STOP)
-        * [STOP_ALL](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:STOP_ALL)
-        * [UNLOCKED](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:UNLOCKED)
-        * [VOLUME](https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:VOLUME)
-    * Structs.Events.
-        * [PROCESS_QUEUE_ADD](https://photonstorm.github.io/phaser3-docs/Phaser.Structs.Events.html#event:PROCESS_QUEUE_ADD)
-        * [PROCESS_QUEUE_REMOVE](https://photonstorm.github.io/phaser3-docs/Phaser.Structs.Events.html#event:PROCESS_QUEUE_REMOVE)
-    * Textures.Events.
-      纹理事件
-        * [ADD](https://photonstorm.github.io/phaser3-docs/Phaser.Textures.Events.html#event:ADD)
-        * [ERROR](https://photonstorm.github.io/phaser3-docs/Phaser.Textures.Events.html#event:ERROR)
-        * [LOAD](https://photonstorm.github.io/phaser3-docs/Phaser.Textures.Events.html#event:LOAD)
-        * [READY](https://photonstorm.github.io/phaser3-docs/Phaser.Textures.Events.html#event:READY)
-        * [REMOVE](https://photonstorm.github.io/phaser3-docs/Phaser.Textures.Events.html#event:REMOVE)
-    * Tweens.Events.
-      补间事件
-        * [TIMELINE_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TIMELINE_COMPLETE)
-        * [TIMELINE_LOOP](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TIMELINE_LOOP)
-        * [TIMELINE_PAUSE](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TIMELINE_PAUSE)
-        * [TIMELINE_RESUME](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TIMELINE_RESUME)
-        * [TIMELINE_START](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TIMELINE_START)
-        * [TIMELINE_UPDATE](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TIMELINE_UPDATE)
-        * [TWEEN_ACTIVE](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_ACTIVE)
-        * [TWEEN_COMPLETE](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_COMPLETE)
-        * [TWEEN_LOOP](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_LOOP)
-        * [TWEEN_REPEAT](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_REPEAT)
-        * [TWEEN_START](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_START)
-        * [TWEEN_STOP](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_STOP)
-        * [TWEEN_UPDATE](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_UPDATE)
-        * [TWEEN_YOYO](https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_YOYO)
-* SpinePluginEvents.
-  Spine插件事件
-    * [COMPLETE](https://photonstorm.github.io/phaser3-docs/SpinePluginEvents.html#event:COMPLETE)
-    * [DISPOSE](https://photonstorm.github.io/phaser3-docs/SpinePluginEvents.html#event:DISPOSE)
-    * [END](https://photonstorm.github.io/phaser3-docs/SpinePluginEvents.html#event:END)
-    * [EVENT](https://photonstorm.github.io/phaser3-docs/SpinePluginEvents.html#event:EVENT)
-    * [INTERRUPTED](https://photonstorm.github.io/phaser3-docs/SpinePluginEvents.html#event:INTERRUPTED)
-    * [START](https://photonstorm.github.io/phaser3-docs/SpinePluginEvents.html#event:START)
-
-
-    <!-- 下代码 -->
-</div>
-
-<script>
-    markdown =  document.getElementById("mm").innerHTML;
-    const data = markmap.transform(markdown);
-
-    markmap.Markmap.create("#mindmap", null, data);
-</script>
-</div>
+<p>这些事件都是字符串常量，其值通常是其名称去除下划线并全部小写的结果。
+为方便可用字符串，而为稳健兼容则使用系统定义的常量。
+比如<code>Phaser.Animations.Events.ANIMATION_COMPLETE === 'animationcomplete'</code>。
+但是<code>Phaser.Animations.Events.ADD_ANIMATION === 'add'</code>。</p>
+<ul>
+<li>Phaser.Animations.Events.
+  动画事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ADD_ANIMATION">ADD_ANIMATION</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_COMPLETE">ANIMATION_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_COMPLETE_KEY">ANIMATION_COMPLETE_KEY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_REPEAT">ANIMATION_REPEAT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_RESTART">ANIMATION_RESTART</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_START">ANIMATION_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_STOP">ANIMATION_STOP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:ANIMATION_UPDATE">ANIMATION_UPDATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:PAUSE_ALL">PAUSE_ALL</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:REMOVE_ANIMATION">REMOVE_ANIMATION</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Animations.Events.html#event:RESUME_ALL">RESUME_ALL</a></li>
+</ul>
+</li>
+<li>Phaser.Cache.Events.
+  缓存事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cache.Events.html#event:ADD">ADD</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cache.Events.html#event:REMOVE">REMOVE</a></li>
+</ul>
+</li>
+<li>Phaser.Cameras.Scene2D.Events.<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:DESTROY">DESTROY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FADE_IN_COMPLETE">FADE_IN_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FADE_IN_START">FADE_IN_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FADE_OUT_COMPLETE">FADE_OUT_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FADE_OUT_START">FADE_OUT_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FLASH_COMPLETE">FLASH_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FLASH_START">FLASH_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:FOLLOW_UPDATE">FOLLOW_UPDATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:PAN_COMPLETE">PAN_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:PAN_START">PAN_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:POST_RENDER">POST_RENDER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:PRE_RENDER">PRE_RENDER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:ROTATE_COMPLETE">ROTATE_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:ROTATE_START">ROTATE_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:SHAKE_COMPLETE">SHAKE_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:SHAKE_START">SHAKE_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:ZOOM_COMPLETE">ZOOM_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cameras.Scene2D.Events.html#event:ZOOM_START">ZOOM_START</a></li>
+</ul>
+</li>
+<li>Phaser.Core.Events.
+  内核事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:BLUR">BLUR</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:BOOT">BOOT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:CONTEXT_LOST">CONTEXT_LOST</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:CONTEXT_RESTORED">CONTEXT_RESTORED</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:DESTROY">DESTROY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:FOCUS">FOCUS</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:HIDDEN">HIDDEN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:PAUSE">PAUSE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:POST_RENDER">POST_RENDER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:POST_STEP">POST_STEP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:PRE_RENDER">PRE_RENDER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:PRE_STEP">PRE_STEP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:READY">READY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:RESUME">RESUME</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:STEP">STEP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Core.Events.html#event:VISIBLE">VISIBLE</a></li>
+</ul>
+</li>
+<li>Phaser.Data.Events.<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Data.Events.html#event:CHANGE_DATA">CHANGE_DATA</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Data.Events.html#event:CHANGE_DATA_KEY">CHANGE_DATA_KEY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Data.Events.html#event:DESTROY">DESTROY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Data.Events.html#event:REMOVE_DATA">REMOVE_DATA</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Data.Events.html#event:SET_DATA">SET_DATA</a></li>
+</ul>
+</li>
+<li>Phaser.GameObjects.Events.<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:ADDED_TO_SCENE">ADDED_TO_SCENE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:DESTROY">DESTROY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:REMOVED_FROM_SCENE">REMOVED_FROM_SCENE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_COMPLETE">VIDEO_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_CREATED">VIDEO_CREATED</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_ERROR">VIDEO_ERROR</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_LOOP">VIDEO_LOOP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_PLAY">VIDEO_PLAY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_SEEKED">VIDEO_SEEKED</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_SEEKING">VIDEO_SEEKING</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_STOP">VIDEO_STOP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_TIMEOUT">VIDEO_TIMEOUT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Events.html#event:VIDEO_UNLOCKED">VIDEO_UNLOCKED</a></li>
+</ul>
+</li>
+<li>Phaser.Input.Events.
+  输入事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:BOOT">BOOT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DESTROY">DESTROY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DRAG">DRAG</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DRAG_END">DRAG_END</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DRAG_ENTER">DRAG_ENTER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DRAG_LEAVE">DRAG_LEAVE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DRAG_OVER">DRAG_OVER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DRAG_START">DRAG_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:DROP">DROP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAME_OUT">GAME_OUT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAME_OVER">GAME_OVER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DOWN">GAMEOBJECT_DOWN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DRAG">GAMEOBJECT_DRAG</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_END">GAMEOBJECT_DRAG_END</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_ENTER">GAMEOBJECT_DRAG_ENTER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_LEAVE">GAMEOBJECT_DRAG_LEAVE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_OVER">GAMEOBJECT_DRAG_OVER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DRAG_START">GAMEOBJECT_DRAG_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_DROP">GAMEOBJECT_DROP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_MOVE">GAMEOBJECT_MOVE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_OUT">GAMEOBJECT_OUT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_OVER">GAMEOBJECT_OVER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_DOWN">GAMEOBJECT_POINTER_DOWN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_MOVE">GAMEOBJECT_POINTER_MOVE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_OUT">GAMEOBJECT_POINTER_OUT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_OVER">GAMEOBJECT_POINTER_OVER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_UP">GAMEOBJECT_POINTER_UP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_POINTER_WHEEL">GAMEOBJECT_POINTER_WHEEL</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_UP">GAMEOBJECT_UP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:GAMEOBJECT_WHEEL">GAMEOBJECT_WHEEL</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:MANAGER_BOOT">MANAGER_BOOT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:MANAGER_PROCESS">MANAGER_PROCESS</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:MANAGER_UPDATE">MANAGER_UPDATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_DOWN">POINTER_DOWN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_DOWN_OUTSIDE">POINTER_DOWN_OUTSIDE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_MOVE">POINTER_MOVE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_OUT">POINTER_OUT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_OVER">POINTER_OVER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_UP">POINTER_UP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_UP_OUTSIDE">POINTER_UP_OUTSIDE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTER_WHEEL">POINTER_WHEEL</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:POINTERLOCK_CHANGE">POINTERLOCK_CHANGE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:PRE_UPDATE">PRE_UPDATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:SHUTDOWN">SHUTDOWN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:START">START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Events.html#event:UPDATE">UPDATE</a></li>
+</ul>
+</li>
+<li>Phaser.Input.Gamepad.Events.
+  游戏手柄事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Gamepad.Events.html#event:BUTTON_DOWN">BUTTON_DOWN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Gamepad.Events.html#event:BUTTON_UP">BUTTON_UP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Gamepad.Events.html#event:CONNECTED">CONNECTED</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Gamepad.Events.html#event:DISCONNECTED">DISCONNECTED</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Gamepad.Events.html#event:GAMEPAD_BUTTON_DOWN">GAMEPAD_BUTTON_DOWN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Gamepad.Events.html#event:GAMEPAD_BUTTON_UP">GAMEPAD_BUTTON_UP</a></li>
+</ul>
+</li>
+<li>Phaser.Input.Keyboard.Events.
+  键盘事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:ANY_KEY_DOWN">ANY_KEY_DOWN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:ANY_KEY_UP">ANY_KEY_UP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:COMBO_MATCH">COMBO_MATCH</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:DOWN">DOWN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:KEY_DOWN">KEY_DOWN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:KEY_UP">KEY_UP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Input.Keyboard.Events.html#event:UP">UP</a></li>
+</ul>
+</li>
+<li>Phaser.Loader.Events.
+  资源加载事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:ADD">ADD</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:COMPLETE">COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:FILE_COMPLETE">FILE_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:FILE_KEY_COMPLETE">FILE_KEY_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:FILE_LOAD">FILE_LOAD</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:FILE_LOAD_ERROR">FILE_LOAD_ERROR</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:FILE_PROGRESS">FILE_PROGRESS</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:POST_PROCESS">POST_PROCESS</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:PROGRESS">PROGRESS</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.Events.html#event:START">START</a></li>
+</ul>
+</li>
+<li>Phaser.Physics.Arcade.Events.
+  Arcade物理系统事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:COLLIDE">COLLIDE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:OVERLAP">OVERLAP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:PAUSE">PAUSE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:RESUME">RESUME</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:TILE_COLLIDE">TILE_COLLIDE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:TILE_OVERLAP">TILE_OVERLAP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:WORLD_BOUNDS">WORLD_BOUNDS</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Arcade.Events.html#event:WORLD_STEP">WORLD_STEP</a></li>
+</ul>
+</li>
+<li>Phaser.Physics.Matter.Events.
+  Matter物理系统事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:AFTER_ADD">AFTER_ADD</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:AFTER_REMOVE">AFTER_REMOVE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:AFTER_UPDATE">AFTER_UPDATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:BEFORE_ADD">BEFORE_ADD</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:BEFORE_REMOVE">BEFORE_REMOVE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:BEFORE_UPDATE">BEFORE_UPDATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:COLLISION_ACTIVE">COLLISION_ACTIVE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:COLLISION_END">COLLISION_END</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:COLLISION_START">COLLISION_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:DRAG">DRAG</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:DRAG_END">DRAG_END</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:DRAG_START">DRAG_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:PAUSE">PAUSE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:RESUME">RESUME</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:SLEEP_END">SLEEP_END</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Physics.Matter.Events.html#event:SLEEP_START">SLEEP_START</a></li>
+</ul>
+</li>
+<li>Phaser.Renderer.Events.
+  渲染事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.Events.html#event:POST_RENDER">POST_RENDER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.Events.html#event:PRE_RENDER">PRE_RENDER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.Events.html#event:RENDER">RENDER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.Events.html#event:RESIZE">RESIZE</a></li>
+</ul>
+</li>
+<li>Phaser.Renderer.WebGL.Pipelines.Events.
+  WebGL渲染管道事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:AFTER_FLUSH">AFTER_FLUSH</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:BEFORE_FLUSH">BEFORE_FLUSH</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:BIND">BIND</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:BOOT">BOOT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:DESTROY">DESTROY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:REBIND">REBIND</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Renderer.WebGL.Pipelines.Events.html#event:RESIZE">RESIZE</a></li>
+</ul>
+</li>
+<li>Phaser.Scale.Events.
+  游戏缩放事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Events.html#event:ENTER_FULLSCREEN">ENTER_FULLSCREEN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Events.html#event:FULLSCREEN_FAILED">FULLSCREEN_FAILED</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Events.html#event:FULLSCREEN_UNSUPPORTED">FULLSCREEN_UNSUPPORTED</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Events.html#event:LEAVE_FULLSCREEN">LEAVE_FULLSCREEN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Events.html#event:ORIENTATION_CHANGE">ORIENTATION_CHANGE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scale.Events.html#event:RESIZE">RESIZE</a></li>
+</ul>
+</li>
+<li>Phaser.Scenes.Events.
+  场景事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:ADDED_TO_SCENE">ADDED_TO_SCENE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:BOOT">BOOT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:CREATE">CREATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:DESTROY">DESTROY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:PAUSE">PAUSE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:POST_UPDATE">POST_UPDATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:PRE_UPDATE">PRE_UPDATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:READY">READY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:REMOVED_FROM_SCENE">REMOVED_FROM_SCENE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:RENDER">RENDER</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:RESUME">RESUME</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:SHUTDOWN">SHUTDOWN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:SLEEP">SLEEP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:START">START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:TRANSITION_COMPLETE">TRANSITION_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:TRANSITION_INIT">TRANSITION_INIT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:TRANSITION_OUT">TRANSITION_OUT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:TRANSITION_START">TRANSITION_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:TRANSITION_WAKE">TRANSITION_WAKE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:UPDATE">UPDATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scenes.Events.html#event:WAKE">WAKE</a></li>
+</ul>
+</li>
+<li>Phaser.Sound.Events.
+  声音事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:COMPLETE">COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:DECODED">DECODED</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:DECODED_ALL">DECODED_ALL</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:DESTROY">DESTROY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:DETUNE">DETUNE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:GLOBAL_DETUNE">GLOBAL_DETUNE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:GLOBAL_MUTE">GLOBAL_MUTE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:GLOBAL_RATE">GLOBAL_RATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:GLOBAL_VOLUME">GLOBAL_VOLUME</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:LOOP">LOOP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:LOOPED">LOOPED</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:MUTE">MUTE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:PAN">PAN</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:PAUSE">PAUSE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:PAUSE_ALL">PAUSE_ALL</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:PLAY">PLAY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:RATE">RATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:RESUME">RESUME</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:RESUME_ALL">RESUME_ALL</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:SEEK">SEEK</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:STOP">STOP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:STOP_ALL">STOP_ALL</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:UNLOCKED">UNLOCKED</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Sound.Events.html#event:VOLUME">VOLUME</a></li>
+</ul>
+</li>
+<li>Phaser.Structs.Events.<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Structs.Events.html#event:PROCESS_QUEUE_ADD">PROCESS_QUEUE_ADD</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Structs.Events.html#event:PROCESS_QUEUE_REMOVE">PROCESS_QUEUE_REMOVE</a></li>
+</ul>
+</li>
+<li>Phaser.Textures.Events.
+  纹理事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Textures.Events.html#event:ADD">ADD</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Textures.Events.html#event:ERROR">ERROR</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Textures.Events.html#event:LOAD">LOAD</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Textures.Events.html#event:READY">READY</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Textures.Events.html#event:REMOVE">REMOVE</a></li>
+</ul>
+</li>
+<li>Phaser.Tweens.Events.
+  补间事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TIMELINE_COMPLETE">TIMELINE_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TIMELINE_LOOP">TIMELINE_LOOP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TIMELINE_PAUSE">TIMELINE_PAUSE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TIMELINE_RESUME">TIMELINE_RESUME</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TIMELINE_START">TIMELINE_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TIMELINE_UPDATE">TIMELINE_UPDATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_ACTIVE">TWEEN_ACTIVE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_COMPLETE">TWEEN_COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_LOOP">TWEEN_LOOP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_REPEAT">TWEEN_REPEAT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_START">TWEEN_START</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_STOP">TWEEN_STOP</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_UPDATE">TWEEN_UPDATE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Tweens.Events.html#event:TWEEN_YOYO">TWEEN_YOYO</a></li>
+</ul>
+</li>
+<li>SpinePluginEvents.
+  Spine插件事件<ul>
+<li><a href="https://photonstorm.github.io/phaser3-docs/SpinePluginEvents.html#event:COMPLETE">COMPLETE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/SpinePluginEvents.html#event:DISPOSE">DISPOSE</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/SpinePluginEvents.html#event:END">END</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/SpinePluginEvents.html#event:EVENT">EVENT</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/SpinePluginEvents.html#event:INTERRUPTED">INTERRUPTED</a></li>
+<li><a href="https://photonstorm.github.io/phaser3-docs/SpinePluginEvents.html#event:START">START</a></li>
+</ul>
+</li>
+</ul>
                 
                   
                 

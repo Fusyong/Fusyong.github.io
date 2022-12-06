@@ -1644,6 +1644,13 @@
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    分组、层、区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     窗口定位
   </a>
   
@@ -3253,6 +3260,13 @@
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    分组、层、区
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     窗口定位
   </a>
   
@@ -3567,7 +3581,17 @@
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
     <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">screen</span><span class="o">.</span><span class="n">surface</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># screen.surface是PygameZero的屏幕纹理</span>
 </code></pre></div>
-<h3 id="_5">窗口定位<a class="headerlink" href="#_5" title="Permanent link">#</a></h3>
+<h3 id="_5">分组、层、区<a class="headerlink" href="#_5" title="Permanent link">#</a></h3>
+<p>通过Group或SurFace</p>
+<div class="highlight"><pre><span></span><code><span class="n">front_sprites</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="n">middle_sprites</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+
+<span class="n">game_surf</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">your_sprite_group</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">game_surf</span><span class="p">)</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">game_surf</span><span class="p">,</span> <span class="n">the_position</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="_6">窗口定位<a class="headerlink" href="#_6" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 必须在pygame.init()和import pgzrun之前：</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;SDL_VIDEO_CENTERED&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span> <span class="c1"># 居中。有报告说新版SDL无效；但在Jupyter中，第二次以后运行有效（服务器保存了os环境参数？？）</span>
