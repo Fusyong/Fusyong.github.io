@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2380,7 +2378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -3790,7 +3788,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -3990,15 +3988,24 @@
 <ul>
 <li>安装，通常在一个独立的Python venv中</li>
 </ul>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pelican<span class="w"> </span>markdown<span class="w"> </span>beautifulsoup4
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pelican<span class="w"> </span>markdown<span class="w"> </span>beautifulsoup4
+</code></pre></div></td></tr></table></div>
 <ul>
 <li>在当前目录生成一个网站骨架</li>
 </ul>
-<div class="highlight"><pre><span></span><code>pelican-quickstart
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pelican-quickstart
+</code></pre></div></td></tr></table></div>
 <p>目录结构如下：</p>
-<div class="highlight"><pre><span></span><code>yourproject/
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>yourproject/
 ├──<span class="w"> </span>content<span class="w">              </span><span class="c1"># 文章</span>
 │<span class="w">   </span>└──<span class="w"> </span><span class="o">(</span>pages<span class="o">)</span><span class="w">         </span><span class="c1"># 固定页面</span>
 │<span class="w">   </span>└──<span class="w"> </span><span class="o">(</span>images<span class="o">)</span><span class="w">        </span><span class="c1"># 静态文件夹(图像)</span>
@@ -4008,27 +4015,42 @@
 ├──<span class="w"> </span>Makefile<span class="w">             </span><span class="c1"># 自动化工具</span>
 ├──<span class="w"> </span>pelicanconf.py<span class="w">       </span><span class="c1"># 主配置</span>
 └──<span class="w"> </span>publishconf.py<span class="w">       </span><span class="c1"># 发布配置</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_2">常用命令<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <ul>
 <li>启动开发服务，监控更改，实时发布更新:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>pelican<span class="w"> </span>-r
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pelican<span class="w"> </span>-r
+</code></pre></div></td></tr></table></div>
 <p>即：</p>
-<div class="highlight"><pre><span></span><code>pelican<span class="w"> </span>--autoreload
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pelican<span class="w"> </span>--autoreload
+</code></pre></div></td></tr></table></div>
 <ul>
 <li>在输出文件夹output的位置启动Python3服务器（其他服务器也可以），然后浏览器中打开给出的地址：</li>
 </ul>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>http.server
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>http.server
+</code></pre></div></td></tr></table></div>
 <h2 id="_3">文件元数据<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
 <p>Pelican支持Markdown、reStructuredText、AsciiDoc等书写格式，也能直接使用HTML页面。下面以较常见的Markdown为主。</p>
 <ul>
 <li>常用Markdown元数据：</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="o">---</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">---</span>
 <span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="nx">文章标题</span><span class="w">        </span><span class="c1">// 必填</span>
 <span class="nx">Slug</span><span class="o">:</span><span class="w">                 </span><span class="c1">// 文章唯一标识,相同的Slug搭配不同的Lan标记可以形成多语言平行页</span>
 <span class="w">                      </span><span class="c1">// 缺省则用Title生成,汉字转换为无调拼音并用&#39;-&#39;分割</span>
@@ -4044,12 +4066,25 @@
 <span class="nx">Status</span><span class="o">:</span><span class="w">                </span><span class="c1">// 状态,如draft(草稿,不公布), published(发布,缺省值),</span>
 <span class="w">                       </span><span class="c1">// hidden(只用于隐藏page,如404页)</span>
 <span class="o">---</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>另有<code>Save_as:</code>标签，控制转换后的输出目标。配合<code>INDEX_SAVE_AS = 'blog_index.html'</code>可以更改网站首页。</p>
 <ul>
 <li>HTML元数据：</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My super title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;tags&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;thats, awesome&quot;</span> <span class="p">/&gt;</span>
@@ -4063,71 +4098,86 @@
         This is the content of my super blog post.
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="html">HTML标签<a class="headerlink" href="#html" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>:abbr:`HTML (HyperText Markup Language)`
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>:abbr:`HTML (HyperText Markup Language)`
+</code></pre></div></td></tr></table></div>
 <h2 id="pages">pages（固定页面）<a class="headerlink" href="#pages" title="Permanent link">#</a></h2>
 <p>内容文件夹<code>content</code>下的文件夹<code>pages</code>，其中的内容会生成静态页，比如About、Contact页。通过<code>DISPLAY_PAGES_ON_MENU</code>选项控制<code>pages</code>中的内容是否全部在顶级导航菜单中显示，默认为<code>True</code>。个别文章可以通过元数据<code>status: hidden</code>隐藏。</p>
 <h2 id="_4">内部内容链接<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p>链接到内部的内容文件，包括即将编译的markdown文件；但图片等静态文件当用<code>static</code>标签。<strong>根文件夹前要用<code>/</code>，如<code>/category</code>。</strong></p>
-<div class="highlight"><pre><span></span><code>[<span class="nt">a link relative to the current file</span>](<span class="na">article1.md</span>)
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>[<span class="nt">a link relative to the current file</span>](<span class="na">article1.md</span>)
+</code></pre></div></td></tr></table></div>
 <h2 id="_5">静态文件链接<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
 <p>在<code>pelicanconf.py</code>中设置静态文件路径:</p>
-<div class="highlight"><pre><span></span><code>STATIC_PATHS = [&#39;images&#39;, &#39;pdfs&#39;]
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>STATIC_PATHS = [&#39;images&#39;, &#39;pdfs&#39;]
+</code></pre></div></td></tr></table></div>
 <p>文章使用方法<code>static</code>标签：</p>
-<div class="highlight"><pre><span></span><code>![<span class="nt">Alt Text</span>](<span class="na">img/han.jpg</span>)
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>![<span class="nt">Alt Text</span>](<span class="na">img/han.jpg</span>)
 [<span class="nt">Our Menu</span>](<span class="na">{static}/pdfs/menu.pdf</span>)
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>与<code>filename</code>标签定义的链接，编译后将指向目标（如md文件）的编译输出文件（如html文件），而<code>static</code>标签定义的链接仍指向源文件。
 另外，用<code>attach</code>代替<code>static</code>可以保持文章与附件的相对关系。但建议只当所有链接都指向同一个文件，且链接所在的文章都在同一目录时才使用<code>attach</code>标签。</p>
 <h2 id="_6">元数据链接<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
 <p>链接到元数据：</p>
-<div class="highlight"><pre><span></span><code><span class="sb">`{author}name`</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="sb">`{author}name`</span>
 <span class="sb">`{category}foobar`</span>
 <span class="sb">`{index}`</span>
 <span class="sb">`{tag}tagname`</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_7">代码语法高亮<a class="headerlink" href="#_7" title="Permanent link">#</a></h2>
 <p>Markdown文件使用CodeHilite extension，代码块缩进、其上加语言标识（用常规的一对三反引号也可以）：</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The triple-colon syntax will *not* show line numbers.&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The triple-colon syntax will *not* show line numbers.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <p>加行号（但会导致<code>css</code>中的<code>pre {overflow-x: auto;}</code>失效）：</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The path-less shebang syntax *will* show line numbers.&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The path-less shebang syntax *will* show line numbers.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>用于诗歌等纯文本时，也应该明示为<code>:::text</code>，否则可能出现错误的红色框。</strong>因为如果没有明示语言，那么Pygments语法高亮引擎会猜测一种语言（除非<code>guess_lang=False</code>）。</p>
 <h2 id="_8">缺省元数据和发布草稿<a class="headerlink" href="#_8" title="Permanent link">#</a></h2>
 <p>在元数据中添加草稿标签<code>Status: draft</code>，可发布到草稿文件夹drafts，不会列入目录、分类、标签中。可设置缺省元数据，缺省发布状态为草稿:</p>
-<div class="highlight"><pre><span></span><code><span class="n">DEFAULT_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">DEFAULT_METADATA</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;draft&#39;</span><span class="p">,</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>此后如果要发布，则需要添加发布状态标签：</p>
-<div class="highlight"><pre><span></span><code>Status: published.
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Status: published.
+</code></pre></div></td></tr></table></div>
 <h2 id="_9">文章的多语言翻译<a class="headerlink" href="#_9" title="Permanent link">#</a></h2>
 <p>略。</p>
 <h2 id="extract_toc">extract_toc插件<a class="headerlink" href="#extract_toc" title="Permanent link">#</a></h2>
 <p>extract_toc通过article.content中第一个<code>[TOC]</code>标签的内容生成目录，放在article.toc中，从而可以在模板中使用。注意，第一个<code>[TOC]</code>标签将被删除。安装依赖：</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>beautifulsoup4
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>beautifulsoup4
+</code></pre></div></td></tr></table></div>
 <p>在设置中安装插件：</p>
-<div class="highlight"><pre><span></span><code><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path/to/pelican-plugins&#39;</span><span class="p">]</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path/to/pelican-plugins&#39;</span><span class="p">]</span>
 <span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;extract_toc&#39;</span><span class="p">]</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>在模板中使用。比我的博客，把目录移到右侧文章信息下部：</p>
 <ul>
 <li>在Pelican自带主题notmyidea的article_infos.html中添加空block，以便扩展：</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">toc</span> <span class="cp">%}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">{%</span> <span class="k">block</span> <span class="nv">toc</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">endblock</span><span class="cp">%}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <ul>
 <li>再新建article_infos_toc.html，扩展前者：</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;article_infos.html&quot;</span> <span class="cp">%}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;article_infos.html&quot;</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">block</span> <span class="nv">toc</span> <span class="cp">%}</span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">article.toc</span> <span class="cp">%}</span>
 <span class="x">        &lt;nav class=&quot;toc&quot;&gt;</span>
@@ -4135,10 +4185,82 @@
 <span class="x">        &lt;/nav&gt;</span>
 <span class="x">    </span><span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_10">常用配置<a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
 <p><code>pelican-quickstart</code>自动生成的<code>pelicanconf.py</code>种有一些重要的设置项，不在此列。这里主要是额外补充的：</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 网站副标题</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 网站副标题</span>
 <span class="n">SITESUBTITLE</span> <span class="o">=</span> <span class="s1">&#39;你来了！&#39;</span>
 
 <span class="c1"># 站点地址，最后的&quot;/&quot;不能少。或留空。</span>
@@ -4211,28 +4333,35 @@
 
 <span class="c1"># 谷歌分析号码</span>
 <span class="n">GOOGLE_ANALYTICS</span> <span class="o">=</span> <span class="s1">&#39;UA-xxxxxxxxx-x&#39;</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>详细配置见<a href="http://docs.getpelican.com/en/stable/settings.html">pelican 文档</a></p>
 <h2 id="githubuser_pages">部署到github的User Pages<a class="headerlink" href="#githubuser_pages" title="Permanent link">#</a></h2>
 <p>在github上新建一个名为username.github.io的库（username必须是你的github账户名，以下<code>Fusyong</code>是我的账号，请改成你自己的）。然后在本地的output文件夹进行git克隆，或者初始化、提交、关联，再推送。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# Fusyong.github.io&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>README.md
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# Fusyong.github.io&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>README.md
 git<span class="w"> </span>init
 git<span class="w"> </span>add<span class="w"> </span>README.md
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;first commit&quot;</span>
 git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/Fusyong/Fusyong.github.io.git
 git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>master
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>即可访问Yourusername.github.io。如果误删除<code>.git</code>文件夹，重新克隆库即可：</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Fusyong/Fusyong.github.io.git<span class="w"> </span>output
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Fusyong/Fusyong.github.io.git<span class="w"> </span>output
+</code></pre></div></td></tr></table></div>
 <p>每次更新后提交、推送：</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>--all
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>--all
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;refresh&quot;</span>
 git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>master
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>以上是用HTTPS链接，每次push都需要输入账号、密码，不过可以在git中保存账户名和密码：</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span>store
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span>store
+</code></pre></div></td></tr></table></div>
 <p>或者使用如下的SSH链接，使用秘钥，不需要每次提供：<code>git@github.com:Fusyong/Fusyong.github.io.git</code></p>
 <p>git知识可参考<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰的git教程.</a></p>
 <p><strong>另，我的win7系统上无法使用官方推荐的ghp-import来更新库。</strong></p>
@@ -4241,15 +4370,19 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <h2 id="_12">更改主题<a class="headerlink" href="#_12" title="Permanent link">#</a></h2>
 <h3 id="_13">给代码块加水平滚动条<a class="headerlink" href="#_13" title="Permanent link">#</a></h3>
 <p>更改css文件。代码块折行：</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">pre</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="nt">pre</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="k">white-space</span><span class="p">:</span><span class="w"> </span><span class="kc">pre-wrap</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>不折行而加上横向滚动条：</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">pre</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="nt">pre</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="k">overflow-x</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>from :<a href="https://75team.com/post/considerations-for-styling-the-%3C-pre-%3E-tag.html">使用<code>pre</code>标签样式的注意事项</a></p>
 
 
@@ -4260,16 +4393,16 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -4281,7 +4414,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -4289,7 +4422,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -4398,6 +4531,10 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -4446,7 +4583,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

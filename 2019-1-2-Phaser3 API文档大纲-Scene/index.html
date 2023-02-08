@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2378,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -3893,7 +3891,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -4191,7 +4189,30 @@
 <p>Phaser3的场景(Scene)源于Phaser2的State，并包含Phaser2的Game World（游戏对象的生存世界）。
 一个完整游戏，在正式游戏场景前常有boot、preload、menu等场景。外部控制场景的细节见Scene.scene(场景管理器)。
 场景类的结构通常是：</p>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">SimpleScene</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scene</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">SimpleScene</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scene</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">super</span><span class="p">(</span>
 <span class="w">                </span><span class="p">{</span>
@@ -4215,7 +4236,7 @@
 <span class="w">    </span><span class="nx">update</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>可定制的方法：<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#.SceneInitCallback">init()</a>, <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#.ScenePreloadCallback">preload()</a>, <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#.SceneCreateCallback">create()</a></p>
 <p>SceneConfig场景配置对象参考<a href="https://github.com/digitsensitive/phaser3-typescript/blob/master/cheatsheets/scene-config.md">SceneConfig小抄</a></p>
 <h2 id="new_phasersceneconfig"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#Scene">new Phaser.Scene(config)</a><a class="headerlink" href="#new_phasersceneconfig" title="Permanent link">#</a></h2>
@@ -4224,8 +4245,8 @@
 <h3 id="add">add/游戏对象工厂<a class="headerlink" href="#add" title="Permanent link">#</a></h3>
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#add">add: Phaser.GameObjects.GameObjectFactory</a></strong></p>
 <p>指向场景层面的游戏对象工厂函数。只有在场景注入图谱（Injection Map）中定义后才能用。其下的方法通过多个参数生成、添加游戏对象。</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;gems&#39;</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;gems&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <ul>
 <li>Members<ul>
 <li>displayList: Phaser.GameObjects.DisplayList</li>
@@ -4247,11 +4268,19 @@
 </ul>
 <p><strong>添加已有的游戏对象，</strong>比如客户定制且未在场景中注入的类，不能通过<code>add</code>/<code>make</code>引用其工厂函数，而只能用<code>new</code>生成实例。这些实例就需要通过<code>add.existing(child)</code>添加。
 如有必要，会添加到显示列表DisplayList和更新列表UpdateList。</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">missile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Missile</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;blue-missile&#39;</span><span class="p">);</span><span class="w">  </span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">missile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Missile</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;blue-missile&#39;</span><span class="p">);</span><span class="w">  </span>
 <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">existing</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">missile</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>对比<code>add</code>、<code>make</code>、<code>new</code>三者的差异：</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c1">// add生成后自动添加到显示列表</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// add生成后自动添加到显示列表</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">text1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;image1&#39;</span><span class="p">);</span>
 <span class="c1">// new生成后手动添加到显示列表</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">text2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">Sprite</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;image2&quot;</span><span class="p">);</span>
@@ -4259,11 +4288,24 @@
 <span class="c1">// make通过配置对象生成实例，通过设置`add: boolean`决定是否立即添加到显示列表（缺省添加）</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">text</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;显示文本&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">style</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">fontFamily</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;楷体&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="mf">64</span><span class="p">,</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="nx">color</span><span class="w"> </span><span class="p">}},</span><span class="w"> </span><span class="nx">ture</span><span class="p">)</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">sprite</span><span class="p">({</span><span class="nx">key</span><span class="o">:</span><span class="s1">&#39;logo&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">add</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">});</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="anims">anims/全局动画管理器<a class="headerlink" href="#anims" title="Permanent link">#</a></h3>
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#anims">anims: Phaser.Animations.AnimationManager</a></strong></p>
 <p>指向全局的动画管理器。<strong>Phaser3生成的动画是全局的，可以应用到不同的对象上。</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// 动画的键值，通过此键值应用动画</span>
 <span class="w">    </span><span class="nx">frames</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">generateFrameNumbers</span><span class="p">(</span><span class="s1">&#39;dude&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">start</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">end</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="p">}),</span>
 <span class="w">    </span><span class="nx">frameRate</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
@@ -4277,7 +4319,7 @@
 <span class="p">});</span>
 
 <span class="nx">player</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="cache">cache/全局缓存管理器<a class="headerlink" href="#cache" title="Permanent link">#</a></h3>
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#cache">cache: Phaser.Cache.CacheManager</a></strong></p>
 <p>指向全局的缓存管理器。成员和方法：</p>
@@ -4335,13 +4377,18 @@
 指向<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cache.CacheManager.html">缓存管理器Phaser.Cache.CacheManager</a>。
 生成游戏实例的全局缓存，其中的每个<a href="https://photonstorm.github.io/phaser3-docs/Phaser.Cache.BaseCache.html">BaseCache</a>实例管理一类已经加载的文件。</p>
 <p>@\cache\json file</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="s1">&#39;jsonData&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;assets/atlas/megaset-0.json&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">cache</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;jsonData&#39;</span><span class="p">));</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="data">data/数据管理器<a class="headerlink" href="#data" title="Permanent link">#</a></h3>
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#data">data: Phaser.Data.DataManager</a></strong></p>
 <p>数据管理器</p>
@@ -4364,7 +4411,28 @@
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#load">load: Phaser.Loader.LoaderPlugin</a></strong></p>
 <p><a href="../2018-12-1-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Loader.LoaderPlugin/">资源加载插件。</a></p>
 <p>@loader/game load config</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="w"> </span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="w"> </span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">progress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">graphics</span><span class="p">();</span>
 <span class="w">    </span><span class="c1">// 设置&#39;progress&#39;事件的回调函数（绘制进度条）</span>
@@ -4386,18 +4454,23 @@
 <span class="w">    </span><span class="p">);</span>
 <span class="w">    </span><span class="c1">// ...</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="make">make/游戏对象生成器<a class="headerlink" href="#make" title="Permanent link">#</a></h3>
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#make">make: Phaser.GameObjects.GameObjectCreator</a></strong></p>
 <p>参考<code>Scene.add</code>。
 实际指向游戏对象生成函数Phaser.GameObjects.GameObjectCreator。成员与方法的名称与<code>add</code>属性的的相同；但与<code>add</code>不同，<code>make</code>下的方法通过一个<strong>配置对象</strong>生成游戏对象，并通过变量控制是否添加到显示列表。</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">bunny</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">sprite</span><span class="p">({</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">bunny</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">sprite</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="nx">game</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bunny&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">add</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="p">},</span><span class="w"> </span><span class="nx">ture</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="mattermatter">matter/Matter物理引擎<a class="headerlink" href="#mattermatter" title="Permanent link">#</a></h3>
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#matter">matter: Phaser.Physics.Matter.MatterPhysics</a></strong></p>
 <p><a href="https://github.com/liabru/matter-js">Matter物理引擎。</a></p>
@@ -4430,13 +4503,24 @@
 <a href="https://github.com/jdotrjs/phaser-guides/blob/master/Basics/Part3.md">Let's Talk About Scenes</a>、
 <a href="https://gist.github.com/samme/01a33324a427f626254c1a4da7f9b6a3">phaser-scenes-summary</a></p>
 <p>新建场景时也可传递data对象：</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;page&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Page</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="nx">data</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;page&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">Page</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="nx">data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="sound">sound/基础声音管理器<a class="headerlink" href="#sound" title="Permanent link">#</a></h3>
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#sound">sound: Phaser.Sound.BaseSoundManager</a></strong></p>
 <p>基础声音管理器。</p>
 <p>@audio/HTML5 Audio/play audio file</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="w"> </span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="w"> </span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="nx">his</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">audio</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="c1">// 一组可选文件</span>
 <span class="w">        </span><span class="s1">&#39;assets/audio/oedipus_wizball_highscore.ogg&#39;</span><span class="p">,</span>
@@ -4448,29 +4532,43 @@
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">music</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">sound</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">music</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="sys">sys/场景的系统<a class="headerlink" href="#sys" title="Permanent link">#</a></h3>
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#sys">sys: Phaser.Scenes.Systems</a></strong></p>
 <p>场景系统。<strong>千万不要覆盖它。</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c1">// 画布宽高</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 画布宽高</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">w</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">sys</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">h</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">sys</span><span class="p">.</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">;</span>
 <span class="c1">// 判断不是桌面系统，而是移动系统</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">isDesktop</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">sys</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">desktop</span><span class="p">;</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="textures">textures/纹理管理器<a class="headerlink" href="#textures" title="Permanent link">#</a></h3>
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#textures">textures: Phaser.Textures.TextureManager</a></strong></p>
 <p>纹理管理器。</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// 获取文理管理器中所有纹理的key(数组)</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 获取文理管理器中所有纹理的key(数组)</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">textures</span><span class="p">.</span><span class="nx">getTextureKeys</span><span class="p">();</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="time">time/时钟<a class="headerlink" href="#time" title="Permanent link">#</a></h3>
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#time">time: Phaser.Time.Clock</a></strong></p>
 <p>时钟。</p>
 <h3 id="tweens">tweens/补间动画管理器<a class="headerlink" href="#tweens" title="Permanent link">#</a></h3>
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#tweens">tweens: Phaser.Tweens.TweenManager</a></strong></p>
 <p>补间动画管理器。</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">84</span><span class="p">,</span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">84</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">120</span><span class="p">,</span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">84</span><span class="p">,</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">84</span><span class="p">,</span><span class="mf">80</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="mf">80</span><span class="w"> </span><span class="p">];</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">84</span><span class="p">,</span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">84</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">120</span><span class="p">,</span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="mf">84</span><span class="p">,</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">84</span><span class="p">,</span><span class="mf">80</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="mf">80</span><span class="w"> </span><span class="p">];</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">r4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">polygon</span><span class="p">(</span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="mh">0xff6699</span><span class="p">);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">tweens</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">targets</span><span class="o">:</span><span class="w"> </span><span class="kt">r4</span><span class="p">,</span>
@@ -4480,17 +4578,20 @@
 <span class="w">    </span><span class="nx">repeat</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">ease</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Sine.easeInOut&#39;</span>
 <span class="p">});</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="methods"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#toc26">Methods</a><a class="headerlink" href="#methods" title="Permanent link">#</a></h2>
 <h3 id="update">update/更新<a class="headerlink" href="#update" title="Permanent link">#</a></h3>
 <p><strong><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html#update">update(time, delta)</a></strong></p>
 <p>它应该被你自己的场景重写。
 需要每步（game step）/每帧都更新的内容，可以写在这里。</p>
-<div class="highlight"><pre><span></span><code><span class="nx">update</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">update</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// 整组对象都围绕一个中心逐帧旋转</span>
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">RotateAround</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">400</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">300</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="mf">0.01</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>published from: <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Scene.html">Phaser 3 API Documentation - Class: Scene</a></p>
 
 
@@ -4501,16 +4602,16 @@
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -4522,7 +4623,7 @@
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -4530,7 +4631,7 @@
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -4639,6 +4740,10 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -4687,7 +4792,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

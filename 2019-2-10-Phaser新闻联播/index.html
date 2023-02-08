@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2378,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -3815,7 +3813,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -4091,13 +4089,15 @@ Phaser.Loader可以加载CSS文件到浏览器中，并且可以直接设置DOM�
 <p>键盘事件也不再像以前一样，会被浏览器截留。</p>
 <h3 id="_6">重要新特性：外部场景文件<a class="headerlink" href="#_6" title="Permanent link">#</a></h3>
 <p>现在可以使用新的Loader文件类型"SceneFile"实时加载外部场景文件。这样就不必预先把所有可能用到场景打包，可以随时在服务器端更新场景，或根据用户端信息选择场景。用法：</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">sceneFile</span><span class="p">(</span><span class="s1">&#39;MiniGame520&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;js/minigames/520.js&#39;</span><span class="p">);</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">sceneFile</span><span class="p">(</span><span class="s1">&#39;MiniGame520&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;js/minigames/520.js&#39;</span><span class="p">);</span>
 <span class="c1">// `MiniGame520`是类名</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>JS文件下载好后，会通过一个脚本标签添加到DOM，并被场景管理器接收。然后可以用它的key启动：</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="s1">&#39;game520&#39;</span><span class="p">);</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">start</span><span class="p">(</span><span class="s1">&#39;game520&#39;</span><span class="p">);</span>
 <span class="c1">// &#39;game520&#39;是key</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_7">后续事项<a class="headerlink" href="#_7" title="Permanent link">#</a></h3>
 <ul>
 <li>处理3.16的问题</li>
@@ -4114,16 +4114,16 @@ Phaser.Loader可以加载CSS文件到浏览器中，并且可以直接设置DOM�
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -4135,7 +4135,7 @@ Phaser.Loader可以加载CSS文件到浏览器中，并且可以直接设置DOM�
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -4143,7 +4143,7 @@ Phaser.Loader可以加载CSS文件到浏览器中，并且可以直接设置DOM�
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -4252,6 +4252,10 @@ Phaser.Loader可以加载CSS文件到浏览器中，并且可以直接设置DOM�
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -4300,7 +4304,7 @@ Phaser.Loader可以加载CSS文件到浏览器中，并且可以直接设置DOM�
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2378,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -3679,7 +3677,7 @@
   
     <li class="md-nav__item">
       <a href="../../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -3764,7 +3762,30 @@
 <hr />
 <p>我们已经有了可爱、诱人的平台，但还没有人在上面跑动。让我们改一下。</p>
 <p>做一个新的变量<code>player</code>，并把下面的代码添加到<code>create</code>函数中。你可以在<code>part5.html</code>中看到这些：</p>
-<div class="highlight"><pre><span></span><code>player = this.physics.add.sprite(100, 450, &#39;dude&#39;);
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code>player = this.physics.add.sprite(100, 450, &#39;dude&#39;);
 
 player.setBounce(0.2);
 player.setCollideWorldBounds(true);
@@ -3788,15 +3809,18 @@ this.anims.create({
     frameRate: 10,
     repeat: -1
 });
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>这里有两件不同的事情：生成物理精灵（sprite），生成精灵能用到的几个动画。</p>
 <h3 id="_1">物理精灵<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
 <p>代码第一部分生成精灵：</p>
-<div class="highlight"><pre><span></span><code>player = this.physics.add.sprite(100, 450, &#39;dude&#39;);
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>player = this.physics.add.sprite(100, 450, &#39;dude&#39;);
 
 player.setBounce(0.2);
 player.setCollideWorldBounds(true);
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>这样生成一个新的精灵，叫<code>player</code>（玩家），位于100 x 450像素，在游戏的下部。精灵是通过物理游戏对象工厂函数（Physics Game Object Factory，即<code>this.physics.add</code>）生成的，这意味着它默认拥有一个动态物体。</p>
 <p>精灵生成后，被赋予0.2的一点点反弹（bounce）值。这意味着，它跳起后着地时始终会弹起那么一点点。然后精灵设置了与世界边界（bound）的碰撞。——边界默认在游戏尺寸之外。我们（通过<code>player.setCollideWorldBounds(true)</code>）把游戏（的世界边界）设置为800 x 600后，玩家就不能不跑出这个区域了。这样会让玩家停下来，不能跑出画面边界，或跳出顶边。</p>
 <h3 id="_2">动画<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
@@ -3804,13 +3828,18 @@ player.setCollideWorldBounds(true);
 <p><img alt="image" src="../dude.png" /></p>
 <p>总共有9帧，4帧向左跑动，1帧面向镜头，4帧向右跑动。注意：Phaser支持翻转精灵，以节省动画帧，不过因为这是教程，我们将保持老派做法。</p>
 <p>我们定义两个动画，叫'left'和'right'。这是'left'动画：</p>
-<div class="highlight"><pre><span></span><code>this.anims.create({
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>this.anims.create({
     key: &#39;left&#39;,
     frames: this.anims.generateFrameNumbers(&#39;dude&#39;, { start: 0, end: 3 }),
     frameRate: 10,
     repeat: -1
 });
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>'left'动画使用0, 1, 2, 3帧，跑动时每秒10帧。'repeat -1'告诉动画要循环播放。</p>
 <p>这是我们的标准跑动周期。反方向的动画把这些重复一下，键值用'right'。最后一个动画键值用'turn'（转身）。</p>
 <p><strong>补充信息：</strong>在Phaser 3 中，动画管理器（Animation Manager）是全局系统。其中生成的动画是全局变量，所有游戏对象都能用到它们。它们分享基础的动画数据，同时管理自己的时间轴（timeline）。这就使我们能够在某时定义一个动画，却可以应用到任意多的游戏对象上。这有别于Phaser 2，那时动画只属于据以生成动画的特定游戏对象。</p>
@@ -3823,16 +3852,16 @@ player.setCollideWorldBounds(true);
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -3844,7 +3873,7 @@ player.setCollideWorldBounds(true);
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -3852,7 +3881,7 @@ player.setCollideWorldBounds(true);
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -3961,6 +3990,10 @@ player.setCollideWorldBounds(true);
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -4009,7 +4042,7 @@ player.setCollideWorldBounds(true);
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.a00a7c5e.min.js"></script>

@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2378,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -4267,7 +4265,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -4992,42 +4990,71 @@
 <p>把包裹加入队列。一般不直接使用，而是用<code>Loader.pack</code>。</p>
 <h4 id="animationkey_url_datakey_xhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#animation">animation(key [, url] [, dataKey] [, xhrSettings])</a><a class="headerlink" href="#animationkey_url_datakey_xhrsettings" title="Permanent link">#</a></h4>
 <p>加载动画数据。一般不直接使用，而是通过<code>this.load.animation()</code>来使用。</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">animation</span><span class="p">(</span><span class="s1">&#39;baddieAnims1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;files/BaddieAnims.json&#39;</span><span class="p">);</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">animation</span><span class="p">(</span><span class="s1">&#39;baddieAnims1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;files/BaddieAnims.json&#39;</span><span class="p">);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">animation</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;baddieAnims2&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="c1">// 如果不提供url，会用key + &quot;.json&quot;自动生成</span>
 <span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;files/BaddieAnims.json&#39;</span>
 <span class="w">    </span><span class="c1">// 还可以通过&quot;dataKey: &#39;level1.baddies.boss&#39;&quot;这样的设置使用JSON的指定数据</span>
 <span class="p">});</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="atlaskey_textureurl_atlasurl_texturexhrsettings_atlasxhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#atlas">atlas(key [, textureURL] [, atlasURL] [, textureXhrSettings] [, atlasXhrSettings])</a><a class="headerlink" href="#atlaskey_textureurl_atlasurl_texturexhrsettings_atlasxhrsettings" title="Permanent link">#</a></h4>
 <p>加载JSON Hash或者JSON Array格式的图集，比如用Texture Packer, Shoebox, Adobe Flash / Animate生成的。还可以加载Normal maps。
 如果Texture Packer的multi-atlas，则请用Phaser Multi Atlas loader加载。
-<div class="highlight"><pre><span></span><code>this.load.atlas(&#39;mainmenu1&#39;, &#39;images/MainMenu.png&#39;, &#39;images/MainMenu.json&#39;);
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>this.load.atlas(&#39;mainmenu1&#39;, &#39;images/MainMenu.png&#39;, &#39;images/MainMenu.json&#39;);
 this.load.atlas({
     key: &#39;mainmenu2&#39;,
     textureURL: &#39;images/MainMenu.png&#39;,
     atlasURL: &#39;images/MainMenu.json&#39;
 });
 this.add.image(x, y, &#39;mainmenu1&#39;, &#39;background&#39;);
-</code></pre></div></p>
+</code></pre></div></td></tr></table></div></p>
 <p><strong>如使用Texture Packer，要改JSON文件编码为utf-8无签名；取消“允许旋转”。</strong></p>
 <h4 id="atlasxmlkey_textureurl_atlasurl_texturexhrsettings_atlasxhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#atlasXML">atlasXML(key [, textureURL] [, atlasURL] [, textureXhrSettings] [, atlasXhrSettings])</a><a class="headerlink" href="#atlasxmlkey_textureurl_atlasurl_texturexhrsettings_atlasxhrsettings" title="Permanent link">#</a></h4>
 <p>加载XML图集，如用Shoebox和Adobe Flash / Animate生成的。还可以加载Normal maps。</p>
 <h4 id="audiokey_urls_config_xhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#audio">audio(key [, urls] [, config] [, xhrSettings])</a><a class="headerlink" href="#audiokey_urls_config_xhrsettings" title="Permanent link">#</a></h4>
 <p>加载Audio或HTML5Audio文件、文件数组。
 如果游戏设置了禁用声音，则不会加载音频文件。</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// 同一声音提供不同格式（最常用的是ogg, mp3, m4a）文件以便适配多种浏览器</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 同一声音提供不同格式（最常用的是ogg, mp3, m4a）文件以便适配多种浏览器</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">audio</span><span class="p">(</span><span class="s1">&#39;title1&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s1">&#39;music/Title.ogg&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;music/Title.mp3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;music/Title.m4a&#39;</span><span class="w"> </span><span class="p">]);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">audio</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;title2&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s1">&#39;music/Title.ogg&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;music/Title.mp3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;music/Title.m4a&#39;</span><span class="w"> </span><span class="p">]</span>
 <span class="p">});</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="audiospritekey_jsonurl_audiourl_audioconfig_audioxhrsettings_jsonxhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#audioSprite">audioSprite(key, jsonURL [, audioURL] [, audioConfig] [, audioXhrSettings] [, jsonXhrSettings])</a><a class="headerlink" href="#audiospritekey_jsonurl_audiourl_audioconfig_audioxhrsettings_jsonxhrsettings" title="Permanent link">#</a></h4>
 <p>加载音频精灵。音频精灵可以把多个音频文件合并到一个文件，并在配套JSON文件中指明起讫位置、回放参数等。
 音频精灵JSON文件应符合<a href="https://github.com/tonistiigi/audiosprite">audiosprite生成器</a>的标准。比如合并TTS导出的音节读音：<code>audiosprite --output audiosprite --export "ogg,m4a,mp3" --bitrate 32 --samplerate 16000 --gap 0.1 *.mp3</code>，把所有".mp3"文件制成音频精灵，以"audiosprite"名字导出"ogg,m4a,mp3"三种格式，并设置采样率、比特率。</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">audioSprite</span><span class="p">(</span><span class="s1">&#39;kyobi1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;kyobi.json&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">audioSprite</span><span class="p">(</span><span class="s1">&#39;kyobi1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;kyobi.json&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="s1">&#39;kyobi.ogg&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="s1">&#39;kyobi.mp3&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="s1">&#39;kyobi.m4a&#39;</span>
@@ -5040,7 +5067,7 @@ this.add.image(x, y, &#39;mainmenu1&#39;, &#39;background&#39;);
 <span class="c1">// 生成实例后选择title播放。**AudioSpriteSound定义有问题，需确认为any以免编译错误。**</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">music</span><span class="o">:</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Sound</span><span class="p">.</span><span class="nx">BaseSound</span><span class="p">.</span><span class="nx">AudioSpriteSound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">sound</span><span class="p">.</span><span class="nx">addAudioSprite</span><span class="p">(</span><span class="s2">&quot;kyobi1&quot;</span><span class="p">);</span>
 <span class="p">(</span><span class="nx">music</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">any</span><span class="p">).</span><span class="nx">play</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="binarykey_url_datatype_xhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#binary">binary(key [, url] [, dataType] [, xhrSettings])</a><a class="headerlink" href="#binarykey_url_datatype_xhrsettings" title="Permanent link">#</a></h4>
 <p>加载二进制文件。</p>
 <h4 id="bitmapfontkey_textureurl_fontdataurl_texturexhrsettings_fontdataxhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#bitmapFont">bitmapFont(key [, textureURL] [, fontDataURL] [, textureXhrSettings] [, fontDataXhrSettings])</a><a class="headerlink" href="#bitmapfontkey_textureurl_fontdataurl_texturexhrsettings_fontdataxhrsettings" title="Permanent link">#</a></h4>
@@ -5112,7 +5139,19 @@ Littera, Glyph Designer等软件生成的XML文件格式。
 <h4 id="setprefix_prefix"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#setPrefix">setPrefix( [prefix])</a><a class="headerlink" href="#setprefix_prefix" title="Permanent link">#</a></h4>
 <h4 id="spritesheetkey_url_frameconfig_xhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#spritesheet">spritesheet(key [, url] [, frameConfig] [, xhrSettings])</a><a class="headerlink" href="#spritesheetkey_url_frameconfig_xhrsettings" title="Permanent link">#</a></h4>
 <p>加载精灵单子。支持normal maps。</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spritesheet</span><span class="p">({</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spritesheet</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bot1&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;images/robot.png&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">frameConfig</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
@@ -5125,14 +5164,25 @@ Littera, Glyph Designer等软件生成的XML文件格式。
 <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spritesheet</span><span class="p">(</span><span class="s1">&#39;bot2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;images/robot.png&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">frameWidth</span><span class="o">:</span><span class="w"> </span><span class="mf">32</span><span class="p">,</span><span class="w"> </span><span class="nx">frameHeight</span><span class="o">:</span><span class="w"> </span><span class="mf">38</span><span class="w"> </span><span class="p">});</span>
 <span class="c1">// and later in your game ...</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;bot1&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="start"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#start">start()</a><a class="headerlink" href="#start" title="Permanent link">#</a></h4>
 <p>开始加载。会重置进度、数量，发出<code>start</code>事件。
 场景的<code>preload</code>函数中加载会自动开始。此外需自行调用，以开始下载。
 如果正在加载，此方法径直返回。</p>
 <h4 id="svgkey_url_svgconfig_xhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#svg">svg(key [, url] [, svgConfig] [, xhrSettings])</a><a class="headerlink" href="#svgkey_url_svgconfig_xhrsettings" title="Permanent link">#</a></h4>
 <p>加载svg文件。注意提供新尺寸，以便在生成纹理时在清晰度和内存消耗之间取得平衡。</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">svg</span><span class="p">(</span><span class="s1">&#39;morty1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;images/Morty.svg&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">600</span><span class="w"> </span><span class="p">});</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">svg</span><span class="p">(</span><span class="s1">&#39;morty1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;images/Morty.svg&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">600</span><span class="w"> </span><span class="p">});</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">svg</span><span class="p">(</span><span class="s1">&#39;morty2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;images/Morty.svg&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="mf">2.5</span><span class="w"> </span><span class="p">});</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">svg</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;morty3&#39;</span><span class="p">,</span>
@@ -5144,39 +5194,57 @@ Littera, Glyph Designer等软件生成的XML文件格式。
 <span class="w">        </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="mf">2.5</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">});</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="textkey_url_xhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#text">text(key [, url] [, xhrSettings])</a><a class="headerlink" href="#textkey_url_xhrsettings" title="Permanent link">#</a></h4>
 <p>加载文本文件。</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">text</span><span class="p">({</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">text</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;story1&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;files/IntroStory.txt&#39;</span>
 <span class="p">});</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s1">&#39;story2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;files/IntroStory.txt&#39;</span><span class="p">);</span>
 <span class="c1">// and later in your game ...</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">cache</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;story1&#39;</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="tilemapcsvkey_url_xhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#tilemapCSV">tilemapCSV(key [, url] [, xhrSettings])</a><a class="headerlink" href="#tilemapcsvkey_url_xhrsettings" title="Permanent link">#</a></h4>
 <p>加载CSV砖块地图文件。</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">tilemapCSV</span><span class="p">({</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">tilemapCSV</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;level1&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;maps/Level1.csv&#39;</span>
 <span class="p">});</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">tilemapCSV</span><span class="p">(</span><span class="s1">&#39;level2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;maps/Level2.csv&#39;</span><span class="p">);</span>
 <span class="c1">// and later in your game ...</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">tilemap</span><span class="p">({</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;level1&#39;</span><span class="w"> </span><span class="p">});</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="tilemapimpactkey_url_xhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#tilemapImpact">tilemapImpact(key [, url] [, xhrSettings])</a><a class="headerlink" href="#tilemapimpactkey_url_xhrsettings" title="Permanent link">#</a></h4>
 <p>加载Impact.js砖块地图文件。</p>
 <h4 id="tilemaptiledjsonkey_url_xhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#tilemapTiledJSON">tilemapTiledJSON(key [, url] [, xhrSettings])</a><a class="headerlink" href="#tilemaptiledjsonkey_url_xhrsettings" title="Permanent link">#</a></h4>
 <p>加载Tiled JSON砖块地图文件。</p>
-<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">tilemapTiledJSON</span><span class="p">({</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">tilemapTiledJSON</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;level1&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;maps/Level1.json&#39;</span>
 <span class="p">});</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">tilemapTiledJSON</span><span class="p">(</span><span class="s1">&#39;level1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;maps/Level1.json&#39;</span><span class="p">);</span>
 <span class="c1">// and later in your game ...</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">make</span><span class="p">.</span><span class="nx">tilemap</span><span class="p">({</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;level1&#39;</span><span class="w"> </span><span class="p">});</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="unityatlaskey_textureurl_atlasurl_texturexhrsettings_atlasxhrsettings"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#unityAtlas">unityAtlas(key [, textureURL] [, atlasURL] [, textureXhrSettings] [, atlasXhrSettings])</a><a class="headerlink" href="#unityatlaskey_textureurl_atlasurl_texturexhrsettings_atlasxhrsettings" title="Permanent link">#</a></h4>
 <p>加载Unity YAML纹理图集。</p>
 <h4 id="update"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#update">update()</a><a class="headerlink" href="#update" title="Permanent link">#</a></h4>
@@ -5202,16 +5270,16 @@ Littera, Glyph Designer等软件生成的XML文件格式。
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -5223,7 +5291,7 @@ Littera, Glyph Designer等软件生成的XML文件格式。
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -5231,7 +5299,7 @@ Littera, Glyph Designer等软件生成的XML文件格式。
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -5340,6 +5408,10 @@ Littera, Glyph Designer等软件生成的XML文件格式。
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -5388,7 +5460,7 @@ Littera, Glyph Designer等软件生成的XML文件格式。
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

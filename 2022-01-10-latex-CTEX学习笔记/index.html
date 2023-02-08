@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2378,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -4133,7 +4131,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -4690,7 +4688,21 @@
 <li><a href="https://ctan.math.washington.edu/tex-archive/language/chinese/ctex/ctex.pdf">CTEX宏集手册</a></li>
 <li><a href="https://github.com/CTeX-org/ctex-kit">CTEX宏集手册ctex-kit</a></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="n">pylatex</span><span class="o">.</span><span class="n">Document</span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">doc</span> <span class="o">=</span> <span class="n">pylatex</span><span class="o">.</span><span class="n">Document</span><span class="p">()</span>
 
 <span class="c1"># 引用ctex中文宏包</span>
 <span class="n">doc</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Package</span><span class="p">(</span><span class="s1">&#39;ctex&#39;</span><span class="p">))</span>
@@ -4705,19 +4717,24 @@
 
 <span class="c1"># 输出latex文件</span>
 <span class="n">doc</span><span class="o">.</span><span class="n">dumps</span><span class="p">()</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><a href="https://jdhao.github.io/2018/03/29/latex-chinese.zh/">备考：</a></p>
 <h3 id="ctexart">使用ctexart等中文文档类<a class="headerlink" href="#ctexart" title="Permanent link">#</a></h3>
 <blockquote>
 <p>如果用户需要在标准文档类的基础上添加中文支持和中文版式支持，我们建议用户使用 CTeX 宏集提供的四个中文文档类。CTeX 宏集提供了四个中文文档类：ctexart、ctexrep、ctexbook和ctexbeamer，分别对应 LaTeX 的标准文档类article、report、book和beamer。</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="na">[UTF8]</span><span class="nb">{</span>ctexart<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\documentclass</span><span class="na">[UTF8]</span><span class="nb">{</span>ctexart<span class="nb">}</span>
 <span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
 
 <span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
 你好，这是一个测试文档。
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>使用 ctexart documentclass 时候，最好加上<code>\usepackage[T1]{fontenc}</code>，否则某些符号显示不正确。</p>
 <p>ctex的ctexbook类包，适合书籍排版，参考
 * <a href="https://www.duguying.net/article/%E7%94%A8latex%E6%8E%92%E7%89%88%E4%B8%AD%E6%96%87%E4%B9%A6%E7%B1%8D/">1</a></p>
@@ -4727,16 +4744,106 @@
 有些文档类是建立在 LaTeX 标准文档类之上开发的。这时，给ctex宏包加上heading选项，可以将章节标题设置为中文风格。<br />
 UTF8这个选项在 XeLaTeX 编译时写不写都无所谓，(pdf)LaTeX 编译时也即将写不写都无所谓。</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 <span class="k">\usepackage</span><span class="na">[heading=true][UTF8]</span><span class="nb">{</span>ctex<span class="nb">}</span>
 <span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
 你好，这是一个测试文档。
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>使用以上代码的 LaTeX 源文件可以使用 latex，pdflatex，xelatex 或者 lualatex 命令来编译生成 PDF 文件。CTeX 开发者推荐使用 xelatex 命令编译源文件。</p>
 <h2 id="latex_workshop">LaTeX Workshop配置<a class="headerlink" href="#latex_workshop" title="Permanent link">#</a></h2>
 <p><strong>不要设置编译失败后清理文件，否则影响二次编译</strong></p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// ah21 2021-07-01</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="c1">// ah21 2021-07-01</span>
 <span class="w">    </span><span class="nt">&quot;latex-workshop.latex.tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">// 编译工具和命令</span>
@@ -4823,13 +4930,22 @@ UTF8这个选项在 XeLaTeX 编译时写不写都无所谓，(pdf)LaTeX 编译�
 <span class="w">    </span><span class="c1">//     &quot;code \&quot;D:/Users/ah21/AppData/Local/Programs/Microsoft VS Code/resources/app/out/cli.js\&quot; -gr \&quot;%f\&quot;:\&quot;%l\&quot;&quot;,</span>
 <span class="w">    </span><span class="c1">//     &quot;%PDF%&quot;,</span>
 <span class="w">    </span><span class="c1">// ],</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_4">建立新命令、新环境、宏包和文档类<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">\newcommand</span><span class="nb">{</span>name<span class="nb">}</span>[num]<span class="nb">{</span>definition<span class="nb">}</span> <span class="c">% 不得重名</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\newcommand</span><span class="nb">{</span>name<span class="nb">}</span>[num]<span class="nb">{</span>definition<span class="nb">}</span> <span class="c">% 不得重名</span>
 <span class="k">\providecommand</span><span class="nb">{</span>name<span class="nb">}</span>[num]<span class="nb">{</span>definition<span class="nb">}</span> <span class="c">% 如果没有同名命令则提供此处定义的命令，如果有则用原来的命令；适用于多次重载防重名</span>
 <span class="k">\renewcommand</span><span class="nb">{</span>name<span class="nb">}</span>[num]<span class="nb">{</span>definition<span class="nb">}</span> <span class="c">% 更新命令</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\txsit</span><span class="nb">}</span>[1]<span class="nb">{</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\txsit</span><span class="nb">}</span>[1]<span class="nb">{</span>
     This is the <span class="k">\emph</span><span class="nb">{</span> #1 <span class="nb">}</span> Short Introduction to <span class="k">\LaTeXe</span>
     <span class="nb">}</span>
 <span class="c">% in the document body:</span>
@@ -4837,10 +4953,17 @@ UTF8这个选项在 XeLaTeX 编译时写不写都无所谓，(pdf)LaTeX 编译�
 <span class="k">\item</span> <span class="k">\txsit</span><span class="nb">{</span>not so<span class="nb">}</span>
 <span class="k">\item</span> <span class="k">\txsit</span><span class="nb">{</span>very<span class="nb">}</span>
 <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">\newenvironment</span><span class="nb">{</span>name<span class="nb">}</span>[num]<span class="nb">{</span>before<span class="nb">}{</span>after<span class="nb">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">\newenvironment</span><span class="nb">{</span>king<span class="nb">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\newenvironment</span><span class="nb">{</span>name<span class="nb">}</span>[num]<span class="nb">{</span>before<span class="nb">}{</span>after<span class="nb">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\newenvironment</span><span class="nb">{</span>king<span class="nb">}</span>
 <span class="nb">{</span><span class="k">\rule</span><span class="nb">{</span>1ex<span class="nb">}{</span>1ex<span class="nb">}</span><span class="c">%</span>
     <span class="k">\hspace</span><span class="nb">{</span><span class="k">\stretch</span><span class="nb">{</span>1<span class="nb">}}}</span>
 <span class="nb">{</span><span class="k">\hspace</span><span class="nb">{</span><span class="k">\stretch</span><span class="nb">{</span>1<span class="nb">}}</span><span class="c">%</span>
@@ -4848,38 +4971,54 @@ UTF8这个选项在 XeLaTeX 编译时写不写都无所谓，(pdf)LaTeX 编译�
 <span class="k">\begin</span><span class="nb">{</span>king<span class="nb">}</span>
 My humble subjects <span class="k">\ldots</span>
 <span class="k">\end</span><span class="nb">{</span>king<span class="nb">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c">% 以.sty后缀保存</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 以.sty后缀保存</span>
 <span class="k">\ProvidesPackage</span><span class="nb">{</span>demopack<span class="nb">}</span> <span class="c">% 定义名称，载入时如果重名会提供提示</span>
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\tnss</span><span class="nb">}{</span>The not so Short Introduction to <span class="k">\LaTeXe</span><span class="nb">}</span>
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\txsit</span><span class="nb">}</span>[1]<span class="nb">{</span>The <span class="k">\emph</span><span class="nb">{</span> #1 <span class="nb">}</span> Short Introduction to <span class="k">\LaTeXe</span><span class="nb">}</span>
 <span class="k">\newenvironment</span><span class="nb">{</span>king<span class="nb">}{</span><span class="k">\begin</span><span class="nb">{</span>quote<span class="nb">}}{</span><span class="k">\end</span><span class="nb">{</span>quote<span class="nb">}}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="newcommand">坚持使用\newcommand*<a class="headerlink" href="#newcommand" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">\def\examplea</span> #1 <span class="nb">{</span><span class="c">% #1 cannot contain \par</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\def\examplea</span> #1 <span class="nb">{</span><span class="c">% #1 cannot contain \par</span>
 <span class="nb">}</span>
 <span class="k">\long\def\exampleb</span> #1 <span class="nb">{</span><span class="c">% #1 can contain \par</span>
 <span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>\newcommand是\def的包装:</p>
-<div class="highlight"><pre><span></span><code><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\examplea</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="c">% #1 can contain \par</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\newcommand</span><span class="nb">{</span><span class="k">\examplea</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="c">% #1 can contain \par</span>
 <span class="nb">}</span>
 <span class="k">\newcommand*</span><span class="nb">{</span><span class="k">\exampleb</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="c">% #1 cannot contain \par</span>
 <span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong><em>Most of the time, \newcommand</em> is the best choice as you want the error-checking that it provides. That is why examples given by experienced LaTeX users normally use this form, rather than just \newcommand.</strong>*</p>
 <p>\newenvironment的情况也是一样:</p>
-<div class="highlight"><pre><span></span><code><span class="k">\newenvironment</span><span class="nb">{</span>examplea<span class="nb">}</span>[1]<span class="nb">{</span><span class="c">% #1 can contain \par</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\newenvironment</span><span class="nb">{</span>examplea<span class="nb">}</span>[1]<span class="nb">{</span><span class="c">% #1 can contain \par</span>
 <span class="nb">}{}</span>
 <span class="k">\newenvironment*</span><span class="nb">{</span>exampleb<span class="nb">}</span>[1]<span class="nb">{</span><span class="c">% #1 cannot contain \par</span>
 <span class="nb">}{}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>对于LaTeX3则使用杂交方法，如果使用xparse定义文档命令，那么long版用加号标记：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\NewDocumentCommand\examplea</span><span class="nb">{</span>m<span class="nb">}{</span><span class="c">% #1 cannot contain \par</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\NewDocumentCommand\examplea</span><span class="nb">{</span>m<span class="nb">}{</span><span class="c">% #1 cannot contain \par</span>
 <span class="nb">}</span>
 <span class="k">\NewDocumentCommand\examplab</span><span class="nb">{</span>+m<span class="nb">}{</span><span class="c">% #1 can contain \par</span>
 <span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="xparse">xparse 宏包更灵活<a class="headerlink" href="#xparse" title="Permanent link">#</a></h3>
 <ul>
 <li>\NewDocumentCommand\⟨name⟩{⟨arg spec⟩}{⟨definition⟩}</li>
@@ -4889,28 +5028,39 @@ My humble subjects <span class="k">\ldots</span>
 <p>写一个宏包的基本工作就是将原本在你的文档导言区里很长的内容拷贝到另一个文件中去，
 这个文件需要以 .sty 作扩展名。你还需要加入一个宏包专用的命令：</p>
 <p>\ProvidesPackage{⟨package name⟩}</p>
-<div class="highlight"><pre><span></span><code><span class="c">% 包名要与文件名同名demopack.sty</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 包名要与文件名同名demopack.sty</span>
 <span class="k">\ProvidesPackage</span><span class="nb">{</span>demopack<span class="nb">}</span>
 <span class="c">% 调用宏包</span>
 <span class="c">% \RequirePackage[⟨options⟩]{⟨package name⟩} %与\usepackage 一致</span>
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\tnss</span><span class="nb">}{</span>The not so Short Introduction to <span class="k">\LaTeXe</span><span class="nb">}</span>
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\txsit</span><span class="nb">}</span>[1]<span class="nb">{</span>The <span class="k">\emph</span><span class="nb">{</span> #1 <span class="nb">}</span> Short Introduction to <span class="k">\LaTeXe</span><span class="nb">}</span>
 <span class="k">\newenvironment</span><span class="nb">{</span>king<span class="nb">}{</span><span class="k">\begin</span><span class="nb">{</span>quote<span class="nb">}}{</span><span class="k">\end</span><span class="nb">{</span>quote<span class="nb">}}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_6">编写文档类<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c">% 类名要与文件名同名demopack..cls</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 类名要与文件名同名demopack..cls</span>
 <span class="k">\ProvidesClass</span><span class="nb">{</span>demopack<span class="nb">}</span>
 <span class="c">% \RequirePackage[⟨options⟩]{⟨package name⟩} %与\usepackage 一致</span>
 <span class="c">% 调用文档类并修改</span>
 <span class="k">\LoadClass</span><span class="na">[⟨options⟩]</span><span class="nb">{</span>⟨package name⟩<span class="nb">}</span> <span class="c">% 与\documentclass 十分相像</span>
 ...
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="latex">LATEX 可定制的一些命令和参数<a class="headerlink" href="#latex" title="Permanent link">#</a></h2>
 <p>见《一份（不太）简短的 LATEX2ε 介绍》</p>
 <h2 id="pylatex">pylatex<a class="headerlink" href="#pylatex" title="Permanent link">#</a></h2>
 <p>If you want to combine xelatex (for Chinese) and latexmk (for compiling multiple times) you should be able to use this:</p>
-<div class="highlight"><pre><span></span><code><span class="n">doc</span><span class="o">.</span><span class="n">generate_pdf</span><span class="p">(</span><span class="n">compiler</span><span class="o">=</span><span class="s1">&#39;latexmk&#39;</span><span class="p">,</span> <span class="n">compiler_args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-xelatex&#39;</span><span class="p">])</span>
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">doc</span><span class="o">.</span><span class="n">generate_pdf</span><span class="p">(</span><span class="n">compiler</span><span class="o">=</span><span class="s1">&#39;latexmk&#39;</span><span class="p">,</span> <span class="n">compiler_args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-xelatex&#39;</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
 <h2 id="markdown">markdown宏包<a class="headerlink" href="#markdown" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="https://ctan.org/pkg/markdown">markdown宏包</a></li>
@@ -4918,16 +5068,43 @@ My humble subjects <span class="k">\ldots</span>
 <li><a href="https://github.com/witiko/markdown">库</a></li>
 </ul>
 <p>编译：</p>
-<div class="highlight"><pre><span></span><code>latexmk<span class="w"> </span>-cd<span class="w"> </span>-lualatex<span class="w"> </span>-silent<span class="w"> </span>markdown.tex
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>latexmk<span class="w"> </span>-cd<span class="w"> </span>-lualatex<span class="w"> </span>-silent<span class="w"> </span>markdown.tex
+</code></pre></div></td></tr></table></div>
 <h2 id="datatool">自动化排版/datatool宏包<a class="headerlink" href="#datatool" title="Permanent link">#</a></h2>
 <p>参考<em>LATEX for Administrative Work</em>，其目标是简化行政管理事务，如回信（邮件合并），执行重复任务，排印问题清单或试卷，等等；常涉及使用外部数据问题。</p>
-<div class="highlight"><pre><span></span><code><span class="c">% 新建数据库</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 新建数据库</span>
 <span class="k">\DTLnewdb</span><span class="nb">{</span>⟨db name⟩<span class="nb">}</span>
 <span class="c">% 新建全局数据库</span>
 <span class="k">\DTLgnewdb</span><span class="nb">{</span>⟨db name⟩<span class="nb">}</span>
-</code></pre></div>
-<p><div class="highlight"><pre><span></span><code><span class="c">% 加载数据库</span>
+</code></pre></div></td></tr></table></div>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 加载数据库</span>
 <span class="k">\DTLloaddb</span><span class="na">[⟨options⟩]</span><span class="nb">{</span>⟨db name⟩<span class="nb">}{</span>⟨filename⟩<span class="nb">}</span>
 <span class="c">% 保存数据库</span>
 <span class="k">\DTLsavedb</span><span class="nb">{</span>⟨db name⟩<span class="nb">}{</span>⟨filename⟩<span class="nb">}</span>
@@ -4952,9 +5129,18 @@ My humble subjects <span class="k">\ldots</span>
 <span class="k">\DTLnewdbentry</span><span class="nb">{</span>mydata<span class="nb">}{</span>Score<span class="nb">}{</span>52<span class="nb">}</span><span class="c">%</span>
 <span class="k">\DTLnewdbentry</span><span class="nb">{</span>mydata<span class="nb">}{</span>Surname<span class="nb">}{</span>Adams<span class="nb">}</span><span class="c">%</span>
 <span class="k">\DTLsavedb</span><span class="nb">{</span>mydata<span class="nb">}{</span>mydata.csv<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 ``</p>
-<div class="highlight"><pre><span></span><code><span class="c">% 迭代数据行</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 迭代数据行</span>
 <span class="k">\DTLforeach</span><span class="na">[⟨condition⟩]</span><span class="nb">{</span>⟨db-name⟩<span class="nb">}{</span>⟨assign⟩<span class="nb">}{</span>⟨body⟩<span class="nb">}</span>
 <span class="c">% 加星/只读版，更快</span>
 <span class="k">\DTLforeach*</span><span class="na">[⟨condition⟩]</span><span class="nb">{</span>⟨db-name⟩<span class="nb">}{</span>⟨assign⟩<span class="nb">}{</span>⟨body⟩<span class="nb">}</span>
@@ -4964,7 +5150,7 @@ My humble subjects <span class="k">\ldots</span>
 
 <span class="c">% 高级迭代（适合大数据库）：</span>
 <span class="k">\dtlforeachkey</span>(⟨key cs⟩,⟨col cs⟩,⟨type cs⟩,⟨header cs⟩)<span class="k">\in</span><span class="nb">{</span>⟨db⟩<span class="nb">}</span><span class="k">\do</span><span class="nb">{</span>⟨body⟩<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="datagidx">datagidx宏包<a class="headerlink" href="#datagidx" title="Permanent link">#</a></h3>
 <p><strong>警告：排序、校勘效率不如外部程序，如使用<code>\printterms</code>时会排序，好处在于<em>内置</em>。</strong></p>
 <p>\loadgidx[⟨options⟩]{⟨filename⟩}{⟨title⟩}
@@ -4985,12 +5171,16 @@ My humble subjects <span class="k">\ldots</span>
 <p>在使用不记编号的命令形式（\section<em>、\caption</em>3、带可选参数的 \item 命令等）时不要使用 \label 命令，否则生成的引用编号不正确。</p>
 <h2 id="refcount">refcount引用计算宏包<a class="headerlink" href="#refcount" title="Permanent link">#</a></h2>
 <p>\thepage，单页构造时才准确，所以只能用在页眉页脚  </p>
-<div class="highlight"><pre><span></span><code><span class="k">\label</span><span class="nb">{</span>标签<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\label</span><span class="nb">{</span>标签<span class="nb">}</span>
 <span class="c">% 标签的页码引用不能展开，含有额外信息</span>
 <span class="k">\pageref</span><span class="nb">{</span>标签<span class="nb">}</span>
 <span class="c">% 把标签的页码引用转为数字</span>
 <span class="k">\getpagerefnumber</span><span class="nb">{</span>标签<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_7">脚注<a class="headerlink" href="#_7" title="Permanent link">#</a></h2>
 <p>有些情况下（比如在表格环境、各种盒子内）使用 \footnote{} 并不能自动生成脚注。可以先再需要的位置用 \footnotemark 标记（计数），再在合适的位置用 \footnotetext{} 生成脚注。</p>
 <h2 id="_8">边注<a class="headerlink" href="#_8" title="Permanent link">#</a></h2>
@@ -4998,7 +5188,17 @@ My humble subjects <span class="k">\ldots</span>
 <p>\marginpar{\footnotesize 边注较窄，不要写过多文字，最好设置较小的字号。}</p>
 <h2 id="_9">列表<a class="headerlink" href="#_9" title="Permanent link">#</a></h2>
 <p>有序列表：</p>
-<div class="highlight"><pre><span></span><code><span class="c">% 可定义各级行头符号</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 可定义各级行头符号</span>
 <span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\labelenumi</span><span class="nb">}{</span><span class="k">\Alph</span><span class="nb">{</span>enumi<span class="nb">}</span>&gt;<span class="nb">}</span>
 <span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\labelenumii</span><span class="nb">}{</span><span class="k">\Alph</span><span class="nb">{</span>enumi<span class="nb">}</span>&gt;<span class="nb">}</span>
 <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
@@ -5009,20 +5209,27 @@ My humble subjects <span class="k">\ldots</span>
     <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
     <span class="k">\item</span> Reference(<span class="k">\ref</span><span class="nb">{</span>itref<span class="nb">}</span>).
 <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>无序列表：</p>
-<div class="highlight"><pre><span></span><code><span class="c">% 可定义各级行头符号</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 可定义各级行头符号</span>
 <span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\labelitemi</span><span class="nb">}{</span><span class="k">\ddag</span><span class="nb">}</span>
 <span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\labelitemii</span><span class="nb">}{</span><span class="k">\dag</span><span class="nb">}</span>
 <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
 <span class="k">\item</span> First item
 <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>描述列表（参数中是要描述的关键词）：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>description<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>description<span class="nb">}</span>
     <span class="k">\item</span><span class="na">[⟨item title⟩]</span> …
 <span class="k">\end</span><span class="nb">{</span>description<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_10">引用环境<a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
 <p>quote 用于引用较短的文字，首行不缩进；quotation 用于
 引用若干段文字，首行缩进。verse 用于排版诗歌，首行悬挂缩进。</p>
@@ -5091,8 +5298,8 @@ My humble subjects <span class="k">\ldots</span>
 </ul>
 <h3 id="_17">函数<a class="headerlink" href="#_17" title="Permanent link">#</a></h3>
 <p>LaTeX3 中的函数名包括三部分：模块名（module）、描述（description）以及参数指定（arg-spec），形如</p>
-<div class="highlight"><pre><span></span><code>\&lt;module&gt;_&lt;description&gt;:&lt;arg-spec&gt;
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>\&lt;module&gt;_&lt;description&gt;:&lt;arg-spec&gt;
+</code></pre></div></td></tr></table></div>
 <p>参数指定包括：</p>
 <ul>
 <li>n：普通（normal）参数，表示一组由大括号{...}包围的 token（记号，或者叫字元）列表，这其实就是TeX 中的标准宏参数</li>
@@ -5105,8 +5312,8 @@ My humble subjects <span class="k">\ldots</span>
 <p>开启 LaTeX3 语法后，单词间的空格是不起任何作用的（catcode=9，即可忽略字符）。确实要使用空格时，则用<sub>代替。至于需要使用</sub>的原来意思，即不可断开的空格（俗称「带子」）时，可以用原来的宏\nobreakspace</p>
 <h3 id="_18">变量<a class="headerlink" href="#_18" title="Permanent link">#</a></h3>
 <p>LaTeX3 中，变量的名称包括四个部分：作用域（scope）、模块名（module）、描述（description）以及变量类型（type），形如</p>
-<div class="highlight"><pre><span></span><code>\&lt;scope&gt;_&lt;module&gt;_&lt;description&gt;_&lt;type&gt;
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>\&lt;scope&gt;_&lt;module&gt;_&lt;description&gt;_&lt;type&gt;
+</code></pre></div></td></tr></table></div>
 <p>变量的作用域有三种：</p>
 <ul>
 <li>c：表示常数（constant），即一旦创建，就不应该改变它的值</li>
@@ -5158,15 +5365,27 @@ My humble subjects <span class="k">\ldots</span>
 <h3 id="_20">编程环境<a class="headerlink" href="#_20" title="Permanent link">#</a></h3>
 <p>之前我们就已经提到过，LaTeX3 目前为止还没有成为一个独立的格式。使用 LaTeX3，仍然需要在 LaTeX 2_ε_ 中调用expl3宏包。</p>
 <p>如果只在一个.tex文件中使用，可以这样做：</p>
-<pre><code>\documentclass{article}
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>\documentclass{article}
 \usepackage{expl3}
 
 \ExplSyntaxOn   % 开启 LaTeX3 编程环境
 ...
 \ExplSyntaxOff  % 关闭 LaTeX3 编程环境
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>如果是要编写宏包或文档类，标准做法与在 LaTeX 2_ε_ 中类似：</p>
-<pre><code>\RequirePackage{expl3}
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>\RequirePackage{expl3}
 
 % 宏包使用 \ProvidesExplPackage
 % 文档类使用 \ProvidesExplClass
@@ -5174,7 +5393,7 @@ My humble subjects <span class="k">\ldots</span>
 \ProvidesExplPackage{&lt;package&gt;}{&lt;data&gt;}{&lt;version&gt;}{&lt;description&gt;}
 
 % 之后开启 LaTeX3 语法，文件末尾处则会自动关闭
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <h2 id="_21">对齐<a class="headerlink" href="#_21" title="Permanent link">#</a></h2>
 <h3 id="_22">文档流对齐开关<a class="headerlink" href="#_22" title="Permanent link">#</a></h3>
 <p>也可以使用命令\raggedright、\centering和\raggedleft使以后的文本按指定方式对齐.</p>
@@ -5262,10 +5481,12 @@ your equation (2) <br />
 <p>强制空格<code>\</code></p>
 <p>英文单、双引号<code>`'</code>, <code>``''</code></p>
 <p>英文连词、连数、连词
-<div class="highlight"><pre><span></span><code>daughter-in-law, X-rated<span class="k">\\</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>daughter-in-law, X-rated<span class="k">\\</span>
 pages 13--67<span class="k">\\</span>
 yes---or no?
-</code></pre></div></p>
+</code></pre></div></td></tr></table></div></p>
 <p>断词<code>\-</code></p>
 <p>中文+、-号宽度不一样，减号改成行内公式<code>$-$</code></p>
 <p>英文省略号<br />
@@ -5274,7 +5495,18 @@ yes---or no?
 <p>可以使用字符 ~ 输入一个不会断行的空格（高德纳称之为 tie，“带子”），通常用在英文人名、图表名称等上下文环
 境</p>
 <h2 id="_29">手动断行和分页<a class="headerlink" href="#_29" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">\\</span><span class="na">[⟨length⟩]</span> 
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\\</span><span class="na">[⟨length⟩]</span> 
 <span class="k">\\*</span><span class="na">[⟨length⟩]</span> <span class="c">% 禁止断行处分页</span>
 <span class="k">\newline</span> <span class="c">% 不能用于表格中</span>
 
@@ -5286,7 +5518,7 @@ yes---or no?
 <span class="k">\nolinebreak</span><span class="na">[⟨n⟩]</span>
 <span class="k">\pagebreak</span><span class="na">[⟨n⟩]</span>
 <span class="k">\nopagebreak</span><span class="na">[⟨n⟩]</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_30">文档元素<a class="headerlink" href="#_30" title="Permanent link">#</a></h2>
 <p><strong>章节：</strong></p>
 <p>三个标准文档类 article、report 和 book提供了划分章节的命令：</p>
@@ -5308,7 +5540,34 @@ yes---or no?
 * \mainmatter 正文部分，页码使用阿拉伯数字，从 1 开始计数；其后的章节编号正常。
 * \backmatter 后记部分，页码格式不变，继续正常计数；其后的 \chapter 不编号。</p>
 <p>文档结构示例：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>book<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>book<span class="nb">}</span>
 
 <span class="c">% 导言区，加载宏包和各项设置，包括参考文献、索引等</span>
 <span class="k">\usepackage</span><span class="nb">{</span>makeidx<span class="nb">}</span> <span class="c">% 调用 makeidx 宏包，用来处理索引</span>
@@ -5336,12 +5595,14 @@ yes---or no?
 <span class="k">\printindex</span> <span class="c">% 利用 makeindex 工具生成索引</span>
 
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_31">字号<a class="headerlink" href="#_31" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>He likes <span class="nb">{</span><span class="k">\LARGE</span> large and
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>He likes <span class="nb">{</span><span class="k">\LARGE</span> large and
 <span class="nb">{</span><span class="k">\small</span> small<span class="nb">}</span> letters<span class="nb">}</span>.
 He likes large and small letters.
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>设定任意大小的字号：</strong>
 <code>\fontsize{⟨size⟩}{⟨base line-skip⟩}</code></p>
 <p>表 5.3: 标准文档类中的字号大小
@@ -5456,15 +5717,29 @@ He likes large and small letters.
 <li>mathbf：math boldface</li>
 </ul>
 <p>加载更多英文字体使用的命令为 fontspec 宏包的 \newfontfamily&lt;命令&gt;[(可选项)]{&lt;字体名&gt;}。xeCJK 宏包（ctex宏包或文档类[包括我们这里的 ctexart 文档]会自动调用）中对应的命令为 \setCJKfamilyfont{&lt;中文字体族&gt;}[&lt;可选项&gt;]{字体名}。</p>
-<div class="highlight"><pre><span></span><code><span class="k">\setCJKfamilyfont</span><span class="nb">{</span>hwhp<span class="nb">}{</span>华文琥珀<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\setCJKfamilyfont</span><span class="nb">{</span>hwhp<span class="nb">}{</span>华文琥珀<span class="nb">}</span>
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\hwhp</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>hwhp<span class="nb">}}</span>
 <span class="k">\newfontfamily\tempus</span><span class="nb">{</span>Tempus Sans ITC<span class="nb">}</span>
 
 <span class="nb">{</span><span class="k">\hwhp</span> 这是一段华文琥珀文字, english not work<span class="nb">}</span>
 <span class="nb">{</span><span class="k">\tempus</span> this is Technic font, 中文不起作用<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>另，中英文分开设置（未测试）：</p>
-<div class="highlight"><pre><span></span><code><span class="c">% 英文字体配置部分</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 英文字体配置部分</span>
 <span class="k">\setmainfont</span><span class="nb">{</span>Source Serif Pro<span class="nb">}</span><span class="c">%Times New Roman</span>
 <span class="k">\setsansfont</span><span class="nb">{</span>Source Sans Pro<span class="nb">}</span>
 <span class="k">\setmonofont</span><span class="nb">{</span>Source Code Pro<span class="nb">}</span>
@@ -5474,7 +5749,7 @@ He likes large and small letters.
 <span class="k">\setCJKsansfont</span><span class="nb">{</span>黑体<span class="nb">}</span><span class="c">%无衬线字体</span>
 <span class="k">\setCJKmonofont</span><span class="nb">{</span>楷体<span class="nb">}</span><span class="c">%等宽字体</span>
 <span class="k">\setCJKfamilyfont</span><span class="nb">{</span>boldsong<span class="nb">}{</span>Source Han Serif SC Heavy<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>查看系统字体</p>
 <ul>
 <li>fc-list 命令可以列出系统中可以使用的字体</li>
@@ -5501,12 +5776,16 @@ He likes large and small letters.
 dows 中设定基本字体为宋体，并设定对应的 BoldFont 为黑体，ItalicFont 为楷体：</p>
 <p>\setCJKmainfont{SimSun}[BoldFont=SimHei, ItalicFont=KaiTi]</p>
 <p>关闭自动字体检测，手动指定字族（方正founder、adobe、windows、ubuntu、none、⟨name⟩）：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="na">[fontset = none]</span><span class="nb">{</span>ctexart<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\documentclass</span><span class="na">[fontset = none]</span><span class="nb">{</span>ctexart<span class="nb">}</span>
 <span class="k">\ctexset</span><span class="nb">{</span>fontset = founder<span class="nb">}</span>
 <span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
 在文档类选项中声明 <span class="k">\verb</span>|fontset = none|，随后在导言区用 <span class="k">\verb</span>|<span class="k">\ctexset</span>|指定字体。
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>设置⟨name⟩会自动调用用户设置的、名为<code>ctex-fontset-⟨name⟩.def</code>的文件进行字体配置。请先保证文件的存在。可以在当前工作目录或者本地 TDS目录树下合适位置建立一个名为 ctex-fontset-⟨name⟩.def 的文件。字体配置文件的具体写法可以参考 CTEX宏集 fontset 目录下的字体配置文件。</p>
 <p>CTEX 宏集预定义的中文字库还定义了一些字体命令。 除了在 ubuntu 字库中没有\fangsong 的定义外，所有字库都有以下四个字体命令：</p>
 <ul>
@@ -5526,7 +5805,15 @@ dows 中设定基本字体为宋体，并设定对应的 BoldFont 为黑体，It
 <p><strong>以上CTEX字体命令只能作用于汉字，\textrm{} 或 \rmfamily系列命令有关联的西文字体。</strong></p>
 <h2 id="cjk">自定义cjk字体<a class="headerlink" href="#cjk" title="Permanent link">#</a></h2>
 <p>字体名称，应该是先找到字体文件，然后用字体查看器观察，用上面“信息”中显示的名字。</p>
-<div class="highlight"><pre><span></span><code><span class="c">% 设置CJKfamily字体。注意顺序，第一个定义的就是默认字体</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 设置CJKfamily字体。注意顺序，第一个定义的就是默认字体</span>
 <span class="k">\setCJKfamilyfont</span><span class="nb">{</span>song<span class="nb">}{</span>FZShuSong-Z01S<span class="nb">}</span><span class="c">% 方正书宋简体</span>
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\song</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>song<span class="nb">}}</span><span class="c">%</span>
 <span class="k">\setCJKfamilyfont</span><span class="nb">{</span>kaiti<span class="nb">}{</span>FZKai-Z03S<span class="nb">}</span><span class="c">% 方正楷体简体</span>
@@ -5535,15 +5822,20 @@ dows 中设定基本字体为宋体，并设定对应的 BoldFont 为黑体，It
 <span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\heiti</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>heiti<span class="nb">}}</span><span class="c">% 因为原命令已被ctex中定义过，所以这里重定义</span>
 <span class="k">\setCJKfamilyfont</span><span class="nb">{</span>fangsong<span class="nb">}{</span>FZFangSong-Z02S<span class="nb">}</span><span class="c">% 方正仿宋简体</span>
 <span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\fangsong</span><span class="nb">}{</span><span class="k">\CJKfamily</span><span class="nb">{</span>fangsong<span class="nb">}}</span><span class="c">% 因为原命令已被ctex中定义过，所以这里重定义</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="geometry">geometry/页面设置<a class="headerlink" href="#geometry" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="na">[a4paper]</span><span class="nb">{</span>article<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\documentclass</span><span class="na">[a4paper]</span><span class="nb">{</span>article<span class="nb">}</span>
 <span class="k">\usepackage</span><span class="nb">{</span>geometry<span class="nb">}</span>
 <span class="k">\geometry</span><span class="nb">{</span>left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm<span class="nb">}</span>
 <span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
 test
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>常用的长度选项还有head（head的高度）, headsep（head与版心的距离）, foot（foot的高度），见下图</p>
 <h3 id="_34">临时调整<a class="headerlink" href="#_34" title="Permanent link">#</a></h3>
 <p>在需要调整页边距的页面，加入下面命令：</p>
@@ -5551,7 +5843,19 @@ test
 <p>如果需要恢复到原来的页边距，用下面的命令：</p>
 <p>\restoregeometry</p>
 <h2 id="pythontex">pythontex<a class="headerlink" href="#pythontex" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c">%!TEX TS-program = Arara</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">%!TEX TS-program = Arara</span>
 <span class="c">% arara: pdflatex: {shell: yes}</span>
 <span class="c">% arara: pythontex</span>
 <span class="c">% arara: pdflatex: {shell: yes}</span>
@@ -5564,7 +5868,7 @@ test
 <span class="k">\py</span><span class="nb">{</span>2+2<span class="nb">}</span>
 
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>PythonTEX offers various inline commands:</p>
 <ul>
 <li><code>\py{&lt;expression&gt;}</code> prints value of expression</li>
@@ -5581,7 +5885,23 @@ test
 <li><code>pyblock</code> executed and typeset</li>
 <li><code>pyconsole</code> simulates an interactive Python-console</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="na">[12pt]</span><span class="nb">{</span>article<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\documentclass</span><span class="na">[12pt]</span><span class="nb">{</span>article<span class="nb">}</span>
 <span class="k">\usepackage</span><span class="na">[utf8]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
 <span class="k">\usepackage</span><span class="na">[T1]</span><span class="nb">{</span>fontenc<span class="nb">}</span>
 <span class="k">\usepackage</span><span class="nb">{</span>pythontex<span class="nb">}</span>
@@ -5598,9 +5918,35 @@ Facebook <span class="nb">&amp;</span> <span class="k">\py</span><span class="nb
 <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
 
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_35">自定义<a class="headerlink" href="#_35" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>fancyvrb<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>fancyvrb<span class="nb">}</span>
 <span class="k">\makeatletter</span>
 <span class="k">\newenvironment</span><span class="nb">{</span>pycode<span class="nb">}</span>[1]<span class="c">%</span>
 <span class="nb">{</span><span class="k">\xdef\d</span>@tn@me<span class="nb">{</span> #1 <span class="nb">}</span><span class="k">\xdef\r</span>@ncmd<span class="nb">{</span>python #1.py &gt; #1.plog<span class="nb">}</span><span class="c">%</span>
@@ -5627,10 +5973,40 @@ print(1+123424)
 
 
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="counter">在天头中通过页码总计每页counter计数<a class="headerlink" href="#counter" title="Permanent link">#</a></h2>
 <p>将每页对象的展开数量存储在一个\prop列表（l3prop属性列表，键值对列表）中，并在天头中提取该列表的值（l3keys键值对列表），天头中属性名称只有页码（希望中间没有重置）；不过对象的数量必须被评估一次以上（在一个循环中），这只更新键-值（因为属性-列表有一个唯一的键-值关系，旧值会被覆盖）。</p>
-<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 
 <span class="k">\usepackage</span><span class="nb">{</span>fancyhdr<span class="nb">}</span>
 <span class="k">\pagestyle</span><span class="nb">{</span>fancy<span class="nb">}</span>
@@ -5661,20 +6037,39 @@ print(1+123424)
 <span class="nb">}</span>
 <span class="k">\ExplSyntaxOff</span>
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_36">计算文本的实际行数/高度以便文本适配<a class="headerlink" href="#_36" title="Permanent link">#</a></h2>
 <ul>
 <li>https://stackoverflow.com/questions/2939450/get-height-on-a-block-of-latex-output</li>
 <li>https://tex.stackexchange.com/questions/317713/count-lines-in-a-block-of-text</li>
 </ul>
 <p>通过盒子测量高度：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\newdimen\height</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\newdimen\height</span>
 <span class="k">\setbox</span>0=<span class="k">\hbox</span><span class="nb">{</span><span class="k">\Huge</span> Hello, World!<span class="nb">}</span>
 <span class="k">\height</span>=<span class="k">\ht</span>0 <span class="k">\advance\height</span> by <span class="k">\dp</span>0
 The height is: <span class="k">\the\height</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>使用<code>adjustbox</code>把内容包括在给定宽度<code>minipage</code>中，然后存储它的高度，然后用计算<code>baselineskip的</code>个数，最后废弃内容。</p>
-<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 <span class="k">\usepackage</span><span class="nb">{</span>adjustbox<span class="nb">}</span>
 
 <span class="k">\newlength\mycalclength</span>
@@ -5691,9 +6086,24 @@ The height is: <span class="k">\the\height</span>
 <span class="k">\CalcNumber</span><span class="nb">{</span>M M M M M M M<span class="nb">}{</span>1em<span class="nb">}{</span><span class="k">\MMMHeight</span><span class="nb">}</span><span class="k">\MMMHeight</span>
 
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>If you rearrange the order of the arguments and have the content last, you can use the feature of \adjustbox to read the last argument as box, not as argument, allowing for verbatim and other special content. Note that the assignment is then global as it happens in a group.</p>
-<div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 <span class="k">\usepackage</span><span class="nb">{</span>adjustbox<span class="nb">}</span>
 
 <span class="k">\newlength\mycalclength</span>
@@ -5709,7 +6119,7 @@ The height is: <span class="k">\the\height</span>
 <span class="k">\CalcNumber</span><span class="nb">{</span>1em<span class="nb">}{</span><span class="k">\MMMHeight</span><span class="nb">}{</span>M M M M M M M<span class="nb">}</span><span class="k">\MMMHeight</span>
 
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>FWIW, ConTeXt provides a macro <code>\determinenofline{...}</code> that determines the number of lines of the content (when typeset in a \vbox). The result is stored in the counter: <code>\noflines</code></p>
 <h2 id="_37">文件/模块引入、文档组织<a class="headerlink" href="#_37" title="Permanent link">#</a></h2>
 <ul>
@@ -5734,16 +6144,16 @@ The height is: <span class="k">\the\height</span>
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -5755,7 +6165,7 @@ The height is: <span class="k">\the\height</span>
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -5763,7 +6173,7 @@ The height is: <span class="k">\the\height</span>
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -5872,6 +6282,10 @@ The height is: <span class="k">\the\height</span>
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -5920,7 +6334,7 @@ The height is: <span class="k">\the\height</span>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

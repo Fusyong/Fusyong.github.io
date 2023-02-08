@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2378,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -3711,7 +3709,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -3830,29 +3828,29 @@
 <p><strong>这个说明可能比较陈旧，请以<a href="https://github.com/Fusyong/zhpunc">zhpunc项目库</a>为准。</strong></p>
 <p>zhpunc项目是对<a href="https://github.com/Fusyong/zhfonts">zhfonts</a>项目的重构，而二者都基于<a href="https://github.com/liyanrui/zhfonts">liyanrui/zhfonts项目</a>，谨致谢忱。</p>
 <h2 id="todo_bugs">TODO &amp; bugs<a class="headerlink" href="#todo_bugs" title="Permanent link">#</a></h2>
-<ol>
-<li>[ ] 全部缓存、使用实测的标点字模数据，而不是使用预设的比例，以适应不同字体的实际；<ol>
-<li>[x] 缓存标点数据</li>
-<li>[x] 用于标点压缩</li>
-<li>[ ] 用于行首尾对齐</li>
+<ol class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> 全部缓存、使用实测的标点字模数据，而不是使用预设的比例，以适应不同字体的实际；<ol class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> 缓存标点数据</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 用于标点压缩</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 用于行首尾对齐</li>
 </ol>
 </li>
-<li>[ ] 变“标点压缩/挤压”为“标点加空”，预制常见的标点加空规则：<ol>
-<li>[x] 全角（默认）</li>
-<li>[x] 半角</li>
-<li>[x] 开明</li>
-<li>[x] 原样</li>
-<li>[ ] 行间</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 变“标点压缩/挤压”为“标点加空”，预制常见的标点加空规则：<ol class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> 全角（默认）</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 半角</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 开明</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 原样</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 行间</li>
 </ol>
 </li>
-<li>[x] 自定加空宽度（默认0.5角）</li>
-<li>[ ] 模块化</li>
-<li>[ ] 拓展、校正或覆盖系统的<code>hanzi</code>脚本的行为（<strong>待定</strong>）<ol>
-<li>[x] 修正两侧收缩胶收缩幅度为实有空白，以防重叠</li>
-<li>[ ] 据条件修正两侧拉伸胶的幅度</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 自定加空宽度（默认0.5角）</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 模块化</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 拓展、校正或覆盖系统的<code>hanzi</code>脚本的行为（<strong>待定</strong>）<ol class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> 修正两侧收缩胶收缩幅度为实有空白，以防重叠</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 据条件修正两侧拉伸胶的幅度</li>
 </ol>
 </li>
-<li>[ ] 允许用户扩展符号类别（<strong>待定</strong>），如：<ul>
+<li class="task-list-item"><input type="checkbox" disabled/> 允许用户扩展符号类别（<strong>待定</strong>），如：<ul>
 <li>☆★○●◎◇◆□</li>
 <li>㈠㈡㈢⑴⑵⑶⒈⒉⒊ⅠⅡⅢ……</li>
 </ul>
@@ -4065,38 +4063,38 @@
 <h2 id="_6">使用方法<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
 <p>参见<a href="https://github.com/Fusyong/jiazhu">jiazhu</a>项目。</p>
 <h2 id="bug_todo">bug &amp; TODO<a class="headerlink" href="#bug_todo" title="Permanent link">#</a></h2>
-<ul>
-<li>[x] 不再使用预设表，而是<strong>根据字体数据实际测算（固定占位半字或一字），并缓存</strong><ul>
-<li>[x] 标点压缩</li>
-<li>[ ] 行头尾标点突出/悬挂</li>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> 不再使用预设表，而是<strong>根据字体数据实际测算（固定占位半字或一字），并缓存</strong><ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> 标点压缩</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 行头尾标点突出/悬挂</li>
 </ul>
 </li>
-<li>[x] 行头尾悬挂标点的bar的长度超越边框</li>
-<li>[ ] 检查并报告系统的中文标点支持预设错误无（scrp-cjk.lua、char-cjk.lua、char-scr.lua、char-def.lua、font-imp-quality.lua等）<ul>
-<li>[x] 连续标点中间添加无限罚分，导致无法断行</li>
-<li>[x] 短行中有禁则时导致过度压缩（<strong>改成半字后其后胶性没有更改</strong>）</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 行头尾悬挂标点的bar的长度超越边框</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 检查并报告系统的中文标点支持预设错误无（scrp-cjk.lua、char-cjk.lua、char-scr.lua、char-def.lua、font-imp-quality.lua等）<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> 连续标点中间添加无限罚分，导致无法断行</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 短行中有禁则时导致过度压缩（<strong>改成半字后其后胶性没有更改</strong>）</li>
 </ul>
 </li>
-<li>[ ] 《标点符号用法》5.1横排文稿标点符号的位置和书写形式<ul>
-<li>[x] 5.1.1 句号、逗号、顿号、分号、冒号均置于相应文字之后，占一个字位置，居左下，不出现在一行之首。</li>
-<li>[x] 5.1.2 问号、叹号均置于相应文字之后，占一个字位置，居左，不出现在一行之首。两个问号（或叹号）叠用时，占一个字位置；三个问号（或叹号）叠用时，占两个字位置；问号和叹号连用时，占一个字位置。</li>
-<li>[x] 5.1.3 引号、括号、书名号中的两部分标在相应项目的两端，各占一个字位置。其中前一半不出现在一行之末，后一半不出现在一行之首。</li>
-<li>[x] 5.1.4 破折号标在相应项目之间，占两个字位置，上下居中，不能中间断开分处上行之末和下行之首。</li>
-<li>[x] 5.1.5 省略号占两个字位置，两个省略号连用时占四个字位置并须单独占一行。省略号不能中间断开分处上行之末和下行之首。</li>
-<li>[x] 5.1.6 连接号中的短横线比汉字“一”略短，占半个字位置；一字线比汉字“一”略长，占一个字位置；浪纹线占一个字位置。连接号上下居中，不出现在一行之首。</li>
-<li>[ ] 5.1.7 间隔号标在需要隔开的项目之间，<strong>占半个字位置，上下居中，不出现在一行之首。</strong></li>
+<li class="task-list-item"><input type="checkbox" disabled/> 《标点符号用法》5.1横排文稿标点符号的位置和书写形式<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> 5.1.1 句号、逗号、顿号、分号、冒号均置于相应文字之后，占一个字位置，居左下，不出现在一行之首。</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 5.1.2 问号、叹号均置于相应文字之后，占一个字位置，居左，不出现在一行之首。两个问号（或叹号）叠用时，占一个字位置；三个问号（或叹号）叠用时，占两个字位置；问号和叹号连用时，占一个字位置。</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 5.1.3 引号、括号、书名号中的两部分标在相应项目的两端，各占一个字位置。其中前一半不出现在一行之末，后一半不出现在一行之首。</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 5.1.4 破折号标在相应项目之间，占两个字位置，上下居中，不能中间断开分处上行之末和下行之首。</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 5.1.5 省略号占两个字位置，两个省略号连用时占四个字位置并须单独占一行。省略号不能中间断开分处上行之末和下行之首。</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 5.1.6 连接号中的短横线比汉字“一”略短，占半个字位置；一字线比汉字“一”略长，占一个字位置；浪纹线占一个字位置。连接号上下居中，不出现在一行之首。</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 5.1.7 间隔号标在需要隔开的项目之间，<strong>占半个字位置，上下居中，不出现在一行之首。</strong></li>
 <li>5.1.8 着重号和专名号标在相应文字的下边。</li>
-<li>[ ] 5.1.9 分隔号占半个字位置，<strong>不出现在一行之首或一行之末。</strong></li>
-<li>[x] 5.1.10 标点符号排在一行末尾时，若为全角字符则应占半角字符的宽度（即半个字位置），以使视觉效果更美观。</li>
-<li>[x] 5.1.11 在实际编辑出版工作中，为排版美观、方便阅读等需要，或为避免某一小节最后一个汉字转行或出现在另外一页开头等情况（浪费版面及视觉效果差），<strong>可适当压缩标点符号所占用的空间。</strong></li>
+<li class="task-list-item"><input type="checkbox" disabled/> 5.1.9 分隔号占半个字位置，<strong>不出现在一行之首或一行之末。</strong></li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 5.1.10 标点符号排在一行末尾时，若为全角字符则应占半角字符的宽度（即半个字位置），以使视觉效果更美观。</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> 5.1.11 在实际编辑出版工作中，为排版美观、方便阅读等需要，或为避免某一小节最后一个汉字转行或出现在另外一页开头等情况（浪费版面及视觉效果差），<strong>可适当压缩标点符号所占用的空间。</strong></li>
 </ul>
 </li>
-<li>[ ] 在夹注中应用标点悬挂</li>
-<li>[ ] close-open符号组合间保留半字空</li>
-<li>[ ] 设置选项（所需值，最大值，最小值）<ul>
-<li>[ ] 全身+</li>
-<li>[ ] 开明+</li>
-<li>[ ] 对开+</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 在夹注中应用标点悬挂</li>
+<li class="task-list-item"><input type="checkbox" disabled/> close-open符号组合间保留半字空</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 设置选项（所需值，最大值，最小值）<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> 全身+</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 开明+</li>
+<li class="task-list-item"><input type="checkbox" disabled/> 对开+</li>
 </ul>
 </li>
 </ul>
@@ -4129,16 +4127,16 @@
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -4150,7 +4148,7 @@
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -4158,7 +4156,7 @@
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -4267,6 +4265,10 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -4315,7 +4317,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

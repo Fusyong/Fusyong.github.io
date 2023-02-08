@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://blog.xiiigame.com/mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/">
+        <link rel="canonical" href="https://blog.xiiigame.com/2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/">
       
       
         <link rel="prev" href="../2021-03-02-mkdocs-material%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
@@ -146,8 +146,6 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -3795,7 +3793,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -3998,19 +3996,34 @@
 <p>这不只是一个插件，它是一个迷你框架！</p>
 </div>
 <h2 id="_1">设置<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">macros</span><span class="p">:</span>
 <span class="w">        </span><span class="c1"># 替换默认的jinja宏标志{{}}，否则类似的地方可能报错</span>
-<span class="w">        </span><span class="c1"># 或用{{raw}}{{endraw}}标签包裹（花括号改成你设置的，下面的标签已经被吃掉，注释、code block都无法阻止转换）</span>
 <span class="w">        </span><span class="c1"># [[% raw %]]</span>
 <span class="w">        </span><span class="nt">j2_block_start_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;[[%&#39;</span>
 <span class="w">        </span><span class="nt">j2_block_end_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;%]]&#39;</span>
 <span class="w">        </span><span class="nt">j2_variable_start_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;[[&#39;</span>
 <span class="w">        </span><span class="nt">j2_variable_end_string</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;]]&#39;</span>
 <span class="w">        </span><span class="c1"># [[% endraw %]]    </span>
-</code></pre></div>
-<p><strong>注意：</strong>lua代码块中长文本应改成类似<code>[-[ ... ]-]</code>的样子；TEX中的<code>{</code>紧接<code>#</code>，或紧接<code>%</code>，会被看作行内注释标签（comment tag）的开始，用空格分开即可（对代码本身有副作用）。</p>
+</code></pre></div></td></tr></table></div>
+<p>HTML注释、code block等都无法阻止宏转换。阻止方法：</p>
+<ul>
+<li>当前文档不应用宏，设置markdown文件的metadata：<code>ignore_macros: true</code></li>
+<li>jinja2单行字符串<code>{{ "{{ 2 + 2 }}" }}</code> <code>{{ '{{ "Hello world" }}' }}</code></li>
+<li>多行则用<code>{{ raw }}</code> <code>{{ endraw }}</code>标签包裹（花括号改成你的设置）</li>
+<li>lua代码块中长文本应改成类似<code>[-[ ... ]-]</code>的样子；TEX中的<code>{</code>紧接<code>#</code>，或紧接<code>%</code>，会被看作行内注释标签（comment tag）的开始，用空格分开即可（对代码本身有副作用）。</li>
+<li></li>
+</ul>
 <h2 id="markdown">用宏扩展markdown页面文件<a class="headerlink" href="#markdown" title="Permanent link">#</a></h2>
 <h3 id="_2">内置的宏对象<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
 <table>
@@ -4045,13 +4058,19 @@
 <td>git</td>
 <td>Information on the git version of the website (if part of a git repository)</td>
 </tr>
+<tr>
+<td>files</td>
+<td>文档结构 (for advanced users who know how to manipulate the mkdocs.structure.files.Files object, as well as mkdocs.structure.files.File objects)</td>
+</tr>
 </tbody>
 </table>
 <p>查看详细信息：</p>
-<div class="highlight"><pre><span></span><code><span class="x">[[% raw %]]</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">[[% raw %]]</span>
 <span class="x">[[ context(page) | pretty ]]</span>
 <span class="x">[[% endraw %]]    </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>本页以下的宏信息，就是像上面这样生成的。</p>
@@ -4069,15 +4088,51 @@
 <h3 id="jinja2">Jinja2内置过滤器<a class="headerlink" href="#jinja2" title="Permanent link">#</a></h3>
 <p>见<a href="https://jinja.palletsprojects.com/en/2.11.x/templates/#builtin-filters">Jinja2内置过滤器的文档</a>。</p>
 <p>本地查看：</p>
-<div class="highlight"><pre><span></span><code><span class="x">[[% raw %]]</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">[[% raw %]]</span>
 <span class="x">[[ context(filters_builtin) | pretty ]]</span>
 <span class="x">[[% endraw %]]    </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_4">自定义模块：宏、过滤器和变量<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p><strong>插件的威力体现在这里！</strong></p>
 <p>模块必须包含<code>define_env()</code>函数，其中包含宏、过滤器和变量声明。
 如在根目录中建立<code>main.py</code>：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
 <span class="k">def</span> <span class="nf">define_env</span><span class="p">(</span><span class="n">env</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This is the hook for defining variables, macros and filters</span>
@@ -4112,12 +4167,14 @@
     <span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="s2">&quot;Reverse a string (and uppercase)&quot;</span>
         <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>在markdown中使用：</p>
-<div class="highlight"><pre><span></span><code><span class="x">[[% raw %]]</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">[[% raw %]]</span>
 <span class="x">[[ mymacro() ]]</span>
 <span class="x">[[% endraw %]]    </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>效果：</p>
 <p>[[ mymacro() ]]</p>
 <h3 id="env">env的成员<a class="headerlink" href="#env" title="Permanent link">#</a></h3>
@@ -4219,7 +4276,20 @@
 </ul>
 <h3 id="_6">用例<a class="headerlink" href="#_6" title="Permanent link">#</a></h3>
 <p>列出20天以来（据page.meta.Modified）的文章标题和日期。过滤器</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 在index页中使用只能取到index页自身，不知何故</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 在index页中使用只能取到index页自身，不知何故</span>
 <span class="nd">@env</span><span class="o">.</span><span class="n">filter</span>
 <span class="k">def</span> <span class="nf">fromdays</span><span class="p">(</span><span class="n">navigation_pages</span><span class="p">,</span> <span class="n">days</span><span class="p">):</span>
     <span class="s2">&quot;滤出今天之前X天内的新帖&quot;</span>
@@ -4233,20 +4303,42 @@
                 <span class="k">if</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">page_time</span> <span class="o">&lt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">days</span><span class="p">):</span>
                     <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">l</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>markdown中的jinja模板：</p>
-<div class="highlight"><pre><span></span><code><span class="x">[[% raw %]]</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">[[% raw %]]</span>
 <span class="x">[[% for page in navigation.pages|fromdays(20) %]]</span>
-<span class="x">- [ [[ page.meta.title ]][[ page.meta.Modified ]] ](https://blog.xiiigame.com/mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/)</span>
+<span class="x">- [ [[ page.meta.title ]][[ page.meta.Modified ]] ](https://blog.xiiigame.com/2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/)</span>
 <span class="x">[[% endfor %]]</span>
 <span class="x">[[% endraw %]]    </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>效果：</p>
 <p>[[% for page in navigation.pages|fromdays(20) %]]
-- <a href="https://blog.xiiigame.com/mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/"> [[ page.meta.title ]][[ page.meta.Modified ]] </a>
+- <a href="https://blog.xiiigame.com/2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/"> [[ page.meta.title ]][[ page.meta.Modified ]] </a>
 [[% endfor %]]</p>
 <p>列出10篇最近更新的文章（据page.meta.Modified）。过滤器：</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 在index页中使用只能取到index页自身，不知何故</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 在index页中使用只能取到index页自身，不知何故</span>
 <span class="nd">@env</span><span class="o">.</span><span class="n">filter</span>
 <span class="k">def</span> <span class="nf">last_blogs</span><span class="p">(</span><span class="n">navigation_pages</span><span class="p">,</span> <span class="n">the_last_num</span><span class="p">):</span>
     <span class="s2">&quot;滤出最新的X个新帖&quot;</span>
@@ -4265,17 +4357,21 @@
     <span class="c1"># print(f&#39;【调用last_blog】&#39;)</span>
     <span class="c1"># print(l)</span>
     <span class="k">return</span> <span class="n">l</span><span class="p">[:</span><span class="n">the_last_num</span><span class="p">]</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>markdown中的jinja模板：</p>
-<div class="highlight"><pre><span></span><code><span class="x">[[% raw %]]</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="x">[[% raw %]]</span>
 <span class="x">[[% for page in navigation.pages|last_blogs(10) %]]</span>
-<span class="x">- [ [[ page.meta.title ]][[ page.meta.Modified ]] ](https://blog.xiiigame.com/mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/)</span>
+<span class="x">- [ [[ page.meta.title ]][[ page.meta.Modified ]] ](https://blog.xiiigame.com/2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/)</span>
 <span class="x">[[% endfor %]]</span>
 <span class="x">[[% endraw %]]    </span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>效果：</p>
 <p>[[% for page in navigation.pages|last_blogs(10) %]]
-- <a href="https://blog.xiiigame.com/mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/"> [[ page.meta.title ]][[ page.meta.Modified ]] </a>
+- <a href="https://blog.xiiigame.com/2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/"> [[ page.meta.title ]][[ page.meta.Modified ]] </a>
 [[% endfor %]]</p>
 <h2 id="pluglets"><a href="https://mkdocs-macros-plugin.readthedocs.io/en/latest/pluglets/">更强大的pluglets</a><a class="headerlink" href="#pluglets" title="Permanent link">#</a></h2>
 <p><a href="https://github.com/fralau/mkdocs-macros-test">查看例子</a></p>
@@ -4289,16 +4385,16 @@
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -4310,7 +4406,7 @@
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -4318,7 +4414,7 @@
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -4427,6 +4523,10 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -4475,7 +4575,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

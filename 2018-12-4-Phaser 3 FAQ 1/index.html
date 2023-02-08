@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2378,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -4134,7 +4132,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -4742,13 +4740,15 @@
 <p>There are <a href="https://gist.github.com/willurd/5720255">many</a> and you may have some already installed.
 // 有很多选择，Node的http-server就挺好，安装、运行如下：</p>
 <p>If you already have <a href="https://nodejs.org/en/">Node</a>/npm, then <a href="https://www.npmjs.com/package/http-server">http-server</a> is a good choice. Install once with</p>
-<pre><code>::shell
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>::shell
 npm i -g http-server
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>Then run in your project directory:</p>
-<pre><code>::shell
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>::shell
 http-server . -c-1 --open
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p><code>-c-1</code> means <em>don't cache（不缓存）</em> and <code>--open</code> means <em>open a browser（打开一个浏览器）</em>.</p>
 <h3 id="how_should_i_organize_my_project">How should I organize my project?<a class="headerlink" href="#how_should_i_organize_my_project" title="Permanent link">#</a></h3>
 <p>// 我该怎么组织工程？</p>
@@ -4951,18 +4951,21 @@ http-server . -c-1 --open
 <p>You can use the traditional ES5 form, the Phaser.Class helper, or ES6 classes.</p>
 <p>The most common mistake is to add the instance to the scene incorrectly, or not at all. From the scene, you can call
 // 最常见的错误是添加实例不正确，或无法添加。可以从场景调用：</p>
-<pre><code>::JavaScript
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>::JavaScript
 this.add.existing( new ExtendedObject(this, /* ... */) );
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>or from the class</p>
-<pre><code>::JavaScript
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>::JavaScript
 this.scene.add.existing(this);
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>For a physics-enabled game object, use the physics plugin's <code>existing</code> method as well.
 // 对于开启物理引擎的游戏对象，同样可以使用物理引擎插件的<code>existing</code>方法：</p>
-<pre><code>::JavaScript
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>::JavaScript
 this.physics.add.existing( new ExtendedObject(this, /* ... */) );
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>When in doubt, imitate the <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html">factory method</a> of the parent class. Make sure you're passing the parent constructor's arguments correctly.</p>
 <p>You can also write your own <a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html">factory method</a> and call it, or register your game object with the plugin manager.
 // 也可以写自己的工厂函数（方法），然后调用，或在插件管理器中注册你的游戏对象。</p>
@@ -5027,9 +5030,10 @@ Matter是复杂的2d物理引擎。</p>
 <p>//这个警告是怎么回事……</p>
 <p>This is normal when using Phaser with Web Audio in Chrome. By itself it doesn't signify a problem. Phaser will automatically resume the audio context when the user clicks/taps. Sound may be muted before that, though.</p>
 <p>If your game doesn't use sound, disable it and you won't see the warning:</p>
-<pre><code>::JavaScript
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>::JavaScript
 new Phaser.Game({ audio: { noAudio: true } });
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>//如果不使用声音，可以关闭警告</p>
 <h3 id="how_do_i_fixdebug_my_game">How do I fix/debug my game?<a class="headerlink" href="#how_do_i_fixdebug_my_game" title="Permanent link">#</a></h3>
 <p>//怎么改正/调试游戏</p>
@@ -5124,16 +5128,16 @@ new Phaser.Game({ audio: { noAudio: true } });
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -5145,7 +5149,7 @@ new Phaser.Game({ audio: { noAudio: true } });
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -5153,7 +5157,7 @@ new Phaser.Game({ audio: { noAudio: true } });
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -5262,6 +5266,10 @@ new Phaser.Game({ audio: { noAudio: true } });
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -5310,7 +5318,7 @@ new Phaser.Game({ audio: { noAudio: true } });
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

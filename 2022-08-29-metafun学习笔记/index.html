@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2378,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -4066,7 +4064,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -4522,7 +4520,25 @@
 <p><em>主要是学习官方文档METAPOST manual、metafun(metafun-p.pdf)和metafun xl(luametafun.pdf)，以及官网。</em></p>
 <h2 id="_1">惯例<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p>在ConTeXt中使用：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\starttext</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\starttext</span>
 
 <span class="c">% 就地插入图片</span>
 <span class="k">\startMPcode</span>
@@ -4541,22 +4557,38 @@ fill unitsquare scaled 5cm withcolor red ;
 <span class="k">\useMPgraphic</span><span class="nb">{</span>name<span class="nb">}</span>
 
 <span class="k">\stoptext</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="metapost">欢迎来到MetaPost<a class="headerlink" href="#metapost" title="Permanent link">#</a></h2>
 <p>坐标点，数值对（pair），矢量，路径，控制点。</p>
-<div class="highlight"><pre><span></span><code>pair somepoint;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>pair somepoint;
 somepoint := (1cm,1.5cm) ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_2">路径<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>(1cm,1cm)..(1.5cm,1.5cm)..(2cm,0cm) <span class="c">% 开放路径，平滑曲线</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>(1cm,1cm)..(1.5cm,1.5cm)..(2cm,0cm) <span class="c">% 开放路径，平滑曲线</span>
 (1cm,1cm)--(1.5cm,1.5cm)--(2cm,0cm) <span class="c">% 开放路径，直线</span>
 (1cm,1cm)..(1.5cm,1.5cm)..(2cm,0cm)..cycle <span class="c">% 闭合路径</span>
 (1cm,1cm)..(1.5cm,1.5cm)..controls (3cm,2cm)..(2cm,0cm) <span class="c">% 控制点，左右两个点共用</span>
 (1cm,1cm)..controls (.5cm,2cm) and (2.5cm,2cm)..(2cm,.5cm) <span class="c">% 控制点，左右分别定义</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_3">变形<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
 <p>变量和赋值：</p>
-<div class="highlight"><pre><span></span><code>path p ; <span class="c">% 定义路径变量</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>path p ; <span class="c">% 定义路径变量</span>
 p := (1cm,1cm)..(1.5cm,2cm)..(2cm,0cm) ; <span class="c">% 赋值</span>
 p shifted (4cm,2cm) <span class="c">% 位移</span>
 p rotated 15 <span class="c">% 旋转，等于：</span>
@@ -4568,7 +4600,7 @@ p reflectedabout((2.4cm,-.5),(2.4cm,3cm)) <span class="c">% 镜像反射</span>
 transform t ; <span class="c">% 变形变量</span>
 t := identity scaled 2cm shifted (4cm,1cm) ; <span class="c">% 变形矩阵</span>
 p transformed t
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <table>
 <thead>
 <tr>
@@ -4616,7 +4648,26 @@ p transformed t
 </tbody>
 </table>
 <h3 id="_4">构造路径<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>z0 = (0.5cm,1.5cm) ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code>z0 = (0.5cm,1.5cm) ;
 z1 = (2.5cm,2.5cm) ;
 z2 = (6.5cm,0.5cm) ;
 z3 = (3.0cm,1.5cm) ;
@@ -4636,7 +4687,7 @@ subpath(2,4) of (z0..z1..z2..z3..cycle) <span class="c">% 提取子路径，可�
 (z0..z1..z2..z3) cutafter z2 <span class="c">% 剪除路径</span>
 (z0..z1..z2..z3) cutbefore z1
 (z0..z1..z2..z3) cutbefore point 2 of (z0..z1..z2..z3) <span class="c">% 剪除路径，可以是小数</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>预定义的directionpoint</p>
 <ul>
 <li>right ( 1, 0)</li>
@@ -4644,12 +4695,24 @@ subpath(2,4) of (z0..z1..z2..z3..cycle) <span class="c">% 提取子路径，可�
 <li>left (-1, 0)</li>
 <li>down ( 0,-1)</li>
 </ul>
-<div class="highlight"><pre><span></span><code>(z0..z1..cycle) cutafter directionpoint up of (z0..z1..cycle)
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>(z0..z1..cycle) cutafter directionpoint up of (z0..z1..cycle)
 (z0..z1..cycle) cutafter directionpoint (1,1) of (z0..z1..cycle)
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_5">角度<a class="headerlink" href="#_5" title="Permanent link">#</a></h3>
 <p>方向函数dir</p>
-<div class="highlight"><pre><span></span><code>pickup pencircle scaled 2mm ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>pickup pencircle scaled 2mm ;
 
 draw (origin -- dir(45) -- dir(0) -- cycle)
 scaled 3cm
@@ -4661,31 +4724,41 @@ scaled 3cm shifted (3.5cm,0) withcolor .625yellow ;
 draw (origin -- (1,1) -- (1,0) -- cycle)
 scaled 3cm shifted (7cm,0)
 withcolor .625white ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_6">画图<a class="headerlink" href="#_6" title="Permanent link">#</a></h3>
 <p>根据路径画线和填充</p>
-<div class="highlight"><pre><span></span><code>draw (0cm,1cm)..(2cm,2cm)..(4cm,0cm)..cycle ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>draw (0cm,1cm)..(2cm,2cm)..(4cm,0cm)..cycle ;
 
 fill (0cm,1cm)..(2cm,2cm)..(4cm,0cm)..cycle ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>颜色，笔型，线型</p>
-<div class="highlight"><pre><span></span><code>path p ; 
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>path p ; 
 p := (0cm,1cm)..(2cm,2cm)..(4cm,0cm)..(2.5cm,1cm)..cycle ;
 drawarrow p withcolor .625red ;
 draw p shifted (7cm,0) dashed withdots withcolor .625yellow ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>图形变量，赋值，清空，操纵</p>
-<div class="highlight"><pre><span></span><code>picture pic ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>picture pic ;
 pic := currentpicture ;
 currentpicture := nullpicture ;
 draw pic rotated 45 withcolor red ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>unfill其实是使用背景色填充</p>
 <p>添加</p>
-<div class="highlight"><pre><span></span><code>addto currentpicture doublepath pat
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>addto currentpicture doublepath pat
 addto currentpicture contour pat
 addto currentpicture also pic
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_7">变量<a class="headerlink" href="#_7" title="Permanent link">#</a></h3>
 <p>METAPOST是一种简单的宏语言，用PASCAL编写而成。</p>
 <p>数据类型：</p>
@@ -4761,19 +4834,22 @@ addto currentpicture also pic
 <li>pen, 主要确定笔画粗细，表达式如pencircle scaled ⟨numeric primary⟩，非圆形笔可以取得书法效果，pickup ⟨pen expression⟩ 影响会面的draw和drawdot</li>
 </ul>
 <p>未定义的变量默认为数字。以下行相同：</p>
-<div class="highlight"><pre><span></span><code>n := 10 ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>n := 10 ;
 numeric n ; n := 10 ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>在宏集中最好先定义，以免冲突。</p>
 <p>数组是同类变量的集合：</p>
-<div class="highlight"><pre><span></span><code>numeric n[][] ; n[2][3] := 10 ;
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>numeric n[][] ; n[2][3] := 10 ;
+</code></pre></div></td></tr></table></div>
 <p>超界索引不会出错，而返回<em>unknown</em></p>
 <p>实际上并没有数组，而是生成了一些哈希条目。以下是定价的：</p>
-<div class="highlight"><pre><span></span><code>i<span class="nb">_</span>111<span class="nb">_</span>222 := 1cm ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>i<span class="nb">_</span>111<span class="nb">_</span>222 := 1cm ;
 i<span class="nb">_</span>[111]<span class="nb">_</span>[222] := 1cm ;
 i<span class="nb">_</span>[111][222] := 1cm ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="_8">变量后缀<a class="headerlink" href="#_8" title="Permanent link">#</a></h4>
 <p>如lable后缀：&lt;空&gt; | lft | rt | top | bot | ulft | urt | llft | lrt</p>
 <p>z后缀，如：</p>
@@ -4781,41 +4857,63 @@ i<span class="nb">_</span>[111][222] := 1cm ;
 <h4 id="token">token<a class="headerlink" href="#token" title="Permanent link">#</a></h4>
 <h3 id="_9">运算符<a class="headerlink" href="#_9" title="Permanent link">#</a></h3>
 <h3 id="_10">条件表达式<a class="headerlink" href="#_10" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>if n=10 : draw p ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>if n=10 : draw p ;
 else : draw q ;
 fi ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>一行式：</p>
-<div class="highlight"><pre><span></span><code>draw if n=10 : p else : q fi withcolor red ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>draw if n=10 : p else : q fi withcolor red ;
 draw p withcolor if n&lt;10 : red elseif n=10 : green else : blue fi ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>变量的布尔检测：</p>
-<div class="highlight"><pre><span></span><code>if picture p :
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>if picture p :
 if known   n :
 if odd     i :
 if cycle   q :
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>支持用and, or, not, 和 ( )构造表达式。</p>
 <h3 id="_11">循环<a class="headerlink" href="#_11" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>for i=0 step 2 until 20 :
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>for i=0 step 2 until 20 :
     draw (0,i) ;
 endfor ;
 
 draw for i=0 upto n-1 : p[i] .. endfor p[n] ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>迭代一列对象：</p>
-<div class="highlight"><pre><span></span><code>for i=p,q,r :
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>for i=p,q,r :
     fill i withcolor .8white ;
     draw i withcolor red ;
 endfor ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>改变循环变量自身：</p>
-<div class="highlight"><pre><span></span><code>forsuffixes i = p, q, r :
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>forsuffixes i = p, q, r :
 i := i shifted (3cm,2cm) ;
 endfor ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>查找特定值后跳出/终止循环：</p>
-<div class="highlight"><pre><span></span><code>numeric done[][], i, j, n ; n := 0 ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>numeric done[][], i, j, n ; n := 0 ;
 forever :
     i := round(uniformdeviate(10)) ; j := round(uniformdeviate(2)) ;
     if unknown done[i][j] :
@@ -4823,10 +4921,27 @@ forever :
     fi ;
     exitif n = 10 ;
 endfor ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_12">宏<a class="headerlink" href="#_12" title="Permanent link">#</a></h3>
 <p>定义宏：</p>
-<div class="highlight"><pre><span></span><code>def upto = step 1 until enddef ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>def upto = step 1 until enddef ;
 
 primarydef p doublescaled s =
     p xscaled (s/2) yscaled (s*2)
@@ -4844,7 +4959,7 @@ vardef randomscaledpath(expr p, s) =
     numeric r ; r := round(1 + uniformdeviate(4)) ;
     p xscaled (s/r) yscaled (s*r)
 enddef ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>可接受的参数：</p>
 <ul>
 <li>expr：    something that can be assigned to a variable</li>
@@ -4854,14 +4969,20 @@ enddef ;
 </ul>
 <p>expr是传值的，suffix则是传引用。</p>
 <p>默认所有变量都是全局的，局部变量需要通过分组来管理。</p>
-<div class="highlight"><pre><span></span><code><span class="c">% 实际上，vardef会自动分组</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 实际上，vardef会自动分组</span>
 vardef randomscaledpath(expr p, s) =
     begingroup ; save r ; numeric r ; <span class="c">% save r 定义局部变量</span>
         r := round(1 + uniformdeviate(4)) ;
         p xscaled (s/r) yscaled (s*r)
     endgroup
 enddef ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>其他定义：</p>
 <ul>
 <li>primarydef   x mod               y = ... enddef ;</li>
@@ -4870,7 +4991,14 @@ enddef ;
 </ul>
 <h3 id="_13">参数<a class="headerlink" href="#_13" title="Permanent link">#</a></h3>
 <p>馈送参数相当灵活：</p>
-<div class="highlight"><pre><span></span><code>def test expr a = enddef ; test (a) ; test a ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>def test expr a = enddef ; test (a) ; test a ;
 def test (expr a) = enddef ; test (a) ; test a ;
 
 def test (expr a,b) (expr c,d) = enddef ;
@@ -4878,13 +5006,30 @@ test (a) (b) (c) (d) ;
 test (a,b) (c,d) ;
 test (a,b,c) (d) ;
 test (a,b,c,d) ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>text参数，如果没有括号限制，会一直匹配到分号。</p>
 <p>限定参数，用于定义z1或z234：</p>
 <p>vardef z@# = (x@#,y@#) enddef ;</p>
 <h3 id="_14">笔型<a class="headerlink" href="#_14" title="Permanent link">#</a></h3>
 <p>绘图时可以使用三种属性：a dashpattern, a pen and/or a color</p>
-<div class="highlight"><pre><span></span><code>withpen pencircle
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>withpen pencircle
 
 <span class="c">% 改变当前笔型</span>
 pickup pencircle xscaled 2mm yscaled 4mm rotated 30 ;
@@ -4902,18 +5047,30 @@ draw pensilled(p, pensquare scaled (1/3) rotated 30)
     scaled 2cm ;
 draw boundingbox image(draw p)
     scaled 2cm ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_15">连接线段<a class="headerlink" href="#_15" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>interim linejoin := mitered ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>interim linejoin := mitered ;
 for i :=1 step 1 until 5 :
     interim miterlimit := i*pt ;
     draw ((0,0)--(.5,1)--(1,0)) shifted (1.5i,0) scaled 50pt
     withpen pencircle scaled 10pt withcolor .625red ;
 endfor ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>参见：Figure 1.3 The nine ways to end and join lines.</p>
 <h3 id="_16">颜色<a class="headerlink" href="#_16" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>withcolor (.4,.5.,6)
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>withcolor (.4,.5.,6)
 
 color darkred ; darkred := (.625,0.0) ;
 withcolor darkred
@@ -4921,9 +5078,22 @@ withcolor darkred
 withcolor .625red
 
 withcolor .5[red,green]
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_17">虚线<a class="headerlink" href="#_17" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>picture p ; p := nullpicture ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>picture p ; p := nullpicture ;
 addto p doublepath ((0,0)--(3mm,3mm)) shifted (6mm,6mm) ;
 draw (0,0)--(10cm,0) dashed p withpen pencircle scaled 1mm ;
 
@@ -4937,7 +5107,7 @@ withpen pencircle scaled 1mm ;
 
 <span class="c">% 设置默认值</span>
 drawoptions(dashed evenly withcolor red) ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_18">文本<a class="headerlink" href="#_18" title="Permanent link">#</a></h3>
 <ul>
 <li>label⟨标签后缀⟩(⟨字符串或图片表达式⟩, ⟨数对表达式⟩);<ul>
@@ -4950,7 +5120,22 @@ drawoptions(dashed evenly withcolor red) ;
 </li>
 <li>⟨标签后缀⟩ -&gt; &lt;空&gt; | lft | rt | top | bot | ulft | urt | llft | lrt</li>
 </ul>
-<div class="highlight"><pre><span></span><code>pair a ; a := (3cm,3cm) ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>pair a ; a := (3cm,3cm) ;
 label.top(&quot;top&quot;,a) ; label.bot(&quot;bot&quot;,a) ;
 label.lft(&quot;lft&quot;,a) ; label.rt (&quot;rt&quot; ,a) ;
 
@@ -4966,7 +5151,7 @@ draw thelabel.rt(&quot;the right way&quot;,a) withcolor .625red ;
 <span class="c">% 使用字体（infont不支持居中、字间等，但是在ConTeXt中与btex无异，因为infont已经重载为，二者都是用textext，即重定向到tex）</span>
 draw &quot;this string will become a sequence of glyphs (MP)&quot; infont defaultfont scaled defaultscale ;
 draw btex this string will become a sequence of glyphs (<span class="k">\TeX</span>) etex ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>改变默认字体、字号：</p>
 <ul>
 <li>defaultfont:="ptmr8r";</li>
@@ -4976,11 +5161,14 @@ draw btex this string will become a sequence of glyphs (<span class="k">\TeX</sp
 <p>绑定盒bbox与文本测量</p>
 <h3 id="_19">线性方程<a class="headerlink" href="#_19" title="Permanent link">#</a></h3>
 <p>解析线性方程（符号计算）</p>
-<div class="highlight"><pre><span></span><code>a + b = 3;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>a + b = 3;
 2a = b +3;
 c = 1/2[a,b]; <span class="c">% 两点之间的比例位置</span>
 show a, b, c; <span class="c">% 跟踪变量</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_20">剪裁<a class="headerlink" href="#_20" title="Permanent link">#</a></h3>
 <p>取得外框数据：</p>
 <ul>
@@ -4990,15 +5178,185 @@ show a, b, c; <span class="c">% 跟踪变量</span>
 <li>ulcorner p:  upper left corner</li>
 <li>center   p:  the center point</li>
 </ul>
-<div class="highlight"><pre><span></span><code>fill fullcircle scaled 2cm withcolor .625yellow ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>fill fullcircle scaled 2cm withcolor .625yellow ;
 setbounds currentpicture to unitsquare scaled 1cm ; <span class="c">% 重置外框</span>
 draw unitsquare scaled 1cm withcolor .625red ;
 
 fill fullcircle scaled 2cm withcolor .625yellow ;
 clip currentpicture to unitsquare scaled 1cm ; <span class="c">% 剪裁</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="metafun">METAFUN扩展<a class="headerlink" href="#metafun" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c">% 缩放：enlarged，bottomenlarged, rightenlarged, topenlarged and leftenlarged</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 缩放：enlarged，bottomenlarged, rightenlarged, topenlarged and leftenlarged</span>
 path p ; p := fullsquare scaled 2cm ;
 drawpath p ; drawpoints p ;
 p := (p shifted (3cm,0)) enlarged (.5cm,.25cm) ;
@@ -5164,9 +5522,19 @@ withpen pencircle scaled .5mm ;
 <span class="c">% 画出背景</span>
 fill fullcircle scaled 1cm withcolor .625red ;
 addbackground withcolor .625 yellow ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_21">剪切和粘贴<a class="headerlink" href="#_21" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>vardef somearrow (expr pat, loc, len) =
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>vardef somearrow (expr pat, loc, len) =
     save p ; path p ; p := pat cutbefore loc ; <span class="c">% 剪掉指定位置前</span>
     (p cutafter point (arctime len of p) of p) <span class="c">% 剪掉指定点（弧长）后</span>
 enddef ;
@@ -5177,10 +5545,27 @@ pickup pencircle scaled 2mm ;
 draw p withcolor .625white ;
 drawarrow somearrow(p,q,2cm) withcolor .625red ;
 draw q withcolor .625yellow ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="currentpicture">当前图像（currentpicture）<a class="headerlink" href="#currentpicture" title="Permanent link">#</a></h3>
 <p>我们绘画时是在当前图像上操作。还可以把当前图像当做一个整体来处理。</p>
-<div class="highlight"><pre><span></span><code>draw fullcircle scaled 1cm withpen pencircle scaled 1mm withcolor .625red ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>draw fullcircle scaled 1cm withpen pencircle scaled 1mm withcolor .625red ;
 currentpicture := currentpicture slanted .5 ;
 
 draw fullcircle scaled 1cm withpen pencircle scaled 1mm withcolor .625red ;
@@ -5198,11 +5583,19 @@ draw image (
     withpen pencircle scaled 1mm withcolor .625yellow ;
     currentpicture := currentpicture slanted -.5 ;
 ) ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_22">更多细节<a class="headerlink" href="#_22" title="Permanent link">#</a></h2>
 <h3 id="graphic">生成图形（graphic）<a class="headerlink" href="#graphic" title="Permanent link">#</a></h3>
 <p>独立文件，比如yourfile.mp：</p>
-<div class="highlight"><pre><span></span><code><span class="c">% Let&#39;s draw a circle.</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% Let&#39;s draw a circle.</span>
 <span class="c">% input mp-tool ;</span>
 <span class="c">% or input metafun ;</span>
 beginfig (7) ;
@@ -5211,11 +5604,11 @@ beginfig (7) ;
     draw fullcircle scaled 3cm withpen pencircle scaled 1cm ;
 endfig ;
 end .
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>在CONTEXT文档中不需要beginfig (7) ; endfig ;和end .</p>
 <p>生成图像文件：</p>
-<div class="highlight"><pre><span></span><code>mpost<span class="w"> </span>yourfile.mp
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mpost<span class="w"> </span>yourfile.mp
+</code></pre></div></td></tr></table></div>
 <p>使用图像：</p>
 <p>\externalfigure[yourfile.7]</p>
 <p>单位：</p>
@@ -5226,7 +5619,26 @@ end .
 </ul>
 <h3 id="_23">围盒<a class="headerlink" href="#_23" title="Permanent link">#</a></h3>
 <p>bbox宏生成的围盒是有偏置量的。偏置量控制：</p>
-<div class="highlight"><pre><span></span><code><span class="c">% 绘制（在路径上/两侧）</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 绘制（在路径上/两侧）</span>
 pickup pencircle scaled .5cm ;
 draw unitsquare xscaled 8cm yscaled 1cm withcolor .625white ;
 path bb ; bboxmargin := 0pt ; bb := bbox currentpicture ;
@@ -5246,7 +5658,7 @@ filldraw unitsquare xscaled 8cm yscaled 1cm withcolor .625white ;
 path bb ; bboxmargin := 0pt ; bb := bbox currentpicture ;
 draw bb withpen pencircle scaled 1pt withcolor .625red ;
 draw origin withpen pencircle scaled 5pt withcolor .625yellow ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_24">解散字模<a class="headerlink" href="#_24" title="Permanent link">#</a></h3>
 <h3 id="_25">调试<a class="headerlink" href="#_25" title="Permanent link">#</a></h3>
 <h3 id="_26">读写文件<a class="headerlink" href="#_26" title="Permanent link">#</a></h3>
@@ -5266,7 +5678,42 @@ draw origin withpen pencircle scaled 5pt withcolor .625yellow ;
 </li>
 </ul>
 <h3 id="_32">整合图形<a class="headerlink" href="#_32" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c">% 直接使用</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 直接使用</span>
 <span class="k">\startMPcode</span>
 fill fullcircle scaled 200pt withcolor .625white ;
 <span class="k">\stopMPcode</span>
@@ -5302,18 +5749,40 @@ input mylogos ;
 <span class="k">\startMPrun</span><span class="nb">{</span>extrafun::mydemo<span class="nb">}</span>
 input mfun-mrun-demo.mp ;
 <span class="k">\stopMPrun</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="contextmetafun">不用CONTEXT，只用METAFUN<a class="headerlink" href="#contextmetafun" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">\startMPpage</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\startMPpage</span>
 <span class="c">% Your mp code goes here. You can use the textext</span>
 <span class="c">% macro as discussed later to deal with typeset text.</span>
 <span class="k">\stopMPpage</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="lua">Lua<a class="headerlink" href="#lua" title="Permanent link">#</a></h2>
 <h3 id="_33">导语<a class="headerlink" href="#_33" title="Permanent link">#</a></h3>
 <h3 id="_34">基础<a class="headerlink" href="#_34" title="Permanent link">#</a></h3>
 <p>metafun向tex输入流馈入字符串：</p>
-<div class="highlight"><pre><span></span><code><span class="c">% </span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% </span>
 numeric n ; n := scantokens(&quot;123.456&quot;) ;
 
 <span class="c">% </span>
@@ -5333,14 +5802,27 @@ local m = mplib.new <span class="nb">{</span>
     run<span class="nb">_</span>script = scriptrunner,
     ...
 <span class="nb">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_35">辅助函数<a class="headerlink" href="#_35" title="Permanent link">#</a></h3>
 <p>CONTEXT的方式：</p>
-<div class="highlight"><pre><span></span><code>numeric n ; n := lua(&quot;mp.print(12.34567)&quot;) ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>numeric n ; n := lua(&quot;mp.print(12.34567)&quot;) ;
 draw textext(n) xsized 4cm withcolor darkred ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_36">字符串<a class="headerlink" href="#_36" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>draw
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>draw
 textext(&quot;This will print <span class="k">\quotation</span><span class="nb">{</span>Hi<span class="nb">}</span> in the console!&quot;)
 xsized TextWidth
 withcolor &quot;darkblue&quot; ;
@@ -5353,22 +5835,35 @@ s := runscript(&quot;mp.quoted(&#39;This will return a string!&#39;)&quot;) ;
 draw textext(s)
     xsized TextWidth
     withcolor &quot;darkgreen&quot; ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_37">数字<a class="headerlink" href="#_37" title="Permanent link">#</a></h3>
 <p>runscript 10000;</p>
 <h3 id="contextmetafun_1">CONTEXT/METAFUN辅助函数<a class="headerlink" href="#contextmetafun_1" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>draw lua.mp.foo(0,2,(3,4)) ; <span class="c">% mp是给CONTEXT用的</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>draw lua.mp.foo(0,2,(3,4)) ; <span class="c">% mp是给CONTEXT用的</span>
 fill lua.MP.foo(0,2,(3,4)) ; <span class="c">% MP是给用户使用的</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>在lua段，被映射到相应的函数：</p>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">mp</span><span class="p">.</span><span class="nf">foo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">function</span> <span class="nc">mp</span><span class="p">.</span><span class="nf">foo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
 <span class="c1">-- do something</span>
 <span class="kr">end</span>
 <span class="kr">function</span> <span class="nc">MP</span><span class="p">.</span><span class="nf">foo</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
 <span class="c1">-- do something</span>
 <span class="kr">end</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>numeric n ; n := lua(&quot;mp.print(12.34567)&quot;) ;
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>numeric n ; n := lua(&quot;mp.print(12.34567)&quot;) ;
 draw textext(n) xsized 4cm withcolor darkred ;
 
 numeric n ; n := lua(&quot;mp.print(1) mp.print(&#39;+&#39;) mp.print(2)&quot;) ;
@@ -5376,10 +5871,25 @@ draw textext(n) xsized 1cm withcolor darkred ;
 <span class="c">% 等价于</span>
 numeric n ; n := lua(&quot;mp.print(1,&#39;+&#39;,2)&quot;) ;
 draw textext(n) xsized 1cm withcolor darkred ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="luamp">从lua打印到mp（传递数据）<a class="headerlink" href="#luamp" title="Permanent link">#</a></h3>
 <p>所打印的字符串即为合法的mp代码</p>
-<div class="highlight"><pre><span></span><code>fill fullcircle scaled runscript(&quot;mp.print(&#39;3cm&#39;)&quot;) withcolor &quot;darkred&quot; ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>fill fullcircle scaled runscript(&quot;mp.print(&#39;3cm&#39;)&quot;) withcolor &quot;darkred&quot; ;
 fill fullcircle scaled runscript(&quot;mp.print.print(&#39;2cm&#39;)&quot;) withcolor &quot;darkgreen&quot; ;
 fill fullcircle scaled runscript(&quot;mp.aux.print(&#39;1cm&#39;)&quot;) withcolor &quot;darkblue&quot; ;
 
@@ -5395,36 +5905,48 @@ mp.print.path(ts,false)
 mp.print.path(t1,&quot;...&quot;,true)
 mp.print.path(t1,&quot;..&quot;,true)
 mp.print.path(t2,&quot;..&quot;)
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="direct">Direct值<a class="headerlink" href="#direct" title="Permanent link">#</a></h3>
 <p>与打印机近似的注入器：</p>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">MP</span><span class="p">.</span><span class="nf">MyFunction</span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">function</span> <span class="nc">MP</span><span class="p">.</span><span class="nf">MyFunction</span><span class="p">()</span>
     <span class="n">mp</span><span class="p">.</span><span class="n">inject</span><span class="p">.</span><span class="n">string</span><span class="p">(</span><span class="s2">&quot;This is just a string.&quot;</span><span class="p">)</span>
 <span class="kr">end</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>包括：
 boolean, cmykcolor, color, integer, number, numeric, pair, path, quadruplet, string, transform, triplet and whatever (kind of automatic)</p>
 <h3 id="_38">寄存器<a class="headerlink" href="#_38" title="Permanent link">#</a></h3>
 <h3 id="_39">特殊辅助函数<a class="headerlink" href="#_39" title="Permanent link">#</a></h3>
 <p>哈希</p>
 <p>模式</p>
-<div class="highlight"><pre><span></span><code><span class="k">\enablemode</span><span class="na">[weird]</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\enablemode</span><span class="na">[weird]</span>
 <span class="k">\startMPcode</span>
     fill fullsquare xyscaled (TextWidth,5mm)
     withcolor if texmode(&quot;weird&quot;) : &quot;darkblue&quot; else : &quot;darkgreen&quot; fi ;
 <span class="k">\stopMPcode</span>
 <span class="k">\disablemode</span><span class="na">[weird]</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>定位</p>
 <p>TeX数量</p>
 <p>UTF8</p>
-<div class="highlight"><pre><span></span><code>string s ; s := &quot;ÀÁÂÃÄÅàáâãäå&quot; ;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>string s ; s := &quot;ÀÁÂÃÄÅàáâãäå&quot; ;
 draw textext(s) shifted ( 0cm,0) withcolor &quot;darkyellow&quot; ;
 draw textext(utfnum(&quot;Â&quot;)) shifted ( 3cm,0) withcolor &quot;darkmagenta&quot; ;
 draw textext(utflen(s)) shifted ( 6cm,0) withcolor &quot;darkcyan&quot; ;
 draw textext(utfsub(s,3,4)) shifted ( 9cm,0) withcolor &quot;darkblue&quot; ;
 draw textext(utfsub(s,6)) shifted (12cm,0) withcolor &quot;darkred&quot; ;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_40">使用变量<a class="headerlink" href="#_40" title="Permanent link">#</a></h3>
 <h3 id="_41">库<a class="headerlink" href="#_41" title="Permanent link">#</a></h3>
 <h3 id="context">CONTEXT辅助函数<a class="headerlink" href="#context" title="Permanent link">#</a></h3>
@@ -5466,7 +5988,32 @@ draw textext(utfsub(s,6)) shifted (12cm,0) withcolor &quot;darkred&quot; ;
 <li>mp.get.string(name)     gets a string from METAPOST</li>
 </ul>
 <h3 id="metapostcontextlua">METAPOST向CONTEXT/lua传递参数<a class="headerlink" href="#metapostcontextlua" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">\startMPcalculation</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\startMPcalculation</span>
 passvariable(&quot;version&quot;,&quot;1.0&quot;) ;
 passvariable(&quot;number&quot;,123) ;
 passvariable(&quot;string&quot;,&quot;whatever&quot;) ;
@@ -5492,12 +6039,14 @@ stoppassingvariable ;
 fill p withcolor .625red ;
 draw b withcolor .625yellow ;
 <span class="k">\stopMPcode</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>lua端通过表metapost.variables使用</p>
-<div class="highlight"><pre><span></span><code><span class="k">\startluacode</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\startluacode</span>
 context.tocontext(metapost.variables)
 <span class="k">\stopluacode</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>tex用法：</p>
 <p>\MPruntab{quad}{3}</p>
 <p>跟踪参数：</p>
@@ -5511,16 +6060,16 @@ context.tocontext(metapost.variables)
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -5532,7 +6081,7 @@ context.tocontext(metapost.variables)
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -5540,7 +6089,7 @@ context.tocontext(metapost.variables)
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -5649,6 +6198,10 @@ context.tocontext(metapost.variables)
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -5697,7 +6250,7 @@ context.tocontext(metapost.variables)
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

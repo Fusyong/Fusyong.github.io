@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2378,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -4366,7 +4364,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -5150,7 +5148,21 @@
 <blockquote>
 <p>src\actions\grid align.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="c1">// 生成group，包含4x20个对象</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 生成group，包含4x20个对象</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;diamonds&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// 精灵单的key</span>
 <span class="w">    </span><span class="nx">frame</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">],</span><span class="w"> </span><span class="c1">// 依次使用的精灵单的帧号</span>
@@ -5165,12 +5177,26 @@
 <span class="w">    </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="c1">// 左上第一个网格中心点x值</span>
 <span class="w">    </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span><span class="w"> </span><span class="c1">// 左上第一个网格中心点y值</span>
 <span class="p">});</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="inc_x_layersincxincyincxy">inc x layers/所有对象用IncX、IncY、IncXY递增坐标值，整体改变位置<a class="headerlink" href="#inc_x_layersincxincyincxy" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\actions\inc x layers.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">update</span><span class="w"> </span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">update</span><span class="w"> </span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// 所有对象移动</span>
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncX</span><span class="p">(</span><span class="nx">groupA</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span><span class="w"> </span><span class="nx">move</span><span class="p">);</span><span class="w"> </span>
@@ -5185,97 +5211,133 @@
 
 <span class="w">    </span><span class="nx">move</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="place_on_circle">Place On Circle/所有对象沿着圆圈放置/排列<a class="headerlink" href="#place_on_circle" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\actions\place on circle.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// 沿着圆圈放置，也可以是椭圆、方形、三角形、直线等</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">circle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Circle</span><span class="p">(</span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="mf">260</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">PlaceOnCircle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span><span class="w"> </span><span class="nx">circle</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="random_circle">Random Circle/所有对象随机放置在圆内<a class="headerlink" href="#random_circle" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\actions\random circle.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// 对象随机放置在圆内，也可以是椭圆、方形、三角形、直线等</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">circle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Circle</span><span class="p">(</span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="mf">130</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">RandomCircle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span><span class="w"> </span><span class="nx">circle</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="rotate_around_distance">Rotate Around Distance/所有对象（整体）围绕一定距离旋转<a class="headerlink" href="#rotate_around_distance" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\actions\rotate around distance.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">update</span><span class="w"> </span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">update</span><span class="w"> </span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">RotateAroundDistance</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="mf">0.02</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="rotate_around">Rotate Around/所有对象（整体）围绕一点旋转<a class="headerlink" href="#rotate_around" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\actions\rotate around.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">update</span><span class="w"> </span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">update</span><span class="w"> </span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">RotateAround</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="mf">0.01</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="set_alpha">Set Alpha/所有对象（整体）设置透明度<a class="headerlink" href="#set_alpha" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\actions\set alpha.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">SetAlpha</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">50</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="set_xy">Set Xy/给所有对象设置坐标值<a class="headerlink" href="#set_xy" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\actions\set xy.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">SetXY</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span><span class="w"> </span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="shift_position">Shift Position/所有对象依次换位<a class="headerlink" href="#shift_position" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\actions\shift position.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">update</span><span class="w"> </span><span class="p">(</span><span class="nx">time</span><span class="p">,</span><span class="w"> </span><span class="nx">delta</span><span class="p">)</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">update</span><span class="w"> </span><span class="p">(</span><span class="nx">time</span><span class="p">,</span><span class="w"> </span><span class="nx">delta</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// 给出第一个（或最后一个）新位置，后面依次换位</span>
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">ShiftPosition</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="spread">Spread/在两个属性值之间铺展所有对象<a class="headerlink" href="#spread" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\actions\spread.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">//  在两个属性值(&#39;alpha&#39;, 0, 1)之间铺展所有对象</span>
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">Spread</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span><span class="w"> </span><span class="s1">&#39;alpha&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="wrap_in_rectangle">wrap in rectangle/所有对象在一个方形内折返放置<a class="headerlink" href="#wrap_in_rectangle" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\actions\wrap in rectangle.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">update</span><span class="w"> </span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">update</span><span class="w"> </span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// 移动位置后，超出方框的一侧的对象会折返到对侧重新放置</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">();</span>
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">IncXY</span><span class="p">(</span><span class="nx">children</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">WrapInRectangle</span><span class="p">(</span><span class="nx">group</span><span class="p">.</span><span class="nx">getChildren</span><span class="p">(),</span><span class="w"> </span><span class="nx">rect</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="animation">Animation<a class="headerlink" href="#animation" title="Permanent link">#</a></h2>
 <h2 id="audio">Audio<a class="headerlink" href="#audio" title="Permanent link">#</a></h2>
 <h2 id="bugs">Bugs<a class="headerlink" href="#bugs" title="Permanent link">#</a></h2>
@@ -5293,7 +5355,42 @@
 <blockquote>
 <p>src\game config\banner colors.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">parent</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;phaser-example&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">800</span><span class="p">,</span>
@@ -5329,12 +5426,32 @@
 <span class="p">};</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="custom_canvas">Custom Canvas/客户定制画布<a class="headerlink" href="#custom_canvas" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\game config\custom canvas.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="c1">// 客户定制文档元素</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 客户定制文档元素</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">myCustomCanvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">);</span>
 <span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;myCustomCanvas&#39;</span><span class="p">;</span>
 <span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;border: 8px solid red&#39;</span><span class="p">;</span>
@@ -5355,12 +5472,46 @@
 <span class="p">};</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="custom_webgl_canvaswebgl">Custom Webgl Canvas/客户定制WebGL画布<a class="headerlink" href="#custom_webgl_canvaswebgl" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\game config\custom webgl canvas.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="c1">// 客户定制文档元素</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 客户定制文档元素</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">myCustomCanvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">);</span>
 <span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;myCustomCanvas&#39;</span><span class="p">;</span>
 <span class="nx">myCustomCanvas</span><span class="p">.</span><span class="nx">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;border: 8px solid green&#39;</span><span class="p">;</span>
@@ -5395,12 +5546,57 @@
 <span class="p">};</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="game_destroy_with_multi_scenes">Game Destroy With Multi Scenes/多场景游戏的销毁<a class="headerlink" href="#game_destroy_with_multi_scenes" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\game config\game destroy with multi scenes.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">Background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Class</span><span class="p">({</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">Background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Class</span><span class="p">({</span>
 <span class="w">    </span><span class="c1">// 继承场景</span>
 <span class="w">    </span><span class="nx">Extends</span><span class="o">:</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scene</span><span class="p">,</span>
 
@@ -5446,12 +5642,39 @@
 <span class="p">};</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="game_rng">Game Rng/游戏的随机数问题<a class="headerlink" href="#game_rng" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\game config\game rng.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">122548965231</span><span class="p">;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">122548965231</span><span class="p">;</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">parent</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;phaser-example&#39;</span><span class="p">,</span>
@@ -5479,12 +5702,36 @@
 <span class="w">        </span><span class="s1">&#39;Shuffle: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nb">Math</span><span class="p">.</span><span class="nx">RND</span><span class="p">.</span><span class="nx">shuffle</span><span class="p">(</span><span class="nx">shuffleTest</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 <span class="w">    </span><span class="p">]);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="multiple_game_instances">Multiple Game Instances/多个游戏实例<a class="headerlink" href="#multiple_game_instances" title="Permanent link">#</a></h3>
 <blockquote>
 <p>src\game config\multiple game instances.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">config2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">config2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">AUTO</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">800</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">600</span><span class="p">,</span>
@@ -5509,7 +5756,7 @@
 <span class="c1">// 两个游戏实例</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">game1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">game2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config2</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="game_objects">Game Objects/游戏对象<a class="headerlink" href="#game_objects" title="Permanent link">#</a></h2>
 <p>各种具体游戏对象都是继承GameObject。请参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObject.html">基础游戏对象/Phaser.GameObjects.GameObject的文档</a>。</p>
 <h3 id="sprites">Sprites/精灵<a class="headerlink" href="#sprites" title="Permanent link">#</a></h3>
@@ -5518,7 +5765,73 @@
 <blockquote>
 <p>src\game objects\sprites\create from config.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>function create ()
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code>function create ()
 {
     //  Implicit values
     var config1 = {
@@ -5585,7 +5898,7 @@
 
     this.make.sprite(config8);
 }
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="bitmaptext">Bitmaptext/位图文本<a class="headerlink" href="#bitmaptext" title="Permanent link">#</a></h3>
 <p>请参考<a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.BitmapText.html">静态文图文本的文档</a>。</p>
 <h4 id="static">Static/静态位图文本<a class="headerlink" href="#static" title="Permanent link">#</a></h4>
@@ -5593,15 +5906,32 @@
 <blockquote>
 <p>src\game objects\bitmaptext\static\bitmaptext blend mode.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mf">64</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ice&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Zero Two&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">32</span><span class="p">);</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mf">64</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ice&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Zero Two&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">32</span><span class="p">);</span>
 <span class="w">    </span><span class="c1">// 与下层的图进行ADD混色</span>
 <span class="w">    </span><span class="nx">text</span><span class="p">.</span><span class="nx">setBlendMode</span><span class="p">(</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">BlendModes</span><span class="p">.</span><span class="nx">ADD</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h5 id="bitmaptext-atlas">Bitmaptext-Atlas/用字体图集生成位图文本<a class="headerlink" href="#bitmaptext-atlas" title="Permanent link">#</a></h5>
 <blockquote>
 <p>src\game objects\bitmaptext\static\bitmaptext-atlas.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">preload</span><span class="p">()</span><span class="w"> </span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// 加载图集</span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">atlas</span><span class="p">(</span><span class="s1">&#39;fontatlas&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;assets/atlas/bitmap-fonts-debug.png&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;assets/atlas/bitmap-fonts.json&#39;</span><span class="p">);</span>
@@ -5617,7 +5947,7 @@
 <span class="w">    </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">BitmapText</span><span class="p">.</span><span class="nx">ParseFromAtlas</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;font3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;fontatlas&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;atari-sunset&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;atariXML&#39;</span><span class="p">);</span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;font3&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;qwert&#39;</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h5 id="_2">以下存目<a class="headerlink" href="#_2" title="Permanent link">#</a></h5>
 <ul>
 <li>Bitmaptext Rotation/旋转动画</li>
@@ -5643,7 +5973,17 @@
 <blockquote>
 <p>src\game objects\bitmaptext\dynamic\display callback rotation effect.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="p">()</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">dynamicBitmapText</span><span class="p">(</span><span class="mf">60</span><span class="p">,</span><span class="w"> </span><span class="mf">60</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;gothic&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Hello\nWorld!&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">128</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">text</span><span class="p">.</span><span class="nx">setDisplayCallback</span><span class="p">(</span><span class="nx">textCallback</span><span class="p">);</span>
@@ -5654,7 +5994,7 @@
 <span class="w">    </span><span class="nx">data</span><span class="p">.</span><span class="nx">rotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.570</span><span class="p">;</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">data</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h5 id="_3">存目<a class="headerlink" href="#_3" title="Permanent link">#</a></h5>
 <ul>
 <li>Display Callback Index Effect/显示回调，索引效果</li>
@@ -5669,7 +6009,20 @@
 <blockquote>
 <p>src\game objects\bitmaptext\retro font\retro text 1.js</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="p">()</span><span class="w"> </span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">create</span><span class="p">()</span><span class="w"> </span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">image</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;knighthawks&#39;</span><span class="p">,</span>
@@ -5683,7 +6036,7 @@
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">cache</span><span class="p">.</span><span class="nx">bitmapFont</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;knighthawks&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">RetroFont</span><span class="p">.</span><span class="nx">Parse</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="nx">config</span><span class="p">));</span>
 <span class="w">    </span><span class="nx">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">bitmapText</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;knighthawks&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;PHASER 3&#39;</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h6 id="_4">存目<a class="headerlink" href="#_4" title="Permanent link">#</a></h6>
 <ul>
 <li>Retro Text Mega Scroll/复古文本滚动</li>
@@ -5716,20 +6069,38 @@
 <h3 id="game_object">game object游戏对象<a class="headerlink" href="#game_object" title="Permanent link">#</a></h3>
 <h4 id="srcinputgame_objectsprite_examplejs">src\input\game object\sprite example.js<a class="headerlink" href="#srcinputgame_objectsprite_examplejs" title="Permanent link">#</a></h4>
 <p>精灵，热点在上，热点离开</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// 开启互动</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 开启互动</span>
 <span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
 <span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerover&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{});</span>
 <span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerout&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{});</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="srcinputgame_objecton_down_eventjs">src\input\game object\on down event.js<a class="headerlink" href="#srcinputgame_objecton_down_eventjs" title="Permanent link">#</a></h4>
 <p>热点按下，热点抬起</p>
-<div class="highlight"><pre><span></span><code><span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
 <span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerdown&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{});</span>
 <span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointerup&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{});</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="srcinputdraggingdrag_distance_thresholdjs_drag_time_thresholdjs">src\input\dragging\drag distance threshold.js; drag time threshold.js<a class="headerlink" href="#srcinputdraggingdrag_distance_thresholdjs_drag_time_thresholdjs" title="Permanent link">#</a></h4>
 <p>拖拽距离阈值，拖拽时间阈值。</p>
-<div class="highlight"><pre><span></span><code><span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">sprite</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">();</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">setDraggable</span><span class="p">(</span><span class="nx">sprite</span><span class="p">);</span>
 <span class="c1">//  热点移动一定距离（阈值，16点）后才被看做拖拽</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">dragDistanceThreshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">16</span><span class="p">;</span>
@@ -5743,13 +6114,16 @@
 <span class="w">    </span><span class="nx">gameObject</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dragY</span><span class="p">;</span>
 <span class="p">});</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;dragend&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">pointer</span><span class="p">,</span><span class="w"> </span><span class="nx">gameObject</span><span class="p">)</span><span class="w"> </span><span class="p">{});</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>也可以单独给一个对象设置拖拽事件回调函数：</p>
-<div class="highlight"><pre><span></span><code><span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;drag&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">pointer</span><span class="o">:</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Input</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">,</span><span class="w"> </span><span class="nx">dragX</span><span class="o">:</span><span class="nx">number</span><span class="p">,</span><span class="w"> </span><span class="nx">dragY</span><span class="o">:</span><span class="nx">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nx">sprite</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;drag&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">pointer</span><span class="o">:</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Input</span><span class="p">.</span><span class="nx">Pointer</span><span class="p">,</span><span class="w"> </span><span class="nx">dragX</span><span class="o">:</span><span class="nx">number</span><span class="p">,</span><span class="w"> </span><span class="nx">dragY</span><span class="o">:</span><span class="nx">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dragX</span><span class="p">;</span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dragY</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="loader">Loader<a class="headerlink" href="#loader" title="Permanent link">#</a></h2>
 <h2 id="paths">Paths<a class="headerlink" href="#paths" title="Permanent link">#</a></h2>
 <h2 id="physics">Physics<a class="headerlink" href="#physics" title="Permanent link">#</a></h2>
@@ -5761,15 +6135,28 @@
 <h3 id="external_scene">外部场景/External Scene<a class="headerlink" href="#external_scene" title="Permanent link">#</a></h3>
 <p>跨场景控制，比如场景用来做菜单、控制面板时。</p>
 <h4 id="change_scene_order"><a href="http://labs.phaser.io/edit.html?src=src/scenes/tutorial/change%20scene%20order.js">改变场景顺序/Change Scene Order</a><a class="headerlink" href="#change_scene_order" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">//...</span>
 <span class="w">    </span><span class="nx">scene</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">SceneA</span><span class="p">,</span><span class="w"> </span><span class="nx">SceneB</span><span class="p">,</span><span class="w"> </span><span class="nx">SceneC</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="c1">//预先激活的场景，最后载入的场景在最前景</span>
 <span class="p">};</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">game</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h4 id="scene_controller"><a href="http://labs.phaser.io/edit.html?src=src/scenes/tutorial/scene%20controller.js">多场景控制器/Scene Controller</a><a class="headerlink" href="#scene_controller" title="Permanent link">#</a></h4>
 <p>用一个场景做控制面板，控制其他场景的启动、显示顺序、激活与否、可视与否；</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// this指当前场景，this.scene指当前场景的场景管理器:Phaser.Scenes. ScenePlugin</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// this指当前场景，this.scene指当前场景的场景管理器:Phaser.Scenes. ScenePlugin</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">launch</span><span class="p">(</span><span class="s1">&#39;SceneA&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">//启动场景</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;SceneA&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">//取得场景</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span><span class="p">);</span><span class="w"> </span><span class="c1">//设置不可见</span>
@@ -5779,7 +6166,7 @@
 <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">moveDown</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span><span class="p">);</span><span class="c1">//向下移动</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">moveUp</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span><span class="p">);</span><span class="c1">//向上移动</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">getIndex</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">currentScene</span><span class="p">);</span><span class="c1">//取得当前位置</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="snapshot">Snapshot<a class="headerlink" href="#snapshot" title="Permanent link">#</a></h2>
 <h2 id="spine">Spine<a class="headerlink" href="#spine" title="Permanent link">#</a></h2>
 <h2 id="textures">Textures<a class="headerlink" href="#textures" title="Permanent link">#</a></h2>
@@ -5797,16 +6184,16 @@
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -5818,7 +6205,7 @@
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -5826,7 +6213,7 @@
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -5935,6 +6322,10 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -5983,7 +6374,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

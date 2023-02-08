@@ -14,7 +14,7 @@
         <link rel="prev" href="../2021-02-05-%E6%9C%89%E6%B2%A1%E6%9C%89%E5%90%88%E9%80%82%E7%9A%84%E8%83%BD%E6%9B%BF%E4%BB%A3flash%E7%9A%84%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90%E7%9A%84/">
       
       
-        <link rel="next" href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/">
+        <link rel="next" href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/">
       
       <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.9">
@@ -146,8 +146,6 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -2566,7 +2564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -3821,7 +3819,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -4051,23 +4049,121 @@
 <p>以汉字开头的markdown文件可能导致奇怪的问题。可以数字时间开头，如“2021-03-17”。</p>
 </div>
 <h2 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mkdocs-material
 <span class="c1"># 以下是插件，按需要安装</span>
 pip<span class="w"> </span>install<span class="w"> </span>mkdocs-mermaid2-plugin
 pip<span class="w"> </span>install<span class="w"> </span>mknotebooks
 pip<span class="w"> </span>install<span class="w"> </span>mkdocs-macros-plugin
+pip<span class="w"> </span>install<span class="w"> </span>mkdocs-git-revision-date-plugin
 
-pip<span class="w"> </span>install<span class="w"> </span>mkdocs-redirects
+<span class="c1"># pip install mkdocs-redirects</span>
 
-<span class="c1"># pip install jieba</span>
+pip<span class="w"> </span>install<span class="w"> </span>jieba
 <span class="c1"># pip install click-man</span>
 <span class="c1"># click-man --target path/to/man/pages mkdocs</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_3">生成项目<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>new<span class="w"> </span>your<span class="se">\b</span>log<span class="se">\d</span>ir
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdocs<span class="w"> </span>new<span class="w"> </span>your<span class="se">\b</span>log<span class="se">\d</span>ir
+</code></pre></div></td></tr></table></div>
 <h2 id="_4">设置文件<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># mkdocs.yml</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># mkdocs.yml</span>
 <span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">嬉戏实验室</span>
 <span class="nt">nav</span><span class="p">:</span><span class="w"> </span><span class="c1"># 导航结构</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"> </span><span class="c1"># [定制主页](https://github.com/squidfunk/mkdocs-material/issues/1996)</span>
@@ -4154,19 +4250,22 @@ pip<span class="w"> </span>install<span class="w"> </span>mkdocs-redirects
 <span class="w">          </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://twitter.com/fusyong</span>
 <span class="w">        </span><span class="c1">#   name: Fusyong on Twitter</span>
 <span class="w">    </span><span class="c1"># disqus: XXXXXXXX # disqus评论插件</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_5">运行服务器<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>your<span class="se">\b</span>log<span class="se">\d</span>ir
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>your<span class="se">\b</span>log<span class="se">\d</span>ir
 mkdocs<span class="w"> </span>serve
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_6">生成发布版本<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>your<span class="se">\b</span>log<span class="se">\d</span>ir<span class="se">\</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>your<span class="se">\b</span>log<span class="se">\d</span>ir<span class="se">\</span>
 mkdocs<span class="w"> </span>build
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>or清理文件夹后在生成</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>your<span class="se">\b</span>log<span class="se">\d</span>ir<span class="se">\</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>your<span class="se">\b</span>log<span class="se">\d</span>ir<span class="se">\</span>
 mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="_7">标题取用顺序<a class="headerlink" href="#_7" title="Permanent link">#</a></h2>
 <ol>
 <li>从配置文件的导航配置<code>nav</code>中；</li>
@@ -4181,7 +4280,36 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
 <li><a href="https://squidfunk.github.io/mkdocs-material/">material</a></li>
 </ul>
 <h3 id="mkdocs-materialoverrides">mkdocs-material模板覆盖文件夹<code>overrides</code>的结构<a class="headerlink" href="#mkdocs-materialoverrides" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>.
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code>.
 ├─<span class="w"> </span>.icons/<span class="w">                             </span><span class="c1"># Bundled icon sets</span>
 ├─<span class="w"> </span>assets/
 │<span class="w">  </span>├─<span class="w"> </span>images/<span class="w">                          </span><span class="c1"># Images and icons</span>
@@ -4211,11 +4339,26 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
 ├─<span class="w"> </span><span class="m">404</span>.html<span class="w">                            </span><span class="c1"># 404错误页</span>
 ├─<span class="w"> </span>base.html<span class="w">                           </span><span class="c1"># Base template</span>
 └─<span class="w"> </span>main.html<span class="w">                           </span><span class="c1"># Default page</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>下载官方库<code>src</code>中的对应文件，修改后放在上述的本地文件夹<code>overrides</code>中的相应位置。</p>
 <h4 id="_9">在导航条目下加一行更新时间<a class="headerlink" href="#_9" title="Permanent link">#</a></h4>
 <p>拷贝官方的<code>nav-item.html</code>文件到<code>overrides\partials\nav-item.html</code>，修改其中的一段如下</p>
-<div class="highlight"><pre><span></span><code>  <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">Main</span> <span class="n">navigation</span> <span class="n">item</span> <span class="o">--&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">Main</span> <span class="n">navigation</span> <span class="n">item</span> <span class="o">--&gt;</span>
   <span class="o">...</span>
     <span class="o">&lt;</span><span class="n">li</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;{{ class }}&quot;</span><span class="o">&gt;</span>
       <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;{{ nav_item.url | url }}&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;md-nav__link&quot;</span><span class="o">&gt;</span>
@@ -4231,20 +4374,25 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
       <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">修改结束</span> <span class="o">--&gt;</span>
     <span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
   <span class="o">...</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="markdown_extensions">markdown_extensions<a class="headerlink" href="#markdown_extensions" title="Permanent link">#</a></h2>
 <h3 id="_10">提示块插件<a class="headerlink" href="#_10" title="Permanent link">#</a></h3>
 <p>设置如下：</p>
-<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admonition</span><span class="w">  </span><span class="c1"># 提示块</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.details</span><span class="w">  </span><span class="c1"># 提示块可折叠</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>语法如下:</p>
-<div class="highlight"><pre><span></span><code>!!! note &quot;可以双引号中指明标题&quot;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>!!! note &quot;可以双引号中指明标题&quot;
     随便多少缩进文本.
 
     空行分段.
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>效果如下：</p>
 <div class="admonition note">
 <p class="admonition-title">可以双引号中指明标题</p>
@@ -4252,26 +4400,29 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
 <p>空行分段.</p>
 </div>
 <p><code>note</code>用作CSS类名和默认标题，只能是一个单词例如</p>
-<div class="highlight"><pre><span></span><code>!!! hint
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>!!! hint
     标题会自动大写。
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>效果如下：</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>标题会自动大写。</p>
 </div>
 <p>如果不想要标题则引号内留空<code>""</code>。</p>
-<div class="highlight"><pre><span></span><code>!!! important &quot;&quot;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>!!! important &quot;&quot;
     无标题提示块。
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>效果是：</p>
 <div class="admonition important">
 <p>无标题提示块。</p>
 </div>
 <p>可以附加额外的CSS类，用空格隔开，会附在<code>type.</code>后：</p>
-<div class="highlight"><pre><span></span><code>!!! danger highlight blink &quot;不要在家里做&quot;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>!!! danger highlight blink &quot;不要在家里做&quot;
     ...
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>效果：</p>
 <div class="admonition danger highlight blink">
 <p class="admonition-title">不要在家里做</p>
@@ -4304,7 +4455,40 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
 <li>行内脚注</li>
 <li>字头拼音标注</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">from</span> <span class="nn">mkdocs.plugins</span> <span class="kn">import</span> <span class="n">BasePlugin</span>
 
 <span class="k">class</span> <span class="nc">Extended_markdown</span><span class="p">(</span><span class="n">BasePlugin</span><span class="p">):</span>
@@ -4338,20 +4522,54 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
             <span class="n">markdown</span> <span class="o">=</span> <span class="n">markdown</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">footnote_list</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">markdown</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="_13">简单支持中文搜索<a class="headerlink" href="#_13" title="Permanent link">#</a></h3>
 <p>找了一遍，网上为Mkdocs实现中文搜索的方法都不灵，而且挺麻烦。</p>
 <p>以下只是简单更改mkdocs-material默认的search组件，对内容进行分词，以支持简单的中文搜索。<strong>之所以说“简单”，是说引擎不会为用户分词，用户输入的关键词必须自己用空格分开，像英文那样。</strong></p>
 <p>在配置中启用search插件，指定英语、日语和分隔符：</p>
-<p><div class="highlight"><pre><span></span><code>plugins:
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>plugins:
     - search:
         lang:
             - en
             - ja
         separator: &#39;[\s\-\.]+&#39;
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 更改默认的search插件<code>mkdocs.contrib.search.search_index.py</code>，添加有注释的代码行，对内容进行中文分词：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">jieba</span> <span class="c1"># 中文分词用模块</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">jieba</span> <span class="c1"># 中文分词用模块</span>
 
 <span class="k">class</span> <span class="nc">SearchIndex</span><span class="p">:</span>
 
@@ -4381,12 +4599,12 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
         <span class="p">})</span>
 
     <span class="c1"># 以下不变，略</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>实际效果参见<a href="https://blog.xiiigame.com/">我的博客</a>，如下：</p>
 <p><img alt="" src="../img/2021-03-02-mkdocs-material%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021-09-18-19-22-51.png" /></p>
 <p>也可以把search组件复制、更改为自己的插件，参考插件<a href="https://github.com/andyoakley/mkdocs-fastsearch">fastsearch</a>。</p>
 <p>如果要更改搜索引擎的行为，比如给输入的搜索内容进行分词、排除停用词等，可参考<a href="https://github.com/mkdocs/mkdocs/blob/master/mkdocs/contrib/search/lunr-language/lunr.ja.js">lunr的日语组件</a></p>
-<h3 id="mkdocs-macros-plugin"><a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/">mkdocs-macros-plugin宏插件</a><a class="headerlink" href="#mkdocs-macros-plugin" title="Permanent link">#</a></h3>
+<h3 id="mkdocs-macros-plugin"><a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/">mkdocs-macros-plugin宏插件</a><a class="headerlink" href="#mkdocs-macros-plugin" title="Permanent link">#</a></h3>
 <p>通过变量和宏释放Mkdocs的威力。号称：</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -4404,16 +4622,16 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -4425,7 +4643,7 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -4433,7 +4651,7 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -4521,7 +4739,7 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
         
         
           
-          <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-footer__link md-footer__link--next" aria-label="下一页: mkdocs-macros-plugin宏插件" rel="next">
+          <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-footer__link md-footer__link--next" aria-label="下一页: mkdocs-macros-plugin宏插件" rel="next">
             <div class="md-footer__title">
               <div class="md-ellipsis">
                 <span class="md-footer__direction">
@@ -4541,6 +4759,10 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
   
   
     Made with
@@ -4590,7 +4812,7 @@ mkdocs<span class="w"> </span>build<span class="w"> </span>--clean
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

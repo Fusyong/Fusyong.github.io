@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2378,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -3749,7 +3747,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -3911,25 +3909,28 @@
 <p>要检查你的项目是否报告了这些警告，你需要单击下面屏幕截图中显示的Overleaf图标。即使你的文档编译时可能没有错误，但看到这些消息是很常见的，任何对 TeX/LaTeX 还陌生的人都可能想知道它们的含义以及是否应该在意。</p>
 <p><img alt="显示 Overleaf 报告未满或过满盒子的截屏" src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/d/dd/Overunderfull.png" /></p>
 <p>排版文档时，LaTeX 会尝试使你的内容片段适配给定的“尺寸”，例如在排版段落，将行分成一定长度时——这很容易使用像 \parbox 之类的命令来演示。如果我们尝试使用 50pt 的行宽来排版以下段落：</p>
-<pre><code>\parbox{50pt}{Some text typeset using a \texttt{\string\parbox}}
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>\parbox{50pt}{Some text typeset using a \texttt{\string\parbox}}
+</code></pre></div></td></tr></table></div>
 <p>Overleaf报告两条未满 Underfull \hbox... 警告：</p>
 <p><img alt="截屏图像，显示 Overleaf 在报告有未满盒子" src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/f/f4/Boxwarnings.png" /></p>
 <p>这些 Underfull \hbox... 警告出现，是因为 TeX 引擎无法在这个 \parbox 的限制内生成“良好的”换行。在 TeX 引擎内部，要排版段落的每一行都会变成了一个 \hbox，引擎随后会检查并报告，这可能会生成警告，指出所有被 TeX 引擎归类为“不可取”的行。</p>
 <p>正如你在下图中看到的那样，行间距非常大，于是 TeX 的 Underfull \hbox... 警告会告诉你这一点——当然在这个例子中，问题是清晰可见的。</p>
 <p><img alt="截屏图像，显示一个段落盒子" src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/9/9e/Parboxone.png" /></p>
 <p>请注意，对于本示例，你可以使用 \raggedright 来避免这些警告：</p>
-<pre><code>\parbox{50pt}{\raggedright Some text typeset using a \texttt{\string\parbox}}
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>\parbox{50pt}{\raggedright Some text typeset using a \texttt{\string\parbox}}
+</code></pre></div></td></tr></table></div>
 <p><img alt="截屏图像，显示一个段落盒子" src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/4/49/Badparboxtwo.png" /></p>
 <h2 id="_4">溢出的盒子和未满的盒子<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p>这个 \parbox 示例演示了一个更普遍的问题：在处理你的 LaTeX 代码时，用于排版你的文档的 TeX 引擎（pdfTeX、XeTeX 或 LuaTeX）可能会认为 LaTeX 的请求会导致排版内容与事先提供或要求的盒子边界不能“良好适配”。如果是这样，TeX 引擎会发出警告，你的材料会得到排版，但有时结果可能不符合审美期望，你可能需要加以修正。了解这些消息的含义，明白何时需要采取行动来解决问题，是值得的。</p>
 <p>这些与盒子相关的警告的形式如下</p>
-<pre><code>Overfull \hbox (&lt;value&gt;pt too wide) ... at line(s) ... 
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Overfull \hbox (&lt;value&gt;pt too wide) ... at line(s) ... 
 Overfull \vbox (&lt;value&gt;pt too high) ... at line(s) ... 
 Underfull \hbox (badness &lt;value&gt; ) ... at line(s) ... 
 Underfull \vbox (badness &lt;value&gt;) ... at line(s) ...
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>\hbox 指的是一个 <em>水平盒子</em>，在它里面，TeX 引擎将一系列条目并排放置在其中，而 \vbox 指的是一个 <em>垂直盒子</em>，在它里面，TeX 引擎将条目一个个地上下堆叠。</p>
 <p>如果材料太少，TeX 引擎将报告 Underfull \hbox 警告或 Underfull \vbox 警告：</p>
 <ul>
@@ -4000,16 +4001,16 @@ Underfull \vbox (badness &lt;value&gt;) ... at line(s) ...
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -4021,7 +4022,7 @@ Underfull \vbox (badness &lt;value&gt;) ... at line(s) ...
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -4029,7 +4030,7 @@ Underfull \vbox (badness &lt;value&gt;) ... at line(s) ...
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -4138,6 +4139,10 @@ Underfull \vbox (badness &lt;value&gt;) ... at line(s) ...
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -4186,7 +4191,7 @@ Underfull \vbox (badness &lt;value&gt;) ... at line(s) ...
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

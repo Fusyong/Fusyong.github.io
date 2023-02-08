@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2378,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -3758,7 +3756,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -3917,13 +3915,18 @@
 </ul>
 <h2 id="the_challenge">The challenge<a class="headerlink" href="#the_challenge" title="Permanent link">#</a></h2>
 <p>Suppose we have an \hbox such as this:</p>
-<pre><code>\hbox to100pt{%
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>\hbox to100pt{%
 A\hskip4pt plus3pt minus 2pt%
 B\hskip 0pt plus 2fil% 
 C\hskip 0pt plus 2fill%
 D\hskip 0pt plus 3fill%
 }
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>Here is what this box looks like—for clarity, shown enlarged and with a border:</p>
 <p><img alt="box" src="https://www.filepicker.io/api/file/N9wjEuTNivKYcAA5wf7A" /></p>
 <p>The question is: what is the final value, in T E X TEX points, of the space (glue) between the following items:</p>
@@ -3943,8 +3946,8 @@ D\hskip 0pt plus 3fill%
 </ul>
 <p><img alt="node graph" src="https://www.filepicker.io/api/file/phmRdm84QcKtytQBMVEk" /></p>
 <p>It is important to note that a particular set of values for glue_set, glue_sign and glue_order only affect glues within the top-level box: they do not affect glues within <em>nested</em> boxes: each nested box (hlist or vlist object) has its own values for these three parameters. Here is an example of an \hbox nested within an outer \hbox. In this example, you can clearly see the different values of glue_set—of course, the nested box can also have different values for glue_sign and glue_order.</p>
-<pre><code>\hbox to 75pt{\hfill ABC\hbox to15pt{\hfill D}}
-</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>\hbox to 75pt{\hfill ABC\hbox to15pt{\hfill D}}
+</code></pre></div></td></tr></table></div>
 <p><img alt="node graph" src="https://www.filepicker.io/api/file/QTapYdE2TJK5zButNmow" /></p>
 <h2 id="glue_types_infinities_and_orders_a_summary">Glue types, infinities and orders: A summary<a class="headerlink" href="#glue_types_infinities_and_orders_a_summary" title="Permanent link">#</a></h2>
 <p>T E X TEX provides a number of primitive glue-related commands, including: </p>
@@ -3989,13 +3992,18 @@ D\hskip 0pt plus 3fill%
 <h3 id="the_natural_width_of_a_box">The natural width of a box<a class="headerlink" href="#the_natural_width_of_a_box" title="Permanent link">#</a></h3>
 <p>The natural width of a box is the total width of all components in that box: characters, kerns, nested boxes and any glue. For glue inside the box its natural width ignores any stretch or shrink of the glue: i.e., its size before any stretching or shrinking takes place.</p>
 <p>Once again, here is the box we are examining:</p>
-<pre><code>\hbox to100pt{%
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>\hbox to100pt{%
 A\hskip4pt plus3pt minus 2pt%
 B\hskip 0pt plus 2fil% 
 C\hskip 0pt plus 2fill%
 D\hskip 0pt plus 3fill%
 }
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>Clearly, we want the box to be 100pt wide, hence W D = 100 p t WD=100pt but what about its natural width, W N WN ? To calculate the natural width it is clear that we need the widths of the four characters (A, B, C and D) plus the natural widths of the four glues.</p>
 <p>W N = width(A) + width(B) + width(C) + width(D) + width ( \hskip 4pt plus3pt minus 2pt ) + width ( \hskip 0pt plus 2fil ) + width ( \hskip 0pt plus 2fill) + width ( \hskip 0pt plus 3fill ) WN=width(A)+width(B)+width(C)+width(D)+width(\hskip 4pt plus3pt minus 2pt)+width(\hskip 0pt plus 2fil)+width(\hskip 0pt plus 2fill)+width(\hskip 0pt plus 3fill)</p>
 <p>Where width width is just a notation to denote the natural width of an item. We can obtain the natural widths of the four characters (A, B, C and D) from our node graph:</p>
@@ -4044,13 +4052,18 @@ In our example, glue_sign has the value of 1, meaning that participating glues a
 <li>we have a total of ( 2 + 3 ) = 5 (2+3)=5 units of fill fill available.</li>
 </ol>
 <p>The next question is: by how much will those glues actually stretch? Enter the <em>glue set ratio</em>—referred to as glue_set in our node graph. What T E X TEX does is to work out how much space must be filled and then distributes that amount of space among the appropriate glues in proportion to the size of their stretch component. If you look back at our actual \hbox you can see exactly which glues have stretch components containing units of fill fill :</p>
-<pre><code>\hbox to100pt{%
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>\hbox to100pt{%
 A\hskip4pt plus3pt minus 2pt%
 B\hskip 0pt plus 2fil% 
 C\hskip 0pt plus 2fill%
 D\hskip 0pt plus 3fill%
 }
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>The glue set ratio ( or glue_set ) glue set ratio (or glue_set) is calculated as follows:</p>
 <p>glue set ratio  ( glue_set ) = = = = = amount to stretch value of highest infinity W D − W N y 3 ( 100 − 33.4445 ) 5 66.5555 5 13.3111  ( to 4 decimal places ) glue set ratio(glue_set)=amount to stretchvalue of highest infinity=WD−WNy3=(100−33.4445)5=66.55555=13.3111(to 4 decimal places)</p>
 <p>And now the final step in the T E X TEX algorithm is applied:</p>
@@ -4062,13 +4075,18 @@ D\hskip 0pt plus 3fill%
 <li>all other glues are set to their natural length—i.e., they do not stretch at all.</li>
 </ol>
 <p>Looking at the glues in our box:</p>
-<pre><code>\hbox to100pt{%
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>\hbox to100pt{%
 A\hskip4pt plus3pt minus 2pt%
 B\hskip 0pt plus 2fil% 
 C\hskip 0pt plus 2fill%
 D\hskip 0pt plus 3fill%
 }
-</code></pre>
+</code></pre></div></td></tr></table></div>
 <p>we can go through them to calculate their final values:</p>
 <ol>
 <li><strong>Between A and B</strong>: \hskip 4pt plus3pt minus 2pt. The stretch component is 3pt, which is order 0. The required glue_order is 3: the stretch component is ignored and this glue assumes its natural width of 4pt.</li>
@@ -4092,16 +4110,16 @@ D\hskip 0pt plus 3fill%
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -4113,7 +4131,7 @@ D\hskip 0pt plus 3fill%
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -4121,7 +4139,7 @@ D\hskip 0pt plus 3fill%
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -4230,6 +4248,10 @@ D\hskip 0pt plus 3fill%
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -4278,7 +4300,7 @@ D\hskip 0pt plus 3fill%
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

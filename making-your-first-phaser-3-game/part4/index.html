@@ -142,8 +142,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2373,7 +2371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -3638,7 +3636,7 @@
   
     <li class="md-nav__item">
       <a href="../../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -3698,27 +3696,33 @@
 <p><em><a href="https://phaser.io/tutorials/making-your-first-phaser-3-game/">英文原文地址</a>  <a href="https://phaser.io/tutorials/making-your-first-phaser-3-game-chinese">中文译文官网原发地址(黄复雄译)</a></em></p>
 <hr />
 <p>我们刚加了一堆代码到<code>create</code>函数中，此函数应该更详尽地解释一下。首先，这一部分：</p>
-<div class="highlight"><pre><span></span><code>platforms = this.physics.add.staticGroup();
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>platforms = this.physics.add.staticGroup();
+</code></pre></div></td></tr></table></div>
 <p>这一句生成一个静态物理组（Group），并把这个组赋值给局部变量<code>platforms</code>。在Arcade物理系统中，有动态的和静态的两类物体（body）。动态物体可以通过外力比如速度（velocity）、加速度（acceleration），得以四处移动。它可以跟其他对象发生反弹（bounce）、碰撞（collide），此类碰撞受物体质量和其他因素影响。</p>
 <p>与此明显不同的是，静态物体只有位置和尺寸。重力对它没有影响，你不能给它设置速度，有东西跟它碰撞时，它一点都不动。名副其实，完全是静态的。所以用作地面和平台很完美，我们打算让玩家在上面来回跑动。</p>
 <p>那么什么是组呢？如其名所示，是把近似对象组织在一起的手段，控制对象全体就像控制一个统一的个体。你也可以检查组与其他游戏对象之间的碰撞。组能够生成自己的游戏对象，这是通过便利的辅助函数如<code>create</code>实现的。物理组会自动生成已经开启物理系统的子项（children），省得你处理时跑腿。</p>
 <p>平台组做好了，我们现在可以用它生成平台：</p>
-<div class="highlight"><pre><span></span><code>platforms.create(400, 568, &#39;ground&#39;).setScale(2).refreshBody();
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>platforms.create(400, 568, &#39;ground&#39;).setScale(2).refreshBody();
 
 platforms.create(600, 400, &#39;ground&#39;);
 platforms.create(50, 250, &#39;ground&#39;);
 platforms.create(750, 220, &#39;ground&#39;);
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>这就生成了场景，如前所见。</p>
 <p>在预加载时，我们输入了图像'ground'。它是个简单的绿色长方形，尺寸是400 x 32像素，将用于我们的基础平台：</p>
 <p><img alt="image" src="../platform.png" /></p>
 <p>上述代码的第一行，添加一张新的地面图像到400 x 568的位置(请记住，图像定位基于中心点)——问题是，我们需要这个平台撑满游戏的宽度。否则玩家就会掉出边界。要做到这一点，我们用函数<code>setScale(2)</code>把它按x2（两倍）缩放。现在它的尺寸是800 x 64了，恰好符合我们的要求。要调用<code>refreshBody()</code>，这是因为我们缩放的是一个 <em>静态</em> 物体，所以必须把所作变动告诉物理世界（physics world）。</p>
 <p>地面已经缩放、就位，现在该别的平台了：</p>
-<div class="highlight"><pre><span></span><code>platforms.create(600, 400, &#39;ground&#39;);
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>platforms.create(600, 400, &#39;ground&#39;);
 platforms.create(50, 250, &#39;ground&#39;);
 platforms.create(750, 220, &#39;ground&#39;);
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>这个步骤跟前面完全相同，只是不需要缩放，因为他们的尺寸本来就正好。</p>
 <p>3个平台已经放到画面各处，距离合适，以便玩家能蹦上去。</p>
 <p>那么让我们添加玩家。</p>
@@ -3731,16 +3735,16 @@ platforms.create(750, 220, &#39;ground&#39;);
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -3752,7 +3756,7 @@ platforms.create(750, 220, &#39;ground&#39;);
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -3760,7 +3764,7 @@ platforms.create(750, 220, &#39;ground&#39;);
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -3869,6 +3873,10 @@ platforms.create(750, 220, &#39;ground&#39;);
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -3917,7 +3925,7 @@ platforms.create(750, 220, &#39;ground&#39;);
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.a00a7c5e.min.js"></script>

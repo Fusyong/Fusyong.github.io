@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2378,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -4780,7 +4778,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -5959,12 +5957,16 @@
 
 <h1 id="phasergameobjects_graphics"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#toc1">Phaser.GameObjects. Graphics</a><a class="headerlink" href="#phasergameobjects_graphics" title="Permanent link">#</a></h1>
 <h3 id="new_graphicsscene_options"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#Graphics">new Graphics(scene [, options])</a><a class="headerlink" href="#new_graphicsscene_options" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">// 通常通过Phaser.Scene.add.graphics()引用其工厂函数</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 通常通过Phaser.Scene.add.graphics()引用其工厂函数</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">back_drop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">graphics</span><span class="p">();</span>
 <span class="c1">// 设置线型后才能画轮廓线</span>
 <span class="nx">back_drop</span><span class="p">.</span><span class="nx">lineStyle</span><span class="p">(</span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="mh">0x888888</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
 <span class="c1">// back_drop.fillStyle(color [, alpha]); //填充型，画面用</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="extends"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#toc3">Extends</a><a class="headerlink" href="#extends" title="Permanent link">#</a></h2>
 <h2 id="members"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#toc4">Members</a><a class="headerlink" href="#members" title="Permanent link">#</a></h2>
 <h3 id="targetcamera_phasercamerasscene2dcamera"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#.TargetCamera"><static> TargetCamera :Phaser.Cameras.Scene2D.Camera</a><a class="headerlink" href="#targetcamera_phasercamerasscene2dcamera" title="Permanent link">#</a></h3>
@@ -6042,11 +6044,14 @@
 <h3 id="fillrectshaperect"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#fillRectShape">fillRectShape(rect)</a><a class="headerlink" href="#fillrectshaperect" title="Permanent link">#</a></h3>
 <h3 id="fillroundedrectx_y_width_height_radius"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#fillRoundedRect">fillRoundedRect(x, y, width, height [, radius])</a><a class="headerlink" href="#fillroundedrectx_y_width_height_radius" title="Permanent link">#</a></h3>
 <p>圆角矩形。</p>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">back_drop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">graphics</span><span class="p">();</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">back_drop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">graphics</span><span class="p">();</span>
 <span class="nx">back_drop</span><span class="p">.</span><span class="nx">lineStyle</span><span class="p">(</span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="mh">0x888888</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
 <span class="c1">//  用一个对象配置四角的圆度</span>
 <span class="nx">back_drop</span><span class="p">.</span><span class="nx">strokeRoundedRect</span><span class="p">(</span><span class="mf">360</span><span class="p">,</span><span class="w"> </span><span class="mf">240</span><span class="p">,</span><span class="w"> </span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">tl</span><span class="o">:</span><span class="w"> </span><span class="kt">64</span><span class="p">,</span><span class="w"> </span><span class="nx">tr</span><span class="o">:</span><span class="w"> </span><span class="kt">22</span><span class="p">,</span><span class="w"> </span><span class="nx">bl</span><span class="o">:</span><span class="w"> </span><span class="kt">12</span><span class="p">,</span><span class="w"> </span><span class="nx">br</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="w"> </span><span class="p">});</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="fillstylecolor_alpha"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#fillStyle">fillStyle(color [, alpha])</a><a class="headerlink" href="#fillstylecolor_alpha" title="Permanent link">#</a></h3>
 <p>填充型</p>
 <h3 id="filltrianglex0_y0_x1_y1_x2_y2"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#fillTriangle">fillTriangle(x0, y0, x1, y1, x2, y2)</a><a class="headerlink" href="#filltrianglex0_y0_x1_y1_x2_y2" title="Permanent link">#</a></h3>
@@ -6063,7 +6068,17 @@
 <h3 id="incdatakey_data"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#incData">incData(key [, data])</a><a class="headerlink" href="#incdatakey_data" title="Permanent link">#</a></h3>
 <h3 id="initpipelinepipeline"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#initPipeline">initPipeline(pipeline)</a><a class="headerlink" href="#initpipelinepipeline" title="Permanent link">#</a></h3>
 <h3 id="linebetweenx1_y1_x2_y2"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#lineBetween">lineBetween(x1, y1, x2, y2)</a><a class="headerlink" href="#linebetweenx1_y1_x2_y2" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">// 画满灰色横条</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// 画满灰色横条</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">back_drop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">graphics</span><span class="p">();</span>
 <span class="nx">back_drop</span><span class="p">.</span><span class="nx">lineStyle</span><span class="p">(</span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="mh">0x888888</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">width</span><span class="p">;</span>
@@ -6074,7 +6089,7 @@
 <span class="w">    </span><span class="nx">back_drop</span><span class="p">.</span><span class="nx">lineBetween</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">);</span>
 <span class="w">    </span><span class="nx">y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">space</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h3 id="linegradientstylelinewidth_topleft_topright_bottomleft_bottomright_alpha"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#lineGradientStyle">lineGradientStyle(lineWidth, topLeft, topRight, bottomLeft, bottomRight [, alpha])</a><a class="headerlink" href="#linegradientstylelinewidth_topleft_topright_bottomleft_bottomright_alpha" title="Permanent link">#</a></h3>
 <h3 id="linestylelinewidth_color_alpha"><a href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Graphics.html#lineStyle">lineStyle(lineWidth, color [, alpha])</a><a class="headerlink" href="#linestylelinewidth_color_alpha" title="Permanent link">#</a></h3>
 <p>轮廓线型。</p>
@@ -6151,16 +6166,16 @@
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -6172,7 +6187,7 @@
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -6180,7 +6195,7 @@
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -6289,6 +6304,10 @@
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -6337,7 +6356,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

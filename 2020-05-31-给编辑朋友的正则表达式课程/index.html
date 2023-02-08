@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2480,7 +2478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -3735,7 +3733,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -3897,17 +3895,18 @@
 <h3 id="_2">学正则该从哪里下手<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
 <p>使用汉字的文字工作者，最好从<a href="http://www.fodianbaoku.com/tools/index.htm">TextPro</a>开始。TextPro是<a href="http://www.fodianbaoku.com">中华佛典宝库</a>网站开发的，是用来整理佛经的文本处理工具。它的正则，对汉字有专门的设计，比如有专门的字符集可以方便地区分汉字和汉字中的标点、数字、大写数字、天干地支用字、拼音用字符、注音符号，等等；它还能处理批量正则替换表（一般的软件都没有这一功能，或者没它方便）；还带有一个专门的正则帮助文件，清晰，简明，有示例，相当于一个教程，用它学习入门就可以。</p>
 <h3 id="aabb">查找AABB式的词语<a class="headerlink" href="#aabb" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>【查找】(\c)\1(\c)\2
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>【查找】(\c)\1(\c)\2
+</code></pre></div></td></tr></table></div>
 <p><code>\c</code>代表一个汉字。<code>()</code>代表捕获其间的内容，以备引用，<code>\1</code>即是引用第一个捕获；那么<code>(\c)\1</code>就表示两个重复的汉字。</p>
 <p>如果你想把这些词语（或所在行）收集到一个文件中，TextPro的“编辑”菜单中有两个现成的功能：“复制所有查找结果”和“复制所有查找结果”。</p>
 <h3 id="_3">删除重复行<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
 <p>可以用正则处理（参见下面的思路），但一般使用软件现成的功能。EmEditor、TextPro，甚至excel都有这样的功能。</p>
 <h3 id="excel">可以像Excel那样，某一列相同的很多行，只保留一行吗？<a class="headerlink" href="#excel" title="Permanent link">#</a></h3>
 <p>用EmEditor跨行正则替换。先按行排序，把有相同值的行都排到一起，然后</p>
-<div class="highlight"><pre><span></span><code>【查找】^((.*?)\t.*)\n\2\t.*$
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>【查找】^((.*?)\t.*)\n\2\t.*$
 【替换】\1
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>其实，EmEditor中现成有这个功能：编辑.高级.删除/把重复行作为书签</strong></p>
 <h2 id="_4"><a href="https://www.zhihu.com/question/446167164/answer/1748757334">正则表达式如何排除汉字?</a><a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p>【答】</p>
@@ -3926,33 +3925,44 @@
 不能跨行处理的软件，可以把所有行合并成一行后再处理。——用一些文本中不可能有的符号组合标记分行的位置，比如@@@@，处理完后还可能恢复分行。</p>
 <h2 id="_6">部分内容跨行移动<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
 <p>有很多如下的试题，需要把答案从最后一行末尾，移动到对应序号行的末尾。</p>
-<div class="highlight"><pre><span></span><code>3.在什么情况下不得行车？
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>3.在什么情况下不得行车？
 A、车窗没关闭
 B、车门没关闭
 C、音响没关闭
 D、顶窗没关闭    答案：B
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>改为：</p>
-<div class="highlight"><pre><span></span><code>3.在什么情况下不得行车？
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>3.在什么情况下不得行车？
 A、车窗没关闭
 B、车门没关闭    答案：B
 C、音响没关闭
 D、顶窗没关闭
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>EmEditor虽能跨行查找，但跨行反向用好像有问题。那么先用<code>@@@@</code>代替换行符，然后分段移动，最后再恢复分行。</p>
 <p>以下是批处理替换的设置：</p>
 <p><img alt="" src="../img/2020-05-31-%E7%BB%99%E7%BC%96%E8%BE%91%E6%9C%8B%E5%8F%8B%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%BE%E7%A8%8B/EmEditor%E6%89%B9%E5%A4%84%E7%90%86.png" /></p>
 <p>以下是导出的tsv文件内容。有tab分割的四栏分别对应<code>启用 | 查找| 替换为 | 条件</code>，可以后缀<code>.tsv</code>保存为文件，再导入EmEditor使用。</p>
-<div class="highlight"><pre><span></span><code>on  \n  @@@@    RD
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>on  \n  @@@@    RD
 on  @@@@([A-C])([^\s]+?)(@@@@[^\s]+?)(\s+答案：\1) @@@@\1\2\4\3    RD
 on  @@@@    \n  RD
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <h2 id="emeditor"><a href="https://www.zhihu.com/question/456749822/answer/1856715424">怎么用EmEditor把中间一段移到句首</a><a class="headerlink" href="#emeditor" title="Permanent link">#</a></h2>
 <p>如把<code>可|不|能</code>转换成<code>不|可|能</code></p>
 <p><strong>【答】</strong></p>
-<div class="highlight"><pre><span></span><code>【查找】^(.+)\|(.+)\|(.+)$
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>【查找】^(.+)\|(.+)\|(.+)$
 【替换】\2|\1|\3
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>此类比较规则的文本，也可以用EmEditor的csv表格操作功能，可以直接移动整列。</p>
 
 
@@ -3963,16 +3973,16 @@ on  @@@@    \n  RD
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -3984,7 +3994,7 @@ on  @@@@    \n  RD
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -3992,7 +4002,7 @@ on  @@@@    \n  RD
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -4101,6 +4111,10 @@ on  @@@@    \n  RD
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -4149,7 +4163,7 @@ on  @@@@    \n  RD
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>

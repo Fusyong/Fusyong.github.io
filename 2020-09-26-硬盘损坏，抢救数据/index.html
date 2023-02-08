@@ -147,8 +147,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -2459,7 +2457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         mkdocs-macros-plugin宏插件
       </a>
     </li>
@@ -3714,7 +3712,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        ☆ about
+        ☆ About
       </a>
     </li>
   
@@ -3855,7 +3853,16 @@
 <p>做好后插在电脑上，准备启动。<strong>最好只留下问题盘和一张容量等于或大于问题盘的空磁盘（用于存储恢复的数据），sata连接，其余的全部拆除，以免误操作。</strong></p>
 <p>把启动时更改biso的引导顺序，通过刚才的U盘引导。<strong>启动后不要操作问题盘和存储数据用的盘，不要装载！以免出问题。</strong></p>
 <p>进入Ubuntu系统后先添加国内的程序源，以便安装程序。也就是在源文件<code>/etc/apt/sources.list</code>后添加源列表。比如阿里源：</p>
-<div class="highlight"><pre><span></span><code>deb<span class="w"> </span>http://mirrors.aliyun.com/ubuntu/<span class="w"> </span>bionic<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>deb<span class="w"> </span>http://mirrors.aliyun.com/ubuntu/<span class="w"> </span>bionic<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
 deb<span class="w"> </span>http://mirrors.aliyun.com/ubuntu/<span class="w"> </span>bionic-security<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
 deb<span class="w"> </span>http://mirrors.aliyun.com/ubuntu/<span class="w"> </span>bionic-updates<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
 deb<span class="w"> </span>http://mirrors.aliyun.com/ubuntu/<span class="w"> </span>bionic-proposed<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
@@ -3865,43 +3872,44 @@ deb-src<span class="w"> </span>http://mirrors.aliyun.com/ubuntu/<span class="w">
 deb-src<span class="w"> </span>http://mirrors.aliyun.com/ubuntu/<span class="w"> </span>bionic-updates<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
 deb-src<span class="w"> </span>http://mirrors.aliyun.com/ubuntu/<span class="w"> </span>bionic-proposed<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
 deb-src<span class="w"> </span>http://mirrors.aliyun.com/ubuntu/<span class="w"> </span>bionic-backports<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p>然后更新系统：</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
-</code></pre></div>
+</code></pre></div></td></tr></table></div>
 <p><strong>安装<code>gddrescue</code>。注意软件包名字前有个g，但是命令没有g，只是<code>ddrescue</code>。</strong></p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>gddrescue
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>gddrescue
+</code></pre></div></td></tr></table></div>
 <p>还可以安装通过图形查看进度的工具<code>ddrescueview</code>：</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ddrescueview
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>ddrescueview
+</code></pre></div></td></tr></table></div>
 <h2 id="ddrescue">使用<code>ddrescue</code>复制、抢救数据<a class="headerlink" href="#ddrescue" title="Permanent link">#</a></h2>
 <p>先查看磁盘列表：</p>
-<div class="highlight"><pre><span></span><code>lshw<span class="w"> </span>-C<span class="w"> </span>disk
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>lshw<span class="w"> </span>-C<span class="w"> </span>disk
+</code></pre></div></td></tr></table></div>
 <p>或者：</p>
-<div class="highlight"><pre><span></span><code>fdisk<span class="w"> </span>-l
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>fdisk<span class="w"> </span>-l
+</code></pre></div></td></tr></table></div>
 <p><img alt="磁盘信息.jpg" src="../img/%E7%A1%AC%E7%9B%98%E6%8D%9F%E5%9D%8F%EF%BC%8C%E6%8A%A2%E6%95%91%E6%95%B0%E6%8D%AE/%E7%A3%81%E7%9B%98%E4%BF%A1%E6%81%AF.jpg" /></p>
 <p>磁盘通常显示为<code>/dev/sda</code>, <code>/dev/sdb</code>这样的格式。其下后还可能显示分卷，如<code>/dev/sda1</code>，<code>/dev/sda1</code>。<strong>下面处理时，应该操作整盘，而不是分卷。</strong></p>
 <p><a href="https://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html">这里是ddrecue的手册</a>，详细解释了算法和处理过程，有助于你在漫长的等待过程中免于焦虑。</p>
 <p>ddrescue有很多选项，但我们通常只需要两个步骤。</p>
 <p><strong>第一步，</strong>快速抓取大部分无错区域：</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ddrescue<span class="w"> </span>-n<span class="w"> </span>-f<span class="w"> </span>/dev/问题盘<span class="w"> </span>/dev/存储盘<span class="w"> </span>rescued.log
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>ddrescue<span class="w"> </span>-n<span class="w"> </span>-f<span class="w"> </span>/dev/问题盘<span class="w"> </span>/dev/存储盘<span class="w"> </span>rescued.log
+</code></pre></div></td></tr></table></div>
 <p><strong>注意，选项<code>-f</code>意味着存储盘上的内容会被覆盖。</strong></p>
 <p><code>rescued.log</code>是记录进度的文件。如果临时停止，<strong>重新开始后，ddrescue可以根据这个文件接着做。Linux live USB系统重启后会抛弃用户设置、文件，所以这个文件应该通过在线邮箱等方式妥善保存。</strong></p>
 <p>可以使用ddrescueview查看进度（可以用<code>-r 30s</code>这样的选项来设置刷新间隔）：</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ddrescueview<span class="w"> </span>rescued.log
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>ddrescueview<span class="w"> </span>rescued.log
+</code></pre></div></td></tr></table></div>
 <p>效果如下：</p>
 <p><img alt="图形信息.jpg" src="../img/%E7%A1%AC%E7%9B%98%E6%8D%9F%E5%9D%8F%EF%BC%8C%E6%8A%A2%E6%95%91%E6%95%B0%E6%8D%AE/%E5%9B%BE%E5%BD%A2%E4%BF%A1%E6%81%AF.jpg" /></p>
 <p><strong>我的问题盘是1T容量，数据大概900G，完成第一步耗时近6小时。</strong></p>
 <p><img alt="结果信息.jpg" src="../img/%E7%A1%AC%E7%9B%98%E6%8D%9F%E5%9D%8F%EF%BC%8C%E6%8A%A2%E6%95%91%E6%95%B0%E6%8D%AE/%E7%BB%93%E6%9E%9C%E4%BF%A1%E6%81%AF.jpg" /></p>
 <p><strong>第二步，</strong>尝试从有错区域中“刮取”，也就是最大限度地恢复数据：</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ddrescue<span class="w"> </span>-r<span class="w"> </span><span class="m">1</span><span class="w"> </span>/dev/old_disk<span class="w"> </span>/dev/new_disk<span class="w"> </span>rescued.log
-</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>ddrescue<span class="w"> </span>-r<span class="w"> </span><span class="m">1</span><span class="w"> </span>/dev/old_disk<span class="w"> </span>/dev/new_disk<span class="w"> </span>rescued.log
+</code></pre></div></td></tr></table></div>
 <p>选项<code>-r 1</code>表示重复次数。这个步骤很耗时，如果时间允许重复两三次也是可以的。这一步我只做了一小会儿。拆下来发现绝大多数已经恢复，就不再做了。</p>
 <h2 id="win10">使用win10磁盘工具查错<a class="headerlink" href="#win10" title="Permanent link">#</a></h2>
 <p>复制得到的磁盘是有错误的，我使用win10磁盘工具查错后，在根目录的隐藏文件夹<code>found.000</code>中找到了很多恢复的文件、文件夹。再通过TC，过滤时间后，得到未备份的内容，加到备份中。
@@ -3917,16 +3925,16 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
   <form class="md-feedback" name="feedback" hidden>
     <fieldset>
       <legend class="md-feedback__title">
-        Was this page helpful?
+        这篇怎么样啊？
       </legend>
       <div class="md-feedback__inner">
         <div class="md-feedback__list">
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
             </button>
           
-            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
             </button>
           
@@ -3938,7 +3946,7 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
               
                 
               
-              Thanks for your feedback!
+              多谢反馈!
             </div>
           
             <div data-md-value="0" hidden>
@@ -3946,7 +3954,7 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
+              多谢反馈!
             </div>
           
         </div>
@@ -4055,6 +4063,10 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
   
     Made with
     <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
@@ -4103,7 +4115,7 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>
