@@ -3908,9 +3908,9 @@
 <ul>
 <li>现在用LibreOffice Writer替代微软Word不会有大问题；</li>
 <li>尽可能只在默认的odt格式上编辑<ol>
-<li><strong>第一次打开docx文件时，不要有修改动作，</strong> 注意观察字数（<strong>doc文件要先用MS Word另存为docx，而不是用Writer直接转</strong>）；</li>
+<li><strong>第一次打开docx文件时，不要有任何修改动作，</strong> 注意观察字数（<strong>doc文件要先用MS Word另存为docx，而不是用Writer直接转</strong>）；</li>
 <li>另存为默认的odt格式，关闭，再打开，核对字数是否有误；</li>
-<li>只在odt上编辑，</li>
+<li><strong>只在odt上改动，</strong></li>
 <li>必要时才通过docx等格式交换文件（Word能直接编辑odt文件）；</li>
 </ol>
 </li>
@@ -3951,15 +3951,21 @@
 <p>按理应当检查原文件的xml标签，可惜我不熟悉。</p>
 <h3 id="_5">目前可能的解决办法<a class="headerlink" href="#_5" title="Permanent link">#</a></h3>
 <ol>
-<li>未作任何修改前，用Writer导出odt；<ul>
-<li>doc文件要先用MS Word另存为docx，而不是用Writer直接转</li>
+<li>收到的文件后，在未作任何修改前，用Writer转为首选格式odt；<ul>
+<li><strong>doc文件要先用MS Word另存为docx，而不是用Writer直接转</strong></li>
+<li>注意检查文档一致性：观察转换格式前后的字数是否一致（Writer有时要保存后，字数才是正确的，但有时保存后也不一定正确，所以需要通过前后变动来确认），如有不一致，可以把转换前后的全文纯文本拷贝至EmEditor等软件中进行比较（常有空格不一致的情况）。</li>
 </ul>
 </li>
-<li><strong>仅修改odt</strong>（通过odt再导出的docx，也许可以在
-Writer中修改，但只经过少量验证）；</li>
-<li>再导出需要的格式；</li>
-<li>注意观察转换格式前后的字数是否一致（Writer有时要保存后，字数才是正确的，但有时保存后也不一定正确，所以需要通过前后变动来确认）</li>
+<li><strong>只在odt文中进行改动</strong><ul>
+<li>（通过odt再导出的docx，也许可以在Writer中修改，但只经过少量验证）；</li>
+</ul>
+</li>
+<li>改定后再通过Writer导出需要的格式，并同前检查文档一致性；</li>
 </ol>
+<div class="admonition note odt vs ooxml">
+<p class="admonition-title">Note</p>
+<p>有人推荐微软维护的ISO标准“Office Open XML文本（过渡格式）”(或叫OOXML、OpenXML，不同于Word 2007-365版的docx），认为兼容性好，并方便与MS Word协作。但有人认为“过渡格式”（即未完全落实ISO标准）中隐藏着一些“非标准”陷阱。<a href="https://ask.libreoffice.org/t/tutorial-differences-between-ms-word-eg-doc-and-docx-and-lo-files-eg-odt/24585">参考</a></p>
+</div>
 <h3 id="_6">未证实的问题<a class="headerlink" href="#_6" title="Permanent link">#</a></h3>
 <p>未经证实的问题：如果审阅人没有名称(编辑软件中没有设置用户名称所致)，那么可能造成审阅标记混乱，比如错误恢复、大量时间归零的标记。</p>
 <h2 id="libreoffice_writer_1">LibreOffice Writer审阅导致无法应用段落样式<a class="headerlink" href="#libreoffice_writer_1" title="Permanent link">#</a></h2>
