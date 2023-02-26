@@ -3780,58 +3780,67 @@
 </code></pre></div></td></tr></table></div>
 <h2 id="_2">文档<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p><em>机器翻译，仅关注的部分做了人工核改</em></p>
-<p><strong>用法：autotrace.exe [options] <input_name></strong>
-<strong><input_name></strong> 
-一个支持的图像
-<strong>[options]：</strong>
-    你可以使用<code>--</code>或<code>-</code>来开始一个选项。
-    你可以使用任何不含糊的缩写作为选项名称。
-    你可以用<code>=</code>或<code></code>分隔选项名称和值。
-* -background-color <hexadecimal>: 忽略的背景颜色。
+<p><strong>用法：autotrace.exe [options] <input_name></strong></p>
+<ul>
+<li>
+<p><strong><input_name></strong>  一个支持的图像</p>
+</li>
+<li>
+<p><strong>[options]：</strong></p>
+<ul>
+<li>你可以使用<code>--</code>或<code>-</code>来开始一个选项。</li>
+<li>你可以使用任何不含糊的缩写作为选项名称。</li>
+<li>你可以用<code>=</code>或<code></code>分隔选项名称和值。</li>
+</ul>
+</li>
+<li>
+<p>-background-color <hexadecimal>: 忽略的背景颜色。
     应该被忽略，例如FFFFF。
-    默认为无背景色。
-* -centerline：追踪字符的中心线，而不是其轮廓。
-* -color-count <unsigned>：一个彩色位图的颜色数量。
+    默认为无背景色。</p>
+</li>
+<li>-centerline：追踪字符的中心线，而不是其轮廓。</li>
+<li>-color-count <unsigned>：一个彩色位图的颜色数量。
     它在灰度上不起作用，允许的颜色为1...256。
-    默认为0，表示不做颜色还原。
-* -corner-always-threshold <angle-in-degrees>：如果一个像素点的角度
-    小于此值，它就被认为是一个角，即使它在其他角的<code>corner-surround</code>像素之内；默认值是60。
-* -corner-surround <unsigned>：在判断一个点是否是角时，要考虑该点两边的像素数。
+    默认为0，表示不做颜色还原。</li>
+<li>-corner-always-threshold <angle-in-degrees>：如果一个像素点的角度
+    小于此值，它就被认为是一个角，即使它在其他角的<code>corner-surround</code>像素之内；默认值是60。</li>
+<li>-corner-surround <unsigned>：在判断一个点是否是角时，要考虑该点两边的像素数。
     点的两侧的像素数，以确定该点是否是一个角。
-    默认为4。
-* -corner-threshold <angle-in-degrees>：如果一个像素前、后一个（几个）像素相遇的角度小于这个值，它就是一个角；默认为100。
-* -despeckle-level <unsigned>：0...20；默认为不去斑。
-* -despeckle-tightness &lt;实数&gt;：0.0...8.0；默认为2.0。
-* -dpi <unsigned>：输入图像中每英寸的点数，影响mif输出图像的缩放。
-    影响mif输出图像的缩放。
-* -error-threshold &lt;实数&gt;：对偏差超过这个像素的拟合曲线进行细分；默认为2.0。
-    比这更多的像素；默认是2.0。
-* -filter-iterations <unsigned>：在拟合前将曲线平滑这么多次，默认为4次。
-    拟合前平滑曲线，默认为4。
-* -input-format。 TGA、PBM、PNM、PGM、PPM或BMP。
-* -help：打印此信息。
-* -line-reversion-threshold <real>：如果花样滑移线比这个值更接近于直线，就用这个值加权。
+    默认为4。</li>
+<li>-corner-threshold <angle-in-degrees>：如果一个像素前、后一个（几个）像素相遇的角度小于这个值，它就是一个角；默认为100。</li>
+<li>-despeckle-level <unsigned>：0...20；默认为不去斑。</li>
+<li>-despeckle-tightness &lt;实数&gt;：0.0...8.0；默认为2.0。</li>
+<li>-dpi <unsigned>：输入图像中每英寸的点数，影响mif输出图像的缩放。
+    影响mif输出图像的缩放。</li>
+<li>-error-threshold &lt;实数&gt;：对偏差超过这个像素的拟合曲线进行细分；默认为2.0。
+    比这更多的像素；默认是2.0。</li>
+<li>-filter-iterations <unsigned>：在拟合前将曲线平滑这么多次，默认为4次。
+    拟合前平滑曲线，默认为4。</li>
+<li>-input-format。 TGA、PBM、PNM、PGM、PPM或BMP。</li>
+<li>-help：打印此信息。</li>
+<li>-line-reversion-threshold <real>：如果花样滑移线比这个值更接近于直线，就用这个值加权。
     比这个值更接近于直线，用曲线长度的平方加权，保持它是一个
-    直线，即使它是一个带有曲线的列表；默认是0.01。
-* -line-threshold&lt;实数&gt;：如果齿尖举例直线的距离不超过这个值,
-    那么就输出一条直线；默认为1。
-* -list-output-formats。打印支持的输出格式的列表到stderr。
-* -list-input-formats。 打印一个支持的输入格式的列表到stderr。
-* -log：将详细的进度报告写到<input_name>.log。
-* -output-file <filename>: 写到<filename>。
-* -output-format <format>: 在输出文件中使用<format>格式
-* -output-format <format>: 对输出文件使用<format>的格式。
+    直线，即使它是一个带有曲线的列表；默认是0.01。</li>
+<li>-line-threshold&lt;实数&gt;：如果齿尖举例直线的距离不超过这个值,
+    那么就输出一条直线；默认为1。</li>
+<li>-list-output-formats。打印支持的输出格式的列表到stderr。</li>
+<li>-list-input-formats。 打印一个支持的输入格式的列表到stderr。</li>
+<li>-log：将详细的进度报告写到<input_name>.log。</li>
+<li>-output-file <filename>: 写到<filename>。</li>
+<li>-output-format <format>: 在输出文件中使用<format>格式</li>
+<li>-output-format <format>: 对输出文件使用<format>的格式。
     eps, ai, p2e, sk, svg, fig, swf, emf, mif, er, dxf, epd, pdf, cgm or dr2d
-    都可以使用。
-* -preserve-width：是否在瘦身前保留线宽。
-* -remove-adjacent-corners：去除相邻的角。
-* -tangent-surround <unsigned>：在计算切线时，一个点两侧的点的数量。
-    点的两侧的点数，默认为3。
-* -report-progress：实时报告追踪状态。
-* -debug-arch：打印cpu的类型。
-* -debug-bitmap：转储加载的位图到<input_name>.bitmap。
-* -version：打印该程序的版本号。
-* -width-weight-factor：用于拟合线宽的权重系数。</p>
+    都可以使用。</li>
+<li>-preserve-width：是否在瘦身前保留线宽。</li>
+<li>-remove-adjacent-corners：去除相邻的角。</li>
+<li>-tangent-surround <unsigned>：在计算切线时，一个点两侧的点的数量。
+    点的两侧的点数，默认为3。</li>
+<li>-report-progress：实时报告追踪状态。</li>
+<li>-debug-arch：打印cpu的类型。</li>
+<li>-debug-bitmap：转储加载的位图到<input_name>.bitmap。</li>
+<li>-version：打印该程序的版本号。</li>
+<li>-width-weight-factor：用于拟合线宽的权重系数。</li>
+</ul>
 
 
   

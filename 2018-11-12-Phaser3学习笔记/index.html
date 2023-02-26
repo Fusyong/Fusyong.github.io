@@ -3161,6 +3161,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    编译/构建后文件过大问题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4669,6 +4676,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    编译/构建后文件过大问题
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5502,6 +5516,14 @@ Video是标准游戏对象，跟Sprite一样，通常的缩放、旋转、修剪
 </code></pre></div></td></tr></table></div>
 <h2 id="_16">缩放适配<a class="headerlink" href="#_16" title="Permanent link">#</a></h2>
 <p>屏幕旋转后保持全屏适配<a href="https://github.com/yandeu/phaser3-scaling-resizing-example">phaser3-scaling-resizing-example</a></p>
+<h2 id="_17">编译/构建后文件过大问题<a class="headerlink" href="#_17" title="Permanent link">#</a></h2>
+<ul>
+<li><code>inline-source-map</code> 体积大，注释掉；</li>
+<li>不直接导入<code>Phaser</code>，而是逐一导入其下的对象，如<code>import { AUTO } from 'phaser/src/const';</code> 或 <code>import { AUTO } from 'phaser';</code>，或<ul>
+<li>定制构建 https://github.com/photonstorm/phaser3-project-template-custom-build</li>
+</ul>
+</li>
+</ul>
 
 
   
