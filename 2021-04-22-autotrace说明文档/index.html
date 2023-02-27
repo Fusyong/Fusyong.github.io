@@ -2437,14 +2437,34 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    用例
+    文档
   </a>
+  
+    <nav class="md-nav" aria-label="文档">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    用法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    文档
+  <a href="#_3" class="md-nav__link">
+    用例
   </a>
   
 </li>
@@ -3737,14 +3757,34 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    用例
+    文档
   </a>
+  
+    <nav class="md-nav" aria-label="文档">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    用法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    文档
+  <a href="#_3" class="md-nav__link">
+    用例
   </a>
   
 </li>
@@ -3772,32 +3812,28 @@
   <h1>autotrace说明文档</h1>
 
 <p><a href="https://github.com/autotrace/autotrace">autotrace</a>用于把点阵图转成矢量图的命令行工具。<strong>转出的图，原背景转成一个白色方框，整体在画板之外，需要在Illustrator中手动修正。</strong></p>
-<h2 id="_1">用例<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<ul>
-<li>转黑白古文字字形</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>autotrace<span class="w"> </span><span class="s2">&quot;in.bmp&quot;</span><span class="w"> </span>-output-file<span class="w"> </span><span class="s2">&quot;out.eps&quot;</span><span class="w"> </span>-input-format<span class="w"> </span><span class="s2">&quot;bmp&quot;</span><span class="w"> </span>-output-format<span class="w"> </span><span class="s2">&quot;eps&quot;</span><span class="w"> </span>-despeckle-level<span class="w"> </span><span class="m">10</span><span class="w"> </span>-despeckle-tightness<span class="w"> </span><span class="m">2</span><span class="w"> </span>-corner-always-threshold<span class="w"> </span><span class="m">120</span><span class="w"> </span>-corner-surround<span class="w"> </span><span class="m">10</span><span class="w"> </span>-corner-threshold<span class="w"> </span><span class="m">130</span><span class="w"> </span>-filter-iterations<span class="w"> </span><span class="m">3</span><span class="w"> </span>-line-threshold<span class="w"> </span><span class="m">1</span><span class="w"> </span>-line-reversion-threshold<span class="w"> </span><span class="m">0</span>.01<span class="w"> </span>
-</code></pre></div></td></tr></table></div>
-<h2 id="_2">文档<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<h2 id="_1">文档<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p><em>机器翻译，仅关注的部分做了人工核改</em></p>
-<p><strong>用法：autotrace.exe [options] <input_name></strong></p>
+<h3 id="_2">用法<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>autotrace.exe<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span>&lt;input_name&gt;
+
+<span class="c1"># &lt;input_name&gt;  一个支持的图像</span>
+<span class="c1"># [options]：</span>
+<span class="c1">#     * 你可以使用`--`或`-`来开始一个选项。</span>
+<span class="c1">#     * 你可以使用任何不含糊的缩写作为选项名称。</span>
+<span class="c1">#     * 你可以用`=`或` `分隔选项名称和值。</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="options">options<a class="headerlink" href="#options" title="Permanent link">#</a></h3>
 <ul>
-<li>
-<p><strong><input_name></strong>  一个支持的图像</p>
-</li>
-<li>
-<p><strong>[options]：</strong></p>
-<ul>
-<li>你可以使用<code>--</code>或<code>-</code>来开始一个选项。</li>
-<li>你可以使用任何不含糊的缩写作为选项名称。</li>
-<li>你可以用<code>=</code>或<code></code>分隔选项名称和值。</li>
-</ul>
-</li>
-<li>
-<p>-background-color <hexadecimal>: 忽略的背景颜色。
+<li>-background-color <hexadecimal>: 忽略的背景颜色。
     应该被忽略，例如FFFFF。
-    默认为无背景色。</p>
-</li>
+    默认为无背景色。</li>
 <li>-centerline：追踪字符的中心线，而不是其轮廓。</li>
 <li>-color-count <unsigned>：一个彩色位图的颜色数量。
     它在灰度上不起作用，允许的颜色为1...256。
@@ -3841,6 +3877,10 @@
 <li>-version：打印该程序的版本号。</li>
 <li>-width-weight-factor：用于拟合线宽的权重系数。</li>
 </ul>
+<h2 id="_3">用例<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<p>黑白古文字字形图转eps</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>autotrace<span class="w"> </span><span class="s2">&quot;in.bmp&quot;</span><span class="w"> </span>-output-file<span class="w"> </span><span class="s2">&quot;out.eps&quot;</span><span class="w"> </span>-input-format<span class="w"> </span><span class="s2">&quot;bmp&quot;</span><span class="w"> </span>-output-format<span class="w"> </span><span class="s2">&quot;eps&quot;</span><span class="w"> </span>-despeckle-level<span class="w"> </span><span class="m">10</span><span class="w"> </span>-despeckle-tightness<span class="w"> </span><span class="m">2</span><span class="w"> </span>-corner-always-threshold<span class="w"> </span><span class="m">120</span><span class="w"> </span>-corner-surround<span class="w"> </span><span class="m">10</span><span class="w"> </span>-corner-threshold<span class="w"> </span><span class="m">130</span><span class="w"> </span>-filter-iterations<span class="w"> </span><span class="m">3</span><span class="w"> </span>-line-threshold<span class="w"> </span><span class="m">1</span><span class="w"> </span>-line-reversion-threshold<span class="w"> </span><span class="m">0</span>.01<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
 
 
   
