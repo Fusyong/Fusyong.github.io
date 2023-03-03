@@ -920,6 +920,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../2023-02-28-%E5%AD%A9%E5%AD%90%E4%B8%8D%E4%BC%9A%E5%86%99%E4%BD%9C%E6%96%87%EF%BC%8C%E8%83%BD%E8%AF%B4%EF%BC%8C%E4%B8%80%E5%88%B0%E5%86%99%E5%B0%B1%E4%B8%8D%E4%BC%9A%E4%BA%86/" class="md-nav__link">
+        孩子不会写作文，能说，一到写就不会了
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2020-09-23-%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E9%9F%B5%E6%AF%8Do%E7%9A%84%E8%AF%BB%E6%B3%95/" class="md-nav__link">
         汉语拼音韵母o的读法
       </a>
@@ -2178,8 +2192,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ripgrep" class="md-nav__link">
-    ripgrep
+  <a href="#fzf" class="md-nav__link">
+    fzf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rga" class="md-nav__link">
+    rga
   </a>
   
 </li>
@@ -4123,8 +4144,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ripgrep" class="md-nav__link">
-    ripgrep
+  <a href="#fzf" class="md-nav__link">
+    fzf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rga" class="md-nav__link">
+    rga
   </a>
   
 </li>
@@ -4541,23 +4569,15 @@
 </ul>
 <h3 id="fd"><a href="https://github.com/sharkdp/fd">fd</a><a class="headerlink" href="#fd" title="Permanent link">#</a></h3>
 <p>查找目录、文件名。</p>
-<h3 id="ripgrep"><a href="">ripgrep</a><a class="headerlink" href="#ripgrep" title="Permanent link">#</a></h3>
+<h3 id="fzf"><a href="https://github.com/junegunn/fzf">fzf</a><a class="headerlink" href="#fzf" title="Permanent link">#</a></h3>
+<p>模糊搜索。可结合rga。</p>
+<h3 id="rga"><a href="https://github.com/phiresky/ripgrep-all">rga</a><a class="headerlink" href="#rga" title="Permanent link">#</a></h3>
 <p>文件名和文件内容查找。</p>
-<p>仅仅列出内容匹配的文件的文件名，不列出内容：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>rg<span class="w"> </span>-l<span class="w"> </span>REGEX
-</code></pre></div></td></tr></table></div>
-<p>仅仅列出<code>--files &lt;directory&gt;</code>下给定格式的目录名和文件名，不查找内容(<strong>用<code>fd</code>更直观，速度相当</strong>)：</p>
+<p>rga是<a href="https://github.com/BurntSushi/ripgrep">ripgrep</a>的包装，文件内容查找时可处理的文件类型：PDFs, E-Books, Office documents, zip, tar.gz，等等。帮助信息：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>rg<span class="w"> </span>-g<span class="w"> </span><span class="s1">&#39;*glob*&#39;</span><span class="w"> </span>--files<span class="w"> </span>&lt;directory&gt;
-<span class="c1"># 大小写敏感则用`--iglob`</span>
-<span class="c1"># `--files`打印预定要搜索而实际未搜索的文件名</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>rg<span class="w"> </span>-h
+rga<span class="w"> </span>-h
 </code></pre></div></td></tr></table></div>
-<p>-g, --glob GLOB ... Include or exclude files for searching that
-                    match the given glob. This always overrides any
-                    other ignore logic. Multiple glob flags may be
-                    used. Globbing rules match .gitignore globs.
-                    Precede a glob with a '!' to exclude it.</p>
 <h2 id="_3">词典与翻译【老编辑必备】<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
 <ul>
 <li>GoldenDict，支持各种格式的词典，最常用的是.mdx</li>
