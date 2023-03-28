@@ -2040,6 +2040,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../2023-03-18-%E3%80%8A%E6%9E%81%E7%AE%80%E7%AE%97%E6%9C%AF%E5%8F%B2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        《极简算术史》读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2019-10-20-%E6%95%99%E5%AD%A9%E5%AD%90%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/" class="md-nav__link">
         教孩子骑自行车
       </a>
@@ -3274,6 +3288,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../2023-03-25-Typst%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        Typst学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2022-11-20-ConTeXt%E7%AE%80%E4%BB%8B%E5%92%8C%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%E6%95%88%E6%9E%9C/" class="md-nav__link">
         ConTeXt简介和中文排版效果
       </a>
@@ -3841,6 +3869,20 @@
         <li class="md-nav__item">
   <a href="#_47" class="md-nav__link">
     自定义命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    字间距/字符间距
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra_font_kerns" class="md-nav__link">
+    额外的字体字间（Extra font kerns）
   </a>
   
 </li>
@@ -4598,6 +4640,20 @@
         <li class="md-nav__item">
   <a href="#_47" class="md-nav__link">
     自定义命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    字间距/字符间距
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra_font_kerns" class="md-nav__link">
+    额外的字体字间（Extra font kerns）
   </a>
   
 </li>
@@ -6901,6 +6957,57 @@ the 21st century}}</p>
 <span class="k">\TestSix</span>  <span class="nb">{</span>one<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
 <p><a href="https://mailman.ntg.nl/pipermail/ntg-context/2010/054629.html">详见</a></p>
+<h2 id="_48">字间距/字符间距<a class="headerlink" href="#_48" title="Permanent link">#</a></h2>
+<p>inter-glyph kerning, Inter-character kerning, or inter-character spacingis, 通常是在字体设计层面处理的。但也可以调整：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\definecharacterkerning</span> [extremekerning] [factor=.125]
+<span class="k">\setcharacterkerning</span><span class="na">[extremekerning]</span> ... text ...
+</code></pre></div></td></tr></table></div>
+<p>标题拉伸（充满给定宽度）：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\setupcharacterkerning</span><span class="na">[stretched][factor=max, width=\availablehsize]</span>
+<span class="c">% \setupcharacterkerning[stretched][width=] % 或这样</span>
+<span class="k">\stretched</span><span class="nb">{</span><span class="k">\bfd</span> to the limit<span class="nb">}</span>
+
+<span class="c">% 或</span>
+<span class="k">\stretched</span><span class="na">[width=]</span><span class="nb">{</span><span class="k">\bfd</span> to the limit<span class="nb">}</span>
+
+<span class="c">% 或</span>
+<span class="k">\ruledhbox</span><span class="nb">{</span><span class="k">\stretched</span><span class="na">[width=10cm]</span><span class="nb">{</span><span class="k">\bfd</span> to the limit<span class="nb">}}</span>
+</code></pre></div></td></tr></table></div>
+<p>观察字符字间：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\usemodule</span><span class="na">[typesetting-kerning]</span>
+<span class="k">\starttext</span>
+    <span class="k">\showcharacterkerningsteps</span>[
+        style=Bold,
+        sample=how to violate a proper font design,
+        text=rubish,
+        first=0,
+        last=45,
+        step=5]
+<span class="k">\stoptext</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="extra_font_kerns">额外的字体字间（Extra font kerns）<a class="headerlink" href="#extra_font_kerns" title="Permanent link">#</a></h2>
+<p>在字体设计的特定字符组合（如<code>AV</code>）间的字间基础上，再设置额外的幅度：</p>
+<p>\setextrafontkerns</p>
+<p>观察字体字间：</p>
+<p>\showfontkerns</p>
 
 
   
