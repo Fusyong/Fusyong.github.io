@@ -3326,7 +3326,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    效率
+    运行效率
   </a>
   
 </li>
@@ -3340,6 +3340,13 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    题外话
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     用例
   </a>
   
@@ -3821,7 +3828,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    效率
+    运行效率
   </a>
   
 </li>
@@ -3835,6 +3842,13 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    题外话
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     用例
   </a>
   
@@ -3877,7 +3891,7 @@
   <h1>体验Typst</h1>
 
 <p><em>这篇是我的Typst学习笔记的摘要，不怕冗长、琐碎的可以看笔记（内附学习资源列表）：<a href="../2023-03-25-Typst%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Typst学习笔记</a></em></p>
-<p>Typst体验很好，前途光明...</p>
+<p>Typst体验很好，前途光明~</p>
 <p>这几天看了两位作者的硕士论文和官方文档，试用了官方在线编辑器、命令行工具和非官方的vscode插件，尝试了我感兴趣的支持中文排版的可能性，如标点压缩、凸排、竖排、双行夹注等。代码还没看。</p>
 <p>现有几点认识和感受：</p>
 <h2 id="_1">语言特性<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
@@ -3895,9 +3909,9 @@
 <li><code>[content]</code>和<code>{...}</code>两种域即是程序的作用域，它们可以不限深度地、交互地嵌套</li>
 </ul>
 <p>Typst是函数式语言，内置支持排版的函数和常量库（实际上，所有文本标记都有对应的函数，是对应函数的语法糖），包括类型系统、设置样式（函数）的高阶函数、文档结构内省工具等。</p>
-<h2 id="_2">效率<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<h2 id="_2">运行效率<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p>Typst是用Rust语言写的，是typ(e+ru)st，目标运行平台是WASM，即浏览器本地离线运行；也编译成命令行工具。<strong>采用一种增量编译算法和一种有约束的版面缓存方案（a constrained layout caching scheme）。</strong></p>
-<p>据作者的论文，从解析到排版阶段的编译效率很好。下面是三种类型出版物每次编辑动作导致的解析、排版平均耗时和标准差：</p>
+<p>据作者的论文，从解析到排版阶段的编译效率很好。下面是三种类型出版物每次编辑动作导致的解析、排版平均耗时（毫秒）和标准差：</p>
 <p><img alt="" src="../img/2023-03-25-Typst%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-03-28-14-41-50.png" /></p>
 <p><img alt="" src="../img/2023-03-25-Typst%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-03-28-14-42-16.png" /></p>
 <p><img alt="" src="../img/2023-03-25-Typst%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-03-28-14-42-33.png" /></p>
@@ -3906,10 +3920,13 @@
 <h2 id="_3">可用情况<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
 <p>目前官方有编辑平台/编辑器，支持语法高亮、代码自动完成，快捷键也接近vscode这类流行编辑器。结果渲染在浏览器画布上，可下载PDF，即键即得。</p>
 <p>非官方的vscode插件（不需要额外装任何东西）也可以配置成“onTpye”时编译，流畅。</p>
-<p>可以说基础扎实，框架比较基本完整，细节问题还比较多... 反响很好，据说代码库开源第一天即达到5000星，社区很活跃。这可能是希望所在。</p>
+<p>可以说基础扎实，框架比较基本完整，细节问题还比较多... 反响很好，据说代码库开源第一天即达到5000星，社区很活跃。这可能是希望所在，比如非官方的vscode插件没用几天就做出来了。</p>
 <p>目前写英文文档问题不大，写中文比较难看。</p>
-<h2 id="_4">用例<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
-<p>因为想做中文支持，做了一点点尝试：</p>
+<h2 id="_4">题外话<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
+<p>Typst会不会逼得ConTeXt+LuaTeX(LuaMetaTeX)团队放弃TeX宏包这个历史包袱呢？LuaMetaTeX的基础设施对TeX代码的依赖大概不多了。</p>
+<p>当然，Typst在用途上面对标LaTeX，即学术写作，而ConTeXt+LuaMetaTeX主要目标是图书出版，两者定位差异比较大。</p>
+<h2 id="_5">用例<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
+<p>因为想做中文支持，试了试可编程特性，效果和代码：</p>
 <p><img alt="" src="../img/2023-03-28-%E4%BD%93%E9%AA%8CTypst/2023-03-28-15-40-17.png" /></p>
 <p><img alt="" src="../img/2023-03-28-%E4%BD%93%E9%AA%8CTypst/2023-03-28-15-40-48.png" /></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
