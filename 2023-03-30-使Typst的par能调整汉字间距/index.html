@@ -3797,12 +3797,12 @@
 
 
 
-<p>Typst的par函数有一个justify字段，设置为<code>true</code>后，可以自动整空格的大小，使行首尾对齐边框。但汉字间没有空格，标点前/后的空格不多，所以效果有限，常常很难看：</p>
+<p>Typst的par函数有一个justify(齐整，两端对齐)字段，设置为<code>true</code>后，可以自动整空格的大小，使行首尾对齐边框。但汉字间没有空格，标点前/后的空格不多，所以效果有限，常常很难看：</p>
 <p><img alt="" src="../img/2023-03-30-%E4%BD%BFTypst%20par%E8%83%BD%E8%B0%83%E6%95%B4%E6%B1%89%E5%AD%97%E9%97%B4%E8%B7%9D/2023-03-30-10-52-39.png" /></p>
 <p>做了一个简单的简单函数，插入fraction（TeX叫无限拉伸胶），使justify常有足够的空格可用，效果就比较自然了：</p>
 <p><img alt="" src="../img/2023-03-30-%E4%BD%BFTypst%20par%E8%83%BD%E8%B0%83%E6%95%B4%E6%B1%89%E5%AD%97%E9%97%B4%E8%B7%9D/2023-03-30-10-53-08.png" /></p>
 <p>代码如后。可在这里在线体验：</p>
-<p><a href="https://typst.app/project/wr0ojcENPFefx8VntL8rtH">使Typst par能调整汉字间距</a></p>
+<p><a href="https://typst.app/project/rF1w0Zcc-LslnU7IBU-ORD">使Typst par能调整汉字间距</a></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -3848,41 +3848,92 @@
 <span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">#</span><span class="nx">set</span><span class="w"> </span><span class="nx">page</span><span class="p">(</span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="kt">auto</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="kt">8.9cm</span><span class="p">)</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">#</span><span class="nx">set</span><span class="w"> </span><span class="nx">page</span><span class="p">(</span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="kt">auto</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="kt">8.9cm</span><span class="p">)</span>
 <span class="err">#</span><span class="nx">set</span><span class="w"> </span><span class="nx">text</span><span class="p">(</span>
 <span class="w">  </span><span class="nx">font</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Noto Serif CJK SC&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">size</span><span class="o">:</span><span class="w"> </span><span class="kt">11.5pt</span>
 <span class="p">)</span>
 
-<span class="err">#</span><span class="nx">set</span><span class="w"> </span><span class="nx">par</span><span class="p">(</span>
-<span class="w">  </span><span class="nx">justify</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="c1">// 启用行内调整</span>
-<span class="p">)</span>
+<span class="cm">/*</span>
+<span class="cm">= 最初尝试的方法</span>
 
-<span class="c1">// 汉字及其标点（不完善）</span>
-<span class="err">#</span><span class="kd">let</span><span class="w"> </span><span class="nx">chinese_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">regex</span><span class="p">(</span><span class="s2">&quot;[\u4E00-\u9FA5、，。；：“”！？‘’]&quot;</span><span class="p">)</span>
+<span class="cm">不能处理嵌套问题。这个思路源自LuaTeX节点列表。</span>
 
-<span class="c1">// 处理此下所有内容</span>
+<span class="cm">//两端对齐</span>
+<span class="cm">#set par(justify: true)</span>
+<span class="cm">// 汉字及其标点（不完善）</span>
+<span class="cm">#let chinese_set = regex(&quot;[\u4E00-\u9FA5、，。；：“”！？‘’]&quot;)</span>
+
+<span class="cm">// 处理此下所有内容</span>
+<span class="cm">#show : (rest) =&gt; {</span>
+<span class="cm">    for i in rest.children {</span>
+<span class="cm">        if i.has(&quot;text&quot;) {</span>
+<span class="cm">            for c in i.text {</span>
+<span class="cm">                if chinese_set in c {</span>
+<span class="cm">                    // 汉字及其标点后插入1份无限拉伸胶</span>
+<span class="cm">                    c + [#h(1fr)] </span>
+<span class="cm">                }else{</span>
+<span class="cm">                    c</span>
+<span class="cm">                }</span>
+<span class="cm">            }</span>
+<span class="cm">        } else {</span>
+<span class="cm">            if i==parbreak() {</span>
+<span class="cm">                // 段末插入100000无限拉伸胶，经验值</span>
+<span class="cm">                // 可能有副作用</span>
+<span class="cm">                [#h(100000fr)]</span>
+<span class="cm">            }</span>
+<span class="cm">            i</span>
+<span class="cm">        }</span>
+<span class="cm">    }</span>
+<span class="cm">}</span>
+
+<span class="cm">= 正确的做法</span>
+
+<span class="cm">还不能处理单元格中的段落。</span>
+
+<span class="cm">*/</span>
+
+
 <span class="err">#</span><span class="nx">show</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">rest</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">rest</span><span class="p">.</span><span class="nx">children</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">text</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="nx">chinese_set</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                    </span><span class="c1">// 汉字及其标点后插入1份无限拉伸胶</span>
-<span class="w">                    </span><span class="nx">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">[</span><span class="err">#</span><span class="nx">h</span><span class="p">(</span><span class="mf">1</span><span class="nx">fr</span><span class="p">)]</span><span class="w"> </span>
-<span class="w">                </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
-<span class="w">                    </span><span class="nx">c</span>
-<span class="w">                </span><span class="p">}</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="nx">i</span><span class="o">==</span><span class="nx">parbreak</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="c1">// 段末插入100000无限拉伸胶，经验值</span>
-<span class="w">                </span><span class="c1">// 可能有副作用</span>
-<span class="w">                </span><span class="p">[</span><span class="err">#</span><span class="nx">h</span><span class="p">(</span><span class="mf">100000</span><span class="nx">fr</span><span class="p">)]</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">            </span><span class="nx">i</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">     </span><span class="nx">set</span><span class="w"> </span><span class="nx">par</span><span class="p">(</span><span class="nx">justify</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span>
+<span class="w">     </span><span class="c1">// 汉字及其标点（不完善）</span>
+<span class="w">     </span><span class="kd">let</span><span class="w"> </span><span class="nx">chinese_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">regex</span><span class="p">(</span><span class="s2">&quot;[\u4E00-\u9FA5、，。；：“”！？‘’]&quot;</span><span class="p">)</span>
+<span class="w">     </span><span class="nx">show</span><span class="w"> </span><span class="nx">chinese_set</span><span class="o">:</span><span class="w"> </span><span class="kt">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">[</span><span class="err">#</span><span class="nx">h</span><span class="p">(</span><span class="mf">1</span><span class="nx">fr</span><span class="p">)]</span><span class="w"> </span>
+<span class="w">     </span><span class="nx">show</span><span class="w"> </span><span class="nx">parbreak</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">b</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="err">#</span><span class="nx">h</span><span class="p">(</span><span class="mf">100000</span><span class="nx">fr</span><span class="p">)]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span>
+<span class="w">     </span><span class="nx">rest</span>
 <span class="p">}</span>
+
 
 <span class="nx">排版元素可以旋转</span><span class="err">、</span><span class="nx">位移</span><span class="err">，</span><span class="nx">可以手动堆叠成行</span><span class="err">、</span><span class="nx">成列</span><span class="err">。</span>
 <span class="nx">元素间可以放置正值或负值的空白</span><span class="err">。</span>
@@ -3892,6 +3943,17 @@
 
 <span class="nx">另外</span><span class="err">，</span><span class="nx">它的分行组段的算法似乎比较简陋</span><span class="err">，</span><span class="nx">不知道后面会不会移植</span><span class="w"> </span><span class="nx">Knuth</span><span class="o">-</span><span class="nx">Plass</span><span class="w"> </span><span class="nx">的算法</span><span class="err">。</span>
 <span class="nx">目前汉字间没有像</span><span class="w"> </span><span class="nx">LuaTeX</span><span class="w"> </span><span class="nx">那样加入零宽度的胶</span><span class="err">，</span><span class="nx">所以行校正时可拉伸点较少</span><span class="err">（</span><span class="nx">只能用标点前后的空格</span><span class="err">），</span><span class="nx">拉得太狠</span><span class="err">，</span><span class="nx">很难看</span><span class="err">。</span>
+
+<span class="err">#</span><span class="nx">lorem</span><span class="p">(</span><span class="mf">20</span><span class="p">)</span>
+
+<span class="c1">//还不能处理嵌套中的内容，如表格</span>
+<span class="err">#</span><span class="nx">table</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">columns</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="mf">1</span><span class="nx">fr</span><span class="p">,</span><span class="mf">1</span><span class="nx">fr</span><span class="p">),</span>
+<span class="w">  </span><span class="p">[</span><span class="err">#</span><span class="nx">set</span><span class="w"> </span><span class="nx">par</span><span class="p">(</span><span class="nx">justify</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="p">],</span>
+<span class="w">  </span><span class="p">[</span><span class="err">#</span><span class="nx">set</span><span class="w"> </span><span class="nx">par</span><span class="p">(</span><span class="nx">justify</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span>
+<span class="w">   </span><span class="err">#</span><span class="nx">lorem</span><span class="p">(</span><span class="mf">10</span><span class="p">)],</span>
+<span class="p">)</span>
 
 <span class="c1">// 文末必须有空行</span>
 </code></pre></div></td></tr></table></div>
