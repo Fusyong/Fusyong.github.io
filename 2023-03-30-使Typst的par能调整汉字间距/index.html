@@ -3799,7 +3799,7 @@
 
 <p>Typst的par函数有一个justify(齐整，两端对齐)字段，设置为<code>true</code>后，可以自动整空格的大小，使行首尾对齐边框。但汉字间没有空格，标点前/后的空格不多，所以效果有限，常常很难看：</p>
 <p><img alt="" src="../img/2023-03-30-%E4%BD%BFTypst%20par%E8%83%BD%E8%B0%83%E6%95%B4%E6%B1%89%E5%AD%97%E9%97%B4%E8%B7%9D/2023-03-30-10-52-39.png" /></p>
-<p>做了一个简单的简单函数，插入fraction（TeX叫无限拉伸胶），使justify常有足够的空格可用，效果就比较自然了：</p>
+<p>做了一个简单的简单函数，插入fraction（TeX叫无限拉伸胶），使justify常有足够的空格可用，效果就比较自然。<strong>这样做可能有副作用：影响fraction的一般使用情形。</strong>效果如下：</p>
 <p><img alt="" src="../img/2023-03-30-%E4%BD%BFTypst%20par%E8%83%BD%E8%B0%83%E6%95%B4%E6%B1%89%E5%AD%97%E9%97%B4%E8%B7%9D/2023-03-30-10-53-08.png" /></p>
 <p>代码如后。可在这里在线体验：</p>
 <p><a href="https://typst.app/project/rF1w0Zcc-LslnU7IBU-ORD">使Typst par能调整汉字间距</a></p>
@@ -3879,7 +3879,13 @@
 <span class="normal">74</span>
 <span class="normal">75</span>
 <span class="normal">76</span>
-<span class="normal">77</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">#</span><span class="nx">set</span><span class="w"> </span><span class="nx">page</span><span class="p">(</span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="kt">auto</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="kt">8.9cm</span><span class="p">)</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">#</span><span class="nx">set</span><span class="w"> </span><span class="nx">page</span><span class="p">(</span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="kt">auto</span><span class="p">,</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="kt">8.9cm</span><span class="p">)</span>
 <span class="err">#</span><span class="nx">set</span><span class="w"> </span><span class="nx">text</span><span class="p">(</span>
 <span class="w">  </span><span class="nx">font</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Noto Serif CJK SC&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">size</span><span class="o">:</span><span class="w"> </span><span class="kt">11.5pt</span>
@@ -3920,7 +3926,7 @@
 
 <span class="cm">= 正确的做法</span>
 
-<span class="cm">还不能处理单元格中的段落。</span>
+<span class="cm">还不能不能处理单元格中的段落。</span>
 
 <span class="cm">*/</span>
 
@@ -3929,8 +3935,9 @@
 <span class="w">     </span><span class="nx">set</span><span class="w"> </span><span class="nx">par</span><span class="p">(</span><span class="nx">justify</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span>
 <span class="w">     </span><span class="c1">// 汉字及其标点（不完善）</span>
 <span class="w">     </span><span class="kd">let</span><span class="w"> </span><span class="nx">chinese_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">regex</span><span class="p">(</span><span class="s2">&quot;[\u4E00-\u9FA5、，。；：“”！？‘’]&quot;</span><span class="p">)</span>
-<span class="w">     </span><span class="nx">show</span><span class="w"> </span><span class="nx">chinese_set</span><span class="o">:</span><span class="w"> </span><span class="kt">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">[</span><span class="err">#</span><span class="nx">h</span><span class="p">(</span><span class="mf">1</span><span class="nx">fr</span><span class="p">)]</span><span class="w"> </span>
-<span class="w">     </span><span class="nx">show</span><span class="w"> </span><span class="nx">parbreak</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">b</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="err">#</span><span class="nx">h</span><span class="p">(</span><span class="mf">100000</span><span class="nx">fr</span><span class="p">)]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span>
+<span class="w">     </span><span class="nx">show</span><span class="w"> </span><span class="nx">chinese_set</span><span class="o">:</span><span class="w"> </span><span class="kt">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">[</span><span class="err">#</span><span class="nx">h</span><span class="p">(</span><span class="mf">0.00001</span><span class="nx">fr</span><span class="p">)]</span><span class="w"> </span>
+<span class="w">     </span><span class="nx">show</span><span class="w"> </span><span class="nx">parbreak</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">b</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="err">#</span><span class="nx">h</span><span class="p">(</span><span class="mf">1</span><span class="nx">fr</span><span class="p">)]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span>
+<span class="w">     </span><span class="c1">//TODO 文末加[#h(1fr)]</span>
 <span class="w">     </span><span class="nx">rest</span>
 <span class="p">}</span>
 
@@ -3950,12 +3957,17 @@
 <span class="err">#</span><span class="nx">table</span><span class="p">(</span>
 <span class="w">  </span><span class="nx">columns</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="mf">1</span><span class="nx">fr</span><span class="p">,</span><span class="mf">1</span><span class="nx">fr</span><span class="p">),</span>
 <span class="w">  </span><span class="p">[</span><span class="err">#</span><span class="nx">set</span><span class="w"> </span><span class="nx">par</span><span class="p">(</span><span class="nx">justify</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span>
-<span class="w">  </span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span>
+
+<span class="w">  </span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span><span class="nx">你来了</span><span class="err">！</span>
+
+<span class="w">  </span><span class="c1">// 末尾必须有空行</span>
+<span class="w">  </span><span class="p">],</span>
 <span class="w">  </span><span class="p">[</span><span class="err">#</span><span class="nx">set</span><span class="w"> </span><span class="nx">par</span><span class="p">(</span><span class="nx">justify</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">)</span>
 <span class="w">   </span><span class="err">#</span><span class="nx">lorem</span><span class="p">(</span><span class="mf">10</span><span class="p">)],</span>
 <span class="p">)</span>
 
-<span class="c1">// 文末必须有空行</span>
+<span class="c1">// 末尾必须有空行</span>
 </code></pre></div></td></tr></table></div>
 
 
