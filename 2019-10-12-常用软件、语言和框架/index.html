@@ -2614,6 +2614,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#python_1" class="md-nav__link">
+    Python游戏框架
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_28" class="md-nav__link">
     数字艺术
   </a>
@@ -4545,6 +4552,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#python_1" class="md-nav__link">
+    Python游戏框架
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_28" class="md-nav__link">
     数字艺术
   </a>
@@ -5134,15 +5148,45 @@ http://optipng.sourceforge.net/</p>
 <li><a href="https://www.mapeditor.org">地砖Tiled</a></li>
 <li><a href="http://kvazars.com/littera">字体Littera</a></li>
 </ul>
-<h3 id="_28">数字艺术<a class="headerlink" href="#_28" title="Permanent link">#</a></h3>
+<h3 id="python_1">Python游戏框架<a class="headerlink" href="#python_1" title="Permanent link">#</a></h3>
+<p>参考<a href="https://realpython.com/top-python-game-engines/">top-python-game-engines</a></p>
 <ul>
-<li><a href="https://github.com/p5py/p5">p5py/p5</a>，Python3语言，还在初始阶段，合适儿童编程/趣味编程入门，可以结合p5.js使用（如用brython翻译）<ul>
-<li><a href="https://p5js.org/">p5.js</a>，JavaScript语言，数字艺术，音频可视化，粒子，游戏（继承自Processing）</li>
+<li>Arcade，比Pygame更现代，<strong>适合Python入门，包括儿童</strong><ul>
+<li>支持Python类型提示</li>
+<li>编程范式可以面向过程，可以面向对象</li>
+<li>精简模板代码</li>
+<li>优秀的社区，完善的教程、样例和文档，内置资源</li>
+<li>支持OpenGL和Pyglet</li>
+<li>更现代和完善的游戏架构<ul>
+<li>支持基于帧的动画精灵</li>
+<li>有物理引擎</li>
+<li>相机、粒子、GUI、视图（小窗）、瓷砖地图、寻路……</li>
 </ul>
 </li>
-<li><a href="https://github.com/berinhard/pyp5js">pyp5js</a>，从Python到P5.js的转写器，用Transcrypt翻译Python为js，从而调用p5.js，<a href="https://berinhard.github.io/pyp5js/pyodide/">在浏览上使用</a>，API与p5.js高度兼容。</li>
-<li><a href="https://github.com/py5coding/py5book">py5</a>，与Jupyter, numpy, and Pillow整合，有Thonny插件，依赖Java（通过JPype运行Java Processing jars）</li>
-<li>Processing.py，只支持python2.7</li>
+</ul>
+</li>
+<li>Pygame，老派代表</li>
+<li>Pygame Zero，简单易用，<strong>适合儿童Python教育</strong></li>
+<li>Wasabi2d，比Pygame更现代，但不太成熟</li>
+<li>Adventurelib，文字冒险游戏框架，以上三个库出自同一个作者</li>
+<li>Ren’Py，视觉小说游戏框架，可用来用来做教育应用</li>
+</ul>
+<h3 id="_28">数字艺术<a class="headerlink" href="#_28" title="Permanent link">#</a></h3>
+<ul>
+<li><a href="https://github.com/p5py/p5">p5</a>，Python3语言，适合儿童编程入门（<strong>目前在Windows上运行会有诸多问题</strong>）<ul>
+<li>可以利用各种Python库，以及开发环境辅助功能</li>
+<li>帧率略差</li>
+<li>部分接口可以手动转写成p5.js代码，在线展示</li>
+</ul>
+</li>
+<li><a href="https://github.com/berinhard/pyp5js">pyp5js</a>，从Python到P5.js的转写器（<strong>因此无法通过编辑器获得代码编写辅助</strong>）<ul>
+<li>方便<a href="https://berinhard.github.io/pyp5js/pyodide/">在浏览上使用</a></li>
+<li>API与p5.js高度兼容</li>
+<li>用Transcrypt转写帧率更高，但支持的库有限，适合Python入门</li>
+<li>用pyodide运行在WASM中则文件较大（官方库可离线），帧率低，但支持很多科学库</li>
+</ul>
+</li>
+<li><a href="https://p5js.org/">p5.js</a>，JavaScript语言，数字艺术，音频可视化，粒子，游戏（继承自Processing）</li>
 </ul>
 <h3 id="_29">音乐合成<a class="headerlink" href="#_29" title="Permanent link">#</a></h3>
 <ul>

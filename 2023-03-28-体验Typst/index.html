@@ -3922,7 +3922,7 @@
 </li>
 <li><code>[content]</code>和<code>{...}</code>两种域即是程序的作用域，它们可以不限深度地、交互地嵌套</li>
 </ul>
-<p>Typst是函数式语言，内置支持排版的函数和常量库（实际上，所有文本标记都有对应的函数，是对应函数的语法糖），包括类型系统、设置样式（函数）的高阶函数、文档结构内省工具等。</p>
+<p>Typst是函数式语言，内置支持排版的函数和常量库（实际上，所有文本标记都有对应的函数，是对应函数的语法糖），包括类型系统、设置样式函数的高阶函数（背后可能是Rust的<code>macro_rules!</code>，有待确认）、文档结构内省工具等。</p>
 <h2 id="_2">运行效率<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <p>Typst是用Rust语言写的，是typ(e+ru)st，目标运行平台是WASM，即浏览器本地离线运行；也编译成命令行工具。<strong>采用一种增量编译算法和一种有约束的版面缓存方案（a constrained layout caching scheme）。</strong></p>
 <p>据作者的论文，从解析到排版阶段的编译效率很好。下面是三种类型出版物每次编辑动作导致的解析、排版平均耗时（毫秒）和标准差：</p>
@@ -4109,7 +4109,7 @@
 
 <span class="nx">但目前似乎没有操作底层数据的接口</span><span class="err">，</span><span class="nx">比如获取字体和字模信息</span><span class="err">，</span><span class="nx">操作抽象语法树</span><span class="err">、</span><span class="nx">模块树</span><span class="err">、</span><span class="nx">框架树</span><span class="err">。</span>
 
-<span class="nx">另外</span><span class="err">，</span><span class="nx">它的分行组段的算法似乎比较简陋</span><span class="err">，</span><span class="nx">不知道后面会不会移植</span><span class="w"> </span><span class="nx">Knuth</span><span class="o">-</span><span class="nx">Plass</span><span class="w"> </span><span class="nx">的算法</span><span class="err">。</span>
+<span class="nx">另外</span><span class="err">，</span><span class="nx">它的分行组段的算法似乎比较简陋</span><span class="err">，</span><span class="nx">不知道后面会不会移植</span><span class="w"> </span><span class="nx">Knuth</span><span class="o">-</span><span class="nx">Plass</span><span class="w"> </span><span class="nx">的算法</span><span class="err">（</span><span class="nx">这个说法是错误的</span><span class="err">，</span><span class="nx">Typst</span><span class="w"> </span><span class="nx">有一个optimized</span><span class="w"> </span><span class="nx">Knuth</span><span class="o">-</span><span class="nx">Plass</span><span class="w"> </span><span class="nx">style</span><span class="err">）。</span>
 <span class="nx">目前汉字间没有像</span><span class="w"> </span><span class="nx">LuaTeX</span><span class="w"> </span><span class="nx">那样加入零宽度的胶</span><span class="err">，</span><span class="nx">所以行校正时可拉伸点较少</span><span class="err">（</span><span class="nx">只能用标点前后的空格</span><span class="err">），</span><span class="nx">拉得太狠</span><span class="err">，</span><span class="nx">很难看</span><span class="err">。</span>
 <span class="p">]</span>
 </code></pre></div></td></tr></table></div>

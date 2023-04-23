@@ -3744,7 +3744,7 @@
         
           <li class="md-nav__item">
   <a href="#_31" class="md-nav__link">
-    交叉引用
+    引用
   </a>
   
 </li>
@@ -3911,6 +3911,20 @@
         <li class="md-nav__item">
   <a href="#extra_font_kerns" class="md-nav__link">
     额外的字体字间（Extra font kerns）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    浮动体
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    存取数据
   </a>
   
 </li>
@@ -4515,7 +4529,7 @@
         
           <li class="md-nav__item">
   <a href="#_31" class="md-nav__link">
-    交叉引用
+    引用
   </a>
   
 </li>
@@ -4682,6 +4696,20 @@
         <li class="md-nav__item">
   <a href="#extra_font_kerns" class="md-nav__link">
     额外的字体字间（Extra font kerns）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    浮动体
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    存取数据
   </a>
   
 </li>
@@ -4994,6 +5022,8 @@ about <span class="k">\TeX</span>.
 
 <span class="k">\LetterHeading</span><span class="nb">{</span>Dear Ms<span class="nb">}{</span>Eloise Merriweather<span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
+<p>处理可选参数：</p>
+<p>https://wiki.contextgarden.net/Commands_with_optional_arguments</p>
 <h2 id="_10">定义环境<a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
 <p><code>\definestartstop[Name][Options]</code></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -5141,10 +5171,16 @@ about <span class="k">\TeX</span>.
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 改变段落缩进的三种形式</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 改变段落缩进的三种形式</span>
 <span class="k">\parindent</span>=0pt
 <span class="k">\parindent</span> 0pt
 <span class="k">\parindent</span>0pt
+
+<span class="c">% 等同于</span>
+<span class="k">\noindentation</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>某些尺寸使用弹性赋值</strong></p>
 <p><code>\MeasureName plus MaxIncrement minus MaxDecrease</code></p>
@@ -6164,21 +6200,47 @@ notoserifcjkscregular      notoserifcjksc      notoserifcjkscregular      c:/win
 <span class="k">\definemarking</span><span class="na">[category]</span>
 <span class="k">\couplemarking</span><span class="na">[category][subsection]</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="_31">交叉引用<a class="headerlink" href="#_31" title="Permanent link">#</a></h3>
+<h3 id="_31">引用<a class="headerlink" href="#_31" title="Permanent link">#</a></h3>
+<p>参考： https://wiki.contextgarden.net/References</p>
+<ul>
+<li>交叉引用模块： https://wiki.contextgarden.net/Cross_Referencing<ul>
+<li>\setupcrossreftext</li>
+<li>\crossref</li>
+</ul>
+</li>
+<li>段落引用模块： https://wiki.contextgarden.net/Paragraph_Referencing</li>
+</ul>
+<p>设置：</p>
+<ul>
+<li>\setupreferencing</li>
+<li>\definereferenceformat 设置自己的引用命令</li>
+<li>\setupinteraction 控制链接交互的格式</li>
+<li>\setupreferencestructureprefix [default] [prefixsegments=2:2]</li>
+<li>\definestructureseparatorset [default] [,,-]</li>
+</ul>
 <p>锚点：</p>
 <ul>
-<li>\reference [REFERENCE]{CONTENT}</li>
-<li>\ref[default| text| title| number| page| realpage][reference]</li>
-<li>\pagereference[reference,reference]</li>
-<li>\textreference [REFERENCE]{CONTENT}</li>
+<li>\reference[reference,...]{text}<ul>
+<li>\chapter[reference]{text}</li>
+<li>\pagereference[reference,...]</li>
+<li>\textreference[reference,...]{text}</li>
 </ul>
+</li>
+</ul>
+<p><code>[reference]</code>可使用命名空间进行分类：<code>[fig:cow]</code></p>
 <p>引用：</p>
 <ul>
-<li>\atpage [REFERENCE]</li>
-<li>\somewhere {CONTENT}{CONTENT}[REFERENCE]</li>
-<li>\in {CONTENT}{CONTENT}[REFERENCE]</li>
-<li>\at {CONTENT}{CONTENT}[REFERENCE]</li>
-<li>\about {CONTENT}[REFERENCE]</li>
+<li>\in {text}{text}[reference] 引用数字编号，只适用于编号的条目</li>
+<li>\at {text}{text}[reference] 引用页码<ul>
+<li>\atpage [reference]</li>
+<li>\somewhere {text}{text}[reference]</li>
+</ul>
+</li>
+<li>\about {text}[reference] 引用文本（引用的标题）<ul>
+<li>\setupreferencing 改变\about的输出</li>
+</ul>
+</li>
+<li>\ref[default| text| title| number| page| realpage][reference] 自定义用，可结合\goto</li>
 </ul>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -6218,6 +6280,7 @@ overview of accommodation in <span class="k">\pagereference</span><span class="n
 
 <span class="k">\at</span><span class="nb">{</span>page<span class="nb">}</span>[accommodation].
 </code></pre></div></td></tr></table></div>
+<p>在校样上显示引用 <code>\showreferences</code></p>
 <h3 id="_32">预置引用<a class="headerlink" href="#_32" title="Permanent link">#</a></h3>
 <h3 id="_33">注册器<a class="headerlink" href="#_33" title="Permanent link">#</a></h3>
 <h2 id="_34">字符、词语、文本和水平间距<a class="headerlink" href="#_34" title="Permanent link">#</a></h2>
@@ -7036,6 +7099,115 @@ the 21st century}}</p>
 <p>\setextrafontkerns</p>
 <p>观察字体字间：</p>
 <p>\showfontkerns</p>
+<h2 id="_49">浮动体<a class="headerlink" href="#_49" title="Permanent link">#</a></h2>
+<ul>
+<li>浮动体 \definefloat<ul>
+<li>\chemical</li>
+<li>\figure</li>
+<li>\table</li>
+<li>\intermezzo</li>
+<li>\graphic</li>
+</ul>
+</li>
+<li>\startfloattext ... \stopfloattext<ul>
+<li>\startchemicaltext ... \stopchemicaltext  </li>
+<li>\startfiguretext ... \stopfiguretext  </li>
+<li>\starttabletext ... \stoptabletext    </li>
+<li>\startintermezzotext ... \stopintermezzotext  </li>
+<li>\startgraphictext ... \stopgraphictext</li>
+</ul>
+</li>
+<li>行首/首字下沉（Drop caps） \setupinitial</li>
+<li>文本围绕行首浮动体悬挂 \starthanging ... \stophanging</li>
+</ul>
+<h2 id="_50">存取数据<a class="headerlink" href="#_50" title="Permanent link">#</a></h2>
+<ul>
+<li>\definedataset[mydataset][delay=yes]</li>
+<li>\setdataset[mydataset][mytable][field1=text 1, ...]</li>
+<li>\datasetvariable{mydataset}{mytable}{myvariable}</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% To define a dataset.</span>
+<span class="k">\definedataset</span><span class="na">[cats]</span>
+
+<span class="c">% 匿名键值表1</span>
+<span class="k">\setdataset</span><span class="na">[cats][name=Gus, job=Theatre Cat]</span>
+
+<span class="c">% 匿名键值表2</span>
+<span class="k">\setdataset</span><span class="na">[cats][scene=crime, name=Macavity, is=not there]</span>
+
+<span class="c">% 命名键值表</span>
+<span class="k">\setdataset</span><span class="na">[cats][culprit][name=Mungojerry]</span>
+
+<span class="c">% 覆盖命名键值表</span>
+<span class="k">\setdataset</span><span class="na">[cats][culprit][name=Rumpleteaser]</span>
+
+
+<span class="c">% 注意：以下用花括号，为的是生成文本</span>
+The name of the culprit was <span class="k">\datasetvariable</span><span class="nb">{</span>cats<span class="nb">}{</span>culprit<span class="nb">}{</span>name<span class="nb">}</span>.
+
+<span class="c">% 第二个匿名表中的name</span>
+<span class="k">\datasetvariable</span><span class="nb">{</span>cats<span class="nb">}{</span>2<span class="nb">}{</span>name<span class="nb">}</span>.
+</code></pre></div></td></tr></table></div>
+<p>lua存取数据：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">\</span><span class="n">startluacode</span>
+  <span class="kd">local</span> <span class="n">setdata</span> <span class="o">=</span> <span class="n">job</span><span class="p">.</span><span class="n">datasets</span><span class="p">.</span><span class="n">setdata</span>
+  <span class="n">setdata</span> <span class="p">{</span>
+    <span class="n">name</span>  <span class="o">=</span> <span class="s2">&quot;dataset_id&quot;</span><span class="p">,</span>
+    <span class="n">tag</span>   <span class="o">=</span> <span class="s2">&quot;this&quot;</span><span class="p">,</span>
+    <span class="n">data</span>  <span class="o">=</span> <span class="p">{</span>
+      <span class="s2">&quot;does&quot;</span><span class="p">,</span>
+      <span class="n">work</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;splendidly&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;for&quot;</span><span class="p">,</span>
+        <span class="n">nested</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;tables&quot;</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">,</span> <span class="p">{{}}</span> <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+
+<span class="kd">local</span> <span class="n">getdata</span> <span class="o">=</span> <span class="n">job</span><span class="p">.</span><span class="n">datasets</span><span class="p">.</span><span class="n">getdata</span>
+<span class="n">table</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">getdata</span> <span class="p">(</span><span class="s2">&quot;dataset_id&quot;</span><span class="p">,</span> <span class="s2">&quot;this&quot;</span><span class="p">),</span> <span class="s2">&quot;this&quot;</span><span class="p">)</span>
+<span class="err">\</span><span class="n">stopluacode</span>
+</code></pre></div></td></tr></table></div>
+<p>参考： https://wiki.contextgarden.net/System_Macros/Key_Value_Assignments#Multi-pass_data</p>
 
 
   

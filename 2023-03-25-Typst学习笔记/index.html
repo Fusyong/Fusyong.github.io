@@ -4075,11 +4075,11 @@
 You Get）的效果</strong>，不能即时预览。Typst在解析环节使用一种增量解析算法（a incremental parsing
 algorithm），在版面编排（layouting）环节使用一种有约束的版面缓存方案（a constrained layout caching scheme），从而实现资源重用，而只做局部改动。</p>
 <blockquote>
-<p>在基于一组典型文档和编辑动作的评估中，我们确定本论文的贡献使Typst的速度提高了4.5到91倍。Typst编译一个编辑动作的速度是LATEX的3.4到9895倍。<sup id="fnref2:fast-typesetting-incremental-compilation"><a class="footnote-ref" href="#fn:fast-typesetting-incremental-compilation">1</a></sup></p>
+<p>在基于一组典型文档和编辑动作的评估中，我们确定本论文的贡献使Typst的速度提高了4.5到91倍。Typst编译一个编辑动作的速度是LATEX的3.4到9895倍。<sup id="fnref3:fast-typesetting-incremental-compilation"><a class="footnote-ref" href="#fn:fast-typesetting-incremental-compilation">2</a></sup></p>
 </blockquote>
 <p>其增量编译算法类似于C#、Swift和Rust开发工具rust-analyzer所使用的Red-Green Trees机制。</p>
 <h2 id="_1">运行效率<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p>从解析到排版阶段的编译效率很高。下面是三种类型出版物每次编辑动作导致的解析、排版平均耗时和标准差：<sup id="fnref:fast-typesetting-incremental-compilation"><a class="footnote-ref" href="#fn:fast-typesetting-incremental-compilation">1</a></sup></p>
+<p>从解析到排版阶段的编译效率很高。下面是三种类型出版物每次编辑动作导致的解析、排版平均耗时和标准差：<sup id="fnref:fast-typesetting-incremental-compilation"><a class="footnote-ref" href="#fn:fast-typesetting-incremental-compilation">2</a></sup></p>
 <p><img alt="" src="../img/2023-03-25-Typst%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-03-28-14-41-50.png" /></p>
 <p><img alt="" src="../img/2023-03-25-Typst%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-03-28-14-42-16.png" /></p>
 <p><img alt="" src="../img/2023-03-25-Typst%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2023-03-28-14-42-33.png" /></p>
@@ -4093,7 +4093,7 @@ algorithm），在版面编排（layouting）环节使用一种有约束的版�
 <p>另有非官方的VScode Typst语言支持插件，无需额外安装命令行工具；目前在初始阶段。</p>
 <h2 id="typst_1">Typst语言<a class="headerlink" href="#typst_1" title="Permanent link">#</a></h2>
 <p>Typst是一种由纯函数组成的、有完整编程环境的语言。</p>
-<p>在Typst语言中，纯文本、文本标记（markup）和程序代码是无缝连接的，不是在一种标记文本中嵌入另一种程序代码。（<strong>这是诸TeX+LuaTeX的基本问题，</strong> 比如宏展开、交互传值等机制非常复杂难解。）<sup id="fnref:programmable-markup-language-for-typesetting"><a class="footnote-ref" href="#fn:programmable-markup-language-for-typesetting">2</a></sup></p>
+<p>在Typst语言中，纯文本、文本标记（markup）和程序代码是无缝连接的，不是在一种标记文本中嵌入另一种程序代码。（<strong>这是诸TeX+LuaTeX的基本问题，</strong> 比如宏展开、交互传值等机制非常复杂难解。）<sup id="fnref:programmable-markup-language-for-typesetting"><a class="footnote-ref" href="#fn:programmable-markup-language-for-typesetting">3</a></sup></p>
 <h3 id="_3">文本标记<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
 <p><em>详见文档：<a href="https://typst.app/docs/reference/syntax/">syntax</a></em></p>
 <p>Typst文档，最上层使用非常类似于markdown的文本标记语法，目的是使文档本身即是人类可读的，并尽可能模拟最终输出的格式。</p>
@@ -4110,7 +4110,7 @@ algorithm），在版面编排（layouting）环节使用一种有约束的版�
 <p><strong>为排版定制的类型系统。</strong>比如支持数据类型auto（默认属性）、length、relative length（相对长度）、angle（角度）、ratio（比率）、fraction（份，类似TeX的fill）、color（色值）、content等类型。<em>详见文档：<a href="https://typst.app/docs/reference/types/">types</a></em>。其中，content类型处于Typst的中心位置，表示正文档、文档片段，可以内嵌所有类型的内容；以结点树的形式呈现，包含由<code>set</code>和<code>show</code>加入的样式。</p>
 <p><strong>语境敏感。</strong>比如不同位置的默认值（如页码）会不同。它同时也支持闭包，即在定义函数时即固定某些变量的值。</p>
 <p><strong>编译器带有一套标准的常量和函数，</strong>可以通过它们访问内部的排版功能，或者用作便捷的辅助工具。所有文件都会加载这个库。它包括这几大类：Text、Math、Layout、Visualize（目前只有几种图形绘制函数，暂缺数据可视化函数）、Meta、Symbols（符号常量，包括emoji）。</p>
-<p><strong>基于属性和转换的可组合的弹性样式系统；</strong>样式与内容紧密结合，以免冲突。比如，你可以通过<code>set</code>和<code>show</code>关键字（可视作高阶函数）控制所有样式函数，生成新的样式规则（rule）。<em>详见文档：<a href="https://typst.app/docs/reference/styling/">styling</a></em>。如果要对本域中插入点后所有内容应用一种样式（比如一种杂志的样式），可以用<code>show: rest =&gt;</code>把后面的内容包裹到变量中，再传递给一个样式函数。</p>
+<p><strong>基于属性和转换的可组合的弹性样式系统；</strong>样式与内容紧密结合，以免冲突。比如，你可以通过<code>set</code>和<code>show</code>关键字（可视作高阶函数或者宏）控制所有样式函数，生成新的样式规则（rule）。<em>详见文档：<a href="https://typst.app/docs/reference/styling/">styling</a></em>。<sup id="fnref:not-macro-based"><a class="footnote-ref" href="#fn:not-macro-based">1</a></sup>如果要对本域中插入点后所有内容应用一种样式（比如一种杂志的样式），可以用<code>show: rest =&gt;</code>把后面的内容包裹到变量中，再传递给一个样式函数。</p>
 <p><strong>支持结构内省操作。</strong>通过Meta类函数控制整个文档的元数据和结构，比如章节标题、书目、交叉引用、计数器；查询和展示特定内容，如通过<code>locate</code>函数获取排版元素最终的页码和页面坐标。</p>
 <h2 id="_5">中文支持<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
 <p>通过少量观察，目前能正确断行。官方的在线编辑器内置“Noto * CJK SC”系列的字体（需要临时下载）。其余支持似乎没有。</p>
@@ -4213,11 +4213,14 @@ algorithm），在版面编排（layouting）环节使用一种有约束的版�
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:not-macro-based">
+<p>这里的情况似乎有些复杂，有待于根据源码确认：尽管作者声称Typst不是基于宏的（The Typst language is Turing-complete, dynamically typed, and not macro-based.<sup id="fnref2:fast-typesetting-incremental-compilation"><a class="footnote-ref" href="#fn:fast-typesetting-incremental-compilation">2</a></sup>），但它的样式管理系统、应用样式的主要方法——<code>set rules</code>和<code>show rules</code>，不管从语法结构、行为方式还是命名，都有Rust基于抽象语法树的宏系统的影子，比如Rust定义宏的关键字是<code>macro_rules!</code>。&#160;<a class="footnote-backref" href="#fnref:not-macro-based" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
 <li id="fn:fast-typesetting-incremental-compilation">
-<p><a href="https://www.user.tu-berlin.de/mhaug/fast-typesetting-incremental-compilation.pdf"><em>fast typesetting incremental compilation</em></a>, by Martin E. Haug, June 2022 (Master’s thesis, Technische Universität Berlin, Faculty IV – Electrical Engineering and Computer Science)&#160;<a class="footnote-backref" href="#fnref:fast-typesetting-incremental-compilation" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:fast-typesetting-incremental-compilation" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://www.user.tu-berlin.de/mhaug/fast-typesetting-incremental-compilation.pdf"><em>fast typesetting incremental compilation</em></a>, by Martin E. Haug, June 2022 (Master’s thesis, Technische Universität Berlin, Faculty IV – Electrical Engineering and Computer Science)&#160;<a class="footnote-backref" href="#fnref:fast-typesetting-incremental-compilation" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:fast-typesetting-incremental-compilation" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:fast-typesetting-incremental-compilation" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:programmable-markup-language-for-typesetting">
-<p><a href="https://www.user.tu-berlin.de/laurmaedje/programmable-markup-language-for-typesetting.pdf"><em>Typst: programmable markup language for typesetting</em></a>, by Laurenz Mädje, September 2022 (Master’s thesis, Technische Universität Berlin, Faculty IV – Electrical Engineering and Computer Science)&#160;<a class="footnote-backref" href="#fnref:programmable-markup-language-for-typesetting" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><a href="https://www.user.tu-berlin.de/laurmaedje/programmable-markup-language-for-typesetting.pdf"><em>Typst: programmable markup language for typesetting</em></a>, by Laurenz Mädje, September 2022 (Master’s thesis, Technische Universität Berlin, Faculty IV – Electrical Engineering and Computer Science)&#160;<a class="footnote-backref" href="#fnref:programmable-markup-language-for-typesetting" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
