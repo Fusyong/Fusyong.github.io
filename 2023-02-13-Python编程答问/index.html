@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#pythonid" class="md-skip">
           跳转至
         </a>
       
@@ -1874,6 +1874,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../2023-04-23-%E5%B0%91%E5%84%BFPython%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%94%A8%E4%BB%80%E4%B9%88%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        Arcade：适合少儿Python入门的游戏框架
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-25-Arcade%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        Arcade学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2019-11-23-PygameZero%E6%96%87%E6%A1%A3%E7%9A%84%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" class="md-nav__link">
         Pygame Zero文档的思维导图和入门实例
       </a>
@@ -2000,6 +2028,13 @@
       目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pythonid" class="md-nav__link">
+    Python的id函数返回的是所储存对象的地址吗？
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
@@ -3774,6 +3809,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-13-%E6%B2%89%E8%BF%B7%E9%97%B2%E8%AF%9D/" class="md-nav__link">
+        沉迷闲话
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -3818,6 +3867,13 @@
       目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pythonid" class="md-nav__link">
+    Python的id函数返回的是所储存对象的地址吗？
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
@@ -3882,6 +3938,12 @@
   <h1>Python编程答问</h1>
 
 <p>原文大多首发于知乎。</p>
+<h2 id="pythonid"><a href="https://www.zhihu.com/question/597786708/answer/3001741857">Python的id函数返回的是所储存对象的地址吗？</a><a class="headerlink" href="#pythonid" title="Permanent link">#</a></h2>
+<p>比如 a = [1,2] 。 id(a)的值是列表 [1,2] 在内存中的地址， 而不是 a 的地址。</p>
+<p>【答】</p>
+<p>严格讲是“值的ID”。推广一下Thonny编辑器，它就是这么写的：</p>
+<p><img alt="" src="../img/2023-02-13-Python%E7%BC%96%E7%A8%8B%E7%AD%94%E9%97%AE/2023-04-26-15-23-44.png" /></p>
+<p>图上的“Heap”并不是指heap据结构，而是说：这是一堆供你分配和取消分配的内存空间；它们在方法或函数调用之外，或者在多个函数中共享。——而函数内变量的值/内存空间是在函数调用期间在stack中临时存储的。</p>
 <h2 id="_1">将一个序列转成多维数组/嵌套列表<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p>两层列表解析</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
