@@ -3968,6 +3968,7 @@
 
   <h1>Arcade学习笔记</h1>
 
+<p>可参考我写的简介 <a href="../2023-04-23-%E5%B0%91%E5%84%BFPython%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%94%A8%E4%BB%80%E4%B9%88%E6%A1%86%E6%9E%B6/">Arcade：适合少儿Python入门的游戏框架</a></p>
 <h2 id="_1">游戏对象的组织<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <ul>
 <li>Window，窗口，展示窗口、管理事件<ul>
@@ -4006,12 +4007,12 @@
 <li>hide_view()</li>
 <li>maximize()</li>
 <li>minimize()</li>
-<li>on_resize(width: float, height: float)</li>
-<li>on_draw()</li>
 <li>update(delta_time: float)</li>
-<li>on_update(delta_time: float)</li>
-<li>on_key_...()</li>
-<li>on_mouse_...()</li>
+<li>on_update(delta_time: float) # 主循环的更新事件钩子</li>
+<li>on_draw() # 主循环的绘制事件钩子</li>
+<li>on_resize(width: float, height: float) # 主循环的窗口缩放事件钩子</li>
+<li>on_key_...() # 主循环的键盘事件钩子</li>
+<li>on_mouse_...() # 主循环的鼠标事件钩子</li>
 <li>get_system_mouse_cursor(name)</li>
 <li>background_color</li>
 <li>ctx: arcade.context.ArcadeContext</li>
@@ -4037,8 +4038,8 @@
 </ul>
 <h2 id="view"><a href="https://api.arcade.academy/en/latest/api/window.html#arcade-view">View</a><a class="headerlink" href="#view" title="Permanent link">#</a></h2>
 <ul>
-<li>on_draw()</li>
 <li>update(delta_time: float)</li>
+<li>on_draw()</li>
 <li>on_update(delta_time: float)</li>
 <li>on_show_view()</li>
 <li>on_hide_view()[source]</li>

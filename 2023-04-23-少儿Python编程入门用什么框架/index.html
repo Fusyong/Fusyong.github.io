@@ -3974,7 +3974,7 @@
 <ul>
 <li><a href="https://api.arcade.academy/en/latest/arcade.html">Arcade</a>，比Pygame更现代，<strong>适合Python入门，包括儿童</strong><ul>
 <li>支持Python类型提示</li>
-<li>编程范式可以面向过程，可以面向对象</li>
+<li>面向对象的编程范式，简单应用也可以面向过程</li>
 <li>精简的模板代码</li>
 <li>优秀的社区，完善的教程、样例和文档，内置资源</li>
 <li>使用OpenGL和Pyglet</li>
@@ -3995,18 +3995,20 @@
 <p>这次发现<a href="https://api.arcade.academy/en/latest/index.html">Arcade</a>很好。以前粗粗看过，感觉比较复杂，不适合孩子入门。这次上手试了试，感觉各方面都不错，大人孩子都适合，强烈推荐。</p>
 <h2 id="_1">模板代码简洁<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <p>Arcade模版代码的简洁不亚于pgzero。比如在窗口上画一个圆：</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">arcade</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">arcade</span>
 
 <span class="n">arcade</span><span class="o">.</span><span class="n">open_window</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span> <span class="c1"># 打开一个窗口</span>
 <span class="c1"># arcade.set_background_color(arcade.color.WHITE) # 设置窗口背景色</span>
+<span class="c1"># arcade.start_render() # 清屏</span>
 
 <span class="n">arcade</span><span class="o">.</span><span class="n">draw_circle_filled</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># 画填充圆</span>
 
@@ -4097,6 +4099,8 @@
 <li>要获得整体概观，可以看一个比较完整的平台游戏<a href="https://api.arcade.academy/en/latest/examples/platform_tutorial/index.html#platformer-tutorial">platformer-tutorial</a></li>
 </ul>
 <p>他们有<a href="https://learn.arcade.academy/en/latest/index.html">一个面向初学者的教程</a>，除了讲Arcade，还包括计算原理，开发环境准备，git，Python基础，等等，可供老师们参考，根据学生情况选用。</p>
+<p>另推荐realpython.com的入门教程<a href="https://realpython.com/arcade-python-game-framework/">arcade-python-game-framework</a>，有一些原理性的解释，适合教师和自学的成人</p>
+<p>也可参考我的<a href="../2023-04-25-Arcade%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Arcade学习笔记</a>。</p>
 <h2 id="_4">开发和社区活跃<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
 <p>相对于Pygame而言，Arcade是新秀，但社区已经比较成熟。比如<a href="https://github.com/pythonarcade/arcade">代码库</a>星标已有1.4k（<a href="https://github.com/pygame/pygame">Pygame</a>是5.9k），开发活跃。</p>
 <p>从官网和Discord社区看，Arcade主要面向Python教育场景。它还内置了一些多媒体资源，可能也是这个原因。命名多用完整的词语、规律的组合，不嫌长；而Pygame较多地用缩写，有极客范。</p>
