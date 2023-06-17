@@ -82,6 +82,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#terminalshell" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1153,6 +1158,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../2023-06-17-%E3%80%8A%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95%E3%80%8B%E7%9A%84%E9%97%B4%E9%9A%94%E5%8F%B7%E5%AE%BD%E5%BA%A6%E6%9C%89%E8%AF%AF/" class="md-nav__link">
+        《标点符号用法》的间隔号宽度有误
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../2020-07-17-%E5%BD%93%E4%BB%A3%E5%88%9D%E9%AB%98%E4%B8%AD%E8%AF%AD%E6%96%87%E6%95%99%E5%AD%A6%E6%98%AF%E5%90%A6%E8%BF%87%E4%BA%8E%E2%80%9C%E6%96%87%E5%AD%A6%E5%8C%96%E2%80%9D%E4%BA%86/" class="md-nav__link">
         当代初高中语文教学是否过于“文学化”了？
       </a>
@@ -1974,9 +1993,38 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          编程环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         编程环境
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terminalshell" class="md-nav__link">
+    终端(terminal)+shell相关概念
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2256,7 +2304,7 @@
   
     <li class="md-nav__item">
       <a href="../2019-10-12-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E3%80%81%E8%AF%AD%E8%A8%80%E5%92%8C%E6%A1%86%E6%9E%B6/" class="md-nav__link">
-        常用/备用软件、语言和框架
+        常用与备用软件、语言和框架
       </a>
     </li>
   
@@ -3807,6 +3855,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terminalshell" class="md-nav__link">
+    终端(terminal)+shell相关概念
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3839,6 +3902,8 @@
 
 
 
+  <h1>编程环境</h1>
+
 <p>有些初学者不理解编程环境，导致种种混乱。这里仅针对一般的Python编程学习和MS Windows操作系统，做了一个简单、粗略的介绍。</p>
 <p>我们是在计算机（以及计算机网络）这个环境中编写程序、执行程序的，这个环境主要包括：</p>
 <ul>
@@ -3860,7 +3925,7 @@
 <li>Pycharm</li>
 </ul>
 </li>
-<li>shell/终端（terminal, shell, bash）；<ul>
+<li>终端(terminal)和shell程序<ul>
 <li>CMD</li>
 <li>Powershell</li>
 <li>Git Bash</li>
@@ -3878,7 +3943,7 @@
 </ul>
 <p>极简的编程过程是这样的：</p>
 <ol>
-<li>安装Python(包括解释器)，<strong>确认Add Python 3.x to PATH</strong></li>
+<li>安装Python(包括解释器和一些工具)，<strong>确认Add Python 3.x to PATH</strong></li>
 <li>在编辑器中编辑Python脚本，如<code>print('Hello, world!')</code>;</li>
 <li>把脚本保存到硬盘等存储设备，取名为<code>hello_world.py</code>;</li>
 <li>在CMD等终端中输入运行脚本的命令，如<code>python hello_world.py</code>;</li>
@@ -3888,6 +3953,20 @@
 <p>安装Python时，如果不<strong>Add Python 3.x to PATH</strong>，终端有可能找不到<code>python</code>命令对应的程序。</p>
 <p>除了直接使用首次安装的Python，还可以针对一个项目，使用Python的venv模块新建一个虚拟环境，如<code>python -m venv myvenv</code>，这样可以使<code>myvenv</code>环境与其他项目的环境各自保持独立、整洁，方便管理。</p>
 <p>有些集成环境，如Pycharm，会把终端、引擎环境，以及其他各种功能集成在一起。</p>
+<h2 id="terminalshell">终端(terminal)+shell相关概念<a class="headerlink" href="#terminalshell" title="Permanent link">#</a></h2>
+<ul>
+<li>终端（terminal），让你通过命令运行shell的环境，通常以文本输入、输出；也可以是<ul>
+<li>实体设备</li>
+<li>图形应用</li>
+<li>console，实体终端，或终端的窗口</li>
+</ul>
+</li>
+<li>shell，与内核互动的命令行解释器，运行在终端中<ul>
+<li>Bash，是一种Unix shell，是Bourne Again Shell的缩写 </li>
+</ul>
+</li>
+<li>命令行工具（command line tool），能通过shell执行的程序，通常执行形式是输入它的名字和参数，没有图形界面</li>
+</ul>
 
 
   
