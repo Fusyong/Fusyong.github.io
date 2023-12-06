@@ -2608,6 +2608,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-09-25-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E8%91%97%E5%BD%95%E8%A7%84%E5%88%99%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        参考文献著录规则笔记
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4026,7 +4040,7 @@
 
 <span class="c1">-- 依赖utf8.lua模块处理中文，见 https://gist.github.com/markandgo/5776124</span>
 <span class="c1">-- 注意改名，以免跟系统模块冲突</span>
-<span class="kd">local</span> <span class="n">utf8</span> <span class="o">=</span> <span class="nb">require</span> <span class="s2">&quot;m-utf8&quot;</span>
+<span class="kd">local</span> <span class="n">utf8</span> <span class="o">=</span> <span class="nb">require</span> <span class="s2">&quot;m-utf8&quot;</span> <span class="c1">--或用unicode.utf8.gmatch</span>
 <span class="c1">-- c: 字；s: &quot;词语；词语；...&quot;；r：半径</span>
 <span class="kr">function</span> <span class="nc">MP</span><span class="p">.</span><span class="nf">wordslink</span><span class="p">(</span><span class="n">char</span><span class="p">,</span><span class="n">words</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> <span class="c1">--lua.MP是给用户预留的命名空间，lua.mp则是系统自用的</span>
     <span class="kd">local</span> <span class="kr">function</span> <span class="nf">split</span> <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">inputstr</span><span class="p">,</span> <span class="n">sep</span><span class="p">)</span>
@@ -4035,7 +4049,7 @@
         <span class="kr">end</span>
         <span class="c1">-- {{str:word, len:wordlength, match_num:c_num_in_the_word, head_or_tail:last_c&#39;s_position},..}</span>
         <span class="kd">local</span> <span class="n">t</span><span class="o">=</span><span class="p">{}</span>
-        <span class="kr">for</span> <span class="n">str</span> <span class="kr">in</span> <span class="n">utf8</span><span class="p">.</span><span class="n">gmatch</span><span class="p">(</span><span class="n">inputstr</span><span class="p">,</span> <span class="s2">&quot;[^&quot;</span><span class="o">..</span><span class="n">sep</span><span class="o">..</span><span class="s2">&quot;]+&quot;</span><span class="p">)</span> <span class="kr">do</span>
+        <span class="kr">for</span> <span class="n">str</span> <span class="kr">in</span> <span class="n">utf8</span><span class="p">.</span><span class="n">gmatch</span><span class="p">(</span><span class="n">inputstr</span><span class="p">,</span> <span class="s2">&quot;[^&quot;</span><span class="o">..</span><span class="n">sep</span><span class="o">..</span><span class="s2">&quot;]+&quot;</span><span class="p">)</span> <span class="kr">do</span> 
             <span class="kd">local</span> <span class="n">tbl</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="kd">local</span> <span class="n">match_num</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="kr">for</span> <span class="n">cc</span> <span class="kr">in</span> <span class="n">utf8</span><span class="p">.</span><span class="n">gmatch</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="kr">do</span>

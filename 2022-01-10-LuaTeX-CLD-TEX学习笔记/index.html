@@ -2608,6 +2608,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-09-25-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E8%91%97%E5%BD%95%E8%A7%84%E5%88%99%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        参考文献著录规则笔记
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -10568,34 +10582,67 @@ print(pwd)
 </code></pre></div></td></tr></table></div>
 <h3 id="_35">用例<a class="headerlink" href="#_35" title="Permanent link">#</a></h3>
 <p>计算正弦</p>
-<p>\def\COSINE#1%
-  {\ctxlua{context(math.cos(#1<em>2</em>math.pi/360))}}</p>
-<p><span class="arithmatex">\(\pi = \ctxlua{context(math.pi)}\)</span> </p>
-<p><span class="arithmatex">\(\pi = \ctxlua{context("\letterpercent.6f", math.pi)}\)</span></p>
-<p>\setupcolors[state=start]
-\setupTABLE[each][each][width=2em,height=2em,align={middle,middle}]<br />
-\setupTABLE[r][1][background=color,backgroundcolor=gray]<br />
-\setupTABLE[c][1][background=color,backgroundcolor=gray]</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\def\COSINE</span>#1<span class="c">%</span>
+  <span class="nb">{</span><span class="k">\ctxlua</span><span class="nb">{</span>context(math.cos(#1*2*math.pi/360))<span class="nb">}}</span>
+
+<span class="s">$</span><span class="nv">\pi</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\ctxlua</span><span class="nb">{context</span><span class="o">(</span><span class="nb">math.pi</span><span class="o">)</span><span class="nb">}</span><span class="s">$</span> 
+
+<span class="s">$</span><span class="nv">\pi</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\ctxlua</span><span class="nb">{context</span><span class="o">(</span><span class="nb">&quot;</span><span class="nv">\letterpercent</span><span class="nb">.</span><span class="m">6</span><span class="nb">f&quot;, math.pi</span><span class="o">)</span><span class="nb">}</span><span class="s">$</span>
+
+<span class="k">\setupcolors</span><span class="na">[state=start]</span>
+<span class="k">\setupTABLE</span><span class="na">[each][each][width=2em,height=2em,align={middle,middle}]</span>  
+<span class="k">\setupTABLE</span><span class="na">[r][1][background=color,backgroundcolor=gray]</span>  
+<span class="k">\setupTABLE</span><span class="na">[c][1][background=color,backgroundcolor=gray]</span>
+</code></pre></div></td></tr></table></div>
 <p>循环而无需担忧展开：</p>
-<p>\startluacode
-context.bTABLE()
-  context.bTR()
-    context.bTD() context("<span class="arithmatex">\((+)\)</span>") context.eTD()
-    for j=1,6 do
-      context.bTD() context(j) context.eTD()
-    end
-  context.eTR()
-  for i=1,6 do
-    context.bTR()
-    context.bTD() context(i) context.eTD()
-    for j=1,6 do
-      context.bTD() context(i+j) context.eTD()
-    end
-    context.eTR()
-  end
-context.eTABLE()
-\stopluacode</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">\</span><span class="n">startluacode</span>
+<span class="n">context</span><span class="p">.</span><span class="n">bTABLE</span><span class="p">()</span>
+  <span class="n">context</span><span class="p">.</span><span class="n">bTR</span><span class="p">()</span>
+    <span class="n">context</span><span class="p">.</span><span class="n">bTD</span><span class="p">()</span> <span class="n">context</span><span class="p">(</span><span class="s2">&quot;$(+)$&quot;</span><span class="p">)</span> <span class="n">context</span><span class="p">.</span><span class="n">eTD</span><span class="p">()</span>
+    <span class="kr">for</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span> <span class="kr">do</span>
+      <span class="n">context</span><span class="p">.</span><span class="n">bTD</span><span class="p">()</span> <span class="n">context</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="n">context</span><span class="p">.</span><span class="n">eTD</span><span class="p">()</span>
+    <span class="kr">end</span>
+  <span class="n">context</span><span class="p">.</span><span class="n">eTR</span><span class="p">()</span>
+  <span class="kr">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span> <span class="kr">do</span>
+    <span class="n">context</span><span class="p">.</span><span class="n">bTR</span><span class="p">()</span>
+    <span class="n">context</span><span class="p">.</span><span class="n">bTD</span><span class="p">()</span> <span class="n">context</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="n">context</span><span class="p">.</span><span class="n">eTD</span><span class="p">()</span>
+    <span class="kr">for</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span> <span class="kr">do</span>
+      <span class="n">context</span><span class="p">.</span><span class="n">bTD</span><span class="p">()</span> <span class="n">context</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">)</span> <span class="n">context</span><span class="p">.</span><span class="n">eTD</span><span class="p">()</span>
+    <span class="kr">end</span>
+    <span class="n">context</span><span class="p">.</span><span class="n">eTR</span><span class="p">()</span>
+  <span class="kr">end</span>
+<span class="n">context</span><span class="p">.</span><span class="n">eTABLE</span><span class="p">()</span>
+<span class="err">\</span><span class="n">stopluacode</span>
+</code></pre></div></td></tr></table></div>
 <h3 id="_36">字符串操作<a class="headerlink" href="#_36" title="Permanent link">#</a></h3>
+<p>文本操作，文本控制，文本分行，参数解析，字符串格式化</p>
 <p>https://wiki.contextgarden.net/String_manipulation</p>
 <h3 id="_37">表格操作<a class="headerlink" href="#_37" title="Permanent link">#</a></h3>
 <p>https://wiki.contextgarden.net/Table_manipulation</p>
