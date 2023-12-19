@@ -4591,6 +4591,8 @@ Column A is <span class="k">\number\columnA</span> sp wide. <span class="c">% in
     <span class="k">\stopnarrower</span><span class="c">%</span>
 <span class="nb">}</span>
 </code></pre></div></td></tr></table></div>
+<p><strong>当盒子、图片、MP在行首时会自动切换到v模式，从而导致自动断行。</strong>可以前置 <code>\dontleavehmode</code> or <code>\quitvmode</code> 以阻止这种行为（<code>\nobreak</code>和<code>\penalty10000</code>等是事后加胶以控制断行算法，此处无效）；
+或cheat：前置0宽胶<code>\hskip\zeropoint</code> or <code>\hskip0pt</code>。</p>
 <h3 id="_8">段落的断行成本计算<a class="headerlink" href="#_8" title="Permanent link">#</a></h3>
 <p>分行构造一个段落，为的是与断行相关的总扣分d最小。一个段落的总扣分值是各个行的扣分值的总和，再加上一些可能的额外罚点。将一个段落作为一个整体来考虑，而不是逐行断开，可以导致更好的断行：TEX可以选择在段落的开始部分取一个稍微不那么漂亮的行，以避免以后出现更大的麻烦。对于每一行的扣分是由拉伸或收缩到断行处的坏度b和与断行有关的罚点p计算出来的。坏度不允许超过某个预先设定的容许值。除了对单个行的断行进行扣分外，TEX还对行的组合方式进行扣分。</p>
 <p>TEX段落分行算法的实现，参见：D.E. Knuth and M.F. Plass. Breaking paragraphs into lines. <em>Software practice and experience</em>, 11:1119–1184, 1981.</p>

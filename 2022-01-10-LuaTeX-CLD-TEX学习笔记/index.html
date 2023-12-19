@@ -4487,12 +4487,18 @@
     ConTeXt命令传递参数和缓存给Lua
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="ConTeXt命令传递参数和缓存给Lua">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_35" class="md-nav__link">
     用例
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -6190,12 +6196,18 @@
     ConTeXt命令传递参数和缓存给Lua
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="ConTeXt命令传递参数和缓存给Lua">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_35" class="md-nav__link">
     用例
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -10580,7 +10592,7 @@ print(pwd)
   <span class="nb">{</span><span class="k">\ctxlua</span>
      <span class="nb">{</span>userdata.verynarrow(buffers.getcontent(&#39;verynarrow&#39;))<span class="nb">}}</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="_35">用例<a class="headerlink" href="#_35" title="Permanent link">#</a></h3>
+<h4 id="_35">用例<a class="headerlink" href="#_35" title="Permanent link">#</a></h4>
 <p>计算正弦</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -10640,6 +10652,63 @@ print(pwd)
   <span class="kr">end</span>
 <span class="n">context</span><span class="p">.</span><span class="n">eTABLE</span><span class="p">()</span>
 <span class="err">\</span><span class="n">stopluacode</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>通用例子</strong>：定义ConTeXt命令，而用lua函数解析参数、实现业务逻辑并输出。（来自 <a href="https://www.mail-archive.com/ntg-context@ntg.nl/msg106209.html">Command handling, Interface between TeX and Lua</a>, by Bruce Horrocks）</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="err">\</span><span class="n">startluacode</span>
+<span class="c1">-- 定义lua函数，存储在给用户分配的userdata中</span>
+<span class="n">userdata</span> <span class="o">=</span> <span class="n">userdata</span> <span class="ow">or</span> <span class="p">{</span> <span class="p">}</span>
+<span class="kr">function</span> <span class="nc">userdata</span><span class="p">.</span><span class="nf">mycommand</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="n">keyvals</span><span class="p">,</span> <span class="n">str</span><span class="p">)</span>
+    <span class="c1">-- 解析位置参数</span>
+    <span class="n">keyword_options</span> <span class="o">=</span> <span class="n">utilities</span><span class="p">.</span><span class="n">parsers</span><span class="p">.</span><span class="n">settings_to_array</span><span class="p">(</span><span class="n">keywords</span><span class="p">)</span>
+    <span class="c1">-- 解析命名参数</span>
+    <span class="n">named_values</span> <span class="o">=</span> <span class="n">utilities</span><span class="p">.</span><span class="n">parsers</span><span class="p">.</span><span class="n">settings_to_hash</span><span class="p">(</span><span class="n">keyvals</span><span class="p">)</span>
+
+    <span class="c1">-- 回输位置参数</span>
+    <span class="n">context</span><span class="p">(</span><span class="s1">&#39;First option = &#39;</span> <span class="o">..</span> <span class="n">keyword_options</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">context</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">par&#39;</span><span class="p">)</span>
+    <span class="c1">-- 回输出命名参数</span>
+    <span class="n">context</span><span class="p">(</span><span class="s1">&#39;Color chosen = &#39;</span> <span class="o">..</span> <span class="n">named_values</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">])</span>
+    <span class="n">context</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">par&#39;</span><span class="p">)</span>
+    <span class="c1">-- 回输内容参数</span>
+    <span class="n">context</span><span class="p">(</span><span class="s1">&#39;Curly braces = &#39;</span> <span class="o">..</span> <span class="n">str</span><span class="p">)</span>
+    <span class="n">context</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">par&#39;</span><span class="p">)</span>
+<span class="kr">end</span>
+<span class="err">\</span><span class="n">stopluacode</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c">% 定义命令，像lua函数传递三种类型的参数</span>
+<span class="k">\def\mycommand</span><span class="na">[#1][#2]</span>#3<span class="nb">{</span><span class="k">\ctxlua</span><span class="nb">{</span>
+    userdata.mycommand(&#39;#1&#39;, &#39;#2&#39;, [==[#3]==])<span class="nb">}}</span>
+
+<span class="k">\starttext</span>
+<span class="c">% 使用命令</span>
+<span class="k">\mycommand</span><span class="na">[top, inmargin, now][color=green, roof=gabled]</span><span class="nb">{</span>Anne of Green Gables?<span class="nb">}</span>
+<span class="k">\stoptext</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="_36">字符串操作<a class="headerlink" href="#_36" title="Permanent link">#</a></h3>
 <p>文本操作，文本控制，文本分行，参数解析，字符串格式化</p>
