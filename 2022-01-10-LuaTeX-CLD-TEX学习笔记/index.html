@@ -4749,7 +4749,7 @@
         
           <li class="md-nav__item">
   <a href="#string" class="md-nav__link">
-    string
+    string 字符串处理
   </a>
   
 </li>
@@ -6458,7 +6458,7 @@
         
           <li class="md-nav__item">
   <a href="#string" class="md-nav__link">
-    string
+    string 字符串处理
   </a>
   
 </li>
@@ -11753,7 +11753,7 @@ tand</p>
 <span class="kr">if</span> <span class="n">is_boolean</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="kr">then</span> <span class="p">...</span> <span class="kr">end</span>
 <span class="kr">if</span> <span class="n">is_boolean</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">default</span><span class="p">)</span> <span class="kr">then</span> <span class="p">...</span> <span class="kr">end</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="string">string<a class="headerlink" href="#string" title="Permanent link">#</a></h4>
+<h4 id="string">string 字符串处理<a class="headerlink" href="#string" title="Permanent link">#</a></h4>
 <p>Lua:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -11859,7 +11859,7 @@ tand</p>
 <span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span>
 <span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">lpeg</span><span class="p">)</span> <span class="c1">--多个分切符号`lpeg.S(&quot;,.&quot;)`</span>
 <span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">checkedsplit</span> <span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">lpeg</span><span class="p">)</span>
-<span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">splitlines</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">t</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">splitlines</span><span class="p">(</span><span class="n">str</span><span class="p">)</span> <span class="c1">--分行</span>
 
 <span class="c1">-- 引号</span>
 <span class="kd">local</span> <span class="n">q</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">quoted</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
@@ -12179,6 +12179,8 @@ tand</p>
 </ul>
 <h4 id="resolversmathgrphmetapostluatextracing">Resolvers、math、grph、MetaPost、LuaTEX、Tracing<a class="headerlink" href="#resolversmathgrphmetapostluatextracing" title="Permanent link">#</a></h4>
 <h3 id="scanners">Scanners<a class="headerlink" href="#scanners" title="Permanent link">#</a></h3>
+<!-- 传参，传递参数 -->
+
 <p>定义直接与Lua交互的宏。</p>
 <p>实现一个界面：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
