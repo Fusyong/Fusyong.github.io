@@ -8,11 +8,16 @@
       
       
       
-      
         <link rel="canonical" href="https://blog.xiiigame.com/2022-01-10-ConTeXt%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
       
+      
+        <link rel="prev" href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+      
+      
+        <link rel="next" href="../2022-01-10-latex-CTEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+      
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.9">
     
     
       
@@ -20,36 +25,44 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.e35208c4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0d440cfe.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4cae4f">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
       
+      
+
     
     
     
       
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../css/ansi-colours.css">
     
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-        
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-105243279-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-PWB4KHSW87"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-PWB4KHSW87",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-PWB4KHSW87",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
     
     
   </head>
@@ -60,10 +73,9 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="pink">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="pink">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -71,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#macro_syntax_error" class="md-skip">
           跳转至
         </a>
       
@@ -80,15 +92,18 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href=".." title="嬉戏实验室" class="md-header__button md-logo" aria-label="嬉戏实验室" data-md-component="logo">
       
   <img src="../img/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -110,21 +125,28 @@
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -132,7 +154,7 @@
           <div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -141,11 +163,14 @@
     
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -159,7 +184,7 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="嬉戏实验室" class="md-nav__button md-logo" aria-label="嬉戏实验室" data-md-component="logo">
       
@@ -180,7 +205,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        ☆ 首页
       </a>
     </li>
   
@@ -195,7 +220,22 @@
   
     <li class="md-nav__item">
       <a href="../new/" class="md-nav__link">
-        New↑ & Pinned↓
+        ☆ 最新
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        ☆ 标签
       </a>
     </li>
   
@@ -212,140 +252,26 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
-      <label class="md-nav__link" for="__nav_3">
-        儿童识字
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="儿童识字" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          儿童识字
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           儿童识字
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
             
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-09-09-%E9%83%A8%E7%BC%96%E7%89%88%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E6%95%99%E6%9D%90%E6%8B%BC%E9%9F%B3%E6%A0%87%E6%B3%A8%E8%A7%84%E5%88%99/" class="md-nav__link">
-        部编版小学语文教材拼音标注规则
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-11-28-%E9%83%A8%E7%BC%96%E7%89%88%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E6%95%99%E6%9D%90%E6%8B%BC%E9%9F%B3%E6%98%AF%E4%BB%80%E4%B9%88%E5%AD%97%E4%BD%93/" class="md-nav__link">
-        部编版小学语文教材拼音是什么字体
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-25-%E8%AF%86%E5%AD%97%E9%87%8F%E6%B5%8B%E8%AF%95/" class="md-nav__link">
-        试试你认识多少字
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-04-21-%E6%80%8E%E4%B9%88%E8%AE%A9%E5%AD%A9%E5%AD%90%E8%AF%86%E5%AD%97%E5%8F%88%E5%A4%9A%E5%8F%88%E5%87%86%E7%A1%AE/" class="md-nav__link">
-        怎么让孩子识字又多又准确
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-02-%E8%AF%86%E5%AD%97%E7%94%A8%E6%88%90%E8%AF%AD%EF%BC%88A%E7%BA%A7%E5%AD%97%EF%BC%89/" class="md-nav__link">
-        儿童识字用成语及录音（A级字）
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-24-%E8%87%AA%E5%88%B6%E5%84%BF%E7%AB%A5%E5%90%AF%E8%92%99%E9%9B%86%E4%B8%AD%E8%AF%86%E5%AD%97%E8%AF%AD%E6%96%99%E5%BA%93%E4%B8%8E%E5%88%86%E7%BA%A7%E5%AD%97%E8%A1%A8/" class="md-nav__link">
-        自制儿童识字语料库与分级字表
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-24-%E8%87%AA%E5%88%B6%E5%84%BF%E7%AB%A5%E5%90%AF%E8%92%99%E9%9B%86%E4%B8%AD%E8%AF%86%E5%AD%97%E5%88%86%E7%BA%A7%E5%AD%97%E8%A1%A8/" class="md-nav__link">
-        自制儿童识字分级字表
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-02-18-%E5%A6%82%E4%BD%95%E7%9C%8B%E5%BE%85%E3%80%8A%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E5%B8%B8%E7%94%A8%E8%AF%8D%E8%A1%A8%EF%BC%88%E8%8D%89%E6%A1%88%EF%BC%89%E3%80%8B%E5%87%BA%E7%89%88%E5%B9%B6%E5%AF%B9%E5%A4%96%E5%8F%91%E5%B8%83%EF%BC%9F/" class="md-nav__link">
-        如何看待《义务教育常用词表（草案）》出版并对外发布
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-02-09-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%AD%97%E5%8D%A1%EF%BC%882021%E5%B9%B4%E6%98%A5%E5%AD%A3%EF%BC%89/" class="md-nav__link">
-        小学语文识字卡片（2021年春季）
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-08-24-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%AD%97%E5%8D%A1%EF%BC%882020%E5%B9%B4%E7%A7%8B%E5%AD%A3%EF%BC%89/" class="md-nav__link">
-        小学语文识字卡片（2020年秋季）
-      </a>
-    </li>
-  
-
-          
-            
+              
   
   
   
@@ -356,8 +282,80 @@
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-04-21-%E6%80%8E%E4%B9%88%E8%AE%A9%E5%AD%A9%E5%AD%90%E8%AF%86%E5%AD%97%E5%8F%88%E5%A4%9A%E5%8F%88%E5%87%86%E7%A1%AE/" class="md-nav__link">
+        怎么让孩子识字又多又准确
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-03-02-%E8%AF%86%E5%AD%97%E7%94%A8%E6%88%90%E8%AF%AD%EF%BC%88A%E7%BA%A7%E5%AD%97%EF%BC%89/" class="md-nav__link">
+        儿童识字用成语及录音（A级字）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-02-18-%E5%A6%82%E4%BD%95%E7%9C%8B%E5%BE%85%E3%80%8A%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E5%B8%B8%E7%94%A8%E8%AF%8D%E8%A1%A8%EF%BC%88%E8%8D%89%E6%A1%88%EF%BC%89%E3%80%8B%E5%87%BA%E7%89%88%E5%B9%B6%E5%AF%B9%E5%A4%96%E5%8F%91%E5%B8%83%EF%BC%9F/" class="md-nav__link">
+        如何看待《义务教育常用词表（草案）》出版并对外发布
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-02-09-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%AD%97%E5%8D%A1%EF%BC%882021%E5%B9%B4%E6%98%A5%E5%AD%A3%EF%BC%89/" class="md-nav__link">
+        小学语文识字卡片（2021年秋季更新）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-08-24-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%AD%97%E5%8D%A1%EF%BC%882020%E5%B9%B4%E7%A7%8B%E5%AD%A3%EF%BC%89/" class="md-nav__link">
+        小学语文识字卡片（2020年秋季）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -368,8 +366,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -380,8 +380,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -392,8 +394,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -404,8 +408,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -416,8 +422,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -428,8 +436,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -440,8 +450,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -452,8 +464,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -464,8 +478,38 @@
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-10-18-%E4%BB%8E%E9%A1%B7%E5%88%B0%E9%A2%8D/" class="md-nav__link">
+        从顷到颍（附说明）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-10-21-%E4%BB%8E%E3%AB%83%E5%88%B0%E6%97%97/" class="md-nav__link">
+        从㫃到旗
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -476,8 +520,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -488,8 +534,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -500,8 +548,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -512,6 +562,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -530,20 +581,54 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
-      <label class="md-nav__link" for="__nav_4">
-        阅读启蒙
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="阅读启蒙" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          阅读启蒙
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           阅读启蒙
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-09-09-%E9%83%A8%E7%BC%96%E7%89%88%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E6%95%99%E6%9D%90%E6%8B%BC%E9%9F%B3%E6%A0%87%E6%B3%A8%E8%A7%84%E5%88%99/" class="md-nav__link">
+        部编版小学语文教材拼音标注规则
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-11-28-%E9%83%A8%E7%BC%96%E7%89%88%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E6%95%99%E6%9D%90%E6%8B%BC%E9%9F%B3%E6%98%AF%E4%BB%80%E4%B9%88%E5%AD%97%E4%BD%93/" class="md-nav__link">
+        部编版小学语文教材拼音是什么字体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -554,8 +639,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -566,8 +653,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -578,8 +667,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -590,8 +681,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -602,8 +695,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -614,8 +709,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -626,8 +723,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -638,8 +737,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -650,8 +751,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -662,8 +765,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -674,8 +779,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -686,8 +793,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -698,8 +807,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -710,8 +821,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -722,6 +835,21 @@
     </li>
   
 
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-10-28-%E9%82%A3%E4%B8%AA%E5%81%B7%E4%B8%9C%E8%A5%BF%E7%9A%84%E4%BA%BA%E5%B0%B1%E6%98%AF%E6%88%91/" class="md-nav__link">
+        那个偷东西的人就是我
+      </a>
+    </li>
+  
+
+            
           
         </ul>
       </nav>
@@ -740,20 +868,40 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
-      <label class="md-nav__link" for="__nav_5">
-        语文答问
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="语文答问" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          语文答问
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           语文答问
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-28-%E5%AD%A9%E5%AD%90%E4%B8%8D%E4%BC%9A%E5%86%99%E4%BD%9C%E6%96%87%EF%BC%8C%E8%83%BD%E8%AF%B4%EF%BC%8C%E4%B8%80%E5%88%B0%E5%86%99%E5%B0%B1%E4%B8%8D%E4%BC%9A%E4%BA%86/" class="md-nav__link">
+        孩子不会写作文，能说，一到写就不会了
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -764,8 +912,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -776,8 +926,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -788,8 +940,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -800,8 +954,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -812,8 +968,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -824,8 +982,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -836,8 +996,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -848,8 +1010,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -860,8 +1024,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -872,8 +1038,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -884,8 +1052,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -896,8 +1066,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -908,8 +1080,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -920,8 +1094,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -932,8 +1108,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -944,8 +1122,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -956,8 +1136,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -968,8 +1150,24 @@
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-06-17-%E3%80%8A%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95%E3%80%8B%E7%9A%84%E9%97%B4%E9%9A%94%E5%8F%B7%E5%AE%BD%E5%BA%A6%E6%9C%89%E8%AF%AF/" class="md-nav__link">
+        《标点符号用法》的间隔号宽度有误
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -980,8 +1178,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -992,8 +1192,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1004,8 +1206,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1016,6 +1220,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1034,20 +1239,26 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
-      <label class="md-nav__link" for="__nav_6">
-        语文专栏
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="语文专栏" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          语文专栏
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           语文专栏
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1058,8 +1269,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1070,8 +1283,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1082,8 +1297,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1094,8 +1311,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1106,8 +1325,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1118,8 +1339,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1130,8 +1353,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1142,6 +1367,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1160,20 +1386,82 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
-      <label class="md-nav__link" for="__nav_7">
-        学习游戏
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="学习游戏" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          学习的技术、资料与游戏
           <span class="md-nav__icon md-icon"></span>
-          学习游戏
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          学习的技术、资料与游戏
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-06-24-%E8%87%AA%E5%88%B6%E5%84%BF%E7%AB%A5%E5%90%AF%E8%92%99%E9%9B%86%E4%B8%AD%E8%AF%86%E5%AD%97%E8%AF%AD%E6%96%99%E5%BA%93%E4%B8%8E%E5%88%86%E7%BA%A7%E5%AD%97%E8%A1%A8/" class="md-nav__link">
+        自制儿童识字语料库与分级字表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-06-24-%E8%87%AA%E5%88%B6%E5%84%BF%E7%AB%A5%E5%90%AF%E8%92%99%E9%9B%86%E4%B8%AD%E8%AF%86%E5%AD%97%E5%88%86%E7%BA%A7%E5%AD%97%E8%A1%A8/" class="md-nav__link">
+        自制儿童识字分级字表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-04-25-%E8%AF%86%E5%AD%97%E9%87%8F%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+        试试你认识多少字
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-10-02-%E5%84%BF%E7%AB%A5%E8%AF%86%E5%AD%97%E7%94%A8%E6%B1%89%E8%AF%AD%E6%96%87%E6%9C%AC%E7%9A%84%E9%9A%BE%E5%BA%A6%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        儿童识字用汉语文本的难度算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -1184,8 +1472,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1196,20 +1486,10 @@
     </li>
   
 
+            
           
             
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-15-%E4%B8%80%E5%AD%97%E4%B8%8D%E8%90%BD/" class="md-nav__link">
-        跟我的《拼字》“同款”的几种游戏
-      </a>
-    </li>
-  
-
-          
-            
+              
   
   
   
@@ -1220,8 +1500,38 @@
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-06-15-%E4%B8%80%E5%AD%97%E4%B8%8D%E8%90%BD/" class="md-nav__link">
+        跟我的《拼字》“同款”的几种游戏
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-10-10-%E3%80%8A%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8%E3%80%8B%E4%B8%AD%E6%9E%84%E5%AD%97%E6%9C%80%E5%A4%9A%E7%9A%84100%E4%B8%AA%E9%83%A8%E4%BB%B6/" class="md-nav__link">
+        《通用规范汉字表》中构字最多的100个部件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -1232,8 +1542,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1244,6 +1556,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1262,20 +1575,40 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
-      <label class="md-nav__link" for="__nav_8">
-        亲子写字
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="亲子写字" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          亲子写字
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           亲子写字
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-01-02-%E4%BA%B2%E5%AD%90%E5%86%99%E5%AD%97%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        亲子写字笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -1286,8 +1619,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1298,8 +1633,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1310,8 +1647,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1322,8 +1661,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1334,8 +1675,24 @@
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-14-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B0%8F%E5%AD%A6%E8%8B%B1%E8%AF%AD%E6%95%99%E6%9D%90%E8%A6%81%E7%94%A8%E8%BF%99%E7%A7%8D%E5%AD%97%E4%BD%93%E4%BD%93%E5%8D%B0%E5%88%B7/" class="md-nav__link">
+        为什么小学英语教材要用这种字体印刷
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -1346,8 +1703,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1358,8 +1717,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1370,8 +1731,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1382,8 +1745,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1394,8 +1759,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1406,8 +1773,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1418,8 +1787,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1430,8 +1801,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1442,8 +1815,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1454,8 +1829,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1466,6 +1843,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1484,32 +1862,68 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
-      <label class="md-nav__link" for="__nav_9">
-        STEAM
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="STEAM" data-md-level="1">
-        <label class="md-nav__title" for="__nav_9">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          少儿编程及STEAM
           <span class="md-nav__icon md-icon"></span>
-          STEAM
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          少儿编程及STEAM
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../2019-11-23-Pygame%20Zero%E6%96%87%E6%A1%A3%E7%9A%84%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" class="md-nav__link">
+      <a href="../2023-04-23-%E5%B0%91%E5%84%BFPython%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%94%A8%E4%BB%80%E4%B9%88%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        Arcade：适合少儿Python入门的游戏框架
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-25-Arcade%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        Arcade学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-11-23-PygameZero%E6%96%87%E6%A1%A3%E7%9A%84%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" class="md-nav__link">
         Pygame Zero文档的思维导图和入门实例
       </a>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1520,8 +1934,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1532,8 +1948,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1544,482 +1962,10 @@
     </li>
   
 
+            
           
             
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-27-Pyo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-        Pyo学习笔记
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-28-Pyo%E6%96%87%E6%A1%A3%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
-        Pyo文档（一）
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-1-1-Pyo%E6%96%87%E6%A1%A3%EF%BC%88%E4%BA%8C%EF%BC%89%E5%AE%9E%E4%BE%8B/" class="md-nav__link">
-        Pyo文档（二）实例
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-10-20-%E6%95%99%E5%AD%A9%E5%AD%90%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/" class="md-nav__link">
-        教孩子骑自行车
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
-      
-      <label class="md-nav__link" for="__nav_10">
-        启蒙文摘
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="启蒙文摘" data-md-level="1">
-        <label class="md-nav__title" for="__nav_10">
-          <span class="md-nav__icon md-icon"></span>
-          启蒙文摘
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-12-%E6%95%99%E7%AB%A5%E5%AD%90%E6%B3%95/" class="md-nav__link">
-        教童子法
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-10-%E8%BF%9E%E7%8E%AF%E5%9B%BE%E7%94%BB%E7%90%90%E8%B0%88/" class="md-nav__link">
-        连环图画琐谈
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-10-%E3%80%8A%E7%9C%8B%E5%9B%BE%E8%AF%86%E5%AD%97%E3%80%8B/" class="md-nav__link">
-        《看图识字》
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-10-%E4%BA%BA%E7%94%9F%E8%AF%86%E5%AD%97%E8%83%A1%E6%B6%82%E5%A7%8B/" class="md-nav__link">
-        人生识字胡涂始
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-11-%E7%8E%8B%E9%95%9B%E4%B9%A6%E8%8B%8F%E8%BD%BC%E7%9F%B3%E8%8B%8D%E8%88%92%E9%86%89%E5%A2%A8%E5%A0%82%E8%AF%97/" class="md-nav__link">
-        王镛书苏轼石苍舒醉墨堂诗
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-11-%E3%80%8A%E4%BC%A0%E7%BB%9F%E8%AF%AD%E6%96%87%E6%95%99%E8%82%B2%E6%95%99%E6%9D%90%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-        《传统语文教育教材论》阅读笔记
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
-      
-      <label class="md-nav__link" for="__nav_11">
-        老编辑的效率工具
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="老编辑的效率工具" data-md-level="1">
-        <label class="md-nav__title" for="__nav_11">
-          <span class="md-nav__icon md-icon"></span>
-          老编辑的效率工具
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-10-12-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E3%80%81%E8%AF%AD%E8%A8%80%E5%92%8C%E6%A1%86%E6%9E%B6/" class="md-nav__link">
-        常用/备用软件、语言和框架
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-01-10-VSCode%E5%B0%8F%E6%8A%84/" class="md-nav__link">
-        VSCode小抄
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-11-7-%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7%E5%BF%97/" class="md-nav__link">
-        奇技淫巧志
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-04-%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84TextPro%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9B%BF%E6%8D%A2%E8%A1%A8/" class="md-nav__link">
-        我常用的TextPro用自定义替换表
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-11-%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7%E7%AD%94%E9%97%AE/" class="md-nav__link">
-        效率工具答问（累积更新）
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-09-01-libreoffice%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/" class="md-nav__link">
-        LibreOfficeWriter使用问题
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-10-26-%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%A4%84%E7%90%86%E6%96%87%E6%9C%AC%E3%80%81%E7%AE%A1%E7%90%86%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%89%E4%BB%B6%E5%A5%97/" class="md-nav__link">
-        用正则表达式处理文本、管理文件的三件套
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-05-31-%E7%BB%99%E7%BC%96%E8%BE%91%E6%9C%8B%E5%8F%8B%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%BE%E7%A8%8B/" class="md-nav__link">
-        给编辑朋友的正则表达式课程
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-02-02-%E6%95%99%E8%82%B2%E7%A1%AC%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-        教育硬件学习笔记
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-12-%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%9A%E4%BB%8E%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%AD%E6%94%B6%E9%9B%86%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
-        小工具：从多文件中收集字符串
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-14-Audition%E6%8A%80%E5%B7%A7%EF%BC%9A%E4%BD%BF%E4%B8%A4%E6%AE%B5%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E7%9A%84%E5%BD%95%E9%9F%B3%E5%8D%8F%E8%B0%83%E4%B8%80%E8%87%B4/" class="md-nav__link">
-        Audition技巧：使两段不同环境的录音协调一致
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-14-Audition%E6%8A%80%E5%B7%A7%EF%BC%9A%E8%87%AA%E5%8A%A8%E5%88%86%E5%88%87%E9%9F%B3%E9%A2%91/" class="md-nav__link">
-        Audition技巧：半自动分切音频
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-15-%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%9A%E5%88%86%E5%89%B2%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6/" class="md-nav__link">
-        小工具：分割文本文件
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-09-26-%E7%A1%AC%E7%9B%98%E6%8D%9F%E5%9D%8F%EF%BC%8C%E6%8A%A2%E6%95%91%E6%95%B0%E6%8D%AE/" class="md-nav__link">
-        硬盘损坏，抢救数据
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-02-27-markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-        markdown学习笔记
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-02-04-%E4%B8%A4%E7%A7%8Dmarkdown%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95/" class="md-nav__link">
-        两种markdown文件解析方法
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-16-markdown%E4%B8%AD%E7%9A%84mermaid%E5%9B%BE%E4%BE%8B/" class="md-nav__link">
-        markdown中的mermaid图例
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-02-05-%E6%9C%89%E6%B2%A1%E6%9C%89%E5%90%88%E9%80%82%E7%9A%84%E8%83%BD%E6%9B%BF%E4%BB%A3flash%E7%9A%84%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90%E7%9A%84/" class="md-nav__link">
-        有没有合适的能替代flash的软件推荐？
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-02-mkdocs-material%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-        静态网站框架mkdocs+material学习笔记
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
-        mkdocs-macros-plugin宏插件
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-22-autotrace%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
-        autotrace说明文档
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-10-14-%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E5%99%A8Pelican%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-        静态网站生成器Pelican学习笔记
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
-      
-      <label class="md-nav__link" for="__nav_12">
-        Python找门教程
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Python找门教程" data-md-level="1">
-        <label class="md-nav__title" for="__nav_12">
-          <span class="md-nav__icon md-icon"></span>
-          Python找门教程
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
+              
   
   
   
@@ -2030,8 +1976,24 @@
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-12-21-%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/" class="md-nav__link">
+        编程环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -2042,8 +2004,24 @@
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-02-13-Python%E7%BC%96%E7%A8%8B%E7%AD%94%E9%97%AE/" class="md-nav__link">
+        Python编程答问
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -2054,6 +2032,77 @@
     </li>
   
 
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-12-27-Pyo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        Pyo学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-12-28-Pyo%E6%96%87%E6%A1%A3%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        Pyo文档（一）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-1-1-Pyo%E6%96%87%E6%A1%A3%EF%BC%88%E4%BA%8C%EF%BC%89%E5%AE%9E%E4%BE%8B/" class="md-nav__link">
+        Pyo文档（二）实例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-18-%E3%80%8A%E6%9E%81%E7%AE%80%E7%AE%97%E6%9C%AF%E5%8F%B2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        《极简算术史》读书笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-10-20-%E6%95%99%E5%AD%A9%E5%AD%90%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/" class="md-nav__link">
+        教孩子骑自行车
+      </a>
+    </li>
+  
+
+            
           
         </ul>
       </nav>
@@ -2072,13 +2121,536 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
       
-      <label class="md-nav__link" for="__nav_13">
-        Phaser学习中心组
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Phaser学习中心组" data-md-level="1">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+          启蒙文摘
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          启蒙文摘
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-06-12-%E6%95%99%E7%AB%A5%E5%AD%90%E6%B3%95/" class="md-nav__link">
+        教童子法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-06-10-%E8%BF%9E%E7%8E%AF%E5%9B%BE%E7%94%BB%E7%90%90%E8%B0%88/" class="md-nav__link">
+        连环图画琐谈
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-06-10-%E3%80%8A%E7%9C%8B%E5%9B%BE%E8%AF%86%E5%AD%97%E3%80%8B/" class="md-nav__link">
+        《看图识字》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-06-10-%E4%BA%BA%E7%94%9F%E8%AF%86%E5%AD%97%E8%83%A1%E6%B6%82%E5%A7%8B/" class="md-nav__link">
+        人生识字胡涂始
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-06-11-%E7%8E%8B%E9%95%9B%E4%B9%A6%E8%8B%8F%E8%BD%BC%E7%9F%B3%E8%8B%8D%E8%88%92%E9%86%89%E5%A2%A8%E5%A0%82%E8%AF%97/" class="md-nav__link">
+        王镛书苏轼石苍舒醉墨堂诗
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-06-11-%E3%80%8A%E4%BC%A0%E7%BB%9F%E8%AF%AD%E6%96%87%E6%95%99%E8%82%B2%E6%95%99%E6%9D%90%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        《传统语文教育教材论》阅读笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+          老编辑的效率工具
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          老编辑的效率工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2019-10-12-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E3%80%81%E8%AF%AD%E8%A8%80%E5%92%8C%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        常用与备用软件、语言和框架
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-07-11-%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7%E7%AD%94%E9%97%AE/" class="md-nav__link">
+        效率工具答问（累积更新）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-03-%E7%94%A8ChatGPT%E8%AE%AD%E7%BB%83%E4%B8%80%E4%BD%8D%E8%82%B2%E5%84%BF%E6%95%99%E7%BB%83/" class="md-nav__link">
+        用ChatGPT训练一位育儿教练
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-04-80-Ways-to-Use-ChatGPT-in-the-Classroom/" class="md-nav__link">
+        《ChatGPT辅助教学80招》目录试译
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-01-10-VSCode%E5%B0%8F%E6%8A%84/" class="md-nav__link">
+        VSCode小抄
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-02-%E7%BB%99%E8%87%AA%E5%B7%B1%E9%85%8D%E7%BD%AE%E7%A7%B0%E5%BF%83%E5%A6%82%E6%84%8F%E7%9A%84%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        给自己配置称心如意的写作工具
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-11-7-%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7%E5%BF%97/" class="md-nav__link">
+        奇技淫巧志
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-03-04-%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84TextPro%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9B%BF%E6%8D%A2%E8%A1%A8/" class="md-nav__link">
+        我常用的TextPro用自定义替换表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-09-01-libreoffice%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        LibreOfficeWriter使用问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-10-26-%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%A4%84%E7%90%86%E6%96%87%E6%9C%AC%E3%80%81%E7%AE%A1%E7%90%86%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%89%E4%BB%B6%E5%A5%97/" class="md-nav__link">
+        用正则表达式处理文本、管理文件的三件套
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-05-31-%E7%BB%99%E7%BC%96%E8%BE%91%E6%9C%8B%E5%8F%8B%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%BE%E7%A8%8B/" class="md-nav__link">
+        给编辑朋友的正则表达式课程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-02-02-%E6%95%99%E8%82%B2%E7%A1%AC%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        教育硬件学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-12-12-%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%9A%E4%BB%8E%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%AD%E6%94%B6%E9%9B%86%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
+        小工具：从多文件中收集字符串
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-12-14-Audition%E6%8A%80%E5%B7%A7%EF%BC%9A%E4%BD%BF%E4%B8%A4%E6%AE%B5%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E7%9A%84%E5%BD%95%E9%9F%B3%E5%8D%8F%E8%B0%83%E4%B8%80%E8%87%B4/" class="md-nav__link">
+        Audition技巧：使两段不同环境的录音协调一致
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-12-14-Audition%E6%8A%80%E5%B7%A7%EF%BC%9A%E8%87%AA%E5%8A%A8%E5%88%86%E5%88%87%E9%9F%B3%E9%A2%91/" class="md-nav__link">
+        Audition技巧：半自动分切音频
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-12-15-%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%9A%E5%88%86%E5%89%B2%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6/" class="md-nav__link">
+        小工具：分割文本文件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2020-09-26-%E7%A1%AC%E7%9B%98%E6%8D%9F%E5%9D%8F%EF%BC%8C%E6%8A%A2%E6%95%91%E6%95%B0%E6%8D%AE/" class="md-nav__link">
+        硬盘损坏，抢救数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-02-27-markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        markdown学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-02-04-%E4%B8%A4%E7%A7%8Dmarkdown%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        两种markdown文件解析方法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-04-16-markdown%E4%B8%AD%E7%9A%84mermaid%E5%9B%BE%E4%BE%8B/" class="md-nav__link">
+        markdown中的mermaid图例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-02-05-%E6%9C%89%E6%B2%A1%E6%9C%89%E5%90%88%E9%80%82%E7%9A%84%E8%83%BD%E6%9B%BF%E4%BB%A3flash%E7%9A%84%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90%E7%9A%84/" class="md-nav__link">
+        有没有合适的能替代flash的软件推荐？
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-03-02-mkdocs-material%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        静态网站框架mkdocs+material学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        mkdocs-macros-plugin宏插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2021-04-22-autotrace%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
+        autotrace说明文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2018-10-14-%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E5%99%A8Pelican%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        静态网站生成器Pelican学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-09-25-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E8%91%97%E5%BD%95%E8%A7%84%E5%88%99%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        参考文献著录规则笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+          Phaser学习中心组
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_13">
           <span class="md-nav__icon md-icon"></span>
           Phaser学习中心组
@@ -2086,6 +2658,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2096,8 +2669,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2108,8 +2683,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2120,8 +2697,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2132,8 +2711,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2144,8 +2725,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2156,8 +2739,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2168,8 +2753,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2180,8 +2767,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2192,8 +2781,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2204,6 +2795,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -2222,13 +2814,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
       
-      <label class="md-nav__link" for="__nav_14">
-        Phaser3文档注记
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Phaser3文档注记" data-md-level="1">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+          Phaser3文档注记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_14">
           <span class="md-nav__icon md-icon"></span>
           Phaser3文档注记
@@ -2236,6 +2833,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2246,8 +2844,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2258,8 +2858,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2270,8 +2872,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2282,8 +2886,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2294,8 +2900,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2306,8 +2914,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2318,8 +2928,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2330,8 +2942,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2342,8 +2956,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2354,8 +2970,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2366,8 +2984,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2378,8 +2998,24 @@
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-12-23-Phaser.Input.Pointer/" class="md-nav__link">
+        Pointer热点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -2390,8 +3026,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2402,8 +3040,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2414,8 +3054,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2426,8 +3068,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2438,8 +3082,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2450,8 +3096,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2462,8 +3110,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2474,6 +3124,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -2492,13 +3143,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
       
-      <label class="md-nav__link" for="__nav_15">
-        Phaser3官网入门教程
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Phaser3官网入门教程" data-md-level="1">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+          Phaser3官网入门教程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
           Phaser3官网入门教程
@@ -2506,6 +3162,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2516,8 +3173,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2528,8 +3187,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2540,8 +3201,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2552,8 +3215,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2564,8 +3229,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2576,8 +3243,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2588,8 +3257,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2600,8 +3271,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2612,8 +3285,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2624,6 +3299,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -2644,20 +3320,68 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" checked>
       
-      <label class="md-nav__link" for="__nav_16">
-        TEX与自动化排版
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="TEX与自动化排版" data-md-level="1">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+          TEX, ConTeXt与排版自动化
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_16">
           <span class="md-nav__icon md-icon"></span>
-          TEX与自动化排版
+          TEX, ConTeXt与排版自动化
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2024-01-21-%E8%AF%AD%E6%96%87%E7%BB%83%E4%B9%A0%E5%86%8C%E5%92%8C%E8%AF%95%E5%8D%B7%E7%9A%84ConTeXt%E6%A8%A1%E6%9D%BF/" class="md-nav__link">
+        语文练习册和试卷的ConTeXt模板
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-11-20-ConTeXt%E7%AE%80%E4%BB%8B%E5%92%8C%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%E6%95%88%E6%9E%9C/" class="md-nav__link">
+        ConTeXt简介和中文排版效果
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-10-28-ConTeXt-LMTX%E6%A0%87%E7%82%B9%E5%8E%8B%E7%BC%A9%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        ConTeXt中文标点压缩插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -2668,8 +3392,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2680,8 +3406,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2692,8 +3420,52 @@
     </li>
   
 
+            
           
             
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-30-%E4%BD%BFTypst%E7%9A%84par%E8%83%BD%E8%B0%83%E6%95%B4%E6%B1%89%E5%AD%97%E9%97%B4%E8%B7%9D/" class="md-nav__link">
+        使Typst par能调整汉字间距
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-28-%E4%BD%93%E9%AA%8CTypst/" class="md-nav__link">
+        体验Typst
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-03-25-Typst%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        Typst学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
@@ -2704,8 +3476,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2716,8 +3490,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2728,8 +3504,10 @@
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -2737,449 +3515,23 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          ConTeXt学习笔记
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         ConTeXt学习笔记
       </a>
       
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    引言
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    学习资源
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    环境和编译
-  </a>
-  
-    <nav class="md-nav" aria-label="环境和编译">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    命令
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vscode" class="md-nav__link">
-    vscode语法高亮插件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vscode_1" class="md-nav__link">
-    使用官方vscode扩展
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instruction_command" class="md-nav__link">
-    instruction 指令 /command 命令：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    组和环境
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    命令语法
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    配套命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    定义命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    定义环境
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    设置变量
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    尺寸
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    输入特殊字符
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    文档与项目结构
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    页面和分页
-  </a>
-  
-    <nav class="md-nav" aria-label="页面和分页">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    页面元素和版面布局
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    设置页码
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    建议分页/不分页、强制分页
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    天头、地脚的配置
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#edgesmargins" class="md-nav__link">
-    页面外边edges、内边margins插入元素
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#typescript" class="md-nav__link">
-    字体脚本 typescript
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
-    安装字体
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
-    字体知识
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
-    颜色
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
-    文档结构
-  </a>
-  
-    <nav class="md-nav" aria-label="文档结构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_23" class="md-nav__link">
-    目录
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_24" class="md-nav__link">
-    列表和联合列表
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_25" class="md-nav__link">
-    结构列表
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_26" class="md-nav__link">
-    索引
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_27" class="md-nav__link">
-    引用和超链接
-  </a>
-  
-    <nav class="md-nav" aria-label="引用和超链接">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_28" class="md-nav__link">
-    同义词
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_29" class="md-nav__link">
-    排序
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mark" class="md-nav__link">
-    mark
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_30" class="md-nav__link">
-    交叉引用
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_31" class="md-nav__link">
-    预置引用
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_32" class="md-nav__link">
-    注册器
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_33" class="md-nav__link">
-    字符、词语、文本和水平间距
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_34" class="md-nav__link">
-    段落、行和行距/垂直间距
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_35" class="md-nav__link">
-    特殊结构和段落
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_36" class="md-nav__link">
-    图像、表格和其他浮动对象
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zhfonts" class="md-nav__link">
-    zhfonts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ruby" class="md-nav__link">
-    ruby和行间标注
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_37" class="md-nav__link">
-    下划线
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#box" class="md-nav__link">
-    盒子 box
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_38" class="md-nav__link">
-    文本行缩放
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_39" class="md-nav__link">
-    悬挂缩进
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_40" class="md-nav__link">
-    缩放、镜像、剪切
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_41" class="md-nav__link">
-    系统宏
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_42" class="md-nav__link">
-    调试
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_43" class="md-nav__link">
-    项目结构
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_44" class="md-nav__link">
-    标题
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#layer" class="md-nav__link">
-    层 layer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pdf" class="md-nav__link">
-    在pdf文件中添加附件
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3190,8 +3542,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3202,8 +3556,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3214,18 +3570,91 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-18-uaTeX-LuaMetaTeX-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" class="md-nav__link">
+      <a href="../2022-02-18-LuaTeX-LuaMetaTeX-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" class="md-nav__link">
         TEX系学习资源
       </a>
     </li>
   
 
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-08-29-metafun%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        metafun学习笔记
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-09-23-metapost-luametafun-examples/" class="md-nav__link">
+        metapost用例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-11-11-How-TeX-Calculates-Glue-Settings-in-an-hbox/" class="md-nav__link">
+        TeX怎样计算横盒子(hbox)中的胶的设定值
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-09-13-Understanding-underfull-and-overfull-box-warnings/" class="md-nav__link">
+        理解未满盒子和溢出盒子的警告信息
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2022-10-04-lua%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        学习笔记
+      </a>
+    </li>
+  
+
+            
           
         </ul>
       </nav>
@@ -3244,13 +3673,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_17" type="checkbox" id="__nav_17" >
       
-      <label class="md-nav__link" for="__nav_17">
-        布考斯基与诗
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="布考斯基与诗" data-md-level="1">
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+          布考斯基与诗
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_17">
           <span class="md-nav__icon md-icon"></span>
           布考斯基与诗
@@ -3258,6 +3692,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -3268,8 +3703,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3280,8 +3717,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3292,8 +3731,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3304,8 +3745,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3316,8 +3759,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3328,8 +3773,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3340,8 +3787,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3352,6 +3801,21 @@
     </li>
   
 
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2023-04-13-%E6%B2%89%E8%BF%B7%E9%97%B2%E8%AF%9D/" class="md-nav__link">
+        沉迷闲话
+      </a>
+    </li>
+  
+
+            
           
         </ul>
       </nav>
@@ -3368,7 +3832,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        About
+        ☆ About
       </a>
     </li>
   
@@ -3386,427 +3850,13 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    引言
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    学习资源
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    环境和编译
-  </a>
-  
-    <nav class="md-nav" aria-label="环境和编译">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    命令
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vscode" class="md-nav__link">
-    vscode语法高亮插件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vscode_1" class="md-nav__link">
-    使用官方vscode扩展
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instruction_command" class="md-nav__link">
-    instruction 指令 /command 命令：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    组和环境
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    命令语法
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    配套命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    定义命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    定义环境
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    设置变量
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    尺寸
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    输入特殊字符
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    文档与项目结构
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    页面和分页
-  </a>
-  
-    <nav class="md-nav" aria-label="页面和分页">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    页面元素和版面布局
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    设置页码
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    建议分页/不分页、强制分页
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    天头、地脚的配置
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#edgesmargins" class="md-nav__link">
-    页面外边edges、内边margins插入元素
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#typescript" class="md-nav__link">
-    字体脚本 typescript
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
-    安装字体
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
-    字体知识
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
-    颜色
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_22" class="md-nav__link">
-    文档结构
-  </a>
-  
-    <nav class="md-nav" aria-label="文档结构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_23" class="md-nav__link">
-    目录
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_24" class="md-nav__link">
-    列表和联合列表
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_25" class="md-nav__link">
-    结构列表
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_26" class="md-nav__link">
-    索引
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_27" class="md-nav__link">
-    引用和超链接
-  </a>
-  
-    <nav class="md-nav" aria-label="引用和超链接">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_28" class="md-nav__link">
-    同义词
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_29" class="md-nav__link">
-    排序
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mark" class="md-nav__link">
-    mark
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_30" class="md-nav__link">
-    交叉引用
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_31" class="md-nav__link">
-    预置引用
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_32" class="md-nav__link">
-    注册器
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_33" class="md-nav__link">
-    字符、词语、文本和水平间距
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_34" class="md-nav__link">
-    段落、行和行距/垂直间距
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_35" class="md-nav__link">
-    特殊结构和段落
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_36" class="md-nav__link">
-    图像、表格和其他浮动对象
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zhfonts" class="md-nav__link">
-    zhfonts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ruby" class="md-nav__link">
-    ruby和行间标注
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_37" class="md-nav__link">
-    下划线
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#box" class="md-nav__link">
-    盒子 box
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_38" class="md-nav__link">
-    文本行缩放
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_39" class="md-nav__link">
-    悬挂缩进
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_40" class="md-nav__link">
-    缩放、镜像、剪切
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_41" class="md-nav__link">
-    系统宏
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_42" class="md-nav__link">
-    调试
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_43" class="md-nav__link">
-    项目结构
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_44" class="md-nav__link">
-    标题
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#layer" class="md-nav__link">
-    层 layer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pdf" class="md-nav__link">
-    在pdf文件中添加附件
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -3814,1776 +3864,79 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
   
-                
-                
-                  <h1>ConTeXt学习笔记</h1>
-                
-                <p><em>欢迎加入本人建的"LuaTeX ConTeXt 学习互助"群：431714622，互助学习LuaTeX ConTeXt LaTeX相关技术，以及通过Lua、Python实现格式化文本、数据的自动排版。</em></p>
-<p><strong>注意：为了避免本博客的jinja引擎误解析，已经在<code>{</code>+<code>#</code>之间，以及对应的<code>}</code>之前加入空格</strong></p>
-<hr />
-<p>本文主要学习如下资料的笔记：</p>
-<ul>
-<li><a href="https://github.com/contextgarden/not-so-short-introduction-to-context"><em>A not so short introduction to ConTeXt</em></a>，</li>
-<li><a href="https://wiki.contextgarden.net/">contextgarden wiki</a>的笔记；</li>
-</ul>
-<p><strong>涉及LuaTeX的部分，请参见<a href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">LuaTeX-CLD-TEX学习笔记</a>。</strong></p>
-<h2 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p><a href="https://wiki.contextgarden.net/Main_Page">ConTeXt</a>格式的目标是通用排版，更适合设计；而LaTeX最初目标是数学相关的学术排版。</p>
-<p>ConTeXt版本：</p>
-<ul>
-<li>MKII，已经冻结，使用PDFTEX (和XETEX)；</li>
-<li>MKIV，使用LUATEX (和LUAJITTEX)</li>
-<li>LMTX，最新版，还在进化，使用LuaMetaTeX引擎</li>
-</ul>
-<h2 id="_2">学习资源<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<h2 id="_3">环境和编译<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
-<h3 id="_4">命令<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
-<p>编译脚本文档</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 默认使用LuaMetaTeX</span>
-context test.mkiv
-<span class="c1"># 或指定使用luatex</span>
-context --luatex test.mkiv
-</code></pre></div>
-<p>其他命令行选项(通过<code>--help</code>选项查看)</p>
-<div class="highlight"><pre><span></span><code>--run                  process (one or more) files (default action)
---make                 生成context格式文件（formats），改变系统文件时需要这样才生效
---ctx=name             use ctx file (process management specification)
---noctx                ignore ctx directives and flags
---interface            use specified user interface (default: en)
---autopdf              close pdf file in viewer and start pdf viewer afterwards
---purge                purge files either or not after a run (--pattern=...)
---purgeall             purge all files either or not after a run (--pattern=...)
---usemodule=list       load the given module or style, normally part of the distribution
---environment=list     load the given environment file first (document styles)
---mode=list            enable given the modes (conditional processing in styles)
---path=list            also consult the given paths when files are looked for
---arguments=list       set variables that can be consulted during a run (key/value pairs)
---randomseed=number    set the randomseed
---result=name          rename the resulting output to the given name
---trackers=list        set tracker variables (show list with --showtrackers)
---directives=list      set directive variables (show list with --showdirectives)
---silent=list          disable logcatgories (show list with --showlogcategories)
---strip                strip Lua code (only meant for production where no errors are expected)
---errors=list          show errors at the end of a run, quit when in list (also when --silent)
---htmlerrorpage        generate html error page instead (optional: =scite)
---noconsole            disable logging to the console (logfile only)
---nodummy              don&#39;t create a dummy file (can confuse pdf viewers that keep file in view)
---purgeresult          purge result file before run
---forcexml             force xml stub
---forcecld             force cld (context lua document) stub
---forcelua             force lua stub (like texlua)
---forcemp              force mp stub
---arrange              run extra imposition pass, given that the style sets up imposition
---noarrange            ignore imposition specifications in the style
---pages                report pagenumbers of names pages and list references (--page=... or --page=...)
---jit                  use luajittex with jit turned off (only use the faster virtual machine)
---jiton                use luajittex with jit turned on (in most cases not faster, even slower)
---once                 only run once (no multipass data file is produced)
---runs                 process at most this many times
---forcedruns           process this many times (permits for optimization trial runs)
---batchmode            run without stopping and do not show messages on the console
---nonstopmode          run without stopping
---nosynctex            never initializes synctex (for production runs)
---synctex              run with synctex enabled (better use \setupsynctex[state=start])
---nodates              omit runtime dates in pdf file (optional value: a number (this 1970 offset time) or string &quot;YYYY-MM-DD HH:MM&quot;)
---nocompression        forcefully turns off compression in the backend
---trailerid            alternative trailer id (or constant one)
---generate             生成文件数据等(如luatools的作用)，安装第三方模块时需要这样才生效
---paranoid             do not descend to .. and ../..
---version              report installed context version
---global               assume given file present elsewhere
---nofile               use dummy file as jobname
-</code></pre></div>
-<h3 id="vscode">vscode语法高亮插件<a class="headerlink" href="#vscode" title="Permanent link">#</a></h3>
-<p>ConTeXt Syntax</p>
-<h3 id="vscode_1">使用官方vscode扩展<a class="headerlink" href="#vscode_1" title="Permanent link">#</a></h3>
-<p><a href="https://wiki.contextgarden.net/VSCode">安装官方的vscode扩展说明</a></p>
-<p>还不大方便：必须命令行启动；启动后只有这一个扩展；并且必须打开指定的颜色主题。</p>
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;D:\Users\ah21\AppData\Local\Programs\Microsoft VS Code\Code.exe&quot;</span> --extensions-dir <span class="s2">&quot;D:\venvs\texlive\2021\texmf-dist\context\data\vscode\extensions&quot;</span> --install-extension context
-</code></pre></div>
-<h2 id="instruction_command">instruction 指令 /command 命令：<a class="headerlink" href="#instruction_command" title="Permanent link">#</a></h2>
-<ul>
-<li>control sequence 控制序列<ul>
-<li>primitive 基元</li>
-<li>macro 宏</li>
-</ul>
-</li>
-<li>control symbol</li>
-<li>control word</li>
-</ul>
-<p>ConTeXt指令一般只分为保留字（所构成的控制符号？）和命令两类：</p>
-<ul>
-<li>控制符号：<code>\</code>+非字母(符号)</li>
-<li>命令：<code>\</code>+字母词(直到遇到一个非字母前终止，<strong>如果遇到一个或多个空白字符则将其丢弃，可用<code>{}</code>作为边界，或用<code>\␣</code>显式保留空格</strong>)</li>
-</ul>
-<p>11个保留字<code>\ % { } # ~ | $ _ ^ &amp;</code>；没有保留字参与的情况下，都视作一般文本。要想输入这些字符，除以下三者，都可以用<code>\</code>先转义：
-<code>\</code> \backslash<br />
-<code>~</code> \lettertilde<br />
-<code>^</code> \letterhat  </p>
-<p>也可以用<code>\type*{*</code>或<code>\type+}+</code>输入。</p>
-<h2 id="_5">组和环境<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
-<ul>
-<li><code>{ ... }</code>，或<code>\bgroup ... \egroup</code>，两对控制序列同义，可以混用</li>
-<li><code>\begingroup ... \endgroup</code>，允许更深层的错误检查</li>
-<li><code>\start ... \stop</code></li>
-<li>数学环境： <code>$ ... $</code></li>
-<li>某些命令/环境： <code>\startSomething ... \endsomething</code></li>
-<li>某些命令会自动生成一个组，如\hbox, \vbox</li>
-</ul>
-<p>组是一个明示的作业单元/解释单元。组内的定义、格式、赋值，组外无效。</p>
-<p>组还可以用来界定前面命令的作用范围/输入范围，比如<code>$4^2x$</code>表示$4^2x$，而<code>$4^{2x}$</code>表示$4^{2x}$</p>
-<p>空组没有显示意义，但可以用来表示命令边界（比如避免吃掉后面的空格）。</p>
-<p><strong>环境一般用于段落以上的内容，除非用<code>\bgroup ... \egroup</code>明示为组，否则不是组。</strong></p>
-<div class="highlight"><pre><span></span><code>In <span class="nb">{</span><span class="k">\it</span> The <span class="k">\TeX</span> Book<span class="nb">}</span>, <span class="nb">{</span><span class="k">\sc</span> Knuth<span class="nb">}</span>
-explained everything you need to know
-about <span class="k">\TeX</span>.
-
-<span class="k">\framed</span><span class="nb">{</span>Tweedledum and Tweedledee<span class="nb">}</span>
-
-<span class="k">\startitemize</span>
-...
-<span class="k">\stopitemize</span>
-</code></pre></div>
-<h2 id="_6">命令语法<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
-<ul>
-<li><code>\command[Option1, Option2, ...]</code></li>
-<li><code>\command[Variable1=value, Variable2=value, ...]</code></li>
-<li>不能这样：<code>\command[Option1, Variable1=value, ...]</code></li>
-</ul>
-<h2 id="_7">配套命令<a class="headerlink" href="#_7" title="Permanent link">#</a></h2>
-<ul>
-<li>command (or environment)</li>
-<li>setupcommand，配置现存command</li>
-<li>definecommand，克隆现存command</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">\framed</span><span class="na">[width=3cm,height=1cm]</span><span class="nb">{</span>Tweedledum<span class="nb">}</span>
-<span class="k">\setupframed</span>
-[
-    width=3cm,
-    height=1cm
-]
-
-<span class="k">\defineframed</span><span class="na">[MySpecialFrame]</span>
-<span class="k">\setupframed</span>
-[MySpecialFrame]
-[
-    width=3cm,
-    height=1cm
-]
-</code></pre></div>
-<h2 id="_8">定义命令<a class="headerlink" href="#_8" title="Permanent link">#</a></h2>
-<p><code>\define[NumArguments]\CommandName{TeXtToReplace}</code></p>
-<ul>
-<li>NumArguments，参数数量，可省略。</li>
-<li>CommandName，命令名称，遵守一般命令名规范，可以是单个非字母，或一个至多个字母</li>
-<li>TextToReplace，命令展开后原位置要替换成的文本，包括格式。</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">\define\Tite</span><span class="nb">{</span><span class="k">\quotation</span><span class="nb">{</span>O Tite tute Tati tibi tanta tyranne tulisti<span class="nb">}}</span>
-
-<span class="k">\define</span><span class="na">[2]</span><span class="k">\LetterHeading</span><span class="nb">{</span>
-    <span class="k">\rightaligned</span><span class="nb">{</span>Peter Smith<span class="nb">}</span><span class="k">\par</span>
-    <span class="k">\rightaligned</span><span class="nb">{</span>Consultant<span class="nb">}</span><span class="k">\par</span>
-    Maryborough, <span class="k">\date\par</span>
-    #1<span class="k">\ </span>#2,<span class="k">\par</span>
-<span class="nb">}</span>
-
-<span class="k">\LetterHeading</span><span class="nb">{</span>Dear Ms<span class="nb">}{</span>Eloise Merriweather<span class="nb">}</span>
-</code></pre></div>
-<h2 id="_9">定义环境<a class="headerlink" href="#_9" title="Permanent link">#</a></h2>
-<p><code>\definestartstop[Name][Options]</code></p>
-<div class="highlight"><pre><span></span><code><span class="k">\definestartstop</span><span class="na">[TextWithBar]</span>[
-    before=<span class="k">\startmarginrule\noindentation</span>, <span class="c">% 如果希望此环境是一个组，则必须明式加入\bgroup</span>
-    after=<span class="k">\stopmarginrule</span>, <span class="c">% 同上，加入\egroup</span>
-    style=<span class="k">\ss\sl</span>
-]
-
-<span class="k">\starttext</span>
-    The first two fundamental laws of human stupidity state unambiguously that:
-    <span class="k">\startTextWithBar</span>
-        <span class="k">\startitemize</span><span class="na">[n,broad]</span>
-            <span class="k">\item</span> Always and inevitably we underestimate the number of stupid individuals in the world.
-            <span class="k">\item</span> The probability that a given person is stupid is independent of any other characteristic of the same person.
-        <span class="k">\stopitemize</span>
-    <span class="k">\stopTextWithBar</span>
-<span class="k">\stoptext</span>
-</code></pre></div>
-<h2 id="_10">设置变量<a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c">% stores value in variable namespace:key</span>
-<span class="k">\setvariables</span><span class="na">[namespace][key=value]</span>
-<span class="c">% stores the expanded value</span>
-<span class="k">\setevariables</span><span class="na">[namespace][key=value]</span>
-<span class="c">% global</span>
-<span class="k">\setgvariables</span><span class="na">[namespace][key=value]</span>
-<span class="c">% global and expanded value</span>
-<span class="k">\setxvariables</span><span class="na">[namespace][key=value]</span>
-
-<span class="k">\setvariables</span><span class="na">[Letter:opening]</span>
-    [before=<span class="k">\blank</span>,
-        after=<span class="nb">{</span><span class="k">\blank</span><span class="na">[2*big]</span><span class="nb">}</span>,
-    ]
-
-<span class="c">% gets value of the variable namespace:key</span>
-<span class="k">\getvariable</span><span class="nb">{</span>namespace<span class="nb">}{</span>key<span class="nb">}</span>
-
-<span class="k">\long\def\Opening</span>#1<span class="nb">{</span><span class="c">%</span>
-    <span class="k">\getvariable</span><span class="nb">{</span>Letter:opening<span class="nb">}{</span>before<span class="nb">}</span>
-    <span class="k">\noindent</span><span class="nb">{</span><span class="k">\begstrut</span>#1<span class="k">\endstrut</span><span class="nb">}</span>
-    <span class="k">\getvariable</span><span class="nb">{</span>Letter:opening<span class="nb">}{</span>after<span class="nb">}</span>
-<span class="nb">}</span>
-</code></pre></div>
-<h2 id="_11">尺寸<a class="headerlink" href="#_11" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Name in ConTEXt</th>
-<th>Equivalent</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Inch</td>
-<td>in</td>
-<td>1 in = 2.54 cm</td>
-</tr>
-<tr>
-<td>Centimetre</td>
-<td>cm</td>
-<td>2.54 cm = 1 inch</td>
-</tr>
-<tr>
-<td>Millimetre</td>
-<td>mm</td>
-<td>100 mm = 1 cm</td>
-</tr>
-<tr>
-<td>Point</td>
-<td>pt</td>
-<td>72.27 pt = 1 inch</td>
-</tr>
-<tr>
-<td>Big point</td>
-<td>bp</td>
-<td>72 bp = 1 inch</td>
-</tr>
-<tr>
-<td>Scaled point</td>
-<td>sp</td>
-<td>65536 sp = 1 point</td>
-</tr>
-<tr>
-<td>Pica</td>
-<td>pc</td>
-<td>1 pc = 12 points</td>
-</tr>
-<tr>
-<td>Didot</td>
-<td>dd</td>
-<td>1157 dd = 1238 points</td>
-</tr>
-<tr>
-<td>Cicero</td>
-<td>cc</td>
-<td>1 cc = 12 didots</td>
-</tr>
-<tr>
-<td>当前“M”的宽度</td>
-<td>em</td>
-<td></td>
-</tr>
-<tr>
-<td>当前“x”的高度</td>
-<td>ex</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<div class="highlight"><pre><span></span><code><span class="c">% 改变段落缩进的三种形式</span>
-<span class="k">\parindent</span>=0pt
-<span class="k">\parindent</span> 0pt
-<span class="k">\parindent</span>0pt
-</code></pre></div>
-<p><strong>某些尺寸使用弹性赋值</strong></p>
-<p><code>\MeasureName plus MaxIncrement minus MaxDecrease</code></p>
-<div class="highlight"><pre><span></span><code><span class="k">\parskip</span> 3pt plus 2pt minus 1pt
-</code></pre></div>
-<h2 id="_12">输入特殊字符<a class="headerlink" href="#_12" title="Permanent link">#</a></h2>
-<ul>
-<li>空格和tab  \␣</li>
-<li>不断行空格  ~</li>
-<li>两个以上的断行为段（显示为空行），也可用一个显式空行\blank代替</li>
-<li>有时断行被解释为一个空格，而行尾注释%以避免引入空格（写宏的时候）</li>
-<li>破折号与连接号：断词用<code>-</code>，输入<code>-</code>或<code>\hyphen</code>；连接数字用<code>–</code>，输入<code>--</code>或<code>\endash</code>；连接句子用<code>—</code>，输入<code>---</code>或<code>\emdash</code>；减号/负号用<code>−</code>，输入<code>$-$</code>或<code>\minus</code>。</li>
-</ul>
-<h2 id="_13">文档与项目结构<a class="headerlink" href="#_13" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c">% First line of the document</span>
-<span class="c">% Preamble area:</span>
-<span class="c">% Containing the global configuration</span>
-<span class="c">% commands for the document</span>
-<span class="k">\starttext</span> <span class="c">% The body of the document begins here</span>
-...
-... <span class="c">% Document contents</span>
-...
-<span class="k">\stoptext</span> <span class="c">% End of the document</span>
-</code></pre></div>
-<p><strong>插入文件内容</strong></p>
-<ul>
-<li><code>\input FileName</code></li>
-<li><code>\ReadFile{FileName}</code> % 文件不存在时不会报错</li>
-<li><code>\readfile{FileName}{TextIfExists}{TextIfNotExists}</code></li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="c">% General configuration commands:</span>
-<span class="k">\input</span> MyConfiguration
-<span class="k">\starttext</span>
-<span class="k">\input</span> PageTitle
-<span class="k">\input</span> Preface
-<span class="k">\input</span> Chap1
-<span class="k">\input</span> Chap2
-<span class="k">\input</span> Chap3
-...
-<span class="k">\stoptext</span>
-</code></pre></div>
-<p><strong>环境文件</strong></p>
-<p>命名法：<code>MyMacros_env.tex</code>或<code>env_MyMacros.tex</code></p>
-<div class="highlight"><pre><span></span><code><span class="k">\startenvironment</span> MyEnvironment
-    <span class="k">\mainlanguage</span><span class="na">[en]</span>
-    <span class="k">\setupbodyfont</span><span class="na">[modern]</span>
-    <span class="k">\setupwhitespace</span><span class="na">[big]</span>
-    ...
-<span class="k">\stopenvironment</span>
-</code></pre></div>
-<p>插入环境文件内容的方法：</p>
-<ul>
-<li><code>\environment File</code></li>
-<li><code>\environment[File]</code></li>
-</ul>
-<p><strong>组件文件</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">\environment</span> MyEnvironment
-<span class="k">\environment</span> MyMacros
-<span class="k">\startcomponent</span> Chapter1
-    <span class="k">\startchapter</span><span class="na">[title={Chapter 1}]</span>
-    ...
-<span class="k">\stopcomponent</span>
-</code></pre></div>
-<p><strong>成品文件</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">\environment</span> MyEnvironment
-<span class="k">\environment</span> MyMacros
-<span class="k">\startproduct</span> MyBook
-    <span class="k">\component</span> Chapter1
-    <span class="k">\component</span> Chapter2
-    <span class="k">\component</span> Chapter3
-    ...
-<span class="k">\stopproduct</span>
-</code></pre></div>
-<p><strong>项目文件</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">\startproject</span> MyCollection
-    <span class="k">\environment</span> MyEnvironment
-    <span class="k">\environment</span> MyMacros
-    <span class="k">\product</span> Book01
-    <span class="k">\product</span> Book02
-    <span class="k">\product</span> Book03
-    ...
-<span class="k">\stopproject</span>
-</code></pre></div>
-<h2 id="_14">页面和分页<a class="headerlink" href="#_14" title="Permanent link">#</a></h2>
-<ul>
-<li>版面逻辑尺寸和印刷物理尺寸（通常一致） <code>\setuppapersize[LogicalPage][PhysicalPage]</code></li>
-<li>自定义尺寸常量： \definepapersize</li>
-<li>拼版 <code>\setuparranging</code> </li>
-<li>显式版面框架： \showframe</li>
-</ul>
-<p>文档任何位置都可以重设。</p>
-<p><strong>纸张适配内容</strong></p>
-<ul>
-<li>\startMPpage， MetaPost图形页</li>
-<li>\startpagefigure，图及文明文字页</li>
-<li>\startTEXpage，文本页</li>
-</ul>
-<p><code>\startTEXpage[Options] ... \stopTEXpage</code></p>
-<p><code>width</code>、<code>height</code>可赋值<code>fit</code></p>
-<ul>
-<li>\pagebreak</li>
-<li>\page</li>
-</ul>
-<h3 id="_15">页面元素和版面布局<a class="headerlink" href="#_15" title="Permanent link">#</a></h3>
-<p><img alt="layout" src="https://wiki.contextgarden.net/images/thumb/5/54/layout.svg/525px-layout.svg.png" /></p>
-<ul>
-<li>5X5块加空布局；</li>
-<li>头、顶；脚、底；左右边、沿；</li>
-</ul>
-<p>\setuplayout[Name] [Options]</p>
-<ul>
-<li>给页面组件设置尺寸</li>
-<li>设置逻辑页在物理页上的位置（结合\setuparranging设置逻辑页布局方式）</li>
-</ul>
-<p>多种页面布局：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\definelayout</span><span class="na">[Name/Number][Configuration]</span>
-<span class="k">\setuplayout</span><span class="na">[LayoutName]</span>
-...
-<span class="k">\setuplayout</span><span class="na">[reset]</span>
-</code></pre></div>
-<p>调整指定页面的高度或行数，用于定版前的微调，放导言区：</p>
-<p><code>\adaptlayout[Pages] [Options]</code></p>
-<p>指定布局的页码范围，在导言区：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\definelayout</span><span class="na">[1][...]</span>
-<span class="k">\definelayout</span><span class="na">[3][reset]</span>
-</code></pre></div>
-<p>单双页布局：</p>
-<ul>
-<li>\definelayout[even]</li>
-<li>\definelayout[odd]</li>
-</ul>
-<p>展示页面布局：</p>
-<ul>
-<li>\showsetups</li>
-<li>\showframe</li>
-<li>\showlayout，兼有前二者的功能</li>
-</ul>
-<p>获取版心/文本区域宽高：</p>
-<ul>
-<li>\textwidth</li>
-<li>\textheight</li>
-</ul>
-<h3 id="_16">设置页码<a class="headerlink" href="#_16" title="Permanent link">#</a></h3>
-<ul>
-<li>\setuppagenumbering</li>
-<li>\setupuserpagenumber</li>
-</ul>
-<p>配合\defineconversionset使用</p>
-<p>获取页码：</p>
-<ul>
-<li>\userpagenumber，用户定制页码</li>
-<li>\pagenumber，页码的阿拉伯数字</li>
-<li>\realpagenumber，未考虑定制的实际页码的数字</li>
-</ul>
-<p>对应形式的末页页码：</p>
-<ul>
-<li>\lastuserpagenumber</li>
-<li>\lastpagenumber</li>
-<li>\lastrealpagenumber.</li>
-</ul>
-<h3 id="_17">建议分页/不分页、强制分页<a class="headerlink" href="#_17" title="Permanent link">#</a></h3>
-<p>\page</p>
-<p>选项：</p>
-<ul>
-<li>no，不建议分页</li>
-<li>preference，建议分页</li>
-<li>bigpreference，强烈建议分页</li>
-</ul>
-<p>选项：</p>
-<ul>
-<li>yes，强制分页</li>
-<li>makeup，立即分页，不预先放置挂起的浮动体</li>
-<li>empty，插入空页</li>
-<li>even，插入页直到双页</li>
-<li>odd，插入页直到单页</li>
-<li>left, right，同前两项，仅用于根据单双页转换不同天头、地脚和页边的双册印刷文档</li>
-<li>quadruple，插入页直到4的倍数页</li>
-</ul>
-<p>TEX boxe是不能分页的</p>
-<p><code>\vbox{Material}</code></p>
-<p>有些环境使用了盒子，如<code>framedtext</code>，也不会分页。</p>
-<h3 id="_18">天头、地脚的配置<a class="headerlink" href="#_18" title="Permanent link">#</a></h3>
-<ul>
-<li>\setupheadertexts</li>
-<li>\setupfootertexts</li>
-</ul>
-<p><div class="highlight"><pre><span></span><code><span class="k">\setupfootertexts</span><span class="na">[pagenumber]</span> <span class="c">% 居中显式</span>
-<span class="k">\setupheadertexts</span><span class="na">[Preface][pagenumber]</span> <span class="c">% 左右分别显式</span>
-</code></pre></div>
-可选参数（这些符号名称只能单独使用，否则视作普通字符串）：</p>
-<ul>
-<li>日期：date, currentdate; </li>
-<li>页码：pagenumber;</li>
-<li>结构： part, chapter, section...; </li>
-<li>结构序号： partnumber, chapternumber, sectionnumber...</li>
-</ul>
-<p>也可使用相应的命令：</p>
-<p><code>\date</code> <code>\currentdate</code> <code>\pagenumber</code> <code>\getmarking[chapter]</code> <code>\getmarking[chapternumber]</code></p>
-<p>格式化配置：</p>
-<ul>
-<li>\setupheader</li>
-<li>\setupfooter</li>
-</ul>
-<p>定义后链接到小节命令中：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\definetext</span><span class="na">[ChapterFirstPage]</span> [footer] [pagenumber]
-<span class="k">\setuphead</span><span class="na">[chapter][header=high, footer=ChapterFirstPage]</span>
-</code></pre></div>
-<p>关闭天头地脚<code>\noheaderandfooterlines</code></p>
-<p>生成无页码的页<code>\page[blank]</code></p>
-<h3 id="edgesmargins">页面外边edges、内边margins插入元素<a class="headerlink" href="#edgesmargins" title="Permanent link">#</a></h3>
-<ul>
-<li>\setuptoptexts: 上边</li>
-<li>\setupbottomtexts: 下边</li>
-<li>\margindata，实例：<ul>
-<li>\inleftmargin defined as \definemargindata[inleftmargin][left][margin=margin,width=\leftmarginwidth,style=,color=]</li>
-<li>\inrightmargin    defined as \definemargindata[inrightmargin][right][margin=margin,width=\rightmarginwidth,style=,color=]</li>
-<li>\inoutermargin    defined as \definemargindata[inoutermargin][outer][margin=margin,width=\outermarginwidth,style=,color=]</li>
-<li>\ininnermargin    defined as \definemargindata[ininnermargin][inner][margin=margin,width=\innermarginwidth,style=,color=]</li>
-<li>\inleftedge   defined as \definemargindata[inleftedge][left][margin=edge,width=\leftedgewidth,style=,color=,category=edge]</li>
-<li>\inrightedge  defined as \definemargindata[inrightedge][right][margin=edge,width=\rightedgewidth,style=,color=,category=edge]</li>
-<li>\inouteredge  defined as \definemargindata[inouteredge][outer][margin=edge,width=\outeredgewidth,style=,color=,category=edge]</li>
-<li>\ininneredge  defined as \definemargindata[ininneredge][inner][margin=edge,width=\inneredgewidth,style=,color=,category=edge]</li>
-<li>\atleftmargin defined as \definemargindata[atleftmargin][left][margin=normal,width=\leftmarginwidth,style=,color=]</li>
-<li>\atrightmargin    defined as \definemargindata[atrightmargin][right][margin=normal,width=\rightmarginwidth,style=,color=]</li>
-<li>\inleft   defined as \definemargindata[inleft][left][margin=margin,width=\leftmarginwidth,align=flushright]</li>
-<li>\inright  defined as \definemargindata[inright][right][margin=margin,width=\rightmarginwidth,align=flushleft]</li>
-<li>\inouter  defined as \definemargindata[inouter][outer][margin=margin,width=\outermarginwidth,align=inner]</li>
-<li>\ininner  defined as \definemargindata[ininner][inner][margin=margin,width=\innermarginwidth,align=outer]</li>
-<li>\inmargin defined as \definemargindata[inmargin][left][margin=margin,width=\leftmarginwidth,align=flushright]</li>
-<li>\inother  defined as \definemargindata[inother][right][margin=margin,width=\rightmarginwidth,align=flushleft]</li>
-<li>\margintext   defined as \definemargindata[margintext][left][margin=margin,width=\leftmarginwidth,align=flushright,stack=yes]</li>
-</ul>
-</li>
-</ul>
-<p>语法：</p>
-<p><code>\CommandName[Reference][Configuration]{Text}</code></p>
-<p>全局配置页边文本：</p>
-<p><code>\setupmargindata[right][style=slanted]</code></p>
-<h2 id="typescript">字体脚本 typescript<a class="headerlink" href="#typescript" title="Permanent link">#</a></h2>
-<p><strong>官方配置脚本（增补）</strong></p>
-<p><code>D:\venvs\texlive\2021\texmf-dist\tex\context\fonts\mkiv\type-imp-mscore.mkiv</code></p>
-<p>用法参考： https://wiki.contextgarden.net/Chinese_Japanese_and_Korean</p>
-<p>增补用法：</p>
-<div class="highlight"><pre><span></span><code><span class="c">% Enable fonts</span>
-<span class="k">\usetypescriptfile</span><span class="na">[mscore]</span>
-<span class="c">% \usebodyfont   [mschinese,12pt]</span>
-<span class="c">% \usebodyfont   [mschinese-light,12pt]</span>
-<span class="k">\usebodyfont</span>   [mschinese-literate,12pt]
-<span class="c">% 或</span>
-<span class="c">% \setupbodyfont [mschinese-literate,12pt]</span>
-<span class="k">\definebodyfontenvironment</span><span class="na">[24pt]</span>
-<span class="k">\definebodyfontenvironment</span><span class="na">[18pt]</span>
-</code></pre></div>
-<p><strong>拼音字体设置</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c">% tex/texmf-fonts/tex/context/user/type-ahpinyin.tex</span>
-<span class="k">\starttypescript</span> [ahpinyin]
-<span class="c">% \definefontsynonym[Human readable]       [file:filename without extension]</span>
-  <span class="k">\definefontsynonym</span><span class="na">[NotoSerif-Regular]</span>    [file:AHPinYin]
-  <span class="k">\definefontsynonym</span><span class="na">[NotoSerif-Italic]</span>     [file:AHPinYin]
-  <span class="k">\definefontsynonym</span><span class="na">[NotoSerif-Bold]</span>       [file:AHPinYin]
-  <span class="k">\definefontsynonym</span><span class="na">[NotoSerif-BoldItalic]</span> [file:AHPinYin]
-<span class="k">\stoptypescript</span>
-
-<span class="k">\starttypescript</span> [ahpinyin]
-  <span class="k">\setups</span><span class="na">[font:fallback:serif]</span>          <span class="c">% 安全设置: 如果没有发现时使用备用字体</span>
-<span class="c">% \definefontsynonym[ConTeXt basics name] [Human readable]       [features=default]</span>
-  <span class="k">\definefontsynonym</span><span class="na">[Serif]</span>                [NotoSerif-Regular]    [features=default]
-  <span class="k">\definefontsynonym</span><span class="na">[SerifItalic]</span>          [NotoSerif-Italic]     [features=default]
-  <span class="k">\definefontsynonym</span><span class="na">[SerifBold]</span>            [NotoSerif-Bold]       [features=default]
-  <span class="k">\definefontsynonym</span><span class="na">[SerifBoldItalic]</span>      [NotoSerif-BoldItalic] [features=default]
-<span class="k">\stoptypescript</span>
-
-<span class="c">% #3. 把&quot;ahpinyin&quot;字体脚本中的四种变体包定义为calligraphic typeface</span>
-<span class="k">\starttypescript</span> [ahpinyin]
-  <span class="k">\definetypeface</span> [ahpinyin]  [cg] [calligraphic] [ahpinyin]    [default]
-<span class="k">\stoptypescript</span>
-
-<span class="c">% 使用字体脚本`type-ahpinyin.tex`设置拼音字体</span>
-<span class="c">% \usetypescriptfile[ahpinyin]</span>
-<span class="c">% \definefont[pinyin][ahpinyin]</span>
-<span class="c">% 或者直接使用</span>
-<span class="c">% \definefont[pinyin][name:ahpinying*default at 9pt]</span>
-</code></pre></div>
-<p>更新手动安装的（outside of tlmgr）文件数据：<code>context --generate</code></p>
-<p><strong>中文字体设置</strong></p>
-<p>参考： http://liyanrui.is-programmer.com/2009/10/21/not-just-for-chinese.12264.html</p>
-<div class="highlight"><pre><span></span><code><span class="c">% 字体脚本typescript `type-myfonts.tex`</span>
-<span class="c">% 定义一个脚本，名为[serif][zhfont]，衬线体</span>
-<span class="k">\starttypescript</span><span class="na">[serif][zhfont]</span>
-    <span class="c">% 字体各变体与系统中对应的字体名称</span>
-    <span class="k">\definefontsynonym</span><span class="na">[Serif][name:adobesongstd]</span>
-    <span class="k">\definefontsynonym</span><span class="na">[SerifBold][name:adobesongstd]</span>
-    <span class="k">\definefontsynonym</span><span class="na">[SerifItalic][name:adobesongstd]</span>
-    <span class="k">\definefontsynonym</span><span class="na">[SerifBoldItalic][name:adobesongstd]</span>
-<span class="k">\stoptypescript</span>
-
-<span class="c">% 再定义一个脚本，名为[sans][zhfont]，无衬线体</span>
-<span class="k">\starttypescript</span> [sans][zhfont]
-    <span class="k">\definefontsynonym</span><span class="na">[Sans][name:adobeheitistd]</span>
-    <span class="k">\definefontsynonym</span><span class="na">[SansBold][name:adobeheitistd]</span>
-    <span class="k">\definefontsynonym</span><span class="na">[SansItalic][name:adobeheitistd]</span>
-    <span class="k">\definefontsynonym</span><span class="na">[SansBoldItalic][name:adobeheitistd]</span>
-<span class="k">\stoptypescript</span>
-
-<span class="c">% 再定义一个脚本，名为[mono][zhfont]，等宽字体</span>
-<span class="k">\starttypescript</span> [mono][zhfont]
-    <span class="k">\definefontsynonym</span><span class="na">[Mono][name:adobefangsongstd]</span>
-    <span class="k">\definefontsynonym</span><span class="na">[MonoBold][name:adobefangsongstd]</span>
-    <span class="k">\definefontsynonym</span><span class="na">[MonoItalic][name:adobefangsongstd]</span>
-    <span class="k">\definefontsynonym</span><span class="na">[MonoBoldItalic][name:adobefangsongstd]</span>
-<span class="k">\stoptypescript</span>
-
-<span class="c">% 定义脚本[myfonts]，其中定义typeface</span>
-<span class="k">\starttypescript</span><span class="na">[myfonts]</span>
-    <span class="c">% 定义typeface[myfonts]，</span>
-    <span class="c">% 使用[serif][zhfont]为rm字体</span>
-    <span class="k">\definetypeface</span><span class="na">[myfonts][rm][serif][zhfont]</span>
-    <span class="c">% 使用[sans][zhfont]为ss字体</span>
-    <span class="k">\definetypeface</span><span class="na">[myfonts][ss][sans][zhfont]</span>
-    <span class="c">% 使用[mono][zhfont]为tt字体</span>
-    <span class="k">\definetypeface</span><span class="na">[myfonts][tt][mono][zhfont]</span>
-<span class="k">\stoptypescript</span>
-</code></pre></div>
-<p>在文稿中使用：</p>
-<div class="highlight"><pre><span></span><code><span class="c">% 使用字体脚本文件</span>
-<span class="k">\usetypescriptfile</span><span class="na">[myfonts]</span>
-<span class="c">% 使用字体脚本</span>
-<span class="k">\usetypescript</span><span class="na">[myfonts]</span>
-<span class="c">% 设置主字体</span>
-<span class="k">\setupbodyfont</span><span class="na">[myfonts,rm,12pt]</span>
-
-<span class="k">\starttext</span>
-
-所有动物都生而平等，但有些动物比其他动物更平等
-
-<span class="k">\ss</span> 所有动物都生而平等，但有些动物比其他动物更平等
-
-<span class="k">\tt</span> 所有动物都生而平等，但有些动物比其他动物更平等
-
-<span class="k">\stoptext</span>
-</code></pre></div>
-<p>定义后备字体（多语言字体）newsong：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\definefontsynonym</span><span class="na">[song][name:adobesongstd]</span>
-<span class="c">% 指定应用范围的后备字体</span>
-<span class="k">\definefontfallback</span><span class="na">[hereos][name:texgyreherosregular][0x0000-0x0400]</span>
-<span class="k">\definefontsynonym</span><span class="na">[fbsong][song][fallbacks=hereos]</span>
-<span class="k">\definefont</span><span class="na">[newsong][fbsong]</span>
-</code></pre></div>
-<h2 id="_19">安装字体<a class="headerlink" href="#_19" title="Permanent link">#</a></h2>
-<p>字体文件可以出放在<code>tex/texmf-fonts/fonts/</code>，或<code>tex/texmf-fonts/fonts/truetype/vendor/fontfamily</code>（注意对应字体类型）</p>
-<p>使用系统字体，先设置环境变量：</p>
-<p>set OSFONTDIR=C:\Windows\Fonts</p>
-<p>索引：</p>
-<p>mtxrun --generate
-mtxrun --script font --reload</p>
-<p>查找你想要字体（包括文件名和符号名称），比如：</p>
-<p>mtxrun --script fonts --list --all --pattern=<em>pinin</em></p>
-<div class="highlight"><pre><span></span><code>identifier         familyname   fontname    filename                        subfont   instances
----
-ahpinying          ahpinying    ahpinying   c:/windows/fonts/AHPinYin.TTF
-ahpinyingnormal    ahpinying    ahpinying   c:/windows/fonts/AHPinYin.TTF
-ahpinyingregular   ahpinying    ahpinying   c:/windows/fonts/AHPinYin.TTF
-</code></pre></div>
-<p>或列出四种特性：</p>
-<blockquote>
-<p>mtxrun --script fonts --list --spec deng-light</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code>familyname   weight   style    width    variant   fontname        filename                     subfont   fontweight
-dengxian     light    normal   normal   normal    dengxianlight   c:/windows/fonts/Dengl.ttf
-</code></pre></div>
-<ol>
-<li>weight black bold demi demibold extrabold heavy light medium mediumbold normal regular semi semibold ultra ultrabold ultralight</li>
-<li>style italic normal oblique regular reverseitalic reverseoblique roman slanted</li>
-<li>width book condensed expanded normal thin</li>
-<li>variant normal oldstyle smallcaps</li>
-</ol>
-<p>然后定义名称后使用<code>\definefont[pinyin][name:ahpinying*default at 9pt]</code>（或定义后立即自动使用<code>\definedfont</code>）。格式如下：</p>
-<ul>
-<li>\definefont[PublicReference][filename*featurenames scaling] % filename可以附加前缀<code>name:</code>，表示使用符号名称； <code>file:</code>表示使用文件名，可以使用后缀<code>.ttf</code>等；featurenames可以使用预制的<code>default</code>，或使用<code>\definefontfeature</code>定义</li>
-<li>\definefont[PublicReference][filename:featurespecication scaling] % 仅用户XƎTEX样式的字体</li>
-<li>\definefont[PublicReference][filename@virtualconstructor scaling] % 适用于虚拟字体，如数学字体，虚拟特性可参考m-punk.mkiv文件</li>
-</ul>
-<p>指定字号的方法：</p>
-<ul>
-<li>at 72pt，有赖于设计尺寸，不可靠</li>
-<li>scaled 2400，硬编码缩放</li>
-<li>sa 2.4，相对于body font尺寸缩放，scaled at the body font size<ul>
-<li>\definefont [TitleFont] [Serif sa b]</li>
-<li>\definefont [TitleFont] [Serif]，会转换为\definefont [TitleFont] [Serif sa *]，展开为当前字体尺寸</li>
-</ul>
-</li>
-</ul>
-<p>字体还可用关键字匹配查询（查找算法比较灵活而复杂/不可靠）：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\definefallbackfamily</span> [documentfont] [rm] [notoserifcjksc] [preset=range:chinese] <span class="c">% 例外，见下</span>
-<span class="k">\definefallbackfamily</span> [documentfont] [ss] [Noto Sans CJK SC][preset=range:chinese]
-<span class="k">\definefallbackfamily</span> [documentfont] [tt] [Noto Sans Mono CJK SC][preset=range:chinese]
-
-<span class="k">\definefontfamily</span> [documentfont] [rm] [Noto Serif]
-<span class="k">\definefontfamily</span> [documentfont] [ss] [Noto Sans]
-<span class="k">\definefontfamily</span> [documentfont] [tt] [Noto Sans Mono]
-
-<span class="k">\setupbodyfont</span> [documentfont]
-</code></pre></div>
-<p><strong>当一个字体文件被分列为多条时，如：</strong></p>
-<div class="highlight"><pre><span></span><code>notoserifcjksc             notoserifcjksc      notoserifcjkscregular      c:/windows/fonts/NotoSerifCJKsc-Regular.otf
-notoserifcjkscnormal       notoserifcjksc      notoserifcjkscregular      c:/windows/fonts/NotoSerifCJKsc-Regular.otf
-notoserifcjkscregular      notoserifcjksc      notoserifcjkscregular      c:/windows/fonts/NotoSerifCJKsc-Regular.otf
-</code></pre></div>
-<p>首次无法通过字体文件名或关键字匹配查询来使用，而只能通过主条（最短一条）的identifier（即notoserifcjksc）使用；此后可一通过关键字匹配查询来使用（可能是优先匹配已缓存字体的缘故）。</p>
-<p>汉字字间拉伸胶：scrp-cjk.lua，一个测试版本确实补偿了蹩脚的半宽，但我们最好在字体定义时进行补偿，并且/或者只是假设一个正确的字体。</p>
-<p><strong>字体颜色特性</strong></p>
-<p>颜文字着色</p>
-<div class="highlight"><pre><span></span><code><span class="k">\definefontfeature</span><span class="na">[colored][colr=yes]</span>
-<span class="k">\definefontsynonym</span><span class="na">[Emoji][file:seguiemj.ttf*default,colored]</span>
-<span class="k">\definesymbol</span><span class="na">[bug][\getglyphdirect{Emoji}{\char&quot;1F41B}]</span>
-<span class="k">\definesymbol</span><span class="na">[ant][\getglyphdirect{Emoji}{\char&quot;1F41C}]</span>
-<span class="k">\definesymbol</span><span class="na">[bee][\getglyphdirect{Emoji}{\char&quot;1F41D}]</span>
-
-<span class="c">% 或者用svg</span>
-<span class="k">\definefontfeature</span><span class="na">[svg][svg=yes]</span>
-<span class="k">\definefontsynonym</span><span class="na">[Emoji][file:emojionecolor-svginot.ttf*default,svg]</span>
-</code></pre></div>
-<h2 id="_20">字体知识<a class="headerlink" href="#_20" title="Permanent link">#</a></h2>
-<ul>
-<li>\setupbodyfont[Options]</li>
-<li>\switchtobodyfont</li>
-<li>\showbodyfont[Options]</li>
-<li>\showfont[FontName]</li>
-</ul>
-<p>显式主体字体（风格*变形+字号）<code>\showbodyfont[schola, 8pt]</code></p>
-<p><img alt="" src="../img/ConTeXt%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021-12-20-09-32-56.png" /></p>
-<p><strong>字体抽象层次：</strong></p>
-<ul>
-<li>typeface 字面（字体总体）<ul>
-<li>style 字体风格<ul>
-<li>alternative  风格变体</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>font style 字体风格</strong></p>
-<table>
-<thead>
-<tr>
-<th>Style</th>
-<th>Symbolic names &amp; Commands</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Roman</td>
-<td>\rm, \roman, \serif, \regular</td>
-</tr>
-<tr>
-<td>Sans Serif</td>
-<td>\ss, \sans, \support, \sansserif</td>
-</tr>
-<tr>
-<td>Monospaced</td>
-<td>\tt, \modo, type, \teletype</td>
-</tr>
-<tr>
-<td>Handwritten</td>
-<td>\hw, \handwritten</td>
-</tr>
-<tr>
-<td>Calligraphic</td>
-<td>\cg, \calligraphic</td>
-</tr>
-</tbody>
-</table>
-<p><strong>font alternative 字体变体</strong></p>
-<table>
-<thead>
-<tr>
-<th>Alternative</th>
-<th>Commands that enable it</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Normal</td>
-<td>\tf, \normal</td>
-</tr>
-<tr>
-<td>Italic</td>
-<td>\it, \italic</td>
-</tr>
-<tr>
-<td>Bold</td>
-<td>\bf, \bold</td>
-</tr>
-<tr>
-<td>Bold-italic</td>
-<td>\bi, \bolditalic, \italicbold</td>
-</tr>
-<tr>
-<td>Slanted</td>
-<td>\sl, \slanted</td>
-</tr>
-<tr>
-<td>Bold-slanted</td>
-<td>\bs, \boldslanted, \slantedbold</td>
-</tr>
-<tr>
-<td>Small caps</td>
-<td>\sc, \smallcaps</td>
-</tr>
-<tr>
-<td>Medieval</td>
-<td>\os, \mediaeval</td>
-</tr>
-</tbody>
-</table>
-<p><strong>6个改变字号的变体后缀</strong></p>
-<p><code>{\tfxx test}, {\tfx test}, {\tf test}, {\tfa test}, {\tfb test}, {\tfc test}, {\tfd test}</code></p>
-<p><strong>定制后缀的缩放权重（主字体环境）</strong></p>
-<ul>
-<li>\definebodyfontenvironment[particular size][scaled]<ul>
-<li>\definebodyfontenvironment[10pt][a=12pt,b=14pt,c=2, d=3]</li>
-</ul>
-</li>
-<li>\definebodyfontenvironment[default][scaled]<ul>
-<li>\definebodyfontenvironment[default][a=1.3,b=1.6,c=2.5,d=4]</li>
-</ul>
-</li>
-</ul>
-<p>除后缀外，以下关键词也可以定制：big, small, script, scriptscript，会影响这些命令：</p>
-<ul>
-<li>\smallbold</li>
-<li>\smallslanted</li>
-<li>\smallboldslanted</li>
-<li>\smallslantedbold</li>
-<li>\smallbolditalic</li>
-<li>\smallitalicbold</li>
-<li>\smallbodyfont</li>
-<li>\bigbodyfont</li>
-</ul>
-<p><strong>显式后缀的缩放权重（主字体环境）</strong></p>
-<p>\showbodyfontenvironment[Font]</p>
-<p><strong>为字体风格、变形、尺寸定义命令和关键词</strong></p>
-<ul>
-<li>\definebodyfontswitch[eight][8pt]</li>
-<li>\definefontstyle[paloseco][ss]</li>
-<li>\definefontstyle[paloseco, sosa, sinrebordes][ss]</li>
-<li>\definealternativestyle[strong][\bf][]</li>
-</ul>
-<p><strong>意大利体、斜体和强调体 \it, \sl and \em</strong></p>
-<ul>
-<li>\setupbodyfontenvironment[default][em=italic]</li>
-</ul>
-<p><strong>小型大写与伪小型大写 Small caps and fake small caps</strong></p>
-<ul>
-<li>\cap and \Cap</li>
-</ul>
-<h2 id="_21">颜色<a class="headerlink" href="#_21" title="Permanent link">#</a></h2>
-<ul>
-<li>\definehighlight[important][color=red]<ul>
-<li>\important{Very important text}</li>
-</ul>
-</li>
-<li>\color[ColourName]{Text to colour}<ul>
-<li>\color[red]{Very important text}</li>
-</ul>
-</li>
-<li>\colored[r=0.1, g=0.8, b=0.8]{coloured} </li>
-<li>\startcolor[ColourName] ... \stopcolor</li>
-<li>\setupcolors[textcolor=red]</li>
-<li>\setuphead[chapter][color=blue]</li>
-<li>\setupbackgrounds[page][background=color,backgroundcolor=blue]</li>
-</ul>
-<p><strong>预定义颜色</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Light tone</th>
-<th>Medium tone</th>
-<th>Dark tone</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>black</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>white</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>gray</td>
-<td>lightgray</td>
-<td>middlegray</td>
-<td>darkgray</td>
-</tr>
-<tr>
-<td>red</td>
-<td>lightred</td>
-<td>middlered</td>
-<td>darkred</td>
-</tr>
-<tr>
-<td>green</td>
-<td>lightgreen</td>
-<td>middlegreen</td>
-<td>darkgreen</td>
-</tr>
-<tr>
-<td>blue</td>
-<td>lightblue</td>
-<td>middleblue</td>
-<td>darkblue</td>
-</tr>
-<tr>
-<td>cyan</td>
-<td></td>
-<td>middlecyan</td>
-<td>darkcyan</td>
-</tr>
-<tr>
-<td>magenta</td>
-<td></td>
-<td>middlemagenta</td>
-<td>darmagenta</td>
-</tr>
-<tr>
-<td>yellow</td>
-<td></td>
-<td>middleyellow</td>
-<td>darkyellow</td>
-</tr>
-</tbody>
-</table>
-<p><strong>预定义色谱</strong></p>
-<ul>
-<li>\showcolor[CollectionName]</li>
-<li>\showcolorcomponents[ColourName]<ul>
-<li>\showcolorcomponents[darkgoldenrod]</li>
-</ul>
-</li>
-<li>
-<p>\usecolors[CollectionName]</p>
-<ul>
-<li>\usecolors[xwi]</li>
-<li>\color[darkgoldenrod]{Tweedledum and Tweedledee}</li>
-</ul>
-</li>
-<li>
-<p>“crayola”, 235 colours imitating marker shades.</p>
-</li>
-<li>“dem”, 91 colours.</li>
-<li>“ema”, 540 colour definitions based on colours used by Emacs.</li>
-<li>“rainbow”, 91 colours for use in maths formulas.</li>
-<li>“ral”, 213 colour definitions from the Deutsches Institut für Gütesicherung und Kennzeichnung (German Institute for Quality Assurance and Labelling).</li>
-<li>“rgb”, 223 colours.</li>
-<li>“solarized”, 16 colours based on the solarized scheme.</li>
-<li>“svg”, 147 colours.</li>
-<li>“x11”, 450 standard colours for X11.</li>
-<li>“xwi”, 124 colours.</li>
-</ul>
-<p><strong>自定义颜色</strong></p>
-<ul>
-<li>\definecolor[New colour][Old colour]<ul>
-<li>\definecolor[maincolour][0.6(orange)]</li>
-</ul>
-</li>
-<li>\definecolor[ColourName][Definition]<ul>
-<li>\definecolor[lime 1][r=0.75, g=1, b=0]</li>
-<li>\definecolor[lime 2][x=BFFF00]</li>
-<li>\definecolor[lime 3][c=0.25, m=0, y=1, k=0]</li>
-<li>\definecolor[lime 4][h=75, s=1, v=1]</li>
-<li>\definecolor[Azure][h=75, w=0.2, b=0.7]</li>
-<li>\definecolor[light grey][s=0.65]</li>
-</ul>
-</li>
-</ul>
-<h2 id="_22">文档结构<a class="headerlink" href="#_22" title="Permanent link">#</a></h2>
-<h3 id="_23">目录<a class="headerlink" href="#_23" title="Permanent link">#</a></h3>
-<p><a href="https://wiki.contextgarden.net/Table_of_Contents">官方文档</a></p>
-<p><strong>目录是内置的联合列表(combinedlist)。</strong></p>
-<ul>
-<li>设置目录联合列表：\setupcombinedlist[content][list={chapter,section},alternative=c]<ul>
-<li>list选项指定head级别，<strong><code>\definehead</code>自定义级别必须额外指定</strong></li>
-<li>alternative选项指定版式：a...g，可通过\setuplist设置</li>
-</ul>
-</li>
-<li>设置目录的pdf交互：\setupinteraction[state=start,focus=width]</li>
-<li>放置目录：<ul>
-<li><code>\completecontent</code>，会在目录前自动生成 \title{目录}，目录标题名称可以更改：<code>\setupheadtext[chinese][content=目次]</code></li>
-<li><code>\placecontent</code>，根据放置位置生成其下各级目录，如放在章、节下则只能显式本章、节之下的目录<ul>
-<li>criterium选项指定内容：all previous [part, chapter, section, subsection..] component</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>条目格式化 \setuplist[Element][Configuration]<ul>
-<li>\definelistalternative定义alternative</li>
-</ul>
-</li>
-</ul>
-<p><strong>默认只加入编号的目录，</strong> 手动加入未编号head级别：<code>\setuphead[title][incrementnumber=yes]</code></p>
-<p>手动加入指定head实例：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\subject</span><span class="nb">{</span>Bibliography<span class="nb">}</span>
-<span class="k">\writetolist</span><span class="na">[section]</span><span class="nb">{}{</span>Bibliography<span class="nb">}</span>
-</code></pre></div>
-<p>条目间加入分割：</p>
-<p>\writebetweenlist[section]{\hrule}</p>
-<p>目录与实际标题不同：</p>
-<ul>
-<li>\SectionType [Options], or with \startSectionType [Options]</li>
-<li>特定文字不列入列表用 <code>\nolist</code> or <code>\nomarking</code>：<ul>
-<li><code>\chapter[title={An \nolist{approximate and slightly repetitive}introduction to the reality of the obvious}]</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="_24">列表和联合列表<a class="headerlink" href="#_24" title="Permanent link">#</a></h2>
-<p>根据列表生成列表、联合列表和目录。列表需要三个元素：</p>
-<ol>
-<li>The number.</li>
-<li>The name or title.</li>
-<li>The page where it is found.</li>
-</ol>
-<p>有序号的标题（无序号标题加入选项<code>incrementnumber=yes</code>）和\place...(如\placetable, \placefigure)命令生成的列表，都能满足要求。</p>
-<p>生成、设置与使用列表与目录近似：</p>
-<ul>
-<li>\definelist[ListName][Configuration]</li>
-<li>\setuplist[ListName][Configuration]</li>
-<li>\placelist[ListName][Options]</li>
-<li>\completelist</li>
-</ul>
-<p>联合列表</p>
-<ul>
-<li>\definecombinedlist[Name][Lists][Options]，Lists如<code>part, chapter, section, subsection</code>，会自动生成放置命令\placeName</li>
-<li>\setupcombinedlist</li>
-</ul>
-<h2 id="_25">结构列表<a class="headerlink" href="#_25" title="Permanent link">#</a></h2>
-<p>用于结构复杂的列表，比如练习题。</p>
-<p><code>\startitemize[Options][Configuration] ... \stopitemize</code></p>
-<div class="highlight"><pre><span></span><code><span class="c">% 设置结构列表，标题字体风格，标题后命令</span>
-<span class="k">\setupitemize</span><span class="na">[headstyle=bold,afterhead={\blank[medium]</span><span class="nb">}</span>]
-
-<span class="k">\startitemize</span>
-  <span class="k">\starthead</span><span class="nb">{</span>标题<span class="nb">}</span>
-    <span class="k">\input</span> 列表项目1正文
-  <span class="k">\stophead</span>
-  <span class="k">\startitem</span>
-    <span class="k">\input</span> 列表项目2正文
-  <span class="k">\stopitem</span>
-<span class="k">\stopitemize</span>
-</code></pre></div>
-<p>自定义类似\startitemize的结构列表：</p>
-<ul>
-<li>\defineitemgroup[myitems]</li>
-<li>\setupitemgroup [myitems] [each] [joinedup]</li>
-<li>\setupitemgroup [myitems] [each] [itemalign=flushright]</li>
-</ul>
-<h2 id="_26">索引<a class="headerlink" href="#_26" title="Permanent link">#</a></h2>
-<ul>
-<li>\index[Alphabetical]{Index entry}<ul>
-<li>\index{Entry 1+Entry 2+Entry 3}，多级别（最多三级）</li>
-</ul>
-</li>
-<li>\seeindex[Alphabetical] {Entry1} {Entry2+Entry 3}，参见Entry2+Entry 3</li>
-<li>\placeindex</li>
-<li>\placeindex</li>
-<li>\completindex</li>
-<li>\setupregister[index][Configuration]</li>
-</ul>
-<p>生成其他索引</p>
-<ul>
-<li>\defineregister[IndexName] [Configuration]，自动生成命令：<ul>
-<li>\IndexName</li>
-<li>\placeIndexName</li>
-<li>completeIndexName</li>
-</ul>
-</li>
-<li>\setupregister[IndexName] [Configuration]</li>
-</ul>
-<h2 id="_27">引用和超链接<a class="headerlink" href="#_27" title="Permanent link">#</a></h2>
-<p>pdf书签</p>
-<ul>
-<li>\placebookmarks[List of sections]<ul>
-<li>\placebookmarks[all]</li>
-</ul>
-</li>
-</ul>
-<p>先设置交互，再设置书签才有效。</p>
-<h3 id="_28">同义词<a class="headerlink" href="#_28" title="Permanent link">#</a></h3>
-<h3 id="_29">排序<a class="headerlink" href="#_29" title="Permanent link">#</a></h3>
-<h3 id="mark">mark<a class="headerlink" href="#mark" title="Permanent link">#</a></h3>
-<ul>
-<li>\marking[IDENTIFIER][CONTENT], TEX \mark</li>
-<li>\getmarking [IDENTIFIER...][first|last|previous|both|all|current]</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">\definemarking</span><span class="na">[words]</span>
-<span class="k">\marking</span><span class="na">[words]</span><span class="nb">{</span>first<span class="nb">}</span>first word ...
-<span class="k">\marking</span><span class="na">[words]</span><span class="nb">{</span>second<span class="nb">}</span>second word ...
-<span class="k">\page</span>
-<span class="k">\marking</span><span class="na">[words]</span><span class="nb">{</span>third<span class="nb">}</span>third word ...
-<span class="k">\marking</span><span class="na">[words]</span><span class="nb">{</span>fourth<span class="nb">}</span>fourth word ...
-<span class="k">\page</span>
-<span class="k">\marking</span><span class="na">[words]</span><span class="nb">{</span>fifth<span class="nb">}</span>fifth word ...
-<span class="k">\page</span>
-
-<span class="k">\setupfootertexts</span>
-[<span class="nb">{</span><span class="k">\getmarking</span><span class="na">[words][previous]</span><span class="nb">}</span> --
-<span class="nb">{</span><span class="k">\getmarking</span><span class="na">[words][first]</span><span class="nb">}</span> --
-<span class="nb">{</span><span class="k">\getmarking</span><span class="na">[words][last]</span><span class="nb">}</span>]
-[]
-
-<span class="k">\setupfootertexts</span><span class="na">[chapter][sectionnumber]</span>
-
-<span class="k">\definehead</span><span class="na">[category][subsection]</span>
-<span class="k">\setupfootertexts</span><span class="na">[chapter][category]</span>
-<span class="k">\definemarking</span><span class="na">[category]</span>
-<span class="k">\couplemarking</span><span class="na">[category][subsection]</span>
-</code></pre></div>
-<h3 id="_30">交叉引用<a class="headerlink" href="#_30" title="Permanent link">#</a></h3>
-<p>锚点：</p>
-<ul>
-<li>\reference [REFERENCE]{CONTENT}</li>
-<li>\ref[default| text| title| number| page| realpage][reference]</li>
-<li>\pagereference[reference,reference]</li>
-<li>\textreference [REFERENCE]{CONTENT}</li>
-</ul>
-<p>引用：</p>
-<ul>
-<li>\atpage [REFERENCE]</li>
-<li>\somewhere {CONTENT}{CONTENT}[REFERENCE]</li>
-<li>\in {CONTENT}{CONTENT}[REFERENCE]</li>
-<li>\at {CONTENT}{CONTENT}[REFERENCE]</li>
-<li>\about {CONTENT}[REFERENCE]</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">\section</span><span class="nb">{</span>FirstSection<span class="nb">}</span>
-
-<span class="k">\reference</span><span class="na">[ref]</span><span class="nb">{</span>Gerald Manley<span class="nb">}</span>
----Gerald Manley Hopkins
-
-Look in <span class="k">\in</span><span class="nb">{</span>chapter<span class="nb">}</span>[hotel] on <span class="k">\at</span><span class="nb">{</span>page<span class="nb">}</span>[hotel] for a complete
-overview of accommodation in <span class="k">\pagereference</span><span class="na">[accommodation]</span>Hasselt.
-
-<span class="k">\section</span><span class="nb">{</span>SecondSection<span class="nb">}</span>
-
-<span class="k">\starttabulate</span><span class="na">[|l|l|l|]</span>
-<span class="k">\NC</span> title:       <span class="k">\NC</span> <span class="k">\ref</span><span class="na">[title]</span>   [ref] <span class="k">\NC</span> <span class="k">\ref</span><span class="na">[title]</span>   [sec] <span class="k">\NC</span> <span class="k">\NR</span>
-<span class="k">\NC</span> number:      <span class="k">\NC</span> <span class="k">\ref</span><span class="na">[number]</span>  [ref] <span class="k">\NC</span> <span class="k">\ref</span><span class="na">[number]</span>  [sec] <span class="k">\NC</span> <span class="k">\NR</span>
-<span class="k">\NC</span> text:        <span class="k">\NC</span> <span class="k">\ref</span><span class="na">[text]</span>    [ref] <span class="k">\NC</span> <span class="k">\ref</span><span class="na">[text]</span>    [sec] <span class="k">\NC</span> <span class="k">\NR</span>
-<span class="k">\NC</span> realpage:    <span class="k">\NC</span> <span class="k">\ref</span><span class="na">[realpage][ref]</span> <span class="k">\NC</span> <span class="k">\ref</span><span class="na">[realpage][sec]</span> <span class="k">\NC</span> <span class="k">\NR</span>
-<span class="k">\NC</span> page number: <span class="k">\NC</span> <span class="k">\ref</span><span class="na">[page]</span>    [ref] <span class="k">\NC</span> <span class="k">\ref</span><span class="na">[page]</span>    [sec] <span class="k">\NC</span> <span class="k">\NR</span>
-<span class="k">\stoptabulate</span>
-
-<span class="k">\at</span><span class="nb">{</span>page<span class="nb">}</span>[accommodation].
-</code></pre></div>
-<h3 id="_31">预置引用<a class="headerlink" href="#_31" title="Permanent link">#</a></h3>
-<h3 id="_32">注册器<a class="headerlink" href="#_32" title="Permanent link">#</a></h3>
-<h2 id="_33">字符、词语、文本和水平间距<a class="headerlink" href="#_33" title="Permanent link">#</a></h2>
-<p><strong>大小写</strong></p>
-<ul>
-<li>\word{text}: 小写</li>
-<li>\Word{text}: 首字母大写</li>
-<li>\Words{text}: 多词语首字母大写</li>
-<li>\WORD{text} or \WORDS{text}: 全部大写</li>
-<li>\cap{...\nocap{...}...}  小型大写字母</li>
-<li>\Cap{}  伪小型大写字母</li>
-</ul>
-<p><strong>上下标</strong></p>
-<ul>
-<li>\high{Text}</li>
-<li>\low{Text}</li>
-<li>\lohi{Subscript}{Superscript} </li>
-<li>公式中用“_” and “^”</li>
-</ul>
-<p><strong>字面文本 Verbatim text</strong></p>
-<ul>
-<li>\type 第一个参数是边界符号<ul>
-<li>\type {This is without curly bracket}</li>
-<li>\type <em>This is a closing curly bracket: ‘}’</em></li>
-<li>\type 1Tweedledum and Tweedledee1</li>
-<li>\type |Tweedledum and Tweedledee|</li>
-<li>\type zTweedledum and Tweedledeez</li>
-<li>\type (Tweedledum and Tweedledee(</li>
-</ul>
-</li>
-<li>\starttyping ... \stoptyping</li>
-<li>\typ 断词版</li>
-<li>\tex 保留字会执行</li>
-</ul>
-<p><strong>水平间距</strong></p>
-<ul>
-<li>\setupspacing[broad]</li>
-<li>\setupspacing[packed]</li>
-</ul>
-<p><strong>字符间距</strong></p>
-<ul>
-<li>\stretched[Configuration]{Text}<ul>
-<li>\stretched[width=4cm]{\bf test text}</li>
-<li>\stretched{test\text} 扩大\指定位置的间距，撑满行</li>
-</ul>
-</li>
-<li>\setupstretched</li>
-<li>\definestretched</li>
-<li>\setupcharacterkerning </li>
-<li>\definecharacterkerning</li>
-</ul>
-<p><strong>增加水平间距</strong></p>
-<ul>
-<li>\,  千分位空格</li>
-<li>\space or “\␣”  半角空格</li>
-<li>\enskip, \quad and \qquad  半个em, 1 em or 2 ems</li>
-<li>\hskip and \hfill 绝对值（可以是负值）空格，\hfill可用在行头行尾<ul>
-<li>This is \hskip 1cm 1centimetre</li>
-<li>This is \hskip 2cm 2centimetres</li>
-<li>This is \hskip 2.5cm 2.5centimetres</li>
-</ul>
-</li>
-</ul>
-<p>某种字体的词语间距 \fontdimen2\font  \fontdimen2\font  \fontdimen4\font</p>
-<p>字距 \kern⟨dimen⟩, \mkern⟨mudimen⟩.</p>
-<p><strong>复合词语的连接</strong></p>
-<p><strong>文本的语言设置</strong></p>
-<ul>
-<li>\mainlanguage</li>
-<li>\language \&lt;语言代码&gt; 文档中临时改变</li>
-<li>\setuplanguage[Language][Configuration]<ul>
-<li>\setuplanguage[en][patterns={en, agr}] 英语和古希腊语（防止替换）</li>
-</ul>
-</li>
-</ul>
-<p>English  en, eng, english
-Japanese  ja, japanese
-chinese  cn, chinese</p>
-<p>会影响：</p>
-<ul>
-<li>断词</li>
-<li>某些词语的输出格式</li>
-<li>某些的排版传统</li>
-</ul>
-<p><strong>自动标签的语言设置</strong></p>
-<ul>
-<li>\setuplabeltext[Language][Key=Label]<ul>
-<li>\setuplabeltext[es][figure=Imagen~]</li>
-<li>\setuplabeltext[chapter=Chapter~]</li>
-</ul>
-</li>
-</ul>
-<p>可参考语言文件<code>lang-txt.lua</code></p>
-<p><strong>语言相关命令</strong></p>
-<ul>
-<li>\currentdate[month, dd, weekday]</li>
-<li>\date[d=6, m=7, y=1957][weekday]</li>
-<li>\month</li>
-<li>\translate[es=Su carta de fecha, en=Your letter dated]  根据语言取值</li>
-<li>\quote and \quotation</li>
-</ul>
-<h2 id="_34">段落、行和行距/垂直间距<a class="headerlink" href="#_34" title="Permanent link">#</a></h2>
-<p><strong>分段：</strong></p>
-<ul>
-<li>连续一个到多个空行</li>
-<li>\par</li>
-<li>\endgraf</li>
-</ul>
-<p><strong>插件垂直空白</strong>（不建议使用<code>\vskip \vfill</code>）：</p>
-<ul>
-<li>\godown[Dimension]，可以累加</li>
-<li>\blank[Dimension]，累加无效</li>
-</ul>
-<p><strong>段落缩进：</strong></p>
-<p>\setupindenting[...,...]</p>
-<p>[...,...]   [+-]small [+-]medium [+-]big none no not first next yes always never odd even normal reset toggle <code>dimension name</code></p>
-<ul>
-<li>always：所有段落缩进</li>
-<li>yes：一般段落缩进。特点段落额外增加垂直间距，如小节起始段落；后面跟着某些环境的段落不缩进。</li>
-<li>no, not, never, none：禁用段落缩进。</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">\setupindenting</span><span class="na">[yes, 2em]</span>
-</code></pre></div>
-<p><strong>指定段落缩进：</strong></p>
-<p>\startnarrower[Options] ... \stopnarrower</p>
-<p><strong>垂直段落间距：</strong></p>
-<p>\setupwhitespace</p>
-<ul>
-<li>none</li>
-<li>small, medium, big：相对字号而言</li>
-<li>line, halfline, quarterline：相对行高而言</li>
-<li>DIMENSION：指定绝对尺寸，如\setupwhitespace[5pt].</li>
-</ul>
-<p><strong>无段落间距</strong></p>
-<p>\startpacked[Space] ... \stoppacked</p>
-<p><strong>指定位置插件间距</strong>，比如标题后</p>
-<div class="highlight"><pre><span></span><code><span class="k">\setuphead</span><span class="na">[chapter]</span>[
-    page=yes,
-    before=<span class="nb">{</span><span class="k">\blank</span><span class="na">[4cm, force]</span><span class="nb">}</span>,
-    after=<span class="nb">{</span><span class="k">\blank</span><span class="na">[3*medium]</span><span class="nb">}</span>
-]
-</code></pre></div>
-<ul>
-<li>\setupblank</li>
-<li>\defineblank[Name] [Configuration]</li>
-</ul>
-<p><strong>行间距、行距：</strong></p>
-<p>% 设定行间距、行距
-%尺寸；符号：reset、small、medium、big、on、off；或用\defineinterlinespace定义的名字；
-%或命名参数：line=8ex（line, height, depth, minheight, mindepth,distance, top, bottom, stretch and shrink.）</p>
-<div class="highlight"><pre><span></span><code><span class="k">\setupinterlinespace</span><span class="na">[line=3.2ex]</span>
-<span class="k">\setupinterlinespace</span><span class="na">[big]</span>
-<span class="k">\setupinterlinespace</span><span class="na">[reset]</span>
-</code></pre></div>
-<p><strong>断词</strong></p>
-<ul>
-<li>\hyphenation{union-ised, man-slaughter}</li>
-<li>\unhyphenated</li>
-<li>\hbox  盒子不会断开</li>
-<li>\pretolerance and \tolerance</li>
-<li>\break, \crlf or \</li>
-</ul>
-<p><strong>行内间距</strong></p>
-<p>\setupinterlinespace [..Interline space..]</p>
-<p><strong>手动断行</strong></p>
-<p>\startlines
-One-one was a race horse.
-Two-two was one too.
-One-one won one race.
-Two-two won one too.
-\stoplines</p>
-<p>可配置：\startlines[indenting={yes, small, even}]...\stoplines</p>
-<p>或全局配置：\setuplines[indenting={yes, small, even}]</p>
-<p>带行号：</p>
-<p>\startlinenumbering[Options] ... \stoplinenumbering</p>
-<p><a href="https://wiki.contextgarden.net/Command/setupalign"><strong> 水平对齐：</strong></a></p>
-<ul>
-<li>\setupalign[right] %全文设置<ul>
-<li>\setupalign[horizontal, morehyphenation]</li>
-<li>\setupalign[reset]</li>
-</ul>
-</li>
-<li>\startalignment[Options] ... \stopalignment % 对齐</li>
-</ul>
-<p>选项：</p>
-<p><code>broad</code> <code>wide</code> <code>bottom</code> <code>height</code> <code>line</code> <code>high</code> <code>low</code> <code>lohi</code> <code>flushright</code> <code>flushleft</code> <code>middle</code> <code>yes</code> <code>no</code> <code>width</code> <code>normal</code> <code>reset</code> <code>inner</code> <code>outer</code> <code>flushinner</code> <code>flushouter</code> <code>left</code> <code>right</code> <code>center</code> <code>disable</code> <code>last</code> <code>end</code> <code>paragraph</code> <code>lefttoright</code> <code>righttoleft</code> <code>l2r</code> <code>r2l</code> <code>table</code> <code>lesshyphenation</code> <code>morehyphenation</code> <code>hanging</code>(标点悬挂/突出 protrusion) <code>hangingboth</code> <code>nothanging</code> <code>hz</code> <code>fullhz</code> <code>nohz</code> <code>hyphenated</code> <code>nothyphenated</code> <code>tolerant</code> <code>verytolerant</code> <code>stretch</code> <code>extremestretch</code> <code>final</code> <code>1*final</code> <code>2*final</code> <code>3*final</code> <code>4*final</code> <code>more</code> <code>1*more</code> <code>2*more</code></p>
-<ul>
-<li>normal or width or yes，对齐</li>
-<li>middle，行居中对齐 <strong>(实测会拉伸字距，等于<code>center, wide</code>，当是与center弄反了)</strong></li>
-<li>flushleft or no or right，左对齐/右填充 (<strong>right源于ragged-right，不建议用</strong>)</li>
-<li>flushright or lef，右对齐/左填充（同上）</li>
-<li>inner，推向内边(margin)</li>
-<li>outer，推向外边</li>
-<li>disable，仅用于单行段落，等于flushleft，但段末\parfillskip为0</li>
-<li>last，对齐，最后一行居中</li>
-</ul>
-<p>怎么控制行宽</p>
-<ul>
-<li>wide，让ragged-right, ragged-left, and middle行更宽些(<strong>实测是保持固定宽度</strong>)</li>
-<li>broad，近似，用于表格</li>
-</ul>
-<p>你希望末行在哪里结束</p>
-<ul>
-<li>bottom，底部填充</li>
-<li>height，撑满高度</li>
-<li>line，字下伸触及下面的边界</li>
-</ul>
-<p>在盒子中竖向对齐，比如在\framed或表格中</p>
-<ul>
-<li>high  Align to top</li>
-<li>low   Align to bottom</li>
-<li>lohi  Vertically centered</li>
-</ul>
-<p>预定义组合</p>
-<ul>
-<li>table，等价于flushleft,broad,high</li>
-<li>reset，等价于normal.</li>
-<li>center，<strong>等价于<code>middle, broad</code>（实测不然，不会增加字距，当是与middle弄反了）</strong></li>
-</ul>
-<p>排版/文本流方向</p>
-<ul>
-<li>lefttoright or l2r，"Hello, world."</li>
-<li>righttoleft or r2l，".dlrow ,olleH"</li>
-</ul>
-<p>更好的调整和局部排版</p>
-<ul>
-<li>hanging，允许悬挂标点/突出(protrusion)</li>
-<li>nothanging，禁止悬挂标点</li>
-<li>hz，允许轻微拉伸字符/字体伸展(font expansion).</li>
-<li>nohz，禁止字体伸展</li>
-<li>hyphenated，允许断词</li>
-<li>nothyphenated，禁止断词</li>
-<li>lesshyphenation，更少断词. Not sure whether this is relative/additive, or absolute.</li>
-<li>morehyphenation，更多断词. Not sure whether this is relative/additive, or absolute.</li>
-<li>tolerant，放松最终段落操控(更多断词和拉伸)以避免超出盒子。</li>
-<li>verytolerant，更加放松最终段落操控</li>
-<li>stretch，运用空白额外拉伸，通常配合(very)tolerant使用</li>
-</ul>
-<p><strong>单行水平对齐：</strong></p>
-<ul>
-<li>\leftaligned, \midaligned or \rightaligned</li>
-<li>\wordright，行内词语右移到头</li>
-</ul>
-<h2 id="_35">特殊结构和段落<a class="headerlink" href="#_35" title="Permanent link">#</a></h2>
-<p><strong>脚注、尾注、边注、行号注、局部注</strong></p>
-<p><strong>分栏：</strong></p>
-<ul>
-<li>\startcolumns[Configuration] ...\column...\stopcolumns</li>
-<li>\setupcolumns[Configuration]</li>
-</ul>
-<p><strong>并行段落</strong></p>
-<p><strong>有结构列表</strong></p>
-<p><strong>描述和枚举</strong></p>
-<p><strong>线和框</strong></p>
-<ul>
-<li>\hairline 整行</li>
-<li>\thinrule  文中，平均撑满整行（类似\hfill）</li>
-<li>\thinrules[n=2] 多行</li>
-<li>\hl[3] and \vl[3] 固定长度的线，单位em</li>
-<li>\fillinline[width=6cm] text， 用线填充剩余空间（通常是右侧）</li>
-<li>\fillinrules  填充多行线</li>
-</ul>
-<p><strong>文本装饰，与文本关联的线</strong></p>
-<ul>
-<li>文字两侧画线<ul>
-<li>\textrule{Example text} </li>
-<li>\starttextrule[Configuration]{Text on the line} ... \stoptextrule</li>
-<li>\setuptextrule</li>
-</ul>
-</li>
-<li>\setupbar 设置参数</li>
-<li>\bar 预定义实例<ul>
-<li>\overbar，上画线，与属性模式的\overbarin不同</li>
-<li>\underbar，下画线，与数学模式的\underbarin不同</li>
-<li>\overstrike，删除线</li>
-<li>\understrike，字下删除线，如马克笔效果</li>
-<li>\overbars，逐词……</li>
-<li>\underbars</li>
-<li>\overstrikes</li>
-<li>\understrikes</li>
-<li>\underrandom，不规则（随机）下画线</li>
-<li>\underrandoms</li>
-<li>\underdash，下画断线</li>
-<li>\underdashes</li>
-<li>\underdot，下画点线</li>
-<li>\underdots</li>
-<li>\nobar</li>
-<li>\hiddenbar</li>
-</ul>
-</li>
-<li>\definebar 自定义实例</li>
-<li>\resetbar 清楚</li>
-</ul>
-<p><strong>加框文本</strong></p>
-<ul>
-<li>\inframed 文字齐行</li>
-<li>\framed 框底齐行</li>
-<li>\startframedtext</li>
-</ul>
-<p><strong>可重用的缓存文本</strong></p>
-<ul>
-<li>\startbuffer[BufferName] ...\stopbuffer</li>
-<li>\getbuffer[BufferName]</li>
-</ul>
-<p><strong>其他环境和建构</strong></p>
-<ul>
-<li>化学式</li>
-<li>算式</li>
-<li>（浮动体、图像）联合体</li>
-<li>隐藏文本 \starthiding...\stophiding</li>
-<li>legend 公式说明</li>
-<li>行调整（比如在加框的情况下）</li>
-<li>mode 编译时进行模式匹配</li>
-<li>左右也相对</li>
-<li>引用</li>
-<li>standardmakeup标准修饰  如每页有文件名</li>
-</ul>
-<h2 id="_36">图像、表格和其他浮动对象<a class="headerlink" href="#_36" title="Permanent link">#</a></h2>
-<h2 id="zhfonts">zhfonts<a class="headerlink" href="#zhfonts" title="Permanent link">#</a></h2>
-<p>标点压缩和字体设置模块</p>
-<p><a href="https://github.com/Fusyong/zhfonts">项目地址</a>，
-<a href="http://garfileo.is-programmer.com/posts/23740">使用说明</a>，
-<a href="http://liyanrui.is-programmer.com/2009/11/28/chinese-punctations-compression-with-luatex.13608.html">标点压缩说明</a>, 
-<a href="http://liyanrui.is-programmer.com/2009/10/21/not-just-for-chinese.12264.html">字体处理基本知识</a>。</p>
-<p>安装目录：</p>
-<p><code>D:\venvs\texlive\2021\texmf-dist\tex\context\third\zhfonts\</code>
-使用：</p>
-<p>\usemodule[zhfonts] %</p>
-<p>可能造成字体找不到的情况（当时汉字码表设置问题），则禁用<code>t-zhfonts.lua</code>中的字体设置功能，只保留标点压缩功能：</p>
-<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nc">zhfonts</span><span class="p">.</span><span class="nf">main</span> <span class="p">(</span><span class="n">param</span><span class="p">)</span>
-    <span class="n">context</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">setscript[hanzi]&#39;</span><span class="p">)</span>
-    <span class="n">zhspuncs</span><span class="p">.</span><span class="n">opt</span> <span class="p">()</span>
-    <span class="c1">-- local arg_list = string_split_and_strip (param, &#39;,&#39;)</span>
-    <span class="c1">-- if arg_list[1] ~= &quot;none&quot; and arg_list[2] ~= &quot;none&quot; then</span>
-    <span class="c1">--     context (&#39;\\definefontfeature[zh][default][&#39; .. fontfeatures .. &#39;]&#39;)</span>
-    <span class="c1">--     context (&#39;\\setupalign[hanging, hz]&#39;)</span>
-    <span class="c1">--         zhfonts.gen_typescript ()</span>
-    <span class="c1">--         if arg_list[1] ~= &quot;hack&quot; and arg_list[2] ~= &quot;hack&quot; then</span>
-    <span class="c1">--             context (&#39;\\usetypescript[zhfonts]&#39;)</span>
-    <span class="c1">--             context (&#39;\\setupbodyfont[zhfonts, &#39; .. param .. &#39;]&#39;) </span>
-    <span class="c1">--         end</span>
-    <span class="c1">-- end</span>
-<span class="kr">end</span>
-</code></pre></div>
-<p><strong>或直接使用仿制的t-zhspuncs.mkiv:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c">% t-zhspuncs.mkiv</span>
-<span class="k">\writestatus</span><span class="nb">{</span>loading<span class="nb">}{</span>ConTeXt User Module / zhspuncs<span class="nb">}</span>
-<span class="k">\startmodule</span><span class="na">[zhspuncs]</span>
-<span class="k">\unprotect</span>
-
-<span class="c">% 加载lua脚本文件</span>
-<span class="k">\ctxloadluafile</span><span class="nb">{</span>t-zhspuncs<span class="nb">}</span>
-<span class="c">% 宏定义，运行脚本函数</span>
-<span class="k">\def\zhspuncs</span><span class="nb">{</span><span class="k">\ctxlua</span><span class="nb">{</span>moduledata.zhspuncs.opt()<span class="nb">}}</span>
-<span class="c">% 宏的加载点</span>
-<span class="k">\appendtoks</span> <span class="k">\zhspuncs</span> <span class="k">\to</span> <span class="k">\everystarttext</span>
-
-<span class="k">\protect</span>
-<span class="k">\stopmodule</span>
-<span class="k">\endinput</span>
-</code></pre></div>
-<p><strong>相应更改t-zhspuncs.lua：</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c1">--t-zhspuncs.lua</span>
-<span class="n">moduledata</span> <span class="o">=</span> <span class="n">moduledata</span> <span class="ow">or</span> <span class="p">{}</span>
-<span class="n">moduledata</span><span class="p">.</span><span class="n">zhspuncs</span> <span class="o">=</span> <span class="n">moduledata</span><span class="p">.</span><span class="n">zhspuncs</span> <span class="ow">or</span> <span class="p">{}</span>
-<span class="n">zhspuncs</span> <span class="o">=</span> <span class="n">moduledata</span><span class="p">.</span><span class="n">zhspuncs</span>
-<span class="c1">-- zhspuncs = zhspuncs or {}</span>
-<span class="c1">--以下保持不变</span>
-</code></pre></div>
-<p>使用：</p>
-<p>\usemodule[zhspuncs]</p>
-<h2 id="ruby">ruby和行间标注<a class="headerlink" href="#ruby" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">\usemodule</span><span class="na">[ruby]</span>
-
-<span class="k">\starttext</span>
-
-<span class="k">\ruby</span><span class="nb">{</span>漢字<span class="nb">}{</span>かんじ<span class="nb">}</span>
-
-<span class="k">\stoptext</span>
-</code></pre></div>
-<p>设置主体文本（base text）与ruby文本布局:</p>
-<div class="highlight"><pre><span></span><code><span class="k">\setupruby</span>
-    [basestyle=...,
-    basecolor=...,
-    textstyle=...,
-    textcolor=...]
-</code></pre></div>
-<p>设置ruby文本与周围文本重叠与否:</p>
-<div class="highlight"><pre><span></span><code>  <span class="k">\setupruby</span>
-    [overhang=auto|start|end|none] <span class="c">% default: yes</span>
-</code></pre></div>
-<p>设置ruby和主体文字（base text）的间距:</p>
-<div class="highlight"><pre><span></span><code>  <span class="k">\setupruby</span>
-    [inbetween=...] <span class="c">% default: \blank[small]</span>
-</code></pre></div>
-<p>可以只改变单个命令的设置:</p>
-<div class="highlight"><pre><span></span><code>  <span class="k">\ruby</span><span class="na">[..,..=..,..]</span><span class="nb">{</span>...<span class="nb">}{</span>...<span class="nb">}</span>
-</code></pre></div>
-<p><strong>其他：</strong></p>
-<ul>
-<li>\clap{whatever} 剧中叠置<ul>
-<li>自定义剧中叠置： <code>def\myclap#1{\hbox to 0pt{\hss\strut #1\hss}}</code></li>
-</ul>
-</li>
-<li>\llap{whatever} 左侧叠置<ul>
-<li><code>我们\llap{\lower 3ex \hbox{\strut wo3 me}}</code></li>
-</ul>
-</li>
-<li>\rlap{whatever} 右侧叠置</li>
-</ul>
-<p>\strut 能利用字体的结构深度（基线、空白等），否则只有轮廓线</p>
-<p><strong>泡泡框</strong>：<a href="https://tex.stackexchange.com/questions/38805/simple-speech-bubbles-arrows-or-balloon-like-shapes-in-beamer/"><strong>tikz宏包</strong></a></p>
-<p><strong>latex</strong></p>
-<ul>
-<li>\overset{\makebox[0pt]{(\scriptsize animal)}}{Bears} </li>
-<li>\underset</li>
-<li>\labeltext</li>
-</ul>
-<h2 id="_37">下划线<a class="headerlink" href="#_37" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>日本語の表記では“<span class="k">\underbar</span><span class="nb">{</span>漢字<span class="nb">}</span>”や
-</code></pre></div>
-<h2 id="box">盒子 box<a class="headerlink" href="#box" title="Permanent link">#</a></h2>
-<p><strong>对齐盒子</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">\showboxes</span> <span class="c">% 显式盒子</span>
-<span class="k">\hbox</span><span class="nb">{</span><span class="k">\hbox</span><span class="nb">{</span>one<span class="nb">}</span> <span class="k">\vbox</span><span class="nb">{</span>two<span class="k">\par</span> three<span class="nb">}</span> <span class="k">\vtop</span><span class="nb">{</span>four<span class="k">\par</span> five<span class="nb">}}</span>
-</code></pre></div>
-<p><img alt="" src="../img/ConTeXt%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2021-12-21-15-55-28.png" /></p>
-<p>更多盒子：</p>
-<ul>
-<li>\hbox 水平盒子</li>
-<li>\vbox 底部行对齐前面的元素</li>
-<li>\vtop 头部行对齐前面的元素</li>
-<li>\cbox 内容垂直居中</li>
-<li>\lbox <ul>
-<li>\lbox to 4cm{... text ...}</li>
-</ul>
-</li>
-<li>\rbox</li>
-<li>\sbox  具有strut的高度（字体设计的行间高度，包括留空），可以基线对齐</li>
-<li>\tbox and \bbox 表格盒子（有strut属性），也用于图表</li>
-</ul>
-<p><strong>显式盒子</strong></p>
-<ul>
-<li>\ruledhbox  带线的盒子</li>
-<li>\ruledvbox  带线的盒子</li>
-<li>\ruledvtop  带线的盒子</li>
-<li>\showboxes  显式所有盒子</li>
-<li>\showmakeup  显式标记信息（包括盒子）</li>
-</ul>
-<p><strong>用盒子标注拼音</strong></p>
-<p>中文此间距glue处理似乎没有中文字符盒子的问题</p>
-<div class="highlight"><pre><span></span><code><span class="c">% 使用字体脚本`type-ahpinyin.tex`设置拼音字体</span>
-<span class="c">% \usetypescriptfile[ahpinyin] % this is the &#39;some-name-you-like&#39; part of the saved filename</span>
-<span class="c">% \definefont[pinyin][ahpinyin]</span>
-<span class="c">% 设置拼音字体</span>
-<span class="k">\definefont</span><span class="na">[pinyin][name:ahpinying*default at 9pt]</span>
-<span class="c">% 设置注音命令</span>
-<span class="c">% \define[2]\Mypy{%TEX</span>
-<span class="k">\def\Mypy</span>#1#2<span class="nb">{</span><span class="c">%ConTeXt</span>
-    <span class="k">\setbox</span>1 = <span class="k">\hbox</span><span class="nb">{</span><span class="k">\strut</span>#1<span class="nb">}</span><span class="c">%</span>
-    <span class="k">\setbox</span>2 = <span class="k">\hbox</span><span class="nb">{</span><span class="k">\strut\darkgray</span> <span class="k">\pinyin</span> #2<span class="nb">}</span><span class="c">% \ssxx xx号无衬线体</span>
-    <span class="k">\newdimen\maxwd</span><span class="c">%</span>
-    <span class="k">\ifdim</span> <span class="k">\wd</span>1&gt;<span class="k">\wd</span>2 <span class="k">\maxwd</span>=<span class="k">\wd</span>1 <span class="k">\else</span> <span class="k">\maxwd</span>=<span class="k">\wd</span>2 <span class="k">\fi</span><span class="c">%</span>
-    <span class="k">\setbox</span>1 = <span class="k">\hbox</span> to <span class="k">\maxwd</span><span class="nb">{</span><span class="k">\hfill</span> <span class="k">\box</span>1 <span class="k">\hfill</span><span class="nb">}</span><span class="c">%</span>
-    <span class="k">\setbox</span>2 = <span class="k">\hbox</span> to <span class="k">\maxwd</span><span class="nb">{</span><span class="k">\hfill</span> <span class="k">\box</span>2 <span class="k">\hfill</span><span class="nb">}</span><span class="c">%</span>
-    <span class="k">\hskip</span>0pt plus5pt<span class="k">\vtop</span><span class="nb">{</span><span class="k">\box</span>1<span class="k">\godown</span><span class="na">[-1.1em]</span><span class="k">\box</span>2<span class="nb">}</span><span class="c">% 加入glue以便正确分行、调词间距</span>
-    <span class="c">% #1\llap{\lower 3ex\box2}%</span>
-<span class="nb">}</span>
-<span class="k">\starttext</span>
-
-漢字漢字漢字漢字<span class="k">\Mypy</span><span class="nb">{</span>漢字<span class="nb">}{</span>han4 zi4<span class="nb">}</span>漢字漢字
-
-<span class="k">\stoptext</span>
-</code></pre></div>
-<h2 id="_38">文本行缩放<a class="headerlink" href="#_38" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">\starttext</span>
-
-<span class="k">\startlines</span>
-<span class="k">\scale</span><span class="na">[maxwidth=4cm]</span><span class="nb">{</span>Hello<span class="nb">}</span>
-<span class="k">\scale</span><span class="na">[maxwidth=4cm]</span><span class="nb">{</span>Hello World<span class="nb">}</span>
-<span class="k">\scale</span><span class="na">[maxwidth=4cm]</span><span class="nb">{</span>Hello World! How<span class="nb">}</span>
-<span class="k">\scale</span><span class="na">[maxwidth=4cm]</span><span class="nb">{</span>Hello World! How are<span class="nb">}</span>
-<span class="k">\scale</span><span class="na">[maxwidth=4cm]</span><span class="nb">{</span>Hello World! How are you<span class="nb">}</span>
-<span class="k">\scale</span><span class="na">[maxwidth=4cm]</span><span class="nb">{</span>Hello World! How are you doing?<span class="nb">}</span>
-<span class="k">\stoplines</span>
-
-<span class="k">\stoptext</span>
-</code></pre></div>
-<h2 id="_39">悬挂缩进<a class="headerlink" href="#_39" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">\definestartstop</span>
-  [exdent]
-  [before=<span class="nb">{</span><span class="k">\startnarrower</span><span class="na">[left]</span><span class="k">\setupindenting</span><span class="na">[-\leftskip,yes]</span><span class="nb">}</span>,
-   after=<span class="k">\stopnarrower</span>]
-
-<span class="k">\setuphead</span><span class="na">[section][indentnext=yes]</span>
-<span class="k">\section</span><span class="nb">{</span>Test<span class="nb">}</span>
-<span class="k">\startexdent</span>
-<span class="k">\input</span> knuth <span class="k">\endgraf</span>
-<span class="k">\stopexdent</span>
-</code></pre></div>
-<h2 id="_40">缩放、镜像、剪切<a class="headerlink" href="#_40" title="Permanent link">#</a></h2>
-<p>https://wiki.contextgarden.net/Scaling_Rotating_Mirroring_Clipping</p>
-<h2 id="_41">系统宏<a class="headerlink" href="#_41" title="Permanent link">#</a></h2>
-<p>https://wiki.contextgarden.net/System_Macros</p>
-<h2 id="_42">调试<a class="headerlink" href="#_42" title="Permanent link">#</a></h2>
-<p><a href="https://wiki.contextgarden.net/Debugging">Debugging</a></p>
-<p><strong>跟踪</strong></p>
-<p>在可能的错误附近打开所有追踪：</p>
-<div class="highlight"><pre><span></span><code><span class="k">\enabletrackers</span>
-<span class="k">\enabletrackers</span><span class="na">[script*]</span> <span class="c">%脚本跟踪，比如标点后注入罚点</span>
-<span class="k">\tracingall</span>
-</code></pre></div>
-<p><strong>视觉展示</strong></p>
-<p><strong>清理</strong><a href="https://wiki.contextgarden.net/Visual_Debugging">Visual_Debugging</a></p>
-<ul>
-<li><code>\trace...</code></li>
-<li><code>\show...</code><ul>
-<li>\showglyphs 显示所有字模的方框</li>
-</ul>
-</li>
-</ul>
-<p><strong>缺字替换</strong></p>
-<p><code>\replacemissingcharacters</code></p>
-<p>缺字体时替换为方块，并且可以拷贝、搜索。</p>
-<p><strong>段落与页面构成</strong></p>
-<p>\showmakeup[...]</p>
-<p>[...]makeup reset boxes all hbox vbox vtop kern glue penalty fontkern strut whatsit glyph simple simplehbox simplevbox simplevtop user math italic origin discretionary expansion line space depth</p>
-<p>三个快捷选项：</p>
-<ul>
-<li>makeup，页面布局</li>
-<li>boxes，盒子构成</li>
-<li>all，大部分有用选项</li>
-</ul>
-<h2 id="_43">项目结构<a class="headerlink" href="#_43" title="Permanent link">#</a></h2>
-<p><img alt="项目结构" src="https://wiki.contextgarden.net/images/5/5c/Project-structure.png" /></p>
-<p>项目—产品—组件
-|    |产品环境
-项目环境</p>
-<h2 id="_44">标题<a class="headerlink" href="#_44" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th>有编号</th>
-<th>无编号</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\part</td>
-<td>—</td>
-</tr>
-<tr>
-<td>\chapter</td>
-<td>\title</td>
-</tr>
-<tr>
-<td>\section</td>
-<td>\subject</td>
-</tr>
-<tr>
-<td>\subsection</td>
-<td>\subsubject</td>
-</tr>
-<tr>
-<td>\subsubsection</td>
-<td>\subsubsubject</td>
-</tr>
-<tr>
-<td>...</td>
-<td>...</td>
-</tr>
-</tbody>
-</table>
-<p>无编号标题不会出现在目录中（可设置）。</p>
-<p>均有Start/Stop版本，方便文档转换。</p>
-<ul>
-<li>\setuphead [Sections][Options]</li>
-<li>\setupheads [Sections][Options]</li>
-</ul>
-<p>选项：</p>
-<ul>
-<li>placehead： whose values can be “yes”, “no” “hidden”, “empty” or “section</li>
-<li>number， “yes” and “no”</li>
-<li>“before” “after，标题排版前后执行的命令<ul>
-<li>before=\hairline，before=\blank，before={\blank[3*big]}</li>
-<li>after={\blank[0cm]},before={\blank[0cm]}</li>
-<li>before={\nowhitespace},after={\nowhitespace\vskip5pt}</li>
-</ul>
-</li>
-<li>commandbefore” and“commandafter”，<strong>标题文本</strong>排版前后执行的命令</li>
-<li>continue=no</li>
-<li>page，前插页</li>
-<li>alignment，“align”会影响包含标题的段落的alignment。可包含“flushleft”(left), “flushright” (right), “middle” (centred), “inner” (inner margin) and “outer” (outer margin)等值。</li>
-<li>Margin</li>
-<li>Width</li>
-<li>indentnext</li>
-<li>alternative，插入时的替代版式：text paragraph normal margin inmargin top middle bottom reverse margintext</li>
-<li>textdistance，标题文本距离</li>
-<li>interlinespace，行间距</li>
-</ul>
-<p>有编号的设置会影响无编号，反之不然。
-上一级的设置会可能影响下一级，反之不然。</p>
-<p>用 <code>\nolist</code> or <code>\nomarking</code>在目录中排除指定字符：</p>
-<p>\chapter{Influences of \nomarking{19th century} impressionism \nomarking{in
-the 21st century}}</p>
-<h2 id="layer">层 layer<a class="headerlink" href="#layer" title="Permanent link">#</a></h2>
-<p>元素可以拥有绝对位置，可以开关某些内容。供重复使用，比如用作背景。</p>
-<p>未写入正式文档。<a href="https://wiki.contextgarden.net/Layers">官方web文档</a></p>
-<h2 id="pdf">在pdf文件中添加附件<a class="headerlink" href="#pdf" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">\setupinteraction</span><span class="na">[state=start]</span>
-<span class="k">\attachment</span><span class="na">[file=\jobname.tex]</span>
-<span class="k">\starttext</span>
-<span class="k">\input</span> zapf
-<span class="k">\stoptext</span>
-</code></pre></div>
-                
                   
+  
+
+  <nav class="md-tags" >
+    
+      
+      
+        <a href="../tags/#context" class="md-tag">ConTeXt</a>
+      
+    
+  </nav>
+
+
+
+
+
+<h1 id="macro_syntax_error"><em>Macro Syntax Error</em><a class="headerlink" href="#macro_syntax_error" title="Permanent link">#</a></h1>
+<p><em>Line 1557 in Markdown file:</em> <strong>Missing end of comment tag</strong> 
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>    \<span class="n">scratchdimen</span>\<span class="n">widthofstring</span><span class="p">{</span><span class="c1">#1}\relax % 获取文本宽度</span>
+</code></pre></div></td></tr></table></div></p>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        这篇怎么样啊？
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
                 
               
+              多谢反馈!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              多谢反馈!
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
 
   <!-- Giscus -->
   <h2 id="__comments">评论</h2>
@@ -5631,95 +3984,101 @@ the 21st century}}</p>
     })
   </script>
 
-              
-                
-
-
-              
-            </article>
-          </div>
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
       
-        <a href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--prev" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              LuaTeX-LMTX-CLD学习笔记
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--prev" aria-label="上一页: LuaTeX-LMTX-CLD学习笔记" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
-          </div>
-        </a>
-      
-      
-        <a href="../2022-01-10-latex-CTEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--next" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              latex-CTEX学习笔记
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  上一页
+                </span>
+                LuaTeX-LMTX-CLD学习笔记
+              </div>
             </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
+          </a>
+        
+        
+          
+          <a href="../2022-01-10-latex-CTEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-footer__link md-footer__link--next" aria-label="下一页: latex-CTEX学习笔记" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  下一页
+                </span>
+                latex-CTEX学习笔记
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2018 - 2023 黄复雄
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
-  <div class="md-footer-social">
+        <div class="md-social">
+  
+    
     
       
       
-        
-        
-      
-      <a href="https://github.com/Fusyong" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-      </a>
+    
+    <a href="https://github.com/Fusyong" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
     
       
       
-        
-        
-      
-      <a href="https://www.facebook.com/Aahuaang/" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
-      </a>
+    
+    <a href="https://www.facebook.com/Aahuaang/" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+    </a>
+  
+    
     
       
       
-        
-        
-      
-      <a href="https://twitter.com/fusyong" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-      </a>
     
-  </div>
-
+    <a href="https://twitter.com/fusyong" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -5728,10 +4087,11 @@ the 21st century}}</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>
       
     
   </body>
