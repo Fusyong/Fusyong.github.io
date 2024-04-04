@@ -4103,6 +4103,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#nodes" class="md-nav__link">
+    绘制节点图nodes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4175,7 +4182,7 @@
   
     <li class="md-nav__item">
       <a href="../2022-08-29-metafun%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
-        metafun学习笔记
+        MetaPost、MetaFun学习笔记
       </a>
     </li>
   
@@ -5006,6 +5013,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#nodes" class="md-nav__link">
+    绘制节点图nodes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5751,12 +5765,14 @@ end
 <p>文档任何位置都可以重设。</p>
 <p><strong>纸张适配内容</strong></p>
 <ul>
-<li>\startMPpage， MetaPost图形页</li>
-<li>\startpagefigure，图及文明文字页</li>
-<li>\startTEXpage，文本页</li>
+<li>\startfittingpage ... \stopfittingpage<ul>
+<li>\startTEXpage ... \stopTEXpage，TeX文本适配页</li>
+<li>\startMPpage ... \stopMPpage， MetaPost图形适配页，直接写MetaPost代码，不再需要\startMPcode...\stopMPcode</li>
 </ul>
-<p><code>\startTEXpage[Options] ... \stopTEXpage</code></p>
-<p><code>width</code>、<code>height</code>可赋值<code>fit</code></p>
+</li>
+<li>\startpagefigure，单一图页面</li>
+</ul>
+<p>分页：</p>
 <ul>
 <li>\pagebreak</li>
 <li>\page</li>
@@ -7815,7 +7831,7 @@ context<span class="w"> </span>--global<span class="w"> </span>m-directives.mkiv
 <ol>
 <li>layer，它是ConTeXt的页面坐标定位机制，以及元素随页码变化而切换的机制等；组合多个对象为页面的一层。可用于背景/前景设置，给整页图加标签，给页面加页码，等等。未写入正式文档。<a href="https://wiki.contextgarden.net/Layers">官方web文档</a></li>
 <li>overlay，在同一点上堆叠多个对象为一个小型图文对象，可用于framed类对象的前景和背景。</li>
-<li>collector，相对于可以用坐标定位的overlay，组合多个对象（如图文）为一个对象；本身还可以组合（composedcollector）。也可以用MetaPost（MetaFun）的<code>thetextext[.anchor](str,pos)</code> <code>thelabel(string,pair)</code> <code>draw externalfigure "mycow.pdf" scaled 3cm</code>等实现。</li>
+<li>collector，相对于可以用坐标定位的overlay，组合多个对象（如图文）为一个对象；本身还可以组合（composedcollector）。参考官方文档details.pdf。也可以用MetaPost（MetaFun）的<code>thetextext[.anchor](str,pos)</code> <code>thelabel(string,pair)</code> <code>draw externalfigure "mycow.pdf" scaled 3cm</code>等实现。</li>
 </ol>
 <h2 id="pdf">在pdf文件中添加附件<a class="headerlink" href="#pdf" title="Permanent link">#</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -8116,6 +8132,14 @@ The name of the culprit was <span class="k">\datasetvariable</span><span class="
 <p>获取文件名，含路径：</p>
 <p>\getdocumentfilename{1}
 \cldcontext{document.files[1]}</p>
+<h2 id="nodes">绘制节点图nodes<a class="headerlink" href="#nodes" title="Permanent link">#</a></h2>
+<p>比如思维导图。</p>
+<p>参考：
+* nodes.tex nodes.pdf
+* meta-nod.mkiv meta-nod.lua</p>
+<!-- D:\venvs\context-win64\tex\texmf-context\tex\context\base\mkiv\meta-nod.mkiv
+D:\venvs\context-win64\tex\texmf-context\doc\context\sources\general\manuals\nodes\nodes.tex
+ -->
 
 
   
