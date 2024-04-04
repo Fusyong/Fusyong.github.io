@@ -1,3937 +1,1489 @@
 
-<!doctype html>
-<html lang="zh" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-        <link rel="canonical" href="https://blog.xiiigame.com/2022-12-21-%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/">
-      
-      
-        <link rel="prev" href="../2020-12-06-Python%E6%89%BE%E9%97%A8%E6%95%99%E7%A8%8B-%E7%9B%AE%E5%BD%95-%E6%B4%BE%E7%9C%9F%E5%92%8C%E4%B8%A4%E6%9D%A1%E8%85%BF%E6%9D%A5%E5%88%B0%E5%93%88%E7%BD%97%E4%B8%96%E7%95%8C/">
-      
-      
-        <link rel="next" href="../2019-10-05-%E5%88%9D%E5%AD%A6python%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BC%96%E8%BE%91%E5%99%A8%E6%8E%A8%E8%8D%90/">
-      
-      <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.9">
-    
-    
-      
-        <title>编程环境 - 嬉戏实验室</title>
-      
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/main.0d440cfe.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
-      
-      
+<!DOCTYPE html>
 
-    
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-      <link rel="stylesheet" href="../css/ansi-colours.css">
-    
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-  
-
-
-  
-  
-
-
-  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-PWB4KHSW87"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-PWB4KHSW87",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-PWB4KHSW87",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
-
-    
-    
-    
-  </head>
-  
-  
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="pink">
-  
-    
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#terminalshell" class="md-skip">
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://blog.xiiigame.com/2022-12-21-%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83/" rel="canonical"/>
+<link href="../2020-12-06-Python%E6%89%BE%E9%97%A8%E6%95%99%E7%A8%8B-%E7%9B%AE%E5%BD%95-%E6%B4%BE%E7%9C%9F%E5%92%8C%E4%B8%A4%E6%9D%A1%E8%85%BF%E6%9D%A5%E5%88%B0%E5%93%88%E7%BD%97%E4%B8%96%E7%95%8C/" rel="prev"/>
+<link href="../2019-10-05-%E5%88%9D%E5%AD%A6python%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BC%96%E8%BE%91%E5%99%A8%E6%8E%A8%E8%8D%90/" rel="next"/>
+<link href="../img/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.9" name="generator"/>
+<title>编程环境 - 嬉戏实验室</title>
+<link href="../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../css/ansi-colours.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-PWB4KHSW87"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-PWB4KHSW87",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-PWB4KHSW87",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="pink" data-md-color-primary="green" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#terminalshell">
           跳转至
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href=".." title="嬉戏实验室" class="md-header__button md-logo" aria-label="嬉戏实验室" data-md-component="logo">
-      
-  <img src="../img/logo.png" alt="logo">
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="嬉戏实验室" class="md-header__button md-logo" data-md-component="logo" href=".." title="嬉戏实验室">
+<img alt="logo" src="../img/logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             嬉戏实验室
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               编程环境
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="查找">
-        
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
-          </a>
-        
-        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             正在初始化搜索引擎
           </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
-    
-    
-  </nav>
-  
+</div>
+</div>
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href=".." title="嬉戏实验室" class="md-nav__button md-logo" aria-label="嬉戏实验室" data-md-component="logo">
-      
-  <img src="../img/logo.png" alt="logo">
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="嬉戏实验室" class="md-nav__button md-logo" data-md-component="logo" href=".." title="嬉戏实验室">
+<img alt="logo" src="../img/logo.png"/>
+</a>
     嬉戏实验室
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
         ☆ 首页
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../new/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../new/">
         ☆ 最新
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tags/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tags/">
         ☆ 标签
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           儿童识字
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
           儿童识字
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-11-19-%E3%80%8A%E5%B9%BC%E5%84%BF%E8%AF%86%E5%AD%9790%E5%A4%A9%EF%BC%9A%E8%AE%A4%E8%AF%86%E4%B9%A6%E4%B8%AD80%25%E7%9A%84%E6%B1%89%E5%AD%97%E3%80%8B/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-11-19-%E3%80%8A%E5%B9%BC%E5%84%BF%E8%AF%86%E5%AD%9790%E5%A4%A9%EF%BC%9A%E8%AE%A4%E8%AF%86%E4%B9%A6%E4%B8%AD80%25%E7%9A%84%E6%B1%89%E5%AD%97%E3%80%8B/">
         《幼儿识字90天：认识书中80%的汉字》
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-04-21-%E6%80%8E%E4%B9%88%E8%AE%A9%E5%AD%A9%E5%AD%90%E8%AF%86%E5%AD%97%E5%8F%88%E5%A4%9A%E5%8F%88%E5%87%86%E7%A1%AE/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-04-21-%E6%80%8E%E4%B9%88%E8%AE%A9%E5%AD%A9%E5%AD%90%E8%AF%86%E5%AD%97%E5%8F%88%E5%A4%9A%E5%8F%88%E5%87%86%E7%A1%AE/">
         怎么让孩子识字又多又准确
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-02-%E8%AF%86%E5%AD%97%E7%94%A8%E6%88%90%E8%AF%AD%EF%BC%88A%E7%BA%A7%E5%AD%97%EF%BC%89/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-02-%E8%AF%86%E5%AD%97%E7%94%A8%E6%88%90%E8%AF%AD%EF%BC%88A%E7%BA%A7%E5%AD%97%EF%BC%89/">
         儿童识字用成语及录音（A级字）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-02-18-%E5%A6%82%E4%BD%95%E7%9C%8B%E5%BE%85%E3%80%8A%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E5%B8%B8%E7%94%A8%E8%AF%8D%E8%A1%A8%EF%BC%88%E8%8D%89%E6%A1%88%EF%BC%89%E3%80%8B%E5%87%BA%E7%89%88%E5%B9%B6%E5%AF%B9%E5%A4%96%E5%8F%91%E5%B8%83%EF%BC%9F/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-02-18-%E5%A6%82%E4%BD%95%E7%9C%8B%E5%BE%85%E3%80%8A%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E5%B8%B8%E7%94%A8%E8%AF%8D%E8%A1%A8%EF%BC%88%E8%8D%89%E6%A1%88%EF%BC%89%E3%80%8B%E5%87%BA%E7%89%88%E5%B9%B6%E5%AF%B9%E5%A4%96%E5%8F%91%E5%B8%83%EF%BC%9F/">
         如何看待《义务教育常用词表（草案）》出版并对外发布
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-02-09-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%AD%97%E5%8D%A1%EF%BC%882021%E5%B9%B4%E6%98%A5%E5%AD%A3%EF%BC%89/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-02-09-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%AD%97%E5%8D%A1%EF%BC%882021%E5%B9%B4%E6%98%A5%E5%AD%A3%EF%BC%89/">
         小学语文识字卡片（2021年秋季更新）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-08-24-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%AD%97%E5%8D%A1%EF%BC%882020%E5%B9%B4%E7%A7%8B%E5%AD%A3%EF%BC%89/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-08-24-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%AD%97%E5%8D%A1%EF%BC%882020%E5%B9%B4%E7%A7%8B%E5%AD%A3%EF%BC%89/">
         小学语文识字卡片（2020年秋季）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-30-%E5%8F%A4%E4%BA%BA%E8%AF%86%E5%AD%97%E7%9A%84%E7%89%B9%E7%82%B9/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-06-30-%E5%8F%A4%E4%BA%BA%E8%AF%86%E5%AD%97%E7%9A%84%E7%89%B9%E7%82%B9/">
         古人识字的特点
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-30-%E8%AF%AD%E6%96%87%E8%AF%BE%E8%AF%86%E5%AD%97%E7%9A%84%E7%89%B9%E7%82%B9/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-06-30-%E8%AF%AD%E6%96%87%E8%AF%BE%E8%AF%86%E5%AD%97%E7%9A%84%E7%89%B9%E7%82%B9/">
         语文课识字的特点
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-09-28-%E5%A6%82%E4%BD%95%E7%9C%8B%E5%BE%85%E5%84%BF%E7%AB%A5%E8%AF%86%E5%AD%97%E5%BA%94%E8%AF%A5%E2%80%9C%E5%8F%AA%E8%AE%A4%E5%AD%97%EF%BC%8C%E5%9B%BE%E5%92%8C%E6%8B%BC%E9%9F%B3%E9%83%BD%E4%B8%8D%E7%9C%8B%E2%80%9D/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-09-28-%E5%A6%82%E4%BD%95%E7%9C%8B%E5%BE%85%E5%84%BF%E7%AB%A5%E8%AF%86%E5%AD%97%E5%BA%94%E8%AF%A5%E2%80%9C%E5%8F%AA%E8%AE%A4%E5%AD%97%EF%BC%8C%E5%9B%BE%E5%92%8C%E6%8B%BC%E9%9F%B3%E9%83%BD%E4%B8%8D%E7%9C%8B%E2%80%9D/">
         如何看待儿童识字应该“只认字，图和拼音都不看”？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-08-18-%E5%B0%8F%E5%AD%A6%E8%AF%86%E5%AD%97%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-08-18-%E5%B0%8F%E5%AD%A6%E8%AF%86%E5%AD%97%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B/">
         小学识字方法有哪些？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-09-15-%E6%80%8E%E4%B9%88%E6%95%99%E5%AD%A9%E5%AD%90%E8%AF%86%E5%AD%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-09-15-%E6%80%8E%E4%B9%88%E6%95%99%E5%AD%A9%E5%AD%90%E8%AF%86%E5%AD%97/">
         怎么教孩子识字
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-30-%E7%BB%99%E8%87%AA%E5%AE%B6%E5%AD%A9%E5%AD%90DIY%E8%AF%86%E5%AD%97%E6%9D%90%E6%96%99%EF%BC%9A%E5%AD%97%E5%8D%A1%EF%BC%88%E9%99%84%E6%88%90%E5%93%81%EF%BC%89/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-06-30-%E7%BB%99%E8%87%AA%E5%AE%B6%E5%AD%A9%E5%AD%90DIY%E8%AF%86%E5%AD%97%E6%9D%90%E6%96%99%EF%BC%9A%E5%AD%97%E5%8D%A1%EF%BC%88%E9%99%84%E6%88%90%E5%93%81%EF%BC%89/">
         给自家孩子DIY识字材料：字卡（附成品）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-28-%E6%97%A9%E8%AF%86%E5%AD%97%E4%BC%9A%E7%A0%B4%E5%9D%8F%E5%AD%A9%E5%AD%90%E7%9A%84%E5%88%9B%E9%80%A0%E5%8A%9B%E3%80%81%E6%83%B3%E8%B1%A1%E5%8A%9B%E5%90%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-28-%E6%97%A9%E8%AF%86%E5%AD%97%E4%BC%9A%E7%A0%B4%E5%9D%8F%E5%AD%A9%E5%AD%90%E7%9A%84%E5%88%9B%E9%80%A0%E5%8A%9B%E3%80%81%E6%83%B3%E8%B1%A1%E5%8A%9B%E5%90%97/">
         早识字会破坏孩子的创造力、想象力吗？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-09-15-%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%87%E7%AB%A0%E5%90%AB%E6%9C%89%E4%B8%8D%E5%90%8C%E7%9A%84%E6%B1%89%E5%AD%97%E6%AF%94%E8%BE%83%E5%A4%9A%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E6%95%99%E5%B0%8F%E6%9C%8B%E5%8F%8B%E8%AF%86%E5%AD%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-09-15-%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%87%E7%AB%A0%E5%90%AB%E6%9C%89%E4%B8%8D%E5%90%8C%E7%9A%84%E6%B1%89%E5%AD%97%E6%AF%94%E8%BE%83%E5%A4%9A%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E6%95%99%E5%B0%8F%E6%9C%8B%E5%8F%8B%E8%AF%86%E5%AD%97/">
         有什么文章含有不同的汉字比较多，可以用于教小朋友识字？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-01-31-%E5%AD%97%E7%90%86/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-01-31-%E5%AD%97%E7%90%86/">
         常用字源字理(累积更新)
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-10-18-%E4%BB%8E%E9%A1%B7%E5%88%B0%E9%A2%8D/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-10-18-%E4%BB%8E%E9%A1%B7%E5%88%B0%E9%A2%8D/">
         从顷到颍（附说明）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-10-21-%E4%BB%8E%E3%AB%83%E5%88%B0%E6%97%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-10-21-%E4%BB%8E%E3%AB%83%E5%88%B0%E6%97%97/">
         从㫃到旗
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-27-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%90%8C%E6%AD%A5%E5%85%B4%E8%B6%A3%E8%AF%86%E5%AD%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-06-27-%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E5%90%8C%E6%AD%A5%E5%85%B4%E8%B6%A3%E8%AF%86%E5%AD%97/">
         小学语文同步兴趣识字（累积更新）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-11-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%AD%E6%96%87%E8%80%81%E5%B8%88%E4%B8%8D%E4%B8%80%E4%B8%AA%E4%B8%AA%E6%95%99%E6%B1%89%E5%AD%97%E6%9C%AC%E4%B9%89/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-11-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%AD%E6%96%87%E8%80%81%E5%B8%88%E4%B8%8D%E4%B8%80%E4%B8%AA%E4%B8%AA%E6%95%99%E6%B1%89%E5%AD%97%E6%9C%AC%E4%B9%89/">
         为什么语文老师不一个个教汉字本义？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-08-11-%E5%AD%A9%E5%AD%90%E5%9C%A8%E4%B8%8A%E5%B0%8F%E5%AD%A6%E4%B9%8B%E5%89%8D%E8%AF%A5%E8%AE%A9%E4%BB%96%E6%8E%8C%E6%8F%A1%E6%8B%BC%E9%9F%B3%E5%90%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-08-11-%E5%AD%A9%E5%AD%90%E5%9C%A8%E4%B8%8A%E5%B0%8F%E5%AD%A6%E4%B9%8B%E5%89%8D%E8%AF%A5%E8%AE%A9%E4%BB%96%E6%8E%8C%E6%8F%A1%E6%8B%BC%E9%9F%B3%E5%90%97/">
         孩子在上小学之前该让他掌握拼音吗？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-14-%E9%80%82%E5%BD%93%E5%BC%80%E5%B1%95%E7%B9%81%E4%BD%93%E5%AD%97%E6%95%99%E8%82%B2%E6%9C%89%E5%BF%85%E8%A6%81%E5%90%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-14-%E9%80%82%E5%BD%93%E5%BC%80%E5%B1%95%E7%B9%81%E4%BD%93%E5%AD%97%E6%95%99%E8%82%B2%E6%9C%89%E5%BF%85%E8%A6%81%E5%90%97/">
         适当开展繁体字教育有必要吗？
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           阅读启蒙
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
           阅读启蒙
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-09-09-%E9%83%A8%E7%BC%96%E7%89%88%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E6%95%99%E6%9D%90%E6%8B%BC%E9%9F%B3%E6%A0%87%E6%B3%A8%E8%A7%84%E5%88%99/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-09-09-%E9%83%A8%E7%BC%96%E7%89%88%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E6%95%99%E6%9D%90%E6%8B%BC%E9%9F%B3%E6%A0%87%E6%B3%A8%E8%A7%84%E5%88%99/">
         部编版小学语文教材拼音标注规则
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-11-28-%E9%83%A8%E7%BC%96%E7%89%88%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E6%95%99%E6%9D%90%E6%8B%BC%E9%9F%B3%E6%98%AF%E4%BB%80%E4%B9%88%E5%AD%97%E4%BD%93/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-11-28-%E9%83%A8%E7%BC%96%E7%89%88%E5%B0%8F%E5%AD%A6%E8%AF%AD%E6%96%87%E6%95%99%E6%9D%90%E6%8B%BC%E9%9F%B3%E6%98%AF%E4%BB%80%E4%B9%88%E5%AD%97%E4%BD%93/">
         部编版小学语文教材拼音是什么字体
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-29-%E4%B8%80%E5%B9%B4%E7%BA%A7%E5%AD%A9%E5%AD%90%E7%9C%8B%E4%B9%A6%E7%89%B9%E5%88%AB%E7%B2%97%E7%95%A5%E6%80%8E%E4%B9%88%E5%BC%95%E5%AF%BC/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-29-%E4%B8%80%E5%B9%B4%E7%BA%A7%E5%AD%A9%E5%AD%90%E7%9C%8B%E4%B9%A6%E7%89%B9%E5%88%AB%E7%B2%97%E7%95%A5%E6%80%8E%E4%B9%88%E5%BC%95%E5%AF%BC/">
         一年级孩子看书特别快，但很粗略，怎么引导？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-04-%E5%AD%A9%E5%AD%90%E4%B8%8D%E7%88%B1%E5%AD%A6%E4%B9%A0%EF%BC%8C%E6%AF%9B%E7%B3%99%E3%80%81%E5%BA%94%E4%BB%98%E6%80%8E%E4%B9%88%E5%8A%9E/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-04-%E5%AD%A9%E5%AD%90%E4%B8%8D%E7%88%B1%E5%AD%A6%E4%B9%A0%EF%BC%8C%E6%AF%9B%E7%B3%99%E3%80%81%E5%BA%94%E4%BB%98%E6%80%8E%E4%B9%88%E5%8A%9E/">
         孩子不爱学习，毛糙、应付怎么办？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-26-%E9%99%AA%E5%AD%A9%E5%AD%90%E5%AD%A6%E8%8B%B1%E8%AF%AD%E7%9A%84%E4%B8%80%E7%82%B9%E5%B0%9D%E8%AF%95%E5%92%8C%E6%83%B3%E6%B3%95/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-26-%E9%99%AA%E5%AD%A9%E5%AD%90%E5%AD%A6%E8%8B%B1%E8%AF%AD%E7%9A%84%E4%B8%80%E7%82%B9%E5%B0%9D%E8%AF%95%E5%92%8C%E6%83%B3%E6%B3%95/">
         陪孩子学英语的一点尝试和想法（累积更新）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-19-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%87%AA%E7%84%B6%E6%8B%BC%E8%AF%BB%E6%B3%95%E9%87%8C%E9%9D%A2%E7%9A%84%E8%A7%84%E5%BE%8B%E7%BC%BA%E4%B9%8F%E6%99%AE%E9%81%8D%E6%80%A7/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-19-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%87%AA%E7%84%B6%E6%8B%BC%E8%AF%BB%E6%B3%95%E9%87%8C%E9%9D%A2%E7%9A%84%E8%A7%84%E5%BE%8B%E7%BC%BA%E4%B9%8F%E6%99%AE%E9%81%8D%E6%80%A7/">
         为什么自然拼读法里面的规律缺乏普遍性？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-09-%E5%AD%A6%E8%8B%B1%E8%AF%AD%E4%BB%8E%E5%93%AA%E9%87%8C%E5%BC%80%E5%A7%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-09-%E5%AD%A6%E8%8B%B1%E8%AF%AD%E4%BB%8E%E5%93%AA%E9%87%8C%E5%BC%80%E5%A7%8B/">
         学英语从哪里开始？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-09-20-%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD%E9%9F%B3%E6%A0%87/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-09-20-%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD%E9%9F%B3%E6%A0%87/">
         如何学习英语音标？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-09-08-%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%AC%942.0%E4%B9%8B%E7%AB%A5%E4%B9%A6%E5%AE%9E%E6%B5%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2019-09-08-%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8%E7%AC%942.0%E4%B9%8B%E7%AB%A5%E4%B9%A6%E5%AE%9E%E6%B5%8B/">
         有道词典笔2.0之童书实测
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-02-28-%E4%BA%B2%E5%AD%90%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-02-28-%E4%BA%B2%E5%AD%90%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
         亲子阅读笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-10-04-%E6%98%AF%E4%B8%8D%E6%98%AF%E5%AD%A9%E5%AD%90%E5%8F%AF%E4%BB%A5%E4%B8%8D%E4%B8%8A%E5%B9%BC%E5%84%BF%E5%9B%AD/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-10-04-%E6%98%AF%E4%B8%8D%E6%98%AF%E5%AD%A9%E5%AD%90%E5%8F%AF%E4%BB%A5%E4%B8%8D%E4%B8%8A%E5%B9%BC%E5%84%BF%E5%9B%AD/">
         是不是孩子可以不上幼儿园
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-30-%E6%80%8E%E4%B9%88%E8%B7%9F%E5%AD%A9%E5%AD%90%E8%A7%A3%E9%87%8A%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-30-%E6%80%8E%E4%B9%88%E8%B7%9F%E5%AD%A9%E5%AD%90%E8%A7%A3%E9%87%8A%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89/">
         怎么跟孩子解释生命的意义
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-18-%E5%A6%82%E4%BD%95%E8%AF%B4%E5%AD%A9%E5%AD%90%E6%89%8D%E4%BC%9A%E5%90%AC/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-18-%E5%A6%82%E4%BD%95%E8%AF%B4%E5%AD%A9%E5%AD%90%E6%89%8D%E4%BC%9A%E5%90%AC/">
         如何说孩子才会听
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-23-%E5%A6%82%E4%BD%95%E8%83%BD%E8%AE%A9%E5%B0%8F%E5%AD%A6%E7%94%9F%E5%AE%89%E9%9D%99%E7%9A%84%E5%81%9A%E4%BD%9C%E4%B8%9A/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-23-%E5%A6%82%E4%BD%95%E8%83%BD%E8%AE%A9%E5%B0%8F%E5%AD%A6%E7%94%9F%E5%AE%89%E9%9D%99%E7%9A%84%E5%81%9A%E4%BD%9C%E4%B8%9A/">
         如何能让小学生安静的做作业
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-05-21-%E6%80%8E%E4%B9%88%E6%89%8D%E8%83%BD%E8%AE%A9%E5%AD%A9%E5%AD%90%E8%87%AA%E5%B7%B1%E6%9F%A5%E5%AD%97%E5%85%B8%E8%AF%86%E5%AD%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-05-21-%E6%80%8E%E4%B9%88%E6%89%8D%E8%83%BD%E8%AE%A9%E5%AD%A9%E5%AD%90%E8%87%AA%E5%B7%B1%E6%9F%A5%E5%AD%97%E5%85%B8%E8%AF%86%E5%AD%97/">
         怎么才能让孩子自己查字典识字？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-30-%E5%B0%8F%E5%AD%A6%E4%B8%80%E5%B9%B4%E7%BA%A7%E8%A6%81%E8%83%8C%E3%80%8A%E5%BC%9F%E5%AD%90%E8%A7%84%E3%80%8B%E5%90%88%E7%90%86%E5%90%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-30-%E5%B0%8F%E5%AD%A6%E4%B8%80%E5%B9%B4%E7%BA%A7%E8%A6%81%E8%83%8C%E3%80%8A%E5%BC%9F%E5%AD%90%E8%A7%84%E3%80%8B%E5%90%88%E7%90%86%E5%90%97/">
         小学一年级要背《弟子规》合理吗
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-19-%E4%BC%B4%E5%AD%A6%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-06-19-%E4%BC%B4%E5%AD%A6%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
         家长伴学技术笔记（累积更新）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-10-28-%E9%82%A3%E4%B8%AA%E5%81%B7%E4%B8%9C%E8%A5%BF%E7%9A%84%E4%BA%BA%E5%B0%B1%E6%98%AF%E6%88%91/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-10-28-%E9%82%A3%E4%B8%AA%E5%81%B7%E4%B8%9C%E8%A5%BF%E7%9A%84%E4%BA%BA%E5%B0%B1%E6%98%AF%E6%88%91/">
         那个偷东西的人就是我
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           语文答问
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
           语文答问
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-02-28-%E5%AD%A9%E5%AD%90%E4%B8%8D%E4%BC%9A%E5%86%99%E4%BD%9C%E6%96%87%EF%BC%8C%E8%83%BD%E8%AF%B4%EF%BC%8C%E4%B8%80%E5%88%B0%E5%86%99%E5%B0%B1%E4%B8%8D%E4%BC%9A%E4%BA%86/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-02-28-%E5%AD%A9%E5%AD%90%E4%B8%8D%E4%BC%9A%E5%86%99%E4%BD%9C%E6%96%87%EF%BC%8C%E8%83%BD%E8%AF%B4%EF%BC%8C%E4%B8%80%E5%88%B0%E5%86%99%E5%B0%B1%E4%B8%8D%E4%BC%9A%E4%BA%86/">
         孩子不会写作文，能说，一到写就不会了
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-09-23-%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E9%9F%B5%E6%AF%8Do%E7%9A%84%E8%AF%BB%E6%B3%95/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-09-23-%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E9%9F%B5%E6%AF%8Do%E7%9A%84%E8%AF%BB%E6%B3%95/">
         汉语拼音韵母o的读法
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-02-04-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8B%BC%E9%9F%B3ao%E4%B8%8D%E5%86%99%E4%BD%9Cau/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-02-04-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8B%BC%E9%9F%B3ao%E4%B8%8D%E5%86%99%E4%BD%9Cau/">
         为什么拼音ao不写作au
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-10-%E7%A9%B6%E7%AB%9F%E6%9C%89%E6%B2%A1%E6%9C%89%E2%80%9C%E6%82%A8%E4%BB%AC%E2%80%9D%E8%BF%99%E7%A7%8D%E7%94%A8%E6%B3%95/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-10-%E7%A9%B6%E7%AB%9F%E6%9C%89%E6%B2%A1%E6%9C%89%E2%80%9C%E6%82%A8%E4%BB%AC%E2%80%9D%E8%BF%99%E7%A7%8D%E7%94%A8%E6%B3%95/">
         究竟有没有“您们”这种用法？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-10-%E2%80%9C%E5%85%B1%E2%80%9D%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BB%8E%E9%83%A8%E9%A6%96%E2%80%9C%E8%89%B9%E2%80%9D%E5%8F%AF%E4%BB%A5%E6%9F%A5%E5%88%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-10-%E2%80%9C%E5%85%B1%E2%80%9D%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BB%8E%E9%83%A8%E9%A6%96%E2%80%9C%E8%89%B9%E2%80%9D%E5%8F%AF%E4%BB%A5%E6%9F%A5%E5%88%B0/">
         “共”为什么从部首“艹”可以查到
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-06-%E6%B1%89%E5%AD%97%E4%B8%BA%E4%BD%95%E6%98%AF%E7%AE%80%E5%8C%96%E7%9A%84%E8%B6%8B%E5%8A%BF/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-06-%E6%B1%89%E5%AD%97%E4%B8%BA%E4%BD%95%E6%98%AF%E7%AE%80%E5%8C%96%E7%9A%84%E8%B6%8B%E5%8A%BF/">
         汉字为何是简化的趋势
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-02-%E4%B8%80%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%AD%A6%E6%9C%9F%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8D%E8%A1%A8%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D%E7%9A%84%E9%A1%BA%E5%BA%8F/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-02-%E4%B8%80%E5%B9%B4%E7%BA%A7%E4%B8%8B%E5%AD%A6%E6%9C%9F%E6%8B%BC%E9%9F%B3%E5%AD%97%E6%AF%8D%E8%A1%A8%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D%E7%9A%84%E9%A1%BA%E5%BA%8F/">
         一年级下学期拼音字母表为什么是英文字母的顺序
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-26-%E5%A6%82%E4%BD%95%E7%9C%8B%E5%BE%85%E9%B2%81%E8%BF%85%E5%85%88%E7%94%9F%E6%8F%90%E5%87%BA%E7%9A%84%E5%BA%9F%E9%99%A4%E6%B1%89%E5%AD%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-26-%E5%A6%82%E4%BD%95%E7%9C%8B%E5%BE%85%E9%B2%81%E8%BF%85%E5%85%88%E7%94%9F%E6%8F%90%E5%87%BA%E7%9A%84%E5%BA%9F%E9%99%A4%E6%B1%89%E5%AD%97/">
         如何看待鲁迅先生提出要废除汉字
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-05-20-%E9%81%87%E5%88%B0%E9%9A%BE%E5%AD%97%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-05-20-%E9%81%87%E5%88%B0%E9%9A%BE%E5%AD%97%E6%80%8E%E4%B9%88%E8%BE%93%E5%85%A5/">
         遇到难字怎么输入
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-02-15-%E5%BD%93%E5%88%9D%E5%88%9B%E5%88%B6%E6%8B%BC%E9%9F%B3%E7%9A%84%E6%97%B6%E5%80%99%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8v%E8%80%8C%E7%94%A8%C3%BC%EF%BC%9F%EF%BC%88%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E6%96%B9%E6%A1%88%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%89/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-02-15-%E5%BD%93%E5%88%9D%E5%88%9B%E5%88%B6%E6%8B%BC%E9%9F%B3%E7%9A%84%E6%97%B6%E5%80%99%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8v%E8%80%8C%E7%94%A8%C3%BC%EF%BC%9F%EF%BC%88%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E6%96%B9%E6%A1%88%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%89/">
         当初创制拼音的时候为什么不用v而用ü？（汉语拼音方案的一些问题）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-02-26-%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AB%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%EF%BC%8C%E8%80%8C%E4%B8%8D%E5%8F%AB%E6%B1%89%E8%AF%AD%E6%B3%A8%E9%9F%B3%E6%88%96%E6%B1%89%E8%AF%AD%E9%9F%B3%E6%A0%87/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-02-26-%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AB%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3%EF%BC%8C%E8%80%8C%E4%B8%8D%E5%8F%AB%E6%B1%89%E8%AF%AD%E6%B3%A8%E9%9F%B3%E6%88%96%E6%B1%89%E8%AF%AD%E9%9F%B3%E6%A0%87/">
         汉语拼音为什么叫汉语拼音，而不叫汉语注音或汉语音标？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-22-%E5%AE%8B%E4%BD%93%E5%AD%97%E6%98%AF%E5%90%A6%E6%98%AF%E6%9C%80%E9%95%BF%E6%97%B6%E9%97%B4%E9%80%82%E5%90%88%E9%98%85%E8%AF%BB%E7%9A%84%E5%AD%97%E4%BD%93/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-22-%E5%AE%8B%E4%BD%93%E5%AD%97%E6%98%AF%E5%90%A6%E6%98%AF%E6%9C%80%E9%95%BF%E6%97%B6%E9%97%B4%E9%80%82%E5%90%88%E9%98%85%E8%AF%BB%E7%9A%84%E5%AD%97%E4%BD%93/">
         宋体字是否是最长时间适合阅读的字体？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-05-%E7%AE%80%E4%BD%93%E5%AD%97%E9%87%8C%E4%B8%89%E7%82%B9%E6%B0%B4%E4%B8%BA%E4%BB%80%E4%B9%88%E7%AE%80%E5%8C%96%E4%B8%BA%E4%B8%A4%E7%82%B9%E6%B0%B4/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-05-%E7%AE%80%E4%BD%93%E5%AD%97%E9%87%8C%E4%B8%89%E7%82%B9%E6%B0%B4%E4%B8%BA%E4%BB%80%E4%B9%88%E7%AE%80%E5%8C%96%E4%B8%BA%E4%B8%A4%E7%82%B9%E6%B0%B4/">
         简体字里三点水为什么简化为两点水？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-16-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%95%BF%E6%97%B6%E9%97%B4%E7%9B%AF%E7%9D%80%E4%B8%80%E4%B8%AA%E6%B1%89%E5%AD%97%EF%BC%8C%E4%BC%9A%E8%A7%89%E5%BE%97%E5%BE%88%E5%A5%87%E6%80%AA%EF%BC%8C%E8%A7%89%E5%BE%97%E4%B8%8D%E8%AE%A4%E8%AF%86%E8%BF%99%E4%B8%AA%E6%B1%89%E5%AD%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-16-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%95%BF%E6%97%B6%E9%97%B4%E7%9B%AF%E7%9D%80%E4%B8%80%E4%B8%AA%E6%B1%89%E5%AD%97%EF%BC%8C%E4%BC%9A%E8%A7%89%E5%BE%97%E5%BE%88%E5%A5%87%E6%80%AA%EF%BC%8C%E8%A7%89%E5%BE%97%E4%B8%8D%E8%AE%A4%E8%AF%86%E8%BF%99%E4%B8%AA%E6%B1%89%E5%AD%97/">
         为什么长时间盯着一个汉字，会觉得很奇怪，觉得不认识这个汉字?
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-19-%E4%B8%BA%E4%BB%80%E4%B9%88%E7%AE%80%E5%8C%96%E5%AD%97%E3%80%8C%E5%9B%BD%E3%80%8D%E6%8A%8A%E3%80%8C%E6%88%96%E3%80%8D%E6%8D%A2%E6%88%90%E4%BA%86%E3%80%8C%E7%8E%89%E3%80%8D%EF%BC%8C%E7%B9%81%E4%BD%93%E5%AD%97%E4%B8%AD%E7%9A%84%E3%80%8C%E6%88%96%E3%80%8D%E6%9C%89%E4%BB%80%E4%B9%88%E5%90%AB%E4%B9%89/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-19-%E4%B8%BA%E4%BB%80%E4%B9%88%E7%AE%80%E5%8C%96%E5%AD%97%E3%80%8C%E5%9B%BD%E3%80%8D%E6%8A%8A%E3%80%8C%E6%88%96%E3%80%8D%E6%8D%A2%E6%88%90%E4%BA%86%E3%80%8C%E7%8E%89%E3%80%8D%EF%BC%8C%E7%B9%81%E4%BD%93%E5%AD%97%E4%B8%AD%E7%9A%84%E3%80%8C%E6%88%96%E3%80%8D%E6%9C%89%E4%BB%80%E4%B9%88%E5%90%AB%E4%B9%89/">
         为什么把「國」改成「国」，「或」有什么含义？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-28-%E5%BD%A2%E5%A3%B0%E5%AD%97%E5%9C%A8%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E5%B8%B8%E7%94%A8%E5%AD%97%E4%B8%AD%E6%89%80%E5%8D%A0%E7%9A%84%E6%AF%94%E4%BE%8B%E6%98%AF%E7%99%BE%E5%88%86%E4%B9%8B%E5%87%A0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-28-%E5%BD%A2%E5%A3%B0%E5%AD%97%E5%9C%A8%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E5%B8%B8%E7%94%A8%E5%AD%97%E4%B8%AD%E6%89%80%E5%8D%A0%E7%9A%84%E6%AF%94%E4%BE%8B%E6%98%AF%E7%99%BE%E5%88%86%E4%B9%8B%E5%87%A0/">
         形声字在现代汉语常用字中所占的比例是百分之几？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-12-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B1%89%E5%AD%97%E4%BC%9A%E6%BC%94%E5%8C%96%E6%88%90%E6%96%B9%E6%96%B9%E6%AD%A3%E6%AD%A3%E7%9A%84%EF%BC%8C%E6%B2%A1%E6%9C%89%E5%9C%86%E5%9C%88%E7%BB%93%E6%9E%84%E7%9A%84%E5%81%8F%E6%97%81/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-12-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B1%89%E5%AD%97%E4%BC%9A%E6%BC%94%E5%8C%96%E6%88%90%E6%96%B9%E6%96%B9%E6%AD%A3%E6%AD%A3%E7%9A%84%EF%BC%8C%E6%B2%A1%E6%9C%89%E5%9C%86%E5%9C%88%E7%BB%93%E6%9E%84%E7%9A%84%E5%81%8F%E6%97%81/">
         为什么汉字会演化成方方正正的，没有圆圈结构的偏旁
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-25-%E6%B1%89%E5%AD%97%E6%9C%89%E5%A4%9A%E5%A4%9A/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-06-25-%E6%B1%89%E5%AD%97%E6%9C%89%E5%A4%9A%E5%A4%9A/">
         汉字到底有多多？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-15-%E9%80%9A%E8%BF%87%E7%AE%80%E4%BD%93%E6%B1%89%E5%AD%97%E9%9A%8F%E6%9C%BA%E7%BB%84%E5%90%88%E4%BA%A7%E7%94%9F%E6%88%91%E5%9B%BD%E7%8E%B0%E6%9C%89%E7%9A%84%E6%9F%90%E4%B8%80%E6%9C%AC%E4%B9%A6%E7%9A%84%E5%85%A8%E9%83%A8%E5%86%85%E5%AE%B9%E7%9A%84%E6%A6%82%E7%8E%87%E5%A4%A7%E7%BA%A6%E6%98%AF%E5%A4%9A%E5%B0%91%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8E%BB%E8%AE%A1%E7%AE%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-15-%E9%80%9A%E8%BF%87%E7%AE%80%E4%BD%93%E6%B1%89%E5%AD%97%E9%9A%8F%E6%9C%BA%E7%BB%84%E5%90%88%E4%BA%A7%E7%94%9F%E6%88%91%E5%9B%BD%E7%8E%B0%E6%9C%89%E7%9A%84%E6%9F%90%E4%B8%80%E6%9C%AC%E4%B9%A6%E7%9A%84%E5%85%A8%E9%83%A8%E5%86%85%E5%AE%B9%E7%9A%84%E6%A6%82%E7%8E%87%E5%A4%A7%E7%BA%A6%E6%98%AF%E5%A4%9A%E5%B0%91%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8E%BB%E8%AE%A1%E7%AE%97/">
         简体字随机组合成某一本书的概率大约是多少，怎么算？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-06-17-%E3%80%8A%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95%E3%80%8B%E7%9A%84%E9%97%B4%E9%9A%94%E5%8F%B7%E5%AE%BD%E5%BA%A6%E6%9C%89%E8%AF%AF/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-06-17-%E3%80%8A%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7%E7%94%A8%E6%B3%95%E3%80%8B%E7%9A%84%E9%97%B4%E9%9A%94%E5%8F%B7%E5%AE%BD%E5%BA%A6%E6%9C%89%E8%AF%AF/">
         《标点符号用法》的间隔号宽度有误
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-17-%E5%BD%93%E4%BB%A3%E5%88%9D%E9%AB%98%E4%B8%AD%E8%AF%AD%E6%96%87%E6%95%99%E5%AD%A6%E6%98%AF%E5%90%A6%E8%BF%87%E4%BA%8E%E2%80%9C%E6%96%87%E5%AD%A6%E5%8C%96%E2%80%9D%E4%BA%86/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-17-%E5%BD%93%E4%BB%A3%E5%88%9D%E9%AB%98%E4%B8%AD%E8%AF%AD%E6%96%87%E6%95%99%E5%AD%A6%E6%98%AF%E5%90%A6%E8%BF%87%E4%BA%8E%E2%80%9C%E6%96%87%E5%AD%A6%E5%8C%96%E2%80%9D%E4%BA%86/">
         当代初高中语文教学是否过于“文学化”了？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-25-%E4%B8%AD%E5%B9%B4%E8%87%AA%E5%AD%A6%E8%8B%B1%E8%AF%AD%E8%A6%81%E6%9C%89%E5%8A%A8%E5%8A%9B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-25-%E4%B8%AD%E5%B9%B4%E8%87%AA%E5%AD%A6%E8%8B%B1%E8%AF%AD%E8%A6%81%E6%9C%89%E5%8A%A8%E5%8A%9B/">
         中年人自学英语的动力从哪儿来？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-11-%E8%AF%AD%E6%96%87%E7%AD%94%E9%97%AE/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-11-%E8%AF%AD%E6%96%87%E7%AD%94%E9%97%AE/">
         更多语文与伴学答问 〉〉
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-11-08-%E5%9B%BD%E5%AE%B6%E5%92%8C%E8%A1%8C%E4%B8%9A%E6%A0%87%E5%87%86%E6%9C%89%E7%89%88%E6%9D%83%E5%90%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-11-08-%E5%9B%BD%E5%AE%B6%E5%92%8C%E8%A1%8C%E4%B8%9A%E6%A0%87%E5%87%86%E6%9C%89%E7%89%88%E6%9D%83%E5%90%97/">
         国家和行业标准有版权吗？
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
           语文专栏
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_7">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
           语文专栏
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-03-10-%E9%83%BD%E8%AF%B4%E5%86%99%E6%97%A5%E8%AE%B0%E6%98%AF%E5%A5%BD%E4%B9%A0%E6%83%AF%EF%BC%8C%E4%BD%86%E5%AD%A9%E5%AD%90%E4%B8%8D%E7%88%B1%E5%86%99%E6%80%8E%E4%B9%88%E5%8A%9E/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-03-10-%E9%83%BD%E8%AF%B4%E5%86%99%E6%97%A5%E8%AE%B0%E6%98%AF%E5%A5%BD%E4%B9%A0%E6%83%AF%EF%BC%8C%E4%BD%86%E5%AD%A9%E5%AD%90%E4%B8%8D%E7%88%B1%E5%86%99%E6%80%8E%E4%B9%88%E5%8A%9E/">
         都说写日记是好习惯，但孩子不爱写怎么办
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-03-10-%E5%AD%A9%E5%AD%90%E4%B8%8D%E7%88%B1%E5%AD%A6%E4%B9%A0%EF%BC%9F%E5%85%88%E8%AE%A9%E4%BB%96%E7%88%B1%E4%B8%8A%E8%AF%BB%E4%B9%A6/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-03-10-%E5%AD%A9%E5%AD%90%E4%B8%8D%E7%88%B1%E5%AD%A6%E4%B9%A0%EF%BC%9F%E5%85%88%E8%AE%A9%E4%BB%96%E7%88%B1%E4%B8%8A%E8%AF%BB%E4%B9%A6/">
         孩子不爱学习？先让他爱上读书
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-01-%E5%8D%B4%E6%98%AF%E7%9F%B3%E6%A6%B4%E7%9F%A5%E7%AB%8B%E5%A4%8F%EF%BC%8C%E5%B9%B4%E5%B9%B4%E6%AD%A4%E6%97%A5%E4%B8%80%E8%8A%B1%E5%BC%80%EF%BC%9A%E7%AB%8B%E5%A4%8F%E7%9A%84%E5%AD%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-01-%E5%8D%B4%E6%98%AF%E7%9F%B3%E6%A6%B4%E7%9F%A5%E7%AB%8B%E5%A4%8F%EF%BC%8C%E5%B9%B4%E5%B9%B4%E6%AD%A4%E6%97%A5%E4%B8%80%E8%8A%B1%E5%BC%80%EF%BC%9A%E7%AB%8B%E5%A4%8F%E7%9A%84%E5%AD%97/">
         却是石榴知立夏，年年此日一花开：立夏的字
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-05-11-%E8%94%AC%E8%8F%9C%E9%9D%92%EF%BC%8C%E8%94%AC%E8%8F%9C%E9%9D%92%EF%BC%8C%E8%AF%B4%E8%AF%B4%E7%AC%91%E7%AC%91%E5%88%B0%E5%8C%97%E4%BA%AC%EF%BC%9A%E5%9F%8E%E9%87%8C%E7%9A%84%E5%AD%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-05-11-%E8%94%AC%E8%8F%9C%E9%9D%92%EF%BC%8C%E8%94%AC%E8%8F%9C%E9%9D%92%EF%BC%8C%E8%AF%B4%E8%AF%B4%E7%AC%91%E7%AC%91%E5%88%B0%E5%8C%97%E4%BA%AC%EF%BC%9A%E5%9F%8E%E9%87%8C%E7%9A%84%E5%AD%97/">
         蔬菜青，蔬菜青，说说笑笑到北京：城里的字
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-05-26-%E8%AE%B8%E4%B8%89%E5%A4%9A%E6%98%AF%E5%93%AA%E4%B8%89%E5%A4%9A%EF%BC%9F%EF%BC%9A%E5%B0%8F%E5%AD%A9%E7%9A%84%E5%AD%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-05-26-%E8%AE%B8%E4%B8%89%E5%A4%9A%E6%98%AF%E5%93%AA%E4%B8%89%E5%A4%9A%EF%BC%9F%EF%BC%9A%E5%B0%8F%E5%AD%A9%E7%9A%84%E5%AD%97/">
         许三多是哪三多？：小孩的字
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-05-20-%E5%AD%A9%E5%AD%90%E5%8F%AA%E6%83%B3%E5%90%AC%E9%9F%B3%E9%A2%91%E6%95%85%E4%BA%8B%E4%B8%8D%E6%83%B3%E8%AF%BB%E4%B9%A6%E7%9C%8B%E4%B9%A6%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-05-20-%E5%AD%A9%E5%AD%90%E5%8F%AA%E6%83%B3%E5%90%AC%E9%9F%B3%E9%A2%91%E6%95%85%E4%BA%8B%E4%B8%8D%E6%83%B3%E8%AF%BB%E4%B9%A6%E7%9C%8B%E4%B9%A6%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E/">
         孩子只想听音频故事不想读书看书，怎么办？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-01-25-%E3%80%8A%E4%BA%8C%E3%80%87%E4%BA%8C%E4%B8%80%E5%B9%B4%E5%85%A8%E5%9B%BD%E5%A7%93%E5%90%8D%E6%8A%A5%E5%91%8A%E3%80%8B%E5%8F%91%E5%B8%83%EF%BC%8C%E4%BD%A0%E5%AE%B6%E5%AD%A9%E5%AD%90%E2%80%9C%E6%92%9E%E5%90%8D%E2%80%9D%E4%BA%86%E5%90%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-01-25-%E3%80%8A%E4%BA%8C%E3%80%87%E4%BA%8C%E4%B8%80%E5%B9%B4%E5%85%A8%E5%9B%BD%E5%A7%93%E5%90%8D%E6%8A%A5%E5%91%8A%E3%80%8B%E5%8F%91%E5%B8%83%EF%BC%8C%E4%BD%A0%E5%AE%B6%E5%AD%A9%E5%AD%90%E2%80%9C%E6%92%9E%E5%90%8D%E2%80%9D%E4%BA%86%E5%90%97/">
         《二〇二一年全国姓名报告》发布，你家孩子“撞名”了吗？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-01-23-%E6%98%A5%E8%8A%82%E5%81%87%E6%9C%9F%E9%87%8C%EF%BC%8C%E6%80%8E%E4%B9%88%E8%AE%A9%E5%AD%A9%E5%AD%90%E8%AF%BB%E4%B9%A6%E6%9B%B4%E6%9C%89%E6%94%B6%E8%8E%B7/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-01-23-%E6%98%A5%E8%8A%82%E5%81%87%E6%9C%9F%E9%87%8C%EF%BC%8C%E6%80%8E%E4%B9%88%E8%AE%A9%E5%AD%A9%E5%AD%90%E8%AF%BB%E4%B9%A6%E6%9B%B4%E6%9C%89%E6%94%B6%E8%8E%B7/">
         春节假期里，怎么让孩子读书更有收获
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
           学习的技术、资料与游戏
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_8">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
           学习的技术、资料与游戏
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-24-%E8%87%AA%E5%88%B6%E5%84%BF%E7%AB%A5%E5%90%AF%E8%92%99%E9%9B%86%E4%B8%AD%E8%AF%86%E5%AD%97%E8%AF%AD%E6%96%99%E5%BA%93%E4%B8%8E%E5%88%86%E7%BA%A7%E5%AD%97%E8%A1%A8/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-06-24-%E8%87%AA%E5%88%B6%E5%84%BF%E7%AB%A5%E5%90%AF%E8%92%99%E9%9B%86%E4%B8%AD%E8%AF%86%E5%AD%97%E8%AF%AD%E6%96%99%E5%BA%93%E4%B8%8E%E5%88%86%E7%BA%A7%E5%AD%97%E8%A1%A8/">
         自制儿童识字语料库与分级字表
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-24-%E8%87%AA%E5%88%B6%E5%84%BF%E7%AB%A5%E5%90%AF%E8%92%99%E9%9B%86%E4%B8%AD%E8%AF%86%E5%AD%97%E5%88%86%E7%BA%A7%E5%AD%97%E8%A1%A8/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-06-24-%E8%87%AA%E5%88%B6%E5%84%BF%E7%AB%A5%E5%90%AF%E8%92%99%E9%9B%86%E4%B8%AD%E8%AF%86%E5%AD%97%E5%88%86%E7%BA%A7%E5%AD%97%E8%A1%A8/">
         自制儿童识字分级字表
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-25-%E8%AF%86%E5%AD%97%E9%87%8F%E6%B5%8B%E8%AF%95/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-25-%E8%AF%86%E5%AD%97%E9%87%8F%E6%B5%8B%E8%AF%95/">
         试试你认识多少字
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-10-02-%E5%84%BF%E7%AB%A5%E8%AF%86%E5%AD%97%E7%94%A8%E6%B1%89%E8%AF%AD%E6%96%87%E6%9C%AC%E7%9A%84%E9%9A%BE%E5%BA%A6%E7%AE%97%E6%B3%95/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-10-02-%E5%84%BF%E7%AB%A5%E8%AF%86%E5%AD%97%E7%94%A8%E6%B1%89%E8%AF%AD%E6%96%87%E6%9C%AC%E7%9A%84%E9%9A%BE%E5%BA%A6%E7%AE%97%E6%B3%95/">
         儿童识字用汉语文本的难度算法
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-10-14-%E6%8B%BC%E5%AD%97%E6%B8%B8%E6%88%8F%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-10-14-%E6%8B%BC%E5%AD%97%E6%B8%B8%E6%88%8F%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/">
         《拼字》游戏软件说明文档
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-13-%E6%B2%A1%E8%B6%A3%E6%B8%B8%E6%88%8F2.0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-06-13-%E6%B2%A1%E8%B6%A3%E6%B8%B8%E6%88%8F2.0/">
         汉字《拼字》游戏2.0
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-5-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83%E7%99%BB%E8%AE%B0%E5%AE%9E%E4%BE%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-12-5-%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6%E8%91%97%E4%BD%9C%E6%9D%83%E7%99%BB%E8%AE%B0%E5%AE%9E%E4%BE%8B/">
         计算机软件著作权登记实例
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-15-%E4%B8%80%E5%AD%97%E4%B8%8D%E8%90%BD/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-06-15-%E4%B8%80%E5%AD%97%E4%B8%8D%E8%90%BD/">
         跟我的《拼字》“同款”的几种游戏
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-10-10-%E3%80%8A%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8%E3%80%8B%E4%B8%AD%E6%9E%84%E5%AD%97%E6%9C%80%E5%A4%9A%E7%9A%84100%E4%B8%AA%E9%83%A8%E4%BB%B6/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-10-10-%E3%80%8A%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8%E3%80%8B%E4%B8%AD%E6%9E%84%E5%AD%97%E6%9C%80%E5%A4%9A%E7%9A%84100%E4%B8%AA%E9%83%A8%E4%BB%B6/">
         《通用规范汉字表》中构字最多的100个部件
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-05-25-%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E6%B8%B8%E6%88%8F%E6%95%B4%E7%90%86/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-05-25-%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E6%B8%B8%E6%88%8F%E6%95%B4%E7%90%86/">
         语言学习游戏整理(草稿)
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-05-25-%E8%A7%86%E9%A2%91%E7%9B%8A%E6%99%BA%E6%B8%B8%E6%88%8F%E5%88%86%E7%B1%BB/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-05-25-%E8%A7%86%E9%A2%91%E7%9B%8A%E6%99%BA%E6%B8%B8%E6%88%8F%E5%88%86%E7%B1%BB/">
         视频益智游戏分类
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
           亲子写字
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_9">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
           亲子写字
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-01-02-%E4%BA%B2%E5%AD%90%E5%86%99%E5%AD%97%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-01-02-%E4%BA%B2%E5%AD%90%E5%86%99%E5%AD%97%E7%AC%94%E8%AE%B0/">
         亲子写字笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-09-29-%E7%AC%94%E9%A1%BA%E5%8A%A8%E7%94%BB/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-09-29-%E7%AC%94%E9%A1%BA%E5%8A%A8%E7%94%BB/">
         2678字笔顺动画
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-02-%E5%A6%82%E4%BD%95%E5%90%91%E5%AD%A9%E5%AD%90%E8%A7%A3%E9%87%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E6%8C%89%E7%AC%94%E9%A1%BA%E5%86%99%E5%AD%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-02-%E5%A6%82%E4%BD%95%E5%90%91%E5%AD%A9%E5%AD%90%E8%A7%A3%E9%87%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%80%E5%AE%9A%E8%A6%81%E6%8C%89%E7%AC%94%E9%A1%BA%E5%86%99%E5%AD%97/">
         如何向孩子解释为什么一定要按笔顺写字
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-05-16-%E9%A2%9C%E7%9C%9F%E5%8D%BF%E6%9C%89%E6%B2%A1%E6%9C%89%E5%86%99%E9%94%99%E5%AD%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-05-16-%E9%A2%9C%E7%9C%9F%E5%8D%BF%E6%9C%89%E6%B2%A1%E6%9C%89%E5%86%99%E9%94%99%E5%AD%97/">
         颜真卿有没有写错字
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-05-28-%E6%98%AF%E4%B8%8D%E6%98%AF%E5%8F%AA%E6%9C%89%E6%B1%89%E5%AD%97%E6%89%8D%E8%83%BD%E5%86%99%E5%87%BA%E4%B9%A6%E6%B3%95/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-05-28-%E6%98%AF%E4%B8%8D%E6%98%AF%E5%8F%AA%E6%9C%89%E6%B1%89%E5%AD%97%E6%89%8D%E8%83%BD%E5%86%99%E5%87%BA%E4%B9%A6%E6%B3%95/">
         是不是只有汉字才能写出书法
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-19-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%8B%B1%E8%AF%AD%E5%92%8C%E6%8B%BC%E9%9F%B3%E8%A6%81%E5%AD%A6%E4%B8%A4%E5%A5%97%E6%89%8B%E5%86%99%E4%BD%93%EF%BC%9F/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-19-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%8B%B1%E8%AF%AD%E5%92%8C%E6%8B%BC%E9%9F%B3%E8%A6%81%E5%AD%A6%E4%B8%A4%E5%A5%97%E6%89%8B%E5%86%99%E4%BD%93%EF%BC%9F/">
         为什么英语和拼音要学两套手写体？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-02-14-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B0%8F%E5%AD%A6%E8%8B%B1%E8%AF%AD%E6%95%99%E6%9D%90%E8%A6%81%E7%94%A8%E8%BF%99%E7%A7%8D%E5%AD%97%E4%BD%93%E4%BD%93%E5%8D%B0%E5%88%B7/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-02-14-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B0%8F%E5%AD%A6%E8%8B%B1%E8%AF%AD%E6%95%99%E6%9D%90%E8%A6%81%E7%94%A8%E8%BF%99%E7%A7%8D%E5%AD%97%E4%BD%93%E4%BD%93%E5%8D%B0%E5%88%B7/">
         为什么小学英语教材要用这种字体印刷
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-06-19-%E6%B3%95%E5%B8%96%E7%BD%91%E5%9B%BE%E6%AF%94%E4%B9%A6%E6%B8%85%E6%A5%9A/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-06-19-%E6%B3%95%E5%B8%96%E7%BD%91%E5%9B%BE%E6%AF%94%E4%B9%A6%E6%B8%85%E6%A5%9A/">
         《高力士墓志》网图比书清楚
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E6%8E%88%E7%AC%94%E8%A6%81%E8%AF%B4%E3%80%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E6%8E%88%E7%AC%94%E8%A6%81%E8%AF%B4%E3%80%8B/">
         书论：唐·韩方明《授笔要说》
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E6%B5%B7%E5%B2%B3%E5%90%8D%E8%A8%80%E3%80%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E6%B5%B7%E5%B2%B3%E5%90%8D%E8%A8%80%E3%80%8B/">
         书论：宋·米芾《海岳名言》
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E7%BF%B0%E5%A2%A8%E5%BF%97%E3%80%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E7%BF%B0%E5%A2%A8%E5%BF%97%E3%80%8B/">
         书论：宋高宗赵构《翰墨志》
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E5%A4%A7%E5%AD%97%E7%BB%93%E6%9E%84%E5%85%AB%E5%8D%81%E5%9B%9B%E6%B3%95%E3%80%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E5%A4%A7%E5%AD%97%E7%BB%93%E6%9E%84%E5%85%AB%E5%8D%81%E5%9B%9B%E6%B3%95%E3%80%8B/">
         书论：明·李淳《大字结构八十四法》
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E7%BF%B0%E6%9E%97%E8%A6%81%E8%AF%80%E3%80%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E7%BF%B0%E6%9E%97%E8%A6%81%E8%AF%80%E3%80%8B/">
         书论：元·陈绎曾《翰林要诀》
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E4%B9%A6%E6%B3%95%E4%B8%89%E6%98%A7%E3%80%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E4%B9%A6%E6%B3%95%E4%B8%89%E6%98%A7%E3%80%8B/">
         书论：元·佚名《书法三昧》
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E5%A2%A8%E6%B1%A0%E7%90%90%E5%BD%95%E3%80%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E5%A2%A8%E6%B1%A0%E7%90%90%E5%BD%95%E3%80%8B/">
         书论：明·杨慎《墨池琐录》
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E4%B9%A6%E6%B3%95%E7%BA%B6%E8%B4%AF%E3%80%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E4%B9%A6%E6%B3%95%E7%BA%B6%E8%B4%AF%E3%80%8B/">
         书论：明·宋啬《书法纶贯》
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E4%B9%A6%E6%B3%95%E7%BA%A6%E8%A8%80%E3%80%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E4%B9%A6%E6%B3%95%E7%BA%A6%E8%A8%80%E3%80%8B/">
         书论：明末清初·宋曹《书法约言》
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E7%AB%A5%E5%AD%A6%E4%B9%A6%E7%A8%8B%E3%80%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-17-%E4%B9%A6%E8%AE%BA%E6%95%B4%E7%90%86%EF%BC%9A%E3%80%8A%E7%AB%A5%E5%AD%A6%E4%B9%A6%E7%A8%8B%E3%80%8B/">
         书论：明·丰坊《童学书程》
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
-      
-      
-      
-        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
           少儿编程及STEAM
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
-        <label class="md-nav__title" for="__nav_10">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
           少儿编程及STEAM
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-04-23-%E5%B0%91%E5%84%BFPython%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%94%A8%E4%BB%80%E4%B9%88%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-04-23-%E5%B0%91%E5%84%BFPython%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8%E7%94%A8%E4%BB%80%E4%B9%88%E6%A1%86%E6%9E%B6/">
         Arcade：适合少儿Python入门的游戏框架
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-04-25-Arcade%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-04-25-Arcade%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         Arcade学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-11-23-PygameZero%E6%96%87%E6%A1%A3%E7%9A%84%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2019-11-23-PygameZero%E6%96%87%E6%A1%A3%E7%9A%84%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/">
         Pygame Zero文档的思维导图和入门实例
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-01-29-PygameZero%E5%8A%A9%E6%89%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-01-29-PygameZero%E5%8A%A9%E6%89%8B/">
         PygameZero助手（比照Scratch而做的增强）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-09-PygameZero%E8%B5%84%E6%BA%90/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-09-PygameZero%E8%B5%84%E6%BA%90/">
         PygameZero资源
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-17-%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B%E7%94%A8%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-17-%E5%B0%91%E5%84%BF%E7%BC%96%E7%A8%8B%E7%94%A8%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E5%99%A8/">
         少儿编程用在线编辑器
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-12-06-Python%E6%89%BE%E9%97%A8%E6%95%99%E7%A8%8B-%E7%9B%AE%E5%BD%95-%E6%B4%BE%E7%9C%9F%E5%92%8C%E4%B8%A4%E6%9D%A1%E8%85%BF%E6%9D%A5%E5%88%B0%E5%93%88%E7%BD%97%E4%B8%96%E7%95%8C/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-12-06-Python%E6%89%BE%E9%97%A8%E6%95%99%E7%A8%8B-%E7%9B%AE%E5%BD%95-%E6%B4%BE%E7%9C%9F%E5%92%8C%E4%B8%A4%E6%9D%A1%E8%85%BF%E6%9D%A5%E5%88%B0%E5%93%88%E7%BD%97%E4%B8%96%E7%95%8C/">
         派真和两条腿来到哈罗世界
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
           编程环境
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         编程环境
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       目录
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#terminalshell" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#terminalshell">
     终端(terminal)+shell相关概念
   </a>
-  
 </li>
-      
-    </ul>
-  
+</ul>
 </nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-10-05-%E5%88%9D%E5%AD%A6python%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BC%96%E8%BE%91%E5%99%A8%E6%8E%A8%E8%8D%90/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2019-10-05-%E5%88%9D%E5%AD%A6python%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BC%96%E8%BE%91%E5%99%A8%E6%8E%A8%E8%8D%90/">
         初学python，有哪些编辑器推荐
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-02-13-Python%E7%BC%96%E7%A8%8B%E7%AD%94%E9%97%AE/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-02-13-Python%E7%BC%96%E7%A8%8B%E7%AD%94%E9%97%AE/">
         Python编程答问
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-05-15-Python%E7%A6%85/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2019-05-15-Python%E7%A6%85/">
         Python口头禅
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-27-Pyo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-12-27-Pyo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         Pyo学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-28-Pyo%E6%96%87%E6%A1%A3%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-12-28-Pyo%E6%96%87%E6%A1%A3%EF%BC%88%E4%B8%80%EF%BC%89/">
         Pyo文档（一）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-1-1-Pyo%E6%96%87%E6%A1%A3%EF%BC%88%E4%BA%8C%EF%BC%89%E5%AE%9E%E4%BE%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2019-1-1-Pyo%E6%96%87%E6%A1%A3%EF%BC%88%E4%BA%8C%EF%BC%89%E5%AE%9E%E4%BE%8B/">
         Pyo文档（二）实例
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-03-18-%E3%80%8A%E6%9E%81%E7%AE%80%E7%AE%97%E6%9C%AF%E5%8F%B2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-03-18-%E3%80%8A%E6%9E%81%E7%AE%80%E7%AE%97%E6%9C%AF%E5%8F%B2%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
         《极简算术史》读书笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-10-20-%E6%95%99%E5%AD%A9%E5%AD%90%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2019-10-20-%E6%95%99%E5%AD%A9%E5%AD%90%E9%AA%91%E8%87%AA%E8%A1%8C%E8%BD%A6/">
         教孩子骑自行车
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
           启蒙文摘
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_11">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_11">
+<span class="md-nav__icon md-icon"></span>
           启蒙文摘
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-12-%E6%95%99%E7%AB%A5%E5%AD%90%E6%B3%95/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-12-%E6%95%99%E7%AB%A5%E5%AD%90%E6%B3%95/">
         教童子法
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-10-%E8%BF%9E%E7%8E%AF%E5%9B%BE%E7%94%BB%E7%90%90%E8%B0%88/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-10-%E8%BF%9E%E7%8E%AF%E5%9B%BE%E7%94%BB%E7%90%90%E8%B0%88/">
         连环图画琐谈
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-10-%E3%80%8A%E7%9C%8B%E5%9B%BE%E8%AF%86%E5%AD%97%E3%80%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-10-%E3%80%8A%E7%9C%8B%E5%9B%BE%E8%AF%86%E5%AD%97%E3%80%8B/">
         《看图识字》
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-10-%E4%BA%BA%E7%94%9F%E8%AF%86%E5%AD%97%E8%83%A1%E6%B6%82%E5%A7%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-10-%E4%BA%BA%E7%94%9F%E8%AF%86%E5%AD%97%E8%83%A1%E6%B6%82%E5%A7%8B/">
         人生识字胡涂始
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-11-%E7%8E%8B%E9%95%9B%E4%B9%A6%E8%8B%8F%E8%BD%BC%E7%9F%B3%E8%8B%8D%E8%88%92%E9%86%89%E5%A2%A8%E5%A0%82%E8%AF%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-11-%E7%8E%8B%E9%95%9B%E4%B9%A6%E8%8B%8F%E8%BD%BC%E7%9F%B3%E8%8B%8D%E8%88%92%E9%86%89%E5%A2%A8%E5%A0%82%E8%AF%97/">
         王镛书苏轼石苍舒醉墨堂诗
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-06-11-%E3%80%8A%E4%BC%A0%E7%BB%9F%E8%AF%AD%E6%96%87%E6%95%99%E8%82%B2%E6%95%99%E6%9D%90%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-06-11-%E3%80%8A%E4%BC%A0%E7%BB%9F%E8%AF%AD%E6%96%87%E6%95%99%E8%82%B2%E6%95%99%E6%9D%90%E8%AE%BA%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
         《传统语文教育教材论》阅读笔记
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_12" type="checkbox"/>
+<label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
           老编辑的效率工具
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_12">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_12_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_12">
+<span class="md-nav__icon md-icon"></span>
           老编辑的效率工具
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-10-12-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E3%80%81%E8%AF%AD%E8%A8%80%E5%92%8C%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2019-10-12-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E3%80%81%E8%AF%AD%E8%A8%80%E5%92%8C%E6%A1%86%E6%9E%B6/">
         常用与备用软件、语言和框架
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-07-11-%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7%E7%AD%94%E9%97%AE/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-07-11-%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7%E7%AD%94%E9%97%AE/">
         效率工具答问（累积更新）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-03-03-%E7%94%A8ChatGPT%E8%AE%AD%E7%BB%83%E4%B8%80%E4%BD%8D%E8%82%B2%E5%84%BF%E6%95%99%E7%BB%83/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-03-03-%E7%94%A8ChatGPT%E8%AE%AD%E7%BB%83%E4%B8%80%E4%BD%8D%E8%82%B2%E5%84%BF%E6%95%99%E7%BB%83/">
         用ChatGPT训练一位育儿教练
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-03-04-80-Ways-to-Use-ChatGPT-in-the-Classroom/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-03-04-80-Ways-to-Use-ChatGPT-in-the-Classroom/">
         《ChatGPT辅助教学80招》目录试译
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-01-10-VSCode%E5%B0%8F%E6%8A%84/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-01-10-VSCode%E5%B0%8F%E6%8A%84/">
         VSCode小抄
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-03-02-%E7%BB%99%E8%87%AA%E5%B7%B1%E9%85%8D%E7%BD%AE%E7%A7%B0%E5%BF%83%E5%A6%82%E6%84%8F%E7%9A%84%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-03-02-%E7%BB%99%E8%87%AA%E5%B7%B1%E9%85%8D%E7%BD%AE%E7%A7%B0%E5%BF%83%E5%A6%82%E6%84%8F%E7%9A%84%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7/">
         给自己配置称心如意的写作工具
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-11-7-%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7%E5%BF%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-11-7-%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7%E5%BF%97/">
         奇技淫巧志
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-04-%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84TextPro%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9B%BF%E6%8D%A2%E8%A1%A8/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-04-%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84TextPro%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9B%BF%E6%8D%A2%E8%A1%A8/">
         我常用的TextPro用自定义替换表
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-09-01-libreoffice%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-09-01-libreoffice%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/">
         LibreOfficeWriter使用问题
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-10-26-%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%A4%84%E7%90%86%E6%96%87%E6%9C%AC%E3%80%81%E7%AE%A1%E7%90%86%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%89%E4%BB%B6%E5%A5%97/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-10-26-%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%A4%84%E7%90%86%E6%96%87%E6%9C%AC%E3%80%81%E7%AE%A1%E7%90%86%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%89%E4%BB%B6%E5%A5%97/">
         用正则表达式处理文本、管理文件的三件套
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-05-31-%E7%BB%99%E7%BC%96%E8%BE%91%E6%9C%8B%E5%8F%8B%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%BE%E7%A8%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-05-31-%E7%BB%99%E7%BC%96%E8%BE%91%E6%9C%8B%E5%8F%8B%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%BE%E7%A8%8B/">
         给编辑朋友的正则表达式课程
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-02-02-%E6%95%99%E8%82%B2%E7%A1%AC%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-02-02-%E6%95%99%E8%82%B2%E7%A1%AC%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         教育硬件学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-12-%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%9A%E4%BB%8E%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%AD%E6%94%B6%E9%9B%86%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-12-12-%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%9A%E4%BB%8E%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%AD%E6%94%B6%E9%9B%86%E5%AD%97%E7%AC%A6%E4%B8%B2/">
         小工具：从多文件中收集字符串
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-14-Audition%E6%8A%80%E5%B7%A7%EF%BC%9A%E4%BD%BF%E4%B8%A4%E6%AE%B5%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E7%9A%84%E5%BD%95%E9%9F%B3%E5%8D%8F%E8%B0%83%E4%B8%80%E8%87%B4/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-12-14-Audition%E6%8A%80%E5%B7%A7%EF%BC%9A%E4%BD%BF%E4%B8%A4%E6%AE%B5%E4%B8%8D%E5%90%8C%E7%8E%AF%E5%A2%83%E7%9A%84%E5%BD%95%E9%9F%B3%E5%8D%8F%E8%B0%83%E4%B8%80%E8%87%B4/">
         Audition技巧：使两段不同环境的录音协调一致
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-14-Audition%E6%8A%80%E5%B7%A7%EF%BC%9A%E8%87%AA%E5%8A%A8%E5%88%86%E5%88%87%E9%9F%B3%E9%A2%91/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-12-14-Audition%E6%8A%80%E5%B7%A7%EF%BC%9A%E8%87%AA%E5%8A%A8%E5%88%86%E5%88%87%E9%9F%B3%E9%A2%91/">
         Audition技巧：半自动分切音频
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-15-%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%9A%E5%88%86%E5%89%B2%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-12-15-%E5%B0%8F%E5%B7%A5%E5%85%B7%EF%BC%9A%E5%88%86%E5%89%B2%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6/">
         小工具：分割文本文件
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2020-09-26-%E7%A1%AC%E7%9B%98%E6%8D%9F%E5%9D%8F%EF%BC%8C%E6%8A%A2%E6%95%91%E6%95%B0%E6%8D%AE/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2020-09-26-%E7%A1%AC%E7%9B%98%E6%8D%9F%E5%9D%8F%EF%BC%8C%E6%8A%A2%E6%95%91%E6%95%B0%E6%8D%AE/">
         硬盘损坏，抢救数据
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-02-27-markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-02-27-markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         markdown学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-02-04-%E4%B8%A4%E7%A7%8Dmarkdown%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-02-04-%E4%B8%A4%E7%A7%8Dmarkdown%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90%E6%96%B9%E6%B3%95/">
         两种markdown文件解析方法
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-16-markdown%E4%B8%AD%E7%9A%84mermaid%E5%9B%BE%E4%BE%8B/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-16-markdown%E4%B8%AD%E7%9A%84mermaid%E5%9B%BE%E4%BE%8B/">
         markdown中的mermaid图例
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-02-05-%E6%9C%89%E6%B2%A1%E6%9C%89%E5%90%88%E9%80%82%E7%9A%84%E8%83%BD%E6%9B%BF%E4%BB%A3flash%E7%9A%84%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90%E7%9A%84/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-02-05-%E6%9C%89%E6%B2%A1%E6%9C%89%E5%90%88%E9%80%82%E7%9A%84%E8%83%BD%E6%9B%BF%E4%BB%A3flash%E7%9A%84%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90%E7%9A%84/">
         有没有合适的能替代flash的软件推荐？
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-02-mkdocs-material%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-02-mkdocs-material%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         静态网站框架mkdocs+material学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-12-mkdocs-macros-plugin%E5%AE%8F%E6%8F%92%E4%BB%B6/">
         mkdocs-macros-plugin宏插件
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-22-autotrace%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-22-autotrace%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/">
         autotrace说明文档
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-10-14-%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E5%99%A8Pelican%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-10-14-%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E5%99%A8Pelican%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         静态网站生成器Pelican学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-09-25-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E8%91%97%E5%BD%95%E8%A7%84%E5%88%99%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-09-25-%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E8%91%97%E5%BD%95%E8%A7%84%E5%88%99%E7%AC%94%E8%AE%B0/">
         参考文献著录规则笔记
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13" type="checkbox"/>
+<label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
           Phaser学习中心组
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_13">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_13_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_13">
+<span class="md-nav__icon md-icon"></span>
           Phaser学习中心组
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-12-Phaser3%E6%B8%B8%E6%88%8F%E7%BB%93%E6%9E%84%E7%A4%BA%E4%BE%8B/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-12-Phaser3%E6%B8%B8%E6%88%8F%E7%BB%93%E6%9E%84%E7%A4%BA%E4%BE%8B/">
         Phaser3游戏结构示例（未完成）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-03-Phaser3%E7%9A%84%E6%A8%A1%E5%9D%97%E7%BB%93%E6%9E%84/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-03-Phaser3%E7%9A%84%E6%A8%A1%E5%9D%97%E7%BB%93%E6%9E%84/">
         Phaser3的模块结构
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-30-%E5%9C%A8Phaser%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%B5%8C%E5%85%A5%E5%AD%97%E4%BD%93/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-30-%E5%9C%A8Phaser%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%B5%8C%E5%85%A5%E5%AD%97%E4%BD%93/">
         在Phaser游戏中嵌入字体
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-2-10-Phaser%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2019-2-10-Phaser%E6%96%B0%E9%97%BB%E8%81%94%E6%92%AD/">
         Phaser新闻联播
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-4-Phaser%203%20FAQ%201/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-12-4-Phaser%203%20FAQ%201/">
         Phaser3常识答问（一）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-4-Phaser%203%20FAQ%202/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-12-4-Phaser%203%20FAQ%202/">
         Phaser3常识答问（二）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-11-12-Phaser3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-11-12-Phaser3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         Phaser3学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-1-8-Phaser3%E5%AE%98%E7%BD%91%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2019-1-8-Phaser3%E5%AE%98%E7%BD%91%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         Phaser3官网实例学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-10-14-Phaser2%E5%AE%98%E7%BD%91%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-10-14-Phaser2%E5%AE%98%E7%BD%91%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         Phaser2官网实例学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-10-14-%E4%B8%80%E4%B8%AA%E4%B8%9A%E4%BD%99%E4%B9%A0Phaser%E7%9A%84%E9%87%8E%E8%B7%AF%E5%AD%90/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-10-14-%E4%B8%80%E4%B8%AA%E4%B8%9A%E4%BD%99%E4%B9%A0Phaser%E7%9A%84%E9%87%8E%E8%B7%AF%E5%AD%90/">
         一个业余习Phaser的野路子
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_14" type="checkbox"/>
+<label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
           Phaser3文档注记
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_14">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_14_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_14">
+<span class="md-nav__icon md-icon"></span>
           Phaser3文档注记
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-30-GameConfig%E6%B8%B8%E6%88%8F%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-30-GameConfig%E6%B8%B8%E6%88%8F%E9%85%8D%E7%BD%AE/">
         GameConfig游戏配置
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-30-Phaser.Scale.ScaleManager/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-30-Phaser.Scale.ScaleManager/">
         ScaleManager窗口适配
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-1-2-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Scene/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2019-1-2-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Scene/">
         Scene场景
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-31-Phaser.Scenes.ScenePlugin/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-31-Phaser.Scenes.ScenePlugin/">
         ScenePlugin场景管理器
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-12-1-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Loader.LoaderPlugin/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-12-1-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Loader.LoaderPlugin/">
         LoaderPlugin加载器
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-11-24-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Sprite/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-11-24-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Sprite/">
         Sprite精灵
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-31-Phaser.GameObjects.Graphics%E5%9B%BE%E7%94%BB%E7%B1%BB/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-31-Phaser.GameObjects.Graphics%E5%9B%BE%E7%94%BB%E7%B1%BB/">
         Graphics图形
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-02-Phaser.GameObjects.Text/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-02-Phaser.GameObjects.Text/">
         Phaser.GameObjects.Text文本
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Container/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Container/">
         Container容器
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Group/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Group/">
         Group组
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Actions/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-11-30-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-Actions/">
         Actions批处理
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-1-8-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-InputPlugin/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2019-1-8-Phaser3%20API%E6%96%87%E6%A1%A3%E5%A4%A7%E7%BA%B2-InputPlugin/">
         InputPlugin输入管理器
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-12-23-Phaser.Input.Pointer/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-12-23-Phaser.Input.Pointer/">
         Pointer热点
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-03-Phaser.Cameras.Scene2D.Camera/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-03-Phaser.Cameras.Scene2D.Camera/">
         Camera镜头
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-14-Phaser3%E5%9C%BA%E6%99%AF%E4%B8%80%E8%A7%88/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-14-Phaser3%E5%9C%BA%E6%99%AF%E4%B8%80%E8%A7%88/">
         Phaser3场景一览
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-12-Phaser3%E6%B8%B8%E6%88%8F%E5%AF%B9%E8%B1%A1%E4%B8%80%E8%A7%88/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-12-Phaser3%E6%B8%B8%E6%88%8F%E5%AF%B9%E8%B1%A1%E4%B8%80%E8%A7%88/">
         Phaser3游戏对象一览
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-13-Phaser3%E4%BA%8B%E4%BB%B6%E4%B8%80%E8%A7%88/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-13-Phaser3%E4%BA%8B%E4%BB%B6%E4%B8%80%E8%A7%88/">
         Phaser3事件一览
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-15-%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%E4%B8%80%E8%A7%88/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-15-%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%E4%B8%80%E8%A7%88/">
         Phaser3物理模块一览
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-15-%E5%9C%BA%E6%99%AFArcade%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%E4%B8%80%E8%A7%88/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-15-%E5%9C%BA%E6%99%AFArcade%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F%E4%B8%80%E8%A7%88/">
         场景的Arcade物理系统一览
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-15-%E5%9C%BA%E6%99%AFArcade%E7%89%A9%E7%90%86%E4%B8%96%E7%95%8C%E4%B8%80%E8%A7%88/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-15-%E5%9C%BA%E6%99%AFArcade%E7%89%A9%E7%90%86%E4%B8%96%E7%95%8C%E4%B8%80%E8%A7%88/">
         场景的Arcade物理世界一览
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-04-15-%E5%8A%A8%E6%80%81Arcade%E7%89%A9%E4%BD%93%E4%B8%80%E8%A7%88/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-04-15-%E5%8A%A8%E6%80%81Arcade%E7%89%A9%E4%BD%93%E4%B8%80%E8%A7%88/">
         Arcade动态物体一览
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_15" type="checkbox"/>
+<label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
           Phaser3官网入门教程
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_15">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_15_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_15">
+<span class="md-nav__icon md-icon"></span>
           Phaser3官网入门教程
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../making-your-first-phaser-3-game/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../making-your-first-phaser-3-game/">
         第一节 - 前言
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../making-your-first-phaser-3-game/part2/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../making-your-first-phaser-3-game/part2/">
         第二节 - 加载资源
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../making-your-first-phaser-3-game/part3/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../making-your-first-phaser-3-game/part3/">
         第三节 - 建立游戏世界
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../making-your-first-phaser-3-game/part4/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../making-your-first-phaser-3-game/part4/">
         第四节 - 平台
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../making-your-first-phaser-3-game/part5/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../making-your-first-phaser-3-game/part5/">
         第5节 - 玩家
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../making-your-first-phaser-3-game/part6/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../making-your-first-phaser-3-game/part6/">
         第6节 - 添加物理系统
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../making-your-first-phaser-3-game/part7/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../making-your-first-phaser-3-game/part7/">
         第7节 - 键盘控制
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../making-your-first-phaser-3-game/part8/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../making-your-first-phaser-3-game/part8/">
         第8节 - 收集星星
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../making-your-first-phaser-3-game/part9/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../making-your-first-phaser-3-game/part9/">
         第9节 - 计分
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../making-your-first-phaser-3-game/part10/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../making-your-first-phaser-3-game/part10/">
         第10节 - 跳跳弹
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_16" type="checkbox"/>
+<label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
           TEX, ConTeXt与排版自动化
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_16">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_16_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_16">
+<span class="md-nav__icon md-icon"></span>
           TEX, ConTeXt与排版自动化
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2024-01-21-%E8%AF%AD%E6%96%87%E7%BB%83%E4%B9%A0%E5%86%8C%E5%92%8C%E8%AF%95%E5%8D%B7%E7%9A%84ConTeXt%E6%A8%A1%E6%9D%BF/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2024-01-21-%E8%AF%AD%E6%96%87%E7%BB%83%E4%B9%A0%E5%86%8C%E5%92%8C%E8%AF%95%E5%8D%B7%E7%9A%84ConTeXt%E6%A8%A1%E6%9D%BF/">
         语文练习册和试卷的ConTeXt模板
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-11-20-ConTeXt%E7%AE%80%E4%BB%8B%E5%92%8C%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%E6%95%88%E6%9E%9C/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-11-20-ConTeXt%E7%AE%80%E4%BB%8B%E5%92%8C%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%E6%95%88%E6%9E%9C/">
         ConTeXt简介和中文排版效果
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-10-28-ConTeXt-LMTX%E6%A0%87%E7%82%B9%E5%8E%8B%E7%BC%A9%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-10-28-ConTeXt-LMTX%E6%A0%87%E7%82%B9%E5%8E%8B%E7%BC%A9%E6%8F%92%E4%BB%B6/">
         ConTeXt中文标点压缩插件
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/">
         ConTeXt LMTX中文竖排插件
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-01-14-ConTeXt-LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-01-14-ConTeXt-LMTX%E7%9A%84%E6%B1%89%E5%AD%97%E7%AB%96%E6%8E%92%E6%80%9D%E8%B7%AF/">
         ConTeXt LMTX中文竖排思路
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-06-19-ConTeXt%E5%8F%8C%E8%A1%8C%E5%A4%B9%E6%B3%A8%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-06-19-ConTeXt%E5%8F%8C%E8%A1%8C%E5%A4%B9%E6%B3%A8%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">
         ConTeXt+LMTX双行夹注的简单实现
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-03-30-%E4%BD%BFTypst%E7%9A%84par%E8%83%BD%E8%B0%83%E6%95%B4%E6%B1%89%E5%AD%97%E9%97%B4%E8%B7%9D/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-03-30-%E4%BD%BFTypst%E7%9A%84par%E8%83%BD%E8%B0%83%E6%95%B4%E6%B1%89%E5%AD%97%E9%97%B4%E8%B7%9D/">
         使Typst par能调整汉字间距
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-03-28-%E4%BD%93%E9%AA%8CTypst/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-03-28-%E4%BD%93%E9%AA%8CTypst/">
         体验Typst
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-03-25-Typst%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-03-25-Typst%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         Typst学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-02-20-luametatex-node-playground/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-02-20-luametatex-node-playground/">
         LuaTeX结点游乐场
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-02-23-luametatex-callback-playground/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-02-23-luametatex-callback-playground/">
         LuaTeX回调游乐场
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-01-10-LuaTeX-CLD-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         LuaTeX-LMTX-CLD学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-01-10-ConTeXt%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-01-10-ConTeXt%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         ConTeXt学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-01-10-latex-CTEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-01-10-latex-CTEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         latex-CTEX学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-05-28-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-05-28-TEX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         TEX学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-06-22-ConTeXt-rule%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-06-22-ConTeXt-rule%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         ConTeXt rule学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-02-18-LuaTeX-LuaMetaTeX-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-02-18-LuaTeX-LuaMetaTeX-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/">
         TEX系学习资源
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-08-29-metafun%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-08-29-metafun%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         MetaPost、MetaFun学习笔记
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-09-23-metapost-luametafun-examples/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-09-23-metapost-luametafun-examples/">
         metapost用例
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-11-11-How-TeX-Calculates-Glue-Settings-in-an-hbox/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-11-11-How-TeX-Calculates-Glue-Settings-in-an-hbox/">
         TeX怎样计算横盒子(hbox)中的胶的设定值
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-09-13-Understanding-underfull-and-overfull-box-warnings/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-09-13-Understanding-underfull-and-overfull-box-warnings/">
         理解未满盒子和溢出盒子的警告信息
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-10-04-lua%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2022-10-04-lua%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         学习笔记
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_17" type="checkbox"/>
+<label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
           布考斯基与诗
           <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_17">
-          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_17_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_17">
+<span class="md-nav__icon md-icon"></span>
           布考斯基与诗
         </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-10-14-%E5%B8%83%E8%80%83%E6%96%AF%E5%9F%BA%E5%B9%B4%E8%A1%A8/" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-10-14-%E5%B8%83%E8%80%83%E6%96%AF%E5%9F%BA%E5%B9%B4%E8%A1%A8/">
         布考斯基年表
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-10-14-%E5%BC%B9%E9%86%89%E7%90%B4%EF%BC%9A%E5%B8%83%E8%80%83%E6%96%AF%E5%9F%BA%E8%AF%97%E9%9B%86/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-10-14-%E5%BC%B9%E9%86%89%E7%90%B4%EF%BC%9A%E5%B8%83%E8%80%83%E6%96%AF%E5%9F%BA%E8%AF%97%E9%9B%86/">
         弹醉琴/如击鼓/直到手指滴血：布考斯基诗集
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2012-8-2-%E7%88%B1%E6%98%AF%E5%9C%B0%E7%8B%B1%E7%9A%84%E6%81%B6%E7%8B%97%EF%BC%9A%E5%B8%83%E8%80%83%E6%96%AF%E5%9F%BA%E8%AF%97%E9%9B%86/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2012-8-2-%E7%88%B1%E6%98%AF%E5%9C%B0%E7%8B%B1%E7%9A%84%E6%81%B6%E7%8B%97%EF%BC%9A%E5%B8%83%E8%80%83%E6%96%AF%E5%9F%BA%E8%AF%97%E9%9B%86/">
         爱如恶狗：布考斯基诗集
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2009-3-18-%E6%9C%80%E7%BB%88%E4%BA%BA%E5%A6%82%E8%8A%B1%EF%BC%9A%E5%B8%83%E8%80%83%E6%96%AF%E5%9F%BA%E6%96%B0%E8%AF%97%E9%80%89%E8%AF%91/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2009-3-18-%E6%9C%80%E7%BB%88%E4%BA%BA%E5%A6%82%E8%8A%B1%EF%BC%9A%E5%B8%83%E8%80%83%E6%96%AF%E5%9F%BA%E6%96%B0%E8%AF%97%E9%80%89%E8%AF%91/">
         最终人如花：布考斯基新诗选译
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2019-1-3-%E9%BB%91%E9%A6%8D%E7%88%B1%E5%A4%B9%E8%8F%9C%EF%BC%88%E8%AF%95%E8%AF%91%EF%BC%89/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2019-1-3-%E9%BB%91%E9%A6%8D%E7%88%B1%E5%A4%B9%E8%8F%9C%EF%BC%88%E8%AF%95%E8%AF%91%EF%BC%89/">
         黑馍爱夹菜（试译）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-11-9-%E3%80%8A%E7%94%9F%E6%9D%A5%E5%A6%82%E6%AD%A4%E3%80%8B%E5%AD%97%E5%B9%95/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-11-9-%E3%80%8A%E7%94%9F%E6%9D%A5%E5%A6%82%E6%AD%A4%E3%80%8B%E5%AD%97%E5%B9%95/">
         《生来如此》字幕
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2018-10-14-%E7%BA%A6%E7%BF%B0%C2%B7%E5%87%A1%E8%92%82/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2018-10-14-%E7%BA%A6%E7%BF%B0%C2%B7%E5%87%A1%E8%92%82/">
         约翰·凡蒂（John Fante）
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-03-25-%E8%AF%84%E5%93%91%E5%AD%A9%E5%AD%90%E7%9A%84%E8%AF%97%E9%9B%86/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2021-03-25-%E8%AF%84%E5%93%91%E5%AD%A9%E5%AD%90%E7%9A%84%E8%AF%97%E9%9B%86/">
         大时代，读小诗
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-04-13-%E6%B2%89%E8%BF%B7%E9%97%B2%E8%AF%9D/" class="md-nav__link">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2023-04-13-%E6%B2%89%E8%BF%B7%E9%97%B2%E8%AF%9D/">
         沉迷闲话
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about/">
         ☆ About
       </a>
-    </li>
-  
-
-    
-  </ul>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       目录
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#terminalshell" class="md-nav__link">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#terminalshell">
     终端(terminal)+shell相关概念
   </a>
-  
 </li>
-      
-    </ul>
-  
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-  
-                  
-  
-
-  <nav class="md-tags" >
-    
-      
-      
-        <a href="../tags/#python" class="md-tag">python</a>
-      
-    
-      
-      
-        <a href="../tags/#" class="md-tag">编程</a>
-      
-    
-  </nav>
-
-
-
-
-
-  <h1>编程环境</h1>
-
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<nav class="md-tags">
+<a class="md-tag" href="../tags/#python">python</a>
+<a class="md-tag" href="../tags/#">编程</a>
+</nav>
+<h1>编程环境</h1>
 <p>有些初学者不理解编程环境，导致种种混乱。这里仅针对一般的Python编程学习和MS Windows操作系统，做了一个简单、粗略的介绍。</p>
 <p>我们是在计算机（以及计算机网络）这个环境中编写程序、执行程序的，这个环境主要包括：</p>
 <ul>
@@ -3995,75 +1547,46 @@
 </li>
 <li>命令行工具（command line tool），能通过shell执行的程序，通常执行形式是输入它的名字和参数，没有图形界面</li>
 </ul>
-
-
-  
-
-
-
-  <form class="md-feedback" name="feedback" hidden>
-    <fieldset>
-      <legend class="md-feedback__title">
+<form class="md-feedback" hidden="" name="feedback">
+<fieldset>
+<legend class="md-feedback__title">
         这篇怎么样啊？
       </legend>
-      <div class="md-feedback__inner">
-        <div class="md-feedback__list">
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="这篇有用" data-md-value="1">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
-            </button>
-          
-            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
-            </button>
-          
-        </div>
-        <div class="md-feedback__note">
-          
-            <div data-md-value="1" hidden>
+<div class="md-feedback__inner">
+<div class="md-feedback__list">
+<button class="md-feedback__icon md-icon" data-md-value="1" title="这篇有用" type="submit">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"></path></svg>
+</button>
+<button class="md-feedback__icon md-icon" data-md-value="0" title="需要改进" type="submit">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"></path></svg>
+</button>
+</div>
+<div class="md-feedback__note">
+<div data-md-value="1" hidden="">
               
               
                 
               
               多谢反馈!
             </div>
-          
-            <div data-md-value="0" hidden>
+<div data-md-value="0" hidden="">
               
               
                 
               
               多谢反馈!
             </div>
-          
-        </div>
-      </div>
-    </fieldset>
-  </form>
-
-
-                
-
-  <!-- Giscus -->
-  <h2 id="__comments">评论</h2>
-  <!-- Replace with generated snippet -->
-  <script src="https://giscus.app/client.js"
-  data-repo="Fusyong/Fusyong.github.io"
-  data-repo-id="MDEwOlJlcG9zaXRvcnkxNTMwNDc3ODc="
-  data-category="Announcements"
-  data-category-id="DIC_kwDOCR9S684CPp2T"
-  data-mapping="pathname"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="bottom"
-  data-theme="light"
-  data-lang="zh-CN"
-  crossorigin="anonymous"
-  async>
+</div>
+</div>
+</fieldset>
+</form>
+<!-- Giscus -->
+<h2 id="__comments">评论</h2>
+<!-- Replace with generated snippet -->
+<script async="" crossorigin="anonymous" data-category="Announcements" data-category-id="DIC_kwDOCR9S684CPp2T" data-emit-metadata="0" data-input-position="bottom" data-lang="zh-CN" data-mapping="pathname" data-reactions-enabled="1" data-repo="Fusyong/Fusyong.github.io" data-repo-id="MDEwOlJlcG9zaXRvcnkxNTMwNDc3ODc=" data-theme="light" src="https://giscus.app/client.js">
 </script>
-
-  <!-- Reload on palette change -->
-  <script>
+<!-- Reload on palette change -->
+<script>
     var palette = __md_get("__palette")
     if (palette && typeof palette.color === "object")
       if (palette.color.scheme === "slate") {
@@ -4089,116 +1612,71 @@
       })
     })
   </script>
-
-              </article>
-            </div>
-          
-          
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
-        
-          
-          <a href="../2020-12-06-Python%E6%89%BE%E9%97%A8%E6%95%99%E7%A8%8B-%E7%9B%AE%E5%BD%95-%E6%B4%BE%E7%9C%9F%E5%92%8C%E4%B8%A4%E6%9D%A1%E8%85%BF%E6%9D%A5%E5%88%B0%E5%93%88%E7%BD%97%E4%B8%96%E7%95%8C/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 派真和两条腿来到哈罗世界" rel="prev">
-            <div class="md-footer__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <div class="md-ellipsis">
-                <span class="md-footer__direction">
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 派真和两条腿来到哈罗世界" class="md-footer__link md-footer__link--prev" href="../2020-12-06-Python%E6%89%BE%E9%97%A8%E6%95%99%E7%A8%8B-%E7%9B%AE%E5%BD%95-%E6%B4%BE%E7%9C%9F%E5%92%8C%E4%B8%A4%E6%9D%A1%E8%85%BF%E6%9D%A5%E5%88%B0%E5%93%88%E7%BD%97%E4%B8%96%E7%95%8C/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                   上一页
                 </span>
                 派真和两条腿来到哈罗世界
               </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../2019-10-05-%E5%88%9D%E5%AD%A6python%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BC%96%E8%BE%91%E5%99%A8%E6%8E%A8%E8%8D%90/" class="md-footer__link md-footer__link--next" aria-label="下一页: 初学python，有哪些编辑器推荐" rel="next">
-            <div class="md-footer__title">
-              <div class="md-ellipsis">
-                <span class="md-footer__direction">
+</div>
+</a>
+<a aria-label="下一页: 初学python，有哪些编辑器推荐" class="md-footer__link md-footer__link--next" href="../2019-10-05-%E5%88%9D%E5%AD%A6python%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BC%96%E8%BE%91%E5%99%A8%E6%8E%A8%E8%8D%90/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
                   下一页
                 </span>
                 初学python，有哪些编辑器推荐
               </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
-      Copyright &copy; 2018 - 2023 黄复雄
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2018 - 2023 黄复雄
     </div>
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-        <div class="md-social">
-  
-    
-    
-      
-      
-    
-    <a href="https://github.com/Fusyong" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-    </a>
-  
-    
-    
-      
-      
-    
-    <a href="https://www.facebook.com/Aahuaang/" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
-    </a>
-  
-    
-    
-      
-      
-    
-    <a href="https://twitter.com/fusyong" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-    </a>
-  
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/Fusyong" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.facebook.com/Aahuaang/" rel="noopener" target="_blank" title="www.facebook.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/fusyong" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
-    
-    
-      <script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.footer", "navigation.tracking", "toc.follow", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../assets/javascripts/bundle.a00a7c5e.min.js"></script>
+</body>
 </html>
