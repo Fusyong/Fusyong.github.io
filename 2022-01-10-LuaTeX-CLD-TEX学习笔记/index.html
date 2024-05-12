@@ -2289,6 +2289,11 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_52">
+    答朋友问
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -3386,6 +3391,11 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_52">
+    答朋友问
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -4061,7 +4071,7 @@ LuaTEX会使用条线来存储可重用对象和图像，所以比tex \hrule和\
 </table>
 <h4 id="3_insert">3 insert<a class="headerlink" href="#3_insert" title="Permanent link">#</a></h4>
 <p>浮动对象的插入标记。
-与\insert基本命令相关。</p>
+与\insert原语相关。</p>
 <table>
 <thead>
 <tr>
@@ -4107,7 +4117,7 @@ LuaTEX会使用条线来存储可重用对象和图像，所以比tex \hrule和\
 shrink and shrink_order. 都是数字。</p>
 <h4 id="4_mark">4 mark<a class="headerlink" href="#4_mark" title="Permanent link">#</a></h4>
 <p>文本标记。
-与\mark基本命令相关联。</p>
+与\mark原语相关联。</p>
 <table>
 <thead>
 <tr>
@@ -4141,7 +4151,7 @@ shrink and shrink_order. 都是数字。</p>
 </table>
 <h4 id="5_adjust">5 adjust<a class="headerlink" href="#5_adjust" title="Permanent link">#</a></h4>
 <p>垂直间距（两行之间）调整标记。
-与\vadjust基本命令相关联。</p>
+与\vadjust原语相关联。</p>
 <table>
 <thead>
 <tr>
@@ -4169,7 +4179,7 @@ shrink and shrink_order. 都是数字。</p>
 </tbody>
 </table>
 <h4 id="7_disc">7 disc<a class="headerlink" href="#7_disc" title="Permanent link">#</a></h4>
-<p>词中的分割结点。与<code>\discretionary</code> and <code>\-</code>基本命令相关, 即连字符<code>-</code>，断词机制也会生成这样的结点。</p>
+<p>词中的分割结点。与<code>\discretionary</code> and <code>\-</code>原语相关, 即连字符<code>-</code>，断词机制也会生成这样的结点。</p>
 <table>
 <thead>
 <tr>
@@ -4323,7 +4333,7 @@ shrink and shrink_order. 都是数字。</p>
 </code></pre></div></td></tr></table></div>
 <h4 id="6_boundary">6 boundary<a class="headerlink" href="#6_boundary" title="Permanent link">#</a></h4>
 <p>（单词、凸排的）边界结点。
-相关的基本命令是：\noboundary, \boundary, \protrusionboundary and \wordboundary</p>
+相关的原语是：\noboundary, \boundary, \protrusionboundary and \wordboundary</p>
 <table>
 <thead>
 <tr>
@@ -4576,6 +4586,7 @@ shrink and shrink_order. 都是数字。</p>
 <li><number> w, <number> h, <number> d=node.rangedimensions(<node> parent, <node> first)</node></node></number></number></number></li>
 <li><number> w, <number> h, <number> d=node.rangedimensions(<node> parent, <node> first, <node> last)</node></node></node></number></number></number></li>
 </ul>
+<p>全局设置尺寸参考<code>tex.dimen</code>；本地/当前尺寸参考<code>tex.get</code>；考虑hangafter, hangindent, parindent, leftskip, rightskip等，请参考源码： typo-fln.lua</p>
 <h4 id="_8">数学列表转行列表<a class="headerlink" href="#_8" title="Permanent link">#</a></h4>
 <p><node> h =node.mlist_to_hlist(<node> n, <string> display_type, <boolean> penalties)</boolean></string></node></node></p>
 <p>跟回调函数<code>mlist_to_hlist</code>一样。</p>
@@ -5123,7 +5134,10 @@ tex.setattribute(["global",] <register>, <number>)</number></register></register
 <ul>
 <li>tex.attribute</li>
 <li>tex.count</li>
-<li>tex.dimen</li>
+<li>tex.dimen，全局设置；而当前/本地值通过 tex.get("key")获得；key：</li>
+<li>textwidth</li>
+<li>columnwidth</li>
+<li>linewidth（没有全局值？）</li>
 <li>tex.skip</li>
 <li>tex.glue</li>
 <li>tex.muskip</li>
@@ -6218,6 +6232,7 @@ token.set_macro(catcodetable,"csname")</p>
 </ul>
 </li>
 </ul>
+<p>实际使用的字体文件，第一次加载时会生成缓存lua表<code>字体文件名.tma</code>，包含一般数据和每个字符的bounding box数据。</p>
 <p><strong>合字（略）</strong></p>
 <p><strong>Goodies（略）</strong></p>
 <p><strong>Tracing</strong></p>
@@ -9108,6 +9123,21 @@ callback.register ('hyphenate', function (head,tail)
 <span class="k">\input</span> knuth
 <span class="k">\bye</span>
 </code></pre></div></td></tr></table></div>
+<h2 id="_52">答朋友问<a class="headerlink" href="#_52" title="Permanent link">#</a></h2>
+<p>【问】</p>
+<p>原生的 tex 是 web 和 pascal 语言写的，latex 进行了扩展，那么问题来了，latex 是扩展的宏集，那么问题来了，有没有完全用新的语言重新实现的 tex 和 latex 呢</p>
+<p>【答】</p>
+<p>我以前也想过luatex是用什么写的这个问题，但没查证。刚才查了查，它目前是C写的（早期用过一点pascal）。</p>
+<p>LaTeX只是宏包，也就是说，是对tex接口的进一步包装。plain tex、ConTeXt也是宏包。</p>
+<p>而tex、xetex、pdftex、LaTeX是tex引擎（即都支持tex原语和语法）。其中xetex、pdftex都是在tex上扩展的，不是完全重写。</p>
+<p>LuaTeX因为绑定了lua，所以在LuaTeX基础上使用LaTeX、plain tex、ConTeXt可以使用lua，ConTeXt本身包含很多lua代码。</p>
+<p>非tex系的Typst等，则主要是重新实现tex效果（尤其是断行组段算法），而不支持tex原语和语法。</p>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.pragma-ade.com/general/manuals/mk.pdf">The history of luaTEX</a></li>
+<li><a href="https://tex.stackexchange.com/questions/101189/is-context-using-tex-or-rewriting-it">Is ConTeXt using TeX or rewriting it?</a></li>
+<li><a href="https://tex.stackexchange.com/questions/38155/rewrite-tex-web-in-c">rewrite tex.web in C++?</a></li>
+</ul>
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
 <legend class="md-feedback__title">

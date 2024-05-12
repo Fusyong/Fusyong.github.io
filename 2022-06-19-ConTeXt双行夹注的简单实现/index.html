@@ -1302,70 +1302,6 @@
     效果
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    术语
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    大致思路
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bug_todo">
-    bug &amp; TODO
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    关于断行、分段的备用资料
-  </a>
-<nav aria-label="关于断行、分段的备用资料" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cjk">
-    cjk排版原型
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cjk_1">
-    cjk断行相关的系统文件：
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#texlinebreak">
-    tex.linebreak的工作基于当前状态
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hans">
-    Hans论干预断行的思路
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-    另一种思路：在两个回调中处理
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#parbuilder_and_related_hpacking">
-    关于parbuilder (and related hpacking)
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
-    末行长度与段落填充控制
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
-    结点操控参考实例
-  </a>
-</li>
-</ul>
-</nav>
-</li>
 </ul>
 </nav>
 </li>
@@ -1536,70 +1472,6 @@
     效果
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    术语
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    大致思路
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bug_todo">
-    bug &amp; TODO
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    关于断行、分段的备用资料
-  </a>
-<nav aria-label="关于断行、分段的备用资料" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cjk">
-    cjk排版原型
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cjk_1">
-    cjk断行相关的系统文件：
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#texlinebreak">
-    tex.linebreak的工作基于当前状态
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hans">
-    Hans论干预断行的思路
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-    另一种思路：在两个回调中处理
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#parbuilder_and_related_hpacking">
-    关于parbuilder (and related hpacking)
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
-    末行长度与段落填充控制
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
-    结点操控参考实例
-  </a>
-</li>
-</ul>
-</nav>
-</li>
 </ul>
 </nav>
 </div>
@@ -1613,102 +1485,10 @@
 <p>适用于ConTeXt和LuaMetaTeX(LMTX， LuaTeX的后继者，ConTeXt当前的实际引擎)的夹注模块，可以配合<a href="../2022-02-15-ConTeXt-LMTX%E4%B8%AD%E6%96%87%E7%AB%96%E6%8E%92%E6%8F%92%E4%BB%B6/">竖排功能和标点压缩功能</a>使用。调整后应该可用于LuaTeX。</p>
 <p>也是本人学习LuaMetaTeX、LuaTeX的练习项目，主要涉及：段落与行的结点列表的操控；使用tex.linebreak()函数等干预断行；使用回调函数。会保留较多学习性的注释和代码。</p>
 <h2 id="_1">效果<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<p><img alt="竖开明大学.jpg" src="../img/2022-11-20-ConTeXt%E7%AE%80%E4%BB%8B%E5%92%8C%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%E6%95%88%E6%9E%9C/%E7%AB%96%E5%BC%80%E6%98%8E%E5%A4%A7%E5%AD%A6.jpg"/></p>
-<p><img alt="横全角庄子.jpg" src="../img/2022-11-20-ConTeXt%E7%AE%80%E4%BB%8B%E5%92%8C%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%E6%95%88%E6%9E%9C/%E6%A8%AA%E5%85%A8%E8%A7%92%E5%BA%84%E5%AD%90.jpg"/></p>
-<h2 id="_2">术语<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
-<p>术语参考<a href="https://github.com/CTeX-org/ctex-kit/blob/master/jiazhu/jiazhu.dtx">CTeX-org</a>：</p>
-<blockquote>
-<p>jiazhu(in Hanyu Pinyin): splitted annotation or
-inline cutting note, 夹注/双行夹注 in simplified Chinese, 割注/warichū in Japanese</p>
-</blockquote>
-<h2 id="_3">大致思路<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
-<ol>
-<li>在文档中段落插入夹注hbox，并给盒子加一个属性作为标记；</li>
-<li>在"processors"类的"after"小类回调中处理：<ol>
-<li>用一个一字宽rule结点代替段落中的夹注盒子，并在一个表中收集夹注盒子，循环：<ol>
-<li>试排段落，找到分行后的rule，获取从它到行末的宽度；</li>
-<li>根据这个宽度和盒子的自然宽度预计、试排盒子的节点列表，循环：<ol>
-<li>预估小于或等于两行时，按盒子宽度的一半试排为两行（可略宽容），删除rule；</li>
-<li>如果预估大于两行，则按空间宽度试排，取前两行；</li>
-<li>vpack插入rule之前，其后加罚点0，（当基本填满行末空间时罚点-10000，即强制断行，放置再次插入夹注）；</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>用新的节点列表代替原段落的节点列表（由系统断行）。</li>
-</ol>
-<h2 id="bug_todo">bug &amp; TODO<a class="headerlink" href="#bug_todo" title="Permanent link">#</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><input checked="" disabled="" type="checkbox"> 夹注转换成标记结点和数据表</input></li>
-<li class="task-list-item"><input checked="" disabled="" type="checkbox"> 夹注整理，分段插入</input></li>
-<li class="task-list-item"><input checked="" disabled="" type="checkbox"> 与直排模块整合<ul class="task-list">
-<li class="task-list-item"><input checked="" disabled="" type="checkbox"> 长夹注（78字以上）内存溢出，死循环<ul class="task-list">
-<li class="task-list-item"><input checked="" disabled="" type="checkbox"> 无用结点清洗</input></li>
-<li class="task-list-item"><input checked="" disabled="" type="checkbox"> 计数考虑直排盒子（<strong>问题在此</strong>）</input></li>
-</ul>
-</input></li>
-</ul>
-</input></li>
-<li class="task-list-item"><input disabled="" type="checkbox"> 调整夹注排式<ul class="task-list">
-<li class="task-list-item"><input checked="" disabled="" type="checkbox"> 在标题中无效</input></li>
-<li class="task-list-item"><input disabled="" type="checkbox"> 与narrower重叠使用缩进（当在linebreak设置）<ul class="task-list">
-<li class="task-list-item"><input checked="" disabled="" type="checkbox"> 暂时用\leftskip代替</input></li>
-</ul>
-</input></li>
-<li class="task-list-item"><input disabled="" type="checkbox"> 短行超出边界</input></li>
-</ul>
-</input></li>
-<li class="task-list-item"><input disabled="" type="checkbox"> 模块化，增加用户接口<ul class="task-list">
-<li class="task-list-item"><input disabled="" type="checkbox"> 双行兼容单行</input></li>
-</ul>
-</input></li>
-<li class="task-list-item"><input disabled="" type="checkbox"> parfillskip<ul>
-<li>不起作用（目前用自定glue代替，但可能影响标点压缩模块，导致同样内容的两行不整齐）</li>
-</ul>
-</input></li>
-<li class="task-list-item"><input disabled="" type="checkbox"> 优化夹注断行（目前每次重新断行后取前两行，往往质量较低，或可使用parshape一次完成分组）</input></li>
-</ul>
-<h1 id="_4">关于断行、分段的备用资料<a class="headerlink" href="#_4" title="Permanent link">#</a></h1>
-<h2 id="cjk">cjk排版原型<a class="headerlink" href="#cjk" title="Permanent link">#</a></h2>
-<p>http://wiki.luatex.org/index.php/Japanese_and_more_generally_CJK_typesetting</p>
-<h2 id="cjk_1">cjk断行相关的系统文件：<a class="headerlink" href="#cjk_1" title="Permanent link">#</a></h2>
-<ul>
-<li>语言脚本：D:\venvs\context-win64\tex\texmf-context\tex\context\base\mkiv\scrp-cjk.lua</li>
-<li>行to段（tex.linebreak）：D:\venvs\context-win64\tex\texmf-context\tex\context\base\mkiv\node-ltp.lua</li>
-<li>用于字间加空、加罚点的hanzi模块<code>char-scr.lua</code> <code>scrp-cjk.lua</code></li>
-</ul>
-<p>type-imp-mscore.mkiv</p>
-<h2 id="texlinebreak">tex.linebreak的工作基于当前状态<a class="headerlink" href="#texlinebreak" title="Permanent link">#</a></h2>
-<p>https://www.mail-archive.com/dev-luatex@ntg.nl/msg01805.html</p>
-<p>It is basing itself on the current TeX state at that point in time (at least, that is what it should do). You can look up tex_run_linebreak() in ltexlib.c, it should be easy to follow.</p>
-<p>也参见<code>node-ltp.lua</code>和 https://github.com/michal-h21/linebreaker</p>
-<h2 id="hans">Hans论干预断行的思路<a class="headerlink" href="#hans" title="Permanent link">#</a></h2>
-<p>https://www.mail-archive.com/luatex@tug.org/msg04329.html</p>
-<blockquote>
-<p>By the way, Hans, I heard you already reimplemented the TeX linebreak algorithm in pure Lua, can your code be found somewhere?</p>
-</blockquote>
-<p>on my machine ... i'm waiting for the new hz in the backend before putting it in the context distribution because i don't want to end up with several versions (and i then need to prune some test code) ... so some patience is needed ...</p>
-<p>btw there was an article on it some time ago, also in: http://www.pragma-ade.com/general/manuals/hybrid.pdf, p 101</p>
-<p><strong>one thing you could play with is storing the paragraph before it gets broken, then let tex do the job, analyze afterwards, and when not ok, add some penalties and let tex do the job again</strong></p>
-<p>but it might be better to rethink this special case (which is unlikely to mix with all those things that can end up in paragraphs, i.e. it's a limited tex-only case), and cook up something dedicated, at least that's the approach i'd choose as soon as context users start asking for such features</p>
-<p>Hans</p>
-<h2 id="_5">另一种思路：在两个回调中处理<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
-<p>https://www.mail-archive.com/luatex@tug.org/msg05587.html</p>
-<p>I did set up pre_linebreak_filter to find out the cases where line breaking happens on the main vertical list (in contrast to being done in a box, say). Then inside pre_linebreak_filter I run</p>
-<p>tex.linebreak</p>
-<p>several times with different looseness (you cann see all my reports coming together :-) ) and record the different results</p>
-<p>Then in post_linebreak_filter I replace the generated paragraph node list with something special (basically to drop it) and to be able to find out about the para on the contribution list (which I look at in buildpage_filter). Could probably be done differently but that was the simplest way to get this working for me.</p>
-<h2 id="parbuilder_and_related_hpacking">关于parbuilder (and related hpacking)<a class="headerlink" href="#parbuilder_and_related_hpacking" title="Permanent link">#</a></h2>
-<p>http://www.pragma-ade.com/general/manuals/hybrid.pdf, p95</p>
-<p>in September 2008, when we were exploring solutions for Arabic par building, Taco converted the parbuilder into Lua code and <strong>stripped away all code related to hyphenation, protrusion, expansion, last line fitting, and some more.</strong></p>
-<h2 id="_6">末行长度与段落填充控制<a class="headerlink" href="#_6" title="Permanent link">#</a></h2>
-<p>https://tex.stackexchange.com/questions/63762/minimum-length-of-last-line-of-a-paragraph</p>
-<h2 id="_7">结点操控参考实例<a class="headerlink" href="#_7" title="Permanent link">#</a></h2>
-<ul>
-<li>https://github.com/gucci-on-fleek/lua-widow-control</li>
-</ul>
+<p><img alt="plot" src="https://blog.xiiigame.com/img/2022-11-20-ConTeXt简介和中文排版效果/竖开明大学.jpg"/></p>
+<p><img alt="plot" src="https://blog.xiiigame.com/img/2022-11-20-ConTeXt简介和中文排版效果/竖半角大学.jpg"/></p>
+<p><img alt="plot" src="https://blog.xiiigame.com/img/2022-11-20-ConTeXt简介和中文排版效果/竖半角行间大学.jpg"/></p>
+<p><img alt="plot" src="https://blog.xiiigame.com/img/2022-11-20-ConTeXt简介和中文排版效果/横开明大学.jpg"/></p>
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
 <legend class="md-feedback__title">
