@@ -133,6 +133,11 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../chinese-literacy-estimation/">
+        识字量估算
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../2020-11-19-%E3%80%8A%E5%B9%BC%E5%84%BF%E8%AF%86%E5%AD%9790%E5%A4%A9%EF%BC%9A%E8%AE%A4%E8%AF%86%E4%B9%A6%E4%B8%AD80%25%E7%9A%84%E6%B1%89%E5%AD%97%E3%80%8B/">
         《幼儿识字90天：认识书中80%的汉字》
       </a>
@@ -2361,7 +2366,8 @@ addto currentpicture also pic
 <li>=, &lt;&gt;, &lt;, &gt;, &lt;=, &gt;=</li>
 </ul>
 </li>
-<li>picture, 任何可绘制对象，draw把绘制结果存在currentpicture，图像可叠加和变换</li>
+<li>picture, 任何可绘制对象，draw把绘制结果存在currentpicture，图像可叠加和变换.
+  参考： https://meeting.contextgarden.net/2022/talks/taco/mp-picture-talk.pdf</li>
 <li>pen, 主要确定笔画粗细，表达式如pencircle scaled ⟨numeric primary⟩，非圆形笔可以取得书法效果，pickup ⟨pen expression⟩ 影响会面的draw和drawdot</li>
 </ul>
 <p>未定义的变量默认为数字。以下行相同：</p>
@@ -2388,6 +2394,7 @@ i<span class="nb">_</span>[111][222] := 1cm ;
 <h4 id="token">token<a class="headerlink" href="#token" title="Permanent link">#</a></h4>
 <h3 id="_9">运算符<a class="headerlink" href="#_9" title="Permanent link">#</a></h3>
 <h3 id="_10">条件表达式<a class="headerlink" href="#_10" title="Permanent link">#</a></h3>
+<p>参考： https://meeting.contextgarden.net/2022/talks/taco/mp-control-talk.pdf</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>if n=10 : draw p ;
@@ -2410,6 +2417,7 @@ if cycle   q :
 </code></pre></div></td></tr></table></div>
 <p>支持用and, or, not, 和 ( )构造表达式。</p>
 <h3 id="_11">循环<a class="headerlink" href="#_11" title="Permanent link">#</a></h3>
+<p>参考： https://meeting.contextgarden.net/2022/talks/taco/mp-control-talk.pdf</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2594,6 +2602,7 @@ endfor ;
 </code></pre></div></td></tr></table></div>
 <p>参见：Figure 1.3 The nine ways to end and join lines.</p>
 <h3 id="_16">颜色<a class="headerlink" href="#_16" title="Permanent link">#</a></h3>
+<p>参考： https://meeting.contextgarden.net/2022/talks/taco/mp-picture-talk.pdf</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
