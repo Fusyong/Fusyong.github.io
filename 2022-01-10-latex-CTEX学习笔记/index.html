@@ -877,6 +877,11 @@
         怎么用AI辅助做一本安徒生童话选
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2024-10-04-%E6%88%91%E7%94%A8AI%E8%BE%85%E5%8A%A9%E5%9B%BE%E4%B9%A6%E7%BC%96%E6%A0%A1%E7%9A%84%E5%87%A0%E4%B8%AA%E4%BE%8B%E5%AD%90/">
+        我用AI辅助图书编校的几个例子
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -2215,7 +2220,7 @@
 <span class="n">doc</span><span class="o">.</span><span class="n">generate_pdf</span><span class="p">(</span><span class="s1">'filename'</span><span class="p">,</span><span class="n">compiler</span><span class="o">=</span><span class="s1">'latexmk'</span><span class="p">,</span> <span class="n">compiler_args</span><span class="o">=</span><span class="p">[</span><span class="s2">"-lualatex"</span><span class="p">],</span> <span class="n">clean</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">clean_tex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">doc</span><span class="o">.</span><span class="n">generate_pdf</span><span class="p">(</span><span class="s1">'filename'</span><span class="p">,</span><span class="n">compiler</span><span class="o">=</span><span class="s1">'lualatex'</span><span class="p">,</span> <span class="n">clean</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">clean_tex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">doc</span><span class="o">.</span><span class="n">generate_pdf</span><span class="p">(</span><span class="s1">'filename'</span><span class="p">,</span><span class="n">compiler</span><span class="o">=</span><span class="s1">'xelatex'</span><span class="p">,</span> <span class="n">clean</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="n">clean_tex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1"># 插件中有配置 </span>
+<span class="c1"># 插件中有配置</span>
 <span class="c1"># tex文件中的实现：`% !TEX program = xelatex`</span>
 
 <span class="c1"># 输出latex文件</span>
@@ -2243,8 +2248,8 @@
 * <a href="https://www.duguying.net/article/%E7%94%A8latex%E6%8E%92%E7%89%88%E4%B8%AD%E6%96%87%E4%B9%A6%E7%B1%8D/">1</a></p>
 <h3 id="ctex">使用 ctex 宏包<a class="headerlink" href="#ctex" title="Permanent link">#</a></h3>
 <blockquote>
-<p>用户在使用非标准文档类时，如果需要添加中文支持或中文版式支持，则可以使用ctex宏包。<br/>
-有些文档类是建立在 LaTeX 标准文档类之上开发的。这时，给ctex宏包加上heading选项，可以将章节标题设置为中文风格。<br/>
+<p>用户在使用非标准文档类时，如果需要添加中文支持或中文版式支持，则可以使用ctex宏包。
+有些文档类是建立在 LaTeX 标准文档类之上开发的。这时，给ctex宏包加上heading选项，可以将章节标题设置为中文风格。
 UTF8这个选项在 XeLaTeX 编译时写不写都无所谓，(pdf)LaTeX 编译时也即将写不写都无所谓。</p>
 </blockquote>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -2410,7 +2415,7 @@ UTF8这个选项在 XeLaTeX 编译时写不写都无所谓，(pdf)LaTeX 编译�
 <span class="w">        </span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">"latex-workshop.view.pdf.viewer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"browser"</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">"latex-workshop.view.pdf.viewer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"browser"</span><span class="p">,</span>
 <span class="w">    </span><span class="c1">// 配置外部浏览器为SumatraPDF（新插件自带浏览器）</span>
 <span class="w">    </span><span class="c1">// "latex-workshop.view.pdf.viewer": "external",</span>
 <span class="w">    </span><span class="c1">// "latex-workshop.view.pdf.external.viewer.command": "D:/wares/SumatraPDF/SumatraPDF.exe",</span>
@@ -2673,7 +2678,7 @@ My humble subjects <span class="k">\ldots</span>
 </ul>
 <p>在使用不记编号的命令形式（\section<em>、\caption</em>3、带可选参数的 \item 命令等）时不要使用 \label 命令，否则生成的引用编号不正确。</p>
 <h2 id="refcount">refcount引用计算宏包<a class="headerlink" href="#refcount" title="Permanent link">#</a></h2>
-<p>\thepage，单页构造时才准确，所以只能用在页眉页脚  </p>
+<p>\thepage，单页构造时才准确，所以只能用在页眉页脚</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2906,7 +2911,7 @@ My humble subjects <span class="k">\ldots</span>
 \centerline{居中}
 \rightline{右对齐}</p>
 <h3 id="_24">多行文本或段落对齐<a class="headerlink" href="#_24" title="Permanent link">#</a></h3>
-<p>左对齐、居中、右对齐 </p>
+<p>左对齐、居中、右对齐</p>
 <p>\begin{flushleft}...\end{flushleft}
 \begin{center}...\end{center}
 \begin{flushright}...\end{flushright}</p>
@@ -2919,28 +2924,27 @@ My humble subjects <span class="k">\ldots</span>
 <ol>
 <li>对某<strong>一行公式</strong>进行左对齐</li>
 </ol>
-<p>\begin{flalign} <br/>
-your equation (1) <br/>
+<p>\begin{flalign}
+your equation (1)
 \end{flalign} \begin{flalign} your equation (1) \end{flalign}</p>
 <ol>
 <li>对某<strong>一个公式</strong>左对齐</li>
 </ol>
 <p>some text here\</p>
 <p>y o u r e q u a t i o n h e r e yourequationhere</p>
-<p>\<br/>
+<p>\
 and more text here.</p>
 <ol>
 <li>对某<strong>几行公式</strong></li>
 </ol>
-<p>\begin{flalign} <br/>
-\begin{split} <br/>
-your equation (1) <br/>
-your equation (2) <br/>
-\end{split}&amp; <br/>
+<p>\begin{flalign}
+\begin{split}
+your equation (1)
+your equation (2)
+\end{split}&amp;
 \end{flalign} \begin{flalign} \begin{split} your equation (1) your equation (2) \end{split}&amp; \end{flalign}</p>
-<ol>
-<li>加载amsmath宏包后，使用选项fleqn（就是声明加载宏包时使用\usepackage[fleqn]{amsmath}）可以使本该居中对齐的行间公式改为左对齐.</li>
-</ol>
+<p>4.
+加载amsmath宏包后，使用选项fleqn（就是声明加载宏包时使用\usepackage[fleqn]{amsmath}）可以使本该居中对齐的行间公式改为左对齐.</p>
 <h3 id="hfill">\hfill 平均填充以对齐<a class="headerlink" href="#hfill" title="Permanent link">#</a></h3>
 <h2 id="minipage">minipage<a class="headerlink" href="#minipage" title="Permanent link">#</a></h2>
 <p>水平间距\hspace{2em}  \hspace \hfill
@@ -2993,8 +2997,8 @@ yes---or no?
 </code></pre></div></td></tr></table></div></p>
 <p>断词<code>\-</code></p>
 <p>中文+、-号宽度不一样，减号改成行内公式<code>$-$</code></p>
-<p>英文省略号<br/>
-\dots<br/>
+<p>英文省略号
+\dots
 \ldots</p>
 <p>可以使用字符 ~ 输入一个不会断行的空格（高德纳称之为 tie，“带子”），通常用在英文人名、图表名称等上下文环
 境</p>
@@ -3010,7 +3014,7 @@ yes---or no?
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\\</span><span class="na">[⟨length⟩]</span> 
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\\</span><span class="na">[⟨length⟩]</span>
 <span class="k">\\*</span><span class="na">[⟨length⟩]</span> <span class="c">% 禁止断行处分页</span>
 <span class="k">\newline</span> <span class="c">% 不能用于表格中</span>
 
@@ -3126,7 +3130,7 @@ He likes large and small letters.
 <p>两类命令、三种形式</p>
 <ul>
 <li>\bfseries 影响之后所有的字符</li>
-<li>{\bfseries ⟨sometext⟩} </li>
+<li>{\bfseries ⟨sometext⟩}</li>
 <li>\textbf{}</li>
 </ul>
 <table>
@@ -3532,7 +3536,7 @@ print(1+123424)
 <span class="k">\cs</span><span class="nb">_</span>new:Npn <span class="k">\propextract</span><span class="nb">{</span><span class="c">%</span>
     <span class="k">\prop</span><span class="nb">_</span>item:Nx <span class="k">\g</span><span class="nb">_</span>ufischer<span class="nb">_</span>object<span class="nb">_</span>counter <span class="nb">{</span><span class="k">\thepage</span><span class="nb">}</span>
 <span class="nb">}</span>
-<span class="k">\prop</span><span class="nb">_</span>new:N <span class="k">\g</span><span class="nb">_</span>ufischer<span class="nb">_</span>object<span class="nb">_</span>counter 
+<span class="k">\prop</span><span class="nb">_</span>new:N <span class="k">\g</span><span class="nb">_</span>ufischer<span class="nb">_</span>object<span class="nb">_</span>counter
 <span class="k">\int</span><span class="nb">_</span>step<span class="nb">_</span>inline:nnnn <span class="nb">{</span>1 <span class="nb">}{</span>1<span class="nb">}{</span>80<span class="nb">}</span>
 <span class="nb">{</span><span class="k">\refstepcounter</span><span class="nb">{</span>mycounter<span class="nb">}</span><span class="k">\themycounter</span>.~an~object <span class="k">\\</span>
     <span class="k">\int</span><span class="nb">_</span>if<span class="nb">_</span>odd:nT <span class="nb">{</span><span class="k">\fp</span><span class="nb">_</span>eval:n <span class="nb">{</span> randint( 9 ) <span class="nb">}}{</span>some~randomness<span class="k">\\</span><span class="nb">}</span>
@@ -3630,6 +3634,7 @@ The height is: <span class="k">\the\height</span>
 <li>\input{⟨filename⟩}，纯粹是把文件里的内容插入，适合用在导言区</li>
 <li>\include{⟨filename⟩}, 在读入文件之前会另起一页，适合章节</li>
 <li>导言区\includeonly指定那些文件可导入，其余文件\include无效：\includeonly{⟨filename1⟩,⟨filename2⟩,…}</li>
+<li>\registerctxluafile{luafilename}{} % 注册lua文件</li>
 </ul>
 <h2 id="_38">超链接和书签<a class="headerlink" href="#_38" title="Permanent link">#</a></h2>
 <p>\usepackage{hyperref}</p>
@@ -3638,7 +3643,7 @@ The height is: <span class="k">\the\height</span>
 <p>或</p>
 <p>\usepackage{luatexja-ruby}</p>
 <p>或</p>
-<p>\overset{\makebox[0pt]{(\scriptsize animal)}}{Bears} </p>
+<p>\overset{\makebox[0pt]{(\scriptsize animal)}}{Bears}</p>
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
 <legend class="md-feedback__title">

@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://blog.xiiigame.com/2019-10-12-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E3%80%81%E8%AF%AD%E8%A8%80%E5%92%8C%E6%A1%86%E6%9E%B6/" rel="canonical"/>
-<link href="../2024-09-22-%E6%80%8E%E4%B9%88%E7%94%A8AI%E8%BE%85%E5%8A%A9%E5%81%9A%E4%B8%80%E6%9C%AC%E5%AE%89%E5%BE%92%E7%94%9F%E7%AB%A5%E8%AF%9D%E9%80%89/" rel="prev"/>
+<link href="../2024-10-04-%E6%88%91%E7%94%A8AI%E8%BE%85%E5%8A%A9%E5%9B%BE%E4%B9%A6%E7%BC%96%E6%A0%A1%E7%9A%84%E5%87%A0%E4%B8%AA%E4%BE%8B%E5%AD%90/" rel="prev"/>
 <link href="../2020-07-11-%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7%E7%AD%94%E9%97%AE/" rel="next"/>
 <link href="../img/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.9" name="generator"/>
@@ -877,6 +877,11 @@
         怎么用AI辅助做一本安徒生童话选
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2024-10-04-%E6%88%91%E7%94%A8AI%E8%BE%85%E5%8A%A9%E5%9B%BE%E4%B9%A6%E7%BC%96%E6%A0%A1%E7%9A%84%E5%87%A0%E4%B8%AA%E4%BE%8B%E5%AD%90/">
+        我用AI辅助图书编校的几个例子
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1083,6 +1088,15 @@
 <a class="md-nav__link" href="#_18">
     文档转换
   </a>
+<nav aria-label="文档转换" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pandoc">
+    Pandoc
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_19">
@@ -1996,6 +2010,15 @@
 <a class="md-nav__link" href="#_18">
     文档转换
   </a>
+<nav aria-label="文档转换" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pandoc">
+    Pandoc
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_19">
@@ -2162,7 +2185,10 @@
 <p>记性不好，这是本人备忘用的、曾经常用，或者正在使用，或者有意将来使用的的软件、语言和框架。</p>
 <h2 id="_1">文本处理【老编辑必备】<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
 <ul>
-<li>正则表达式</li>
+<li>正则表达式<ul>
+<li>文档分行，以便git管理：<code>[。！？：;][”）]*</code>替换为<code>$0\n</code></li>
+</ul>
+</li>
 <li>TextPro，汉字的正则处理，批量正则替换</li>
 <li>EmEditor，打开大文件，跨行正则处理，表格模式</li>
 <li>VS Code，各种语言支持（比如办公常用的markdown），丰富的插件，Git版本控制</li>
@@ -2471,7 +2497,10 @@ convert<span class="w"> </span><span class="k">in</span>-1.jpg<span class="w"> <
 <li>SumatraPDF.exe -page <pageno> -view "continuous single page" -zoom    "fit width" -reuse-instance [filepath ...]</pageno></li>
 </ul>
 </li>
-<li>Adobe Arobat</li>
+<li>Adobe Arobat<ul>
+<li>两步转曲：1. 用“背景”工具，添加白色、不透明度0%的背景，以提高软件对透明背景的兼容度，防止错误处理；2. 用“拼合器预览”，将所有文本转换为轮廓，将所有描边转换为轮廓。</li>
+</ul>
+</li>
 <li>常用处理工具<ul>
 <li><a href="https://www.pdflabs.com/docs/pdftk-man-page/">pdftk</a></li>
 <li><a href="https://github.com/hellerbarde/stapler">stapler(pdftk的python绑定)</a></li>
@@ -2492,7 +2521,7 @@ convert<span class="w"> </span><span class="k">in</span>-1.jpg<span class="w"> <
 　　　　　--&gt; 一次性打开50张图片，再一张张拖入到上面的模板中，全选所有图层，居中，再一张张慢慢移位
 　　　　　--&gt; 最终：【脚本】-&gt;【把图层导出到文件】--&gt;【文件类型：TIFF, 图像压缩：LZW】（这样速度快！）
 　　　　　--&gt; 还可以继续使用“老马”的 "ComicEnhancerPro" 将图片缩小化，转换格式为png</li>
-<li>ComicEnhancerPro(转换格式、大小) 等* </li>
+<li>ComicEnhancerPro(转换格式、大小) 等*</li>
 <li>PDG转PIC：使用“老马”的"pdg2pic</li>
 <li>图片词典PNG格式瘦身优化</li>
 <li>
@@ -2520,6 +2549,7 @@ http://optipng.sourceforge.net/</p>
 <li>Abbyy，商业软件</li>
 <li><a href="https://github.com/hiroi-sora/Umi-OCR">Umi-OCR</a>，支持PaddleOCR-json、RapidOCR-json等离线引擎</li>
 <li>屏幕、图片识别轻便的<a href="https://github.com/ShareX/ShareX">ShareX</a></li>
+<li>winrt-Windows.Media.Ocr</li>
 </ul>
 <h2 id="_16">常用商业软件的替代<a class="headerlink" href="#_16" title="Permanent link">#</a></h2>
 <ul>
@@ -2545,13 +2575,24 @@ http://optipng.sourceforge.net/</p>
 </ul>
 <h2 id="_17">办公、日用<a class="headerlink" href="#_17" title="Permanent link">#</a></h2>
 <h3 id="_18">文档转换<a class="headerlink" href="#_18" title="Permanent link">#</a></h3>
+<h4 id="pandoc">Pandoc<a class="headerlink" href="#pandoc" title="Permanent link">#</a></h4>
 <p><a href="https://pandoc.org/demos.html">demo</a></p>
-<ul>
-<li>pandoc -o output.docx -f markdown -t docx filename.md</li>
-</ul>
+<p>markdown转docx：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pandoc<span class="w"> </span>-o<span class="w"> </span>output.docx<span class="w"> </span>-f<span class="w"> </span>markdown<span class="w"> </span>-t<span class="w"> </span>docx<span class="w"> </span>filename.md
+</code></pre></div></td></tr></table></div>
+<p><a href="https://gist.github.com/plembo/409a8d7b1bae66622dbcd26337bbb185#file-pandocdocx2md-md">docx转markdown，含图：</a></p>
+<p>转换markdown，省略号、破折号、引号等会出错，可以再转一个markdown_strict来核对。（<a href="https://pandoc.org/MANUAL.html#markdown-variants">各种变体</a>）</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nv">myfilename</span><span class="o">=</span><span class="s2">"example"</span>
+pandoc<span class="w"> </span>-t<span class="w"> </span>markdown_strict<span class="w"> </span>--extract-media<span class="o">=</span><span class="s1">'./attachments/$myfilename'</span><span class="w"> </span><span class="nv">$myfilename</span>.docx<span class="w"> </span>-o<span class="w"> </span><span class="nv">$myfilename</span>.md
+</code></pre></div></td></tr></table></div>
 <p>用MS Word批量转换工具转换当前路径下所有doc为docx：</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">for</span><span class="w"> </span>/R<span class="w"> </span>%f<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">(</span>*.doc<span class="o">)</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="s2">"C:\Program Files (x86)\Microsoft Office\root\Office16\Wordconv.exe"</span><span class="w"> </span>-oice<span class="w"> </span>-nme<span class="w"> </span><span class="s2">"%f"</span><span class="w"> </span><span class="s2">"%fx"</span>
 </code></pre></div></td></tr></table></div>
+<p>docx转ConTeXt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pandoc<span class="w"> </span>-t<span class="w"> </span>context<span class="w"> </span>-f<span class="w"> </span>docx<span class="w"> </span>-o<span class="w"> </span>b.tex<span class="w"> </span><span class="s2">"a.docx"</span>
+</code></pre></div></td></tr></table></div>
+<p>转换后，后点引号、破折会、全角连接号、部分省略号有出错或转换，可以再转一个markdown_strict来核对。</p>
 <h3 id="_19">微软拼音输入法自定义时间<a class="headerlink" href="#_19" title="Permanent link">#</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>%yyyy%-%MM%-%dd%
@@ -2604,6 +2645,7 @@ http://optipng.sourceforge.net/</p>
 <li>scikit-learn</li>
 <li>scikit-image</li>
 <li>Scrapy，爬虫</li>
+<li>RapidFuzz(c++)、difflib(python自带), 文本相似度、模糊查找与匹配</li>
 <li>多平台应用：Kivy/KivyMD, Open source UI framework written in Python, running on Windows, Linux, macOS, Android and iOS</li>
 <li>
 <p><a href="https://medium.datadriveninvestor.com/streamlit-vs-dash-vs-voil%C3%A0-vs-panel-battle-of-the-python-dashboarding-giants-177c40b9ea57">在线应用，数据展示</a></p>
@@ -2923,6 +2965,21 @@ http://optipng.sourceforge.net/</p>
 </li>
 <li>文件的硬链接(hard link，不依赖链接对象，数据别名)<code>mklink /H linkname.txt target.txt</code></li>
 </ul>
+<!--
+d:
+cd D:\venvs\context-win64\tex\texmf-context\tex\context\modules\third\
+mklink /D vertical-typesetting\  D:\ah21\TEX\vertical-typesetting\
+mklink /D jiazhu\  D:\ah21\TEX\jiazhu\
+mklink /D zhpunc\  D:\ah21\TEX\zhpunc\
+
+d:
+cd D:\venvs\context-win64\tex\texmf-context\tex\context\base\mkiv
+ren scrp-cjk.lua scrp-cjk.lua.bak
+ren char-scr.lua char-scr.lua.bak
+mklink scrp-cjk.lua  D:\ah21\TEX\context-source-studying\source-reviewed\scrp-cjk.lua
+mklink char-scr.lua  D:\ah21\TEX\context-source-studying\source-reviewed\char-scr.lua
+
+-->
 <form class="md-feedback" hidden="" name="feedback">
 <fieldset>
 <legend class="md-feedback__title">
@@ -2994,7 +3051,7 @@ http://optipng.sourceforge.net/</p>
 </main>
 <footer class="md-footer">
 <nav aria-label="页脚" class="md-footer__inner md-grid">
-<a aria-label="上一页: 怎么用AI辅助做一本安徒生童话选" class="md-footer__link md-footer__link--prev" href="../2024-09-22-%E6%80%8E%E4%B9%88%E7%94%A8AI%E8%BE%85%E5%8A%A9%E5%81%9A%E4%B8%80%E6%9C%AC%E5%AE%89%E5%BE%92%E7%94%9F%E7%AB%A5%E8%AF%9D%E9%80%89/" rel="prev">
+<a aria-label="上一页: 我用AI辅助图书编校的几个例子" class="md-footer__link md-footer__link--prev" href="../2024-10-04-%E6%88%91%E7%94%A8AI%E8%BE%85%E5%8A%A9%E5%9B%BE%E4%B9%A6%E7%BC%96%E6%A0%A1%E7%9A%84%E5%87%A0%E4%B8%AA%E4%BE%8B%E5%AD%90/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -3003,7 +3060,7 @@ http://optipng.sourceforge.net/</p>
 <span class="md-footer__direction">
                   上一页
                 </span>
-                怎么用AI辅助做一本安徒生童话选
+                我用AI辅助图书编校的几个例子
               </div>
 </div>
 </a>
