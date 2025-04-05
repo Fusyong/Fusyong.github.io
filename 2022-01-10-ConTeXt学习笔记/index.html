@@ -3229,6 +3229,7 @@ M<span class="k">\scale</span><span class="na">[height=\heightofstring{M}]</span
 <li>有时断行被解释为一个空格，而行尾注释%以避免引入空格（写宏的时候）</li>
 <li>破折号与连接号：断词用<code>-</code>，输入<code>-</code>或<code>\hyphen</code>；连接数字用<code>–</code>，输入<code>--</code>或<code>\endash</code>；连接句子用<code>—</code>，输入<code>---</code>或<code>\emdash</code>；减号/负号用<code>−</code>，输入<code>$-$</code>或<code>\minus</code>。</li>
 </ul>
+<p>隐藏段落使用\defineblock然后\hideblock</p>
 <h2 id="_18">文档与项目结构<a class="headerlink" href="#_18" title="Permanent link">#</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -4989,6 +4990,39 @@ Two-two won one too.
 <li>\startbuffer[BufferName] ...\stopbuffer</li>
 <li>\getbuffer[BufferName]</li>
 </ul>
+<p><strong>block</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">\defineblock</span><span class="na">[question]</span>
+<span class="k">\hideblocks</span><span class="na">[question]</span> <span class="c">% We don't want to print blocks where we define them</span>
+
+<span class="k">\beginquestion</span><span class="na">[first]</span>
+To be, or not to be? (not <span class="k">\\</span>start... and <span class="k">\\</span>stop....)
+<span class="k">\endquestion</span>
+
+<span class="k">\section</span><span class="nb">{</span>Let's see what blocks we've got.<span class="nb">}</span>
+<span class="k">\useblocks</span><span class="na">[question]</span>
+
+<span class="k">\section</span><span class="nb">{</span>We've seen what blocks we've got. Let's take another look at that first question.<span class="nb">}</span>
+<span class="k">\useblocks</span><span class="na">[question][first]</span>
+
+<span class="k">\beginquestion</span><span class="na">[last]</span>
+Mais o<span class="k">\`</span>u sont les neiges d'antan?
+<span class="k">\endquestion</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>其他环境和建构</strong></p>
 <ul>
 <li>化学式</li>
