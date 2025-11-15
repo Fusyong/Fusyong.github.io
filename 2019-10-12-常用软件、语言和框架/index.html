@@ -3485,9 +3485,26 @@ convert<span class="w"> </span><span class="k">in</span>-1.jpg<span class="w"> <
 <h3 id="pdf">PDF相关<a class="headerlink" href="#pdf" title="Permanent link">#</a></h3>
 <ul>
 <li>PDF-XChange Editor</li>
-<li>SumatraPDF，快，支持多种文件格式，<a href="https://www.sumatrapdfreader.org/docs/Command-line-arguments.html">支持命令行</a>，比如:<ul>
+<li>SumatraPDF，快，支持多种文件格式，<ul>
+<li><a href="https://www.sumatrapdfreader.org/docs/Command-line-arguments.html">支持命令行</a>，比如:<ul>
 <li>SumatraPDF.exe -named-dest <destination-name> -view "continuous single page" -zoom    "180" -reuse-instance [filepath ...]</destination-name></li>
 <li>SumatraPDF.exe -page <pageno> -view "continuous single page" -zoom    "fit width" -reuse-instance [filepath ...]</pageno></li>
+</ul>
+</li>
+<li>可<a href="https://www.sumatrapdfreader.org/docs/Customizing-keyboard-shortcuts">自定义快捷键</a>（<a href="https://www.sumatrapdfreader.org/docs/Commands">查询命令</a>），如用Esc关闭文档
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Shortcuts [
+    [
+        Cmd = CmdClose
+        Key = Escape
+    ]
+]
+</code></pre></div></td></tr></table></div></li>
+<li>复用实例，避免文档重复打开： <code>ReuseInstance = true</code></li>
 </ul>
 </li>
 <li>Adobe Arobat<ul>
