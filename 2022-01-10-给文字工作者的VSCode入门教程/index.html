@@ -1458,10 +1458,10 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#vscode_1">
 <span class="md-ellipsis">
-      VSCode 文本编辑功能与实例
+      VSCode 文本编辑操作举例
     </span>
 </a>
-<nav aria-label="VSCode 文本编辑功能与实例" class="md-nav">
+<nav aria-label="VSCode 文本编辑操作举例" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
@@ -2644,10 +2644,10 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#vscode_1">
 <span class="md-ellipsis">
-      VSCode 文本编辑功能与实例
+      VSCode 文本编辑操作举例
     </span>
 </a>
-<nav aria-label="VSCode 文本编辑功能与实例" class="md-nav">
+<nav aria-label="VSCode 文本编辑操作举例" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
@@ -3137,15 +3137,67 @@
 </code></pre></div></td></tr></table></div>
 <p>如果使用markdown-preview-enhanced预览扩展，可参考其文档中的一部分：<a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/markdown-basics">Markdown基本元素</a></p>
 <h2 id="vscode">VSCode的快捷操作<a class="headerlink" href="#vscode" title="Permanent link">#</a></h2>
-<p>为了保持界面简洁，VSCode把很多<strong>快捷导航</strong>功能以命令的形式隐藏起来。如果用的多，值得花点时间来学习。现在你只要大体了解有哪些快捷操作即可：</p>
+<p>如果用得多，很有必要学一些 <a href="https://code.visualstudio.com/docs/getstarted/tips-and-tricks">常用技巧 tips-and-tricks</a>和快捷键。</p>
+<p>这里是完整的<a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">快捷键 keyboard-shortcuts-windows</a>，可以打印出来。</p>
+<p>下面挑出一些常用的。</p>
 <ul>
-<li>命令面板（Ctrl+Shift+P），可以输入关键字筛出命令，比如用<code>aiproof</code>能筛出我做的AI Proofreader扩展的所有命令。刚使用过的命令再次查询时默认选中，回车即可执行，很方便。</li>
-<li>文件浏览面板(Ctrl+P)，跟命令面板类似，能筛出项目所有文件名，用Down和Right键快速打开。</li>
-<li>位置跳转(Ctrl+G)，快速跳转到指定行号。</li>
-<li>符号跳转(Ctrl+Shift+O)，快速筛出、跳转到当前文档指定标题，输入#筛出标题级别（Markdown文档只有标题这一种符号）</li>
+<li>快捷导航<ul>
+<li>Ctrl+Shift+P 命令面板，可以输入关键字筛出命令，比如用<code>aiproof</code>能筛出我做的AI Proofreader扩展的所有命令。刚使用过的命令再次查询时默认选中，回车即可执行，很方便。</li>
+<li>Ctrl+P 文件浏览面板，跟命令面板类似，能筛出项目所有文件名，用Down和Right键快速打开。</li>
+<li>Ctrl+G 位置跳转，快速跳转到指定行号。</li>
+<li>Ctrl+Shift+O 符号跳转，快速筛出、跳转到当前文档指定标题，输入#筛出标题级别（Markdown文档只有标题这一种符号）</li>
 </ul>
-<p>另外，用过用得多，还有 <a href="https://code.visualstudio.com/docs/getstarted/tips-and-tricks">常用技巧 tips-and-tricks</a> 和 <a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf">快捷键 keyboard-shortcuts-windows</a> 值得学习。</p>
-<h2 id="vscode_1">VSCode 文本编辑功能与实例<a class="headerlink" href="#vscode_1" title="Permanent link">#</a></h2>
+</li>
+<li>文件操作，跟其他软件类似<ul>
+<li>Ctrl+N 新建文件 </li>
+<li>Ctrl+S 保存文件 </li>
+<li>Ctrl+W 关闭编辑窗口 </li>
+<li>Ctrl+Tab 切换到后一个文件</li>
+<li>Ctrl+Shift+Tab 切换到前一个文件</li>
+</ul>
+</li>
+<li>编辑，常用操作跟其他软件类似，又有很大增强<ul>
+<li>Ctrl+C 拷贝(无选择时拷贝整行)</li>
+<li>Ctrl+X 剪切(无选择时剪切整行)</li>
+<li>Ctrl+V 粘贴文字、链接、图片等</li>
+<li>Alt+ ↑ / ↓ 上下移动当前行</li>
+<li>Shift+Alt + ↓ / ↑ 上下拷贝当前行</li>
+<li>Alt+PgUp / PgDn 上下翻页</li>
+<li>Alt+ ← / → 移动到前后编辑位置</li>
+<li>Alt+Z 换行开关 </li>
+<li>Ctrl+] / [ 缩进开关</li>
+<li>Ctrl+Shift+[ / ] 增加标题级别（需插件支持）</li>
+<li>Ctrl+/ 注释行开关</li>
+</ul>
+</li>
+<li>查找替换<ul>
+<li>Ctrl+F 查找</li>
+<li>Ctrl+H 替换</li>
+<li>F3 / Shift+F3 查找上一个/下一个</li>
+<li>Alt+Enter 选中所有查找的相同项目</li>
+<li>Ctrl+Shift+F 项目内搜索</li>
+<li>Ctrl+Shift+H 项目内替换</li>
+</ul>
+</li>
+<li>多光标操作<ul>
+<li>Ctrl+D 加选相同项目</li>
+<li>Alt+Click 插入一个光标</li>
+<li>Ctrl+U 取消最后一个光标</li>
+<li>Ctrl+Shift+L 选中所有与选中项相同者</li>
+<li>Shift+Alt + (鼠标拖拽) 列块选择</li>
+</ul>
+</li>
+<li>显示<ul>
+<li>F11 全屏开关</li>
+<li>Ctrl+ = / - 放大与缩小</li>
+<li>Ctrl+B 侧栏开关</li>
+<li>Ctrl+Shift+E 浏览器</li>
+<li>Ctrl+Shift+X 扩展</li>
+<li>Ctrl+Shift+V 预览Markdown文件</li>
+</ul>
+</li>
+</ul>
+<h2 id="vscode_1">VSCode 文本编辑操作举例<a class="headerlink" href="#vscode_1" title="Permanent link">#</a></h2>
 <h3 id="_4">多重选择和多光标编辑<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
 <p><strong>多重选择：</strong> 按住Ctrl键，然后可以用鼠标选中多段内容。</p>
 <p><strong>扩展选择：</strong> 选中一段文字，然后按ctrl+D，可以选中下一处与相同的文字，如此继续可以选中更多。如果想一次性选中所有相同文字，可以使用Ctrl+Shift+L；如果此时查找窗口打开且其中有正则表达式，则选中的是正则匹配，而不是选中的相同项。</p>
