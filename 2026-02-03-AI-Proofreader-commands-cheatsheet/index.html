@@ -1878,30 +1878,29 @@
 <h3 id="21">2.1 两种校对方式<a class="headerlink" href="#21" title="Permanent link">#</a></h3>
 <pre class="mermaid"><code>flowchart LR
     subgraph 方式二["长文档校对"]
-        L1[打开 Markdown]
-        L2[split file &lt;br&gt; 切分文件]
-        L3[得到 JSON]
-        L4[proofread file &lt;br&gt; 批量校对文件]
-        L5[结果面板 / diff / 勘误表]
+        L1["打开 Markdown"]
+        L2["split file &lt;br&gt; 切分文件"]
+        L3["得到 JSON"]
+        L4["proofread file &lt;br&gt; 批量校对文件"]
+        L5["结果面板 / diff / 勘误表"]
         L1 --&gt; L2 --&gt; L3 --&gt; L4 --&gt; L5
     end
 
     subgraph 方式一["选段校对"]
-        S1[打开 Markdown]
-        S2[选中一段文字]
-        S3[proofread selection &lt;br&gt; 校对选中]
-        S4[查看 diff 结果]
+        S1["打开 Markdown"]
+        S2["选中一段文字"]
+        S3["proofread selection &lt;br&gt; 校对选中"]
+        S4["查看 diff 结果"]
         S1 --&gt; S2 --&gt; S3 --&gt; S4
-    end
-</code></pre>
+    end</code></pre>
 <h3 id="22">2.2 长文档校对整体流程<a class="headerlink" href="#22" title="Permanent link">#</a></h3>
 <pre class="mermaid"><code>flowchart TB
     subgraph 准备["📄 文档准备"]
-        A[原始稿：docx / PDF / text / TeX / LaTeX / ComTeXt]
-        B[convert docx to markdown &lt;br&gt; Word 转 Markdown]
-        C[convert PDF to markdown &lt;br&gt; PDF 转 Markdown]
-        D[format paragraphs / mark titles &lt;br&gt; 整理段落 / 标记标题]
-        E[可校对之 Markdown]
+        A["原始稿：docx / PDF / text / TeX / LaTeX / ComTeXt"]
+        B["convert docx to markdown &lt;br&gt; Word 转 Markdown"]
+        C["convert PDF to markdown &lt;br&gt; PDF 转 Markdown"]
+        D["format paragraphs / mark titles &lt;br&gt; 整理段落 / 标记标题"]
+        E["可校对之 Markdown"]
         A --&gt; B
         A --&gt; C
         B --&gt; E
@@ -1910,25 +1909,25 @@
     end
 
     subgraph 切分["✂️ 文档切分"]
-        E --&gt; F[split file  &lt;br&gt; 选择模式切分文件]
-        F --&gt; G[按长度 / 按标题 / 按标题 + 长度 / 带上下文]
-        G --&gt; H[得到 filename.json + filename.json.md]
+        E --&gt; F["split file &lt;br&gt; 选择模式切分文件"]
+        F --&gt; G["按长度 / 按标题 / 按标题 + 长度 / 带上下文"]
+        G --&gt; H["得到 filename.json + filename.json.md"]
     end
 
     subgraph 语境["🔗 可选：组织语境"]
-        H --&gt; I[merge two files &lt;br&gt; 合并两个文件]
-        I --&gt; J[并入或更新 target / context / reference （目标文本 / 语境 / 参考资料）]
+        H --&gt; I["merge two files &lt;br&gt; 合并两个文件"]
+        I --&gt; J["并入或更新 target / context / reference （目标文本 / 语境 / 参考资料）"]
     end
 
     subgraph 校对["✏️ 校对"]
-        J --&gt; K[proofread file &lt;br&gt; 校对JSON文件]
+        J --&gt; K["proofread file &lt;br&gt; 校对JSON文件"]
         H --&gt; K
-        K --&gt; L[得到 filename.proofread.json filename.proofread.json.md 等]
+        K --&gt; L["得到 filename.proofread.json filename.proofread.json.md 等"]
     end
 
     subgraph 查看["👀 查看结果"]
-        L --&gt; M[diff it with another file &lt;br&gt; 与另一文件比较差异]
-        L --&gt; N[结果面板：前后差异 / 勘误表 / HTML]
+        L --&gt; M["diff it with another file &lt;br&gt; 与另一文件比较差异"]
+        L --&gt; N["结果面板：前后差异 / 勘误表 / HTML"]
     end
 
     准备 --&gt; 切分
@@ -1937,32 +1936,32 @@
     校对 --&gt; 查看</code></pre>
 <h3 id="23">2.3 切分模式选择（决策简图）<a class="headerlink" href="#23" title="Permanent link">#</a></h3>
 <pre class="mermaid"><code>flowchart TD
-    Start[我要切分 Markdown] --&gt; Q1{有标题结构?}
-    Q1 --&gt;|无| ByLen[按长度切分 &lt;br&gt; split by length]
-    Q1 --&gt;|有| Q2{题下段落长度合适?}
-    Q2 --&gt;|是，且不太长| ByTitle[按标题切分 &lt;br&gt; split by title]
-    Q2 --&gt;|长短不一| ByTitleLen[按标题+长度 &lt;br&gt; split by title and length]
-    Q2 --&gt;|需要整章作语境| WithTitleCtx[带标题范围上下文 &lt;br&gt; split by length with title context]
-    Q1 --&gt;|有，只需前后段语境| WithParaCtx[带前后段落上下文 &lt;br&gt; split by length with paragraph context]
+    Start["我要切分 Markdown"] --&gt; Q1{"有标题结构?"}
+    Q1 --&gt;|无| ByLen["按长度切分 &lt;br&gt; split by length"]
+    Q1 --&gt;|有| Q2{"题下段落长度合适?"}
+    Q2 --&gt;|是，且不太长| ByTitle["按标题切分 &lt;br&gt; split by title"]
+    Q2 --&gt;|长短不一| ByTitleLen["按标题+长度 &lt;br&gt; split by title and length"]
+    Q2 --&gt;|需要整章作语境| WithTitleCtx["带标题范围上下文 &lt;br&gt; split by length with title context"]
+    Q1 --&gt;|有，只需前后段语境| WithParaCtx["带前后段落上下文 &lt;br&gt; split by length with paragraph context"]
 
-    ByLen --&gt; Out[得到 .json + .json.md]
+    ByLen --&gt; Out["得到 .json + .json.md"]
     ByTitle --&gt; Out
     ByTitleLen --&gt; Out
     WithTitleCtx --&gt; Out
     WithParaCtx --&gt; Out</code></pre>
 <h3 id="24">2.4 比较与生成勘误表/审校记录<a class="headerlink" href="#24" title="Permanent link">#</a></h3>
 <pre class="mermaid"><code>flowchart TD
-    Diff[与另一文件比较差异 &lt;br&gt; diff it with another file] --&gt; Mode{选择模式}
-    Mode --&gt;|VS Code 内置| A[左右对比 diff]
-    Mode --&gt;|jsdiff HTML| B[生成带修改标记的 HTML &lt;br&gt; 可打印 PDF]
-    Mode --&gt;|逐句对齐| C[生成勘误表 HTML &lt;br&gt; 可筛选、对比]</code></pre>
+    Diff["与另一文件比较差异 &lt;br&gt; diff it with another file"] --&gt; Mode{"选择模式"}
+    Mode --&gt;|VS Code 内置| A["左右对比 diff"]
+    Mode --&gt;|jsdiff HTML| B["生成带修改标记的 HTML &lt;br&gt; 可打印 PDF"]
+    Mode --&gt;|逐句对齐| C["生成勘误表 HTML &lt;br&gt; 可筛选、对比"]</code></pre>
 <h3 id="25">2.5 引文核对流程<a class="headerlink" href="#25" title="Permanent link">#</a></h3>
 <pre class="mermaid"><code>flowchart LR
-    A[设置文献库路径] --&gt; B[build citation reference index &lt;br&gt; 建立文献索引]
-    B --&gt; C[verify citations / verify selected citation &lt;br&gt; 全文核对引文 / 核对选中引文]
-    C --&gt; D[在 Citation 视图中查看]
-    D --&gt; E[diff citations vs references &lt;br&gt; 引文与文献对比]
-    D --&gt; F[search citation in PDF &lt;br&gt; 在 PDF 中查该引文]</code></pre>
+    A["设置文献库路径"] --&gt; B["build citation reference index &lt;br&gt; 建立文献索引"]
+    B --&gt; C["verify citations / verify selected citation &lt;br&gt; 全文核对引文 / 核对选中引文"]
+    C --&gt; D["在 Citation 视图中查看"]
+    D --&gt; E["diff citations vs references &lt;br&gt; 引文与文献对比"]
+    D --&gt; F["search citation in PDF &lt;br&gt; 在 PDF 中查该引文"]</code></pre>
 <hr/>
 <h2 id="_2">三、按场景的快速入口<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
 <table>
