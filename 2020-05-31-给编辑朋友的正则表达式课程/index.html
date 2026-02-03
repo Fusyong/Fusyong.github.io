@@ -858,15 +858,20 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_12" type="checkbox"/>
 <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
-          图书编辑学AI
+          AI Proofreader
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-expanded="false" aria-labelledby="__nav_12_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_12">
 <span class="md-nav__icon md-icon"></span>
-          图书编辑学AI
+          AI Proofreader
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2026-02-03-AI-Proofreader-commands-cheatsheet/">
+        AI Proofreader便查图表
+      </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../2025-07-23-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E8%AF%84%E5%AE%9A%E6%99%AE%E9%80%9A%E8%AF%9D%E6%B0%B4%E5%B9%B3%E7%9A%84%E6%95%88%E6%9E%9C/">
         大语言模型评定普通话水平的效果
@@ -1078,6 +1083,11 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_10">
+    把练习册的题干都标成二级标题
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
     参考资料
   </a>
 </li>
@@ -1697,6 +1707,11 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_10">
+    把练习册的题干都标成二级标题
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
     参考资料
   </a>
 </li>
@@ -1716,12 +1731,13 @@
 <p>很多编辑只会用Word。有些编辑也会用WPS，但他以为自己是在用Word；如果给他装Libreoffice Writer，他会稍稍不适应，但很快也能用起来。</p>
 <p>如果一个编辑希望稍微进一步学点“电脑知识”，我推荐学正则表达式。再搭配使用高效的文本处理工具，比如</p>
 <ul>
-<li>TextPro（<strong>除非特别说明，文中例子都是TextPro环境中的</strong>），</li>
+<li>TextPro，</li>
 <li>EmEditor，</li>
 <li>VSCode，</li>
 <li>PowerGrep，</li>
 <li>Libreoffice Writer，</li>
 </ul>
+<p><strong>除非特别说明，文中例子都适用于VSCode环境</strong>。主要区别在于VSCode在替换是用<code>$1</code>表示捕获组1，而TextPro、EmEditor等用<code>\1</code>表示；TextPro有较多适合处理中文的预定义字符集，比如<code>\y</code>表示拼音字符。其余细节请参考各自的文档。</p>
 <p>以及一些文档管理工具，比如</p>
 <ul>
 <li>Total Commander，</li>
@@ -1828,7 +1844,19 @@ on  @@@@    \n  RD
 【替换】\2|\1|\3
 </code></pre></div></td></tr></table></div>
 <p>此类比较规则的文本，也可以用EmEditor的csv表格操作功能，可以直接移动整列。</p>
-<h2 id="_10">参考资料<a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
+<h2 id="_10">把练习册的题干都标成二级标题<a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
+<p>用VSCode处理学生练习册。练习册中的每一道大题都是一个独立的语境，形式上都以<code>一、</code>这样的序号开头（但是字符前后可能有空格）；参考答案也是这样。如果把这些题干和参考答案都标成标题，那么就可以一一对齐，拼接在一起，不管是人工校对，还是机器校对，都是很好的。</p>
+<p>正则表达式查找：<code>^\s*([一二三四五六七八九十]+)\s*(、)</code></p>
+<p>正则表达式替换：<code>## $1$2</code></p>
+<p>这时候，<code>一、……</code>（字符前后无论是否有空格）就变成了<code>## 一、……</code></p>
+<p>为了说明文本的内容（比如“参考答案”）以帮助大模型理解，还可以正则表达式替换为：<code>## 【参考答案】\n$1$2</code></p>
+<p>这时候，<code>一、……</code>（字符前后无论是否有空格）就变成了：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>## 【参考答案】
+一、……
+</code></pre></div></td></tr></table></div>
+<p>这样处理后，可以通过多重选择（Ctrl+Shift+L）选中所有标题，再用选中整行，然后贴到电子表格中。答案同样操作，贴在第二列。这样就能看到是否一一对应了。</p>
+<h2 id="_11">参考资料<a class="headerlink" href="#_11" title="Permanent link">#</a></h2>
 <ul>
 <li>VSCode的文件内搜索使用的是<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions">JavaScript 正则表达式</a>，而项目内跨文件搜索使用的是<a href="https://docs.rs/regex/1.12.2/regex/#syntax">Rust 正则表达式</a>。<sup id="fnref:what-flavor-of-regex-does-visual-studio-code-use"><a class="footnote-ref" href="#fn:what-flavor-of-regex-does-visual-studio-code-use">1</a></sup></li>
 </ul>
