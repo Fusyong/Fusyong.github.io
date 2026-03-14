@@ -4831,7 +4831,7 @@ chinese  cn, chinese</p>
 <li>\setupspacing[broad]</li>
 <li>\setupspacing[packed]</li>
 </ul>
-<p><strong>字符间距</strong></p>
+<p><strong>拉伸</strong></p>
 <p>拉伸</p>
 <ul>
 <li>\stretched[Configuration]{Text}<ul>
@@ -4841,9 +4841,23 @@ chinese  cn, chinese</p>
 </li>
 <li>\setupstretched</li>
 <li>\definestretched</li>
+</ul>
+<p><strong>字符间距</strong></p>
+<ul>
 <li>\setupcharacterkerning</li>
 <li>\definecharacterkerning</li>
+<li>\kerncharacters</li>
+<li>\letterspacing</li>
 </ul>
+<p><strong>微调字内距 / 字符间距</strong></p>
+<p>% 定义一个字间距加紧的特征
+\definefontfeature[tight][default][spacing=0.05] % 增加间距
+\definefontfeature[tighter][default][kerning=yes, spacing=-0.02] % 稍微压缩间距</p>
+<p>% 应用到字体
+\definefont[MyTightFont][Serif*tighter at 12pt]</p>
+<p _feature_tighter_="\feature[+][tighter]" 这段文字的字符间距会更紧凑。="这段文字的字符间距会更紧凑。">% 或者局部使用</p>
+<p><strong>词间句</strong></p>
+<p>\setupspacing[broad] % fixed packed broad</p>
 <h2 id="_43">垂直间距/空白<a class="headerlink" href="#_43" title="Permanent link">#</a></h2>
 <p><strong>分段：</strong></p>
 <ul>
